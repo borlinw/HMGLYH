@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.rcyhtj.mapper.NybMapper">
+	
+	<select id="getNy" resultType="com.hdsx.hmglyh.rcyhtj.bean.Nyb">
+		select * from htgl_nyjcb
+		where add_months(current_date,1)>stime
+		order by stime desc
+	</select>
+	
+<!-- 	<select id="getZyysNy" parameterType="hashmap" resultType="com.hdsx.hmglyh.rcyhtj.bean.Nyb">
+		select * from htgl_nyjcb
+		where add_months(current_date,1)>stime
+		 and yname in 
+         (
+         select distinct t3.yname from rcyh_wxzyjlb t1
+         left join htgl_bmb t2 on  t1.bmcode = t2.bmcode
+         left join htgl_nyjcb t3 on t3.stime &lt;= t1.wgtime and t3.etime &gt;= t1.wgtime
+         where
+		      t1.yszt = '0' and
+		      t1.zysbzt = '1' and
+              t1.ldcode = #{ldcode} and
+              t1.bmcode = #{bmcode}
+         )
+		order by stime desc
+	</select> -->
+	<!-- 
+		2016年12月20日15:58:08 
+		注释掉了部门的条件，前台没有更改， 传过来的参数将不会有作用
+	 -->
+	<select id="getZyysNy" parameterType="hashmap" resultType="com.hdsx.hmglyh.rcyhtj.bean.Nyb">
+		select * from htgl_nyjcb
+		where add_months(current_date,1)>stime
+		 and yname in 
+         (
+         select distinct t3.yname from rcyh_wxzyjlb t1
+         left join htgl_bmb t2 on  t1.bmcode = t2.bmcode
+         left join htgl_nyjcb t3 on t3.stime &lt;= t1.wgtime and t3.etime &gt;= t1.wgtime
+         where
+		      t1.yszt = '0' and
+		      t1.zysbzt = '1' and
+              t1.ldcode = #{ldcode} 
+         )
+		order by stime desc
+	</select>
+	
+	<!-- 查询 -->
+	<select id="getYf" resultType="nyb">
+		select * from htgl_nyjcb
+		where current_date>etime
+		order by stime desc
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

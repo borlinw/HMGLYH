@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.rcyh.dao.RcyhZyysjlbMapper" >
+  <resultMap id="BaseResultMap" type="com.hdsx.hmglyh.rcyh.dao.model.RcyhZyysjlb" >
+    <id column="YSID" property="ysid" jdbcType="VARCHAR" />
+    <result column="YSTIME" property="ystime" jdbcType="DATE" />
+    <result column="YSUSERNAME" property="ysusername" jdbcType="VARCHAR" />
+    <result column="BMCODE" property="bmcode" jdbcType="VARCHAR" />
+    <result column="LDCODE" property="ldcode" jdbcType="VARCHAR" />
+    <result column="SSNY" property="ssny" jdbcType="VARCHAR" />
+    <result column="YHID" property="yhid" jdbcType="VARCHAR" />
+    <result column="SBSL" property="sbsl" jdbcType="DECIMAL" />
+    <result column="SBGR" property="sbgr" jdbcType="DECIMAL" />
+    <result column="LDZH" property="ldzh" jdbcType="VARCHAR" />
+    <result column="CJSL" property="cjsl" jdbcType="DECIMAL" />
+    <result column="YSSL" property="yssl" jdbcType="DECIMAL" />
+    <result column="HGSL" property="hgsl" jdbcType="DECIMAL" />
+    <result column="SLFHL" property="slfhl" jdbcType="DECIMAL" />
+    <result column="ZLHGL" property="zlhgl" jdbcType="DECIMAL" />
+    <result column="YXSL" property="yxsl" jdbcType="DECIMAL" />
+    <result column="YXGR" property="yxgr" jdbcType="DECIMAL" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    YSID, YSTIME, YSUSERNAME, BMCODE, LDCODE, SSNY, YHID, SBSL, SBGR, LDZH, CJSL, YSSL, 
+    HGSL, SLFHL, ZLHGL, YXSL, YXGR
+  </sql>
+ 
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from hmglyh.RCYH_ZYYSJLB
+    where YSID = #{ysid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from hmglyh.RCYH_ZYYSJLB
+    where YSID = #{ysid,jdbcType=VARCHAR}
+  </delete>
+ 
+  <insert id="insert" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhZyysjlb" >
+    insert into hmglyh.RCYH_ZYYSJLB (YSID, YSTIME, YSUSERNAME, 
+      BMCODE, LDCODE, SSNY, 
+      YHID, SBSL, SBGR, LDZH, 
+      CJSL, YSSL, HGSL, SLFHL, 
+      ZLHGL, YXSL, YXGR)
+    values (#{ysid,jdbcType=VARCHAR}, to_date(#{ystime},'yyyy-mm-dd hh24:mi:ss'), #{ysusername,jdbcType=VARCHAR}, 
+      #{bmcode,jdbcType=VARCHAR}, #{ldcode,jdbcType=VARCHAR}, #{ssny,jdbcType=VARCHAR}, 
+      #{yhid,jdbcType=VARCHAR}, #{sbsl,jdbcType=DECIMAL}, #{sbgr,jdbcType=DECIMAL}, #{ldzh,jdbcType=VARCHAR}, 
+      #{cjsl,jdbcType=DECIMAL}, #{yssl,jdbcType=DECIMAL}, #{hgsl,jdbcType=DECIMAL}, #{slfhl,jdbcType=DECIMAL}, 
+      #{zlhgl,jdbcType=DECIMAL}, #{yxsl,jdbcType=DECIMAL}, #{yxgr,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhZyysjlb" >
+    insert into hmglyh.RCYH_ZYYSJLB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ysid != null" >
+        YSID,
+      </if>
+      <if test="ystime != null" >
+        YSTIME,
+      </if>
+      <if test="ysusername != null" >
+        YSUSERNAME,
+      </if>
+      <if test="bmcode != null" >
+        BMCODE,
+      </if>
+      <if test="ldcode != null" >
+        LDCODE,
+      </if>
+      <if test="ssny != null" >
+        SSNY,
+      </if>
+      <if test="yhid != null" >
+        YHID,
+      </if>
+      <if test="sbsl != null" >
+        SBSL,
+      </if>
+      <if test="sbgr != null" >
+        SBGR,
+      </if>
+      <if test="ldzh != null" >
+        LDZH,
+      </if>
+      <if test="cjsl != null" >
+        CJSL,
+      </if>
+      <if test="yssl != null" >
+        YSSL,
+      </if>
+      <if test="hgsl != null" >
+        HGSL,
+      </if>
+      <if test="slfhl != null" >
+        SLFHL,
+      </if>
+      <if test="zlhgl != null" >
+        ZLHGL,
+      </if>
+      <if test="yxsl != null" >
+        YXSL,
+      </if>
+      <if test="yxgr != null" >
+        YXGR,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ysid != null" >
+        #{ysid,jdbcType=VARCHAR},
+      </if>
+      <if test="ystime != null" >
+        to_date(#{ystime},'yyyy-mm-dd hh24:mi:ss'),
+      </if>
+      <if test="ysusername != null" >
+        #{ysusername,jdbcType=VARCHAR},
+      </if>
+      <if test="bmcode != null" >
+        #{bmcode,jdbcType=VARCHAR},
+      </if>
+      <if test="ldcode != null" >
+        #{ldcode,jdbcType=VARCHAR},
+      </if>
+      <if test="ssny != null" >
+        #{ssny,jdbcType=VARCHAR},
+      </if>
+      <if test="yhid != null" >
+        #{yhid,jdbcType=VARCHAR},
+      </if>
+      <if test="sbsl != null" >
+        #{sbsl,jdbcType=DECIMAL},
+      </if>
+      <if test="sbgr != null" >
+        #{sbgr,jdbcType=DECIMAL},
+      </if>
+      <if test="ldzh != null" >
+        #{ldzh,jdbcType=VARCHAR},
+      </if>
+      <if test="cjsl != null" >
+        #{cjsl,jdbcType=DECIMAL},
+      </if>
+      <if test="yssl != null" >
+        #{yssl,jdbcType=DECIMAL},
+      </if>
+      <if test="hgsl != null" >
+        #{hgsl,jdbcType=DECIMAL},
+      </if>
+      <if test="slfhl != null" >
+        #{slfhl,jdbcType=DECIMAL},
+      </if>
+      <if test="zlhgl != null" >
+        #{zlhgl,jdbcType=DECIMAL},
+      </if>
+      <if test="yxsl != null" >
+        #{yxsl,jdbcType=DECIMAL},
+      </if>
+      <if test="yxgr != null" >
+        #{yxgr,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+ 
+  <select id="canYs" parameterType="hashmap" resultType="int">
+      select count(*) 
+      from RCYH_ZYYSJLB
+      where	 bmcode = #{ysbmcode} and
+     		 ldcode = #{ldcode} and
+     		 yhid = #{yhid} and
+			 ystime &gt;= to_date(#{starttime},'yyyy-mm-dd') and
+			 ystime &lt;= to_date(#{endtime},'yyyy-mm-dd') 
+      	
+  </select>
+
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhZyysjlb" >
+    update hmglyh.RCYH_ZYYSJLB
+    <set >
+      <if test="ystime != null" >
+        YSTIME = to_date(#{ystime},'yyyy-mm-dd hh24:mi:ss'),
+      </if>
+      <if test="ysusername != null" >
+        YSUSERNAME = #{ysusername,jdbcType=VARCHAR},
+      </if>
+      <if test="bmcode != null" >
+        BMCODE = #{bmcode,jdbcType=VARCHAR},
+      </if>
+      <if test="ldcode != null" >
+        LDCODE = #{ldcode,jdbcType=VARCHAR},
+      </if>
+      <if test="ssny != null" >
+        SSNY = #{ssny,jdbcType=VARCHAR},
+      </if>
+      <if test="yhid != null" >
+        YHID = #{yhid,jdbcType=VARCHAR},
+      </if>
+      <if test="sbsl != null" >
+        SBSL = #{sbsl,jdbcType=DECIMAL},
+      </if>
+      <if test="sbgr != null" >
+        SBGR = #{sbgr,jdbcType=DECIMAL},
+      </if>
+      <if test="ldzh != null" >
+        LDZH = #{ldzh,jdbcType=VARCHAR},
+      </if>
+      <if test="cjsl != null" >
+        CJSL = #{cjsl,jdbcType=DECIMAL},
+      </if>
+      <if test="yssl != null" >
+        YSSL = #{yssl,jdbcType=DECIMAL},
+      </if>
+      <if test="hgsl != null" >
+        HGSL = #{hgsl,jdbcType=DECIMAL},
+      </if>
+      <if test="slfhl != null" >
+        SLFHL = #{slfhl,jdbcType=DECIMAL},
+      </if>
+      <if test="zlhgl != null" >
+        ZLHGL = #{zlhgl,jdbcType=DECIMAL},
+      </if>
+      <if test="yxsl != null" >
+        YXSL = #{yxsl,jdbcType=DECIMAL},
+      </if>
+      <if test="yxgr != null" >
+        YXGR = #{yxgr,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where YSID = #{ysid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhZyysjlb" >
+    update hmglyh.RCYH_ZYYSJLB
+    set YSTIME = to_date(#{ystime},'yyyy-mm-dd hh24:mi:ss'),
+      YSUSERNAME = #{ysusername,jdbcType=VARCHAR},
+      BMCODE = #{bmcode,jdbcType=VARCHAR},
+      LDCODE = #{ldcode,jdbcType=VARCHAR},
+      SSNY = #{ssny,jdbcType=VARCHAR},
+      YHID = #{yhid,jdbcType=VARCHAR},
+      SBSL = #{sbsl,jdbcType=DECIMAL},
+      SBGR = #{sbgr,jdbcType=DECIMAL},
+      LDZH = #{ldzh,jdbcType=VARCHAR},
+      CJSL = #{cjsl,jdbcType=DECIMAL},
+      YSSL = #{yssl,jdbcType=DECIMAL},
+      HGSL = #{hgsl,jdbcType=DECIMAL},
+      SLFHL = #{slfhl,jdbcType=DECIMAL},
+      ZLHGL = #{zlhgl,jdbcType=DECIMAL},
+      YXSL = #{yxsl,jdbcType=DECIMAL},
+      YXGR = #{yxgr,jdbcType=DECIMAL}
+    where YSID = #{ysid,jdbcType=VARCHAR}
+  </update>
+</mapper>

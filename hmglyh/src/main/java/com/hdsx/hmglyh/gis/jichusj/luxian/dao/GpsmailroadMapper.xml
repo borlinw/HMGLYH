@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.gis.jichusj.luxian.dao.GpsmailroadMapper" >
+  <cache readOnly="true"></cache>
+  <resultMap id="BaseResultMap" type="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Gpsmailroad" >
+    <result column="ROADCODE" property="roadcode" jdbcType="VARCHAR" />
+    <result column="XZQH" property="xzqh" jdbcType="VARCHAR" />
+    <result column="XZDJ" property="xzdj" jdbcType="VARCHAR" />
+    <result column="ROADNAME" property="roadname" jdbcType="VARCHAR" />
+    <result column="GSFL" property="gsfl" jdbcType="VARCHAR" />
+    <result column="QDDM" property="qddm" jdbcType="VARCHAR" />
+    <result column="STARTZH" property="startzh" jdbcType="VARCHAR" />
+    <result column="QDFJDLB" property="qdfjdlb" jdbcType="VARCHAR" />
+    <result column="ZDDM" property="zddm" jdbcType="VARCHAR" />
+    <result column="ENDZH" property="endzh" jdbcType="VARCHAR" />
+    <result column="ZDFJDLB" property="zdfjdlb" jdbcType="VARCHAR" />
+    <result column="LDXZ" property="ldxz" jdbcType="VARCHAR" />
+    <result column="LDLX" property="ldlx" jdbcType="VARCHAR" />
+    <result column="ZDZXFL" property="zdzxfl" jdbcType="VARCHAR" />
+    <result column="HDSL" property="hdsl" jdbcType="DECIMAL" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="VARCHAR" />
+    <result column="DSMC" property="dsmc" jdbcType="VARCHAR" />
+    <result column="QXMC" property="qxmc" jdbcType="VARCHAR" />
+    <result column="TXLC" property="txlc" jdbcType="DECIMAL" />
+    <result column="STARTX" property="startx" jdbcType="DECIMAL" />
+    <result column="STARTY" property="starty" jdbcType="DECIMAL" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="VARCHAR" />
+    <result column="ENDX" property="endx" jdbcType="DECIMAL" />
+    <result column="ENDY" property="endy" jdbcType="DECIMAL" />
+    <result column="MINX" property="minx" jdbcType="DECIMAL" />
+    <result column="MINY" property="miny" jdbcType="DECIMAL" />
+    <result column="MAXX" property="maxx" jdbcType="DECIMAL" />
+    <result column="MAXY" property="maxy" jdbcType="DECIMAL" />
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="ROADENDS_" property="roadends" jdbcType="DECIMAL" />
+    <result column="ROADENDS" property="roadends" jdbcType="DECIMAL" />
+    <result column="ROADSTART_" property="roadstart" jdbcType="DECIMAL" />
+    <result column="ROADSTART" property="roadstart" jdbcType="DECIMAL" />
+    <result column="ID" property="id" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Gpsmailroad" extends="BaseResultMap" >
+    <result column="SHAPE" property="shape" jdbcType="BLOB" />
+  </resultMap>
+ 
+  <sql id="Blob_Column_List" >
+    SHAPE
+  </sql>
+  
+  <resultMap id="LuduanBaseResultMap" type="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Luduan" >
+    <result column="ROADCODE" property="roadcode" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="ROADNAME" property="roadname" jdbcType="OTHER" />
+    <result column="GSFL" property="gsfl" jdbcType="OTHER" />
+    <result column="XZBM" property="xzbm" jdbcType="OTHER" />
+    <result column="XZMC" property="xzmc" jdbcType="OTHER" />
+    <result column="QDDM" property="qddm" jdbcType="OTHER" />
+    <result column="RE_ROADCODE" property="reRoadcode" jdbcType="OTHER" />
+    <result column="STARTZH" property="startzh" jdbcType="OTHER" />
+    <result column="QDFJDLB" property="qdfjdlb" jdbcType="OTHER" />
+    <result column="RE_STARTZH" property="reStartzh" jdbcType="OTHER" />
+    <result column="ZDDM" property="zddm" jdbcType="OTHER" />
+    <result column="RE_ENDZH" property="reEndzh" jdbcType="OTHER" />
+    <result column="ENDZH" property="endzh" jdbcType="OTHER" />
+    <result column="ZDFJDLB" property="zdfjdlb" jdbcType="OTHER" />
+    <result column="ZSLC" property="zslc" jdbcType="DECIMAL" />
+    <result column="LDLX" property="ldlx" jdbcType="OTHER" />
+    <result column="ZDZXFL" property="zdzxfl" jdbcType="OTHER" />
+    <result column="ZDBM" property="zdbm" jdbcType="OTHER" />
+    <result column="ZDMC" property="zdmc" jdbcType="OTHER" />
+    <result column="LDXZ" property="ldxz" jdbcType="OTHER" />
+    <result column="JCSJ" property="jcsj" jdbcType="OTHER" />
+    <result column="GJSJ" property="gjsj" jdbcType="OTHER" />
+    <result column="JSXZ" property="jsxz" jdbcType="OTHER" />
+    <result column="GBM" property="gbm" jdbcType="OTHER" />
+    <result column="DM" property="dm" jdbcType="OTHER" />
+    <result column="SFXZ" property="sfxz" jdbcType="OTHER" />
+    <result column="SSSFZ" property="sssfz" jdbcType="OTHER" />
+    <result column="SFYFGS" property="sfyfgs" jdbcType="OTHER" />
+    <result column="SFQYTC" property="sfqytc" jdbcType="OTHER" />
+    <result column="SFCGLD" property="sfcgld" jdbcType="OTHER" />
+    <result column="HDSL" property="hdsl" jdbcType="DECIMAL" />
+    <result column="JSDJ" property="jsdj" jdbcType="OTHER" />
+    <result column="LMLX" property="lmlx" jdbcType="OTHER" />
+    <result column="LMKD" property="lmkd" jdbcType="DECIMAL" />
+    <result column="LJKD" property="ljkd" jdbcType="DECIMAL" />
+    <result column="CDTZ" property="cdtz" jdbcType="OTHER" />
+   
+    <result column="LZGLDW" property="lzgldw" jdbcType="OTHER" />
+    <result column="LYQK" property="lyqk" jdbcType="OTHER" />
+    <result column="DLLX" property="dllx" jdbcType="OTHER" />
+    <result column="LYZJ" property="lyzj" jdbcType="OTHER" />
+    <result column="YHSJ" property="yhsj" jdbcType="OTHER" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="OTHER" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="OTHER" />
+    <result column="GYDWFL" property="gydwfl" jdbcType="OTHER" />
+    <result column="BGYY" property="bgyy" jdbcType="OTHER" />
+    <result column="BGSJ" property="bgsj" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="DSMC" property="dsmc" jdbcType="OTHER" />
+    <result column="QXMC" property="qxmc" jdbcType="OTHER" />
+    <result column="TXLC" property="txlc" jdbcType="DECIMAL" />
+    <result column="STARTX" property="startx" jdbcType="DECIMAL" />
+    <result column="STARTY" property="starty" jdbcType="DECIMAL" />
+    <result column="ENDX" property="endx" jdbcType="DECIMAL" />
+    <result column="ENDY" property="endy" jdbcType="DECIMAL" />
+    <result column="MAXX" property="maxx" jdbcType="DECIMAL" />
+    <result column="KLH" property="klh" jdbcType="DECIMAL" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="ROADSTART_" property="roadstart" jdbcType="DECIMAL" />
+    <result column="RE_ID" property="reId" jdbcType="OTHER" />
+    <result column="XZDJ" property="xzdj" jdbcType="OTHER" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="YLH" property="ylh" jdbcType="DECIMAL" />
+    <result column="MAXY" property="maxy" jdbcType="DECIMAL" />
+    <result column="ROADSTART" property="roadstart" jdbcType="DECIMAL" />
+    <result column="ROADENDS_" property="roadends" jdbcType="DECIMAL" />
+    <result column="ROADENDS" property="roadends" jdbcType="DECIMAL" />
+    <result column="SFNLCZY" property="sfnlczy" jdbcType="OTHER" />
+    <result column="SFCFLD" property="sfcfld" jdbcType="OTHER" />
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+    <result column="ID" property="id" jdbcType="OTHER" />
+    <result column="MINX" property="minx" jdbcType="DECIMAL" />
+  </resultMap>
+  <resultMap id="LuduanResultMapWithBLOBs" type="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Luduan" extends="BaseResultMap" >
+    <result column="SHAPE" property="shape" jdbcType="BLOB" />
+  </resultMap>
+  
+  <sql id="luduan_column_list">
+  	roadcode,roadname,startzh,endzh,ldlx,ldxz,jcsj,gjsj,dm,sfxz,sfyfgs,sfqytc,sfcgld,jsdj,lmlx,ljkd,cdtz,dsmc,qxmc,xzdj  
+  </sql>
+
+  <!-- 查询 路线 的 定位信息  -->
+  <select id="selectRoadMapInfo" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Gpsmailroad"
+  	resultMap="ResultMapWithBLOBs"
+  >
+  	
+  	select roadcode,startzh,endzh,LDLX,SHAPE from Gpsmailroad where
+  	
+  	roadcode = #{roadcode}
+  	
+  
+  	<!-- 默认不指定类型，上行线和双向合并 -->
+  	<if test="ldlx == null or ldlx == '' ">
+  	 	and ( ldlx like '1%' or ldlx like '3%' ) 
+  	</if>
+  	
+  	<if test="ldlx != null and ldlx != '' ">
+  		and ( ldlx like #{ldlx} || '%' )
+  	</if>
+  	
+  	<if test="startzh != null and startzh != '' ">
+  		and startzh = #{startzh}
+  	</if>
+  	
+  	<if test="endzh != null and endzh != '' ">
+  		and endzh = #{endzh}
+  	</if>
+  	
+  	<if test = "ldlx != 2 ">
+  	order by to_number(startzh)
+  	</if>
+  	<if test="ldlx == 2 ">
+  	order by to_number(endzh) desc
+  	</if>
+  	
+  </select>
+  
+  <!-- 路段列表 -->
+  <select id="luduanRows" resultType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Luduan" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Luduan">
+  		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+			 
+			 select 
+			 	*
+			 	from gpsmailroad
+			 	<where>
+			 		<!-- 路线编码 -->
+			 		<if test="roadcode != null and roadcode != '' ">
+			 			and roadcode = #{roadcode}
+			 		</if>
+			 		<!-- 路段类型 -->
+			 		<if test="ldlx != null and ldlx != '' ">
+			 			and substr(ldlx,0,1) in (select * from table(fn_split(#{ldlx},',')))
+			 		</if>
+			 		<if test=" startzh != null and startzh != '' ">
+			 			and startzh  <![CDATA[ >= ]]> #{startzh}
+			 		</if>
+			 		
+			 		<if test=" endzh != null and endzh != '' ">
+			 			and endzh  <![CDATA[ <=  ]]> #{endzh}
+			 		</if>
+			 		
+			 		<!-- 行政等级 -->
+			 		<if test = "xzdj != null and xzdj != '' ">
+			 			and xzdj = #{xzdj}
+			 		</if>
+			 		
+			 		<!-- 技术等级 -->
+			 		<if test="ldxz != null and ldxz != '' ">
+			 			and ldxz like #{ldxz} || '%'
+			 		</if>
+			 		
+			 	</where>
+			 	order by roadcode,roadstart,ldlx
+	) TEMP
+	<if test="page != null and page != ''">
+	  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+	</if>)
+    <where>
+	   <if test="page != null and page != ''">
+	      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+		</if>
+	</where>
+  </select>
+  
+  <!-- 路段列表 总数 -->
+  <select id="luduanCount" resultType="int"  parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Luduan">
+  		select count(*) 
+  		from gpsmailroad
+  			<where>
+			 		<!-- 路线编码 -->
+			 		<if test="roadcode != null and roadcode != '' ">
+			 			and roadcode = #{roadcode}
+			 		</if>
+			 		<!-- 路段类型 -->
+			 		<if test="ldlx != null and ldlx != '' ">
+			 			and substr(ldlx,0,1) in (select * from table(fn_split(#{ldlx},',')))
+			 		</if>
+			 		<if test=" startzh != null and startzh != '' ">
+			 			and startzh  <![CDATA[ >= ]]> #{startzh}
+			 		</if>
+			 		
+			 		<if test=" endzh != null and endzh != '' ">
+			 			and endzh  <![CDATA[ <=  ]]> #{endzh}
+			 		</if>
+			 		
+			 		<!-- 行政等级 -->
+			 		<if test = "xzdj != null and xzdj != '' ">
+			 			and xzdj like  #{xzdj} || '%'
+			 		</if>
+			 		
+			 		<!-- 技术等级 -->
+			 		<if test="jsdj != null and jsdj != '' ">
+			 			and jsdj = #{jsdj}
+			 		</if>
+			 	</where>
+  </select>
+  
+  
+  <sql id="RoadChart_Where">
+  		 1 = 1 
+		<!-- jsdj != ' ' -->
+      <!--   and ldlx != '2.下行' -->
+      <!--  and ldlx != '4.匝道' --> 
+       
+       <if test=" roadcodes != null ">
+       		and roadcode in
+       		<foreach item="item" index="index" collection="roadcodes"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+       </if>
+       
+  </sql>
+  <!-- 高速公路按技术等级 图表 -->
+  <select id="jishudjChart" parameterType="hashmap" resultType="hashmap">
+  		 select substr(jsdj,  instr(jsdj,'.')+1) "name", len "value", substr(jsdj, 0, instr(jsdj,'.') - 1) ord
+			   from (select distinct jsdj, sum(abs(endzh - startzh)) len
+			           from gpsroad t
+			           where
+			           	<include refid="RoadChart_Where"/>
+			           group by jsdj) temp
+			  order by ord
+  </select>
+  
+  <!-- 高速公路路面类型统计图 -->
+  <select id="lumianlxChart" parameterType="hashmap" resultType="hashmap">
+  		  select substr(lmlx, instr(lmlx,'.')+1) "name", len "value", substr(lmlx,0,instr(lmlx,'.')-1) ord
+			   from (select distinct lmlx, sum(abs(endzh - startzh)) len
+			           from gpsroad t
+			          where 
+			          	<include refid="RoadChart_Where"></include>
+			          group by lmlx) temp
+			  order by ord
+  </select>
+  
+  <select id="chedaotzChart" parameterType="hashmap" resultType="hashmap">
+  		 select substr(cdtz, instr(cdtz,'.')+1) "name", len "value", substr(cdtz,0,instr(cdtz,'.')-1) ord
+			   from (select distinct cdtz, sum(abs(endzh - startzh)) len
+			           from gpsroad t
+			          where
+			          	<include refid="RoadChart_Where"></include>
+			            group by cdtz) temp
+			  order by ord
+  </select>
+  
+  <!-- 高速公路 所需 路线  -->
+  <select id="roadList" parameterType="hashmap" resultType="hashmap">
+  		 select distinct roadcode "name",roadname,sum(abs(endzh - startzh)) "value"
+		   from gpsroad t
+		  	where 
+		  			<include refid="RoadChart_Where" />
+		    group by t.roadcode,t.roadname
+  </select>
+  
+  
+  <select id="selectRoadByCondition" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Gpsmailroad" resultType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Gpsmailroad">
+  		select * from 
+  			Gpsmailroad
+  			<where>
+  				<if test="roadcode != null and roadcode != '' ">
+  					and roadcode = #{roadcode}
+  				</if>
+  				<if test="xzqh != null and xzqh != '' ">
+  					and xzqh = #{xzqh}
+  				</if>
+  				<if test="startzh != null and startzh != '' ">
+  					and startzh = #{startzh}
+  				</if>
+  				
+  				<if test="endzh != null and endzh != '' ">
+  					and endzh = #{endzh}
+  				</if>
+  				<if test="ldlx != null and ldlx != '' ">
+  					and ldlx like #{ldlx} || '%'
+  				</if>
+  				<if test="id != null and id != '' ">
+  					and id = #{id}
+  				</if>
+  			</where>
+  </select>
+  
+</mapper>

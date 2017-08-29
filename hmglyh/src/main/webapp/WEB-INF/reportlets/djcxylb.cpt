@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20141222" releaseVersion="7.1.1">
+<TableDataMap>
+<TableData name="chooseDepart" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT BMCODE,BMNAME FROM HTGL_BMB WHERE LENGTH(BMCODE) = 6 AND BMCODE != '010105' ORDER BY BMCODE]]></Query>
+</TableData>
+<TableData name="cxkbData" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="bmcode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT A.*,(A.QYFY+A.CYFY) AS YLFY,B.BMNAME FROM RCYH_CXKBB A LEFT JOIN HTGL_BMB B ON A.BMCODE=B.BMCODE WHERE A.BMCODE='${bmcode}']]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,864000,1152000,1152000,1296000,1152000,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[864000,1447800,1485900,1485900,1600200,1562100,1943100,1790700,1524000,1638300,1584000,1584000,1584000,1584000,1584000,1584000,1584000,1584000,1584000,1584000,1584000,1584000,1728000,1728000,1728000,1728000,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="26" rs="3" s="0">
+<O>
+<![CDATA[冬季除雪一览表]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="3" cs="8">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[="填报单位："+$bmname]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="3" cs="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[="填报日期：" + YEAR(TODAY()) + "年" + MONTH(TODAY()) + "月" + DAY(TODAY()) + "日"]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="4" rs="3" s="1">
+<O>
+<![CDATA[序号]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="4" rs="3" s="1">
+<O>
+<![CDATA[日期]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="4" rs="3" s="1">
+<O>
+<![CDATA[路线编码]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="4" rs="3" s="1">
+<O>
+<![CDATA[路线名称]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="4" rs="3" s="1">
+<O>
+<![CDATA[除雪厚度（cm）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="4" rs="3" s="1">
+<O>
+<![CDATA[除雪里程（km）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="4" rs="3" s="1">
+<O>
+<![CDATA[除雪面积（㎡）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="4" rs="3" s="1">
+<O>
+<![CDATA[除雪量（m³）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="4" rs="3" s="1">
+<O>
+<![CDATA[机械台班]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="4" rs="3" s="1">
+<O>
+<![CDATA[人工工日]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="4" cs="12" s="1">
+<O>
+<![CDATA[材料费（万元）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="4" cs="2" rs="2" s="1">
+<O>
+<![CDATA[机械费（万元）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="24" r="4" rs="3" s="1">
+<O>
+<![CDATA[实际发生费用（万元）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="25" r="4" rs="3" s="1">
+<O>
+<![CDATA[备注]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="5" cs="3" s="1">
+<O>
+<![CDATA[融雪剂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="5" cs="3" s="1">
+<O>
+<![CDATA[盐]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="5" cs="3" s="1">
+<O>
+<![CDATA[滚刷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="5" cs="3" s="1">
+<O>
+<![CDATA[刀片]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="6" s="2">
+<O>
+<![CDATA[数量（吨）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="6" s="2">
+<O>
+<![CDATA[单价（万元）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="6" s="2">
+<O>
+<![CDATA[费用（万元）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="6" s="2">
+<O>
+<![CDATA[数量（吨）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="6" s="2">
+<O>
+<![CDATA[单价（万元）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="6" s="2">
+<O>
+<![CDATA[费用（万元）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="6" s="2">
+<O>
+<![CDATA[数量（副）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="6" s="2">
+<O>
+<![CDATA[平均单价（副/万元）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="6" s="2">
+<O>
+<![CDATA[费用（万元）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="6" s="2">
+<O>
+<![CDATA[数量（副）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="6" s="2">
+<O>
+<![CDATA[平均单价（副/万元）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="21" r="6" s="2">
+<O>
+<![CDATA[费用（万元）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="6" s="1">
+<O>
+<![CDATA[油料]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="23" r="6" s="1">
+<O>
+<![CDATA[其他]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="7" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SEQ()]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="B8"/>
+</C>
+<C c="1" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="TBDATE"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="LXCODE"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="LXNAME"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="4" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="PJHD"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="CXLC"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="CXMJ"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="CXL"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="JXTB"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="9" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="RGGR"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="10" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="RXJSL"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="11" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="RXJDJ"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="12" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="RXJFY"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="13" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="CXYYSL"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="14" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="CXYYDJ"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="15" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="CXYYFY"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="16" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="GSSL"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="17" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="GSDJ"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="18" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="GSFY"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="19" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="DPSL"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="20" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="DPDJ"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="21" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="DPFY"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="22" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="YLFY"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="23" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="QTFY"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="24" r="7" s="1">
+<O t="DSColumn">
+<Attributes dsName="cxkbData" columnName="FYHJ"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="25" r="7" s="1">
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting orientation="1">
+<Margin top="986400" left="720000" bottom="986400" right="720000"/>
+</PaperSetting>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.form.main.parameter.FormParameterUI">
+<Layout class="com.fr.form.ui.container.WParameterLayout">
+<WidgetName name="para"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Margin top="1" left="1" bottom="1" right="1"/>
+<Border>
+<border style="0" color="-723724" type="0" borderStyle="0"/>
+<WidgetTitle>
+<O>
+<![CDATA[新建标题]]></O>
+<FRFont name="SimSun" style="0" size="72"/>
+<Position pos="0"/>
+</WidgetTitle>
+<Alpha alpha="1.0"/>
+</Border>
+<Background name="ColorBackground" color="-1118482"/>
+<LCAttr vgap="0" hgap="0" compInterval="0"/>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.Label">
+<WidgetName name="LabelEndDate"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue>
+<O>
+<![CDATA[结束日期：]]></O>
+</widgetValue>
+<LabelAttr verticalcenter="true" textalign="0" autoline="true"/>
+<FRFont name="SimSun" style="0" size="72"/>
+<border style="0" color="-723724"/>
+</InnerWidget>
+<BoundsAttr x="463" y="17" width="63" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.DateEditor">
+<Listener event="afteredit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[var startTime = this.options.form.getWidgetByName("StartDate").getValue();
+var endTime = this.options.form.getWidgetByName("EndDate").getValue();
+if(startTime > endTime){
+	alert("日期错误（起始日期要小于结束日期）。");
+	this.options.form.getWidgetByName("Search").setEnable(false);
+}else{
+	this.options.form.getWidgetByName("Search").setEnable(true);
+}]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="EndDate"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<DateAttr/>
+<widgetValue>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=TODAY()]]></Attributes>
+</O>
+</widgetValue>
+</InnerWidget>
+<BoundsAttr x="526" y="17" width="105" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.Label">
+<WidgetName name="LabelStartDate"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue>
+<O>
+<![CDATA[起始日期：]]></O>
+</widgetValue>
+<LabelAttr verticalcenter="true" textalign="0" autoline="true"/>
+<FRFont name="SimSun" style="0" size="72"/>
+<border style="0" color="-723724"/>
+</InnerWidget>
+<BoundsAttr x="276" y="17" width="62" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.DateEditor">
+<Listener event="afteredit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[var startTime = this.options.form.getWidgetByName("StartDate").getValue();
+var endTime = this.options.form.getWidgetByName("EndDate").getValue();
+if(startTime > endTime){
+	alert("日期错误（起始日期要小于结束日期）。");
+	this.options.form.getWidgetByName("Search").setEnable(false);
+}else{
+	this.options.form.getWidgetByName("Search").setEnable(true);
+}]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="StartDate"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<DateAttr/>
+<widgetValue>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=TODAY()]]></Attributes>
+</O>
+</widgetValue>
+</InnerWidget>
+<BoundsAttr x="338" y="17" width="104" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.parameter.FormSubmitButton">
+<Listener event="click">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[
+var startTime = this.options.form.getWidgetByName("StartDate").getValue();
+var endTime = this.options.form.getWidgetByName("EndDate").getValue();
+var bmname = this.options.form.getWidgetByName("bmcode").getText();
+if(startTime > endTime){
+	alert("起止日期错误。");
+}
+//alert("bmname="+bmname);
+var bmnames = this.options.form.getWidgetByName("bmname");
+bmnames.setValue([bmname]A);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="Search"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[查询]]></Text>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</InnerWidget>
+<BoundsAttr x="667" y="17" width="80" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.Label">
+<WidgetName name="Labelbmcode"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue>
+<O>
+<![CDATA[选择部门：]]></O>
+</widgetValue>
+<LabelAttr verticalcenter="true" textalign="0" autoline="true"/>
+<FRFont name="SimSun" style="0" size="72"/>
+<border style="0" color="-723724"/>
+</InnerWidget>
+<BoundsAttr x="45" y="17" width="62" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.ComboBox">
+<WidgetName name="bmcode"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<DirectEdit>
+<![CDATA[false]]></DirectEdit>
+<noRepeat>
+<![CDATA[false]]></noRepeat>
+<CustomData>
+<![CDATA[false]]></CustomData>
+<Dictionary class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr kiName="BMCODE" viName="BMNAME"/>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[chooseDepart]]></Name>
+</TableData>
+</TableDataDictAttr>
+</Dictionary>
+<widgetValue>
+<databinding>
+<![CDATA[{}]]></databinding>
+</widgetValue>
+</InnerWidget>
+<BoundsAttr x="107" y="17" width="135" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.TextEditor">
+<WidgetName name="bmname"/>
+<WidgetAttr invisible="true">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<widgetValue>
+<O>
+<![CDATA[]]></O>
+</widgetValue>
+</InnerWidget>
+<BoundsAttr x="775" y="17" width="36" height="21"/>
+</Widget>
+<Sorted sorted="false"/>
+<Display display="true"/>
+<DelayDisplayContent delay="true"/>
+<Position position="0"/>
+<Design_Width design_width="960"/>
+<MobileWidgetList>
+<Widget widgetName="bmcode"/>
+<Widget widgetName="StartDate"/>
+<Widget widgetName="EndDate"/>
+<Widget widgetName="bmname"/>
+</MobileWidgetList>
+<WidgetNameTagMap>
+<NameTag name="EndDate" tag="结束日期："/>
+<NameTag name="StartDate" tag="起始日期："/>
+<NameTag name="bmcode" tag="选择部门："/>
+<NameTag name="bmname" tag="bmname:"/>
+</WidgetNameTagMap>
+</Layout>
+<DesignAttr width="960" height="54"/>
+</ParameterUI>
+<Parameter>
+<Attributes name="StartDate"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=TODAY()]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="EndDate"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=TODAY()]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="bmcode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="bmname"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="黑体" style="1" size="160"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="56"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="HBB"/>
+<PreviewType PreviewType="0"/>
+</WorkBook>

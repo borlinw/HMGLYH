@@ -1,0 +1,48 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<!-- 挖掘占施工 -->
+	<package name="qmldb" extends="struts-default" namespace="/qmldb">
+		<!-- 生成千米数据 -->
+		<action name="createQmldb" class="qmldbController" method="createQmldb"></action>
+		<!-- 查询千米路段 -->
+		<action name="getQmld" class="qmldbController" method="getQmld"></action>
+		<!-- 清空千米路段 -->
+		<action name="dropQmld" class="qmldbController" method="dropQmld"></action>
+		<!-- 路况调查用，查询千米路段及其对应的调查主表 -->
+		<action name="getQmldForLkdc" class="qmldbController" method="getQmldForLkdc"></action>
+		<!-- 生成路况评定明细表 -->
+		<action name="createMxb" class="qmldbController" method="createMxb"></action>
+		<!-- 查询路况评定明细 -->
+		<action name="getMxb" class="qmldbController" method="getMxb"></action>
+		<!-- 导出路况评定明细 -->
+		<action name="exportMxb" class="qmldbController" method="exportMxb">
+			<result>/page/lkpd/lkpd/exportMxb.jsp</result>
+		</action>
+		<!-- 查询统计路面类型 -->
+		<action name="getLmlx" class="qmldbController" method="getLmlx"></action>
+		<!-- 查询统计技术等级 -->
+		<action name="getJsdj" class="qmldbController" method="getJsdj"></action>
+		<!--  -->
+		<action name="getLmdcForExport" class="qmldbController" method="getLmdcForExport">
+			<result name="lqlm">/page/lkpd/lkdc/exportLqlm.jsp</result>
+			<result name="snlm">/page/lkpd/lkdc/exportSnlm.jsp</result>
+			<result name="sslm">/page/lkpd/lkdc/exportSslm.jsp</result>
+		</action>
+		<!--  -->
+		<action name="getLjdcForExport" class="qmldbController" method="getLjdcForExport">
+			<result>/page/lkpd/lkdc/exportLj.jsp</result>
+		</action>
+		<!--  -->
+		<action name="getQshdcForExport" class="qmldbController" method="getQshdcForExport">
+			<result>/page/lkpd/lkdc/exportQsh.jsp</result>
+		</action>
+		<!--  -->
+		<action name="getYxssdcForExport" class="qmldbController" method="getYxssdcForExport">
+			<result>/page/lkpd/lkdc/exportYxss.jsp</result>
+		</action>
+		<!-- 区段划分用，各区段病害分类统计 -->
+		<action name="getBhfltj" class="qmldbController" method="getBhfltj"></action>
+	</package>
+</struts>

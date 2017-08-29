@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.basicData.mapper.LxldMapper">
+	<!-- 查询路线 -->
+
+	<select id="getLx" resultType="lxld">
+		select lxcode as id,lxname||lxcode||'('||'K'||szhh||'-'||'K'||ezhh||')' as text
+		from htgl_lxb
+		order by lxcode
+	</select>
+	<!-- 按部门查询路段 -->
+	<select id="getLd" resultType="com.hdsx.hmglyh.basicData.bean.Lxld" parameterType="com.hdsx.hmglyh.basicData.bean.Lxld">
+		select ldcode as id,ldname as text,lxcode,szhh,ezhh,bmCode
+		from htgl_ldb
+		<if test="bmlx.equals('0101') or bmlx.equals('0102')">
+			where bmcode=#{bmCode}
+		</if>
+		<if test="bmlx.equals('0103') or bmlx.equals('0104')">
+			where bmcode like substr(#{bmCode},0,length(#{bmCode})-2)||'__'
+		</if>
+		order by lxcode
+	</select>
+	
+	<!-- 按部门查询路段 zlm 有未验收的作业才显示 -->
+	<select id="getLd2" resultType="com.hdsx.hmglyh.basicData.bean.Lxld" parameterType="com.hdsx.hmglyh.basicData.bean.Lxld">
+		select ldcode as id,ldname as text,lxcode,szhh,ezhh,bmCode
+		from htgl_ldb
+		<if test="bmlx.equals('0101') or bmlx.equals('0102')">
+			where bmcode=#{bmCode}
+		</if>
+		<if test="bmlx.equals('0103') or bmlx.equals('0104')">
+			where bmcode like substr(#{bmCode},0,length(#{bmCode})-2)||'__'
+		</if>
+		 and ldcode in
+         (  select distinct ldcode 
+	         from rcyh_wxzyjlb
+	         where yszt = '0'
+	         and zysbzt = '1' )
+		order by lxcode
+	</select>
+	
+	<!-- 按部门特殊部门查询路段 -->
+	<select id="getTsbmLxldCombo" resultType="com.hdsx.hmglyh.basicData.bean.Lxld" parameterType="com.hdsx.hmglyh.basicData.bean.Lxld">
+		select ldcode as id,ldname as text,lxcode,szhh,ezhh,bmCode
+		from htgl_ldb
+		<if test="bmlx.equals('0101') or bmlx.equals('0102')">
+			where bmcode = #{bmCode}
+		</if>
+		<if test="bmlx.equals('0103') or bmlx.equals('0104')">
+			where bmcode like substr(#{bmCode},0,length(#{bmCode})-2)||'__'
+		</if>
+		 and ldcode in
+         (  select distinct ldcode 
+	         from rcyh_wxzyjlb
+	         where yszt = '0'
+	         and zysbzt = '1' )
+		order by lxcode
+	</select>
+	<!-- 查询部门类型 -->
+	<select id="getBmlx" parameterType="String" resultType="String">
+		select bmlx from htgl_bmb
+		where bmCode=#{bmCode}
+	</select>
+</mapper>

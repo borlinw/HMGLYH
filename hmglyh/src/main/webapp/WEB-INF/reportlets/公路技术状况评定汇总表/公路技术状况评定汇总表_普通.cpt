@@ -1,0 +1,1390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20141222" releaseVersion="7.1.1">
+<TableDataMap>
+<TableData name="版本" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select bbid,bbmc,bblx, (to_char(bbsj, 'YYYY')) bbsj from jcpd_bbkzb where BBLX='0203']]></Query>
+</TableData>
+<TableData name="路段" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select ld.bmcode,ld.ldcode,ld.ldname name,ld.lxcode lxcode,ld.szhh szhh,ld.ezhh ezhh from htgl_ldb ld,htgl_bmb bm where ld.bmcode=bm.bmcode order by ld.ldname]]></Query>
+</TableData>
+<TableData name="路面类型" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct LMLX,
+case LMLX when 1 then '沥青路面' when 2 then '水泥路面' when 3 then '砂石路面' end LMLXName
+from jcpd_qmldb ]]></Query>
+</TableData>
+<TableData name="技术等级" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="zdzh"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="路线1"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="qdzh"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct isgs,
+case isgs when 1 then '高速公路' when 0 then '普通公路' end JSDJname
+ from jcpd_qmldb t where  lxcode='${路线1}' and szhh>='${qdzh}' and ezhh<='${zdzh}']]></Query>
+</TableData>
+<TableData name="汇总上" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="技术等级"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="ZDZH"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="路线1"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="路面类型"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="版本"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="QDZH"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT SUM(TT.MQI*TT.CD)/SUM(TT.CD) MQI1,
+SUM(TT.PQI*TT.CD)/SUM(TT.CD) PQI1,
+SUM(TT.SCI*TT.CD)/SUM(TT.CD) SCI1,
+SUM(TT.BCI*TT.CD)/SUM(TT.CD) BCI1,
+SUM(TT.TCI*TT.CD)/SUM(TT.CD) TCI1, 
+TT.FX FX,SUM(TT.CD) CD FROM
+(SELECT QM.LDID LDCODE,QM.SZHH SZHH,QM.EZHH EZHH,BB.BBID BBID,TO_NUMBER(MX.MQI) MQI,
+TO_NUMBER(MX.PQI) PQI,TO_NUMBER(MX.SCI) SCI,TO_NUMBER(MX.BCI) BCI,TO_NUMBER(MX.TCI) TCI,QM.CD/1000 CD,QM.FX FX
+FROM JCPD_BBKZB  BB 
+LEFT JOIN JCPD_LKPDMXB MX ON BB.BBID=MX.BBID 
+LEFT JOIN JCPD_QMLDB QM ON QM.LDID=MX.LDID
+WHERE BB.BBLX='0203'AND BB.BBID='${版本}'
+AND QM.LXCODE='${路线1}'AND QM.SZHH>='${QDZH}' AND QM.EZHH<='${ZDZH}'AND QM.LMLX='${路面类型}' AND QM.ISGS='${技术等级}')TT
+GROUP BY TT.FX]]></Query>
+</TableData>
+<TableData name="汇总右" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="技术等级"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="ZDZH"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="路面类型"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="QDZH"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="路线"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT SUM(TT.MQI*TT.CD)/SUM(TT.CD) MQI1,SUM(TT.PQI*TT.CD)/SUM(TT.CD) PQI1,SUM(TT.SCI*TT.CD)/SUM(TT.CD) SCI1,SUM(TT.BCI*TT.CD)/SUM(TT.CD) BCI1,SUM(TT.TCI*TT.CD)/SUM(TT.CD) TCI1,
+TT.CD CD,TT.SZHH SZHH,TT.EZHH EZHH,TT.FX
+FROM
+(SELECT QM.LDID LDCODE,QM.SZHH SZHH,QM.EZHH EZHH,BB.BBID BBID,TO_NUMBER(MX.MQI) MQI,
+TO_NUMBER(MX.PQI) PQI,TO_NUMBER(MX.SCI) SCI,TO_NUMBER(MX.BCI) BCI,TO_NUMBER(MX.TCI) TCI,QM.CD/1000 CD,QM.FX FX
+FROM JCPD_BBKZB  BB 
+LEFT JOIN JCPD_LKPDMXB MX ON BB.BBID=MX.BBID 
+LEFT JOIN JCPD_QMLDB QM ON QM.LDID=MX.LDID
+WHERE BB.BBLX='0203'AND BB.BBID='${版本}'
+AND QM.LXCODE='${路线1}'AND QM.SZHH>='${QDZH}' AND QM.EZHH<='${ZDZH}'AND QM.LMLX='${路面类型}' AND QM.ISGS='${技术等级}')TT
+GROUP BY TT.SZHH,TT.EZHH,CD,FX]]></Query>
+</TableData>
+<TableData name="汇总左" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="技术等级"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="ZDZH"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="路线1"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="路面类型"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="版本"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="QDZH"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT SUM(TT.MQI*TT.CD)/SUM(TT.CD) MQI1,SUM(TT.PQI*TT.CD)/SUM(TT.CD) PQI1,SUM(TT.SCI*TT.CD)/SUM(TT.CD) SCI1,SUM(TT.BCI*TT.CD)/SUM(TT.CD) BCI1,SUM(TT.TCI*TT.CD)/SUM(TT.CD) TCI1,
+TT.CD CD,TT.SZHH SZHH,TT.EZHH EZHH
+FROM
+(SELECT QM.LDID LDCODE,QM.SZHH SZHH,QM.EZHH EZHH,BB.BBID BBID,TO_NUMBER(MX.MQI) MQI,
+TO_NUMBER(MX.PQI) PQI,TO_NUMBER(MX.SCI) SCI,TO_NUMBER(MX.BCI) BCI,TO_NUMBER(MX.TCI) TCI,QM.CD/1000 CD,QM.FX FX
+FROM JCPD_BBKZB  BB 
+LEFT JOIN JCPD_LKPDMXB MX ON BB.BBID=MX.BBID 
+LEFT JOIN JCPD_QMLDB QM ON QM.LDID=MX.LDID
+WHERE BB.BBLX='0203'AND BB.BBID='${版本}'
+AND QM.LXCODE='${路线1}'AND QM.SZHH>='${QDZH}' AND QM.EZHH<='${ZDZH}'AND QM.LMLX='${路面类型}' AND QM.ISGS='${技术等级}')TT
+GROUP BY TT.SZHH,TT.EZHH,CD]]></Query>
+</TableData>
+<TableData name="qzzh" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="路段"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select ld.ldcode,ld.ldname name,ld.lxcode lxcode,ld.szhh szhh,ld.ezhh ezhh from htgl_ldb ld,htgl_bmb bm where ld.ldname='${路段}']]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,0,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2880000,2880000,2880000,2880000,2880000,2880000,2880000,2880000,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="8" s="0">
+<O>
+<![CDATA[公路技术状况评定汇总表]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1" s="1">
+<O>
+<![CDATA[填报单位：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="1" cs="2" s="1">
+<O>
+<![CDATA[哈密公路管理局]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="1" s="1">
+<O>
+<![CDATA[时间：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="1" cs="2" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$bbsj]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="2" cs="8" s="1">
+<O>
+<![CDATA[基本信息]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="3" cs="2" s="1">
+<O>
+<![CDATA[所属省市]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="3" cs="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="4" cs="2" s="1">
+<O>
+<![CDATA[路线名称(编码)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="4" cs="6" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$路线1]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr kiName="LXCODE" viName="NAME"/>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[路段]]></Name>
+</TableData>
+</TableDataDictAttr>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="0" r="5" cs="2" s="1">
+<O>
+<![CDATA[技术等级]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="5" cs="6" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$技术等级]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr kiName="ISGS" viName="JSDJNAME"/>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[技术等级]]></Name>
+</TableData>
+</TableDataDictAttr>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="0" r="6" cs="2" s="1">
+<O>
+<![CDATA[路面类型]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="6" cs="6" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$路面类型]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr kiName="LMLX" viName="LMLXNAME"/>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[路面类型]]></Name>
+</TableData>
+</TableDataDictAttr>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="0" r="7" cs="2" s="1">
+<O>
+<![CDATA[评定长度(km)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="7" cs="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="8" cs="2" s="1">
+<O>
+<![CDATA[管养单位]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="8" cs="6" s="1">
+<O>
+<![CDATA[哈密公路管理局]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="9" cs="2" s="1">
+<O>
+<![CDATA[主管单位]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="9" cs="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="10" cs="2" s="1">
+<O>
+<![CDATA[平均MQI]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="10" cs="2" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=A30/C8]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="10" cs="2" s="1">
+<O>
+<![CDATA[评定等级]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="10" cs="2" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=IF(C11 >= 90, "优", if(C11 >= 80, "良", IF(C11 >= 70, "中", IF(C11 >= 60, "次", "差"))))]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="11" cs="8" s="1">
+<O>
+<![CDATA[统计信息]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="12" cs="2" rs="2" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="12" cs="6" s="1">
+<O>
+<![CDATA[上下行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="13" cs="3" s="1">
+<O>
+<![CDATA[长度(km)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="13" cs="3" s="1">
+<O>
+<![CDATA[比例(%)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="14" cs="2" s="1">
+<O>
+<![CDATA[MQI(优、良)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="14" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="14" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C15 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="15" cs="2" s="1">
+<O>
+<![CDATA[MQI(中)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="15" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="15" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C16 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="16" cs="2" s="1">
+<O>
+<![CDATA[MQI(次、差)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="16" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="16" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C17 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="17" cs="2" s="1">
+<O>
+<![CDATA[PQI(优、良)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="17" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[PQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="17" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C18 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="18" cs="2" s="1">
+<O>
+<![CDATA[PQI(中)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="18" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[PQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[PQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="18" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C19 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="19" cs="2" s="1">
+<O>
+<![CDATA[PQI(次、差)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="19" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[PQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="19" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C20 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="20" cs="2" s="1">
+<O>
+<![CDATA[SCI(优、良)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="20" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[SCI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="20" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C21 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="21" cs="2" s="1">
+<O>
+<![CDATA[SCI(中)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="21" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[SCI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[SCI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="21" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C22 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="22" cs="2" s="1">
+<O>
+<![CDATA[SCI(次、差)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="22" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[SCI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="22" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C23 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="23" cs="2" s="1">
+<O>
+<![CDATA[BCI(优、良)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="23" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[BCI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="23" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C24 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="24" cs="2" s="1">
+<O>
+<![CDATA[BCI(中)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="24" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[BCI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[BCI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="24" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C25 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="25" cs="2" s="1">
+<O>
+<![CDATA[BCI(次、差)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="25" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[BCI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="25" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C26 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="26" cs="2" s="1">
+<O>
+<![CDATA[TCI(优、良)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="26" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[TCI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="26" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C27 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="27" cs="2" s="1">
+<O>
+<![CDATA[TCI(中)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="27" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[TCI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[TCI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="27" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C28 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="28" cs="2" s="1">
+<O>
+<![CDATA[TCI(次、差)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="28" cs="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[TCI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="28" cs="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C29 / C8 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="0" r="29">
+<O t="DSColumn">
+<Attributes dsName="汇总左" columnName="MQI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<Parameter>
+<Attributes name="p1"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="1" size="96"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="HBB"/>
+<PreviewType PreviewType="0"/>
+</WorkBook>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.jcpd.mapper.QdhfshbMapper">
+	<insert id="addShb" parameterType="com.hdsx.hmglyh.jcpd.bean.Qdhfshb">
+		INSERT INTO JCPD_QDHFSHB(BMCODE,BBID,SQZT,SHZT,SQR,SQSJ)
+		VALUES(#{bmCode},#{bbid},1,0,#{sqr},current_date)
+	</insert>
+	<!-- 上报 -->
+	<update id="report" parameterType="com.hdsx.hmglyh.jcpd.bean.Qdhfshb">
+		UPDATE JCPD_QDHFSHB
+		SET SQZT=1,SHZT=0,SQR=#{sqr},SQSJ=current_date
+		WHERE BMCODE=#{bmCode} AND BBID=#{bbid}
+	</update>
+	<!-- 审核 -->
+	<update id="check" parameterType="com.hdsx.hmglyh.jcpd.bean.Qdhfshb">
+		UPDATE JCPD_QDHFSHB
+		SET SHZT=#{shzt},SHR=#{shry},SHSJ=CURRENT_DATE
+		<if test="shzt==2">
+			,SQZT=0
+		</if>
+		WHERE BMCODE=#{bmCode} AND BBID=#{bbid}
+	</update>
+	<!-- 查询上报的路段划分审核信息 -->
+	<select id="getShb" parameterType="com.hdsx.hmglyh.jcpd.bean.Qdhfshb" resultType="com.hdsx.hmglyh.jcpd.bean.Qdhfshb">
+		SELECT T.*,BM.BMNAME,BB.BBMC BBNAME,BB.QMBBID FROM JCPD_QDHFSHB T
+		LEFT JOIN HTGL_BMB BM
+		ON T.BMCODE=BM.BMCODE
+		LEFT JOIN JCPD_BBKZB BB
+		ON T.BBID=BB.BBID
+		WHERE T.BBID=#{bbid} AND T.SQZT=1
+		<if test="bmCode != null and bmCode != ''">
+			AND T.BMCODE=#{bmCode}
+		</if>
+		ORDER BY SQSJ DESC
+	</select>
+	<!-- 查询需要上报或者已经上报的路段划分信息 -->
+	<select id="getShbForReport" parameterType="com.hdsx.hmglyh.jcpd.bean.Qdhfshb" resultType="com.hdsx.hmglyh.jcpd.bean.Qdhfshb">
+		SELECT Q.*,SHB.*,BM.BMNAME,BB.BBMC BBNAME,BB.QMBBID FROM 
+		(select distinct bbid as bbid1,bmcode as bmcode1 from jcpd_qdhfb) q
+		LEFT JOIN JCPD_QDHFSHB SHB
+		ON Q.BBID1=SHB.BBID AND Q.BMCODE1=SHB.BMCODE
+		LEFT JOIN HTGL_BMB BM
+		ON Q.BMCODE1=BM.BMCODE
+		LEFT JOIN JCPD_BBKZB BB
+		ON Q.BBID1=BB.BBID
+		WHERE Q.BMCODE1=#{bmCode}
+		ORDER BY Q.BBID1 DESC
+	</select>
+	<!-- 查询是否满足上报条件 -->
+	<select id="isAbleToReport" parameterType="com.hdsx.hmglyh.jcpd.bean.Qdhfshb" resultType="boolean">
+		select (case when cd=mileage then 1 else 0 end) from
+		(select sum(cd) as cd from jcpd_qdhfb where bmCode=#{bmCode1} and bbid=#{bbid1}),
+		(select sum(mileage)*1000 as mileage from htgl_ldb where bmcode=#{bmCode1})
+	</select>
+	<!-- 查询某个版本的路段划分信息 -->
+	<select id="getQdhf" parameterType="com.hdsx.hmglyh.jcpd.bean.Qdhfshb" resultType="qdhfb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+			select * from jcpd_qdhfb
+			where bmCode=#{bmCode} and bbid=#{bbid}
+			order by lxcode,szhh
+			) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		<where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	<select id="getQdhfCount" parameterType="com.hdsx.hmglyh.jcpd.bean.Qdhfshb" resultType="int">
+		select count(*) from jcpd_qdhfb
+		where bmCode=#{bmCode} and bbid=#{bbid}
+	</select>
+	
+	
+	
+	<!-- 用于导出区段划分信息 -->
+	<select id="getLd" parameterType="String" resultType="com.hdsx.hmglyh.jcpd.bean.Ldb">
+		SELECT L.*,#{bbid} AS BBID FROM HTGL_LDB L
+		WHERE BMCODE=#{bmCode}
+		ORDER BY LDCODE
+	</select>
+	<select id="getQyhfByLd" parameterType="com.hdsx.hmglyh.jcpd.bean.Ldb" resultType="qyhfb">
+		SELECT * FROM JCPD_QYHFB 
+		WHERE BBID=#{bbid} AND LXCODE=#{lxCode} AND SZHH>=#{szhh} AND #{ezhh}>SZHH
+	</select>
+	<select id="getQdhfByQyhf" parameterType="qyhfb" resultType="qdhfb">
+		SELECT * FROM JCPD_QDHFB 
+		WHERE BBID=#{bbid} AND LXCODE=#{lxCode} AND SZHH>=#{szhh} AND #{ezhh}>SZHH
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

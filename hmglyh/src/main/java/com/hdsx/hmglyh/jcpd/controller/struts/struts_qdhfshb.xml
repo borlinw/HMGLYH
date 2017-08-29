@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<package name="qdhfshb" extends="struts-default" namespace="/qdhfshb">
+		<!-- 上报 -->
+		<action name="report" class="qdhfshbController" method="report"></action>
+		<!-- 打回后上报 -->
+		<action name="reReport" class="qdhfshbController" method="reReport"></action>
+		<!-- 审核 -->
+		<action name="check" class="qdhfshbController" method="check"></action>
+		<!--  -->
+		<action name="getShb" class="qdhfshbController" method="getShb"></action>
+		<!--  -->
+		<action name="getShbForReport" class="qdhfshbController" method="getShbForReport"></action>
+		<!--  -->
+		<action name="getQdhf" class="qdhfshbController" method="getQdhf"></action>		
+	</package>
+</struts>

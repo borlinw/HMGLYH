@@ -1,0 +1,281 @@
+/*声明*/
+body, ul, li, form, fieldset, legend, button, input, textarea, th, td{ margin:0; padding:0; border:0;}
+ul, ol { list-style:none; }
+li{ list-style:none}
+body {font-family:Arial, SimSun, sans-serif, Verdana, Lucida, Helvetica;font-size:12px; line-height:22px; color:#000;}
+a img, img, iframe,button{border:none;}
+a span, form label,button {cursor:pointer;}
+
+
+.top{ width:100%; height:70px; background:url(../images/top_bg.jpg) repeat-x;}
+.logo{ width:338px; overflow:hidden; float:left; display:block;}
+.top_right{ width:300px; overflow:hidden; float:right; display:block; padding:24px 36px 0 0;color:#70d2e0;}
+
+
+.left{ width:188px; overflow:hidden;}
+.left_nav{ width:180px; overflow:hidden; float:left; display:block; background-color:#d7f3f7;}
+.left_nav ul li{ width:180px; overflow:hidden;}
+.left_img{ float:left; display:block; padding:7px 10px 7px 20px;}
+.left_font{ float:left; display:block; font-size:14px; line-height:52px;}
+.left_font2{ float:left; display:block; color:#FFF; font-size:14px; line-height:52px;}
+.left_sidebar{ width:8px; height:336px; overflow:hidden; float:right; display:block; padding-top:262px;background-color:#70d2e0;}
+
+
+.foot{ width:100%; height:32px; background-color:#0791a8; color:#FFF; line-height:32px; text-align:center;}
+
+/* 左侧菜单 */
+/* 路况调查 */
+.lkdc{
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	padding : 0 10px 0 60px;
+	color:#000000;
+	cursor:pointer;
+	font-size:14px;
+	background:#D7F3F7 url(../images/nav_001.png) 13px center no-repeat;
+}
+.lkdc:hover{
+	color:#FFFFFF;
+	background:#70D2E0 url(../images/nav_001_hover.png) 13px center no-repeat;
+}
+.lkdc2{
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	padding : 0 10px 0 60px;
+	cursor:pointer;
+	font-size:14px;
+	color:#FFFFFF;
+	background:#70D2E0 url(../images/nav_001_hover.png) 13px center no-repeat;
+}
+/* 路面检测 */
+.lmjc{
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	padding : 0 10px 0 60px;
+	color:#000000;
+	cursor:pointer;
+	font-size:14px;
+	background:#D7F3F7 url(../images/nav_002.png) 13px center no-repeat;
+}
+.lmjc:hover{
+	color:#FFFFFF;
+	background:#70D2E0 url(../images/nav_002_hover.png) 13px center no-repeat;
+}
+.lmjc2{
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	padding : 0 10px 0 60px;
+	cursor:pointer;
+	font-size:14px;
+	color:#FFFFFF;
+	background:#70D2E0 url(../images/nav_002_hover.png) 13px center no-repeat;
+}
+/* 路况评定 */
+.lkpd{
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	padding : 0 10px 0 60px;
+	color:#000000;
+	cursor:pointer;
+	font-size:14px;
+	background:#D7F3F7 url(../images/nav_003.png) 13px center no-repeat;
+}
+.lkpd:hover{
+	color:#FFFFFF;
+	background:#70D2E0 url(../images/nav_003_hover.png) 13px center no-repeat;
+}
+.lkpd2{
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	padding : 0 10px 0 60px;
+	cursor:pointer;
+	font-size:14px;
+	color:#FFFFFF;
+	background:#70D2E0 url(../images/nav_003_hover.png) 13px center no-repeat;
+}
+/* 路况统计分析 */
+.lktjfx{
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	padding : 0 10px 0 60px;
+	color:#000000;
+	cursor:pointer;
+	font-size:14px;
+	background:#D7F3F7 url(../images/nav_004.png) 13px center no-repeat;
+}
+.lktjfx:hover{
+	color:#FFFFFF;
+	background:#70D2E0 url(../images/nav_004_hover.png) 13px center no-repeat;
+}
+.lktjfx2{
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	padding : 0 10px 0 60px;
+	cursor:pointer;
+	font-size:14px;
+	color:#FFFFFF;
+	background:#70D2E0 url(../images/nav_004_hover.png) 13px center no-repeat;
+}
+
+/* 区域区段划分 */
+.qyqdhf{
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	padding : 0 10px 0 60px;
+	color:#000000;
+	cursor:pointer;
+	font-size:14px;
+	background:#D7F3F7 url(../images/nav_005.png) 13px center no-repeat;
+}
+.qyqdhf:hover{
+	color:#FFFFFF;
+	background:#70D2E0 url(../images/nav_005_hover.png) 13px center no-repeat;
+}
+.qyqdhf2{
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	padding : 0 10px 0 60px;
+	cursor:pointer;
+	font-size:14px;
+	color:#FFFFFF;
+	background:#70D2E0 url(../images/nav_005_hover.png) 13px center no-repeat;
+}
+/* 基础信息 */
+.jcxx{
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	padding : 0 10px 0 60px;
+	color:#000000;
+	cursor:pointer;
+	font-size:14px;
+	background:#D7F3F7 url(../images/nav_006.png) 13px center no-repeat;
+}
+.jcxx:hover{
+	color:#FFFFFF;
+	background:#70D2E0 url(../images/nav_006_hover.png) 13px center no-repeat;
+}
+.jcxx2{
+	height:50px;
+	line-height:50px;
+	overflow:hidden;
+	padding : 0 10px 0 60px;
+	cursor:pointer;
+	font-size:14px;
+	color:#FFFFFF;
+	background:#70D2E0 url(../images/nav_006_hover.png) 13px center no-repeat;
+}
+
+
+/* 路况调查 */
+.lkdc_con{ width:812px; height:500px; overflow:hidden; margin:0 auto; background:url(../images/lkdc_road.png) center no-repeat; position:relative;}
+.lkdc_list01{ width:106px; overflow:hidden; position:absolute; z-index:101; top:50px; left:30px;}
+.lkdc_list01_img{ width:106px; height:212px; overflow:hidden;}
+.lkdc_list01 a:link, .lkdc_list01 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#28c45f; line-height:22px; text-align:center; text-decoration:none;}
+.lkdc_list01 a:hover{ text-decoration:none; color:#14a647;}
+.lkdc_list01_font{ padding:30px 0 0 0;}
+
+.lkdc_list02{ width:106px; overflow:hidden; position:absolute; z-index:102; top:185px; left:240px;}
+.lkdc_list02_img{ width:106px; height:212px; overflow:hidden;}
+.lkdc_list02 a:link, .lkdc_list02 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#f9be00; line-height:22px; text-align:center; text-decoration:none;}
+.lkdc_list02 a:hover{ text-decoration:none; color:#c69805;}
+.lkdc_list02_font{ padding:0 0 30px 0;}
+
+.lkdc_list03{ width:106px; overflow:hidden; position:absolute; z-index:103; top:50px; left:450px;}
+.lkdc_list03_img{ width:106px; height:212px; overflow:hidden;}
+.lkdc_list03 a:link, .lkdc_list03 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#ec8408; line-height:22px; text-align:center; text-decoration:none;}
+.lkdc_list03 a:hover{ text-decoration:none; color:#ba6705;}
+.lkdc_list03_font{ padding:30px 0 0 0;}
+
+.lkdc_list04{ width:106px; overflow:hidden; position:absolute; z-index:104; top:185px; right:30px;}
+.lkdc_list04_img{ width:106px; height:212px; overflow:hidden;}
+.lkdc_list04 a:link, .lkdc_list04 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#19bfdb; line-height:22px; text-align:center; text-decoration:none;}
+.lkdc_list04 a:hover{ text-decoration:none; color:#099eb7;}
+.lkdc_list04_font{ padding:0 0 30px 0;}
+
+
+/* 路况统计分析 */
+.lktjfx_con{ width:978px; height:550px; overflow:hidden; margin:0 auto; background:url(../images/lktjfx_con.png) right no-repeat; position:relative;}
+
+.lktjfx_list01{ width:150px; overflow:hidden; position:absolute; z-index:101; top:350px; left:0px;}
+.lktjfx_list01_img{ width:86px; height:114px; overflow:hidden; margin:0 auto;}
+.lktjfx_list01 a:link, .lktjfx_list01 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#d8481d; line-height:22px; text-align:center; text-decoration:none;}
+.lktjfx_list01 a:hover{ text-decoration:none; color:#b12f08;}
+.lktjfx_list01_font{ padding:15px 0 0 0;}
+
+.lktjfx_list02{ width:150px; overflow:hidden; position:absolute; z-index:102; top:150px; left:150px;}
+.lktjfx_list02_img{ width:86px; height:114px; overflow:hidden; margin:0 auto;}
+.lktjfx_list02 a:link, .lktjfx_list02 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#008b65; line-height:22px; text-align:center; text-decoration:none;}
+.lktjfx_list02 a:hover{ text-decoration:none; color:#02694d;}
+.lktjfx_list02_font{ padding:0 0 15px 0;}
+
+.lktjfx_list03{ width:150px; overflow:hidden; position:absolute; z-index:103; top:120px; right:378px;}
+.lktjfx_list03_img{ width:86px; height:114px; overflow:hidden; margin:0 auto;}
+.lktjfx_list03 a:link, .lktjfx_list03 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#28c45f; line-height:22px; text-align:center; text-decoration:none;}
+.lktjfx_list03 a:hover{ text-decoration:none; color:#0e9a40;}
+.lktjfx_list03_font{ padding:0 0 15px 0;}
+
+.lktjfx_list04{ width:150px; overflow:hidden; position:absolute; z-index:104; bottom:80px; left:300px;}
+.lktjfx_list04_img{ width:86px; height:114px; overflow:hidden; margin:0 auto;}
+.lktjfx_list04 a:link, .lktjfx_list04 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#f9be00; line-height:22px; text-align:center; text-decoration:none;}
+.lktjfx_list04 a:hover{ text-decoration:none; color:#bb8f01;}
+.lktjfx_list04_font{ padding:15px 0 0 0;}
+
+.lktjfx_list05{ width:150px; overflow:hidden; position:absolute; z-index:105; bottom:80px; right:227px;}
+.lktjfx_list05_img{ width:86px; height:114px; overflow:hidden; margin:0 auto;}
+.lktjfx_list05 a:link, .lktjfx_list05 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#26969e; line-height:22px; text-align:center; text-decoration:none;}
+.lktjfx_list05 a:hover{ text-decoration:none; color:#0a686f;}
+.lktjfx_list05_font{ padding:15px 0 0 0;}
+
+.lktjfx_list06{ width:180px; overflow:hidden; position:absolute; z-index:106; top:80px; right:64px;}
+.lktjfx_list06_img{ width:86px; height:114px; overflow:hidden; margin:0 auto;}
+.lktjfx_list06 a:link, .lktjfx_list06 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#00a0e9; line-height:22px; text-align:center; text-decoration:none;}
+.lktjfx_list06 a:hover{ text-decoration:none; color:#0875a6;}
+.lktjfx_list06_font{ padding:0 0 15px 0;}
+
+
+/* 区域区段划分 */
+.qyqdhf_con{ width:702px; height:382px; overflow:hidden; margin:0 auto; background:url(../images/qyqdhf_con.png) center no-repeat; position:relative;}
+.qyqdhf_list01{ width:132px; overflow:hidden; position:absolute; z-index:101; top:0px; left:95px;}
+.qyqdhf_list01_img{ width:132px; height:170px; overflow:hidden;}
+.qyqdhf_list01 a:link, .qyqdhf_list01 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#c2281f; line-height:22px; text-align:center; text-decoration:none;}
+.qyqdhf_list01 a:hover{ text-decoration:none; color:#991008;}
+.qyqdhf_list01_font{ padding:40px 0 0 0;}
+
+.qyqdhf_list02{ width:132px; overflow:hidden; position:absolute; z-index:101; bottom:0px; right:125px;}
+.qyqdhf_list02_img{ width:132px; height:170px; overflow:hidden;}
+.qyqdhf_list02 a:link, .qyqdhf_list02 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#0791a8; line-height:22px; text-align:center; text-decoration:none;}
+.qyqdhf_list02 a:hover{ text-decoration:none; color:#047183;}
+.qyqdhf_list02_font{ padding:0 0 40px 0;}
+
+
+/* 基础信息 */
+.jcxx_con{ width:816px; height:344px; overflow:hidden; margin:0 auto; background:url(../images/jcxx_con.png) center no-repeat; position:relative;}
+.jcxx_list01{ width:152px; overflow:hidden; position:absolute; z-index:101; top:8px; left:9px;}
+.jcxx_list01_img{ width:152px; height:152px; overflow:hidden;}
+.jcxx_list01 a:link, .jcxx_list01 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#0791a8; line-height:22px; text-align:center; text-decoration:none;}
+.jcxx_list01 a:hover{ text-decoration:none; color:#057486;}
+.jcxx_list01_font{ padding:30px 0 0 0;}
+
+.jcxx_list02{ width:152px; overflow:hidden; position:absolute; z-index:102; top:13px; left:333px;}
+.jcxx_list02_img{ width:152px; height:152px; overflow:hidden;}
+.jcxx_list02 a:link, .jcxx_list02 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#d8481d; line-height:22px; text-align:center; text-decoration:none;}
+.jcxx_list02 a:hover{ text-decoration:none; color:#af2f08;}
+.jcxx_list02_font{ padding:30px 0 0 0;}
+
+.jcxx_list03{ width:152px; overflow:hidden; position:absolute; z-index:103; top:13px; right:8px;}
+.jcxx_list03_img{ width:152px; height:152px; overflow:hidden;}
+.jcxx_list03 a:link, .jcxx_list03 a:visited{ font-family:"微软雅黑"; font-size:16px; color:#26bbab; line-height:22px; text-align:center; text-decoration:none;}
+.jcxx_list03 a:hover{ text-decoration:none; color:#129789;}
+.jcxx_list03_font{ padding:30px 0 0 0;}
+

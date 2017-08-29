@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20141222" releaseVersion="7.1.1">
+<TableDataMap>
+<TableData name="路段" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select ld.bmcode,ld.ldcode,ld.ldname name,ld.lxcode lxcode,ld.szhh szhh,ld.ezhh ezhh from htgl_ldb ld,htgl_bmb bm where ld.bmcode=bm.bmcode and bm.bmcode='${bmcode}' order by ld.ldname]]></Query>
+</TableData>
+<TableData name="技术等级" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="止点"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="路线"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="起点"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct isgs,
+case isgs when 1 then '高速公路' when 0 then '普通公路' end JSDJname
+ from jcpd_qmldb t where  lxcode='${路线}' and szhh>='${起点}' and ezhh<='${止点}']]></Query>
+</TableData>
+<TableData name="版本" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select bbid,bbmc,bblx,bbsj from jcpd_bbkzb where BBLX='0203']]></Query>
+</TableData>
+<TableData name="qzzh" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="路段"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select ld.bmcode,ld.ldcode,ld.ldname name,ld.lxcode lxcode,ld.szhh szhh,ld.ezhh ezhh from htgl_ldb ld,htgl_bmb bm where ld.bmcode=bm.bmcode and ld.ldname='${路段}' ]]></Query>
+</TableData>
+<TableData name="汇总" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="技术等级"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="止点"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="路线"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="起点"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT SUM(TT.MQI*TT.CD)/SUM(TT.CD) MQI1,SUM(TT.PQI*TT.CD)/SUM(TT.CD) PQI1,
+SUM(TT.PCI*TT.CD)/SUM(TT.CD) PCI1,
+SUM(TT.RQI*TT.CD)/SUM(TT.CD) RQI1,
+SUM(TT.SCI*TT.CD)/SUM(TT.CD) SCI1,
+SUM(TT.BCI*TT.CD)/SUM(TT.CD) BCI1,
+SUM(TT.TCI*TT.CD)/SUM(TT.CD) TCI1,
+tt.fx,tt.bbid
+FROM 
+(SELECT QM.LDID LDCODE,QM.SZHH SZHH,QM.EZHH EZHH,BB.BBID BBID,TO_NUMBER(MX.MQI) MQI,
+TO_NUMBER(MX.PQI) PQI,TO_NUMBER(MX.PCI) PCI,TO_NUMBER(MX.RQI) RQI,TO_NUMBER(MX.SCI) SCI,TO_NUMBER(MX.BCI) BCI,TO_NUMBER(MX.TCI) TCI,QM.CD/1000 CD,QM.FX FX
+FROM JCPD_BBKZB  BB 
+LEFT JOIN JCPD_LKPDMXB MX ON BB.BBID=MX.BBID 
+LEFT JOIN JCPD_QMLDB QM ON QM.LDID=MX.LDID
+WHERE BB.BBLX='0203'
+AND QM.LXCODE='${路线}'AND QM.SZHH>='${起点}' AND QM.EZHH<='${止点}'AND QM.ISGS='${技术等级}' ) TT GROUP BY tt.fx,tt.bbid]]></Query>
+</TableData>
+<TableData name="上下行" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="技术等级"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="止点"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="路线"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="起点"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT SUM(TT.MQI*TT.CD)/SUM(TT.CD) MQI1,SUM(TT.PQI*TT.CD)/SUM(TT.CD) PQI1,
+SUM(TT.PCI*TT.CD)/SUM(TT.CD) PCI1,
+SUM(TT.RQI*TT.CD)/SUM(TT.CD) RQI1,
+SUM(TT.SCI*TT.CD)/SUM(TT.CD) SCI1,
+SUM(TT.BCI*TT.CD)/SUM(TT.CD) BCI1,
+SUM(TT.TCI*TT.CD)/SUM(TT.CD) TCI1,
+tt.bbid
+FROM 
+(SELECT QM.LDID LDCODE,QM.SZHH SZHH,QM.EZHH EZHH,BB.BBID BBID,TO_NUMBER(MX.MQI) MQI,
+TO_NUMBER(MX.PQI) PQI,TO_NUMBER(MX.PCI) PCI,TO_NUMBER(MX.RQI) RQI,TO_NUMBER(MX.SCI) SCI,TO_NUMBER(MX.BCI) BCI,TO_NUMBER(MX.TCI) TCI,QM.CD/1000 CD,QM.FX FX
+FROM JCPD_BBKZB  BB 
+LEFT JOIN JCPD_LKPDMXB MX ON BB.BBID=MX.BBID 
+LEFT JOIN JCPD_QMLDB QM ON QM.LDID=MX.LDID
+WHERE BB.BBLX='0203'
+AND QM.LXCODE='${路线}'AND QM.SZHH>='${起点}' AND QM.EZHH<='${止点}'AND QM.ISGS='${技术等级}' ) TT GROUP BY tt.bbid]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[1752600,1152000,1152000,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[1295400,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0">
+<O>
+<![CDATA[指标]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="0" cs="3" s="0">
+<O>
+<![CDATA[MQI]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="0" cs="3" s="0">
+<O>
+<![CDATA[PQI(路面使用性能指数)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="0" cs="3" s="0">
+<O>
+<![CDATA[PCI(路面状况)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="0" cs="3" s="0">
+<O>
+<![CDATA[RQI(行驶质量)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="0" cs="3" s="0">
+<O>
+<![CDATA[SCI(路基状况)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="0" cs="3" s="0">
+<O>
+<![CDATA[BCI(构造物状况)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="0" cs="3" s="0">
+<O>
+<![CDATA[TCI(沿线设施状况)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1" s="0">
+<O>
+<![CDATA[段落]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="1" cs="3" s="0">
+<O>
+<![CDATA[双向]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="1" cs="3" s="0">
+<O>
+<![CDATA[双向]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="1" cs="3" s="0">
+<O>
+<![CDATA[双向]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="1" cs="3" s="0">
+<O>
+<![CDATA[双向]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="1" cs="3" s="0">
+<O>
+<![CDATA[双向]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="1" cs="3" s="0">
+<O>
+<![CDATA[双向]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="1" cs="3" s="0">
+<O>
+<![CDATA[双向]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="版本" columnName="BBID"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[BBID]]></CNAME>
+<Compare op="12">
+<Parameter>
+<Attributes name="版本"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr kiName="BBID" viName="BBMC"/>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[版本]]></Name>
+</TableData>
+</TableDataDictAttr>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="1" r="2" cs="3" s="2">
+<O t="DSColumn">
+<Attributes dsName="上下行" columnName="MQI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[BBID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="2"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="4" r="2" cs="3" s="2">
+<O t="DSColumn">
+<Attributes dsName="上下行" columnName="PQI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[BBID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="2"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="A3"/>
+</C>
+<C c="7" r="2" cs="3" s="2">
+<O t="DSColumn">
+<Attributes dsName="上下行" columnName="PCI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[BBID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="2"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="A3"/>
+</C>
+<C c="10" r="2" cs="3" s="2">
+<O t="DSColumn">
+<Attributes dsName="上下行" columnName="RQI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[BBID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="2"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="A3"/>
+</C>
+<C c="13" r="2" cs="3" s="2">
+<O t="DSColumn">
+<Attributes dsName="上下行" columnName="SCI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[BBID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="2"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="A3"/>
+</C>
+<C c="16" r="2" cs="3" s="2">
+<O t="DSColumn">
+<Attributes dsName="上下行" columnName="BCI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[BBID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="2"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="A3"/>
+</C>
+<C c="19" r="2" cs="3" s="2">
+<O t="DSColumn">
+<Attributes dsName="上下行" columnName="TCI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[BBID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="2"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="A3"/>
+</C>
+<C c="0" r="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<Parameter>
+<Attributes name="p1"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="p2"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="p3"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="p4"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="p5"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="p6"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="p7"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="HBB"/>
+<PreviewType PreviewType="0"/>
+</WorkBook>

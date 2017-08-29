@@ -1,0 +1,919 @@
+[
+		 {
+        "bhid": "01",
+        "bhname": "路面",
+        "dw": "--",
+        "id": "01",
+        "state": "closed",
+        "text": "路面",
+        "wxsx": 0
+    	 ,
+    	 "children": [
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0101",
+				      "bhname": "龟裂（轻）",
+				      "dw": "㎡",
+				      "id": "0101",
+				      "state": "",
+				      "text": "龟裂（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0102",
+				      "bhname": "龟裂（中）",
+				      "dw": "㎡",
+				      "id": "0102",
+				      "state": "",
+				      "text": "龟裂（中）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0103",
+				      "bhname": "龟裂（重）",
+				      "dw": "㎡",
+				      "id": "0103",
+				      "state": "",
+				      "text": "龟裂（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0104",
+				      "bhname": "块状裂缝（轻）",
+				      "dw": "㎡",
+				      "id": "0104",
+				      "state": "",
+				      "text": "块状裂缝（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0105",
+				      "bhname": "块状裂缝（重）",
+				      "dw": "㎡",
+				      "id": "0105",
+				      "state": "",
+				      "text": "块状裂缝（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0106",
+				      "bhname": "纵向裂缝（轻）",
+				      "dw": "m",
+				      "id": "0106",
+				      "state": "",
+				      "text": "纵向裂缝（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0107",
+				      "bhname": "纵向裂缝（重）",
+				      "dw": "m",
+				      "id": "0107",
+				      "state": "",
+				      "text": "纵向裂缝（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0108",
+				      "bhname": "横向裂缝（轻）",
+				      "dw": "m",
+				      "id": "0108",
+				      "state": "",
+				      "text": "横向裂缝（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0109",
+				      "bhname": "横向裂缝（重）",
+				      "dw": "m",
+				      "id": "0109",
+				      "state": "",
+				      "text": "横向裂缝（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0110",
+				      "bhname": "坑槽（轻）",
+				      "dw": "㎡",
+				      "id": "0110",
+				      "state": "",
+				      "text": "坑槽（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0111",
+				      "bhname": "坑槽（重）",
+				      "dw": "㎡",
+				      "id": "0111",
+				      "state": "",
+				      "text": "坑槽（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0112",
+				      "bhname": "松散（轻）",
+				      "dw": "㎡",
+				      "id": "0112",
+				      "state": "",
+				      "text": "松散（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0113",
+				      "bhname": "松散（重）",
+				      "dw": "㎡",
+				      "id": "0113",
+				      "state": "",
+				      "text": "松散（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0114",
+				      "bhname": "沉陷（轻）",
+				      "dw": "㎡",
+				      "id": "0114",
+				      "state": "",
+				      "text": "沉陷（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0115",
+				      "bhname": "沉陷（重）",
+				      "dw": "㎡",
+				      "id": "0115",
+				      "state": "",
+				      "text": "沉陷（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0116",
+				      "bhname": "车辙（轻）",
+				      "dw": "m",
+				      "id": "0116",
+				      "state": "",
+				      "text": "车辙（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0117",
+				      "bhname": "车辙（重）",
+				      "dw": "m",
+				      "id": "0117",
+				      "state": "",
+				      "text": "车辙（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0118",
+				      "bhname": "波浪拥包（轻）",
+				      "dw": "㎡",
+				      "id": "0118",
+				      "state": "",
+				      "text": "波浪拥包（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0119",
+				      "bhname": "波浪拥包（重）",
+				      "dw": "㎡",
+				      "id": "0119",
+				      "state": "",
+				      "text": "波浪拥包（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0120",
+				      "bhname": "泛油",
+				      "dw": "㎡",
+				      "id": "0120",
+				      "state": "",
+				      "text": "泛油",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0121",
+				      "bhname": "修补",
+				      "dw": "㎡",
+				      "id": "0121",
+				      "state": "",
+				      "text": "修补",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m2"
+     				  },
+     				  "bhid": "0122",
+				      "bhname": "路面不洁",
+				      "dw": "m2",
+				      "id": "0122",
+				      "state": "",
+				      "text": "路面不洁",
+				      "wxsx": 1
+				      }
+    	  ]
+    }
+    ,
+	 {
+        "bhid": "02",
+        "bhname": "路基",
+        "dw": "",
+        "id": "02",
+        "state": "closed",
+        "text": "路基",
+        "wxsx": 1
+    	 ,
+    	 "children": [
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0201",
+				      "bhname": "路肩边沟不洁",
+				      "dw": "m",
+				      "id": "0201",
+				      "state": "",
+				      "text": "路肩边沟不洁",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0202",
+				      "bhname": "路肩损坏（轻）",
+				      "dw": "㎡",
+				      "id": "0202",
+				      "state": "",
+				      "text": "路肩损坏（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0203",
+				      "bhname": "路肩损坏（重）",
+				      "dw": "㎡",
+				      "id": "0203",
+				      "state": "",
+				      "text": "路肩损坏（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0204",
+				      "bhname": "边坡坍塌（轻）",
+				      "dw": "㎡",
+				      "id": "0204",
+				      "state": "",
+				      "text": "边坡坍塌（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0205",
+				      "bhname": "边坡坍塌（中）",
+				      "dw": "㎡",
+				      "id": "0205",
+				      "state": "",
+				      "text": "边坡坍塌（中）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0206",
+				      "bhname": "边坡坍塌（重）",
+				      "dw": "㎡",
+				      "id": "0206",
+				      "state": "",
+				      "text": "边坡坍塌（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0207",
+				      "bhname": "水毁冲沟（轻）",
+				      "dw": "㎡",
+				      "id": "0207",
+				      "state": "",
+				      "text": "水毁冲沟（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0208",
+				      "bhname": "水毁冲沟（中）",
+				      "dw": "㎡",
+				      "id": "0208",
+				      "state": "",
+				      "text": "水毁冲沟（中）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0209",
+				      "bhname": "水毁冲沟（重）",
+				      "dw": "㎡",
+				      "id": "0209",
+				      "state": "",
+				      "text": "水毁冲沟（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0210",
+				      "bhname": "路基构造物损坏（轻）",
+				      "dw": "单位",
+				      "id": "0210",
+				      "state": "",
+				      "text": "路基构造物损坏（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0211",
+				      "bhname": "路基构造物损坏（中）",
+				      "dw": "单位",
+				      "id": "0211",
+				      "state": "",
+				      "text": "路基构造物损坏（中）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0212",
+				      "bhname": "路基构造物损坏（重）",
+				      "dw": "单位",
+				      "id": "0212",
+				      "state": "",
+				      "text": "路基构造物损坏（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0213",
+				      "bhname": "路缘石缺损",
+				      "dw": "m",
+				      "id": "0213",
+				      "state": "",
+				      "text": "路缘石缺损",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"处"
+     				  },
+     				  "bhid": "0214",
+				      "bhname": "路基沉降（轻）",
+				      "dw": "处",
+				      "id": "0214",
+				      "state": "",
+				      "text": "路基沉降（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"处"
+     				  },
+     				  "bhid": "0215",
+				      "bhname": "路基沉降（中）",
+				      "dw": "处",
+				      "id": "0215",
+				      "state": "",
+				      "text": "路基沉降（中）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"处"
+     				  },
+     				  "bhid": "0216",
+				      "bhname": "路基沉降（重）",
+				      "dw": "处",
+				      "id": "0216",
+				      "state": "",
+				      "text": "路基沉降（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0217",
+				      "bhname": "排水系统淤塞（轻）",
+				      "dw": "单位",
+				      "id": "0217",
+				      "state": "",
+				      "text": "排水系统淤塞（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0218",
+				      "bhname": "排水系统淤塞（重）",
+				      "dw": "单位",
+				      "id": "0218",
+				      "state": "",
+				      "text": "排水系统淤塞（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m3"
+     				  },
+     				  "bhid": "0219",
+				      "bhname": "塌方",
+				      "dw": "m3",
+				      "id": "0219",
+				      "state": "",
+				      "text": "塌方",
+				      "wxsx": 7
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m3"
+     				  },
+     				  "bhid": "0220",
+				      "bhname": "泥石流",
+				      "dw": "m3",
+				      "id": "0220",
+				      "state": "",
+				      "text": "泥石流",
+				      "wxsx": 7
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0221",
+				      "bhname": "碎落",
+				      "dw": "m",
+				      "id": "0221",
+				      "state": "",
+				      "text": "碎落",
+				      "wxsx": 7
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"1000m2"
+     				  },
+     				  "bhid": "0222",
+				      "bhname": "路肩边坡杂草",
+				      "dw": "1000m2",
+				      "id": "0222",
+				      "state": "",
+				      "text": "路肩边坡杂草",
+				      "wxsx": 2
+				      }
+    	  ]
+    }
+    ,
+	 {
+        "bhid": "03",
+        "bhname": "沿线设施",
+        "dw": "",
+        "id": "03",
+        "state": "closed",
+        "text": "沿线设施",
+        "wxsx": 1
+    	 ,
+    	 "children": [
+     				 {
+     				  "attributes":{
+     				  	"dw":"处"
+     				  },
+     				  "bhid": "0301",
+				      "bhname": "防护设施缺损（轻）",
+				      "dw": "处",
+				      "id": "0301",
+				      "state": "",
+				      "text": "防护设施缺损（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"处"
+     				  },
+     				  "bhid": "0302",
+				      "bhname": "防护设施缺损（重）",
+				      "dw": "处",
+				      "id": "0302",
+				      "state": "",
+				      "text": "防护设施缺损（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"处"
+     				  },
+     				  "bhid": "0303",
+				      "bhname": "隔离栅损坏",
+				      "dw": "处",
+				      "id": "0303",
+				      "state": "",
+				      "text": "隔离栅损坏",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"处"
+     				  },
+     				  "bhid": "0304",
+				      "bhname": "标志缺损",
+				      "dw": "处",
+				      "id": "0304",
+				      "state": "",
+				      "text": "标志缺损",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0305",
+				      "bhname": "标线缺损",
+				      "dw": "m",
+				      "id": "0305",
+				      "state": "",
+				      "text": "标线缺损",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0306",
+				      "bhname": "绿化管理不善",
+				      "dw": "m",
+				      "id": "0306",
+				      "state": "",
+				      "text": "绿化管理不善",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0307",
+				      "bhname": "波形护栏损坏（普通型）",
+				      "dw": "m",
+				      "id": "0307",
+				      "state": "",
+				      "text": "波形护栏损坏（普通型）",
+				      "wxsx": 7
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0308",
+				      "bhname": "波形护栏（加强型）",
+				      "dw": "m",
+				      "id": "0308",
+				      "state": "",
+				      "text": "波形护栏（加强型）",
+				      "wxsx": 7
+				      }
+    	  ]
+    }
+    ,
+	 {
+        "bhid": "04",
+        "bhname": "桥梁",
+        "dw": "",
+        "id": "04",
+        "state": "closed",
+        "text": "桥梁",
+        "wxsx": 1
+    	 ,
+    	 "children": [
+     				 {
+     				  "attributes":{
+     				  	"dw":""
+     				  },
+     				  "bhid": "0401",
+				      "bhname": "桥梁技术状况",
+				      "dw": "",
+				      "id": "0401",
+				      "state": "",
+				      "text": "桥梁技术状况",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0402",
+				      "bhname": "桥头跳车",
+				      "dw": "单位",
+				      "id": "0402",
+				      "state": "",
+				      "text": "桥头跳车",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0403",
+				      "bhname": "伸缩缝损坏",
+				      "dw": "单位",
+				      "id": "0403",
+				      "state": "",
+				      "text": "伸缩缝损坏",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0404",
+				      "bhname": "泄水孔堵塞",
+				      "dw": "单位",
+				      "id": "0404",
+				      "state": "",
+				      "text": "泄水孔堵塞",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0405",
+				      "bhname": "栏杆护栏损坏",
+				      "dw": "单位",
+				      "id": "0405",
+				      "state": "",
+				      "text": "栏杆护栏损坏",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0406",
+				      "bhname": "翼墙锥坡损坏",
+				      "dw": "单位",
+				      "id": "0406",
+				      "state": "",
+				      "text": "翼墙锥坡损坏",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0407",
+				      "bhname": "上跨桥防落网损坏（轻）",
+				      "dw": "单位",
+				      "id": "0407",
+				      "state": "",
+				      "text": "上跨桥防落网损坏（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0408",
+				      "bhname": "上跨桥防落网损坏（重）",
+				      "dw": "单位",
+				      "id": "0408",
+				      "state": "",
+				      "text": "上跨桥防落网损坏（重）",
+				      "wxsx": 1
+				      }
+    	  ]
+    }
+    ,
+	 {
+        "bhid": "05",
+        "bhname": "隧道",
+        "dw": "",
+        "id": "05",
+        "state": "closed",
+        "text": "隧道",
+        "wxsx": 1
+    	 ,
+    	 "children": [
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0501",
+				      "bhname": "洞体损坏",
+				      "dw": "单位",
+				      "id": "0501",
+				      "state": "",
+				      "text": "洞体损坏",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0502",
+				      "bhname": "渗漏积水、排水不良",
+				      "dw": "单位",
+				      "id": "0502",
+				      "state": "",
+				      "text": "渗漏积水、排水不良",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0503",
+				      "bhname": "通风监视系统故障",
+				      "dw": "单位",
+				      "id": "0503",
+				      "state": "",
+				      "text": "通风监视系统故障",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0504",
+				      "bhname": "照明设施故障",
+				      "dw": "单位",
+				      "id": "0504",
+				      "state": "",
+				      "text": "照明设施故障",
+				      "wxsx": 1
+				      }
+    	  ]
+    }
+    ,
+	 {
+        "bhid": "06",
+        "bhname": "涵洞",
+        "dw": "",
+        "id": "06",
+        "state": "closed",
+        "text": "涵洞",
+        "wxsx": 1
+    	 ,
+    	 "children": [
+     				 {
+     				  "attributes":{
+     				  	"dw":"单位"
+     				  },
+     				  "bhid": "0601",
+				      "bhname": "涵洞损坏淤积",
+				      "dw": "单位",
+				      "id": "0601",
+				      "state": "",
+				      "text": "涵洞损坏淤积",
+				      "wxsx": 1
+				      }
+    	  ]
+    }
+   
+]

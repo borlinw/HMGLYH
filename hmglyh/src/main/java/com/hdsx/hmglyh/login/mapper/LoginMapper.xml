@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.login.mapper.LoginMapper">
+  <!-- 
+  		配置mybatis 二级 缓存 
+  		注意：配置缓存之后 对用用户的权限操作 将会有延迟
+  		建议运行时 开启
+   -->
+  <!-- <cache readOnly="true"></cache> -->
+  <resultMap id="LoginUserResultMap" type="com.hdsx.hmglyh.login.bean.LoginUser" >
+   	<!-- 用户表 -->
+    <id column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="PW" property="pw" jdbcType="VARCHAR" />
+    <result column="RYID" property="ryid" jdbcType="VARCHAR" />
+    <result column="JSID" property="jsid" jdbcType="VARCHAR" />
+    <result column="QYZT" property="qyzt" jdbcType="VARCHAR" />
+  	
+	 <!-- 人员表  -->
+	 <result column="RYNAME" property="ryname" jdbcType="VARCHAR" />
+	 <result column="BMCODE" property="bmcode" jdbcType="VARCHAR" />
+	 <result column="ZW" property="zw" jdbcType="VARCHAR" />
+  	 
+  	 <!-- 部门表 -->
+  	 <result column="BMZSCODE" property="bmzscode" jdbcType="VARCHAR" />
+  	 <result column="BMNAME" property="bmname" jdbcType="VARCHAR" />
+  	 <result column="FZR" property="fzr" jdbcType="VARCHAR" />
+  	 <result column="BMLX" property="bmlx" jdbcType="VARCHAR" />
+  	
+  	 <!-- 级联查询 角色 -->
+  	 <association  property="role" column="JSID" select="selectRole" javaType="com.hdsx.hmglyh.login.bean.Role" >
+     </association>
+  </resultMap>
+  
+  <resultMap id="RoleResultMap" type="com.hdsx.hmglyh.login.bean.Role" >
+    <id column="JSID" property="jsid" jdbcType="DECIMAL" />
+    <result column="JSNAME" property="jsname" jdbcType="VARCHAR" />
+    <result column="JSMS" property="jsms" jdbcType="VARCHAR" />
+   	<!-- 级联查询 权限  -->
+    <collection property="auths" column="JSID" select="selectAuths" ofType="java.util.List" ></collection>
+  </resultMap>
+  
+  <resultMap id="AuthResultMap" type="com.hdsx.hmglyh.login.bean.Auth" >
+    <id column="MKID" property="mkid" jdbcType="VARCHAR" />
+    <result column="MKNAME" property="mkname" jdbcType="VARCHAR" />
+    <result column="MKMS" property="mkms" jdbcType="VARCHAR" />
+    <result column="URL" property="url" jdbcType="VARCHAR" />
+  </resultMap>
+
+  
+  <sql id="LoginUser_Column_List" >
+    t1.USERNAME, t1.PW, t1.RYID, t1.JSID, t1.QYZT
+  </sql>
+  
+  <sql id="Ryb_Column_List">
+  	t2.RYNAME,t2.BMCODE,t2.ZW
+  </sql>
+  
+  <sql id="Bmb_Column_List">
+  	t3.BMZSCODE,t3.BMNAME,t3.FZR,t3.BMLX
+  </sql>
+  
+  <sql id="Role_Column_List" >
+    JSID, JSNAME, JSMS
+  </sql>
+  
+  <sql id="Auth_Column_List" >
+   t1.MKID, t1.MKNAME, t1.MKMS, t1.URL
+  </sql>
+  
+<!-- 级联查询角色 -->
+<select id="selectRole" parameterType="string" resultMap="RoleResultMap">
+	select 
+		<include refid="Role_Column_List" />
+		from HTGL_JSB 
+		where JSID = #{jsid}
+</select>
+
+<!-- 级联查询权限 -->
+<select id="selectAuths" parameterType="string" resultMap="AuthResultMap" >
+	select
+		<include refid="Auth_Column_List" />
+		from HTGL_MKB t1
+		left join
+		HTGL_JSYMDYB t2 on t1.mkid = t2.mkid
+		where t2.JSID = #{jsid}
+		<!-- order by t1.mkid -->
+		order by t1.px
+</select>
+  
+<!-- 用户登陆 -->
+<select id="longin" parameterType="loginuser" resultMap="LoginUserResultMap">
+	
+	select 
+		<include refid="LoginUser_Column_List"/>,
+		<include refid="Ryb_Column_List"/>,
+		<include refid="Bmb_Column_List"/>
+	from HTGL_YHB t1
+	left join HTGL_RYB t2 on t1.RYID = t2.RYID
+	left join HTGL_BMB t3 on t2.BMCODE = t3.BMCODE
+	where 
+	t1.USERNAME = #{username}
+	and t1.pw = #{pw} 
+	and t1.qyzt = 1 
+</select>
+
+<!-- 修改（路段） -->
+<update id="changePassword" parameterType="loginuser">
+	UPDATE HTGL_YHB SET pw=#{newpw} WHERE USERNAME=#{username} AND pw=#{pw}
+</update>
+
+</mapper>

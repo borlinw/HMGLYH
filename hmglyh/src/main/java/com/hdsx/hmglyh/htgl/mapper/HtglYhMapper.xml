@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.htgl.mapper.HtglYhMapper">
+
+<!-- 添加 -->
+<insert id="addOneYh" parameterType="htglyhb">
+	INSERT INTO HTGL_YHB (USERNAME,PW,RYID,JSID,QYZT) VALUES(#{username},#{pw},#{ryid},#{jsid},#{qyzt})
+</insert>
+
+<!-- 删除 -->
+<delete id="deleteOneYh" parameterType="htglyhb">
+	DELETE FROM HTGL_YHB WHERE USERNAME=#{username}
+</delete>
+
+<!-- 修改 -->
+<update id="updateOneYh" parameterType="htglyhb">
+	UPDATE HTGL_YHB SET JSID=#{jsid},QYZT=#{qyzt} WHERE USERNAME=#{username}
+</update>
+
+<!-- 修改 -->
+<update id="updateOneYhQyzt" parameterType="htglyhb">
+	UPDATE HTGL_YHB SET QYZT=#{qyzt} WHERE USERNAME=#{username}
+</update>
+
+<!-- 查询 -->
+<select id="queryAllBySome" resultType="htglyhb" parameterType="htglyhb">
+	SELECT TEMP.* FROM (
+		SELECT ROWNUM RN,A.* FROM (
+			<!-- SELECT A.USERNAME,A.RYID,A.JSID,A.QYZT,B.RYNAME,B.BMCODE,D.BMNAME,C.JSNAME FROM HTGL_YHB A, HTGL_RYB B, HTGL_JSB C, HTGL_BMB D
+				WHERE A.RYID=B.RYID AND A.JSID=C.JSID AND B.BMCODE=D.BMCODE AND B.BMCODE like #{bmcode}||'%' -->
+				SELECT A.USERNAME,A.RYID,A.JSID,A.QYZT,B.RYNAME,B.BMCODE,D.BMNAME,C.JSNAME FROM HTGL_YHB A, HTGL_RYB B, HTGL_JSB C, (
+					SELECT a.bmcode,case nvl(b.bmname,'')||'-' when '-' then '' else nvl(b.bmname,'')||' - ' end ||a.bmname AS BMNAME from htgl_bmb a left join htgl_bmb b on substr(a.bmcode,1,length(a.bmcode)-2)=b.bmcode
+				) D
+				WHERE A.RYID=B.RYID AND A.JSID=C.JSID AND B.BMCODE=D.BMCODE AND B.BMCODE like #{bmcode}||'%'
+	    ) A
+	) TEMP
+	<where>
+		<if test="page != null and page != ''">
+			<![CDATA[RN <= (${page} * ${rows})]]>
+			 AND
+			<![CDATA[RN>((${page} - 1) * ${rows})]]>
+		</if>
+	</where>
+</select>
+
+<!-- 查询 - 按照条件统计数据条数 -->
+<select id="countNumBySome" resultType="int" parameterType="htglyhb">
+	SELECT COUNT(*) FROM HTGL_YHB A LEFT JOIN HTGL_RYB B ON A.RYID=B.RYID WHERE B.BMCODE LIKE #{bmcode}||'%'
+</select>
+
+<!-- 查询 - 按照条件统计数据条数 -->
+<select id="verifyUsername" resultType="int" parameterType="htglyhb">
+	SELECT COUNT(*) FROM HTGL_YHB WHERE USERNAME=#{username}
+</select>
+
+</mapper>

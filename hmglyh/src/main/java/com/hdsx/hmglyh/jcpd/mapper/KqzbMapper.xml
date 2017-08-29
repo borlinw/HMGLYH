@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.jcpd.mapper.KqzbMapper">
+	<!-- 插入主表 -->
+	<insert id="addZb" parameterType="com.hdsx.hmglyh.jcpd.bean.Kqzb">
+		INSERT INTO RCYH_KQZB(KQID,SCDATE,SSNY,BMCODE,TBUSERNAME,TBRXM,FZRXM)
+		VALUES(#{kqid},current_date,#{ssny},#{bmCode},#{tbUserName},#{tbrxm},#{fzrxm})
+	</insert>
+	<!-- 查询主表是否已经存在 -->
+	<select id="getZb" parameterType="com.hdsx.hmglyh.jcpd.bean.Kqzb" resultType="com.hdsx.hmglyh.jcpd.bean.Kqzb">
+		SELECT * FROM RCYH_KQZB
+		WHERE BMCODE=#{bmCode} AND SSNY=#{ssny}
+	</select>
+	
+	<!-- 获取部门的部门类型 -->
+	<select id="getBmlx" parameterType="String" resultType="String">
+		SELECT BMLX FROM HTGL_BMB WHERE BMCODE=#{bmCode}
+	</select>
+	
+	<!-- 插入附表 -->
+	<insert id="addFb" parameterType="com.hdsx.hmglyh.jcpd.bean.Kqfb">
+		${sql}
+	</insert>
+	<!-- 获取养护站养护队生成附表的信息 -->
+	<select id="getFbxx" parameterType="com.hdsx.hmglyh.jcpd.bean.Kqzb" resultType="com.hdsx.hmglyh.jcpd.bean.Kqfb">
+		<![CDATA[select distinct ry.ryid,ry.zytime,nvl(wxzy.kq,'0706') kq from 
+		(select ryid,zytime 
+		from htgl_ryb,(select stime+rownum-1 as zytime from (select stime,etime from htgl_nyjcb where yname=#{ssny}) connect by rownum<etime-stime+2)
+		where bmcode=#{bmCode} and qyzt=1)ry
+		left join (select r.ryid,trunc(wx.wgtime,'dd') wgtime,(case substr(wx.yhid,0,2) when '07' then '0702' else '0701' end)kq from rcyh_ryzyjlb r
+		left join rcyh_wxzyjlb wx
+		on r.zyid=wx.zyid) wxzy
+		on ry.ryid=wxzy.ryid and ry.zytime=wxzy.wgtime
+		order by ry.ryid,ry.zytime]]>
+	</select>
+	<!-- 获取巡查队生成附表的信息 -->
+	<select id="getXcFbxx" parameterType="com.hdsx.hmglyh.jcpd.bean.Kqzb" resultType="com.hdsx.hmglyh.jcpd.bean.Kqfb">
+		<![CDATA[
+		select distinct ry.ryid,ry.zytime,nvl(xc.kq,'0706') from
+		(select ryid,zytime 
+	    from htgl_ryb,(select stime+rownum-1 as zytime from (select stime,etime from htgl_nyjcb where yname=#{ssny}) connect by rownum<etime-stime+2)
+	    where bmcode=#{bmCode} and qyzt=1)ry
+	    left join (select jlr,fzr,trunc(stime,'dd') wgtime,'0701' as kq from rcyh_glxcsjb) xc
+	    on (ry.ryid=xc.jlr or ry.ryid=xc.fzr) and ry.zytime=xc.wgtime
+	    order by ry.ryid,ry.zytime
+		]]>
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

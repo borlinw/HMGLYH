@@ -1,0 +1,59 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="/hmglyh/page/gis/css/style.css"/>
+<script type="text/javascript" src="/hmglyh/page/gis/js/easyui-1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="/hmglyh/page/gis/js/tools.js"></script>
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+
+
+
+<title>路线技术等级</title>
+</head>
+<body style="overflow:auto">
+	
+	 <div id="main" style="width:100%;height:100%;margin:0px;padding:5px;"></div>
+	
+	<form id="myform">
+		
+			<input type="text" name = "roadcodes" value="" />
+		
+			<input type="text" name = "roadcodes" value="" />
+		
+			<input type="text" name = "roadcodes" value="" />
+		
+			<input type="text" name = "roadcodes" value="" />
+		
+			<input type="text" name = "roadcodes" value="" />
+		
+			<input type="text" name = "roadcodes" value="" />
+		
+	</form>
+	
+	 <script type="text/javascript">
+		var send = function(){
+			$.ajax({
+				url:"http://192.168.0.113:8080/hmglyh/test",
+				contentType:'application/json;charset=UTF-8',
+				type:"POST",
+				dataType:"json",
+				data:{
+					username:'zhagnsan',
+					pwd:'zhagnsan'
+				},
+				success:function(data){
+					console.log(data);
+				}
+			});
+		}
+       
+    </script>
+</body>
+	
+</body>
+</html>

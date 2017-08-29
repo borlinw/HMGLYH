@@ -1,0 +1,9 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<package name="rcyhwxzyjlb" extends="struts-default" namespace="/rcyhwxzyjlb">
+		<!-- 查询维修作业信息 -->
+		<action name="queryWxzy" class="wxzyjlbController" method="queryWxzy"></action>
+	</package>
+</struts>

@@ -1,0 +1,2426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20141222" releaseVersion="7.1.1">
+<TableDataMap>
+<TableData name="养护里程" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="管养单位"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select a.ldname,substr(ldname,0,1) lx, b.lxcode,b.szhh,b.ezhh,b.cd/1000 cd,b.lmlx,b.isgs,b.ldid from 
+(select * from htgl_ldb where bmcode='${管养单位}')a left join (select * from jcpd_qmldb)b on a.lxcode=b.lxcode 
+where b.szhh>=a.szhh and b.ezhh<=a.ezhh]]></Query>
+</TableData>
+<TableData name="沥青汇总" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="管养单位"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="版本"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT SUM(TT.MQI*TT.CD)/SUM(TT.CD)*CD MQI1,SUM(TT.PQI*TT.CD)/SUM(TT.CD)*CD PQI1,SUM(TT.SCI*TT.CD)/SUM(TT.CD)*CD SCI1,SUM(TT.BCI*TT.CD)/SUM(TT.CD)*CD BCI1,SUM(TT.TCI*TT.CD)/SUM(TT.CD)*CD TCI1,
+TT.CD CD,TT.SZHH SZHH,TT.EZHH EZHH
+FROM
+(select * from 
+(select b.ldid,b.szhh,b.ezhh,b.lmlx,b.isgs,(b.cd/1000) cd from 
+(select * from htgl_ldb where bmcode='${管养单位}')a left join (select * from jcpd_qmldb )b on a.lxcode=b.lxcode 
+where b.szhh>=a.szhh and b.ezhh<=a.ezhh and b.lmlx=1
+)c inner join(select * from jcpd_lkpdmxb where bbid='${版本}')d on c.ldid=d.ldid)tt
+group by cd,szhh,ezhh]]></Query>
+</TableData>
+<TableData name="水泥路汇总" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="管养单位"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="版本"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT SUM(TT.MQI*TT.CD)/SUM(TT.CD)*CD MQI1,SUM(TT.PQI*TT.CD)/SUM(TT.CD)*CD PQI1,SUM(TT.SCI*TT.CD)/SUM(TT.CD)*CD SCI1,SUM(TT.BCI*TT.CD)/SUM(TT.CD)*CD BCI1,SUM(TT.TCI*TT.CD)/SUM(TT.CD)*CD TCI1,
+TT.CD CD,TT.SZHH SZHH,TT.EZHH EZHH
+FROM
+(select * from 
+(select b.ldid,b.szhh,b.ezhh,b.lmlx,b.isgs,(b.cd/1000) cd from 
+(select * from htgl_ldb where bmcode='${管养单位}')a left join (select * from jcpd_qmldb)b on a.lxcode=b.lxcode 
+where b.szhh>=a.szhh and b.ezhh<=a.ezhh and b.lmlx=2
+)c inner join(select * from jcpd_lkpdmxb where bbid='${版本}')d on c.ldid=d.ldid)tt
+group by cd,szhh,ezhh]]></Query>
+</TableData>
+<TableData name="沙石路面" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="管养单位"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="版本"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT SUM(TT.MQI*TT.CD)/SUM(TT.CD)*CD MQI1,SUM(TT.PQI*TT.CD)/SUM(TT.CD)*CD PQI1,SUM(TT.SCI*TT.CD)/SUM(TT.CD)*CD SCI1,SUM(TT.BCI*TT.CD)/SUM(TT.CD)*CD BCI1,SUM(TT.TCI*TT.CD)/SUM(TT.CD)*CD TCI1,
+TT.CD CD,TT.SZHH SZHH,TT.EZHH EZHH
+FROM
+(select * from 
+(select b.ldid,b.szhh,b.ezhh,b.lmlx,b.isgs,(b.cd/1000) cd from 
+(select * from htgl_ldb where bmcode='${管养单位}')a left join (select * from jcpd_qmldb)b on a.lxcode=b.lxcode 
+where b.szhh>=a.szhh and b.ezhh<=a.ezhh and b.lmlx=3
+)c inner join(select * from jcpd_lkpdmxb where bbid='${版本}')d on c.ldid=d.ldid)tt
+group by cd,szhh,ezhh]]></Query>
+</TableData>
+<TableData name="高速以及一级公路" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="管养单位"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="版本"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT SUM(TT.MQI*TT.CD)/SUM(TT.CD)*CD MQI1,SUM(TT.PQI*TT.CD)/SUM(TT.CD)*CD PQI1,SUM(TT.SCI*TT.CD)/SUM(TT.CD)*CD SCI1,SUM(TT.BCI*TT.CD)/SUM(TT.CD)*CD BCI1,SUM(TT.TCI*TT.CD)/SUM(TT.CD)*CD TCI1,
+TT.CD CD,TT.SZHH SZHH,TT.EZHH EZHH
+FROM
+(select * from 
+(select b.ldid,b.szhh,b.ezhh,b.lmlx,b.isgs,(b.cd/1000) cd from 
+(select * from htgl_ldb where bmcode='${管养单位}')a left join (select * from jcpd_qmldb)b on a.lxcode=b.lxcode 
+where b.szhh>=a.szhh and b.ezhh<=a.ezhh and b.isgs=1
+)c inner join(select * from jcpd_lkpdmxb where bbid='${版本}')d on c.ldid=d.ldid)tt
+group by cd,szhh,ezhh]]></Query>
+</TableData>
+<TableData name="普通公路" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="管养单位"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="版本"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT SUM(TT.MQI*TT.CD)/SUM(TT.CD)*CD MQI1,SUM(TT.PQI*TT.CD)/SUM(TT.CD)*CD PQI1,SUM(TT.SCI*TT.CD)/SUM(TT.CD)*CD SCI1,SUM(TT.BCI*TT.CD)/SUM(TT.CD)*CD BCI1,SUM(TT.TCI*TT.CD)/SUM(TT.CD)*CD TCI1,
+TT.CD CD,TT.SZHH SZHH,TT.EZHH EZHH
+FROM
+(select * from 
+(select b.ldid,b.szhh,b.ezhh,b.lmlx,b.isgs,(b.cd/1000) cd from 
+(select * from htgl_ldb where bmcode='${管养单位}')a left join (select * from jcpd_qmldb )b on a.lxcode=b.lxcode 
+where b.szhh>=a.szhh and b.ezhh<=a.ezhh and b.isgs=0
+)c inner join(select * from jcpd_lkpdmxb where bbid='${版本}')d on c.ldid=d.ldid)tt
+group by cd,szhh,ezhh]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[990600,723900,876300,1371600,1440000,1440000,1714500,1440000,1440000,1440000,1440000,876300,0,0,0,0,0,1440000,1440000,1440000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[1584000,1584000,1584000,1584000,1584000,1584000,1584000,1584000,1584000,1584000,1584000,1584000,1584000,1584000,1584000,1981200,0,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="17" s="0">
+<O>
+<![CDATA[养护单位公路技术状况评定汇总表 ]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1" cs="16" s="1">
+<O>
+<![CDATA[                                                                                                表A_9 ]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="1" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="2" cs="2" s="3">
+<O>
+<![CDATA[填报单位:]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="2" cs="14" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="3" cs="2" rs="2" s="3">
+<O>
+<![CDATA[项目]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="3" rs="2" s="3">
+<O>
+<![CDATA[养护里程]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="3" rs="2" s="3">
+<O>
+<![CDATA[评定里程]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="3" rs="2" s="3">
+<O>
+<![CDATA[MQI]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="3" rs="2" s="3">
+<O>
+<![CDATA[评定等级]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="3" rs="2" s="3">
+<O>
+<![CDATA[PQI]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="3" rs="2" s="3">
+<O>
+<![CDATA[SCI]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="3" rs="2" s="3">
+<O>
+<![CDATA[BCI]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="3" rs="2" s="3">
+<O>
+<![CDATA[TCI]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="3" cs="5" s="4">
+<O>
+<![CDATA[评定里程各等级情况]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="3" rs="2" s="3">
+<O>
+<![CDATA[优良路率]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="3" s="4">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="4" s="3">
+<O>
+<![CDATA[优]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="4" s="3">
+<O>
+<![CDATA[良]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="4" s="3">
+<O>
+<![CDATA[中]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="4" s="3">
+<O>
+<![CDATA[次]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="4" s="3">
+<O>
+<![CDATA[差]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="4" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="5" rs="3" s="3">
+<O>
+<![CDATA[路面结构]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="5" s="3">
+<O>
+<![CDATA[沥青路面]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[LMLX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="3" r="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="沥青汇总" columnName="CD"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="5" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E13/D6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="5" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=IF(E6 >= 90, "优", if(E6 >= 80, "良", IF(E6 >= 70, "中", IF(E6 >= 60, "次", "差"))))]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="5" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G13/D6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="5" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=H13/D6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="5" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=I13/D6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="5" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=J13/D6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="沥青汇总" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[90]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="沥青汇总" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[90]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="沥青汇总" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="沥青汇总" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[60]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="沥青汇总" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[60]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="5" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(K6+L6)/D6*100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="5" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="6" s="3">
+<O>
+<![CDATA[水泥混凝土路面]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="6" s="5">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[LMLX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="3" r="6" s="5">
+<O t="DSColumn">
+<Attributes dsName="水泥路汇总" columnName="CD"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="6" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E14/D7]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="6" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=IF(E7 >= 90, "优", if(E7 >= 80, "良", IF(E7 >= 70, "中", IF(E7 >= 60, "次", "差"))))]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="6" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G14/D7]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="6" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=H14/D7]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="6" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=I14/D7]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="6" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=J14/D7]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="6" s="5">
+<O t="DSColumn">
+<Attributes dsName="水泥路汇总" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[90]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="6" s="5">
+<O t="DSColumn">
+<Attributes dsName="水泥路汇总" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[90]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="6" s="5">
+<O t="DSColumn">
+<Attributes dsName="水泥路汇总" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="6" s="5">
+<O t="DSColumn">
+<Attributes dsName="水泥路汇总" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[60]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="6" s="5">
+<O t="DSColumn">
+<Attributes dsName="水泥路汇总" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[60]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="6" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(K7+L7)/D7*100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="6" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="7" s="3">
+<O>
+<![CDATA[砂石路面]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[LMLX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="3" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="沙石路面" columnName="CD"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="7" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E15/D8]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="7" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=IF(E8 >= 90, "优", if(E8 >= 80, "良", IF(E8 >= 70, "中", IF(E8 >= 60, "次", "差"))))]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="7" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G15/D8]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="7" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=H15/D8]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="7" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=I15/D8]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="7" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=J15/D8]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="沙石路面" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[90]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="沙石路面" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[90]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="沙石路面" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="沙石路面" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[60]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="沙石路面" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[60]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="7" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(K8+L8)/D8*100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="7" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="8" rs="2" s="3">
+<O>
+<![CDATA[公路等级]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="8" s="3">
+<O>
+<![CDATA[高速、一级]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[ISGS]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="8" s="5">
+<O t="DSColumn">
+<Attributes dsName="高速以及一级公路" columnName="CD"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="8" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E16/D9]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=IF(E9 >= 90, "优", if(E9 >= 80, "良", IF(E9 >= 70, "中", IF(E9 >= 60, "次", "差"))))]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="8" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G16/D9]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="8" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=H16/D9]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="8" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=I16/D9]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="8" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=J16/D9]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="8" s="5">
+<O t="DSColumn">
+<Attributes dsName="高速以及一级公路" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[90]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="8" s="5">
+<O t="DSColumn">
+<Attributes dsName="高速以及一级公路" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[90]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="8" s="5">
+<O t="DSColumn">
+<Attributes dsName="高速以及一级公路" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="8" s="5">
+<O t="DSColumn">
+<Attributes dsName="高速以及一级公路" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[60]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="8" s="5">
+<O t="DSColumn">
+<Attributes dsName="高速以及一级公路" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[60]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="8" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(K9+L9)/D9*100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="8" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="9" s="3">
+<O>
+<![CDATA[普通公路]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[ISGS]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="9" s="5">
+<O t="DSColumn">
+<Attributes dsName="普通公路" columnName="CD"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="9" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E17/D10]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="9" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=IF(E10>= 90, "优", if(E10>= 80, "良", IF(E10>= 70, "中", IF(E10>= 60, "次", "差"))))]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="9" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G17/D10]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="9" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=H17/D10]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="9" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=I17/D10]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="9" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=J17/D10]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="9" s="5">
+<O t="DSColumn">
+<Attributes dsName="普通公路" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[90]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="9" s="5">
+<O t="DSColumn">
+<Attributes dsName="普通公路" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[90]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="9" s="5">
+<O t="DSColumn">
+<Attributes dsName="普通公路" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="9" s="5">
+<O t="DSColumn">
+<Attributes dsName="普通公路" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[60]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="9" s="5">
+<O t="DSColumn">
+<Attributes dsName="普通公路" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[60]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="9" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(K10+L10)/D10*100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="9" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="10" cs="2" s="3">
+<O>
+<![CDATA[单位汇总]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C9+C10]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D9+D10]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="10" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(E9*D9+E10*D10)/D11]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=IF(E11>= 90, "优", if(E11>= 80, "良", IF(E11>= 70, "中", IF(E11>= 60, "次", "差"))))]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="10" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(G9*D9+G10*D10)/D11]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="10" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(H9*D9+H10*D10)/D11]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="10" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(I9*D9+I10*D10)/D11]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="10" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(J9*D9+J10*D10)/D11]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=K9+K10]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=L9+L10]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=M9+M10]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=N9+N10]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=O9+O10]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="10" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(K11+L11)/D11*100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="10" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="11" cs="2" s="3">
+<O>
+<![CDATA[主管:]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="11" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="11" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="11" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="11" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="11" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="11" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="11" s="3">
+<O>
+<![CDATA[审核:]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="11" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="11" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="11" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="11" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="11" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="11" s="3">
+<O>
+<![CDATA[填表:]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="11" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="11" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="12" cs="3" s="4">
+<O>
+<![CDATA[沥青]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="12" s="4">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="12" s="3">
+<O t="DSColumn">
+<Attributes dsName="沥青汇总" columnName="MQI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="12" s="4">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="12" s="4">
+<O t="DSColumn">
+<Attributes dsName="沥青汇总" columnName="PQI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="12" s="4">
+<O t="DSColumn">
+<Attributes dsName="沥青汇总" columnName="SCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="12" s="4">
+<O t="DSColumn">
+<Attributes dsName="沥青汇总" columnName="BCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="12" s="4">
+<O t="DSColumn">
+<Attributes dsName="沥青汇总" columnName="TCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="12" s="4">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="12" s="4">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="12" s="4">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="12" s="4">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="12" s="4">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="12" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="12" s="4">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="13" cs="3" s="4">
+<O>
+<![CDATA[水泥]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="13">
+<O t="DSColumn">
+<Attributes dsName="水泥路汇总" columnName="MQI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13">
+<O t="DSColumn">
+<Attributes dsName="水泥路汇总" columnName="PQI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="13">
+<O t="DSColumn">
+<Attributes dsName="水泥路汇总" columnName="SCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="13">
+<O t="DSColumn">
+<Attributes dsName="水泥路汇总" columnName="BCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="13">
+<O t="DSColumn">
+<Attributes dsName="水泥路汇总" columnName="TCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="14" cs="3" s="4">
+<O>
+<![CDATA[沙石]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="14">
+<O t="DSColumn">
+<Attributes dsName="沙石路面" columnName="MQI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="14">
+<O t="DSColumn">
+<Attributes dsName="沙石路面" columnName="PQI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="14">
+<O t="DSColumn">
+<Attributes dsName="沙石路面" columnName="SCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="14">
+<O t="DSColumn">
+<Attributes dsName="沙石路面" columnName="BCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="14">
+<O t="DSColumn">
+<Attributes dsName="沙石路面" columnName="TCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="15" cs="3" s="4">
+<O>
+<![CDATA[高速以及一级]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="15">
+<O t="DSColumn">
+<Attributes dsName="高速以及一级公路" columnName="MQI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="15">
+<O t="DSColumn">
+<Attributes dsName="高速以及一级公路" columnName="PQI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="15">
+<O t="DSColumn">
+<Attributes dsName="高速以及一级公路" columnName="SCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="15">
+<O t="DSColumn">
+<Attributes dsName="高速以及一级公路" columnName="BCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="15">
+<O t="DSColumn">
+<Attributes dsName="高速以及一级公路" columnName="TCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="16" cs="3" s="4">
+<O>
+<![CDATA[普通公路]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="16">
+<O t="DSColumn">
+<Attributes dsName="普通公路" columnName="MQI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="16">
+<O t="DSColumn">
+<Attributes dsName="普通公路" columnName="PQI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="16">
+<O t="DSColumn">
+<Attributes dsName="普通公路" columnName="SCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="16">
+<O t="DSColumn">
+<Attributes dsName="普通公路" columnName="BCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="16">
+<O t="DSColumn">
+<Attributes dsName="普通公路" columnName="TCI1"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="33912000" height="46411200"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<Parameter>
+<Attributes name="p1"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="p2"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="p3"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="1" size="88"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="HBB"/>
+<PreviewType PreviewType="0"/>
+</WorkBook>

@@ -1,0 +1,19 @@
+.button_font2{ width:64px; height:22px; overflow:hidden; cursor:pointer; background:url(../images/button_2font.png) no-repeat; border:0;}
+.button_font2:hover{ background:url(../images/button_2font_hover.png) no-repeat;}
+
+.button_font4{ width:72px; height:22px; overflow:hidden; cursor:pointer; background:url(../images/button_4font.png) no-repeat; border:0;}
+.button_font4:hover{ background:url(../images/button_4font_hover.png) no-repeat;}
+
+.button_font6{ width:100px; height:22px; overflow:hidden; cursor:pointer; background:url(../images/button_6font.png) no-repeat; border:0;}
+.button_font6:hover{ background:url(../images/button_6font_hover.png) no-repeat;}
+
+.top_div_lr{
+	height:30px;
+	line-height:30px;
+	padding-left:35px;
+	background-color: #70D2E0;
+	color: #FFFFFF;
+	background:#70D2E0 url(../images/position.png) 13px center no-repeat;
+	font-size : 12px;
+	font-weight : 800;
+}

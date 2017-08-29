@@ -1,0 +1,18 @@
+.bk{ width:100%; height:400px; overflow:hidden; background:url(../images/login_conbg.png) repeat-x;}
+.main{ width:1000px; overflow:hidden; margin:0 auto;}
+.left{ width:600px; height:400px; overflow:hidden; float:left; display:block; background:url(../images/login_left_bg.png) no-repeat;}
+.left_con{ margin:135px 0 0 15px;}
+.right{ width:400px; height:400px; overflow:hidden; float:right; display:block; background:url(../images/login_right_bg.png) no-repeat;}
+.right_con{ width:260px; overflow:hidden; margin:90px auto 0 auto;}
+.right_con ul li{ margin-bottom:10px;}
+.name{ width:218px; height:32px; overflow:hidden; background:url(../images/login_name.png) no-repeat; font-family:"微软雅黑"; font-size:18px; line-height:32px; color:#abe6ee; padding-left:42px; margin-bottom:12px;}
+.name:hover{ background:url(../images/login_name_hover.png) no-repeat;}
+.password{ width:218px; height:32px; overflow:hidden; background:url(../images/login_password.png) no-repeat; font-family:"微软雅黑"; font-size:18px; line-height:32px; color:#abe6ee; padding-left:42px; margin-bottom:12px;}
+.password:hover{ background:url(../images/login_password_hover.png) no-repeat;}
+.yzm{ width:108px; height:32px; overflow:hidden; background:url(../images/login_yzm.png) no-repeat; font-family:"微软雅黑"; font-size:18px; line-height:32px; color:#abe6ee; text-align:center;}
+.yzm:hover{ background:url(../images/login_yzm_hover.png) no-repeat;}
+.yzm_img{ border:1px solid #15b1cb;}
+.yzm_font{ color:#0791a8;}
+.ts{ font-size:12px; color:#ff0000;}
+.login_button{ width:260px; height:38px; overflow:hidden; background:url(../images/login_dl.png) no-repeat; font-family:"微软雅黑"; font-size:18px; color:#FFF; line-height:38px; cursor:pointer;}
+.login_button:hover{ background:url(../images/login_dl_hover.png) no-repeat;}

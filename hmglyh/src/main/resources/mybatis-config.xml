@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "/xsd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- changes from the defaults for testing -->
+		<setting name="cacheEnabled" value="true" />
+		<setting name="useGeneratedKeys" value="true" />
+		<!-- <setting name="defaultExecutorType" value="REUSE" /> -->
+		<!-- 设置log输出sql -->
+  		<setting name="logImpl" value="STDOUT_LOGGING" />
+	</settings>
+	
+
+	<typeAliases>
+		<!-- LR添加 -->
+		<!-- 登陆 -->
+		<typeAlias type="com.hdsx.hmglyh.login.bean.LoginUser" alias="loginuser"/>
+		<!-- 后台权限 - 病害类型 -->
+		<typeAlias type="com.hdsx.hmglyh.htgl.bean.HtglBhlx" alias="htglBhlx"/>
+		<!-- 后台权限 - 工料机管理（类型表+价格表） -->
+		<typeAlias type="com.hdsx.hmglyh.htgl.bean.HtglGlj" alias="htglGlj"/>
+		<!-- 后台权限 - 部门 -->
+		<typeAlias type="com.hdsx.hmglyh.htgl.bean.HtglBm" alias="htglBm"/>
+		<!-- 后台权限 - 枚举 -->
+		<typeAlias type="com.hdsx.hmglyh.htgl.bean.HtglMjlx" alias="htglMj"/>
+		<!-- 后台权限 - 路线/路段 -->
+		<typeAlias type="com.hdsx.hmglyh.htgl.bean.HtglLdb" alias="htglldb"/>
+		<!-- 后台权限 - 人员 -->
+		<typeAlias type="com.hdsx.hmglyh.htgl.bean.HtglRyb" alias="htglryb"/>
+		<!-- 后台权限 - 用户 -->
+		<typeAlias type="com.hdsx.hmglyh.htgl.bean.HtglYhb" alias="htglyhb"/>
+		<!-- 后台权限 - 角色 -->
+		<typeAlias type="com.hdsx.hmglyh.htgl.bean.HtglJs" alias="htgljs"/>
+		<!-- 后台权限 - 作业项目类别管理（养护类型表） -->
+		<typeAlias type="com.hdsx.hmglyh.htgl.bean.HtglYhlxb" alias="htglyhlxb"/>
+		<!-- 后台权限 - 作业项目类别管理（定额表） -->
+		<typeAlias type="com.hdsx.hmglyh.htgl.bean.HtglDeb" alias="htgldeb"/>
+		<!-- LR添加 -->
+		
+		<!-- 日常养护 - 作业维修整改（通知单/回复单） -->
+		<typeAlias type="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg" alias="rcyhwxzg"/>
+		
+		<!-- 基础数据 -->
+		<typeAlias type="com.hdsx.hmglyh.basicData.bean.GpsRoad" alias="gpsRoad"/>
+		<typeAlias type="com.hdsx.hmglyh.basicData.bean.Lxld" alias="lxld"/>
+		<typeAlias type="com.hdsx.hmglyh.basicData.bean.Bhlx" alias="bhlx"/>
+		<!-- 检测评定 -->
+		<typeAlias type="com.hdsx.hmglyh.jcpd.bean.Qmldb" alias="qmldb"/>
+		<typeAlias type="com.hdsx.hmglyh.jcpd.bean.Bbkzb" alias="bbkzb"/>
+		<typeAlias type="com.hdsx.hmglyh.jcpd.bean.Lkdcfb" alias="lkdcfb"/>
+		<typeAlias type="com.hdsx.hmglyh.jcpd.bean.Qyhfb" alias="qyhfb"/>
+		<typeAlias type="com.hdsx.hmglyh.jcpd.bean.Qdhfb" alias="qdhfb"/>
+		<typeAlias type="com.hdsx.hmglyh.jcpd.bean.Lmjcb" alias="lmjcb"/>
+		<typeAlias type="com.hdsx.hmglyh.jcpd.bean.Qdhfshb" alias="qdhfshb"/>
+		<typeAlias type="com.hdsx.hmglyh.jcpd.bean.Lkldhfb" alias="lkldhfb"/>
+		<!-- 年月查询 -->
+		<typeAlias type="com.hdsx.hmglyh.rcyhtj.bean.Nyb" alias="nyb"/>
+		<!-- 年度学习记录表 -->
+		<typeAlias type="com.hdsx.hmglyh.rcyhtj.bean.RcyhNdxxjlb" alias="rcyhNdxxjlb"/>
+		<!-- 月度计划任务单 -->
+		<typeAlias type="com.hdsx.hmglyh.ydjh.bean.RcyhRwdjlb" alias="rcyhRwdjlb"/>
+		<!-- 维修作业信息查询 -->
+	<!-- 	<typeAlias type="com.hdsx.hmglyh.rcyhtj.bean.Rcyhwxzyjlb" alias="rcyhwxzyjlb"/> -->
+		<!-- 病害类型查询 -->
+		<!-- <typeAlias type="com.hdsx.hmglyh.rcyhtj.bean.Rcyhbhjlb" alias="rcyhbhjlb"/> -->
+	</typeAliases>
+	
+</configuration>

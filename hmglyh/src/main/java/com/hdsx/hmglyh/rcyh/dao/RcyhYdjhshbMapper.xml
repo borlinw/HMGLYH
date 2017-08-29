@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.rcyh.dao.RcyhYdjhshbMapper" >
+  <resultMap id="BaseResultMap" type="com.hdsx.hmglyh.rcyh.dao.model.RcyhYdjhshb" >
+    <result column="BMCODE" property="bmcode" jdbcType="VARCHAR" />
+    <result column="LDCODE" property="ldcode" jdbcType="VARCHAR" />
+    <result column="SSNY" property="ssny" jdbcType="VARCHAR" />
+    <result column="SQZT" property="sqzt" jdbcType="DECIMAL" />
+    <result column="SQR" property="sqr" jdbcType="VARCHAR" />
+    <result column="SQSJ" property="sqsj" jdbcType="DATE" />
+    <result column="SHZT" property="shzt" jdbcType="DECIMAL" />
+    <result column="SHR" property="shr" jdbcType="VARCHAR" />
+    <result column="SHSJ" property="shsj" jdbcType="DATE" />
+  </resultMap>
+  <insert id="insert" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhYdjhshb" >
+    insert into hmglyh.RCYH_YDJHFSHB (BMCODE, LDCODE, SSNY, 
+      SQZT, SQR, SQSJ, SHZT, 
+      SHR, SHSJ)
+    values (#{bmcode,jdbcType=VARCHAR}, #{ldcode,jdbcType=VARCHAR}, #{ssny,jdbcType=VARCHAR}, 
+      #{sqzt,jdbcType=DECIMAL}, #{sqr,jdbcType=VARCHAR}, to_date(#{sqsj},'yyyy-mm-dd hh24:mi:ss'), #{shzt,jdbcType=DECIMAL}, 
+      #{shr,jdbcType=VARCHAR}, to_date(#{shsj},'yyyy-mm-dd hh24:mi:ss') )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhYdjhshb" >
+    insert into hmglyh.RCYH_YDJHFSHB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="bmcode != null" >
+        BMCODE,
+      </if>
+      <if test="ldcode != null" >
+        LDCODE,
+      </if>
+      <if test="ssny != null" >
+        SSNY,
+      </if>
+      <if test="sqzt != null" >
+        SQZT,
+      </if>
+      <if test="sqr != null" >
+        SQR,
+      </if>
+      <if test="sqsj != null" >
+        SQSJ,
+      </if>
+      <if test="shzt != null" >
+        SHZT,
+      </if>
+      <if test="shsj != null" >
+        SHSJ,
+      </if>
+       <if test="shrr != null" >
+        shr,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="bmcode != null" >
+        #{bmcode,jdbcType=VARCHAR},
+      </if>
+      <if test="ldcode != null" >
+        #{ldcode,jdbcType=VARCHAR},
+      </if>
+      <if test="ssny != null" >
+        #{ssny,jdbcType=VARCHAR},
+      </if>
+      <if test="sqzt != null" >
+        #{sqzt,jdbcType=DECIMAL},
+      </if>
+      <if test="sqr != null" >
+        #{sqr,jdbcType=VARCHAR},
+      </if>
+      <if test="sqsj != null" >
+       to_date(#{sqsj},'yyyy-mm-dd hh24:mi:ss'),
+      </if>
+      <if test="shzt != null" >
+     	#{shzt},
+      </if>
+      <if test="shsj != null" >
+       to_date(#{shsj},'yyyy-mm-dd hh24:mi:ss') ,
+      </if>
+      <if test="shrr != null" >
+       #{shrr}
+      </if>
+    </trim>
+  </insert>
+  
+  <select id="canTijiaosh" parameterType="string" resultType="int">
+  		select count(*)
+  			from rcyh_ydjhfshb 
+  			where
+  			bmcode = #{bmcode} and 
+  			ldcode = #{ldcode} and
+  			ssny = #{ssny}
+  </select>
+  
+  <update id="updateByCondition" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhYdjhshb">
+  	  update RCYH_YDJHFSHB
+    <set >
+      <if test="bmcode != null" >
+        bmcode = #{bmcode},
+      </if>
+	  <if test="ldcode != null" >
+	    ldcode = #{ldcode},
+	  </if>
+	  <if test="sqzt != null" >
+	    sqzt = #{sqzt},
+	  </if>
+	  <if test="sqr != null" >
+	    sqr = #{sqr},
+	  </if>
+	  <if test="sqsj != null" >
+	    sqsj = to_date(#{sqsj},'yyyy-mm-dd hh24:mi:ss'),
+	  </if>
+	  <if test="shzt != null" >
+	    shzt = #{shzt},
+	  </if>
+	  <if test="shrr != null" >
+	    shr = #{shrr},
+	  </if>
+	   <if test="shsj != null" >
+	    shsj = to_date(#{shsj},'yyyy-mm-dd hh24:mi:ss'),
+	  </if>
+    </set>
+    where 
+    	bmcode = #{bmcode}
+    	and 
+    	ldcode = #{ldcode}
+    	and
+    	ssny = #{ssny}
+  </update>
+  
+  <select id="queryYdjhshByCondition" parameterType="string" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhYdjhshb">
+  	select * from 
+  		RCYH_YDJHFSHB 
+  		where 
+  			BMCODE = #{bmcode} and
+  			LDCODE = #{ldcode} and 
+  			SSNY = #{ssny}
+  </select>
+  
+</mapper>

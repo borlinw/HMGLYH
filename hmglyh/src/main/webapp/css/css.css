@@ -1,0 +1,7 @@
+/*声明*/
+body, ul, li, form, fieldset, legend, button, input, textarea, th, td{ margin:0; padding:0; border:0;}
+ul, ol { list-style:none; }
+li{ list-style:none}
+body {font-family:Arial, SimSun, sans-serif, Verdana, Lucida, Helvetica;font-size:12px; line-height:22px; color:#000; background:url(../images/bg.jpg) repeat;}
+a img, img, iframe,button{border:none;}
+a span, form label,button {cursor:pointer;}

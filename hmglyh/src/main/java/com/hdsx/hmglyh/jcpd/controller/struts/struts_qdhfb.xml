@@ -1,0 +1,23 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<package name="qdhfb" extends="struts-default" namespace="/qdhfb">
+		<!-- 插入区段划分 -->
+		<action name="addQdhfb" class="qdhfbController" method="addQdhfb"></action>
+		<!-- 清空某一版本某条路段上的区段划分 -->
+		<action name="clearQdhfb" class="qdhfbController" method="clearQdhfb"></action>
+		<!-- 查询区段划分的信息 -->
+		<action name="queryQdhfb" class="qdhfbController" method="queryQdhfb"></action>
+		<!-- 区段划分用，获取图表需要的数据 -->
+		<action name="getHighChartData" class="qdhfbController" method="getHighChartData"></action>
+		<!-- 区段划分用，查询版本信息以及区段划分信息 -->
+		<action name="getBb" class="qdhfbController" method="getBb"></action>
+		<!-- 根据路况调查版本,区段划分版本，路线编码，起止桩号获取病害分类统计表内容 -->
+		<action name="getBhfl" class="qdhfbController" method="getBhfl"></action>
+		<!-- 导出区段划分信息 -->
+		<action name="exportQdhf" class="qdhfbController" method="exportQdhf">
+			<result>/page/lkpd/qyqdhf/exportQdhf.jsp</result>
+		</action>
+	</package>
+</struts>

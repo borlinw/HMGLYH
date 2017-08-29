@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20141222" releaseVersion="7.1.1">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<DSName>
+<![CDATA[]]></DSName>
+<ColumnNames>
+<![CDATA[LDID,,.,,LXCODE,,.,,SZHH,,.,,EZHH,,.,,CD,,.,,LMKD,,.,,BBID,,.,,LMLX,,.,,ISGS,,.,,FX,,.,,QMNAME,,.,,LXNAME,,.,,KEY,,.,,VALUE]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.math.BigDecimal,java.lang.String,java.math.BigDecimal,java.math.BigDecimal,java.math.BigDecimal,java.math.BigDecimal,java.math.BigDecimal,java.math.BigDecimal,java.math.BigDecimal,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[XdmXn,t/A7fB#rT?F\egceJmPDKP#p"9h(*&JlY4J/a!(JuHmQqD-du]AS.(t7_,KO+Q2#8N5
+Ob1SE+kdM/MbFpX6LZbC(o4Y".3oIK*MdqWHT+s5*0ls6"Uf'lV6_T)A99-]Ad/6\ip&gr:N"
+@rU]A$pm9]ANgm/Q_Sa'Tm;ro*OjT0IVtr]A>$,*^+G&YJ,A]Aj6MJ-J,9&]AG>FgE7AZ@<iKLGd?
+@MG6_=s!4^3]AA:.@"5KIpRU"nGK&rIt&XAn*`DdG2U!kP8r8n-cP8)GS2$Q-ddKi&flfNL<j
+lS&"aSD,2u19+J(t+i^n5;IN#rA;*B;(I#Wq0d=HNT*Jc)jOn`M_.S'+"<UhXbSjWhC8TZ)H
+6jM`;h=+.!mbsYpHU']AOIP%-[^D>.i,OrnF?&mn&]AAc=K4GaQdPNY7oM2oMe_[ec)LEDDG&b
+.,-&5T#&nK^..?OT0\=<;o@IRV2=kWh7e%`FRp8:3;mg5g@Mn4W98*YD2B"7[Wt&5T#Fn^_@
+;3,WSKLnF)?rtbFML,]A1sk7%DM^`*8+@FfM:9qLDpGnY)l-r5s7!cc$K,nL;d?NP3I\qK[D-
+('l4bXmFI790^G3m^Zs"8='%&oX7s,f-"`?qqWa.C)QRd=HNT*Jc)jOa,V[,RNVo"`r+":6A
+NXM[m[hkWh7eNl9\L,"XI90:7q-F,E)"=`bdX6jM^CF<o^$'hP#@?8/;;&JA4mYin>7M%7If
+kWo'O9gt4Q:0oV%%H\@--*ZUbi`YnhnLQ^6DjuV0_48/G:)_>*Z:\NPJTqeJLaUT4GhZ1C$0
+L:PF4+GkO]A;I@%`FRp5Wjm``7q.58MFd1R$._qNiWjqF<I/C#NA<s,i0.clf%f@2esc'8A_[
+r5Wjl5`09CU]A_,En50I9)AaQfD.9@9*LaUT$GS2$R[m&!`BA)UWXF6BZjiX;"nK^.,:SK*(e
+n8.^/:2f2[Eilh>Zl.kSjWhC8TZ67qCG:3AZsFcp0!E?.uOnUPNY7oM2oMYT4R8nm.FN450K
+(/A^Q'R&flcUdBCOX&Aq/5AZsFcp/qli.uf!,SjpI/:ST0)en8.^/:2f2[EnE&LaUT$GS2$Q
+-de'$la&-jQG#K*g1P\"`09CM4GaQdPNYQMoi[SE.peiZmB^hoLaUT$GS2$Q-de'$la,X@qQ
++A&PnXg+U''p23Y5)]A,Os>t7Ja*1I9*`$8re]ATd=HNT*Jc)jOa-2u,(3M)4tG?"V*r7ckWh7
+e%`FRp8A+UuOZk:%T,$b";Bt0mF<I/C#NA<s,i8C!<'>,7c>Cf,-IcOW]AIMp53s8djG6k\fm
+LXIhl^X[Op:othN/#DhFARnN$$?H^'']AmE,LdUh6BX33OdIb-9G`]AQ&m-s:kgu0:U0m5!d?4
+4qr?a7)]AU1;idj;;3@*sOM&flcUd?44qD'^oB]AU1;idj=QM@*sOM&flcUd=M(?^7k17R2=?6
+pdu<)1U-)pi`YnhnLQ^6DsO/B0jVJ[/fN1rZ=[LlJTqeJLaUT4GZu7i4hR/b)UgRLAmj#;GS
+2$Q-de'$>9DCka/tW/'f7$R"83O"ln_.^.q"A;pV7c"/u,!o"Mau)\(VXeZ+icK6l&#:&`>F
+3,J[kE8"e&02,fcW8+j;2<OWu+oVNbY_%i'q^cmU8`7p`[lHOY0NdBJrA.QVQ"7[Wt&5T#Fn
+[<&0ZIl,4cfqKJ2/6[T^nLr$,WZK4U*K3ZEE*(OH3%;/TPJ)G^nLr$,WZK4U*K3ZEOG+P.t)
+oYG;Q!8'BE.*s4edU)Rr/MD/b8\90#5.`s0aK[U.>0?!jCk,&8:kOR#O_&%TCgndomlk>sq%
+GZ8VA;0Cnr,J,'6*F&]A'%fDOS8Gr8uE9_G,:GgI[n@>&CNsW;B8*mI8J8='Q!Oolc!\U>K5N
+R'9_G&e%X.^uOs#stj7eUrb+kN&I*ccZXj<<_bcDQl-W1(2iWk+p>Ol[UA%^(@N#Q@;:+MQN
+,[cubQW1'lf>3+Ec(B%E!Mgd7L77Z?S.GNpghn7j"C&6%lO]A<!O%`FRp5Wjm``7n1uaTePd)
+j$p9OO1k/70hgDF<I/C8)e@nX'<@$D*X,P?]A49*=EG[W6jM^CF<H%&D^a:h1iEKEF9Br8hg_
+rqfA]As*C[ir:&q@WhjSPh:D*XP=e'oSR+Vl)S-ddKi&flfnhb^WFB\kCD1u38\aSp`Z#NA<s
++J(tkipDL_9nKs%6/=Ar>@c:"U''p23Y5)]A,OtJKSL3aZ]AO.gT)U9ptZRe-K:SIs]A,WZQV/%
+d3Wf"F7_g1NQHXt2UF:SIs]A,WZQV]A=Y5$f4SCd/@>1bd=HNT*Jc)jOa,Udl,(#YI<KG-H_an
+LF<I/C#NA<s,i2Qf?2CXLIFbgPHDFeKF<I/C#NA<s+F`#oW(Wb*YKsfR=c\dtMgd7L7DBVaU
+*K3ZB3kA8H[XJQc[)Bl=`bdX6jM^CF<o`>X@o1.YKsfR=c\dtM[m[hkWh7eNl5.oFm67#oi]A
+m1l]AH4!d=HNT*Jc)jOa-2u/q)<a53pp84]A8F63Y5)]A"7[Wt&oW3LV9ca)B3kD98'7)c#NA<s
++J(tkiiUP<o\&a1XD=Gf8@c%i5Wjl5`09CU]A_0r;Na(pU7_ad;m`0i^%R"6g,JY$J7t>qoN^
+/pccP\\?`1N1#JUR\o?__*T]A*.C)E#Hk3i%gZEct->"%127W"n^/l*g+tSM[ln?6jNEWF<LS
+\\E4q84hQ:d)UK_7>%#a]A`O"d[i`U@KhE#OF5S#N@LBdC,X;4o[+J(t+i^n5;hE#OF5S#N@L
+BdC,X;4o[+J(t+i^n5;hE#OF5S#N@LBdC,I,i,="7[Wt&5T#Fn^_\ITAEm>O5nn6=Y6lA5Wj
+l5`09CU]AQN"kJ0&#^%h7_7=Y6lA5Wjl5`09CU]AQN"kJ0&#^%h7_7=Y6lA5Wjl5`09CUr#'Ab
+d*iBdT`I;$Ws'7ZLaUT$GS2$R[n*!7GX)%qg<28bZ7J$J:SIs]A,WZQVI5[qJVUoHZqeSaEPs
+kr;8TZ)H7)'M0c]A;k5dV%%pZ`/@2"6E.M?]A(c/0?)E(8A+WKPWkRCT2"^Z=X2otF<I/C#NA<
+s,i8B68tSh]Ac_gEhC_?1_3Y5)]A"7[Wt&oW1VV9c$jB2e\Dp5!r+*Jc)jJTqeJM75[<dV%%pZ
+`/@27moIr%`FRp5Wjm``*8j.l*KXIg!i3DI&nlY%`FRp5Wjm``*8ku-_aA>c]A6==SLYnU6jM
+^CF<I/C8)gYsVY&R4qJ9o=Xa<GuM%7IfkWh7eNl5.o/Npa1>M<^?7DtDR5Wjl5`09CU]A_0s@
+5$M?c/a]Am0,N;::+J(t+i^n57rqu!A-%3575$Q`R.oNN$qR(P`rE;=ANl5.o/a9V'p"@bW>E
+Nr;d=HNT*Jc)jOa-2u-%3575$Q`R.oNN$3Y5)]A"7[Wt&oW3,UsG@YB1r,<7EUla#NA<s+J(t
+kiiUOmo\&g3Ch]AND8@c%i5Wjl5`09CU]A_0s@5$M?c/a]AkZ.9@9*LaUT$GS2$R[m"$EB?TVIV
+1#crjiX;"nK^.,:SK*(en7(TXLm(s9DWIS8OP[t%`FRp5Wjm``;eG%6J`6Nch:Eg5#SO73Y5
+)]A"7[Z5L%p,u~
+]]></RowData>
+</TableData>
+</TableDataMap>
+<ReportExportAttr>
+<ExcelExportAttr hideRow="false"/>
+<PDFExportAttr/>
+<HTMLExportAttr/>
+<WordExportAttr/>
+</ReportExportAttr>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[3771900,3200400,0,0,0,0,1943100,1943100,1905000,1790700,1905000,1790700,1790700,1866900,1905000,1943100,1790700,1866900,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="18" s="0">
+<O>
+<![CDATA[四项指数坏调查表]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1" s="0">
+<O>
+<![CDATA[路线]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="1" cs="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LXCODE"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="2" s="0">
+<O>
+<![CDATA[桩号]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="2" s="0">
+<O>
+<![CDATA[类型]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="2" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="2" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="2" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="2" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="2" s="0">
+<O>
+<![CDATA[检查点1]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="2" s="0">
+<O>
+<![CDATA[检查点2]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="2" s="0">
+<O>
+<![CDATA[检查点3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="2" s="0">
+<O>
+<![CDATA[检查点4]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="2" s="0">
+<O>
+<![CDATA[检查点5]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="2" s="0">
+<O>
+<![CDATA[检查点6]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="2" s="0">
+<O>
+<![CDATA[检查点7]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="2" s="0">
+<O>
+<![CDATA[检查点8]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="2" s="0">
+<O>
+<![CDATA[检查点9]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="2" s="0">
+<O>
+<![CDATA[检查点10]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="2" s="0">
+<O>
+<![CDATA[值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="2" s="0">
+<O>
+<![CDATA[平均值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QMNAME"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="1" r="3" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="VALUE"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LDID"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="KEY"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="4" r="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LMLX"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ISGS"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="3" s="1">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr allowNegative="false">
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="7" r="3" s="1">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr allowNegative="false">
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="8" r="3" s="1">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr allowNegative="false">
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="9" r="3" s="1">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr allowNegative="false">
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="10" r="3" s="1">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr allowNegative="false">
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="11" r="3" s="1">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr allowNegative="false">
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="12" r="3" s="1">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr allowNegative="false">
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="13" r="3" s="1">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr allowNegative="false">
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="14" r="3" s="1">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr allowNegative="false">
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="15" r="3" s="1">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr allowNegative="false">
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="16" r="3" s="1">
+<O t="Formula" class="Formula">
+<Attributes reserveExecute="true">
+<![CDATA[=IF(OR(D4="0403",D4="0404"),"",IF(D4 = "0401", ROUND((100 / (1 + 0.026 * EXP(0.65 * R4))), 2), ROUND((100 - 2 * R4), 2)))]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr allowNegative="false">
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0" leftParentDefault="false" left="R4"/>
+</C>
+<C c="17" r="3" s="1">
+<O t="Formula" class="Formula">
+<Attributes reserveExecute="true">
+<![CDATA[=IF(OR(D4="0401",D4="0402"),SUM(G4:P4) / COUNT(G4:P4),"")]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr allowNegative="false">
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="18" r="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="hmglyh"/>
+<DMLConfig class="com.fr.write.config.DeleteConfig">
+<Table schema="hmglyh" name="JCPD_LMJCB"/>
+<ColumnConfig name="BBID" isKey="true" skipUnmodified="false">
+<Parameter>
+<Attributes name="bbid"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</ColumnConfig>
+<ColumnConfig name="LDID" isKey="true" skipUnmodified="false">
+<ColumnRow column="2" row="3"/>
+</ColumnConfig>
+<Condition class="com.fr.data.condition.ListCondition"/>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL2">
+<Attributes dsName="hmglyh"/>
+<DMLConfig class="com.fr.write.config.InsertConfig">
+<Table schema="" name="JCPD_LMJCB"/>
+<ColumnConfig name="JCID" isKey="true" skipUnmodified="false">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=UUID()]]></Attributes>
+</O>
+</ColumnConfig>
+<ColumnConfig name="BBID" isKey="true" skipUnmodified="false">
+<Parameter>
+<Attributes name="bbid"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</ColumnConfig>
+<ColumnConfig name="LDID" isKey="true" skipUnmodified="false">
+<ColumnRow column="2" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="JCLX" isKey="true" skipUnmodified="false">
+<ColumnRow column="3" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="JCD1" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="JCD2" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="JCD3" isKey="false" skipUnmodified="false">
+<ColumnRow column="8" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="JCD4" isKey="false" skipUnmodified="false">
+<ColumnRow column="9" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="JCD5" isKey="false" skipUnmodified="false">
+<ColumnRow column="10" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="JCD6" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="JCD7" isKey="false" skipUnmodified="false">
+<ColumnRow column="12" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="JCD8" isKey="false" skipUnmodified="false">
+<ColumnRow column="13" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="JCD9" isKey="false" skipUnmodified="false">
+<ColumnRow column="14" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="JCD10" isKey="false" skipUnmodified="false">
+<ColumnRow column="15" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="ZHI" isKey="false" skipUnmodified="false">
+<ColumnRow column="16" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="PJZ" isKey="false" skipUnmodified="false">
+<ColumnRow column="17" row="3"/>
+</ColumnConfig>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[AND(F4=1,OR(E4=1,AND(E4=2,D4!="0404")))]]></Formula>
+</Condition>
+</JoinCondition>
+<JoinCondition join="1">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[AND(F4=0,D4="0401")]]></Formula>
+</Condition>
+</JoinCondition>
+</Condition>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="HBB"/>
+<PreviewType PreviewType="1"/>
+</WorkBook>

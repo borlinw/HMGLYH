@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.gis.jichusj.luxian.dao.LdmxbMapper" >
+	<select id="getMxb" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Ldmxb" resultType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Ldmxb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+				SELECT * FROM LUDUANJBQKMXB
+				<where>
+					<!-- 路线编码 -->
+			 		<if test="roadcode != null and roadcode != '' ">
+			 			and roadcode = #{roadcode}
+			 		</if>
+			 		<if test=" spos != null and spos != '' ">
+			 			and spos  <![CDATA[ >= ]]> #{spos}
+			 		</if>
+			 		<if test=" epos != null and epos != '' ">
+			 			and epos  <![CDATA[ <=  ]]> #{epos}
+			 		</if>
+			 		<if test=" jsdj != null and jsdj != '' ">
+			 			and jsdj  in (select * from table(fn_split(#{jsdj},',')))
+			 		</if>
+				</where>
+		) TEMP
+		<if test="page != null and page != ''">
+		  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+		</if>)
+	    <where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	<select id="getMxbCount" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Ldmxb" resultType="int">
+		SELECT COUNT(*) FROM LUDUANJBQKMXB
+		<where>
+			<!-- 路线编码 -->
+	 		<if test="roadcode != null and roadcode != '' ">
+	 			and roadcode = #{roadcode}
+	 		</if>
+	 		<if test=" spos != null and spos != '' ">
+	 			and spos  <![CDATA[ >= ]]> #{spos}
+	 		</if>
+	 		<if test=" epos != null and epos != '' ">
+	 			and epos  <![CDATA[ <=  ]]> #{epos}
+	 		</if>
+	 		<if test=" jsdj != null and jsdj != '' ">
+	 			and jsdj  in (select * from table(fn_split(#{jsdj},',')))
+	 		</if>
+		</where>
+	</select>
+</mapper>

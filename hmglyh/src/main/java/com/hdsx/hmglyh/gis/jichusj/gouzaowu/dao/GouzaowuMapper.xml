@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.GouzaowuMapper" >
+  <cache readOnly="true"></cache>
+  <resultMap id="QiaoliangResultMap" type="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qiaoliang" >
+    <result column="ROADCODE" property="roadcode" jdbcType="OTHER" />
+    <result column="CODE" property="code" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="NAME" property="name" jdbcType="OTHER" />
+    <result column="YHZH" property="yhzh" jdbcType="OTHER" />
+    <result column="POS" property="pos" jdbcType="OTHER" />
+    <result column="KYDWLX" property="kydwlx" jdbcType="OTHER" />
+    <result column="KYDWMC" property="kydwmc" jdbcType="OTHER" />
+    <result column="KYDWLX2" property="kydwlx2" jdbcType="OTHER" />
+    <result column="KYDWMC2" property="kydwmc2" jdbcType="OTHER" />
+    <result column="SFXZ" property="sfxz" jdbcType="OTHER" />
+    <result column="LXJSDJ" property="lxjsdj" jdbcType="OTHER" />
+    <result column="LDLX" property="ldlx" jdbcType="OTHER" />
+    <result column="JHLB" property="jhlb" jdbcType="OTHER" />
+    <result column="JHND" property="jhnd" jdbcType="OTHER" />
+    <result column="JHWH" property="jhwh" jdbcType="OTHER" />
+    <result column="JHXMWYBM" property="jhxmwybm" jdbcType="OTHER" />
+    <result column="JHXMLXBM" property="jhxmlxbm" jdbcType="OTHER" />
+    <result column="JHXMLXMC" property="jhxmlxmc" jdbcType="OTHER" />
+    <result column="JHXMZH" property="jhxmzh" jdbcType="DECIMAL" />
+    <result column="ZDBM" property="zdbm" jdbcType="OTHER" />
+    <result column="HTLX" property="htlx" jdbcType="OTHER" />
+    <result column="HTJCFS" property="htjcfs" jdbcType="OTHER" />
+    <result column="HTXS" property="htxs" jdbcType="OTHER" />
+    <result column="QLCD" property="qlcd" jdbcType="DECIMAL" />
+    <result column="QLKJFL" property="qlkjfl" jdbcType="OTHER" />
+    <result column="QLKJZC" property="qlkjzc" jdbcType="DECIMAL" />
+    <result column="ZQZK" property="zqzk" jdbcType="DECIMAL" />
+    <result column="ZQKS" property="zqks" jdbcType="DECIMAL" />
+    <result column="KJZH" property="kjzh" jdbcType="OTHER" />
+    <result column="QLGD" property="qlgd" jdbcType="DECIMAL" />
+    <result column="QMQK" property="qmqk" jdbcType="DECIMAL" />
+    <result column="QMJK" property="qmjk" jdbcType="DECIMAL" />
+    <result column="QXJK" property="qxjk" jdbcType="DECIMAL" />
+    <result column="QMPZLX" property="qmpzlx" jdbcType="OTHER" />
+    <result column="QLSBJGCL" property="qlsbjgcl" jdbcType="OTHER" />
+    <result column="SBJG" property="sbjg" jdbcType="OTHER" />
+    <result column="SBJGNB" property="sbjgnb" jdbcType="OTHER" />
+    <result column="QLXZ" property="qlxz" jdbcType="OTHER" />
+    <result column="SJHZ" property="sjhz" jdbcType="OTHER" />
+    <result column="KZDJ" property="kzdj" jdbcType="OTHER" />
+    <result column="THDJ" property="thdj" jdbcType="OTHER" />
+    <result column="QTLX" property="qtlx" jdbcType="OTHER" />
+    <result column="QDLX" property="qdlx" jdbcType="OTHER" />
+    <result column="DTFZSSLX" property="dtfzsslx" jdbcType="OTHER" />
+    <result column="SSFLX" property="ssflx" jdbcType="OTHER" />
+    <result column="ZZLX" property="zzlx" jdbcType="OTHER" />
+    <result column="WPXTZ" property="wpxtz" jdbcType="OTHER" />
+    <result column="RXDK" property="rxdk" jdbcType="DECIMAL" />
+    <result column="JCSJ" property="jcsj" jdbcType="OTHER" />
+    <result column="TCSJ" property="tcsj" jdbcType="OTHER" />
+    <result column="GJSJ" property="gjsj" jdbcType="OTHER" />
+    <result column="JSXZ" property="jsxz" jdbcType="OTHER" />
+    <result column="JSDW" property="jsdw" jdbcType="OTHER" />
+    <result column="SJDW" property="sjdw" jdbcType="OTHER" />
+    <result column="SGDW" property="sgdw" jdbcType="OTHER" />
+    <result column="JLDW" property="jldw" jdbcType="OTHER" />
+    <result column="ZZJ" property="zzj" jdbcType="DECIMAL" />
+    <result column="JSPDDJ" property="jspddj" jdbcType="OTHER" />
+    <result column="PDRQ" property="pdrq" jdbcType="OTHER" />
+    <result column="ZJDQJCRQ" property="zjdqjcrq" jdbcType="OTHER" />
+    <result column="ZYBHWZ" property="zybhwz" jdbcType="OTHER" />
+    <result column="BHMS" property="bhms" jdbcType="OTHER" />
+    <result column="YCQDJTGZCS" property="ycqdjtgzcs" jdbcType="OTHER" />
+    <result column="BHGZBW" property="bhgzbw" jdbcType="OTHER" />
+    <result column="GZGCXZ" property="gzgcxz" jdbcType="OTHER" />
+    <result column="GZWGRQ" property="gzwgrq" jdbcType="OTHER" />
+    <result column="SFBBZXM" property="sfbbzxm" jdbcType="OTHER" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="OTHER" />
+    <result column="GYDWXZ" property="gydwxz" jdbcType="OTHER" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="OTHER" />
+    <result column="GYDWMC" property="gydwmc" jdbcType="OTHER" />
+    <result column="JGDWMC" property="jgdwmc" jdbcType="OTHER" />
+    <result column="WHNF1" property="whnf1" jdbcType="OTHER" />
+    <result column="KJZH1" property="kjzh1" jdbcType="OTHER" />
+    <result column="TZ1" property="tz1" jdbcType="DECIMAL" />
+    <result column="WHNF2" property="whnf2" jdbcType="OTHER" />
+    <result column="KJZH2" property="kjzh2" jdbcType="OTHER" />
+    <result column="TZ2" property="tz2" jdbcType="DECIMAL" />
+    <result column="WHNF3" property="whnf3" jdbcType="OTHER" />
+    <result column="KJZH3" property="kjzh3" jdbcType="OTHER" />
+    <result column="TZ3" property="tz3" jdbcType="DECIMAL" />
+    <result column="WHNF4" property="whnf4" jdbcType="OTHER" />
+    <result column="KJZH4" property="kjzh4" jdbcType="OTHER" />
+    <result column="TZ4" property="tz4" jdbcType="DECIMAL" />
+    <result column="WHNF5" property="whnf5" jdbcType="OTHER" />
+    <result column="KJZH5" property="kjzh5" jdbcType="OTHER" />
+    <result column="TZ5" property="tz5" jdbcType="DECIMAL" />
+    <result column="BGYY" property="bgyy" jdbcType="OTHER" />
+    <result column="BGSJ" property="bgsj" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="DSMC" property="dsmc" jdbcType="OTHER" />
+    <result column="QXMC" property="qxmc" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+    <result column="ID" property="id" jdbcType="OTHER" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+    <result column="ROADNAME" property="roadname" jdbcType="OTHER" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="ROADPOS" property="roadpos" jdbcType="DECIMAL" />
+    <result column="ROADPOS_" property="roadpos" jdbcType="DECIMAL" />
+    <result column="O_ID" property="oId" jdbcType="OTHER" />
+    <result column="DSFBM" property="dsfbm" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <sql id="Qiaoliang_Columns_List">
+  	roadcode,code,xzqh,name,pos,kydwlx,kydwmc,sfxz,lxjsdj,ldlx,htlx,qlcd,qlkjfl,
+       zqzk,kjzh,qlgd,qmqk,qmjk,qxjk,qlsbjgcl,sbjgnb,qlxz,sjhz,kzdj,thdj,qtlx,qdlx,dtfzsslx,rxdk,jcsj,tcsj,jsdw,sjdw,
+       sgdw,jldw,zzj,jspddj,pdrq,tbdwbm,gydwbm,gydwmc,jgdwmc,dsmc,qxmc,ptx,pty
+  </sql>
+  
+  <sql id="Qiaoliang_Where">
+  	 <where>
+			  	<!-- 路线 -->
+			  	<if test="roadcode != null and roadcode != '' ">
+			  		and roadcode = #{roadcode}
+			  	</if>
+			  	<!-- 桥梁编码 -->
+			  	<if test="code != null and code != '' ">
+			  		and code = #{code}
+			  	</if>
+			  	<!-- 行政区划 编码 -->
+			  	<if test="xzqh != null and xzqh != '' ">
+			  		and xzqh = #{xzqh}
+			  	</if>
+			  	
+			  	<!-- 桥梁名称 -->
+			  	<if test="name != null and name != '' ">
+			  		and name like '%' || #{name} || '%'
+			  	</if>
+			  	
+			  	<if test="startzh != null and startzh != ''">
+			  		and #{startzh}  <![CDATA[ <= ]]> POS 
+			  	</if>
+			  	
+			  	<if test="endzh != null and endzh != '' " >
+			  		and POS <![CDATA[ <= ]]> #{endzh}
+			  	</if>
+			  	
+			  	<if test="qlkjfl != null and qlkjfl != '' ">
+			  		and qlkjfl like '%' || #{qlkjfl} || '%'
+			  	</if>
+			  	
+			  	<if test="qlxz != null and qlxz != '' ">
+			  		and qlxz like '%' || #{qlxz} || '%'
+			  	</if>
+			  	
+			  </where>
+			  order by pos
+  </sql>
+  
+  <resultMap id="SuidaoResultMap" type="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Suidao" >
+    <result column="ROADCODE" property="roadcode" jdbcType="OTHER" />
+    <result column="CODE" property="code" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="ROADNAME" property="roadname" jdbcType="OTHER" />
+    <result column="NAME" property="name" jdbcType="OTHER" />
+    <result column="POS" property="pos" jdbcType="OTHER" />
+    <result column="SFFLSSD" property="sfflssd" jdbcType="OTHER" />
+    <result column="FLSSDSXXFX" property="flssdsxxfx" jdbcType="OTHER" />
+    <result column="SFSXSD" property="sfsxsd" jdbcType="OTHER" />
+    <result column="JHLB" property="jhlb" jdbcType="OTHER" />
+    <result column="JHND" property="jhnd" jdbcType="OTHER" />
+    <result column="JHWH" property="jhwh" jdbcType="OTHER" />
+    <result column="JHXMWYBM" property="jhxmwybm" jdbcType="OTHER" />
+    <result column="JHXMLXBM" property="jhxmlxbm" jdbcType="OTHER" />
+    <result column="JHXMLXMC" property="jhxmlxmc" jdbcType="OTHER" />
+    <result column="JHXMZH" property="jhxmzh" jdbcType="DECIMAL" />
+    <result column="LDLX" property="ldlx" jdbcType="OTHER" />
+    <result column="ZDBM" property="zdbm" jdbcType="OTHER" />
+    <result column="SDCD" property="sdcd" jdbcType="DECIMAL" />
+    <result column="SDQK" property="sdqk" jdbcType="DECIMAL" />
+    <result column="SDJK" property="sdjk" jdbcType="DECIMAL" />
+    <result column="SDJG" property="sdjg" jdbcType="DECIMAL" />
+    <result column="SDFL" property="sdfl" jdbcType="OTHER" />
+    <result column="SDZM" property="sdzm" jdbcType="OTHER" />
+    <result column="SDTF" property="sdtf" jdbcType="OTHER" />
+    <result column="LMMCLX" property="lmmclx" jdbcType="OTHER" />
+    <result column="RXDK" property="rxdk" jdbcType="DECIMAL" />
+    <result column="DKXS" property="dkxs" jdbcType="OTHER" />
+    <result column="AQTDS" property="aqtds" jdbcType="DECIMAL" />
+    <result column="DZSB" property="dzsb" jdbcType="OTHER" />
+    <result column="DMXS" property="dmxs" jdbcType="OTHER" />
+    <result column="PSLX" property="pslx" jdbcType="OTHER" />
+    <result column="QCCL" property="qccl" jdbcType="OTHER" />
+    <result column="XFSS" property="xfss" jdbcType="OTHER" />
+    <result column="JCSJ" property="jcsj" jdbcType="OTHER" />
+    <result column="TCSJ" property="tcsj" jdbcType="OTHER" />
+    <result column="GJRQ" property="gjrq" jdbcType="OTHER" />
+    <result column="JSXZ" property="jsxz" jdbcType="OTHER" />
+    <result column="JSDW" property="jsdw" jdbcType="OTHER" />
+    <result column="SJDW" property="sjdw" jdbcType="OTHER" />
+    <result column="SGDW" property="sgdw" jdbcType="OTHER" />
+    <result column="JLDW" property="jldw" jdbcType="OTHER" />
+    <result column="WHNF1" property="whnf1" jdbcType="OTHER" />
+    <result column="TZ1" property="tz1" jdbcType="DECIMAL" />
+    <result column="WHNF2" property="whnf2" jdbcType="OTHER" />
+    <result column="TZ2" property="tz2" jdbcType="DECIMAL" />
+    <result column="WHNF3" property="whnf3" jdbcType="OTHER" />
+    <result column="TZ3" property="tz3" jdbcType="DECIMAL" />
+    <result column="WHNF4" property="whnf4" jdbcType="OTHER" />
+    <result column="TZ4" property="tz4" jdbcType="DECIMAL" />
+    <result column="WHNF5" property="whnf5" jdbcType="OTHER" />
+    <result column="TZ5" property="tz5" jdbcType="DECIMAL" />
+    <result column="PDRQ" property="pdrq" jdbcType="OTHER" />
+    <result column="JSPDDJ" property="jspddj" jdbcType="OTHER" />
+    <result column="ZYBHWZ" property="zybhwz" jdbcType="OTHER" />
+    <result column="BHMS" property="bhms" jdbcType="OTHER" />
+    <result column="BHGZBW" property="bhgzbw" jdbcType="OTHER" />
+    <result column="GZGCXZ" property="gzgcxz" jdbcType="OTHER" />
+    <result column="GZWGRQ" property="gzwgrq" jdbcType="OTHER" />
+    <result column="JGDWMC" property="jgdwmc" jdbcType="OTHER" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="OTHER" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="OTHER" />
+    <result column="GYDWMC" property="gydwmc" jdbcType="OTHER" />
+    <result column="GYDWXZ" property="gydwxz" jdbcType="OTHER" />
+    <result column="BGYY" property="bgyy" jdbcType="OTHER" />
+    <result column="BGSJ" property="bgsj" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="DSMC" property="dsmc" jdbcType="OTHER" />
+    <result column="QXMC" property="qxmc" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+    <result column="ID" property="id" jdbcType="OTHER" />
+    <result column="O_ID" property="oId" jdbcType="OTHER" />
+    <result column="ROADPOS_" property="roadpos" jdbcType="DECIMAL" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+    <result column="ROADPOS" property="roadpos" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id = "Suidao_Columns_List">
+  	   roadcode,code,xzqh,roadname,name,pos,sfflssd,sfsxsd,jhlb,jhnd,
+       jhwh,jhxmwybm,jhxmlxmc,jhxmzh,ldlx,zdbm,sdcd,sdqk,sdjk,sdjg,sdfl,sdzm,sdtf,
+       lmmclx,rxdk,dkxs,pslx,qccl,jcsj,tcsj,gjrq,jsxz,jsdw,sjdw,sgdw,jldw,whnf1,
+       tz1,whnf2,tz2,whnf3,tz3,whnf4,tz4,whnf5,tz5,pdrq,jspddj,zybhwz,bhms,bhgzbw,gzgcxz,gzwgrq,jgdwmc,
+       tbdwbm,gydwbm,gydwmc,gydwxz,bgyy,bgsj,bz,dsmc,qxmc,ptx,pty,sfkbj,id
+  </sql>
+  <sql id = "Suidao_Where">
+  	<where>
+		<if test="roadcode != null and roadcode != '' ">
+			and roadcode = #{roadcode}
+		</if>
+		<if test="code != null and code != '' ">
+			and code = #{code}
+		</if>
+		<if test="xzqh != null and xzqh != '' ">
+			and xzqh = #{xzqh}
+		</if>
+		<if test="name != null and name != '' ">
+			and name like '%' || #{name} || '%'
+		</if>
+		<if test="sdfl != null and sdfl != '' ">
+			and sdfl like '%' || #{sdfl} || '%'
+		</if> 
+		
+		<if test="startzh != null and startzh != '' ">
+		  		and #{startzh}  <![CDATA[ <= ]]> POS
+		</if>
+		<if test="endzh != null and endzh != '' ">
+				and POS <![CDATA[ <= ]]> #{endzh}
+		</if>
+	</where>  
+	order by to_number(pos)
+  </sql>
+  <resultMap id="HandongResultMap" type="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Handong" >
+    <result column="ROADCODE" property="roadcode" jdbcType="OTHER" />
+    <result column="CODE" property="code" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="ROADNAME" property="roadname" jdbcType="OTHER" />
+    <result column="NAME" property="name" jdbcType="OTHER" />
+    <result column="POS" property="pos" jdbcType="OTHER" />
+    <result column="HDLX" property="hdlx" jdbcType="OTHER" />
+    <result column="LDLX" property="ldlx" jdbcType="OTHER" />
+    <result column="ZDBM" property="zdbm" jdbcType="OTHER" />
+    <result column="HDKJ" property="hdkj" jdbcType="DECIMAL" />
+    <result column="HDJG" property="hdjg" jdbcType="DECIMAL" />
+    <result column="HDCD" property="hdcd" jdbcType="DECIMAL" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="OTHER" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="OTHER" />
+    <result column="GYDWMC" property="gydwmc" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="DSMC" property="dsmc" jdbcType="OTHER" />
+    <result column="QXMC" property="qxmc" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="ROADPOS" property="roadpos" jdbcType="DECIMAL" />
+    <result column="ID" property="id" jdbcType="OTHER" />
+    <result column="O_ID" property="oId" jdbcType="OTHER" />
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+    <result column="ROADPOS_" property="roadpos" jdbcType="DECIMAL" />
+    <result column="JSZK" property="jszk" jdbcType="OTHER" />
+    <result column="KS" property="ks" jdbcType="OTHER" />
+    <result column="JK" property="jk" jdbcType="OTHER" />
+    <result column="KJ" property="kj" jdbcType="OTHER" />
+    <result column="HDQC" property="hdqc" jdbcType="OTHER" />
+    <result column="JKXS" property="jkxs" jdbcType="OTHER" />
+    <result column="CKXS" property="ckxs" jdbcType="OTHER" />
+  </resultMap>
+  <sql id="Handong_Columns_List">
+  	ROADCODE,CODE,XZQH,ROADNAME,NAME,POS,HDLX,LDLX,ZDBM,HDKJ,HDJG,HDCD,TBDWBM,
+  	GYDWBM,GYDWMC,BZ,DSMC,QXMC,PTX,PTY,Z_ID,ROADPOS,ID,O_ID,SFKBJ,ROADPOS_,JSZK,KS,JK,KJ,HDQC,JKXS,CKXS
+  </sql>
+  <sql id="Handong_Where">
+  	<where>
+ 	<if test="roadcode != null and roadcode != '' " >
+ 		and roadcode = #{roadcode}
+ 	</if>
+ 	<if test="code != null and code != '' ">
+ 		and code = #{code}
+ 	</if>
+ 	<if test="xzqh != null and xzqh != '' ">
+ 		and xzqh = #{xzqh}
+ 	</if>
+ 	<if test = "name != null and name != '' ">
+ 		and name like '%' || #{name} || '%'
+ 	</if>
+ 	<if test = "hdlx != null and hdlx != '' ">
+ 		and hdlx like '%' || #{hdlx} || '%'
+ 	</if>
+ 	<if test="startzh != null and startzh != '' ">
+		and #{startzh}  <![CDATA[ <= ]]> POS 
+    </if>
+    <if test=" endzh != null and endzh != '' ">
+		and POS <![CDATA[ <= ]]> #{endzh}
+    </if>
+    <if test="dsmc != null and dsmc != '' ">
+    	and dsmc like '%' || #{dsmc} || '%'
+    </if>
+ 	</where>
+ 	order by pos
+  </sql>
+  <resultMap id="LujifhResultMap" type="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Lujifh" >
+    <id column="ID" property="id" jdbcType="OTHER" />
+    <result column="ROADCODE" property="roadcode" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="ROADNAME" property="roadname" jdbcType="OTHER" />
+    <result column="SPOS" property="spos" jdbcType="OTHER" />
+    <result column="EPOS" property="epos" jdbcType="OTHER" />
+    <result column="FHLX" property="fhlx" jdbcType="OTHER" />
+    <result column="GYDW" property="gydw" jdbcType="OTHER" />
+    <result column="SZRQ" property="szrq" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="FX" property="fx" jdbcType="OTHER" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+  </resultMap>
+  
+   <sql id="Lujifh_Columns_List" >
+    ID, ROADCODE, XZQH, ROADNAME, SPOS, EPOS, FHLX, GYDW, SZRQ, BZ,PTX,PTY,FX
+  </sql>
+  
+  <sql id="Lujifh_Where">
+  	<where>
+  		<if test="roadcode != null and roadcode != '' ">
+  			and roadcode = #{roadcode}
+  		</if>
+  		<if test="xzqh != null and xzqh != '' ">
+  			and xzqh = #{xzqh}
+  		</if>
+  		<if test = "fhlx != null and fhlx != ''">
+  			and fhlx = #{fhlx}
+  		</if>
+  		<if test="startzh != null and startzh != ''
+		  	">
+		  		and #{startzh}  <![CDATA[ <= ]]> SPOS 
+		 </if>
+		 <if test="endzh != null and endzh != ''
+		  	">
+		  		and #{endzh}  <![CDATA[ >= ]]> EPOS 
+		 </if>
+  	</where>
+  	order by spos
+  </sql>
+  
+  <select id="qiaoliangList" resultMap="QiaoliangResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qiaoliang">
+  	SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+			  select 
+			  <include refid="Qiaoliang_Columns_List"/> 
+			  from Qiaoliang 
+			  <include refid="Qiaoliang_Where"/>			 
+	) TEMP
+	<if test="page != null and page != ''">
+	  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+	</if>)
+    <where>
+	   <if test="page != null and page != ''">
+	      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+		</if>
+	</where>
+  </select>
+  
+  <select id="qiaoliangCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qiaoliang">
+  		select count(*) from qiaoliang  <include refid="Qiaoliang_Where"/>
+  </select>
+   
+  <select id="suidaoList" resultMap="SuidaoResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Suidao">
+	  	SELECT * FROM(
+			    SELECT ROWNUM RN,TEMP.* FROM(
+				select 
+				<include refid="Suidao_Columns_List"/>
+				from SUIDAO
+				<include refid="Suidao_Where"/>
+		) TEMP
+		<if test="page != null and page != ''">
+		  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+		</if>)
+	    <where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+  </select>
+  
+  <select id="suidaoCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Suidao">
+  		select count(*) 
+  		from SUIDAO
+  		<include refid="Suidao_Where"/>
+  </select>
+  
+  <select id="handongList" resultMap="HandongResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Handong">
+  		SELECT * FROM(
+			    SELECT ROWNUM RN,TEMP.* FROM(
+			select 
+			<include refid="Handong_Columns_List" />
+			from HANDONG
+			<include refid="Handong_Where"/>				  
+		) TEMP
+		<if test="page != null and page != ''">
+		  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+		</if>)
+	    <where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+  </select>
+  
+  <select id="handongCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Handong">
+  		select count(*) from HANDONG
+  		<include refid="Handong_Where"/>
+  </select>
+  
+  <select id="lujifhList" resultMap="LujifhResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Lujifh">
+  		SELECT * FROM(
+			    SELECT ROWNUM RN,TEMP.* FROM(
+				select 
+				<include refid="Lujifh_Columns_List"/>
+				from LUJIFANGHUGZW
+				<include refid="Lujifh_Where" />
+		) TEMP
+		<if test="page != null and page != ''">
+		  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+		</if>)
+	    <where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+  </select>
+  
+  <select id="lujifhCount" resultType = "int" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Lujifh">
+  		select count(*) from LUJIFANGHUGZW 
+  		<include refid="Lujifh_Where" />
+  </select>
+  
+  <sql id="Chart_Where">
+  	<where>
+  	   <if test=" roadcodes != null ">
+       		and roadcode in
+       		<foreach item="item" index="index" collection="roadcodes"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+       </if>
+       <if test="startzh != null and startzh != '' and
+		  			  endzh != null and endzh != ''
+		  	">
+		  		and (#{startzh}  <![CDATA[ <= ]]> POS and POS <![CDATA[ <= ]]> #{endzh})
+		</if>
+  	</where>
+  	
+  </sql>
+  
+  <!-- 桥梁跨径分类 饼形图 -->
+  <select id="qlkjflChart" parameterType="hashmap" resultType="hashmap" >
+  	
+  	 select case when substr(qlkjfl, instr(qlkjfl,'.')+1) != ' '
+		 then substr(qlkjfl, instr(qlkjfl,'.')+1) else N'未分类' end "name", len "value", substr(qlkjfl,0,instr(qlkjfl,'.')-1) ord
+		   from (select distinct qlkjfl, count(*) len
+		           from qiaoliang t
+		           <include refid="Chart_Where" />
+		          group by qlkjfl) temp
+		  order by ord
+ </select>
+ 
+  <!-- 桥梁技术等级 -->
+  <select id="qljsdjChart" parameterType="hashmap" resultType="hashmap" >
+	 select case when
+	   substr(jspddj,  instr(jspddj,'.')+1) !=  ' ' then substr(jspddj,  instr(jspddj,'.')+1) else N'未分类'
+	  end "name", len "value", substr(jspddj,0,instr(jspddj,'.')-1) ord
+	   from (select distinct jspddj, count(*) len
+	           from qiaoliang t
+	            <include refid="Chart_Where" />
+	          group by jspddj) temp
+	  order by ord
+  </select>
+  
+  <!-- 桥梁性质 -->
+  <select id="qlxzChart" parameterType="hashmap" resultType="hashmap" >
+	  select case when
+		  substr(qlxz,  instr(qlxz,'.')+1) !=  ' ' then substr(qlxz,  instr(qlxz,'.')+1) else N'未分类'
+		 end "name", len "value", substr(qlxz,0,instr(qlxz,'.')-1) ord
+		  from (select distinct qlxz, count(*) len
+		          from qiaoliang t
+		           <include refid="Chart_Where" />
+		         group by qlxz) temp
+		 order by ord
+  </select>
+
+  <!-- 隧道按 隧道 分类 统计 -->
+  <select id="sdflChart" parameterType="hashmap" resultType="hashmap" >
+	   select case when
+		   substr(sdfl,  instr(sdfl,'.')+1) !=  ' ' then substr(sdfl,  instr(sdfl,'.')+1) else N'未分类'
+		  end "name", len "value", substr(sdfl,0,instr(sdfl,'.')-1) ord
+		   from (select distinct sdfl, count(*) len
+		           from suidao t
+		            <include refid="Chart_Where" />
+		          group by sdfl) temp
+		  order by ord
+  </select>
+  
+  <!-- 隧道按技术等级统计 -->
+   <select id="sdjsdjChart" parameterType="hashmap" resultType="hashmap" >
+	   select case when
+		   substr(jspddj,  instr(jspddj,'.')+1) !=  ' ' then substr(jspddj,  instr(jspddj,'.')+1) else N'未分类'
+		  end "name", len "value", substr(jspddj,0,instr(jspddj,'.')-1) ord
+		   from (select distinct jspddj, count(*) len
+		           from suidao t
+		           <include refid="Chart_Where" />
+		          group by jspddj) temp
+		  order by ord
+  </select>
+  
+  <!-- 涵洞按 类型统计 -->
+   <select id="hdflChart" parameterType="hashmap" resultType="hashmap" >
+	  select case when
+		   substr(hdlx,  instr(hdlx,'.')+1) !=  ' ' then substr(hdlx,  instr(hdlx,'.')+1) else N'未分类'
+		  end "name", len "value", substr(hdlx,0,instr(hdlx,'.')-1) ord
+		   from (select distinct hdlx, count(*) len
+		           from handong t
+		           <include refid="Chart_Where" />
+		          group by hdlx) temp
+		  order by ord
+  </select>
+  
+  <!-- 涵洞 跨径统计 -->
+  <select id="hdkjflChart" parameterType="hashmap" resultType="hashmap" >
+	  select case when
+	   substr(hdkj,  instr(hdkj,'.')+1) !=  ' ' then substr(hdkj,  instr(hdkj,'.')+1) else '未分类'
+	  end "name", len "value", substr(hdkj,0,instr(hdkj,'.')-1) ord
+	   from (select distinct hdkj, count(*) len
+	           from handong t
+	            <include refid="Chart_Where" />
+	          group by hdkj) temp
+	  order by ord
+  </select>
+  
+  <!-- 路基防护构造物 按照类型统计 -->
+   <select id="ljfhlxChart" parameterType="hashmap" resultType="hashmap" >
+	   select case when
+		   substr(FHLX,  instr(FHLX,'.')+1) !=  ' ' then substr(FHLX,  instr(FHLX,'.')+1) else N'未分类'
+		  end "name", len "value", substr(FHLX,0,instr(FHLX,'.')-1) ord
+		   from (select distinct FHLX, count(*) len
+		           from LUJIFANGHUGZW t
+		            <include refid="Chart_Where" />
+		          group by FHLX) temp
+		  order by ord
+  </select>
+  
+  <sql id="ComboboxWhere">	
+  		<where>
+			<if test="q != null and q != '' ">
+				 name like '%' || #{q} || '%' or code like '%' || #{q} || '%'
+			</if>
+		</where>
+  </sql>
+  
+  <sql id="Combobox_Column_List">
+  	 name text,code value,name textField,code valueField
+  </sql>
+  
+  <!-- 桥梁combobox -->
+  <select id="qlCombobox" parameterType="hashmap" resultType="com.hdsx.hmglyh.gis.util.Combobox">
+		select
+					<include refid="Combobox_Column_List" /> 
+				 from qiaoliang
+					<include refid="ComboboxWhere" />
+  </select>
+  
+   <select id="qlCombobox100" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qiaoliang" resultType="com.hdsx.hmglyh.gis.util.Combobox">
+		select
+			<include refid="Combobox_Column_List" /> 
+				 from qiaoliang
+				 where roadcode = #{roadcode} 
+				 	and abs(pos-#{pos}) &lt; 5
+  </select>
+  
+  <select id="qlComboboxByld" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qiaoliang" resultType="com.hdsx.hmglyh.gis.util.Combobox">
+		select
+			<include refid="Combobox_Column_List" /> 
+				 from qiaoliang
+				 where roadcode = #{roadcode} 
+				 	and #{startzh} &lt;= pos
+				 	and #{endzh} &gt;=pos
+  </select>
+  
+  <!-- 隧道combobox -->
+  <select id="sdCombobox" parameterType="hashmap" resultType="com.hdsx.hmglyh.gis.util.Combobox">
+				select
+					<include refid="Combobox_Column_List" /> 
+				 from SUIDAO
+					<include refid="ComboboxWhere" />
+  </select>
+  
+  <select id="sdCombobox100" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Suidao" resultType="com.hdsx.hmglyh.gis.util.Combobox">
+			select
+				<include refid="Combobox_Column_List" /> 
+			 from suidao
+				 where roadcode = #{roadcode} 
+				 	and abs(pos-#{pos}) &lt; 5
+				 	order by abs(pos-#{pos})
+  </select>
+  
+  <select id="sdComboboxByld" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Suidao" resultType="com.hdsx.hmglyh.gis.util.Combobox">
+			select
+				<include refid="Combobox_Column_List" /> 
+			 from suidao
+				 where roadcode = #{roadcode} 
+				 	and #{startzh} &lt;= pos
+				 	and #{endzh} &gt;=pos
+  </select>
+  
+  <!-- 涵洞combobox -->
+   <select id="hdCombobox" parameterType="hashmap" resultType="com.hdsx.hmglyh.gis.util.Combobox">
+			select
+					<include refid="Combobox_Column_List" /> 
+				 from HANDONG
+					<include refid="ComboboxWhere" />
+  </select>
+  
+  <select id="hdCombobox100" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Handong" resultType="com.hdsx.hmglyh.gis.util.Combobox">
+			select
+					<include refid="Combobox_Column_List" /> 
+				 from handong
+				 where roadcode = #{roadcode} 
+				 	and abs(pos-#{pos}) &lt; 5
+  </select>
+  
+  <select id="hdComboboxByld" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Handong" resultType="com.hdsx.hmglyh.gis.util.Combobox">
+			select
+					<include refid="Combobox_Column_List" /> 
+				 from handong
+				  where roadcode = #{roadcode} 
+				 	and #{startzh} &lt;= pos
+				 	and #{endzh} &gt;=pos
+  </select>
+  
+  <!-- 获取桥梁名称 通过桥梁 编码 -->
+  <select id="getQlname" parameterType="string" resultType="string">
+  	select name from QIAOLIANG where CODE = #{code}
+  </select>
+  <!-- 获取隧道名称 通过隧道编码 -->
+  <select id="getSdname" parameterType="string" resultType="string">
+  	select name from SUIDAO where CODE = #{code}
+  </select>
+  <!-- 获取涵洞名称 通过涵洞编码 -->
+  <select id="getHdname" parameterType="string" resultType="string">
+  	select name from HANDONG where CODE = #{code}
+  </select>
+  
+  <select id="getChartData" parameterType="hashmap" resultType="hashmap">
+  	select substr(nvl(${rowName},'0.未分类'),3) "name",count(*) "value" from ${tableName} ql
+	left join hmglyh.htgl_ldb ld 
+	on ql.roadcode=ld.lxcode and ql.roadpos>=ld.szhh and ld.ezhh>ql.roadpos
+	where ld.bmcode=#{bmCode}
+	group by ${rowName}
+  </select>
+  
+</mapper>

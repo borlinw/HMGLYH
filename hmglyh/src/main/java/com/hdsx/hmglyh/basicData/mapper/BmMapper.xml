@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.basicData.mapper.BmMapper">
+	<!-- 查询根节点 -->
+	<select id="getParent" resultType="com.hdsx.hmglyh.util.Combotree" parameterType="String">
+		SELECT BMCODE AS ID,BMNAME AS TEXT FROM HTGL_BMB
+		WHERE BMCODE = #{bmCode}
+	</select>
+	<!-- 查询某种类型的子节点 -->
+	<select id="getChildren" resultType="com.hdsx.hmglyh.util.Combotree" parameterType="htglBm">
+		SELECT BMCODE AS ID,BMNAME AS TEXT FROM HTGL_BMB
+		WHERE BMCODE LIKE #{bmcode}||'__'  
+		<if test="bmlx != null and bmlx != ''">
+			AND BMLX IN (SELECT COLUMN_VALUE FROM TABLE(FN_SPLIT(#{bmlx},',')))
+		</if>
+		ORDER BY BMCODE
+	</select>
+	<!-- 查询巡道记录用，若为管理局则查询分局，若为分局则查询管辖的巡道队 -->
+	<select id="getBmForXd" resultType="com.hdsx.hmglyh.util.Combobox" parameterType="String">
+		SELECT BMCODE AS ID,BMNAME AS TEXT FROM HTGL_BMB T 
+		WHERE BMCODE LIKE #{bmCode}||'__' AND BMLX IN ('0103','0101')
+	</select>
+</mapper>

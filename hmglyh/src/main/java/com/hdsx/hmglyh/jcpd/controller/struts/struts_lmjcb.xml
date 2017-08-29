@@ -1,0 +1,11 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<package name="lmjcb" extends="struts-default" namespace="/lmjcb">
+		<!-- 路面检测查询 -->
+		<action name="getLmjc" class="lmjcbController" method="getLmjc"></action>
+		<!-- 沿用之前的数据 -->
+		<action name="copy" class="lmjcbController" method="copy"></action>
+	</package>
+</struts>

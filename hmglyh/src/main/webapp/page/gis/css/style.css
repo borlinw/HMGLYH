@@ -1,0 +1,569 @@
+html,body {
+	padding:0px;
+	margin:0px;
+	height:100%;
+	width:100%;
+	overflow:hidden;
+}
+*{
+	padding:0px;
+	margin:0px;
+}
+#map {
+	height:100%;
+	width:100%;
+}
+
+
+
+/**
+	右侧工具条
+**/
+.right_menu {
+	width:144px;
+	height: 23px;
+	position: absolute;
+	z-index:998;
+	margin-left:216px; 
+	right:10px;
+	top:10px;
+	display:block;
+	border:#c4c7cc solid 1px;
+}
+.right_menu div:last-child{
+	border-right:none;
+}
+
+.right_menu_top{
+	width:45px;
+	height:20px;
+	background:url('rmimg/img_up.png') no-repeat center center;
+	float:right;
+	clear:both;
+}
+.right_menu_bottom{
+	width:45px;
+	height:20px;
+	background:url('rmimg/img_down.png') no-repeat center center;
+	float:right;
+	clear:both;
+}
+
+.right_menu_container {
+	width:45px;
+	background:url("rmimg/img_middle.png") repeat-y center center;
+	float:right;
+	clear:both;
+}
+
+.right_menu_pingyi{
+	background:url('rmimg/tool_py.png') no-repeat center center;
+}
+.right_menu_fangda{
+	background:url('rmimg/tool_fd.png') no-repeat center center;
+}
+.right_menu_suoxiao{
+	background:url('rmimg/tool_sx.png') no-repeat center center;
+}
+.right_menu_ceju{
+	background:url('rmimg/tool_cj.png') no-repeat center center;
+}
+.right_menu_cemian{
+	background:url('rmimg/img_cemian.png') no-repeat center center;
+}
+.right_menu_quanping{
+	background:url('rmimg/tool_qp.png') no-repeat center center;
+}
+.right_menu_delete{
+	background:url('rmimg/tool_sc.png') no-repeat center center;
+}
+
+.right_menu_con{
+	width: 23px;
+	height: 23px;
+  /* background-color: #EBEBEB; */
+	/*  background-color: #d5eefc;*/
+	/*margin-right: 6px;
+	margin-bottom: 6px;
+	border-radius: 5px;*/
+	float:left;
+	border-right: 1px solid #ecedef;
+	display:inline;
+}
+.right_menu_con:hover{
+	background-color:#e5f4f6;
+}
+.right_menu_con_selected{
+	background-color:#d5eefc;
+}
+.right_menu_split{
+	width:45px;
+	height:1px;
+	background:url('image/split.png') no-repeat center center;
+	float:right;
+	clear:both;
+}
+.buttonsContainer{
+	margin-top:5px;
+	margin-bottom:5px;
+	background-color:#fff;
+	padding-left:10px;
+	border-top:1px dashed #0791a8;
+}
+.buttonsContainer span{
+	color : #0791a8;
+}
+
+
+
+/* menu */
+
+.ddsmoothmenu{
+font: bold 12px Verdana;
+background: #414141; /*background of menu bar (default state)*/
+width: 100%;
+}
+
+.ddsmoothmenu ul{
+z-index:100;
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+/*Top level list items*/
+.ddsmoothmenu ul li{
+position: relative;
+display: inline;
+float: left;
+}
+
+/*Top level menu link items style*/
+.ddsmoothmenu ul li a{
+display: block;
+background: #414141; /*background of menu items (default state)*/
+color: white;
+padding: 8px 10px;
+border-right: 1px solid #778;
+color: #2d2b2b;
+text-decoration: none;
+}
+
+* html .ddsmoothmenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+display: inline-block;
+}
+
+.ddsmoothmenu ul li a:link, .ddsmoothmenu ul li a:visited{
+color: white;
+}
+
+.ddsmoothmenu ul li a.selected{ /*CSS class that's dynamically added to the currently active menu items' LI A element*/
+background: black; 
+color: white;
+}
+
+.ddsmoothmenu ul li a:hover{
+background: black; /*background of menu items during onmouseover (hover state)*/
+color: white;
+}
+	
+/*1st sub level menu*/
+.ddsmoothmenu ul li ul{
+position: absolute;
+left: 0;
+display: none; /*collapse all sub menus to begin with*/
+visibility: hidden;
+}
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.ddsmoothmenu ul li ul li{
+display: list-item;
+float: none;
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.ddsmoothmenu ul li ul li ul{
+top: 0;
+}
+
+/* Sub level menu links style */
+.ddsmoothmenu ul li ul li a{
+font: normal 13px Verdana;
+width: 160px; /*width of sub menus*/
+padding: 5px;
+margin: 0;
+border-top-width: 0;
+border-bottom: 1px solid gray;
+background-color:#fff;
+}
+
+/* Holly Hack for IE \*/
+* html .ddsmoothmenu{height: 1%;} /*Holly Hack for IE7 and below*/
+
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+position: absolute;
+top: 12px;
+right: 7px;
+}
+
+.rightarrowclass{
+position: absolute;
+top: 6px;
+left: 5px;
+}
+
+/* ######### CSS for shadow added to sub menus  ######### */
+
+.ddshadow{
+position: absolute;
+left: 0;
+top: 0;
+width: 0;
+height: 0;
+background: silver;
+}
+
+.toplevelshadow{ /*shadow opacity. Doesn't work in IE*/
+opacity: 0.8;
+}
+
+
+
+.ddsmoothmenu-v ul{
+margin: 0;
+padding: 0;
+width:140px; /* Main Menu Item widths */
+list-style-type: none;
+font-size:16px;
+font-family:"微软雅黑";
+color:#fff;
+/* border-bottom: 1px solid #1785da;
+border-top:1px solid #1785da; */
+}
+
+.ddsmoothmenu-v ul li ul {
+ border-bottom: 1px solid #1785da;
+ border-top:1px solid #1785da;
+}
+ 
+.ddsmoothmenu-v ul li{
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+}
+
+/* Top level menu links style */
+.ddsmoothmenu-v ul li a{
+display: block;
+overflow: auto; /*force hasLayout in IE7 */
+color: white;
+text-decoration: none;
+padding-left:10px;
+border-top: 1px solid #0b6bb2;
+border-right: 1px solid #0b6bb2;
+}
+
+.ddsmoothmenu-v ul li ul li a {
+/*   border-bottom: 1px solid #1785da; */
+  border-left: 1px solid #1785da;
+  /* border-top: 1px solid #1785da; */
+  padding-left:10px;
+}
+
+.ddsmoothmenu-v ul li a:link, .ddsmoothmenu-v ul li a:visited, .ddsmoothmenu-v ul li a:active{
+background: #1785da; /*background of menu items (default state)*/
+background:rgba(23,133,218,0.9);
+color: white;
+}
+
+
+.ddsmoothmenu-v ul li a.selected{ /*CSS class that's dynamically added to the currently active menu items' LI A element*/
+background:#fff; 
+background:rgba(255,255,255,0.9);
+color: #1785da;
+}
+
+.ddsmoothmenu-v ul li a.selected .jichuXX_img_div {
+	background:url("menuimg/jichuXX_hover.png") no-repeat center center;
+}
+.ddsmoothmenu-v ul li a.selected .yanghuSJ_img_div {
+	background:url("menuimg/yanghuSJ_hover.png") no-repeat center center;
+}
+.ddsmoothmenu-v ul li a.selected .dongtaiJK_img_div {
+	background:url("menuimg/dongtaiJK_hover.png") no-repeat center center;
+}
+.ddsmoothmenu-v ul li a.selected .yanghuYJ_img_div {
+	background:url("menuimg/yanghuYJ_hover.png") no-repeat center center;
+}
+
+.ddsmoothmenu-v ul li a:hover{
+background: #fff; /*background of menu items during onmouseover (hover state)*/
+color: #1785da;
+}
+
+/*Sub level menu items */
+.ddsmoothmenu-v ul li ul{
+position: absolute;
+width: 140px; /*Sub Menu Items width */
+top: 0;
+font-weight: normal;
+visibility: hidden;
+}
+
+/*Sub level menu items */
+.ddsmoothmenu-v ul li ul li a:link,.ddsmoothmenu-v ul li ul li a:visited,.ddsmoothmenu-v ul li ul li a:active{
+	background-color:#fff;
+	background:rgba(255,255,255,0.9);
+	color:#4b4b4b;
+	font-size:16px;
+	font-family:微软雅黑;
+	border-top:0px;
+}
+
+/* .ddsmoothmenu-v ul li ul li a:fist-child {
+	border-right:0px;
+}
+ */
+.ddsmoothmenu-v ul li ul li a:hover{
+	background-color:#e6e6e6;
+}
+
+.jichuXX_img_div {
+	background:url("menuimg/jichuXX.png") no-repeat center center;
+	width: 35px;
+	height: 40px;
+	float: left;
+}
+
+.yanghuSJ_img_div {
+	background:url("menuimg/yanghuSJ.png") no-repeat center center;
+	width: 35px;
+	height: 40px;
+	float: left;
+}
+.dongtaiJK_img_div {
+	background:url("menuimg/dongtaiJK.png") no-repeat center center;
+	width: 35px;
+	height: 40px;
+	float: left;
+}
+.yanghuYJ_img_div {
+	background:url("menuimg/yanghuYJ.png") no-repeat center center;
+	width: 35px;
+	height: 40px;
+	float: left;
+}
+
+/* .jichuXX_img_div:hover {
+	background:url("menuimg/jichuXX_hover.png") no-repeat center center;
+}  */
+
+/* Holly Hack for IE \*/
+* html .ddsmoothmenu-v ul li { float: left; height: 1%; }
+* html .ddsmoothmenu-v ul li a { height: 1%; }
+/* End */
+ 
+ 
+ .menu_container {
+ 	position:absolute;
+ 	right:100px;
+ 	top:200px;
+ 	width:120px;
+ 	height:120px;
+ 	background-color:#1785da;
+ 	background:rgba(23,133,218,0.9);
+ 	z-index:5000;
+ 	cursor:pointer;
+ 	
+ }
+ 
+ .menu_container .arrow_container{
+ 	height:15px;
+ 	background:url('menuimg/gis_jiantou.png') no-repeat center 0px;
+	background-color: #0b6bb2;
+ }
+ 
+  .menu_container_selected {
+ 		width:140px;
+ }
+ 
+  .menu_container_selected .arrow_container {
+	height:15px;
+ 	background:url('menuimg/gis_jiantou.png') no-repeat center -15px;
+ 	background-color: #0b6bb2;
+ }
+ 
+ .menu_container .logo_container {
+ 	height:70px;
+ 	background:url('menuimg/gis_logo.png') no-repeat center center;
+ }
+ 
+.menu_container .text_container {
+	height:35px;
+	line-height:25px;
+	font-size:16px;
+	font-family:微软雅黑;
+	color:#fff;
+	text-align:center;
+}
+
+.menu_zhezhao{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	background-color:#fff;
+	filter:alpha(opacity=50);
+	 -moz-opacity:0.5; 
+	  -khtml-opacity: 0.5; 
+	  opacity: 0.5;
+	  z-index:5000;
+}
+
+.search_button {
+	padding-left:10px;
+}
+
+
+
+html,body,*{
+	padding:0px;
+	margin:0px;
+}
+
+html,body{
+	width:100%;
+	height:100%;
+	overflow-y:hidden;
+}
+
+.chart_div{
+	width:100%;
+	height:100%;
+	background-color:#D5F0E8;
+}
+
+.zttj_iframe{
+	/* height:400px; */
+}
+
+.tabs_container {
+	width:100%;
+	height:100%;
+}
+
+.tabs_form {
+	height:40px;
+}
+
+.tabs_form table {
+	/* width:450px; */
+	height:40px;
+	padding:0px;
+	margin:0px;
+	cellpadding:0px;
+	cellmargin:0px;
+}
+
+.tabs_form table tr td {
+	padding-left:10px;
+	text-align: left;
+	font-size:14px;
+	color:#fff;
+}
+
+.tabs_menu {
+	height:28px;
+	/* line-height:28px; */
+	/* padding-left:10px; */
+}
+
+.zttjButton {
+	width:30px;
+	height:24px;
+	background:url("images/zttjButton.png") no-repeat center center;
+	border:none;
+}
+
+.zttjButton:hover{
+	background:url("images/zttjButton_hover.png") no-repeat center center;
+} 
+
+.tabs_tab {
+	/* width:80px; */
+	color:#000;
+	font-size:12px;
+	float:left;
+	text-align:center;
+	cursor:pointer;
+}
+
+.tabs_tab_selected .l-btn-left .l-btn-text {
+	color:#000;
+	font-weight:bold;
+	/* background:url("images/tabs_bg.png") no-repeat center center; */
+}
+
+
+
+.tabs_content {
+	/* background-color:#D5F0E8; */
+	height:100%;
+	border-top: 1px solid #d8d8d8;
+}
+
+.tabs_contentWithTab {
+	background-color:#D5F0E8;
+}
+
+.tabs_item{
+	height:100%;
+	display:none;
+}
+
+.tabs_item_selected {
+	display:block;
+}
+
+.innerTab {
+	display:none;
+}
+
+.innerTab_selected {
+	display:block;
+}
+
+.jcpd_form {
+	float:left;
+	display:none;
+}
+
+.jcpd_form_selected {
+	display:block;
+}
+
+.paddingbar {
+	height:3px;
+}
+
+/* .chartBody {
+	height:300px;
+} */
+
+.chart {
+	width:100%;
+	height:100%;
+}
+
+.mySearchTable {
+	width:100%;
+}
+
+.mySearchTable .myCombo {
+	height:20px;
+}
+

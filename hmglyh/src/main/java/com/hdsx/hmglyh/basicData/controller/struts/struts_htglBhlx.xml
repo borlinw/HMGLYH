@@ -1,0 +1,10 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<!-- 挖掘占施工 -->
+	<package name="bhlx" extends="struts-default" namespace="/bhlx">
+		<action name="getAllBhlx" class="bhlxController" method="getAllBhlx"></action>
+		<action name="createBhlxTree" class="bhlxController" method="createBhlxTree"></action>
+	</package>
+</struts>

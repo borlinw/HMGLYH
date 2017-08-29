@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> OpenLayers: Convert Data Format </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <script src="olapi/OpenLayers.js"></script>
+  <script  type="text/javascript">
+    function onConvertClick()
+    {
+        var inp = document.getElementById("input");
+        var out = document.getElementById("output");
+        var selector = document.getElementById("format");
+        var format = selector.value;
+
+        var wkt = inp.value;
+        var wkt_c = new OpenLayers.Format.WKT();
+        var geometry = wkt_c.read(wkt);
+
+        var convertor = createConvertor(format);
+        var text = convertor.write(geometry);
+
+        out.value = text;
+    }
+
+    function createConvertor(type)
+    {
+        var convertor = null;
+        switch(type)
+        {
+        case "GML":
+            convertor = new OpenLayers.Format.GML();
+            break;
+        case "KML":
+            convertor = new OpenLayers.Format.KML();
+            break;
+        case "GeoJSON":
+            convertor = new OpenLayers.Format.GeoJSON();
+            break;
+        }
+        return convertor;
+    }
+  </script>
+ </HEAD>
+
+ <BODY>
+    <table>
+        <tr>
+            <td>
+                <SELECT NAME="format" id="format">
+                    <OPTION value="GML">GML</OPTION>
+                    <OPTION value="KML">KML</OPTION>
+                    <OPTION value="GeoJSON">GeoJSON</OPTION>
+                </SELECT>
+            </td>
+            <td>
+                <input type="button" value="Convert" onClick="onConvertClick();">
+            </td>
+        </tr>
+        <tr>
+            <td>input:</td>
+            <td><textarea id="input" rows="10" cols="80">POLYGON((6.027164 49.524078,6.088064 49.680508,5.948726 49.772232,5.941587 49.91943,6.03742 50.064381,6.147439 50.130783,6.211109 50.166946,6.312177 50.134426,6.340263 49.998951,6.525142 49.858585,6.734586 49.815399,6.715019 49.685902,6.603117 49.621159,6.636707 49.462303,6.57162 49.490456,6.315996 49.495625,6.02716449.524078))</textarea></td>
+        </tr>
+        <tr>
+            <td>output:</td>
+            <td><textarea id="output" rows="20" cols="80"></textarea></td>
+        </tr>
+    </table>
+ </BODY>
+</HTML>

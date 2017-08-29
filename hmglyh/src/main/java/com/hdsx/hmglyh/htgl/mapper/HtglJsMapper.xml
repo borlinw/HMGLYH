@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.htgl.mapper.HtglJsMapper">
+
+<!-- 添加（角色） -->
+<insert id="addOneJs" parameterType="htgljs">
+	INSERT INTO HTGL_JSB (JSID,JSNAME,JSMS) VALUES(#{jsid},#{jsname},#{jsms})
+</insert>
+
+<!-- 删除（角色） -->
+<delete id="deleteOneJs" parameterType="htgljs">
+	DELETE FROM HTGL_JSB WHERE JSID=#{jsid}
+</delete>
+
+<!-- 修改（角色） -->
+<update id="updateOneJs" parameterType="htgljs">
+	UPDATE HTGL_JSB SET JSNAME=#{jsname},JSMS=#{jsms} WHERE JSID=#{jsid}
+</update>
+
+<!-- 添加（角色模块对应表） -->
+<insert id="addJsMk" parameterType="java.util.List">
+	INSERT INTO HTGL_JSYMDYB (JSID,MKID) VALUES (#{jsid},#{mkid})
+</insert>
+
+<!-- 删除（角色模块对应表） -->
+<delete id="delereJsMk" parameterType="htgljs">
+	DELETE FROM HTGL_JSYMDYB WHERE JSID=#{jsid}
+</delete>
+
+<!-- 根据Jsid查询其下对应的所有的模块信息 -->
+<select id="queryJsMkByJsid" resultType="String" parameterType="htgljs">
+	SELECT WMSYS.WM_CONCAT(MKID) FROM HTGL_JSYMDYB WHERE JSID=#{jsid}
+</select>
+
+<!-- 查询 -->
+<select id="queryAllJs" resultType="htgljs" parameterType="htgljs">
+	<!-- SELECT TEMP.* FROM (
+		SELECT ROWNUM RN,A.* FROM (
+			SELECT * FROM HTGL_JSB ORDER BY JSID
+	    ) A
+	) TEMP -->
+	SELECT TEMP.* FROM (
+		SELECT ROWNUM RN,A.*,B.CHILDNUM FROM (
+			SELECT * FROM HTGL_JSB ORDER BY JSID
+		) A LEFT JOIN (SELECT COUNT(*) AS childNum,JSID FROM HTGL_YHB GROUP BY JSID) B ON A.JSID=B.JSID
+	) TEMP
+	<where>
+		<if test="page != null and page != ''">
+			<![CDATA[RN <= (${page} * ${rows})]]>
+			 AND
+			<![CDATA[RN>((${page} - 1) * ${rows})]]>
+		</if>
+	</where>
+</select>
+
+<!-- 查询 - 按照条件统计数据条数 -->
+<select id="countNum" resultType="int" parameterType="htgljs">
+	SELECT COUNT(*) FROM HTGL_JSB
+</select>
+
+<!-- 查询全部 -->
+<select id="queryAllJsToYh" resultType="htgljs" >
+	SELECT JSID,JSNAME FROM HTGL_JSB
+</select>
+
+<!-- 获取“角色表”主键 -->
+<select id="generationPK" resultType="int">
+	SELECT MAX(JSID)+1 FROM HTGL_JSB
+</select>
+
+<!-- 获取父节点（模块） -->
+<select id="selectFatherOfMk" resultType="htgljs">
+	SELECT MKID,MKNAME FROM HTGL_MKB WHERE MKID like '__'
+</select>
+<!-- 获取children（模块） -->
+<select id="selectChildrenOfMk" parameterType="htgljs" resultType="htgljs">
+	SELECT MKID,MKNAME FROM HTGL_MKB WHERE MKID like #{mkid}||'__'
+</select>
+
+</mapper>

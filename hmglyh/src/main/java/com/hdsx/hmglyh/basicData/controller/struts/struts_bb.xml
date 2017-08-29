@@ -1,0 +1,10 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<!-- 路段路线 -->
+	<package name="bbm" extends="struts-default" namespace="/bbm">
+		<!-- 版本下拉复选框 -->
+		<action name="getBbCombotree" class="bbController" method="getBbCombotree"></action>
+	</package>
+</struts>

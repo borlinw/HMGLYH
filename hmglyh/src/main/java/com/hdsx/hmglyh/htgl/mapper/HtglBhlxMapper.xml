@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.htgl.mapper.HtglBhlxMapper">
+
+<!-- 添加 -->
+<insert id="bhlxAddOne" parameterType="htglBhlx">
+	INSERT INTO HTGL_BHLX (BHID,BHNAME,DW,BHMS,WXSX,QYZT,PX) VALUES(#{bhid},#{bhname},#{dw},#{bhms},#{wxsx},#{qyzt},1)
+</insert>
+
+<!-- 删除 -->
+<delete id="bhlxDeleteOne" parameterType="htglBhlx">
+	DELETE FROM HTGL_BHLX WHERE BHID=#{bhid}
+</delete>
+
+<!-- 修改 -->
+<update id="bhlxUpdateOne" parameterType="htglBhlx">
+	UPDATE HTGL_BHLX SET BHNAME=#{bhname},DW=#{dw},BHMS=#{bhms},WXSX=#{wxsx},QYZT=#{qyzt} WHERE BHID=#{bhid}
+</update>
+
+<!-- 修改-“启用状态” -->
+<update id="bhlxUpdateOneQyzt" parameterType="htglBhlx">
+	UPDATE HTGL_BHLX SET QYZT=#{qyzt} WHERE BHID=#{bhid}
+</update>
+
+<!-- 查询 -->
+<select id="queryAllBySome" resultType="htglBhlx" parameterType="htglBhlx">
+	SELECT TEMP.* FROM (
+		SELECT ROWNUM RN,A.* FROM (
+			SELECT A.*,B.childNum FROM Htgl_Bhlx A left join (
+				SELECT A.Bhid,COUNT(B.Bhid) AS childNum FROM HTGL_BHLX A LEFT JOIN HTGL_BHLX B ON B.Bhid like A.Bhid||'%' GROUP BY A.BHID
+			)B ON A.bhid= B.bhid WHERE A.BHID like #{bhid}||'%'
+			<if test="qyztStr == 'a'.toString()">
+				AND A.qyzt=1
+			</if>
+			<if test="qyztStr == 'b'.toString()">
+				AND A.qyzt=0
+			</if>
+			ORDER BY QYZT DESC,PX
+	    ) A
+	) TEMP
+	<where>
+		<if test="page != null and page != ''">
+			<![CDATA[RN <= (${page} * ${rows})]]>
+			 AND
+			<![CDATA[RN>((${page} - 1) * ${rows})]]>
+		</if>
+	</where>
+</select>
+
+<!-- 查询 - 按照条件统计数据条数 -->
+<select id="countNumBySome" resultType="int" parameterType="htglBhlx">
+	SELECT COUNT(*) FROM Htgl_Bhlx WHERE BHID like #{bhid}||'%'
+	<if test="qyztStr == 'a'.toString()">
+		AND qyzt=1
+	</if>
+	<if test="qyztStr == 'b'.toString()">
+		AND qyzt=0
+	</if>
+</select>
+
+<!-- 获取父节点（病害类型） -->
+<select id="selectFather" parameterType="htglBhlx" resultType="htglBhlx">
+	SELECT * FROM HTGL_BHLX WHERE BHID =#{bhid}<!-- AND QYZT='1' -->
+</select>
+<!-- 获取children -->
+<select id="selectChildren" parameterType="htglBhlx" resultType="htglBhlx">
+	SELECT * FROM HTGL_BHLX WHERE BHID like #{bhid}||'__'<!-- AND QYZT='1' --> order by BHID
+</select>
+
+<!-- 获取“病害”主键 -->
+<select id="generationPK" parameterType="htglBhlx" resultType="htglBhlx">
+	SELECT CONCAT(#{bhid},LPAD(CAST(NVL(substr(MAX(bhid), -2)+1,1) AS varchar(2)),2,0)) AS BHID FROM HTGL_BHLX WHERE BHID like #{bhid}||'__'
+</select>
+
+</mapper>

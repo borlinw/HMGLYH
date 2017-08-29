@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.gis.jichusj.guanyangdw.dao.HtglBmbMapper" >
+  <cache
+        eviction="FIFO"
+        flushInterval="60000"
+        size="512"
+        readOnly="true" />
+  <resultMap id="BaseResultMap" type="com.hdsx.hmglyh.gis.jichusj.guanyangdw.dao.model.HtglBmb" >
+    <id column="BMCODE" property="bmcode" jdbcType="VARCHAR" />
+    <result column="BMZSCODE" property="bmzscode" jdbcType="VARCHAR" />
+    <result column="BMNAME" property="bmname" jdbcType="VARCHAR" />
+    <result column="FZR" property="fzr" jdbcType="VARCHAR" />
+    <result column="LXDH" property="lxdh" jdbcType="VARCHAR" />
+    <result column="BMMS" property="bmms" jdbcType="VARCHAR" />
+    <result column="BMLX" property="bmlx" jdbcType="DECIMAL" />
+    <result column="QYZT" property="qyzt" jdbcType="DECIMAL" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="JSNF" property="jsnf" jdbcType="VARCHAR" />
+    <result column="ZDMJ" property="zdmj" jdbcType="DECIMAL" />
+    <result column="JZMJ" property="jzmj" jdbcType="DECIMAL" />
+    <result column="DZ" property="dz" jdbcType="VARCHAR" />
+    <result column="LXCODE" property="lxCode" jdbcType="VARCHAR" />
+    <result column="FX" property="fx" jdbcType="VARCHAR" />
+    <result column="POS" property="pos" jdbcType="DECIMAL" />
+    <result column="ZH" property="zh" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <resultMap id="Combotree" type="com.hdsx.hmglyh.util.Combotree">
+  		<result column="ID" property="id" jdbcType="VARCHAR" />
+	    <result column="TEXT" property="text" jdbcType="VARCHAR" />
+		<collection property="children" javaType="java.util.List" select="selectCombotreeChildren" column="id" ofType="com.hdsx.hmglyh.util.Combotree">
+		</collection>
+  </resultMap>
+  
+  <resultMap type="com.hdsx.hmglyh.gis.jichusj.guanyangdw.dao.model.HtglBmb" id="BmbResultMap">
+  		 <collection property="children" javaType="java.util.ArrayList" select="bumenChilren" column="BMCODE" ofType="com.hdsx.hmglyh.gis.jichusj.guanyangdw.dao.model.HtglBmb">
+   		 </collection>  
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    BMCODE, BMZSCODE, BMNAME, FZR, LXDH, BMMS, BMLX, QYZT, PTX, PTY,JSNF,ZDMJ,JZMJ,DZ,LXCODE,FX,POS,ZH
+  </sql>
+  
+  <sql id="Base_Column_List2" >
+    t1.BMCODE, t1.BMZSCODE, t1.BMNAME, t1.FZR, t1.LXDH, t1.BMMS, t1.BMLX, t1.QYZT, t1.PTX,t1.PTY
+  </sql>
+  
+  <select id="selectCombotreeChildren" resultMap="Combotree">
+  		select 
+  			BMCODE id,BMNAME text from HTGL_BMB
+  			WHERE substr(bmcode,0,length(bmcode)-2) = #{id}
+  </select>
+  
+  <select id="selectBmCombotree" parameterType="string" resultMap="Combotree">
+ 		select 
+ 			BMCODE id,BMNAME text from HTGL_BMB
+ 			where BMCODE = #{id}
+  </select>
+  
+  <!-- 查询 子部门 -->
+  <select id="bumenChilren"  resultType="com.hdsx.hmglyh.gis.jichusj.guanyangdw.dao.model.HtglBmb" parameterType="com.hdsx.hmglyh.gis.jichusj.guanyangdw.dao.model.HtglBmb">
+  		select <include refid="Base_Column_List" />
+  		 from htgl_bmb where substr(bmcode,0,length(bmcode)-2) = #{bmcode}
+  </select>
+  
+  <!-- 父部门 -->
+  <select id="bumenParents"  resultType="com.hdsx.hmglyh.gis.jichusj.guanyangdw.dao.model.HtglBmb" parameterType="com.hdsx.hmglyh.gis.jichusj.guanyangdw.dao.model.HtglBmb">
+  		select <include refid="Base_Column_List" />
+  		 from htgl_bmb where  BMCODE = substr(#{bmcode},0,length(#{bmcode})-2)
+  </select>
+  
+  <select id="bumenList" resultMap="BmbResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.guanyangdw.dao.model.HtglBmb">
+  		select 
+  			<include refid="Base_Column_List" />
+  		 from htgl_bmb
+  		 where BMCODE = #{bmcode}
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="BmbResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from hmglyh.HTGL_BMB
+    where BMCODE = #{bmcode,jdbcType=VARCHAR}
+  </select>
+  
+  <!-- 获取 派工对象的 部门 (分局的人) -->
+  <select id="getFjPgdx" parameterType="string" resultType="com.hdsx.hmglyh.gis.jichusj.guanyangdw.dao.model.HtglBmb"
+  	>
+			select * from HTGL_BMB
+			where BMCODE like #{bmcode} || '__' 
+			and ( BMLX = '0104' or bmlx = '0102' ) and qyzt = '1'
+			<!-- union all
+			select  * from htgl_bmb
+			where sftsbm = '1' and qyzt = '1' -->
+  	</select>
+  
+    <!-- 获取派工对象  （总局的人） -->
+ <select id="getZjPgdx" parameterType="string" resultType="com.hdsx.hmglyh.gis.jichusj.guanyangdw.dao.model.HtglBmb">
+  			select * from HTGL_BMB 
+			where  BMLX = '0104'  and bmcode like #{bmcode} || '__'
+  </select>	
+  
+   <!-- 获取 派工对象的部门 (养护站的人) -->
+  <select id="getYhzPgdx" parameterType="string" resultType="com.hdsx.hmglyh.gis.jichusj.guanyangdw.dao.model.HtglBmb">
+  			select * from HTGL_BMB 
+			where BMCODE = #{bmcode}
+		<!-- 	union all
+			select  * from htgl_bmb
+			where sftsbm = '1' and qyzt = '1' -->
+  </select>
+  
+  <!-- getYhzs 获取分局所管理的所有的养护站 -->
+  <select id="getYhzs" parameterType="String" resultType="com.hdsx.hmglyh.gis.jichusj.guanyangdw.dao.model.HtglBmb">
+      	select
+      	*
+      	from
+      	HTGL_BMB
+      	where BMCODE like #{bmcode} || '__'
+      	and BMLX = '0102'  and qyzt = '1' 
+      	and bmcode in 
+        (
+         select distinct bmcode from rcyh_wxzyjlb
+         where yszt = '0'
+         and zysbzt = '1'
+         and BMCODE like #{bmcode} || '__'
+        )
+      	union all
+			select  * from htgl_bmb
+			where
+				bmcode like substr(#{bmcode},0,length(#{bmcode}) - 2 ) || '__' and
+			 sftsbm = '1' and qyzt = '1' 
+			 and bmcode in
+			  (
+		         select distinct bmcode from rcyh_wxzyjlb
+		         where yszt = '0'
+		         and zysbzt = '1'
+		         and BMCODE like substr(#{bmcode},0,length(#{bmcode}) - 2 ) || '__'
+		       )
+  </select>
+  
+  
+  <select id="selectBmbByBmcode" parameterType="string" resultType="com.hdsx.hmglyh.gis.jichusj.guanyangdw.dao.model.HtglBmb">
+  	select * from 
+  		htgl_bmb
+  		where bmcode = #{bmcode}
+  </select>
+  
+  
+</mapper>

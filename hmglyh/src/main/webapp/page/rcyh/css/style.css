@@ -1,0 +1,91 @@
+/*声明*/
+body, ul, li, form, fieldset, legend, button, input, textarea, th, td{ margin:0px; padding:0px; border:0px;}
+ul, ol { list-style:none; }
+li{ list-style:none}
+body {font-family:Arial, SimSun, sans-serif, Verdana, Lucida, Helvetica;font-size:12px; line-height:22px; color:#000;}
+a img, img, iframe,button{border:none;}
+a,a span, form label,button {cursor:pointer;}
+body,document,html{height:100%;width:100%;}
+input{font-family:Arial, SimSun, sans-serif, Verdana, Lucida, Helvetica;font-size:12px; line-height:22px; color:#000;text-algin:center;}
+
+.form_table{
+	width:100%;
+	border:1px dotted #ccc;
+	border-right:0px;
+	border-bottom:0px;
+}
+
+.datagrid-cell input{
+	border:none;
+	width:98%;
+	text-align:center;
+}
+
+.datagrid-cell input:FOCUS {
+	border:none;
+}
+
+.search-form {
+	margin:0px;
+	display: inline
+}
+
+.myformsearch {
+	style:display:none;
+}
+
+/*
+	日常养护 首页
+*/
+
+
+/* 日常养护首页  */
+.yhbg2_con{ width:1212px; height:160px; overflow:hidden; margin:0 auto; background:url(../images/yhbg2_line.png) center repeat-x; position:relative;}
+.yhbg2_font{ font-family:"微软雅黑"; font-size:16px; color:#FFF; text-align:center; padding-top:20px;}
+.yhbg2_font span{ font-family:Arial, Helvetica, sans-serif; font-size:26px; color:#FFF; line-height:52px;}
+h1, h2, h3, h4, h5, h6{ margin:0; padding:0; line-height:53px; font-family:"微软雅黑"; font-size:16px; font-weight:normal; text-align:center;}
+
+
+.yhbg2_001{ position:absolute; z-index:101; top:0px; left:23px; cursor:pointer;}
+.yhbg2_001_out{  width:150px; height:160px; overflow:hidden; background:url(../images/yhbg2_001.png) no-repeat;}
+.yhbg2_001_hover{  width:150px; height:160px; overflow:hidden; background:url(../images/yhbg2_001_hover.png) no-repeat;}
+.yhbg2_001 h1{ color:#f29545;}
+
+.yhbg2_002{ position:absolute; z-index:102; top:0px; left:225px; cursor:pointer;}
+.yhbg2_002_out{  width:150px; height:160px; overflow:hidden; background:url(../images/yhbg2_002.png) no-repeat;}
+.yhbg2_002_hover{  width:150px; height:160px; overflow:hidden; background:url(../images/yhbg2_002_hover.png) no-repeat;}
+.yhbg2_002 h2{ color:#5ecad9;}
+
+.yhbg2_003{ position:absolute; z-index:103; top:0px; left:427px; cursor:pointer;}
+.yhbg2_003_out{  width:150px; height:160px; overflow:hidden; background:url(../images/yhbg2_003.png) no-repeat;}
+.yhbg2_003_hover{  width:150px; height:160px; overflow:hidden; background:url(../images/yhbg2_003_hover.png) no-repeat;}
+.yhbg2_003 h3{ color:#add26f;}
+
+.yhbg2_004{ position:absolute; z-index:104; top:0px; left:633px; cursor:pointer;}
+.yhbg2_004_out{  width:150px; height:160px; overflow:hidden; background:url(../images/yhbg2_004.png) no-repeat;}
+.yhbg2_004_hover{  width:150px; height:160px; overflow:hidden; background:url(../images/yhbg2_004_hover.png) no-repeat;}
+.yhbg2_004 h4{ color:#2fc4c6;}
+
+.yhbg2_005{ position:absolute; z-index:105; top:0px; right:225px; cursor:pointer;}
+.yhbg2_005_out{  width:150px; height:160px; overflow:hidden; background:url(../images/yhbg2_005.png) no-repeat;}
+.yhbg2_005_hover{  width:150px; height:160px; overflow:hidden; background:url(../images/yhbg2_005_hover.png) no-repeat;}
+.yhbg2_005 h5{ color:#e56867;}
+
+.yhbg2_006{ position:absolute; z-index:106; top:0px; right:23px; cursor:pointer;}
+.yhbg2_006_out{  width:150px; height:160px; overflow:hidden; background:url(../images/yhbg2_006.png) no-repeat;}
+.yhbg2_006_hover{  width:150px; height:160px; overflow:hidden; background:url(../images/yhbg2_006_hover.png) no-repeat;}
+.yhbg2_006 h6{ color:#f0c245;}
+
+
+
+.yhbg2_001_grey{  width:150px; height:160px; overflow:hidden; background:url(../images/yhbg2_grey1.png) no-repeat;}
+.yhbg2_001_grey h1{ color:#d4d4d4;}
+
+.yhbg2_002_grey{  width:150px; height:160px; overflow:hidden; background:url(../images/yhbg2_grey2.png) no-repeat;}
+.yhbg2_002_grey h2, .yhbg2_002_grey h3, .yhbg2_002_grey h4, .yhbg2_002_grey h5, .yhbg2_002_grey h6{ color:#d4d4d4;}
+
+.yhbg2_arrow1{ width:44px; height:25px; overflow:hidden; background:url(../images/yhbg_arrow1.png) no-repeat; position:absolute; z-index:201; top:25px; left:177px;}
+.yhbg2_arrow2{ width:44px; height:25px; overflow:hidden; background:url(../images/yhbg_arrow2.png) no-repeat; position:absolute; z-index:202; top:111px; left:379px;}
+.yhbg2_arrow3{ width:44px; height:25px; overflow:hidden; background:url(../images/yhbg_arrow1.png) no-repeat; position:absolute; z-index:203; top:25px; left:582px;}
+.yhbg2_arrow4{ width:44px; height:25px; overflow:hidden; background:url(../images/yhbg_arrow2.png) no-repeat; position:absolute; z-index:204; top:111px; right:380px;}
+.yhbg2_arrow5{ width:44px; height:25px; overflow:hidden; background:url(../images/yhbg_arrow1.png) no-repeat; position:absolute; z-index:205; top:25px; right:177px;}

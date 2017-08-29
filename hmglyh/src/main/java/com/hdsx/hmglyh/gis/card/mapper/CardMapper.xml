@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.gis.card.mapper.CardMapper">
+	<!-- 插入 -->
+	<insert id="addCard" parameterType="com.hdsx.hmglyh.gis.card.bean.Card">
+		INSERT INTO HTGL_GZWKPB(KPID,KPLX,DYID,WJDZ,USERNAME,SCTIME)
+		VALUES(kp_sequence.nextval,#{kplx},#{dyid},#{wjdz},#{userName},CURRENT_DATE)
+	</insert>
+	<!-- 删除 -->
+	<delete id="dropCard" parameterType="com.hdsx.hmglyh.gis.card.bean.Card">
+		DELETE FROM HTGL_GZWKPB
+		WHERE KPLX=#{kplx} AND DYID=#{dyid}
+	</delete>
+	<!-- 查询 -->
+	<select id="getCard" parameterType="com.hdsx.hmglyh.gis.card.bean.Card" resultType="com.hdsx.hmglyh.gis.card.bean.Card">
+		SELECT * FROM HTGL_GZWKPB
+		WHERE KPLX=#{kplx} AND DYID=#{dyid}
+		order by sctime desc
+	</select>
+	<!-- 修改 -->
+	<update id="updateCard" parameterType="com.hdsx.hmglyh.gis.card.bean.Card">
+		UPDATE HTGL_GZWKPB
+		SET WJDZ=#{wjdz},USERNAME=#{userName},SCTIME=CURRENT_DATE
+		WHERE KPID=#{kpid}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

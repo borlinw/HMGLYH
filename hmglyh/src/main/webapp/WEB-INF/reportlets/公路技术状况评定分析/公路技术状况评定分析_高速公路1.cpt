@@ -1,0 +1,2767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20141222" releaseVersion="7.1.1">
+<TableDataMap>
+<TableData name="版本" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select bbid,bbmc,bblx, (to_char(bbsj, 'YYYY')) bbsj from jcpd_bbkzb where BBLX='0203']]></Query>
+</TableData>
+<TableData name="部门下拉树" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from htgl_bmb where bmcode='0101' and bmlx='0101' or bmlx='0102']]></Query>
+</TableData>
+<TableData name="技术等级" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct isgs,
+case isgs when 1 then '高速公路' when 0 then '普通公路' end JSDJname
+ from jcpd_qmldb t ]]></Query>
+</TableData>
+<TableData name="汇总" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="管养单位"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="版本"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  lxcode ,ldname,qzzh,SUM(MQI*CD)/SUM(CD) MQI1,
+SUM(PQI*CD)/SUM(CD) PQI1,
+SUM(SCI*CD)/SUM(CD) SCI1,
+SUM(BCI*CD)/SUM(CD) BCI1,
+SUM(TCI*CD)/SUM(CD) TCI1, 
+FX,
+sum(cd) cd
+from
+(select a.lxcode,a.ldname,b.ldid,('K'||a.szhh||'-'||'K'||a.ezhh)qzzh,b.lmlx,b.isgs,b.fx,(b.cd/1000) cd from 
+(select * from htgl_ldb where bmcode='${管养单位}')a left join (select * from jcpd_qmldb)b on a.lxcode=b.lxcode 
+where b.szhh>=a.szhh and b.ezhh<=a.ezhh and b.isgs='1'
+)c inner join(select * from jcpd_lkpdmxb where bbid='${版本}')d on c.ldid=d.ldid
+group by lxcode,fx,ldname,qzzh]]></Query>
+</TableData>
+<TableData name="Tree1" class="com.fr.data.impl.RecursionTableData">
+<markFields>
+<![CDATA[0]]></markFields>
+<markFieldsName>
+<![CDATA[BMCODE]]></markFieldsName>
+<originalTableDataName>
+<![CDATA[部门下拉树]]></originalTableDataName>
+</TableData>
+<TableData name="养护里程" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="管养单位"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="版本"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  lxcode ,ldname,szhh,ezhh,SUM(MQI*CD)/SUM(CD) MQI1,
+SUM(PQI*CD)/SUM(CD) PQI1,
+SUM(SCI*CD)/SUM(CD) SCI1,
+SUM(BCI*CD)/SUM(CD) BCI1,
+SUM(TCI*CD)/SUM(CD) TCI1, 
+FX,
+cd
+from
+(select a.lxcode,a.ldname,b.ldid,b.szhh,b.ezhh,b.lmlx,b.isgs,b.fx,(b.cd/1000) cd from 
+(select * from htgl_ldb where bmcode='${管养单位}')a left join (select * from jcpd_qmldb)b on a.lxcode=b.lxcode 
+where b.szhh>=a.szhh and b.ezhh<=a.ezhh and b.isgs='1'
+)c inner join(select * from jcpd_lkpdmxb where bbid='${版本}')d on c.ldid=d.ldid
+group by lxcode,szhh,ezhh,fx,ldname,cd]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,1714500,1181100,1143000,723900,838200,876300,723900,723900,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1143000,1143000,1143000,723900,1143000,1143000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2476500,2057400,2133600,2552700,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="17" s="0">
+<O>
+<![CDATA[公路技术状况统计表]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1" cs="17" s="1">
+<O>
+<![CDATA[   填报单位:                                  -----高速公路                                 表A-11]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="2" cs="4" rs="2" s="2">
+<O>
+<![CDATA[项目]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="2" rs="2" s="2">
+<O>
+<![CDATA[编号]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="2" rs="2" s="2">
+<O>
+<![CDATA[评定里程(公里)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="2" cs="5" s="2">
+<O>
+<![CDATA[评定结果]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="2" cs="5" s="2">
+<O>
+<![CDATA[评定里程(公里)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="2" rs="2" s="2">
+<O>
+<![CDATA[优良路率(%)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="3" s="2">
+<O>
+<![CDATA[MQI]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="3" s="2">
+<O>
+<![CDATA[PQI]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="3" s="2">
+<O>
+<![CDATA[SCI]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="3" s="2">
+<O>
+<![CDATA[BCI]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="3" s="2">
+<O>
+<![CDATA[TCI]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="3" s="2">
+<O>
+<![CDATA[优等路]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="3" s="2">
+<O>
+<![CDATA[良等路]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="3" s="2">
+<O>
+<![CDATA[中等路]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="3" s="2">
+<O>
+<![CDATA[次等路]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="3" s="2">
+<O>
+<![CDATA[差等路]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="4" cs="4" s="2">
+<O>
+<![CDATA[甲]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="4" s="2">
+<O>
+<![CDATA[乙]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="4" s="2">
+<O t="I">
+<![CDATA[1]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="4" s="2">
+<O t="I">
+<![CDATA[2]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="4" s="2">
+<O t="I">
+<![CDATA[3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="4" s="2">
+<O t="I">
+<![CDATA[4]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="4" s="2">
+<O t="I">
+<![CDATA[5]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="4" s="2">
+<O t="I">
+<![CDATA[6]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="4" s="2">
+<O t="I">
+<![CDATA[7]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="4" s="2">
+<O t="I">
+<![CDATA[8]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="4" s="2">
+<O t="I">
+<![CDATA[9]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="4" s="2">
+<O t="I">
+<![CDATA[10]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="4" s="2">
+<O t="I">
+<![CDATA[11]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="4" s="2">
+<O t="I">
+<![CDATA[12]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="5" cs="4" s="2">
+<O>
+<![CDATA[总计]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="5" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="5" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(F8)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="5" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G8*F8)/F6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="5" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(H9*F8)/F6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="5" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(I8*F8)/F6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="5" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(J8*F8)/F6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="5" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(K8*F8)/F6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="5" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(L8)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="5" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(M8)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="5" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(N8)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="5" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(O8)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="5" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(P8)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="5" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(L6+M6)/F6*100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="6" s="2">
+<O>
+<![CDATA[路线编号]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="6" s="2">
+<O>
+<![CDATA[路线名称]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="6" s="2">
+<O>
+<![CDATA[桩号区间]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O>
+<![CDATA[前进方向]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="7" rs="3" s="2">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="LXCODE"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr kiName="LXCODE" viName="LXCODE"/>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[汇总]]></Name>
+</TableData>
+</TableDataDictAttr>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="1" r="7" rs="3" s="2">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="LDNAME"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="7" rs="3" s="2">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="QZZH"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="7" s="2">
+<O>
+<![CDATA[上下行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="7" rs="3" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SEQ()]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" extendable="1" leftParentDefault="false" left="A8"/>
+</C>
+<C c="5" r="7" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(F9+F10)/2]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="A8"/>
+</C>
+<C c="6" r="7" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(G9+G10)/2]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="7" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(H9+H10)/2]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="7" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(I9+I10)/2]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="7" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(J9+J10)/2]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="7" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(K9+K10)/2]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="7" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(L9+L10)/2]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="7" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(M9+m10)/2]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="7" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(N9+N10)/2]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="7" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(O9+O10)/2]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="7" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(P9+P10)/2]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="7" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(L8+M8)/F8*100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="8" s="2">
+<O>
+<![CDATA[上行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="8" s="4">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0601]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="8" s="4">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="MQI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0601]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="8" s="4">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="PQI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0601]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="8" s="4">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="SCI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0601]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="9" r="8" s="4">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="BCI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0601]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="10" r="8" s="4">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="TCI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0601]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="E8"/>
+</C>
+<C c="11" r="8" s="4">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[LXCODE]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="7"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0601]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[90]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="8" s="4">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[LXCODE]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="7"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0601]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[90]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="8" s="4">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[LXCODE]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="7"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0601]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="8" s="4">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[LXCODE]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="7"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0601]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[60]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="8" s="4">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[LXCODE]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="7"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0601]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[60]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(L9+M9)/F9*100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="9" s="2">
+<O>
+<![CDATA[下行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="CD"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0602]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="MQI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0602]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="PQI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0602]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="SCI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0602]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="9" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="SCI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0602]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="10" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="SCI1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0602]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="11" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[LXCODE]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="7"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0602]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[90]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[LXCODE]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="7"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0602]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[90]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[LXCODE]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="7"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0602]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[80]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[LXCODE]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="7"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0602]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="3">
+<O>
+<![CDATA[60]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[70]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="养护里程" columnName="CD"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[LXCODE]]></CNAME>
+<Compare op="0">
+<ColumnRow column="0" row="7"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[FX]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[0602]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[MQI1]]></CNAME>
+<Compare op="4">
+<O>
+<![CDATA[60]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="9" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(L10+M10)/F10*100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="10" s="2">
+<O>
+<![CDATA[上下行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="10" s="2">
+<O t="I">
+<![CDATA[5]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="11" s="2">
+<O>
+<![CDATA[上行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="11" s="2">
+<O t="I">
+<![CDATA[6]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="12" s="2">
+<O>
+<![CDATA[下行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="12" s="2">
+<O t="I">
+<![CDATA[7]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="13" s="2">
+<O>
+<![CDATA[上下行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="13" s="2">
+<O t="I">
+<![CDATA[8]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="13" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="14" s="2">
+<O>
+<![CDATA[上行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="14" s="2">
+<O t="I">
+<![CDATA[9]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="15" s="2">
+<O>
+<![CDATA[下行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="15" s="2">
+<O t="I">
+<![CDATA[10]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="16" s="2">
+<O>
+<![CDATA[上下行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="16" s="2">
+<O t="I">
+<![CDATA[11]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="17" s="2">
+<O>
+<![CDATA[上行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="17" s="2">
+<O t="I">
+<![CDATA[12]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="17" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="18" s="2">
+<O>
+<![CDATA[下行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="18" s="2">
+<O t="I">
+<![CDATA[13]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="19" s="2">
+<O>
+<![CDATA[上下行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="19" s="2">
+<O t="I">
+<![CDATA[14]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="19" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="20" s="2">
+<O>
+<![CDATA[上行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="20" s="2">
+<O t="I">
+<![CDATA[15]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="21" s="2">
+<O>
+<![CDATA[下行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="21" s="2">
+<O t="I">
+<![CDATA[16]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="22" s="2">
+<O>
+<![CDATA[上下行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="22" s="2">
+<O t="I">
+<![CDATA[17]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="23" s="2">
+<O>
+<![CDATA[上行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="23" s="2">
+<O t="I">
+<![CDATA[18]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="24" s="2">
+<O>
+<![CDATA[下行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="24" s="2">
+<O t="I">
+<![CDATA[19]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="24" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="25" cs="6" s="5">
+<O>
+<![CDATA[主管:]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="25" cs="4" s="6">
+<O>
+<![CDATA[填报人:]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="25" cs="7" s="5">
+<O>
+<![CDATA[填报日期:]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="26" s="5">
+<O>
+<![CDATA[填报说明:]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="26" cs="16" s="5">
+<O>
+<![CDATA[1.本表为年报,反映当时所辖公路的技术状况。]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="27" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="27" cs="16" s="5">
+<O>
+<![CDATA[2.应当以本辖区某整条高速公路为基本单位进行填报,整条的含义为编号相同,有重复路段的路段,只填报一次,结果记入编号小的高速公路。]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="28" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="28" cs="16" s="5">
+<O>
+<![CDATA[3.MQI、PQI、SCI、BCI、TCI的计算及等级评定按照《公路技术评定标准》（JTGH20-2007）的规定执行]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="29" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="29" cs="16" s="5">
+<O>
+<![CDATA[4正在进行大中修养护或改建的路段，不纳入评定里程。5.评定结果为所有参评公路评价结果的算术平均值。]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="30" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="30" cs="16" s="5">
+<O>
+<![CDATA[6.优良路率(%)=100*(优等路里程+良等路里程)/评定里程.7.评定里程总计=所有路线上下行评定里程的总和/2。]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<Parameter>
+<Attributes name="p1"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="p2"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="p3"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="1" size="88"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="2" imageLayout="1">
+<FRFont name="SimSun" style="0" size="64"/>
+<Background name="NullBackground"/>
+<Border>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+</Border>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="HBB"/>
+<PreviewType PreviewType="0"/>
+</WorkBook>

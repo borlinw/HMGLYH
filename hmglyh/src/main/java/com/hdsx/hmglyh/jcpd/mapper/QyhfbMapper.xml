@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.jcpd.mapper.QyhfbMapper">
+	<!-- 插入 -->
+	<insert id="addQyhfb" parameterType="qyhfb">
+		INSERT INTO JCPD_QYHFB(QYID,LXCODE,SZHH,EZHH,CD,BMCODE,BBID)
+		VALUES(QY_SEQUENCE.NEXTVAL,#{lxCode},#{szhh},#{ezhh},#{cd},#{bmCode},#{bbid})
+	</insert>
+	<!-- 查询区域划分是否已经被使用 -->
+	<select id="isUsed" parameterType="qyhfb" resultType="int">
+		SELECT COUNT(*) FROM JCPD_QDHFB
+		WHERE BMCODE=#{bmCode} AND BBID=#{bbid} AND LXCODE=#{lxCode} AND <![CDATA[szhh>=#{szhh} and #{ezhh}>szhh]]>
+	</select>
+	<!-- 查询 -->
+	<select id="queryQyhfb" parameterType="qyhfb" resultType="qyhfb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+				SELECT Q.*,LXCODE||' K'||SZHH||'-K'||EZHH AS QYNAME FROM JCPD_QYHFB Q
+				WHERE BMCODE=#{bmCode} AND BBID=#{bbid}
+				<if test="lxCode != null and lxCode != ''">
+					 AND LXCODE=#{lxCode} AND <![CDATA[szhh>=#{szhh} and #{ezhh}>szhh]]>
+				</if>
+				ORDER BY SZHH
+			) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		<where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	<!-- 清空 -->
+	<delete id="dropQyhfb" parameterType="qyhfb">
+		DELETE FROM JCPD_QYHFB
+		WHERE LXCODE=#{lxCode} AND <![CDATA[szhh>=#{szhh} and #{ezhh}>szhh]]> AND BMCODE=#{bmCode} AND BBID=#{bbid}
+	</delete>
+	<!-- 查询区域划分条数 -->
+	<select id="getQyhfbCount" parameterType="qyhfb" resultType="int">
+		SELECT COUNT(*) FROM JCPD_QYHFB
+		WHERE BMCODE=#{bmCode} AND BBID=#{bbid}
+		<if test="lxCode != null and lxCode != ''">
+			 AND LXCODE=#{lxCode} AND <![CDATA[szhh>=#{szhh} and #{ezhh}>szhh]]>
+		</if>
+	</select>
+	
+	<!-- 查询区域划分用于导出 -->
+	<!-- 查询某一区域中技术等级 -->
+	<select id="getJsdj" parameterType="qyhfb" resultType="qyhfb">
+		<![CDATA[SELECT ROADCODE AS LXCODE,JSDJ,
+		CASE WHEN ROADSTART>=#{szhh} THEN ROADSTART
+		     ELSE #{szhh} 
+		END AS SZHH,
+		CASE WHEN ROADENDS<#{ezhh} THEN ROADENDS
+		   ELSE #{ezhh}
+		END AS EZHH
+		FROM HTGL_LKLDHFB
+		WHERE ROADCODE = #{lxCode} AND ((ROADSTART>=#{szhh} and ROADSTART<#{ezhh})or(ROADENDS>#{szhh} and ROADENDS<=#{ezhh})or(ROADSTART<#{szhh} and ROADENDS>#{ezhh}))
+		ORDER BY JSDJ,SZHH]]>
+	</select>
+	
+	
+	<!-- 查询之前在该路段有划分的区域划分版本 -->
+	<select id="getQybb" parameterType="qyhfb" resultType="bbkzb">
+		SELECT DISTINCT QY.BBID,BB.BBMC FROM JCPD_QYHFB QY
+		LEFT JOIN JCPD_BBKZB BB
+		ON QY.BBID=BB.BBID
+		<![CDATA[WHERE QY.BBID<>#{bbid} AND QY.LXCODE=#{lxCode} AND SZHH>=#{szhh} AND SZHH<#{ezhh} AND BMCODE=#{bmCode}]]>
+	</select>
+	<!-- 沿用之前版本添加区域划分 -->
+	<insert id="copy" parameterType="qyhfb" useGeneratedKeys="false">
+		INSERT INTO JCPD_QYHFB
+		(SELECT QY_SEQUENCE.NEXTVAL QYID,LXCODE,SZHH,EZHH,CD,#{bmCode} BMCODE,#{bbid} AS BBID FROM JCPD_QYHFB T
+		<![CDATA[WHERE LXCODE=#{lxCode} AND SZHH>=#{szhh} AND SZHH<#{ezhh} AND BBID=#{qybbid} AND BMCODE=#{bmCode}]]>)
+	</insert>
+	
+	<!-- 区域划分详细表 -->
+	<insert id="addXxb" parameterType="com.hdsx.hmglyh.jcpd.bean.Qyhfxxb">
+		INSERT INTO JCPD_QYHFXX(ID,LXCODE,SZHH,EZHH,BMCODE,BBID,YXYS,DJ)
+		VALUES(SYS_GUID(),#{lxCode},#{szhh},#{ezhh},#{bmCode},#{bbid},#{yxys},#{dj})
+	</insert>
+	
+	<delete id="dropXxb" parameterType="qyhfb">
+		DELETE FROM JCPD_QYHFXX
+		WHERE LXCODE=#{lxCode} AND <![CDATA[SZHH>=#{szhh} AND #{ezhh}>SZHH]]> AND BMCODE=#{bmCode} AND BBID=#{bbid}
+	</delete>
+	
+	<select id="getXxb" parameterType="qyhfb" resultType="com.hdsx.hmglyh.jcpd.bean.Qyhfxxb">
+		SELECT * FROM JCPD_QYHFXX
+		WHERE LXCODE=#{lxCode} AND <![CDATA[SZHH>=#{szhh} AND #{ezhh}>SZHH]]> AND BMCODE=#{bmCode} AND BBID=#{bbid}
+		ORDER BY YXYS,SZHH
+	</select>
+	<insert id="copyXxb" parameterType="qyhfb" useGeneratedKeys="false">
+		INSERT INTO JCPD_QYHFXX
+		(SELECT SYS_GUID() QYID,LXCODE,SZHH,EZHH,#{bmCode} BMCODE,#{bbid},YXYS,DJ AS BBID FROM JCPD_QYHFXX T
+		<![CDATA[WHERE LXCODE=#{lxCode} AND SZHH>=#{szhh} AND SZHH<#{ezhh} AND BBID=#{qybbid} AND BMCODE=#{bmCode}]]>)
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

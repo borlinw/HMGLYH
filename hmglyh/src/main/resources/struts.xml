@@ -1,0 +1,215 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN" "/xsd/struts-2.1.7.dtd">
+<struts>
+	<include file="struts-default.xml" />
+	<constant name="struts.locale" value="zh_CN"></constant>
+	<constant name="struts.custom.i18n.resources" value="message" />
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<!-- 设置Struts2最大上传 -->
+	<constant name="struts.multipart.maxSize" value="500000000000000"></constant>
+	<!-- 设置Struts2是否支持动态方法调用，该属性的默认值是true。如果需要关闭动态方法调用，则可设置该属性为false -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<!-- 设置是否每次HTTP请求到达时，系统都重新加载资源文件。该属性默认值是false。在开发阶段将该属性设置为true会更有利于开发，但在产品发布阶段应将该属性设置为false -->
+	<constant name="struts.i18n.reload" value="true" />
+	<!-- 设置 Struts 2应用是否使用开发模式，设置该属性为true，则可以在应用出错时显示更多、更友好的出错提示 -->
+	<constant name="struts.devMode" value="false" />
+	<!-- Struts2也有自己的对象池，就像Spring那样，在配置文件中你可以引用对象池中的对象，你可以借助于Spring中的对象池，当想要得到Spring中的对象池时 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 设置浏览器是否缓存静态内容。当应用处于开发阶段时，我们希望每次请求都获得服务器的最新响应，则可设置该属性为false。 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<constant name="struts.action.extension" value="do" />
+	<!-- 在struts2 中调用静态方法 -->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>  
+	<!-- 编目编码模块 -->
+	<!-- GIS {1} 模块   {2} 方法  -->
+	<package name="gis" extends="struts-default" namespace="/gis">
+	
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="loginInterceptor"
+				class="com.hdsx.hmglyh.util.LoginInterceptor" />
+			<!-- 配置拦截器 -->
+			<interceptor-stack name="myloginInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login,userLoginAuthor,logout</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器 ， 对包中的所有的Action 都有效 -->
+		<default-interceptor-ref name="myloginInterceptor" />
+	
+		<global-results>
+			<result name="loginPage" type="redirect">../index.jsp</result>
+			<result name="authErrorPage" type="redirect">../authErrorPage.jsp</result>
+			<result name="exceptionPage" type="redirect">../exceptionPage.jsp</result>
+		</global-results>
+		
+		<!-- 如果系统找不到Action ， 执行默认的Action -->
+		<!-- <default-action-ref name="index" /> -->
+	
+		<action name="index" class="indexController" method="index">
+			<result name="index">/WEB-INF/jsp/gis/index.jsp</result>
+		</action>
+		
+		<action name="*_*" class="{1}Controller" method="{2}" >
+			<result name="de_{2}">/WEB-INF/jsp/gis/{1}/{2}.jsp</result>
+			<result name="jc_{2}">/WEB-INF/jsp/gis/jichuSJ/{1}/{2}.jsp</result>
+			<result name="yw_{2}">/WEB-INF/jsp/gis/yewuSJ/{1}/{2}.jsp</result>
+			<result name="upload">/WEB-INF/jsp/gis/upload.jsp</result>
+			<result name="SUCCESS">/WEB-INF/jsp/gis/success.jsp</result>
+			<result name="ERROR">/WEB-INF/jsp/gis/error.jsp</result>
+			<result name="rcyhMap">/WEB-INF/jsp/gis/rcyhMap.jsp</result>
+		</action>
+	</package>
+	
+	<package name="publicBean" extends="struts-default" namespace="/pb">
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="loginInterceptor"
+				class="com.hdsx.hmglyh.util.LoginInterceptor" />
+			<!-- 配置拦截器 -->
+			<interceptor-stack name="myloginInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login,userLoginAuthor,logout</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器 ， 对包中的所有的Action 都有效 -->
+		<default-interceptor-ref name="myloginInterceptor" />
+	
+		<global-results>
+			<result name="loginPage" type="redirect">../index.jsp</result>
+			<result name="authErrorPage" type="redirect">../authErrorPage.jsp</result>
+			<result name="exceptionPage" type="redirect">../exceptionPage.jsp</result>
+		</global-results>
+		<action name="pub_export" class="publicBeanController" method="export">
+			<result>/WEB-INF/jsp/gis/jichuSJ/export.jsp</result>
+		</action>
+		<action name="getHtml" class="publicBeanController" method="getHtmlForGzw"></action>
+	</package>
+	
+	<package name="lswxjl" extends="struts-default" namespace="/lswxjl">
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="loginInterceptor"
+				class="com.hdsx.hmglyh.util.LoginInterceptor" />
+			<!-- 配置拦截器 -->
+			<interceptor-stack name="myloginInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login,userLoginAuthor,logout</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器 ， 对包中的所有的Action 都有效 -->
+		<default-interceptor-ref name="myloginInterceptor" />
+	
+		<global-results>
+			<result name="loginPage" type="redirect">../index.jsp</result>
+			<result name="authErrorPage" type="redirect">../authErrorPage.jsp</result>
+			<result name="exceptionPage" type="redirect">../exceptionPage.jsp</result>
+		</global-results>
+		<action name="getMxbById" class="lishiweixiujlController" method="getMxbById">
+			<result>/page/gis/page/addLswxjl.jsp</result>
+		</action>
+		<action name="add" class="lishiweixiujlController" method="add"></action>
+		<action name="getMxb" class="lishiweixiujlController" method="getMxb"></action>
+	</package>
+	
+	 
+	<package name="rcyh" extends="struts-default" namespace="/rcyh" >
+		
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="loginInterceptor"
+				class="com.hdsx.hmglyh.util.LoginInterceptor" />
+			<!-- 配置拦截器 -->
+			<interceptor-stack name="myloginInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login,userLoginAuthor,logout</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器 ， 对包中的所有的Action 都有效 -->
+		<default-interceptor-ref name="myloginInterceptor" />
+	
+		<global-results>
+			<result name="loginPage" type="redirect">../index.jsp</result>
+			<result name="authErrorPage" type="redirect">../authErrorPage.jsp</result>
+			<result name="exceptionPage" type="redirect">../exceptionPage.jsp</result>
+		</global-results>
+	
+		<action name="*_*" class="{1}Controller" method="{2}" >
+			<result name="SUCCESS">/WEB-INF/jsp/rcyh/{1}/${resultpage}.jsp</result>
+			<result name="success">/WEB-INF/jsp/rcyh/{1}/${resultpage}.jsp</result>
+			<result name="result">/WEB-INF/jsp/rcyh/${resultpage}.jsp</result>
+			<result name="succ">/WEB-INF/jsp/rcyh/success.jsp</result>
+			<result name="input">/WEB-INF/jsp/rcyh/error.jsp</result>
+			<result name="excepPage">/WEB-INF/jsp/rcyh/exceptionPage.jsp</result>
+		</action>
+	</package>
+	
+
+	<include file="com/hdsx/hmglyh/basicData/controller/struts/struts_gpsRoad.xml"></include>
+	<!-- 检测评定 -->
+	<!-- 千米路段 -->
+	<include file="com/hdsx/hmglyh/jcpd/controller/struts/struts_qmldb.xml"></include>
+	<!-- 版本库 -->
+	<include file="com/hdsx/hmglyh/jcpd/controller/struts/struts_bbkzb.xml"></include>
+	<!-- LR添加 -->
+	<!-- 后台管理 -->
+	<include file="com/hdsx/hmglyh/htgl/mapper/struts/struts_htgl.xml"></include>
+	<!-- 登陆 -->
+	<include file="com/hdsx/hmglyh/login/mapper/struts/struts_login.xml"></include>
+	<!-- 日常养护 -->
+	<!-- <include file="com/hdsx/hmglyh/rcyh/mapper/struts/struts_rcyh.xml"></include> -->
+	<include file="com/hdsx/hmglyh/rcyh/controller/struts_export.xml"></include>
+	<!-- LR添加 -->
+
+	
+	<include file="com/hdsx/hmglyh/basicData/controller/struts/struts_gpsRoad.xml"></include>
+	<include file="com/hdsx/hmglyh/basicData/controller/struts/struts_lxld.xml"></include>
+	<include file="com/hdsx/hmglyh/basicData/controller/struts/struts_year.xml"></include>
+	<include file="com/hdsx/hmglyh/basicData/controller/struts/struts_htglBhlx.xml"></include>
+	<include file="com/hdsx/hmglyh/basicData/controller/struts/struts_bm.xml"></include>
+	<include file="com/hdsx/hmglyh/basicData/controller/struts/struts_bb.xml"></include>
+	<include file="com/hdsx/hmglyh/basicData/controller/struts/struts_dgyldbm.xml"></include>
+	<!-- 路况评定 -->
+	<!-- 千米路段 -->
+	<include file="com/hdsx/hmglyh/jcpd/controller/struts/struts_qmldb.xml"></include>
+	<!-- 版本库 -->
+	<include file="com/hdsx/hmglyh/jcpd/controller/struts/struts_bbkzb.xml"></include>
+	<!-- 路面检测 -->
+	<include file="com/hdsx/hmglyh/jcpd/controller/struts/struts_lmjcb.xml"></include>
+	<!-- 原始路段管理 -->
+	<include file="com/hdsx/hmglyh/jcpd/controller/struts/struts_lkldhfb.xml"></include>
+
+	<!--年月查询-->
+	<include file="com/hdsx/hmglyh/rcyhtj/controller/struts/struts_nyb.xml"></include>
+	<!--年度学习记录-->
+	<include file="com/hdsx/hmglyh/rcyhtj/controller/struts/struts_xxjl.xml"></include>
+	<!--月度计划任务单-->
+	<include file="com/hdsx/hmglyh/ydjh/controller/struts/struts_ydjh.xml"></include>
+	
+	<!-- 区域划分 -->
+	<include file="com/hdsx/hmglyh/jcpd/controller/struts/struts_qyhfb.xml"></include>
+	<!-- 区段划分 -->
+	<include file="com/hdsx/hmglyh/jcpd/controller/struts/struts_qdhfb.xml"></include>
+	<!-- 区段划分审核表 -->
+	<include file="com/hdsx/hmglyh/jcpd/controller/struts/struts_qdhfshb.xml"></include>
+	<!-- 考勤 -->
+	<include file="com/hdsx/hmglyh/jcpd/controller/struts/struts_kqzb.xml"></include>
+	<!-- 工资 -->
+	<include file="com/hdsx/hmglyh/jcpd/controller/struts/struts_gzdxzb.xml"></include>
+
+	<!--病害信息查询-->
+	<!-- <include file="com/hdsx/hmglyh/rcyhtj/controller/struts/struts_bhjlb.xml"></include> -->
+	<!--维修作业信息查询-->
+	<!-- <include file="com/hdsx/hmglyh/rcyhtj/controller/struts/struts_wxzyjlb.xml"></include> -->
+	
+	<!-- 卡片信息 -->
+	<include file="com/hdsx/hmglyh/gis/card/controller/struts/struts_card.xml"></include>
+	<include file="com/hdsx/hmglyh/gis/card/controller/struts/struts_download.xml"></include>
+</struts>

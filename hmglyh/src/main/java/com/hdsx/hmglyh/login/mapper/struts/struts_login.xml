@@ -1,0 +1,18 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+
+	<!-- 登陆 - 登陆 - 登陆 - 登陆 - 登陆 - 登陆 - 登陆 - 登陆 - 登陆 - 登陆 - 登陆 - 登陆 - 登陆 - 登陆 - 登陆 - 登陆 - 登陆 - 登陆 -->
+	<package name="login" extends="struts-default" namespace="/login">
+		<!-- 用户登录-->
+		<action name="userlogin" class="com.hdsx.hmglyh.login.action.LoginAction" method="login"/>
+		<!-- 验证用户登录、权限（前台）-->
+		<action name="userLoginAuthor" class="com.hdsx.hmglyh.login.action.LoginAction" method="userLoginAuthor"/>
+		<!-- 退出登陆 -->
+		<action name="logout" class="com.hdsx.hmglyh.login.action.LoginAction" method="logout" />
+		<!-- 修改密码 -->
+		<action name="changePassword" class="com.hdsx.hmglyh.login.action.LoginAction" method="changePassword" />
+	</package>
+
+</struts>

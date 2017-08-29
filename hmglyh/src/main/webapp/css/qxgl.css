@@ -1,0 +1,34 @@
+/*声明*/
+body, ul, li, form, fieldset, legend, button, input, textarea, th, td{ margin:0; padding:0; border:0;}
+ul, ol { list-style:none; }
+li{ list-style:none}
+body {font-family:Arial, SimSun, sans-serif, Verdana, Lucida, Helvetica;font-size:12px; line-height:22px; color:#000;}
+a img, img, iframe,button{border:none;}
+a span, form label,button {cursor:pointer;}
+
+
+
+.top{ width:100%; height:70px; background:url(../images/top_bg.jpg) repeat-x;}
+.logo{ width:338px; overflow:hidden; float:left; display:block;}
+.top_right{ width:300px; overflow:hidden; float:right; display:block; padding:24px 36px 0 0;color:#70d2e0;}
+
+
+.left{ width:188px; overflow:hidden;}
+.left_nav{ width:180px; overflow:hidden; float:left; display:block; background-color:#d7f3f7;}
+.left_nav ul li{ width:180px; overflow:hidden;}
+.left_img{ float:left; display:block; padding:7px 10px 7px 20px;}
+.left_font{ float:left; display:block; font-size:14px; line-height:52px;}
+.left_font2{ float:left; display:block; color:#FFF; font-size:14px; line-height:52px;}
+.left_sidebar{ width:8px; height:236px; overflow:hidden; float:right; display:block; padding-top:180px;background-color:#70d2e0;}
+
+
+.main_left{ width:220px;}
+.main_left_tit{ width:220px; height:28px; overflow:hidden; background-color:#70d2e0; font-size:12px; line-height:28px; color:#FFF; text-align:center;}
+
+
+.main_con{ width:100%;}
+.main_con_tit{ height:28px; overflow:hidden; background:#70d2e0 url(../images/position.png) no-repeat; font-size:12px; line-height:28px; color:#FFF; padding-left:46px;}
+.st{ font-family:"宋体";}
+
+
+.foot{ width:100%; height:32px; background-color:#0791a8; color:#FFF; line-height:32px; text-align:center;}

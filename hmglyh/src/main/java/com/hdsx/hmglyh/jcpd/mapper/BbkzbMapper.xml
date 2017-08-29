@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.jcpd.mapper.BbkzbMapper">
+	<!-- 插入版本 -->
+	<insert id="addBbkzb" parameterType="bbkzb">
+		INSERT INTO JCPD_BBKZB(BBID,BBMC,BBSJ,BBLX,ZJCZR,QMBBID)
+		VALUES(bbk_sequence.nextval,#{bbmc},#{bbsj},#{bblx},#{zjczr},#{qmbbid})
+	</insert>
+	<!-- 修改版本 -->
+	<update id="changeBbkzb" parameterType="bbkzb">
+		UPDATE JCPD_BBKZB
+		SET ZJCZR=#{zjczr},BBMC=#{bbmc},QMBBID=#{qmbbid}
+		WHERE BBID=#{bbid}
+	</update>
+	<!-- 查询版本 -->
+	<select id="queryBb" parameterType="bbkzb" resultType="bbkzb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+				SELECT * FROM JCPD_BBKZB
+				WHERE BBLX=#{bblx}
+				<if test="isUse==1">
+					AND BBID IN (SELECT DISTINCT BBID FROM jcpd_lkpdmxb)
+				</if>
+				ORDER BY BBSJ DESC
+			) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		<where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	<!-- 查询版本条数 -->
+	<select id="getBbCount" parameterType="bbkzb" resultType="int">
+		SELECT COUNT(*) FROM JCPD_BBKZB
+		WHERE BBLX=#{bblx}
+	</select>
+	<!-- 删除版本 -->
+	<delete id="dropBb" parameterType="bbkzb">
+		DELETE FROM JCPD_BBKZB
+		WHERE BBID=#{bbid}
+	</delete>
+	<!-- 查询版本是否被使用 -->
+	<select id="isUsed" parameterType="bbkzb" resultType="bbkzb">
+		select bbid from jcpd_lkdczb where bbid=#{bbid}
+        union
+        select bbid from jcpd_lmjcb where bbid=#{bbid}
+        union
+        select bbid from jcpd_lkpdmxb where bbid=#{bbid}
+        union
+        select qmbbid from jcpd_bbkzb where qmbbid=#{bbid}
+        union
+        select bbid from jcpd_qmldb where bbid=#{bbid}
+        union
+        select bbid from jcpd_qyhfb where bbid=#{bbid}
+	</select>
+	<!-- 对千米路段操作时修改千米版本的时间 -->
+	<update id="changeQmbb" parameterType="bbkzb">
+		UPDATE JCPD_BBKZB
+		SET BBSJ = #{bbsj}
+		WHERE BBID=#{bbid}
+	</update>
+	
+	<!-- 根据评定版本查询路况调查或者路面检测版本 -->
+	<select id="getBbid" parameterType="bbkzb" resultType="bbkzb">
+		SELECT * FROM JCPD_BBKZB
+		WHERE QMBBID=(SELECT QMBBID FROM JCPD_BBKZB WHERE BBID=#{bbid}) AND BBLX=#{bblx}
+		ORDER BY BBSJ DESC
+	</select>
+	<!-- 查询统计版本 -->
+	<select id="getBb" parameterType="bbkzb" resultType="bbkzb">
+		SELECT * FROM JCPD_BBKZB WHERE BBLX=#{bblx}
+		<if test="qmbbid != null and qmbbid != ''">
+			AND QMBBID=#{qmbbid}
+		</if>
+	</select>
+	<!-- 路面检测沿用之前路面检测数据专用 -->
+	<select id="getBbForLmjc" parameterType="bbkzb" resultType="bbkzb">
+		<![CDATA[SELECT * FROM JCPD_BBKZB
+		WHERE QMBBID=(SELECT QMBBID FROM JCPD_BBKZB WHERE BBID=#{bbid}) AND BBLX='0202' AND BBID<>#{bbid}]]>
+	</select>
+	
+	<!-- 区段划分用，带有上报状态 -->
+	<select id="getBbForQdhf" parameterType="bbkzb" resultType="bbkzb">
+		SELECT BB.*,NVL(SH.SQZT,0) ISSB FROM JCPD_BBKZB BB
+		LEFT JOIN (SELECT * FROM JCPD_QDHFSHB WHERE BMCODE=#{bmCode}) SH
+		ON BB.BBID=SH.BBID
+		WHERE BB.BBLX='0205'
+		ORDER BY BB.BBSJ DESC
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

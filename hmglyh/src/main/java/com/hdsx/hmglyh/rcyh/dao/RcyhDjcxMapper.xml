@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.rcyh.dao.RcyhDjcxMapper" >
+
+<!-- 添加 -->
+<insert id="addOneDjcx" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhDjcx">
+	INSERT INTO RCYH_CXKBB (KBID,Bmcode,Tbdate,Tbusername,Tbrxm,Shrxm,Lxcode,Lxname,Wd,Qzzh,Jxsj,Txsj,Cxsj,Pjhd,Cxfl,Cxlc,Stime,Etime,Chuxsj,cxmj,cxl,rggr,jxtb,cxyysl,cxyydj,cxyyfy,rxjsl,rxjdj,rxjfy,gssl,gsdj,gsfy,dpsl,dpdj,dpfy,qysl,qydj,qyfy,cysl,cydj,Cyfy,qtsl,qtdj,qtfy,fyhj,zslc,nz,ldcode,state,cxrs,jxcl)
+	VALUES(#{kbid},#{bmcode},#{tbdate},#{tbusername},#{tbrxm},#{shrxm},#{lxcode},#{lxname},#{wd},#{qzzh},#{jxsj},#{txsj},#{cxsj},#{pjhd},#{cxfl},#{cxlc},#{stime},#{etime},#{chuxsj},#{cxmj},#{cxl},#{rggr},#{jxtb},#{cxyysl},#{cxyydj},#{cxyyfy},#{rxjsl},#{rxjdj},#{rxjfy},#{gssl},#{gsdj},#{gsfy},#{dpsl},#{dpdj},#{dpfy},#{qysl},#{qydj},#{qyfy},#{cysl},#{cydj},#{cyfy},#{qtsl},#{qtdj},#{qtfy},#{fyhj},#{zslc},#{nz},#{ldcode},'1',#{cxrs},#{jxcl})
+</insert>
+
+<!-- 删除 -->
+<delete id="deldeteOneDjcx" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhDjcx">
+	DELETE RCYH_CXKBB WHERE KBID=#{kbid}
+</delete>
+
+<!-- 修改 -->
+<update id="updateOneDjcx" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhDjcx">
+	UPDATE RCYH_CXKBB SET Shrxm=#{shrxm},Lxcode=#{lxcode},Lxname=#{lxname},Wd=#{wd},Qzzh=#{qzzh},Jxsj=#{jxsj},Txsj=#{txsj},Cxsj=#{cxsj},Pjhd=#{pjhd},Cxfl=#{cxfl},Cxlc=#{cxlc},Stime=#{stime},Etime=#{etime},Chuxsj=#{chuxsj},cxmj=#{cxmj},cxl=#{cxl},rggr=#{rggr},jxtb=#{jxtb},cxyysl=#{cxyysl},cxyydj=#{cxyydj},cxyyfy=#{cxyyfy},rxjsl=#{rxjsl},rxjdj=#{rxjdj},rxjfy=#{rxjfy},gssl=#{gssl},gsdj=#{gsdj},gsfy=#{gsfy},dpsl=#{dpsl},dpdj=#{dpdj},dpfy=#{dpfy},qysl=#{qysl},qydj=#{qydj},qyfy=#{qyfy},cysl=#{cysl},cydj=#{cydj},Cyfy=#{cyfy},qtsl=#{qtsl},qtdj=#{qtdj},qtfy=#{qtfy},fyhj=#{fyhj},zslc=#{zslc},nz=#{nz},ldcode=#{ldcode},state='1',cxrs=#{cxrs},jxcl=#{jxcl} WHERE KBID=#{kbid}
+</update>
+
+<!-- 按条件查询“除雪快报”数据 -->
+<select id="selectAllDjcxBySome" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhDjcx" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhDjcx">
+	SELECT * FROM(
+	    SELECT ROWNUM RN,TEMP.* FROM(
+			SELECT B.BMNAME,C.VALUE AS cxflStr,A.* FROM RCYH_CXKBB A LEFT JOIN HTGL_BMB B ON A.BMCODE=B.BMCODE,HTGL_MJLX C WHERE A.CXFL=C.KEY AND A.BMCODE like #{bmcode}||'%' ORDER BY TBDATE DESC
+		) TEMP
+		<if test="page != null and page != ''">
+		  	where <![CDATA[ROWNUM <= (${page} * ${rows})]]>
+		</if>)
+	<where>
+	   <if test="page != null and page != ''">
+	      <![CDATA[RN>((${page} - 1) * ${rows})]]>
+		</if>
+	</where>
+</select>
+
+<!-- 按条件统计“除雪快报”数量 -->
+<select id="countAllDjcxBySome" resultType="int" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhDjcx">
+	SELECT COUNT(*) FROM RCYH_CXKBB WHERE BMCODE LIKE #{bmcode}||'%'
+</select>
+
+<!-- 根据“快报ID”查询数据：用于“查看” -->
+<select id="queryOneCxkbByKbid" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhDjcx" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhDjcx">
+	SELECT LX.LXNAME AS ROADNAME,B.BMNAME,C.VALUE AS cxflStr,A.* FROM RCYH_CXKBB A 
+	LEFT JOIN HTGL_LXB LX
+	ON A.LXCODE=LX.LXCODE
+	LEFT JOIN HTGL_BMB B 
+	ON A.BMCODE=B.BMCODE,HTGL_MJLX C WHERE A.CXFL=C.KEY AND A.KBID=#{kbid}
+</select>
+
+<!-- 计算“除雪快报”的折算里程 -->
+<select id="selectAllRoadByRoadcode" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhBasicRoad" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhBasicRoad">
+SELECT ROADCODE,
+	sum(case when t.roadends &gt; t.roadstart
+		then
+			abs((case when t.roadends &gt;= #{roadends} then #{roadends} else t.roadends end)-(case when t.roadstart &lt;= #{roadstart} then #{roadstart} else t.roadstart end))
+		else
+			abs((case when t.roadstart &gt;= #{roadends} then #{roadends} else t.roadstart end)-(case when t.roadends &lt;= #{roadstart} then #{roadstart} else t.roadends end)) 
+		end
+	) AS lc
+FROM HTGL_LKLDHFB t WHERE ROADCODE=#{roadcode} AND JSDJ in ('高速','一级')
+	AND (t.roadstart between #{roadstart} and #{roadends} or t.roadends between #{roadstart} and #{roadends})
+	group by ROADCODE
+</select>
+
+<!-- 计算“除雪快报”的除雪面积 -->
+<select id="countCxmj" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhBasicRoad" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhBasicRoad">
+SELECT ROADCODE,
+	sum(
+		case when t.roadends &gt; t.roadstart
+		then
+			(abs((case when t.roadends &gt;= #{roadends} then #{roadends} else t.roadends end)-(case when t.roadstart &lt;= #{roadstart} then #{roadstart} else t.roadstart end)) * LMKD)
+		else
+			(abs((case when t.roadstart &gt;= #{roadends} then #{roadends} else t.roadstart end)-(case when t.roadends &lt;= #{roadstart} then #{roadstart} else t.roadends end)) * LMKD) 
+		end
+	) AS mj
+FROM HTGL_LKLDHFB t WHERE ROADCODE=#{roadcode}
+	AND ((#{roadstart} &lt;= t.roadends AND #{roadends} &gt;=t.roadstart) or t.roadstart between #{roadstart} and #{roadends} or t.roadends between #{roadstart} and #{roadends})
+	group by ROADCODE
+</select>
+
+<!-- 修改State -->
+<update id="updateDjcxState" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhDjcx">
+	UPDATE RCYH_CXKBB SET state=#{state} WHERE KBID=#{kbid}
+</update>
+
+</mapper>

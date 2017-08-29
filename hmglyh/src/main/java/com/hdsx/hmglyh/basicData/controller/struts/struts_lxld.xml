@@ -1,0 +1,15 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<!-- 路段路线 -->
+	<package name="lxld" extends="struts-default" namespace="/lxld">
+		<!-- 管养路段下拉框 -->
+		<action name="getLxldCombo" class="lxldController" method="getLxldCombo"></action>
+		<action name="getLxldComboForLkdc" class="lxldController" method="getLxldComboForLkdc"></action>
+		<action name="getLxldCombo2" class="lxldController" method="getLxldCombo2"></action>
+		<action name="getLxCombo" class="lxldController" method="getLxCombo"></action>
+		<!-- 路线下拉框 -->
+		<action name="getTsbmLxldCombo" class="lxldController" method="getTsbmLxldCombo"></action>
+	</package>
+</struts>

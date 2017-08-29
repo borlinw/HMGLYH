@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.htgl.mapper.HtglLdbMapper">
+
+<!-- 查询（创建“路线”Combobox） -->
+<select id="queryLxToCreateCombobox" resultType="htglldb" parameterType="htglldb">
+	SELECT * FROM HTGL_LXB
+</select>
+
+<!-- 添加（路段） -->
+<insert id="addOneLd" parameterType="htglldb">
+	INSERT INTO HTGL_LDB (LDCODE,LDNAME,LXCODE,SZHH,EZHH,MILEAGE,BMCODE,BZ) VALUES(#{ldcode},#{ldname},#{lxcode},#{szhh},#{ezhh},#{mileage},#{bmcode},#{bz})
+</insert>
+
+<!-- 删除（路段） -->
+<delete id="deleteOneLd" parameterType="htglldb">
+	DELETE FROM HTGL_LDB WHERE LDCODE=#{ldcode}
+</delete>
+
+<!-- 修改（路段） -->
+<update id="updateOneLd" parameterType="htglldb">
+	UPDATE HTGL_LDB SET LDNAME=#{ldname},LXCODE=#{lxcode},SZHH=#{szhh},EZHH=#{ezhh},MILEAGE=#{mileage},BZ=#{bz} WHERE LDCODE=#{ldcode}
+</update>
+
+<!-- 查询（DataGrid） -->
+<select id="selectAllLdBySome" resultType="htglldb" parameterType="htglldb">
+	SELECT TEMP.* FROM (
+		SELECT ROWNUM RN,A.* FROM (
+			SELECT A.*,B.LXNAME,C.Bmname,C.BMLX<!-- ,D.childNum --> FROM HTGL_LDB A, HTGL_LXB B, HTGL_BMB C
+			<!-- ,(SELECT A.LDCODE,COUNT(B.LDCODE) AS childNum FROM HTGL_LDB A LEFT JOIN HTGL_LDB B ON B.LDCODE like A.LDCODE||'%' GROUP BY A.LDCODE) D -->
+			WHERE A.LXCODE = B.LXCODE AND A.BMCODE = C.Bmcode
+			<!-- AND A.LDCODE = D.LDcode -->
+			AND A.Bmcode=#{bmcode}
+			<if test="lxcode != '' and lxcode != null">
+				AND A.Lxcode=#{lxcode}
+			</if>
+	    ) A
+	) TEMP
+	<where>
+		<if test="page != null and page != ''">
+			<![CDATA[RN <= (${page} * ${rows})]]>
+			 AND
+			<![CDATA[RN>((${page} - 1) * ${rows})]]>
+		</if>
+	</where>
+</select>
+
+<!-- 查询 - 按照条件统计数据条数 -->
+<select id="countNumBySome" resultType="int" parameterType="htglldb">
+	SELECT COUNT(*) FROM HTGL_LDB WHERE Bmcode=#{bmcode}
+	<if test="lxcode != '' and lxcode != null">
+		AND Lxcode=#{lxcode}
+	</if>
+</select>
+
+<!-- 不需要Tree，预备废弃 -->
+<!-- 获取父节点（路段） -->
+<select id="selectFatherLd" parameterType="htglldb" resultType="htglldb">
+	SELECT * FROM HTGL_LDB WHERE LDCODE = #{ldcode}
+</select>
+<!-- 获取children（路段） -->
+<select id="selectChildrenLd" parameterType="htglldb" resultType="htglldb">
+	SELECT * FROM HTGL_LDB WHERE LDCODE like #{ldcode}||'__' order by LDCODE
+</select>
+
+<!-- 主键生成策略 -->
+<select id="generationPK" parameterType="htglldb" resultType="htglldb">
+	SELECT CONCAT(#{ldcode},LPAD(CAST(NVL(substr(MAX(LDCODE), -2)+1,1) AS varchar(2)),2,0)) AS LDCODE FROM HTGL_LDB WHERE LDCODE like #{ldcode}||'__'
+</select>
+
+<!-- 查询（根据部门编码创建“路段”Combobox） -->
+<select id="queryLdByBmcodeToCreateCombobox" resultType="htglldb" parameterType="htglldb">
+	SELECT LDCODE,LDNAME,LXCODE,SZHH,EZHH FROM HTGL_LDB WHERE BMCODE=#{bmcode}
+</select>
+</mapper>

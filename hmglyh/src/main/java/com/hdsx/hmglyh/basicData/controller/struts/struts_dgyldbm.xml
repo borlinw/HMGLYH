@@ -1,0 +1,10 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<package name="bm1" extends="struts-default" namespace="/bm1">
+		<!-- 部门下拉树 -->
+		<action name="getBmCombotree1" class="dgyldBmController" method="getBmCombotree1"></action>
+		
+	</package>
+</struts>

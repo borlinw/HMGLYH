@@ -1,0 +1,7 @@
+.logo{ width:440px; height:77px; overflow:hidden; margin:0 auto 20px auto;}
+
+.main{ width:995px; overflow:hidden; margin:0 auto;}
+.main ul{ padding:0; margin:0; border:0;}
+.main ul li{ width:248px; height:200px; overflow:hidden; float:left; display:block; margin:1px 1px 0 0;}
+
+.foot{ width:995px; height:22px; overflow:hidden; margin:15px auto 0 auto; font-size:12px; color:#FFF; line-height:22px; text-align:center;}

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hdsx.hmglyh.rcyh.dao.HtglMjlxMapper"> 
+ 
+  <cache eviction="FIFO" flushInterval="60000" size="512" readOnly="true"/>  
+  
+  <resultMap id="BaseResultMap" type="com.hdsx.hmglyh.rcyh.dao.model.HtglMjlx"> 
+    <result column="TYPE" property="type" jdbcType="VARCHAR"/>  
+    <result column="TYPECODE" property="typecode" jdbcType="VARCHAR"/>  
+    <result column="KEY" property="key" jdbcType="VARCHAR"/>  
+    <result column="VALUE" property="value" jdbcType="VARCHAR"/> 
+  </resultMap>  
+  <resultMap id="YhlxBaseResultMap" type="com.hdsx.hmglyh.rcyh.dao.model.HtglYhlxb"> 
+    <id column="YHID" property="yhid" jdbcType="VARCHAR"/>  
+    <result column="YHNAME" property="yhname" jdbcType="VARCHAR"/>  
+    <result column="DW" property="dw" jdbcType="VARCHAR"/>  
+    <result column="DJ" property="dj" jdbcType="DECIMAL"/>  
+    <result column="GRDE" property="grde" jdbcType="DECIMAL"/>  
+    <result column="YHXMMS" property="yhxmms" jdbcType="VARCHAR"/>  
+    <result column="QYZT" property="qyzt" jdbcType="DECIMAL"/>  
+    <result column="DEZT" property="dezt" jdbcType="DECIMAL"/>  
+    <result column="DEQDZT" property="deqdzt" jdbcType="DECIMAL"/>  
+    <result column="ISLFXB" property="islfxb" jdbcType="DECIMAL"/>  
+    <result column="ISLQLMXB" property="islqlmxb" jdbcType="DECIMAL"/>  
+    <result column="PX" property="px" jdbcType="DECIMAL"/> 
+  </resultMap>  
+  <resultMap type="com.hdsx.hmglyh.rcyh.dao.model.HtglYhlxb" id="YhlxResultMap" extends="YhlxBaseResultMap"> 
+    <collection select="selectYhlxChildren" column="YHID" property="children" ofType="java.util.List"/> 
+  </resultMap>  
+  <resultMap type="com.hdsx.hmglyh.util.Combotree" id="CombotreeMap"> 
+    <result column="YHID" property="id" jdbcType="VARCHAR"/>  
+    <result column="YHNAME" property="text" jdbcType="VARCHAR"/>  
+    <collection select="selectYhlxChildren" column="YHID" property="children" ofType="java.util.List"/> 
+  </resultMap>  
+  <resultMap id="GljlxbBaseResultMap" type="com.hdsx.hmglyh.rcyh.dao.model.HtglGljlxb"> 
+    <id column="LXID" property="lxid" jdbcType="VARCHAR"/>  
+    <result column="LXNAME" property="lxname" jdbcType="VARCHAR"/>  
+    <result column="GG" property="gg" jdbcType="VARCHAR"/>  
+    <result column="DW" property="dw" jdbcType="VARCHAR"/>  
+    <result column="BZ" property="bz" jdbcType="VARCHAR"/>  
+    <result column="PX" property="px" jdbcType="DECIMAL"/>  
+    <result column="QYZT" property="qyzt" jdbcType="DECIMAL"/> 
+  </resultMap>  
+  <resultMap type="com.hdsx.hmglyh.rcyh.dao.model.HtglGljlxb" id="GljlxbResultMap" extends="GljlxbBaseResultMap"> 
+    <collection property="children" column="LXID" ofType="java.util.List" select="selectGljlxbChildren"/> 
+  </resultMap>  
+  <sql id="Gljlxb_Column_List">LXID, LXNAME, nvl(GG,'无'), nvl(DW,' '), BZ, PX, QYZT</sql>  
+  <sql id="Yhlx_Column_List">YHID, YHNAME, DW, nvl(DJ,0), nvl(GRDE,0), YHXMMS, QYZT, DEZT, DEQDZT, ISLFXB, ISLQLMXB, PX</sql>  
+  <sql id="Base_Column_List">TYPE, TYPECODE, KEY, VALUE</sql>  
+  <sql id="Bhlx_Column_List" >
+	    BHID, BHNAME, DW, BHMS, WXSX, QYZT, PX
+  </sql>
+  <sql id="Mjlx_Where"> 
+    <where> 
+      <if test="type">and TYPE = #{type}</if>  
+      <if test="key">and KEY = #{key}</if>  
+      <if test="typecode">and TYPECODE = #{typecode}</if> 
+    </where> 
+  </sql>  
+  
+  <select id="selectBhlxByPrimaryKey" resultType="com.hdsx.hmglyh.rcyh.dao.model.HtglBhlx" parameterType="java.lang.String" >
+    select 
+    <include refid="Bhlx_Column_List" />
+    from hmglyh.HTGL_BHLX
+    where BHID = #{bhid,jdbcType=VARCHAR}
+  </select>
+  
+  <!--工料机 类型表 -->  
+  <select id="selectGljlxbChildren" resultMap="GljlxbResultMap" parameterType="string">select 
+    <include refid="Gljlxb_Column_List"/> ,lxid id,lxname text from HTGL_GLJLXB where LXID like #{lxid} || '___'
+  </select>  
+ 
+  <!-- 机械类型 树 -->  
+  <select id="selectGljjxTree" resultMap="GljlxbResultMap" parameterType="string">select 
+    <include refid="Gljlxb_Column_List"/> ,lxid id,lxname text from HTGL_GLJLXB where LXID = '003'
+  </select>  
+  <!-- 材料类型 树 -->  
+  <select id="selectGljclTree" resultMap="GljlxbResultMap" parameterType="string">select 
+    <include refid="Gljlxb_Column_List"/> ,lxid id,lxname text from HTGL_GLJLXB where LXID = '002'
+  </select>  
+  
+  <!-- 养护类型 -->  
+  <select id="selectYhlxChildren" parameterType="string" resultType="com.hdsx.hmglyh.rcyh.dao.model.HtglYhlxb" useCache="true">
+      select 
+    <include refid="Yhlx_Column_List"/> , yhid id, yhname text
+     from HTGL_YHLXB where YHID like #{yhid} || '__' order by px,yhid
+  </select>  
+  <!-- 养护类型树 -->  
+  <select id="selectYhlxTree" resultMap="YhlxBaseResultMap" useCache="true">
+      select 
+    	<include refid="Yhlx_Column_List"/> ,yhid id, yhname text from HTGL_YHLXB 
+    	where YHID like '__' order by px,yhid
+  </select>  
+  <!-- 枚举类型列表 -->
+  <select id="selectTq" parameterType="com.hdsx.hmglyh.rcyh.dao.model.HtglMjlx" resultType="com.hdsx.hmglyh.rcyh.dao.model.HtglMjlx">select 
+    <include refid="Base_Column_List"/> from HTGL_MJLX 
+    <include refid="Mjlx_Where"/> order by key
+  </select>  
+  <!-- 状态列表 -->
+  <select id="selectZtlb" parameterType="hashmap" resultType="com.hdsx.hmglyh.util.Combobox">
+  		select key "value",value "text"
+  			from HTGL_ZTSMB 
+  				<where>
+  					<if test="ssbd != null and ssbd != '' ">
+  						and SSBD = #{ssbd}
+  					</if>
+  					<if test="ztcode != null and ztcode != '' ">
+  						and ZTCODE = #{ztcode}
+  					</if>
+  					<if test="ztname != null and ztname != '' ">
+  						and ZTNAME = #{ztname}
+  					</if>
+  				</where>
+  				order by key
+  </select>
+  <!-- 获取部门对应的人工费 -->  
+  <select id="getRgfdj" parameterType="string" resultType="double">
+  		select nvl(dj,0) "dj" from HTGL_GLJJGB
+  		where LXID = '001001' and BMCODE like #{bmcode} || '%'
+  </select>  
+  
+  
+  <select id="getDedto" parameterType="string" resultType="com.hdsx.hmglyh.rcyh.controller.dto.Dedto">
+  	 select nvl(t1.dw,' ') dw,nvl(t1.grde,0) grde,nvl(t2.dj,0) rgdj,nvl(t1.dejs,1) dejs,nvl(t1.dj,0) dj from htgl_yhlxb t1
+                     left join htgl_gljjgb t2 on t2.lxid = '001001'  and t2.bmcode like #{bmcode} || '%'
+                     where t1.yhid = #{yhid}
+  </select>  
+  
+  <select id="getDeCls" parameterType="string" resultType="com.hdsx.hmglyh.rcyh.dao.model.HtglGljlxb">
+  	 select t2.lxname,t2.lxid,nvl(t2.gg,'无') gg,t2.bm,nvl(t1.sl,0) sl,nvl(t3.dj,0) dj,nvl(t2.dw,'-')  dw from htgl_deb t1
+                       left join htgl_gljlxb t2  on t1.lxid = t2.lxid
+                       left join htgl_gljjgb t3 on t2.lxid = t3.lxid and t3.bmcode like #{bmcode} || '%'
+                       where t1.YHID = #{yhid} and t2.LXID like '002%'
+  </select>  
+   <select id="getDeJxs" parameterType="string" resultType="com.hdsx.hmglyh.rcyh.dao.model.HtglGljlxb">
+  	 select t2.lxname,t2.lxid,nvl(t2.gg,'无') gg,t2.bm,nvl(t1.sl,0) sl,nvl(t3.dj,0) dj ,nvl(t2.dw,'-') dw from htgl_deb t1
+                       left join htgl_gljlxb t2  on t1.lxid = t2.lxid
+                       left join htgl_gljjgb t3 on t2.lxid = t3.lxid and t3.bmcode like #{bmcode} || '%'
+                       where t1.YHID = #{yhid} and t2.LXID like '003%'
+  </select>  
+  
+  <select id="selectZt" parameterType="hashmap" resultType="string">
+  	select VALUE from HTGL_ZTSMB where ZTCODE = #{ztcode} and KEY = #{key}
+  </select>  
+  <select id="bhlxConvert" parameterType="string" resultType="string">
+  	select BHNAME from HTGL_BHLX where BHID = #{bhid}
+  </select> 
+  <!-- 枚举类型 转换 -->
+  <select id="mjlxConvert" parameterType="hashmap" resultType="string">
+  	select VALUE 
+  		from HTGL_MJLX
+  		WHERE
+  			TYPECODE = #{typecode}
+  			and 
+  			KEY = #{key}
+  </select>
+
+  <!-- 批量插入 材料机械 消耗表 -->
+  <select id="insertCljxxhBatch"  parameterType="java.util.List">
+   insert into 
+  		  RCYH_CLJXXHB (SSID, LXID,SL,DJ,JE)
+	    <foreach collection="list" item="item" index="index" separator="union all" >  
+	   		  (select  
+					#{item.ssid,jdbcType=VARCHAR}, #{item.lxid,jdbcType=VARCHAR}, #{item.sl,jdbcType=NUMERIC}, #{item.dj,jdbcType=NUMERIC}, #{item.je,jdbcType=NUMERIC}
+	   			from dual ) 
+	    </foreach>  
+  </select>
+  
+  <delete id="deleteGljxhBySsid" parameterType="string">
+  	 delete from 
+  	 	RCYH_CLJXXHB
+  	 	where SSID = #{ssid}
+  </delete>
+  
+  <!-- 批量插入 用户表 -->
+  <select id="insertRyzyjlBatch"  parameterType="java.util.List">
+   insert into 
+  		  RCYH_RYZYJLB (ZYID, RYID,WCGCL,WCGR)
+	    <foreach collection="list" item="item" index="index" separator="union all" >  
+	   		  (select  
+					#{item.zyid,jdbcType=VARCHAR}, #{item.ryid,jdbcType=VARCHAR}, #{item.wcgcl,jdbcType=NUMERIC}, #{item.wcgr,jdbcType=NUMERIC}
+	   			from dual ) 
+	    </foreach>  
+  </select>
+  
+  <!-- 根据所属ID 删除 人员记录的相关信息 -->
+  <delete id="deleteRyzysByZyid" parameterType="string" >
+  		delete from 
+  			RCYH_RYZYJLB 
+  			where ZYID = #{zyid}
+  </delete>
+  
+  <delete id="deleteBhgl" parameterType="string" >
+  		delete from 
+  			RCYH_RWBHGLB 
+  			where rwdid = #{rwdid}
+  </delete>
+  
+  <!-- 批量插入病害的照片信息 -->
+  <select id="insertZpBatch"  parameterType="java.util.List">
+   insert into 
+  		  RCYH_ZPJLB (SSID, RYID,ZPMC,ZPDZ,ZPID,ZPMS,ZPDX)
+	    <foreach collection="list" item="item" index="index" separator="union all" >  
+	   		  (select  
+					#{item.ssid,jdbcType=VARCHAR}, #{item.ryid,jdbcType=VARCHAR}, #{item.zpmc,jdbcType=VARCHAR}, #{item.zpdz,jdbcType=VARCHAR},#{item.zpid,jdbcType=VARCHAR},
+	   			#{item.zpms,jdbcType=VARCHAR},#{item.zpdx,jdbcType=VARCHAR} from dual ) 
+	    </foreach>  
+  </select>
+  
+  <select id="getZpsBySsid" parameterType="string" resultType="com.hdsx.hmglyh.rcyh.dao.model.ZP">
+  		select 
+  			SSID, RYID,ZPMC,ZPDZ,ZPID,ZPMS,ZPDX
+  			from RCYH_ZPJLB
+  			where SSID = #{ssid}
+  </select>
+  
+  <delete id="delPicBySsid" parameterType="string">
+  		delete from 
+  		RCYH_ZPJLB
+  		where SSID = #{ssid}
+  </delete>
+  
+  <delete id="delPicByPicId" parameterType="string">
+  		delete from 
+	  		RCYH_ZPJLB
+	  		where ZPID = #{zpid}
+  </delete>
+  
+  <!-- 通过 养护 类型 ID 查询  养护 类型名称 -->
+  <select id="getYhlxName" parameterType="string" resultType="string">
+  	select YHNAME 
+  	from HTGL_YHLXB
+  	where YHID = #{yhlxid}
+  </select>
+
+  <!-- 根据 任务 ID  查询  病害 ID 数组 -->
+  <select id="selectBhjlids" parameterType="string" resultType="string">
+  	select BHJLID 
+  		from RCYH_RWBHGLB
+  		where RWDID = #{rwdid}
+  </select>
+  
+  <!-- 根据 传入的 字符串 时间 格式 查询 当前 的 所属 年月  格式(yyyy-mm-dd) -->
+  <select id="getSsny" parameterType="string" resultType="string" >
+      select yname from  htgl_nyjcb
+			where stime &lt;= to_date(#{today},'yyyy-mm-dd') and etime &gt;= to_date(#{today},'yyyy-mm-dd')
+  </select>
+
+ <!-- 通过当前时间 获取 当前月的 开始时间和结束时间 -->	
+ <select id="getStimeAndEtime" parameterType="string" resultType="hashmap" >
+	  select STIME,ETIME from HTGL_NYJCB
+	  where stime &lt;= to_date(#{today},'yyyy-mm-dd') and etime &gt;= to_date(#{today},'yyyy-mm-dd')
+ </select>
+ 
+  <select id="getStimeAndEtimeBySsny" parameterType="string" resultType="hashmap" >
+	  select STIME,ETIME from HTGL_NYJCB
+	  where YNAME = #{ssny}
+ </select>
+ 
+ 
+ <select id="getLdname" parameterType="string" resultType="string">
+     select LDNAME 
+     from HTGL_LDB
+     where LDCODE = #{ldcode}
+ </select>
+<!-- 根据部门ID 查询同级部门的 养护站的 所管辖路段 -->
+<select id="xdjlLds" parameterType="string" resultType="hashmap">
+   	select t1.ldcode "value",t1.ldname "text",t1.SZHH "szhh",t1.EZHH "ezhh"
+   	from HTGL_LDB t1 
+   		left join HTGL_BMB t2 on t1.bmcode = t2.bmcode
+   	where t1.bmcode like #{bmcode} || '__'
+   		   and t2.BMLX = '0102'
+</select>
+<!-- 通过病害类型ID查询 病害的维修时限 -->
+<select id="getWxsx" parameterType="string" resultType="string">
+   select WXSX from HTGL_BHLX
+   where BHID = #{bhid}
+</select>
+
+<!-- 工料机相关 -->
+
+ <!-- 
+ 	条件	 部门编码
+ 		类型ID
+ 		养护ID
+ 	查询 材料机械 相关 
+  -->
+  <select id="getGljdjs" parameterType="hashmap" resultType="hashmap">
+  	select t1.lxid "lxid",t1.lxname "lxname" ,nvl(t1.gg,'无') "gg",nvl(t1.dw,' ') "dw",t1.bm "bm",
+       nvl(t2.dj,0) "dj",nvl(t3.sl,0) "sl"
+        from htgl_gljlxb t1
+              left join htgl_gljjgb t2 on t1.lxid = t2.lxid and t2.bmcode = #{bmcode}
+              left join htgl_deb t3 on t3.lxid = t1.lxid and t3.yhid = #{yhid}
+              where 
+              t1.lxid = #{lxid} 
+  </select>
+  <!-- 根据养护类型ID 和 工料机类型ID 查询  工料机 的 数量 -->
+  <select id="getGljsl" parameterType="hashmap" resultType="integer">
+		select  SL FROM HTGL_DEB
+		where 
+		     YHID = #{yhid}
+		     and 
+		     LXID = #{lxid}
+  </select>
+  
+  <!-- 根据传入部门编码 和 类型ID 查询 上级部门的 工料机 单价 -->
+  <select id="getGljdjsForParent" parameterType="hashmap" resultType="double">
+  	select nvl(DJ,0)
+  		from
+  			HTGL_GLJJGB 
+  			where bmcode = ( select BMCODE from HTGL_BMB where BMCODE like substr(BMCODE,0,length(#{bmcode})-4) || '__' and BMLX = '0104')
+  				and 
+  				LXID  = #{id}
+  </select>
+  
+  <!-- 根据 养护ID 和部门编码 查询 工料机 相关信息  -->
+  <select id="listGljxhs" parameterType="hashmap" resultType="hashmap">
+      select t1.yhid "yhid",t2.lxid "lxid",t1.sl "sl",nvl(t2.dj,0) "dj",t2.bmcode "bmcode",t3.lxname "lxname",t3.gg "gg",t3.dw "dw" from htgl_deb t1
+         left join htgl_gljjgb t2 on t2.lxid = t1.lxid
+         left join htgl_gljlxb t3 on t2.lxid = t3.lxid
+        where t1.yhid = #{yhid} and t2.bmcode = #{bmcode}
+  </select>
+
+  <!-- 根据养护ID 查询 养护类型的 相关信息 -->
+  <select id="getYhlx" parameterType="string" resultType="hashmap">
+      select yhid "yhid",yhname "yhname" ,dw "dw" ,grde "grde" from htgl_yhlxb where YHID =#{yhid}
+  </select>
+ 
+  <!-- 根据路路段编码 返回 路线编码 -->
+  <select id="getLxcodeByld" parameterType="string" resultType="string">
+    	select lxcode from HTGL_LDB where LDCODE = #{ldcode}
+  </select>
+  
+  <!-- 根据部门编码获取 一个部门的人员 -->
+  <select id="selectRysByBmcode" parameterType="string" resultType="hashmap">
+  		select t1.ryid "ryid",t1.ryname "ryname"	
+  		from HTGL_RYB t1
+  			left join HTGL_BMB t2 on t1.BMCODE = t2.BMCODE
+  			where t1.BMCODE = #{bmcode}
+  			order by t1.zw
+  </select>
+  
+  <!-- 通过 bhid 查询 病害数量的单位 -->
+  <select id="getDwByBhid" parameterType="string" resultType="String">
+  		select dw from 
+  			htgl_bhlx
+  				where bhid = #{bhid}
+  </select>
+  <!-- 通过养护ID 查询 类型  -->
+  <select id="getDwByYhid" parameterType="string" resultType="String">
+  		select dw from 
+  			htgl_yhlxb
+  				where yhid = #{yhid}
+  </select>
+  
+  <!-- 根据人员ID 获取人员的姓名 -->
+  <select id="getRynameByRyid" parameterType="string" resultType="string">
+  		select ryname 
+  		from htgl_ryb
+  		where ryid = #{ryid}
+  </select>
+  
+ 
+  <!-- 获取部门人员treegrid -->
+  <resultMap id="RyTreeGridMap" type="com.hdsx.hmglyh.rcyh.controller.dto.RyDataList"> 
+    <result column="ryid" property="ryid" jdbcType="VARCHAR"/>  
+    <result column="ryname" property="ryname" jdbcType="VARCHAR"/>  
+    <result column="ryxb" property="ryxb" jdbcType="VARCHAR"/>  
+    <result column="bmcode" property="bmcode" jdbcType="VARCHAR"/> 
+    <result column="bmname" property="bmname" jdbcType="VARCHAR"/> 
+    <result column="zw" property="zw" jdbcType="VARCHAR"/> 
+    <collection select="selectBmRyChildren" column="BMCODE" property="children" ofType="java.util.List"/> 
+  </resultMap>  
+  
+  <select id="getRyTreegrid" parameterType="string" resultType="com.hdsx.hmglyh.rcyh.controller.dto.RyDataList">
+  		select t2.ryname text,t1.bmname "group", t2.* from
+  			HTGL_BMB t1 
+  			left join HTGL_RYB t2 on t1.BMCODE = t2.BMCODE
+  			where t1.bmcode like substr(#{bmcode},0,length(#{bmcode})-2) || '__' and t2.qyzt=1
+  			order by t1.bmcode,t2.zw
+  </select>
+  <select id="selectBmRyChildren" parameterType="string" resultType="com.hdsx.hmglyh.rcyh.controller.dto.RyDataList">
+  		 select t1.*,t2.bmname from 
+  			HTGL_RYB t1
+  			left join HTGL_BMB t2 on t1.bmcode = t2.bmcode
+  			where t1.bmcode = #{bmcode} and t1.qyzt=1
+  			order by t2.bmcode,t1.ZW
+  </select>
+  
+  <!-- 通过yhid 获取 定额基数 -->
+  <select id="getDejs" parameterType="string" resultType="double">
+  		select dejs from
+  			htgl_yhlxb
+  			where yhid = #{yhid}
+  </select>
+  
+  <select id="getBmcodeByLdcode" parameterType="string" resultType="string">
+  		select bmcode from 
+  			HTGL_LDB 
+  				where ldcode = #{ldcode}
+  </select>
+  
+  <select id="getSsnyByDateTime" parameterType="string" resultType="string">
+  	select yname from htgl_nyjcb
+			where stime &lt;= to_date(#{datetime},'yyyy-mm-dd hh24:mi:ss') 
+			      and  to_date(to_char(ETIME,'yyyy-mm-dd') || '23:59:59','yyyy-mm-dd hh24:mi:ss') &gt;= to_date(#{datetime},'yyyy-mm-dd hh24:mi:ss') 
+  </select>
+  <select id="getGrde" parameterType="string" resultType="double">
+  	select grde from htgl_yhlxb
+  	where yhid = #{yhid}
+  </select>
+  <select id="getYhlxDj" parameterType="string" resultType="double">
+  	select dj from htgl_yhlxb
+  	where yhid = #{yhid}
+  </select>
+</mapper>

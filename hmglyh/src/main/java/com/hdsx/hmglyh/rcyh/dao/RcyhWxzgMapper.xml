@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.rcyh.dao.RcyhWxzgMapper">
+
+<!-- 添加一条“整改通知单”信息 -->
+<insert id="addOneTzd" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	<!-- INSERT INTO RCYH_ZGTZD (TZDID,TBBMCODE,TBUSERNAME,TZDXLJ,SBBMCODE,WZ,YQ,SXTIME,TBRXM,SDTIME,CZWT,ZGYQ,JDUSERNAME,JDTIME,TZDZT) VALUES(#{tzdid},#{tbbmcode},#{tbusername},#{tzdxlj},#{sbbmcode},#{wz},#{yq},#{sxtime},#{tbrxm},#{sdtime},#{czwt},#{zgyq},#{jdusername},#{jdtime},#{tzdzt}) -->
+	<!-- 无“接单用户名和接单时间” -->
+	INSERT INTO RCYH_ZGTZD (TZDID,TBBMCODE,TBUSERNAME,TZDXLJ,SBBMCODE,WZ,YQ,SXTIME,TBRXM,SDTIME,CZWT,ZGYQ,TZDZT) VALUES(#{tzdid},#{tbbmcode},#{tbusername},#{tzdxlj},#{sbbmcode},#{wz},#{yq},#{sxtime},#{tbrxm},#{sdtime},#{czwt},#{zgyq},#{tzdzt})
+</insert>
+
+<!-- 删除一条“整改通知单”信息 -->
+<delete id="deleteOneTzd" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	DELETE RCYH_ZGTZD WHERE TZDID=#{tzdid}
+</delete>
+
+<!-- 修改一条“整改通知单”信息 -->
+<update id="updateOneTzd" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	
+</update>
+
+<!-- 修改 - “整改通知单”的接单操作 -->
+<update id="updateOneTzdOfJd" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	UPDATE RCYH_ZGTZD SET JDUSERNAME=#{jdusername},JDTIME=#{jdtime},TZDZT=1 WHERE TZDID=#{tzdid}
+</update>
+
+<!-- 修改一条“整改通知单”的tzdzt信息 -->
+<update id="updateTzdzt" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	UPDATE RCYH_ZGTZD SET TZDZT=#{tzdzt} WHERE TZDID=#{tzdid}
+</update>
+
+<!-- 按条件查询“维修整改通知单”信息 -->
+<select id="queryZgtzdBySome" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	SELECT TEMP.* FROM (
+		SELECT ROWNUM RN,A.*,B.BMNAME AS tbbmname,C.BMNAME AS sbbmname,D.RYNAME AS jdrxm FROM RCYH_ZGTZD A LEFT JOIN (SELECT USERNAME,RYNAME FROM HTGL_YHB A LEFT JOIN HTGL_RYB B ON A.RYID=B.RYID) D ON A.JDUSERNAME=D.USERNAME, HTGL_BMB B, HTGL_BMB C WHERE A.TBBMCODE=B.BMCODE AND A.SBBMCODE=C.BMCODE
+		AND TBBMCODE like #{tbbmcode}||'%'
+	) TEMP
+	<where>
+		<if test="page != null and page != ''">
+			<![CDATA[RN <= (${page} * ${rows})]]>
+			 AND
+			<![CDATA[RN>((${page} - 1) * ${rows})]]>
+		</if>
+	</where>
+</select>
+
+<!-- 按条件统计“维修整改通知单”数量 -->
+<select id="countZgtzdNumBySome" resultType="int" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	SELECT COUNT(*) FROM RCYH_ZGTZD
+</select>
+
+<!-- 添加一条“整改回复单”信息 -->
+<insert id="addOneHfd" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	<!-- INSERT INTO RCYH_ZGHFD (HFDID,TZDID,ZYBMCODE,HFDATE,SJWCTIME,TBUSERNAME,ZGCS,ZGJG,JCRYJ,JCUSERNAME,JCRXM) VALUES(#{hfdid},#{tzdid},#{zybmcode},#{hfdate},#{sjwctime},#{tbusername},#{zgcs},#{zgjg},#{jcryj},#{jcusername},#{jcexm}) -->
+	INSERT INTO RCYH_ZGHFD (HFDID,TZDID,ZYBMCODE,HFDATE,SJWCTIME,TBUSERNAME,ZGCS,ZGJG) VALUES(#{hfdid},#{tzdid},#{zybmcode},#{hfdate},#{sjwctime},#{tbusername},#{zgcs},#{zgjg})
+</insert>
+
+<!-- 删除一条“整改回复单”信息 -->
+<delete id="deleteOneHfd" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	DELETE RCYH_ZGHFD WHERE HFDID={hfdid}
+</delete>
+
+<!-- 修改一条“整改回复单”信息 -->
+<update id="updateOneHfd" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	
+</update>
+
+<!-- 修改 - “整改回复单”审核该回复单 -->
+<update id="updateOneHfdOfSh" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	UPDATE RCYH_ZGHFD SET JCRYJ=#{jcryj},JCUSERNAME=#{jcusername},JCRXM=#{jcrxm} WHERE HFDID=#{hfdid}
+</update>
+
+<!-- 返工 - “整改回复单” -->
+<update id="fgOfHfd" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	UPDATE RCYH_ZGHFD SET ZGCS=#{zgcs},ZGJG=#{zgjg},SJWCTIME=#{sjwctime} WHERE HFDID=#{hfdid}
+</update>
+
+<!-- 按条件查询“维修整改回复单”信息 -->
+<select id="queryZghfdBySome" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	SELECT TEMP.* FROM (
+		<!-- SELECT ROWNUM RN,A.*,B.BMNAME AS zybmname,D.RYNAME AS tbrxm FROM RCYH_ZGHFD A, HTGL_BMB B ,HTGL_YHB C ,HTGL_RYB D WHERE A.ZYBMCODE=B.BMCODE AND A.TBUSERNAME=C.USERNAME AND C.RYID=D.RYID
+			AND ZYBMCODE like #{zybmcode}||'%' -->
+		<!-- 实际上查询的还是“通知单的内容” -->
+		<!-- SELECT ROWNUM RN,A.TZDID,B.HFDID,A.TBUSERNAME,A.TZDXLJ,A.WZ,A.YQ,A.SXTIME,A.TBRXM,A.SDTIME,A.CZWT,A.ZGYQ,A.TZDZT FROM RCYH_ZGTZD A LEFT JOIN RCYH_ZGHFD B ON A.TZDID=B.TZDID WHERE SBBMCODE like #{sbbmcode}||'%' -->
+		SELECT ROWNUM RN,A.TZDID,B.HFDID,A.TBUSERNAME,A.TZDXLJ,A.WZ,A.YQ,A.SXTIME,A.TBRXM,A.SDTIME,A.CZWT,A.ZGYQ,A.TZDZT FROM RCYH_ZGTZD A LEFT JOIN RCYH_ZGHFD B ON A.TZDID=B.TZDID WHERE SBBMCODE = #{sbbmcode}
+	) TEMP
+	<where>
+		<if test="page != null and page != ''">
+			<![CDATA[RN <= (${page} * ${rows})]]>
+			 AND
+			<![CDATA[RN>((${page} - 1) * ${rows})]]>
+		</if>
+	</where>
+</select>
+
+<!-- 按条件统计“维修整改回复单”数量 -->
+<select id="countZghfdNumBySome" resultType="int" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	<!-- SELECT COUNT(*) FROM RCYH_ZGHFD WHERE ZYBMCODE like #{zybmcode}||'%' -->
+	<!-- SELECT COUNT(*) FROM RCYH_ZGTZD WHERE SBBMCODE like #{sbbmcode}||'%' -->
+	SELECT COUNT(*) FROM RCYH_ZGTZD WHERE SBBMCODE = #{sbbmcode}
+</select>
+
+<!-- 根据“维修整改通知单”tzdid查询通知单的信息，用于：回复单中“查看”操作 -->
+<select id="queryOneZgtzdByTzdid" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	SELECT A.TZDID,A.TBBMCODE,C.BMNAME AS TBBMNAME,A.SBBMCODE,D.BMNAME AS SBBMNAME,A.TZDXLJ,A.WZ,A.YQ,A.SXTIME,A.TBRXM,A.SDTIME,A.CZWT,A.ZGYQ,B.RYNAME AS jdrxm,A.JDTIME FROM RCYH_ZGTZD A LEFT JOIN (SELECT USERNAME,RYNAME FROM HTGL_YHB A LEFT JOIN HTGL_RYB B ON A.RYID=B.RYID) B ON A.JDUSERNAME=B.USERNAME, HTGL_BMB C, HTGL_BMB D WHERE A.TBBMCODE=C.BMCODE AND A.SBBMCODE=D.BMCODE AND TZDID=#{tzdid}
+</select>
+
+<!-- 根据“维修整改通知单”tzdid查询其对应“回复单”的信息，用于：审核回复单 -->
+<select id="queryZghfdByTzdid" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	SELECT A.TZDID,B.HFDID,B.ZYBMCODE,C.BMNAME AS ZYBMNAME,B.HFDATE,A.TZDXLJ,A.SDTIME,A.SXTIME,B.SJWCTIME,B.ZGCS,B.ZGJG,B.JCRYJ,B.JCRXM FROM RCYH_ZGTZD A LEFT JOIN RCYH_ZGHFD B ON A.TZDID=B.TZDID,HTGL_BMB C WHERE B.ZYBMCODE=C.BMCODE AND A.TZDID=#{tzdid}
+</select>
+
+<!-- 根据Tzdid查询数据，用于导出Excel -->
+<select id="queryTzdToExport" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	<!-- SELECT A.TZDID,A.TBBMCODE,B.BMNAME AS TBBMNAME,A.TZDXLJ,A.SBBMCODE,C.BMNAME AS SBBMNAME,A.WZ,A.YQ,A.SXTIME,A.TBRXM,A.SDTIME,A.CZWT,A.ZGYQ,A.JDUSERNAME,D.RYNAME AS JDRXM,A.JDTIME FROM RCYH_ZGTZD A LEFT JOIN HTGL_BMB B ON A.TBBMCODE=B.BMCODE,HTGL_BMB C,(SELECT A.USERNAME,B.RYNAME FROM HTGL_YHB A LEFT JOIN HTGL_RYB B ON A.RYID=B.RYID) D WHERE A.SBBMCODE=C.BMCODE AND A.JDUSERNAME=D.USERNAME AND TZDID=#{tzdid} -->
+	SELECT TEMPA.*,TEMPB.RYNAME AS JDRXM FROM (
+		SELECT A.TZDID,A.TBBMCODE,B.BMNAME AS TBBMNAME,A.TZDXLJ,A.SBBMCODE,C.BMNAME AS SBBMNAME,A.WZ,A.YQ,A.SXTIME,A.TBRXM,A.SDTIME,A.CZWT,A.ZGYQ,A.JDUSERNAME,A.JDTIME 
+		FROM RCYH_ZGTZD A LEFT JOIN HTGL_BMB B ON A.TBBMCODE=B.BMCODE,HTGL_BMB C
+		WHERE A.SBBMCODE=C.BMCODE AND TZDID=#{tzdid}
+	) TEMPA LEFT JOIN (
+		SELECT A.USERNAME,B.RYNAME FROM HTGL_YHB A LEFT JOIN HTGL_RYB B ON A.RYID=B.RYID
+	) TEMPB ON TEMPA.JDUSERNAME=TEMPB.USERNAME
+</select>
+
+<!-- 根据Hfdid查询数据，用于导出Excel -->
+<!-- 当前为：根据tzdid查询回复单数据，用于导出Excel -->
+<select id="queryHfdToExport" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzg">
+	<!-- SELECT A.HFDID,A.TZDID,A.ZYBMCODE,C.BMNAME AS ZYBMNAME,A.HFDATE,B.TZDXLJ,B.SDTIME,B.SXTIME,A.SJWCTIME,A.ZGCS,A.ZGJG,A.JCRYJ,A.JCRXM FROM RCYH_ZGHFD A LEFT JOIN RCYH_ZGTZD B ON A.TZDID=B.TZDID,HTGL_BMB C WHERE A.ZYBMCODE=C.BMCODE AND A.HFDID=#{hfdid} -->
+	SELECT A.HFDID,A.TZDID,A.ZYBMCODE,C.BMNAME AS ZYBMNAME,A.HFDATE,B.TZDXLJ,B.SDTIME,B.SXTIME,A.SJWCTIME,A.ZGCS,A.ZGJG,A.JCRYJ,A.JCRXM FROM RCYH_ZGHFD A LEFT JOIN RCYH_ZGTZD B ON A.TZDID=B.TZDID,HTGL_BMB C WHERE A.ZYBMCODE=C.BMCODE AND A.TZDID=#{tzdid}
+</select>
+
+</mapper>

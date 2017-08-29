@@ -1,0 +1,25 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<package name="bbkzb" extends="struts-default" namespace="/bbkzb">
+		<!-- 生成版本库 -->
+		<action name="addBbkzb" class="bbkzbController" method="addBbkzb"></action>
+		<!-- 修改版本库 -->
+		<action name="changeBbkzb" class="bbkzbController" method="changeBbkzb"></action>
+		<!-- 查询版本库 -->
+		<action name="queryBb" class="bbkzbController" method="queryBb"></action>
+		<!-- 删除版本库 -->
+		<action name="dropBb" class="bbkzbController" method="dropBb"></action>
+		<!-- 获取千米版本 -->
+		<action name="getQmbb" class="bbkzbController" method="getQmbb"></action>
+		<!-- 获取版本 -->
+		<action name="getBbid" class="bbkzbController" method="getBbid"></action>
+		<!-- 统计分析版本 -->
+		<action name="getBb" class="bbkzbController" method="getBb"></action>
+		<!-- 路面检测沿用之前路面检测数据专用 -->
+		<action name="getBbForLmjc" class="bbkzbController" method="getBbForLmjc"></action>
+		<!-- 区段划分用，带有上报状态 -->
+		<action name="getBbForQdhf" class="bbkzbController" method="getBbForQdhf"></action>
+	</package>
+</struts>

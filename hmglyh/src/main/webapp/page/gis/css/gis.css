@@ -1,0 +1,40 @@
+/*声明*/
+body, ul, li, form, fieldset, legend, button, input, textarea, th, td{ margin:0; padding:0; border:0;}
+ul, ol, dl, dt { list-style:none; }
+li{ list-style:none}
+body {font-family:Arial, SimSun, sans-serif, Verdana, Lucida, Helvetica;font-size:12px; line-height:22px; color:#000;}
+a img, img, iframe,button{border:none;}
+a span, form label,button {cursor:pointer;}
+
+/*index*/
+.main{ width:225px; overflow:hidden;}
+.main_con{ width:210px; min-height:600px;height:100%; overflow:hidden; float:left; display:block;background:white;z-index:99999;position:absolute;left:0px;top:0px;}
+.logo{ width:210px; height:70px; overflow:hidden;}
+.nav{ width:210px; overflow:hidden;}
+.nav_tit{ width:210px; overflow:hidden;}
+.nav_tit ul li{ width:105px; height:60px; float:left; display:block; text-align:center; padding-top:6px; margin-bottom:10px;}
+.libg1{ border-bottom:1px solid #FFF; background-color:#FFF;cursor:pointer;}
+.libg2{ border-bottom:1px solid #dadbde; background-color:#e5f4f6;cursor:pointer;}
+.liimg{ width:36px; height:36px; overflow:hidden; margin:0 auto;}
+.lifont{ width:105px; overflow:hidden; text-align:center;}
+.nav_sub{ width:210px; height:400px; overflow:hidden;}
+.nav_sub ul li{ height:36px; border-bottom:1px solid #dadbde; line-height:36px;}
+.font_a1:link, .font_a1:visited{ color:#000; text-decoration:none;}
+.font_a1:hover{ color:#59c3d1;}
+.nav_sub_img{ width:18px; overflow:hidden; float:left; display:block; padding:9px 10px 0 20px;}
+.nav_sub_arrow{ width:9px; overflow:hidden; float:right; display:block; padding:13px 10px 0 20px;}
+.font_a2:link, .font_a2:visited{ font-family:"宋体"; color:#099; text-decoration:none;}
+.font_a2:hover{ color:#59c3d1;}
+
+.main_bottom{ width:210px; height:22px; overflow:hidden; color:#c9c9c9; margin:15px 0;}
+.main_side{ width:15px; height:300px; overflow:hidden; float:left; display:block; background:url(../images/side_bg.png) repeat-y;z-index:99999;position:absolute;left:210px; padding-top:300px; cursor:pointer;}
+
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden} /*所有主流浏览器都支持 :after 伪元素。*/ 
+.clearfix{height:600px;}/*不知道有什么用处，不加ie7也没有问题*/ 
+.clearfix:after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;} 
+.clearfix{zoom:1;}
+
+
+
+/*index2*/
+.main_side2{ width:15px; height:300px; overflow:hidden; background:url(../images/side_bg.png) repeat-y; padding-top:300px; cursor:pointer;}

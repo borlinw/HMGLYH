@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20141222" releaseVersion="7.1.1">
+<TableDataMap>
+<TableData name="汇总" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="ssny"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="bmcode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="rwdlx"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="ldcode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from r_rcyhrwd
+where bmcode='${bmcode}' and ssny='${ssny}'and ldcode='${ldcode}'and rwdlx='${rwdlx}']]></Query>
+</TableData>
+<TableData name="任务单来源" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[Oracle]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct rwdlx,
+case rwdlx when 0 then '计划' when 1 then '巡道' when 2 then '补充'end rwly
+from rcyh_rwdjlb]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[914400,457200,723900,723900,1181100,1943100,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[0,1324800,1324800,1324800,1324800,1324800,1324800,1324800,1324800,1324800,1324800,1324800,1324800,1324800,1324800,1324800,1324800,1324800,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="0" cs="17" rs="2" s="0">
+<O>
+<![CDATA[日常养护作业任务通知单          ]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="2" cs="17" s="0">
+<O>
+<![CDATA[                                                             表5-7]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="3" s="0">
+<O>
+<![CDATA[编号:]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="3" cs="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="3" cs="5" s="0">
+<O>
+<![CDATA[年 第（        ）号]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="3" cs="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="4" cs="3" s="0">
+<O>
+<![CDATA[养护作业单位]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="4" cs="13" s="1">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="BMNAME"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="17" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="5" cs="3" s="0">
+<O>
+<![CDATA[线路编号及区段桩号]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="5" cs="5" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="LDNAME"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="9" r="5" cs="3" s="0">
+<O>
+<![CDATA[任务来源（计划/巡道/补充)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="5" cs="5" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="RWDLX"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr kiName="RWDLX" viName="RWLY"/>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[任务单来源]]></Name>
+</TableData>
+</TableDataDictAttr>
+</Dictionary>
+</Present>
+<Expand/>
+</C>
+<C c="17" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="6" rs="4">
+<O>
+<![CDATA[任务Id]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="6" rs="4" s="0">
+<O>
+<![CDATA[序号]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="6" rs="4" s="0">
+<O>
+<![CDATA[病害名称]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="6" rs="4" s="0">
+<O>
+<![CDATA[项目名称]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="6" rs="4" s="0">
+<O>
+<![CDATA[实施路段]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="6" rs="4" s="0">
+<O>
+<![CDATA[计量单位]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="6" rs="4" s="0">
+<O>
+<![CDATA[工日定额]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="6" rs="4" s="0">
+<O>
+<![CDATA[工程数量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="6" rs="4" s="0">
+<O>
+<![CDATA[人工费 （元）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="6" cs="3" s="0">
+<O>
+<![CDATA[主要材料消耗]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="6" rs="4" s="0">
+<O>
+<![CDATA[材料费(元)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="6" cs="3" s="0">
+<O>
+<![CDATA[主要机械消耗]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="6" rs="4" s="0">
+<O>
+<![CDATA[机械费(元)]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="6" rs="4" s="0">
+<O>
+<![CDATA[修复时限]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="7" rs="3" s="0">
+<O>
+<![CDATA[名称]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="7" rs="3" s="0">
+<O>
+<![CDATA[数量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="7" rs="3" s="0">
+<O>
+<![CDATA[单价]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="7" rs="3" s="0">
+<O>
+<![CDATA[名称]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="7" rs="3" s="0">
+<O>
+<![CDATA[台班]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="7" rs="3" s="0">
+<O>
+<![CDATA[单价]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="10">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="RWDID"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="1" r="10" s="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq()]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="A11" order="1"/>
+</C>
+<C c="2" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="BHNAME"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="A11"/>
+</C>
+<C c="3" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="YHNAME"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="B11"/>
+</C>
+<C c="4" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="SSLD"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="B11"/>
+</C>
+<C c="5" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="DW"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="B11"/>
+</C>
+<C c="6" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="GRDE"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="B11"/>
+</C>
+<C c="7" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="GCHSL"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="B11"/>
+</C>
+<C c="8" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="RGF"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="B11"/>
+</C>
+<C c="9" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="CLNAME"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="10" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="CLSL"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="11" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="CLDJ"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="12" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="CLF"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="B11"/>
+</C>
+<C c="13" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="JXNAME"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="14" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="JXSL"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="15" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="JXDJ"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="16" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="JXF"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="B11"/>
+</C>
+<C c="17" r="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="汇总" columnName="XFSX"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false" left="B11"/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="JDBC2"/>
+<DMLConfig class="com.fr.write.config.IntelliDMLConfig">
+<Table schema="" name=""/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<UpdateAttr updateStatus="true"/>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<Parameter>
+<Attributes name="养护作业单位"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="养护区段"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="月份"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="任务来源"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="p5"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="HBB"/>
+<PreviewType PreviewType="0"/>
+</WorkBook>

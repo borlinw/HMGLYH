@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.rcyhtj.mapper.RcyhNdxxjlbMapper">
+	<!-- 查询全部学习信息 -->
+	<sql id="xx_Where">
+  	<where>
+  		<if test="bmcode != null and bmcode != '' ">
+  			and bmcode = #{bmcode}
+  		</if>
+  		<if test = "nf != null and nf != '' ">
+  			and nf = #{nf}
+  		</if>
+  		<if test = "jlid != null and jlid != '' ">
+  			and jlid = #{jlid}
+  		</if>
+  	</where>
+  </sql>
+	<select id="queryXxjl" parameterType="RcyhNdxxjlb" resultType="RcyhNdxxjlb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+				select * from R_NDXXJL
+				<include refid="xx_Where"/> order by xxdate desc
+			) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		<where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	<!-- 查询学习信息数量 -->
+	<select id="getXxCount" parameterType="RcyhNdxxjlb" resultType="int">
+		SELECT COUNT(*) FROM R_NDXXJL
+		<include refid="xx_Where"/>
+	</select>
+	<!-- 查询年份 -->
+	<select id="getNf" parameterType="RcyhNdxxjlb" resultType="RcyhNdxxjlb">
+		SELECT DISTINCT(NF) AS NF FROM RCYH_NDXXJLB  ORDER BY  NF DESC
+	</select>
+	<!-- 删除 一条信息-->
+	<delete id="drop" parameterType="RcyhNdxxjlb" >
+		DELETE FROM RCYH_NDXXJLB WHERE JLID = #{jlid}
+	</delete>
+	<!-- 添加一条信息 -->
+	<insert id="add" parameterType="RcyhNdxxjlb" >
+		INSERT INTO RCYH_NDXXJLB(JLID,JLDATE,NF,BMCODE,JLUSERNAME,XXNR,XXDD,XXDATE,BZ,XXRY)
+		VALUES(SYS_GUID(),#{jldate},#{nf},
+		#{bmcode},#{jlusername},#{xxnr},#{xxdd},#{xxdate},#{bz},#{xxry})
+	</insert>
+	<!-- 修改一条信息 -->
+	<update id="change" parameterType="RcyhNdxxjlb">
+		UPDATE RCYH_NDXXJLB
+		SET JLDATE=#{jldate},NF=#{nf},BMCODE=#{bmcode},
+		JLUSERNAME=#{jlusername},XXNR=#{xxnr},XXDD=#{xxdd},XXDATE=#{xxdate},BZ=#{bz},XXRY=#{xxry}
+		WHERE JLID=#{jlid}
+	</update>
+	<!-- 根据id查询学习记录 -->
+	<select id="queryByid" parameterType="RcyhNdxxjlb" resultType="RcyhNdxxjlb">
+		select * from rcyh_ndxxjlb where jlid=#{jlid}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
