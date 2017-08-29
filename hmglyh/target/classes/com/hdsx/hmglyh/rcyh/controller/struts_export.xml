@@ -1,0 +1,16 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+
+	<!-- 导出专用（通知单/回复单）  -->
+	<package name="export" extends="struts-default" namespace="/export">
+
+		<!-- 下载文件（通知单） -->
+		<action name="exportTzd" class="com.hdsx.hmglyh.rcyh.controller.WxzgExportController" method="exportTzd"/>
+		<!-- 下载文件（回复单） -->
+		<action name="exportHfd" class="com.hdsx.hmglyh.rcyh.controller.WxzgExportController" method="exportHfd"/>
+
+	</package>
+
+</struts>

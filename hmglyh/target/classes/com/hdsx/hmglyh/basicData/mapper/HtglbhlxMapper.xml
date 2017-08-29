@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.basicData.mapper.BhlxMapper">
+	<!-- 查询病害类型 -->
+	<select id="getAllBhlx"  resultType="bhlx">
+		SELECT BHID,BHNAME FROM HTGL_BHLX	
+	</select>
+	<!-- 获取父节点 -->
+	<select id="selectFather" parameterType="bhlx" resultType="bhlx">
+		select * from htgl_bhlx where bhid like '__'
+	</select>
+	<!-- 获取子节点 -->
+	<select id="selectChildren" parameterType="bhlx" resultType="bhlx">
+		select * from htgl_bhlx where bhid like #{bhid}||'__' order by bhid
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

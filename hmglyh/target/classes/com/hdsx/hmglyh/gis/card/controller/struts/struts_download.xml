@@ -1,0 +1,20 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<package name="download" extends="struts-default" namespace="/download">
+		<action name="down" class="downloadController" method="down">
+			<result name="success" type="stream">
+				<param name="inputName">download</param>
+				<param name="contentDisposition">attachment;fileName="${fileName}"</param>
+			</result>
+		</action>
+		<action name="open" class="downloadController" method="open">
+			<result name="success" type="stream">
+				<param name="inputName">download</param>
+				<param name="contentDisposition">fileName="${fileName}"</param>
+				<param name="contentType">application/octet-stream;charset=ISO8859-1</param>
+			</result>
+		</action>
+	</package>
+</struts>

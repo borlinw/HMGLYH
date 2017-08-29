@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.rcyh.dao.HtglYhbMapper" >
+   <cache
+        eviction="FIFO"
+        flushInterval="60000"
+        size="512"
+        readOnly="true" />
+  <resultMap id="BaseResultMap" type="com.hdsx.hmglyh.rcyh.dao.model.HtglYhb" >
+    <id column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="PW" property="pw" jdbcType="VARCHAR" />
+    <result column="RYID" property="ryid" jdbcType="DECIMAL" />
+    <result column="JSID" property="jsid" jdbcType="DECIMAL" />
+    <result column="QYZT" property="qyzt" jdbcType="DECIMAL" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    USERNAME, PW, RYID, JSID, QYZT
+  </sql>
+  
+  <sql id="Base_Column_List2" >
+    t1.USERNAME, t1.PW, t1.RYID, t1.JSID, t1.QYZT
+  </sql>
+  
+  <!-- 巡道记录的记录人和负责人 -->
+  <select id="xdjlYhs" parameterType="string" resultType="hashmap">
+  		select t2.ryid "value",t2.RYNAME "text"
+  		from HTGL_RYB t2
+  			where t2.BMCODE = #{bmcode}
+  </select>
+  
+  <!-- 查询 真实姓名 -->
+  <select id = "getRealName" parameterType="string" resultType="string">
+  		select t2.RYNAME 
+  		from HTGL_YHB t1 
+  		left join HTGL_RYB t2 on t1.RYID = t2.RYID
+  		where t1.USERNAME = #{username}
+  </select>
+  <!-- 查询部门编码 -->
+  <select id = "getBmname" parameterType="string" resultType="string">
+  	select BMNAME from 
+  	HTGL_BMB
+  	where BMCODE = #{bmcode}
+  </select>
+ 
+</mapper>

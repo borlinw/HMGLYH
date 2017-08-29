@@ -1,0 +1,16 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<!-- 原始路段管理 -->
+	<package name="lkldhfb" extends="struts-default" namespace="/lkldhfb">
+		<!-- 查询原始路段 -->
+		<action name="getYsld" class="lkldhfbController" method="getYsld"></action>
+		<!-- 添加原始路段 -->
+		<action name="addYsld" class="lkldhfbController" method="addYsld"></action>
+		<!-- 修改原始路段 -->
+		<action name="change" class="lkldhfbController" method="change"></action>
+		<!-- 删除原始路段 -->
+		<action name="dropYsld" class="lkldhfbController" method="dropYsld"></action>
+	</package>
+</struts>

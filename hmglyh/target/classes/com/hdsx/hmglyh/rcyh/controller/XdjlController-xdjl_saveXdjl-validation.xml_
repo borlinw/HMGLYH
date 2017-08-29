@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="xcsj.bmcode">
+		<field-validator type="requiredstring">
+			<message>巡道记录人部门不能为空</message>
+		</field-validator>
+	</field>
+	<field name="xcsj.username">
+		<field-validator type="requiredstring">
+			<message>巡道记录人不能为空</message>
+		</field-validator>
+	</field>
+	<field name="xcsj.stime">
+		<field-validator type="requiredstring">
+			<message>巡道开始时间不能为空</message>
+		</field-validator>
+	</field>
+	<field name="xcsj.etime">
+		<field-validator type="requiredstring">
+			<message>巡道结束时间不能为空</message>
+		</field-validator>
+	</field>
+	<field name="xcsj.xsld">
+		<field-validator type="requiredstring">
+			<message>查询路段不能为空</message>
+		</field-validator>
+	</field>
+	<field name="xcsj.tq">
+		<field-validator type="requiredstring">
+			<message>天气不能为空</message>
+		</field-validator>
+	</field>
+	<field name="xcsj.jlr">
+		<field-validator type="requiredstring">
+			<message>记录人不能为空</message>
+		</field-validator>
+	</field>
+	<field name="xcsj.fzr">
+		<field-validator type="requiredstring">
+			<message>负责人不能为空</message>
+		</field-validator>
+	</field>
+</validators>

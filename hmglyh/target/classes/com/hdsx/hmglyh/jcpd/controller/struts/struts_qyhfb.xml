@@ -1,0 +1,26 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<package name="qyhfb" extends="struts-default" namespace="/qyhfb">
+		<!-- 插入区域划分（不用） -->
+		<action name="addQyhfb" class="qyhfbController" method="addQyhfb"></action>
+		<!-- 插入区域划分 -->
+		<action name="addQyhfbDetail" class="qyhfbController" method="addQyhfbDetail"></action>
+		<!-- 清空某一版本某条路段上的区域划分 -->
+		<action name="clearQyhfb" class="qyhfbController" method="clearQyhfb"></action>
+		<!-- 查询区域划分的信息 -->
+		<action name="queryQyhfb" class="qyhfbController" method="queryQyhfb"></action>
+		<!-- 查询区域划分是否被使用 -->
+		<action name="isUsed" class="qyhfbController" method="isUsed"></action>
+		<!-- 区域划分导出 -->
+		<action name="exportQyhf" class="qyhfbController" method="exportQyhf">
+			<result>/page/lkpd/qyqdhf/exportQyhf.jsp</result>
+		</action>
+		<!-- 查询之前在该路段有划分的区域划分版本 -->
+		<action name="getQybb" class="qyhfbController" method="getQybb"></action>
+		<!-- 沿用之前版本添加区域划分 -->
+		<action name="copy" class="qyhfbController" method="copy"></action>
+		<action name="getXxbForUpdate" class="qyhfbController" method="getXxbForUpdate"></action>
+	</package>
+</struts>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.htgl.mapper.HtglRybMapper">
+
+<!-- 添加 -->
+<insert id="addOneRy" parameterType="htglryb">
+	INSERT INTO HTGL_RYB (RYID,RYNAME,RYXB,BMCODE,ZW,LXDH,EMAIL,QQ,RZSJ,QYZT) VALUES (#{ryid},#{ryname},#{ryxb},#{bmcode},#{zw},#{lxdh},#{email},#{qq},#{rzsj},#{qyzt})
+</insert>
+
+<!-- 删除 -->
+<delete id="deleteOneRy" parameterType="htglryb">
+	DELETE FROM HTGL_RYB WHERE RYID=#{ryid}
+</delete>
+
+<!-- 修改 -->
+<update id="updateOneRy" parameterType="htglryb">
+	UPDATE HTGL_RYB SET RYNAME=#{ryname},RYXB=#{ryxb},BMCODE=#{bmcode},ZW=#{zw},LXDH=#{lxdh},EMAIL=#{email},QQ=#{qq},RZSJ=#{rzsj} WHERE RYID=#{ryid}
+</update>
+
+<!-- 修改启用禁用状态 -->
+<update id="changeState" parameterType="htglryb">
+	UPDATE HTGL_RYB SET QYZT=#{qyzt} WHERE RYID=#{ryid}
+</update>
+
+<!-- 查询 -->
+<select id="queryAllBySome" resultType="htglryb" parameterType="htglryb">
+	SELECT TEMP.* FROM (
+		SELECT ROWNUM RN,A.* FROM (
+			<!-- SELECT A.*,B.BMNAME FROM HTGL_RYB A LEFT JOIN HTGL_BMB B ON A.BMCODE=B.BMCODE -->
+			SELECT A.*,B.BMNAME,C.USERNAME FROM HTGL_RYB A LEFT JOIN HTGL_BMB B ON A.BMCODE=B.BMCODE,(SELECT A.RYID,B.USERNAME FROM HTGL_RYB A LEFT JOIN HTGL_YHB B ON A.RYID=B.RYID) C
+			<!-- WHERE RYNAME like '%'||#{ryname}||'%' AND A.BMCODE LIKE #{bmcode}||'%' -->
+			WHERE A.RYID=C.RYID AND RYNAME like '%'||#{ryname}||'%' AND A.BMCODE LIKE #{bmcode}||'%'
+			<if test="year != null and year != ''">
+				AND TO_CHAR(RZSJ,'yyyy') LIKE #{year}||'%'
+			</if>
+	    ) A
+	) TEMP
+	<where>
+		<if test="page != null and page != ''">
+			<![CDATA[RN <= (${page} * ${rows})]]>
+			 AND
+			<![CDATA[RN>((${page} - 1) * ${rows})]]>
+		</if>
+	</where>
+</select>
+
+<!-- 查询 - 按照条件统计数据条数 -->
+<select id="countNumBySome" resultType="int" parameterType="htglryb">
+	SELECT COUNT(*) FROM HTGL_RYB WHERE RYNAME like '%'||#{ryname}||'%' AND BMCODE LIKE #{bmcode}||'%'
+	<if test="year != null and year != ''">
+		AND TO_CHAR(RZSJ,'yyyy') LIKE #{year}||'%'
+	</if>
+</select>
+
+<!-- 获取“人员”主键 -->
+<select id="generationPK" resultType="int">
+	SELECT MAX(RYID)+1 FROM HTGL_RYB
+</select>
+
+<!-- 查询没有用户名的人员 -->
+<select id="queryAllWithNoUsername" resultType="htglryb" parameterType="htglryb">
+	SELECT A.RYID,A.RYNAME FROM HTGL_RYB A LEFT JOIN HTGL_YHB B ON A.RYID=B.RYID 
+	WHERE B.USERNAME is null AND A.BMCODE=#{bmcode} AND A.QYZT=1
+</select>
+
+<!-- 查询人员的入职年份（用于筛选人员） -->
+<select id="queryYear" resultType="htglryb" >
+	SELECT YEAR FROM(
+		SELECT DISTINCT TO_CHAR(NVL(RZSJ,CURRENT_DATE),'yyyy') AS Year FROM HTGL_RYB
+	) ORDER BY YEAR
+</select>
+
+</mapper>

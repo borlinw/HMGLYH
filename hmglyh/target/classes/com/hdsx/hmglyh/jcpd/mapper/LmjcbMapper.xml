@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.jcpd.mapper.LmjcbMapper">
+	<!-- 路面检测 -->
+	<select id="getLmjc" parameterType="lmjcb" resultType="lmjcb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+		    	SELECT QM.LXCODE,'K'||QM.SZHH||'-K'||QM.EZHH AS QMNAME,MJ.VALUE AS FXNAME,
+				L.JCID,L.BBID,L.LDID,L.JCLX,NVL(JCD1,-1) JCD1,NVL(JCD2,-1) JCD2,NVL(JCD3,-1) JCD3,NVL(JCD4,-1) JCD4,NVL(JCD5,-1) JCD5,
+				NVL(JCD6,-1) JCD6,NVL(JCD7,-1) JCD7,NVL(JCD8,-1) JCD8,NVL(JCD9,-1) JCD9,NVL(JCD10,-1) JCD10,NVL(ZHI,-1) ZHI,NVL(PJZ,-1) PJZ
+				FROM JCPD_QMLDB QM
+				LEFT JOIN HTGL_MJLX MJ
+				ON QM.FX=MJ.KEY
+				JOIN (SELECT * FROM JCPD_LMJCB WHERE JCLX=#{jclx} AND BBID=#{bbid}) L
+				ON QM.LDID=L.LDID
+				WHERE QM.LXCODE=#{lxCode} AND QM.BBID=(SELECT QMBBID FROM JCPD_BBKZB WHERE BBID=#{bbid}) 
+				AND <![CDATA[QM.SZHH>=#{szhh} AND #{ezhh}>QM.SZHH]]> AND QM.FX=#{fx}
+				ORDER BY QM.SZHH
+			) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		<where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	<select id="getLmjcCount" parameterType="lmjcb" resultType="int">
+		SELECT COUNT(*) FROM JCPD_LMJCB
+		WHERE JCLX=#{jclx} AND BBID=#{bbid} AND LDID IN (SELECT LDID FROM JCPD_QMLDB
+			WHERE LXCODE=#{lxCode} AND BBID=(SELECT QMBBID FROM JCPD_BBKZB WHERE BBID=#{bbid}) 
+			AND <![CDATA[SZHH>=#{szhh} AND #{ezhh}>SZHH]]> AND FX=#{fx}
+		)
+	</select>
+	
+	<!-- 沿用之前的数据 -->
+	<insert id="copy" parameterType="lmjcb" useGeneratedKeys="false">
+		<![CDATA[INSERT INTO JCPD_LMJCB(
+		SELECT SYS_GUID() AS JCID,#{bbid},LDID,JCLX,JCD1,JCD2,JCD3,JCD4,JCD5,JCD6,JCD7,JCD8,JCD6,JCD10,ZHI,PJZ FROM JCPD_LMJCB
+		WHERE BBID=#{jcbbid} AND LDID IN (SELECT LDID FROM JCPD_QMLDB WHERE BBID=(SELECT QMBBID FROM JCPD_BBKZB WHERE BBID=#{bbid})
+		AND LXCODE=#{lxCode} AND FX=#{fx} AND SZHH>=#{szhh} AND SZHH<#{ezhh}))]]>
+	</insert>
+	<!-- 清空某一版本的数据 -->
+	<delete id="clear" parameterType="lmjcb">
+		<![CDATA[DELETE FROM JCPD_LMJCB
+		WHERE BBID=#{bbid} AND LDID IN (SELECT LDID FROM JCPD_QMLDB WHERE BBID=(SELECT QMBBID FROM JCPD_BBKZB WHERE BBID=#{bbid})
+		AND LXCODE=#{lxCode} AND FX=#{fx} AND SZHH>=#{szhh} AND SZHH<#{ezhh})]]>
+	</delete>
+</mapper>

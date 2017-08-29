@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.rcyh.dao.RcyhCxbbbMapper" >
+
+<!-- 添加 -->
+<insert id="addOneCxbbb" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhCxbbb">
+	INSERT INTO RCYH_CXBBB (BBID,BBMC,SSJ,ESJ,ZJCZR) VALUES(#{bbid},#{bbmc},#{ssj},#{esj},#{zjczr})
+</insert>
+
+<!-- 删除 -->
+<delete id="deleteOneCxbbb" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhCxbbb">
+	DELETE RCYH_CXBBB WHERE BBID=#{bbid}
+</delete>
+
+<!-- 修改 -->
+<update id="updateOneCxbbb" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhCxbbb">
+	UPDATE RCYH_CXBBB SET BBMC=#{bbmc},SSJ=#{ssj},ESJ=#{esj} WHERE BBID=#{bbid}
+</update>
+
+<!-- 按条件查询“除雪版本”数据 -->
+<select id="queryAll" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhCxbbb" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhCxbbb">
+	SELECT TEMP.* FROM (
+		SELECT ROWNUM RN,A.*,B.RYNAME AS CJRMC FROM RCYH_CXBBB A LEFT JOIN (SELECT A.USERNAME,B.RYNAME FROM HTGL_YHB A LEFT JOIN HTGL_RYB B ON A.RYID=B.RYID) B ON A.ZJCZR=B.USERNAME
+	) TEMP
+	<where>
+		<if test="page != null and page != ''">
+			<![CDATA[RN <= (${page} * ${rows})]]>
+			 AND
+			<![CDATA[RN>((${page} - 1) * ${rows})]]>
+		</if>
+	</where>
+</select>
+
+<!-- 按条件统计“除雪快报”数量 -->
+<select id="countNum" resultType="int" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhCxbbb">
+	SELECT COUNT(*) FROM RCYH_CXBBB
+</select>
+
+<!-- 根据bbid查询一条数据（用于：编辑、查看） -->
+<select id="queryOneByBBID" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhCxbbb" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhCxbbb" >
+	SELECT A.*,B.RYNAME AS CJRMC FROM RCYH_CXBBB A LEFT JOIN (SELECT A.USERNAME,B.RYNAME FROM HTGL_YHB A LEFT JOIN HTGL_RYB B ON A.RYID=B.RYID) B ON A.ZJCZR=B.USERNAME WHERE BBID=#{bbid}
+</select>
+
+<!-- 主键生成 -->
+<select id="generationPK" resultType="int" >
+	SELECT nvl(MAX(BBID),0)+1 FROM RCYH_CXBBB
+</select>
+
+<!-- 根据bbid和bmcode查询当前部门版本的除雪年报是否已添加（用于：添加、查看除雪年报） -->
+<select id="queryCxnbByBBIDAndBmcode" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhCxbbb" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhCxbbb" >
+	SELECT NBID FROM RCYH_CXNBZB WHERE BBID=#{bbid} AND BMCODE=#{bmcode}
+</select>
+
+</mapper>

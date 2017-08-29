@@ -1,0 +1,11 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<package name="nyb" extends="struts-default" namespace="/nyb">
+		<!-- 查询年月 -->
+		<action name="getNy" class="nybController" method="getNy"></action>
+		<action name="getZyysNy" class="nybController" method="getZyysNy"></action>
+		<action name="getYf" class="nybController" method="getYf"></action>
+	</package>
+</struts>

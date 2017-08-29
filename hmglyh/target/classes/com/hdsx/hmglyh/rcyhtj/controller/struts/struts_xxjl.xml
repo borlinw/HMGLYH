@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<package name="rcyhNdxxjlb" extends="struts-default" namespace="/xxjlb">
+		<!-- 查询学习记录 -->
+		<action name="queryXxjl" class="rcyhNdxxjlbController" method="queryXxjl"></action>
+		<!-- 查询年份 -->
+		<action name="getNf" class="rcyhNdxxjlbController" method="getNf"></action>
+		<!-- 添加 -->
+		<action name="add" class="rcyhNdxxjlbController" method="add"></action>
+		<!-- 修改 -->
+		<action name="change" class="rcyhNdxxjlbController" method="change"></action>
+		<!-- 删除 -->
+		<action name="drop" class="rcyhNdxxjlbController" method="drop"></action>
+		<!-- 查询一条记录 -->
+		<action name="exportXxjl" class="rcyhNdxxjlbController" method="exportXxjl"></action>
+	</package>
+</struts>

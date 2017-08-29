@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.gis.jichusj.qitays.dao.QitaysMapper" >
+  <cache readOnly="true"></cache>
+  <resultMap id="JianzhicunResultMap" type="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Jianzhicun" >
+    <result column="CODE" property="code" jdbcType="OTHER" />
+    <result column="NAME" property="name" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="SXZRCSL" property="sxzrcsl" jdbcType="DECIMAL" />
+    <result column="JZCRK" property="jzcrk" jdbcType="DECIMAL" />
+    <result column="SSDX" property="ssdx" jdbcType="OTHER" />
+    <result column="SFGMLQ" property="sfgmlq" jdbcType="OTHER" />
+    <result column="SFSSMZJJQ" property="sfssmzjjq" jdbcType="OTHER" />
+    <result column="SFPKDQ" property="sfpkdq" jdbcType="OTHER" />
+    <result column="SFNLMC" property="sfnlmc" jdbcType="OTHER" />
+    <result column="SFSB" property="sfsb" jdbcType="OTHER" />
+    <result column="DYSFJYLDJTMT" property="dysfjyldjtmt" jdbcType="OTHER" />
+    <result column="MTYLDJL" property="mtyldjl" jdbcType="DECIMAL" />
+    <result column="DNSFJYGL" property="dnsfjygl" jdbcType="OTHER" />
+    <result column="TDXZ" property="tdxz" jdbcType="OTHER" />
+    <result column="SFYJTGYL" property="sfyjtgyl" jdbcType="OTHER" />
+    <result column="SFSYTGL" property="sfsytgl" jdbcType="OTHER" />
+    <result column="BSYYY" property="bsyyy" jdbcType="OTHER" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="OTHER" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="OTHER" />
+    <result column="GYDWMC" property="gydwmc" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="DSMC" property="dsmc" jdbcType="OTHER" />
+    <result column="QXMC" property="qxmc" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="ID" property="id" jdbcType="OTHER" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+  </resultMap>
+  
+  <!-- 建制村 -->
+   <sql id="Jianzhicun_Column_List">
+	   CODE,NAME,XZQH,SXZRCSL,JZCRK,SSDX,SFGMLQ,SFSSMZJJQ,SFPKDQ,SFNLMC,SFSB,DYSFJYLDJTMT,MTYLDJL,DNSFJYGL,TDXZ,SFYJTGYL,SFSYTGL,BSYYY,TBDWBM,GYDWBM,GYDWMC,BZ,DSMC,QXMC,PTX,PTY,C_ID,Z_ID,ID,M_PTY,SFKBJ,M_PTX
+   </sql>
+   
+   <sql id="Jianzhicun_Where"> 
+	  <where>
+	    <if test="code != null and code != '' ">and CODE = #{code}</if>
+	    <if test="xzqh != null and xzqh != '' ">and XZQH = #{xzqh}</if>
+	    <if test="name != null and name != '' ">and NAME like '%' || #{name} || '%'</if>
+	  </where>
+	</sql>
+  
+   <resultMap id="JumindianResultMap" type="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Jumindian" >
+    <result column="CODE" property="code" jdbcType="OTHER" />
+    <result column="NAME" property="name" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="JMDRK" property="jmdrk" jdbcType="DECIMAL" />
+    <result column="SSDX" property="ssdx" jdbcType="OTHER" />
+    <result column="SFGMLQ" property="sfgmlq" jdbcType="OTHER" />
+    <result column="SFSSMZJJQ" property="sfssmzjjq" jdbcType="OTHER" />
+    <result column="SFPKDQ" property="sfpkdq" jdbcType="OTHER" />
+    <result column="SFNLMC" property="sfnlmc" jdbcType="OTHER" />
+    <result column="SFSB" property="sfsb" jdbcType="OTHER" />
+    <result column="DYSFJYLDJTMT" property="dysfjyldjtmt" jdbcType="OTHER" />
+    <result column="MTYLDJL" property="mtyldjl" jdbcType="DECIMAL" />
+    <result column="DNSFJYGL" property="dnsfjygl" jdbcType="OTHER" />
+    <result column="TDXZ" property="tdxz" jdbcType="OTHER" />
+    <result column="SFYJTGYL" property="sfyjtgyl" jdbcType="OTHER" />
+    <result column="SFSYTGL" property="sfsytgl" jdbcType="OTHER" />
+    <result column="BSYYY" property="bsyyy" jdbcType="OTHER" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="OTHER" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="OTHER" />
+    <result column="GYDWMC" property="gydwmc" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="DSMC" property="dsmc" jdbcType="OTHER" />
+    <result column="QXMC" property="qxmc" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="ID" property="id" jdbcType="OTHER" />
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+  </resultMap>
+  
+  <!-- 居民点 -->
+  <sql id="Jumindian_Column_List">
+  		CODE,NAME,XZQH,JMDRK,SSDX,SFGMLQ,SFSSMZJJQ,SFPKDQ,SFNLMC,SFSB,DYSFJYLDJTMT,MTYLDJL,
+  		DNSFJYGL,TDXZ,SFYJTGYL,SFSYTGL,BSYYY,TBDWBM,GYDWBM,GYDWMC,BZ,DSMC,QXMC,PTX,PTY,Z_ID,
+  		ID,SFKBJ,M_PTX,C_ID,M_PTY
+  </sql>
+  
+  
+  <sql id="Jumindian_Where"> 
+	  <where>
+	    <if test="code != null and code != '' ">and CODE = #{code}</if>
+	    <if test="xzqh != null and xzqh != '' ">and XZQH = #{xzqh}</if>
+	    <if test="name != null and name != '' ">and NAME like '%' || #{name} || '%'</if>
+	 </where>
+  </sql>
+  
+  <resultMap id="XiangzhenResultMap" type="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Xiangzhen" >
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="CODE" property="code" jdbcType="OTHER" />
+    <result column="NAME" property="name" jdbcType="OTHER" />
+    <result column="XZRK" property="xzrk" jdbcType="DECIMAL" />
+    <result column="SSDX" property="ssdx" jdbcType="OTHER" />
+    <result column="SFGMLQ" property="sfgmlq" jdbcType="OTHER" />
+    <result column="SFSSMZJJQ" property="sfssmzjjq" jdbcType="OTHER" />
+    <result column="SFPKDQ" property="sfpkdq" jdbcType="OTHER" />
+    <result column="SFNLMC" property="sfnlmc" jdbcType="OTHER" />
+    <result column="SFSB" property="sfsb" jdbcType="OTHER" />
+    <result column="DYSFJYLDJTMT" property="dysfjyldjtmt" jdbcType="OTHER" />
+    <result column="MTYLDJL" property="mtyldjl" jdbcType="DECIMAL" />
+    <result column="DNSFJYGL" property="dnsfjygl" jdbcType="OTHER" />
+    <result column="TDXZ" property="tdxz" jdbcType="OTHER" />
+    <result column="SFYJTGYL" property="sfyjtgyl" jdbcType="OTHER" />
+    <result column="SFSYTGL" property="sfsytgl" jdbcType="OTHER" />
+    <result column="BSYYY" property="bsyyy" jdbcType="OTHER" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="OTHER" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="OTHER" />
+    <result column="GYDWMC" property="gydwmc" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="DSMC" property="dsmc" jdbcType="OTHER" />
+    <result column="QXMC" property="qxmc" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+    <result column="ID" property="id" jdbcType="OTHER" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+  </resultMap>
+  
+  <sql id="Xiangzhen_Column_List">
+	XZQH,CODE,NAME,XZRK,SSDX,SFGMLQ,SFSSMZJJQ,SFPKDQ,SFNLMC,SFSB,DYSFJYLDJTMT,MTYLDJL,DNSFJYGL,TDXZ,SFYJTGYL,SFSYTGL,BSYYY,TBDWBM,GYDWBM,GYDWMC,BZ,DSMC,QXMC,PTX,PTY,M_PTX,SFKBJ,ID,M_PTY,C_ID,Z_ID
+  </sql>
+  
+  <sql id="Xiangzhen_Where"> 
+  <where>
+    <if test="code != null and code != '' ">and CODE = #{code}</if>
+    <if test="xzqh != null and xzqh != '' ">and XZQH = #{xzqh}</if>
+    <if test="name != null and name != '' ">and NAME like '%' || #{name} || '%'</if>
+  </where>
+</sql>
+  
+  <resultMap id="ZirancunResultMap" type="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Zirancun" >
+    <result column="CODE" property="code" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="NAME" property="name" jdbcType="OTHER" />
+    <result column="HJSL" property="hjsl" jdbcType="DECIMAL" />
+    <result column="RKSL" property="rksl" jdbcType="DECIMAL" />
+    <result column="ZRCLX" property="zrclx" jdbcType="OTHER" />
+    <result column="SSDX" property="ssdx" jdbcType="OTHER" />
+    <result column="SFGMLQ" property="sfgmlq" jdbcType="OTHER" />
+    <result column="SFSSMZJJQ" property="sfssmzjjq" jdbcType="OTHER" />
+    <result column="SFPKDQ" property="sfpkdq" jdbcType="OTHER" />
+    <result column="BZJZW" property="bzjzw" jdbcType="OTHER" />
+    <result column="DYSFJYLDJTMT" property="dysfjyldjtmt" jdbcType="OTHER" />
+    <result column="MTYLDJL" property="mtyldjl" jdbcType="DECIMAL" />
+    <result column="DNSFJYGL" property="dnsfjygl" jdbcType="OTHER" />
+    <result column="SFSYTGL" property="sfsytgl" jdbcType="OTHER" />
+    <result column="BSYYY" property="bsyyy" jdbcType="OTHER" />
+    <result column="TDXZ" property="tdxz" jdbcType="OTHER" />
+    <result column="SFYJTGYL" property="sfyjtgyl" jdbcType="OTHER" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="OTHER" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="OTHER" />
+    <result column="GYDWMC" property="gydwmc" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="DSMC" property="dsmc" jdbcType="OTHER" />
+    <result column="QXMC" property="qxmc" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="ID" property="id" jdbcType="OTHER" />
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+  </resultMap>
+  
+  <sql id="Zirancun_Column_List">
+  	CODE,XZQH,NAME,HJSL,RKSL,ZRCLX,SSDX,SFGMLQ,SFSSMZJJQ,
+  	SFPKDQ,BZJZW,DYSFJYLDJTMT,MTYLDJL,DNSFJYGL,SFSYTGL,BSYYY,
+  	TDXZ,SFYJTGYL,TBDWBM,GYDWBM,GYDWMC,BZ,DSMC,QXMC,PTX,PTY,
+  	C_ID,M_PTX,M_PTY,Z_ID,ID,SFKBJ
+  </sql>
+  
+  <sql id="Zirancun_Where"> 
+	  <where>
+	    <if test="code != null and code != '' ">and CODE = #{code}</if>
+	    <if test="xzqh != null and xzqh != '' ">and XZQH = #{xzqh}</if>
+	    <if test="name != null and name != '' ">and NAME like '%' || #{name} || '%'</if>
+	  </where>
+  </sql>
+  
+  <resultMap id="LvyoujdResultMap" type="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Lvyoujd" >
+    <id column="ID" property="id" jdbcType="OTHER" />
+    <result column="CODE" property="code" jdbcType="OTHER" />
+    <result column="NAME" property="name" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="SFHSJQ" property="sfhsjq" jdbcType="OTHER" />
+    <result column="TDGLDM" property="tdgldm" jdbcType="OTHER" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="OTHER" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="OTHER" />
+    <result column="GYDWMC" property="gydwmc" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="DSMC" property="dsmc" jdbcType="OTHER" />
+    <result column="QXMC" property="qxmc" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Lvyoujd_Column_List" >
+    ID, CODE, NAME, XZQH, SFHSJQ, TDGLDM, TBDWBM, GYDWBM, GYDWMC, BZ, DSMC, QXMC, PTX, 
+    PTY, M_PTX, M_PTY, C_ID, Z_ID, SFKBJ
+  </sql>
+  
+  <sql id="Lvyoujd_Where"> 
+	  <where>
+	    <if test="code != null and code != '' ">and CODE = #{code}</if>
+	    <if test="xzqh != null and xzqh != '' ">and XZQH = #{xzqh}</if>
+	    <if test="name != null and name != '' ">and NAME like '%' || #{name} || '%'</if>
+	  </where>
+  </sql>
+  
+  <resultMap id="XuexiaoResultMap" type="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Xuexiao" >
+    <result column="CODE" property="code" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="NAME" property="name" jdbcType="OTHER" />
+    <result column="SSJZCBM" property="ssjzcbm" jdbcType="OTHER" />
+    <result column="XXLX" property="xxlx" jdbcType="OTHER" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="OTHER" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="OTHER" />
+    <result column="GYDWMC" property="gydwmc" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="DSMC" property="dsmc" jdbcType="OTHER" />
+    <result column="QXMC" property="qxmc" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="ID" property="id" jdbcType="OTHER" />
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Xuexiao_Column_List">
+  	CODE,XZQH,NAME,SSJZCBM,XXLX,TBDWBM,GYDWBM,GYDWMC,BZ,DSMC,QXMC,PTX,PTY,C_ID,M_PTX,M_PTY,Z_ID,ID,SFKBJ
+  </sql>
+  <sql id="Xuexiao_Where"> 
+	  <where>
+	    <if test="code != null and code != '' ">and CODE = #{code}</if>
+	    <if test="xzqh != null and xzqh != '' ">and XZQH = #{xzqh}</if>
+	    <if test="name != null and name != '' ">and NAME like '%' || #{name} || '%'</if>
+	  </where>
+   </sql>
+  
+   <resultMap id="QitalxdResultMap" type="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Qitalxd" >
+    <result column="CODE" property="code" jdbcType="OTHER" />
+    <result column="NAME" property="name" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="SX1" property="sx1" jdbcType="OTHER" />
+    <result column="SX2" property="sx2" jdbcType="OTHER" />
+    <result column="SX3" property="sx3" jdbcType="OTHER" />
+    <result column="SX4" property="sx4" jdbcType="OTHER" />
+    <result column="SX5" property="sx5" jdbcType="OTHER" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="OTHER" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="OTHER" />
+    <result column="GYDWMC" property="gydwmc" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="DSMC" property="dsmc" jdbcType="OTHER" />
+    <result column="QXMC" property="qxmc" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="ID" property="id" jdbcType="OTHER" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+  </resultMap>
+  
+  <sql id="Qitalxd_Column_List">
+  		CODE,NAME,XZQH,SX1,SX2,SX3,SX4,SX5,TBDWBM,GYDWBM,GYDWMC,BZ,DSMC,QXMC,PTX,PTY,ID,Z_ID,M_PTX,C_ID,SFKBJ,M_PTY
+  </sql>
+  	
+   <sql id="Qitalxd_Where"> 
+	  <where>
+	    <if test="code != null and code != '' ">and CODE = #{code}</if>
+	    <if test="xzqh != null and xzqh != '' ">and XZQH = #{xzqh}</if>
+	    <if test="name != null and name != '' ">and NAME like '%' || #{name} || '%'</if>
+	  </where>
+   </sql>
+  	
+   <resultMap id="GuoshuilmResultMap" type="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Guoshuilm" >
+    <id column="ID" property="id" jdbcType="OTHER" />
+    <result column="ROADCODE" property="roadcode" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="ROADNAME" property="roadname" jdbcType="OTHER" />
+    <result column="POS" property="pos" jdbcType="OTHER" />
+    <result column="CD" property="cd" jdbcType="OTHER" />
+    <result column="GYDW" property="gydw" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+  </resultMap>
+  
+  <sql id="Guoshuilm_Column_List" >
+    ID, ROADCODE, XZQH, ROADNAME, POS, CD, GYDW, BZ, PTX, PTY,FX
+  </sql>
+  
+  <sql id="Guoshuilm_Where"> 
+	  <where>
+	    <if test="roadcode != null and roadcode != '' ">and ROADCODE = #{roadcode}</if>
+	    <if test="xzqh != null and xzqh != '' ">and XZQH = #{xzqh}</if>
+	    <if test="id != null and id != '' ">and ID = #{id}</if>
+	  </where>
+   </sql>
+   
+   <resultMap id="BixiancdResultMap" type="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Bixiancd" >
+    <id column="ID" property="id" jdbcType="OTHER" />
+    <result column="ROADCODE" property="roadcode" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="ROADNAME" property="roadname" jdbcType="OTHER" />
+    <result column="POS" property="pos" jdbcType="OTHER" />
+    <result column="GYDW" property="gydw" jdbcType="OTHER" />
+    <result column="SZRQ" property="szrq" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+  </resultMap>
+  
+  <sql id="Bixiancd_Column_List">
+  ID,ROADCODE,XZQH,ROADNAME,POS,GYDW,SZRQ,BZ,PTX,PTY
+  </sql>
+  <sql id="Bixiancd_Where"> 
+	  <where>
+	    <if test="roadcode != null and roadcode != '' ">and ROADCODE = #{roadcode}</if>
+	    <if test="xzqh != null and xzqh != '' ">and XZQH = #{xzqh}</if>
+	    <if test="id != null and id != '' ">and ID = #{id}</if>
+	  </where>
+  </sql>
+  
+  <resultMap id="TingchedaoResultMap" type="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Tingchedao" >
+    <id column="ID" property="id" jdbcType="OTHER" />
+    <result column="ROADCODE" property="roadcode" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="ROADNAME" property="roadname" jdbcType="OTHER" />
+    <result column="POS" property="pos" jdbcType="OTHER" />
+    <result column="GYDW" property="gydw" jdbcType="OTHER" />
+    <result column="SZRQ" property="szrq" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Tingchedao_Column_List" >
+    ID, ROADCODE, XZQH, ROADNAME, POS, GYDW, SZRQ, BZ, PTX, PTY
+  </sql>
+  
+  <sql id="Tingchedao_Where"> 
+	  <where>
+	    <if test="roadcode != null and roadcode != '' ">and ROADCODE = #{roadcode}</if>
+	    <if test="xzqh != null and xzqh != '' ">and XZQH = #{xzqh}</if>
+	    <if test="id != null and id != '' ">and ID = #{id}</if>
+	  </where>
+  </sql>
+  
+  <resultMap id="LvhuaResultMap" type="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Lvhua" >
+    <id column="ID" property="id" jdbcType="OTHER" />
+    <result column="ROADCODE" property="roadcode" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="ROADNAME" property="roadname" jdbcType="OTHER" />
+    <result column="STARTZH" property="startzh" jdbcType="OTHER" />
+    <result column="ENDZH" property="endzh" jdbcType="OTHER" />
+    <result column="LDLX" property="ldlx" jdbcType="OTHER" />
+    <result column="LHZL" property="lhzl" jdbcType="OTHER" />
+    <result column="ZZRQ" property="zzrq" jdbcType="OTHER" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="OTHER" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="OTHER" />
+    <result column="GYDWMC" property="gydwmc" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="DSMC" property="dsmc" jdbcType="OTHER" />
+    <result column="QXMC" property="qxmc" jdbcType="OTHER" />
+    <result column="ROADENDS" property="roadends" jdbcType="DECIMAL" />
+    <result column="ROADSTART_" property="roadstart" jdbcType="DECIMAL" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="ROADSTART" property="roadstart" jdbcType="DECIMAL" />
+    <result column="ROADENDS_" property="roadends" jdbcType="DECIMAL" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+    <result column="FX" property="fx" jdbcType="OTHER" />
+  </resultMap>
+  
+   <sql id="Lvhua_Column_List" >
+    ID, ROADCODE, XZQH, ROADNAME, STARTZH, ENDZH, LDLX, LHZL, ZZRQ, TBDWBM, GYDWBM, GYDWMC, 
+    BZ, DSMC, QXMC, ROADENDS, ROADSTART_, C_ID, Z_ID, ROADSTART, ROADENDS_,PTX,PTY,M_PTX,M_PTY,FX
+  </sql>
+  
+   <sql id="Lvhua_Where"> 
+	  <where>
+	    <if test="roadcode != null and roadcode != '' ">and ROADCODE = #{roadcode}</if>
+	    <if test="xzqh != null and xzqh != '' ">and XZQH = #{xzqh}</if>
+	    <if test="id != null and id != '' ">and ID = #{id}</if>
+	  </where>
+  	</sql>
+  	
+  	
+  	<!-- 自动生成 -->
+   <select id="jianzhicunList" resultMap="JianzhicunResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Jianzhicun">SELECT * FROM(SELECT ROWNUM RN,TEMP.* FROM( select
+    <include refid="Jianzhicun_Column_List"/>from JIANZHICUN
+    <include refid="Jianzhicun_Where"/>) TEMP
+    <if test="page != null and page != '' ">where <![CDATA[ROWNUM <= (#{page} * #{rows})]]></if>)
+    <where>
+      <if test="page != null and page != ''"><![CDATA[RN>((#{page} - 1) * #{rows})]]></if>
+    </where>
+  </select>
+  <select id="jianzhicunCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Jianzhicun">select count(*) from JIANZHICUN
+    <include refid="Jianzhicun_Where"/>
+  </select>
+  <select id="jumindianList" resultMap="JumindianResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Jumindian">SELECT * FROM(SELECT ROWNUM RN,TEMP.* FROM( select
+    <include refid="Jumindian_Column_List"/>from JUMINDIAN
+    <include refid="Jumindian_Where"/>) TEMP
+    <if test="page != null and page != '' ">where <![CDATA[ROWNUM <= (#{page} * #{rows})]]></if>)
+    <where>
+      <if test="page != null and page != ''"><![CDATA[RN>((#{page} - 1) * #{rows})]]></if>
+    </where>
+  </select>
+  <select id="jumindianCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Jumindian">select count(*) from JUMINDIAN
+    <include refid="Jumindian_Where"/>
+  </select>
+  <select id="xiangzhenList" resultMap="XiangzhenResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Xiangzhen">SELECT * FROM(SELECT ROWNUM RN,TEMP.* FROM( select
+    <include refid="Xiangzhen_Column_List"/>from xiangzhen
+    <include refid="Xiangzhen_Where"/>) TEMP
+    <if test="page != null and page != '' ">where <![CDATA[ROWNUM <= (#{page} * #{rows})]]></if>)
+    <where>
+      <if test="page != null and page != ''"><![CDATA[RN>((#{page} - 1) * #{rows})]]></if>
+    </where>
+  </select>
+  <select id="xiangzhenCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Xiangzhen">select count(*) from xiangzhen
+    <include refid="Xiangzhen_Where"/>
+  </select>
+  <select id="zirancunList" resultMap="ZirancunResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Zirancun">SELECT * FROM(SELECT ROWNUM RN,TEMP.* FROM( select
+    <include refid="Zirancun_Column_List"/>from zirancun
+    <include refid="Zirancun_Where"/>) TEMP
+    <if test="page != null and page != '' ">where <![CDATA[ROWNUM <= (#{page} * #{rows})]]></if>)
+    <where>
+      <if test="page != null and page != ''"><![CDATA[RN>((#{page} - 1) * #{rows})]]></if>
+    </where>
+  </select>
+  <select id="zirancunCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Zirancun">select count(*) from zirancun
+    <include refid="Zirancun_Where"/>
+  </select>
+  <select id="lvyoujdList" resultMap="LvyoujdResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Lvyoujd">SELECT * FROM(SELECT ROWNUM RN,TEMP.* FROM( select
+    <include refid="Lvyoujd_Column_List"/>from jinqu
+    <include refid="Lvyoujd_Where"/>) TEMP
+    <if test="page != null and page != '' ">where <![CDATA[ROWNUM <= (#{page} * #{rows})]]></if>)
+    <where>
+      <if test="page != null and page != ''"><![CDATA[RN>((#{page} - 1) * #{rows})]]></if>
+    </where>
+  </select>
+  <select id="lvyoujdCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Lvyoujd">select count(*) from jinqu
+    <include refid="Lvyoujd_Where"/>
+  </select>
+  <select id="xuexiaoList" resultMap="XuexiaoResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Xuexiao">SELECT * FROM(SELECT ROWNUM RN,TEMP.* FROM( select
+    <include refid="Xuexiao_Column_List"/>from School
+    <include refid="Xuexiao_Where"/>) TEMP
+    <if test="page != null and page != '' ">where <![CDATA[ROWNUM <= (#{page} * #{rows})]]></if>)
+    <where>
+      <if test="page != null and page != ''"><![CDATA[RN>((#{page} - 1) * #{rows})]]></if>
+    </where>
+  </select>
+  <select id="xuexiaoCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Xuexiao">select count(*) from School
+    <include refid="Xuexiao_Where"/>
+  </select>
+  <select id="qitalxdList" resultMap="QitalxdResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Qitalxd">SELECT * FROM(SELECT ROWNUM RN,TEMP.* FROM( select
+    <include refid="Qitalxd_Column_List"/>from OTHERPOINT
+    <include refid="Qitalxd_Where"/>) TEMP
+    <if test="page != null and page != '' ">where <![CDATA[ROWNUM <= (#{page} * #{rows})]]></if>)
+    <where>
+      <if test="page != null and page != ''"><![CDATA[RN>((#{page} - 1) * #{rows})]]></if>
+    </where>
+  </select>
+  <select id="qitalxdCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Qitalxd">select count(*) from OTHERPOINT
+    <include refid="Qitalxd_Where"/>
+  </select>
+  <select id="guoshuilmList" resultMap="GuoshuilmResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Guoshuilm">SELECT * FROM(SELECT ROWNUM RN,TEMP.* FROM( select
+    <include refid="Guoshuilm_Column_List"/>from GUOSHUILUMIAN
+    <include refid="Guoshuilm_Where"/>) TEMP
+    <if test="page != null and page != '' ">where <![CDATA[ROWNUM <= (#{page} * #{rows})]]></if>)
+    <where>
+      <if test="page != null and page != ''"><![CDATA[RN>((#{page} - 1) * #{rows})]]></if>
+    </where>
+  </select>
+  <select id="guoshuilmCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Guoshuilm">select count(*) from GUOSHUILUMIAN
+    <include refid="Guoshuilm_Where"/>
+  </select>
+  <select id="bixiancdList" resultMap="BixiancdResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Bixiancd">SELECT * FROM(SELECT ROWNUM RN,TEMP.* FROM( select
+    <include refid="Bixiancd_Column_List"/>from PUTONGGONGLUBIXIANCHEDAO
+    <include refid="Bixiancd_Where"/>) TEMP
+    <if test="page != null and page != '' ">where <![CDATA[ROWNUM <= (#{page} * #{rows})]]></if>)
+    <where>
+      <if test="page != null and page != ''"><![CDATA[RN>((#{page} - 1) * #{rows})]]></if>
+    </where>
+  </select>
+  <select id="bixiancdCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Bixiancd">select count(*) from PUTONGGONGLUBIXIANCHEDAO
+    <include refid="Bixiancd_Where"/>
+  </select>
+  <select id="tingchedaoList" resultMap="TingchedaoResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Tingchedao">SELECT * FROM(SELECT ROWNUM RN,TEMP.* FROM( select
+    <include refid="Tingchedao_Column_List"/>from PUTONGGONGLUTINGCHEDAO
+    <include refid="Tingchedao_Where"/>) TEMP
+    <if test="page != null and page != '' ">where <![CDATA[ROWNUM <= (#{page} * #{rows})]]></if>)
+    <where>
+      <if test="page != null and page != ''"><![CDATA[RN>((#{page} - 1) * #{rows})]]></if>
+    </where>
+  </select>
+  <select id="tingchedaoCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Tingchedao">select count(*) from PUTONGGONGLUTINGCHEDAO
+    <include refid="Tingchedao_Where"/>
+  </select>
+  <select id="lvhuaList" resultMap="LvhuaResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Lvhua">SELECT * FROM(SELECT ROWNUM RN,TEMP.* FROM( select
+    <include refid="Lvhua_Column_List"/>from lxlh
+    <include refid="Lvhua_Where"/>) TEMP
+    <if test="page != null and page != '' ">where <![CDATA[ROWNUM <= (#{page} * #{rows})]]></if>)
+    <where>
+      <if test="page != null and page != ''"><![CDATA[RN>((#{page} - 1) * #{rows})]]></if>
+    </where>
+  </select>
+  <select id="lvhuaCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Lvhua">select count(*) from lxlh
+    <include refid="Lvhua_Where"/>
+  </select>
+  <resultMap id="ChuanchengldResultMap" type="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Chuanchengld" >
+    <id column="ID" property="id" jdbcType="OTHER" />
+    <result column="ROADCODE" property="roadcode" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="ROADNAME" property="roadname" jdbcType="OTHER" />
+    <result column="SPOS" property="spos" jdbcType="OTHER" />
+    <result column="EPOS" property="epos" jdbcType="OTHER" />
+    <result column="SZDM" property="szdm" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Chuanchengld_Column_List" >
+    ID, ROADCODE, XZQH, ROADNAME, SPOS, EPOS, SZDM, BZ, PTX, PTY, M_PTX, M_PTY
+  </sql>
+  <sql id="Chuanchengld_Where"> 
+	  <where>
+	    <if test="roadcode != null and roadcode != '' ">and ROADCODE = #{roadcode}</if>
+	    <if test="xzqh != null and xzqh != '' ">and XZQH = #{xzqh}</if>
+	  </where>
+   </sql>
+ <select id="ChuanchengldList" resultMap="ChuanchengldResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Chuanchengld">SELECT * FROM(SELECT ROWNUM RN,TEMP.* FROM( select
+    <include refid="Chuanchengld_Column_List"/>from CHUANCHENGLD
+    <include refid="Chuanchengld_Where"/>) TEMP
+    <if test="page != null and page != '' ">where <![CDATA[ROWNUM <= (#{page} * #{rows})]]></if>)
+    <where>
+      <if test="page != null and page != ''"><![CDATA[RN>((#{page} - 1) * #{rows})]]></if>
+    </where>
+  </select>
+  <select id="ChuanchengldCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.qitays.dao.model.Chuanchengld">select count(*) from CHUANCHENGLD
+    <include refid="Chuanchengld_Where"/>
+  </select>
+  
+  
+  
+  
+</mapper>

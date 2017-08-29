@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.MediasMapper" >
+  <resultMap id="BaseResultMap" type="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Medias" >
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+    <result column="ID" property="id" jdbcType="OTHER" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="ZPFX" property="zpfx" jdbcType="OTHER" />
+    <result column="DMTLX" property="dmtlx" jdbcType="OTHER" />
+    <result column="TXYSDID" property="txysdid" jdbcType="OTHER" />
+    <result column="BM" property="bm" jdbcType="OTHER" />
+    <result column="ZML" property="zml" jdbcType="OTHER" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="NAME" property="name" jdbcType="OTHER" />
+    <result column="DX" property="dx" jdbcType="VARCHAR" />
+    <result column="ZPDZ" property="zpdz" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Medias" >
+    insert into KTBASICDATABASE.MEDIAS (SFKBJ, ID, Z_ID, 
+      BZ, ZPFX, DMTLX, TXYSDID, 
+      BM, ZML, C_ID, NAME, 
+      DX, ZPDZ)
+    values (#{sfkbj,jdbcType=DECIMAL}, #{id,jdbcType=OTHER}, #{zId,jdbcType=DECIMAL}, 
+      #{bz,jdbcType=OTHER}, #{zpfx,jdbcType=OTHER}, #{dmtlx,jdbcType=OTHER}, #{txysdid,jdbcType=OTHER}, 
+      #{bm,jdbcType=OTHER}, #{zml,jdbcType=OTHER}, #{sys_guid(),jdbcType=VARCHAR}, #{name,jdbcType=OTHER}, 
+      #{dx,jdbcType=VARCHAR}, #{zpdz,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Medias" >
+    insert into KTBASICDATABASE.MEDIAS
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sfkbj != null" >
+        SFKBJ,
+      </if>
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="zId != null" >
+        Z_ID,
+      </if>
+      <if test="bz != null" >
+        BZ,
+      </if>
+      <if test="zpfx != null" >
+        ZPFX,
+      </if>
+      <if test="dmtlx != null" >
+        DMTLX,
+      </if>
+      <if test="txysdid != null" >
+        TXYSDID,
+      </if>
+      <if test="bm != null" >
+        BM,
+      </if>
+      <if test="zml != null" >
+        ZML,
+      </if>
+      <if test="cId != null" >
+        C_ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="dx != null" >
+        DX,
+      </if>
+      <if test="zpdz != null" >
+        ZPDZ,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sfkbj != null" >
+        #{sfkbj,jdbcType=DECIMAL},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=OTHER},
+      </if>
+      <if test="zId != null" >
+        #{zId,jdbcType=DECIMAL},
+      </if>
+      <if test="bz != null" >
+        #{bz,jdbcType=OTHER},
+      </if>
+      <if test="zpfx != null" >
+        #{zpfx,jdbcType=OTHER},
+      </if>
+      <if test="dmtlx != null" >
+        #{dmtlx,jdbcType=OTHER},
+      </if>
+      <if test="txysdid != null" >
+        #{txysdid,jdbcType=OTHER},
+      </if>
+      <if test="bm != null" >
+        #{bm,jdbcType=OTHER},
+      </if>
+      <if test="zml != null" >
+        #{zml,jdbcType=OTHER},
+      </if>
+      <if test="cId != null" >
+        #{sys_guid(),jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=OTHER},
+      </if>
+      <if test="dx != null" >
+        #{dx,jdbcType=VARCHAR},
+      </if>
+      <if test="zpdz != null" >
+        #{zpdz,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="selectByKey" parameterType="string" resultType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Medias">
+  	select * from KTBASICDATABASE.medias
+  	where id = #{id}
+  </select>
+  
+  <delete id="deleteByKey" parameterType="string">
+  	delete  from KTBASICDATABASE.medias
+  	where id = #{id}
+  </delete>
+</mapper>

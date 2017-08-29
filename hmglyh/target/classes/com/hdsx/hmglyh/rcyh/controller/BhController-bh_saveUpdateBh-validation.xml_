@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+	<field name="bhjl.xcid"><!-- 要校验的属性名 -->
+		<field-validator type="requiredstring"><!-- 指定校验规则 -->
+			<message>巡道ID不能为空</message><!-- 校验失败后的错误信息 -->
+		</field-validator>
+	</field>
+	<field name="bhjl.bhjlid"><!-- 要校验的属性名 -->
+		<field-validator type="requiredstring"><!-- 指定校验规则 -->
+			<message>病害记录ID不能为空</message><!-- 校验失败后的错误信息 -->
+		</field-validator>
+	</field>
+	<field name="bhjl.jlusername">
+		<field-validator type="requiredstring">
+			<message>巡视人不能为空</message>
+		</field-validator>
+	</field>
+	
+	<field name="bhjl.szhhkm">
+		<field-validator type="required">
+			<message>起点桩号KM不能为空</message>
+		</field-validator>
+		<field-validator type="long">
+			<message>起点桩号M只能为数字</message>
+		</field-validator>
+	</field>
+	<field name="bhjl.szhhm">
+		<field-validator type="required">
+			<message>起点桩号KM不能为空</message>
+		</field-validator>
+		<field-validator type="long">
+			<message>起点桩号M只能为数字</message>
+		</field-validator>
+	</field>
+	<field name="bhjl.ezhhkm">
+		<field-validator type="required">
+			<message>止点桩号KM不能为空</message>
+		</field-validator>
+		<field-validator type="long">
+			<message>止点桩号M只能为数字</message>
+		</field-validator>
+	</field>
+	<field name="bhjl.ezhhm">
+		<field-validator type="required">
+			<message>止点桩号KM不能为空</message>
+		</field-validator>
+		<field-validator type="long">
+			<message>止点桩号M只能为数字</message>
+		</field-validator>
+	</field>
+	
+	<field name="bhjl.bhid">
+		<field-validator type="requiredstring">
+			<message>病害类型不能为空</message>
+		</field-validator>
+	</field>
+	<field name="bhjl.sl">
+		<field-validator type="required">
+			<message>病害数量不能为</message>
+		</field-validator>
+		<field-validator type="int">
+			<message>病害数量只能为数字</message>
+		</field-validator>
+	</field>
+</validators>

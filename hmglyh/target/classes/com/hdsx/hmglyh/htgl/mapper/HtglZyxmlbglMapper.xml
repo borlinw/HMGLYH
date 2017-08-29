@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.htgl.mapper.HtglZyxmlbglMapper">
+
+<!-- 添加（养护类型） -->
+<insert id="addOneYhlxb" parameterType="htglyhlxb">
+	INSERT INTO HTGL_YHLXB (YHID,YHNAME,DW,DJ,GRDE,YHXMMS,QYZT,DEZT,DEQDZT,ISLFXB,ISLQLMXB,PX,DEJS) VALUES(#{yhid},#{yhname},#{dw},#{dj},#{grde},#{yhxmms},#{qyzt},0,0,#{islfxb},#{islqlmxb},1,#{dejs})
+</insert>
+
+<!-- 删除（养护类型） -->
+<delete id="deleteOneYhlxb" parameterType="htglyhlxb">
+	DELETE FROM HTGL_YHLXB WHERE YHID=#{yhid}
+</delete>
+
+<!-- 修改（养护类型） -->
+<update id="updateOneYhlxb" parameterType="htglyhlxb">
+	UPDATE HTGL_YHLXB SET YHNAME=#{yhname},DW=#{dw},DJ=#{dj},GRDE=#{grde},YHXMMS=#{yhxmms},QYZT=#{qyzt},ISLFXB=#{islfxb},ISLQLMXB=#{islqlmxb},DEJS=#{dejs} WHERE YHID=#{yhid}
+</update>
+
+<!-- 修改-“启用状态”（养护类型） -->
+<update id="updateOneYhlxbQyzt" parameterType="htglyhlxb">
+	UPDATE HTGL_YHLXB SET QYZT=#{qyzt} WHERE YHID=#{yhid}
+</update>
+
+<!-- 修改-“定额状态”（养护类型） -->
+<update id="updateOneYhlxbDezt" parameterType="htglyhlxb">
+	UPDATE HTGL_YHLXB SET DEZT=#{dezt} WHERE YHID=#{yhid}
+</update>
+
+<!-- 修改-“定额启动状态”（养护类型） -->
+<update id="updateOneYhlxbDeqdzt" parameterType="htglyhlxb">
+	UPDATE HTGL_YHLXB SET DEQDZT=#{deqdzt} WHERE YHID=#{yhid}
+</update>
+
+<!-- 修改-“是否裂缝修补”（养护类型） -->
+<update id="updateOneYhlxbIslfxb" parameterType="htglyhlxb">
+	UPDATE HTGL_YHLXB SET ISLFXB=#{islfxb} WHERE YHID=#{yhid}
+</update>
+
+<!-- 修改-“是否沥青路面修补”（养护类型） -->
+<update id="updateOneYhlxbIslqlmxb" parameterType="htglyhlxb">
+	UPDATE HTGL_YHLXB SET ISLQLMXB=#{islqlmxb} WHERE YHID=#{yhid}
+</update>
+
+<!-- 添加（定额） -->
+<insert id="addOneDe" parameterType="htgldeb">
+	INSERT INTO HTGL_DEB (YHID,LXID,SL) VALUES (#{yhid},#{lxid},#{sl})
+</insert>
+
+<!-- 删除（定额） -->
+<delete id="deleteDeOfYhid" parameterType="htgldeb">
+	DELETE FROM HTGL_DEB WHERE YHID=#{yhid}
+</delete>
+
+<!-- 查询（定额） -->
+<select id="queryDeByYhid" parameterType="htgldeb" resultType="htgldeb">
+	SELECT A.YHID,A.LXID,B.LXNAME,B.DW,A.SL FROM HTGL_DEB A LEFT JOIN HTGL_GLJLXB B ON A.LXID=B.LXID WHERE YHID=#{yhid} ORDER BY A.LXID
+</select>
+
+<!-- 获取“养护类型表”主键 -->
+<select id="generationPKOfYhlx" parameterType="htglyhlxb" resultType="String">
+	SELECT CONCAT(#{yhid},LPAD(CAST(NVL(substr(MAX(YHID), -2)+1,1) AS varchar(2)),2,0)) AS YHID FROM HTGL_YHLXB WHERE YHID like #{yhid}||'__'
+</select>
+
+<!-- 查询 -->
+<select id="queryAllBySomeOfYhlx" resultType="htglyhlxb" parameterType="htglyhlxb">
+	SELECT TEMP.* FROM (
+		SELECT ROWNUM RN,A.* FROM (
+			SELECT A.*,NVL(B.denum,0) AS DENUM,C.CHILDNUM FROM HTGL_YHLXB A LEFT JOIN (SELECT YHID,COUNT(LXID) AS denum FROM HTGL_DEB GROUP BY YHID) B ON A.YHID=B.YHID,(SELECT A.YHID,COUNT(B.YHID) AS childNum FROM HTGL_YHLXB A LEFT JOIN HTGL_YHLXB B ON B.YHID like A.YHID||'%' GROUP BY A.YHID) C
+			<where>
+				A.YHID=C.YHID AND A.YHID LIKE #{yhid}||'%'
+			</where>
+			ORDER BY A.PX,A.YHID
+	    ) A
+	) TEMP
+	<where>
+		<if test="page != null and page != ''">
+			<![CDATA[RN <= (${page} * ${rows})]]>
+			 AND
+			<![CDATA[RN>((${page} - 1) * ${rows})]]>
+		</if>
+	</where>
+</select>
+
+<!-- 查询 - 按照条件统计数据条数 -->
+<select id="countNumBySomeOfYhlx" resultType="int" parameterType="htglyhlxb">
+	SELECT COUNT(*) FROM HTGL_YHLXB WHERE YHID LIKE #{yhid}||'%'
+</select>
+
+<!-- 获取父节点（养护类型） -->
+<select id="selectFatherOfYhlx" parameterType="htglyhlxb" resultType="htglyhlxb">
+	SELECT * FROM HTGL_YHLXB WHERE YHID like '__' ORDER BY PX
+</select>
+<!-- 获取children -->
+<select id="selectChildrenOfYhlx" parameterType="htglyhlxb" resultType="htglyhlxb">
+	SELECT * FROM HTGL_YHLXB WHERE YHID like #{yhid}||'__' ORDER BY PX
+</select>
+
+</mapper>

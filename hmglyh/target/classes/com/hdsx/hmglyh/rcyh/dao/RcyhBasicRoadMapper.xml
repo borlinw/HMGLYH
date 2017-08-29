@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.rcyh.dao.RcyhBasicRoadMapper" >
+
+<!-- 计算“除雪快报”的折算里程 -->
+<select id="selectAllRoadByRoadcode" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhBasicRoad" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhBasicRoad">
+	<!-- SELECT ROADCODE,ROADNAME,STARTZH,ENDZH,JSDJ,ROADSTART,ROADENDS FROM GPSROAD WHERE ROADCODE=#{road} -->
+	<!-- SELECT ROADCODE,ROADNAME,
+	sum(case when <![CDATA[t.endzh > t.startzh ]]>
+	  then
+	  abs(<![CDATA[(case when t.roadends >= #{roadends} then #{roadends} else t.roadends end)]]>-<![CDATA[(case when t.roadstart <= #{roadstart} then #{roadstart} else t.roadstart end)]]>)
+	else
+	   abs(<![CDATA[(case when t.roadstart >= #{roadends} then #{roadends} else t.roadstart end)]]>-<![CDATA[(case when t.roadends <= #{roadstart} then #{roadstart} else t.roadends end)]]>) 
+	end) AS lc
+	FROM GPSROAD t WHERE ROADCODE=#{roadcode} AND JSDJ in ('1.高速公路','2.一级公路') AND LDLX in ('1.上行','3.双向')
+	and (t.roadstart between #{roadstart} and #{roadends} or t.roadends between #{roadstart} and #{roadends})
+	group by ROADCODE,ROADNAME -->
+	SELECT ROADCODE,ROADNAME,
+	sum(case when t.endzh &gt; t.startzh
+	  then
+	  abs((case when t.roadends &gt;= #{roadends} then #{roadends} else t.roadends end)-(case when t.roadstart &lt;= #{roadstart} then #{roadstart} else t.roadstart end))
+	else
+	   abs((case when t.roadstart &gt;= #{roadends} then #{roadends} else t.roadstart end)-(case when t.roadends &lt;= #{roadstart} then #{roadstart} else t.roadends end)) 
+	end) AS lc
+	FROM GPSROAD t WHERE ROADCODE=#{roadcode} AND JSDJ in ('1.高速公路','2.一级公路') AND LDLX in ('1.上行','3.双向')
+	and (t.roadstart between #{roadstart} and #{roadends} or t.roadends between #{roadstart} and #{roadends})
+	group by ROADCODE,ROADNAME
+</select>
+
+</mapper>

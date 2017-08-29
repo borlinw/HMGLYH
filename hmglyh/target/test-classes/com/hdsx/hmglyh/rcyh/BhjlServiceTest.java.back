@@ -1,0 +1,199 @@
+package com.hdsx.hmglyh.rcyh;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.hdsx.hmglyh.login.bean.LoginUser;
+import com.hdsx.hmglyh.rcyh.dao.model.HtglBhlx;
+import com.hdsx.hmglyh.rcyh.dao.model.HtglYhb;
+import com.hdsx.hmglyh.rcyh.dao.model.RcyhBhjlb;
+import com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb;
+import com.hdsx.hmglyh.rcyh.service.BhService;
+import com.hdsx.hmglyh.rcyh.service.WorkFlowService;
+
+@RunWith(SpringJUnit4ClassRunner.class) // = extends SpringJUnit4ClassRunner
+/*@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)  
+@Transactional  // 配置事物
+*/@ContextConfiguration(locations = { "classpath:applicationContext.xml"})
+public class BhjlServiceTest {
+	
+	private static Logger log = LoggerFactory.getLogger(BhjlServiceTest.class);
+	
+	
+	
+	@Autowired
+	BhService bhjlService;
+	@Autowired
+	WorkFlowService wfService;
+	
+	/**
+	 * 根据 xcid 查询 巡查数据表 关联 了 部门表
+	 */
+	@Test
+	public void selectGlxcsjb(){
+		RcyhGlxcsjb xcsj = new RcyhGlxcsjb();
+		xcsj.setXcid("A15C6D4D23D54E568AC5FABD704EFD02");
+		
+		
+		xcsj = bhjlService.selectGlxcsjb(xcsj);
+		
+		System.out.println(xcsj);
+		
+		
+	}
+	
+	/**
+	 * 保存 巡查记录表
+	 */
+	@Test
+	public void saveXcjlTest(){
+		RcyhGlxcsjb xcsj = new RcyhGlxcsjb();
+		xcsj.setBmcode("010101");
+		xcsj.setBz("我了个去");
+		xcsj.setUsername("zhangsan");
+		xcsj.setJlr("zhangsan");
+		xcsj.setFzr("zhangsan");
+		bhjlService.saveXdjl(xcsj);
+	}
+	
+	/**
+	 *  首页巡查记录列表  
+	 */
+	@Test
+	public void xcjlRowsTest(){
+		RcyhGlxcsjb glxcsjb = new RcyhGlxcsjb();
+		glxcsjb.setPage(1);
+		glxcsjb.setRows(5);
+		glxcsjb.setUsername("zhangsan");
+		
+		List<RcyhGlxcsjb> list =  bhjlService.listXdsj(glxcsjb);
+		int total = bhjlService.listXdsjCount(glxcsjb);
+		log.info("共有" + list.size() + "条数据");
+		log.info("count 的值是" + total);
+		for( RcyhGlxcsjb sjb : list ) {
+			System.out.println(sjb);
+		}
+	}
+	
+	/**
+	 * 测试 通过 巡查id 删除 一条 寻道记录
+	 */
+	@Test
+	public void delXdjlTest(){
+		RcyhGlxcsjb xcsj = new RcyhGlxcsjb();
+		xcsj.setXcid("1");
+		try {
+			bhjlService.delXdjl(xcsj);
+			log.info(xcsj.getXcid() + " 寻道 记录删除成功");
+		} catch (Exception e) {
+			log.info(xcsj.getXcid() + " 寻道 记录删除失败");
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@Test
+	public void canDelXdsjTest(){
+		RcyhGlxcsjb xcsj = new RcyhGlxcsjb();
+		xcsj.setXcid("72D739FDB62741FDA0AA98CEE1A60496");
+		bhjlService.canDelXdjl(xcsj);
+	}
+	
+	/**
+	 * 测试 通过 用户名 查询 巡视 记录表 
+	 * 级联查询 用户 以及部门下 管辖 路段
+	 */
+	@Test
+	public void selectGlxcsjbByUsernameTest(){
+		RcyhGlxcsjb sjb = bhjlService.queryglxcsjbByUsername("admin");
+		System.out.println(sjb);
+	}
+	
+	/**
+	 * 测试 通过巡查日志的 可以查询  巡查日志表
+	 */
+	@Test
+	public void selectByKeyTest(){
+		RcyhGlxcsjb xcsj = new RcyhGlxcsjb();
+		xcsj.setXcid("CE98553E50A743468C5822FFA3BDB277");
+		xcsj.setUsername("zhangsan");
+		xcsj.setBmcode("01010105");
+		RcyhGlxcsjb sjb = bhjlService.queryXdsjByKey(xcsj);
+		System.out.println(sjb);
+	}
+	
+	
+	
+	/**
+	 * 根据用户名查询 用户 
+	 */
+	@Test
+	public void queryYhbTest(){
+		HtglYhb yh = new HtglYhb();
+		yh.setUsername("zhangsan");
+		HtglYhb newYh = bhjlService.queryYhb(yh);
+		System.out.println(newYh);
+	}
+	
+	@Test
+	public void queryYhbsTest(){
+		HtglYhb yh = new HtglYhb();
+		yh.setBmcode("01010105");
+		List<HtglYhb> list = bhjlService.queryYhbs(yh);
+		System.out.println(list);
+	}
+	
+	/**
+	 * 级联自关联 查询 病害类型
+	 */
+	@Test
+	public void selectBhlxsTest(){
+		List<HtglBhlx> list = bhjlService.selectBhlxs();
+		System.out.println(list);
+	}
+	
+	/**
+	 * 启动流程实例
+	 */
+	@Test
+	public void saveBhTest(){
+		RcyhBhjlb bhjl = new RcyhBhjlb();
+		LoginUser user = new LoginUser();
+		user.setUsername("zhangsan");
+		bhjl.setUser(user);
+		bhjl.setLdcode("0101030101");
+		bhjl.setXcid("5195D4CE2B624990A915148C3C2F0596");
+		bhjlService.saveBh(bhjl);
+	}
+	
+	@Test
+	public void listBhTest(){
+		RcyhBhjlb bhjl = new RcyhBhjlb();
+		bhjl.setBmcode("01010105");
+		bhjl.setPage(1);
+		bhjl.setRows(10);
+		List<RcyhBhjlb> list = bhjlService.listBh(bhjl);
+		int total = bhjlService.listBhCount(bhjl);
+		log.info("成功！");
+	}
+	
+	@Test
+	public void completeTaskTest(){
+		/*LoginUser user = new LoginUser();
+		user.setUsername("zhangsan");
+		user.setBmcode("01010105");*/
+	//	ActionContext.getContext().getSession().put("loginUser", user);
+		HashMap<String,Object> map = new HashMap<String,Object>();
+		map.put("bhsbzt", 1);
+		map.put("bmcode", "01010105");
+		wfService.completeTask("BHID1435215282591_2452",map);
+	}
+}

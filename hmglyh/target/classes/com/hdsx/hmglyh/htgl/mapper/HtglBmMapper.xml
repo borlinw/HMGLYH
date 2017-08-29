@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.htgl.mapper.HtglBmMapper">
+
+<!-- 获取父节点 -->
+<select id="selectFather" parameterType="htglBm" resultType="htglBm">
+	SELECT * FROM HTGL_BMB WHERE BMCODE = #{bmcode}
+</select>
+<!-- 获取children -->
+<select id="selectChildren" parameterType="htglBm" resultType="htglBm">
+	SELECT * FROM HTGL_BMB WHERE BMCODE like #{bmcode}||'__' order by BMCODE
+</select>
+
+<!-- 查询 -->
+<select id="queryAllBySome" resultType="htglBm" parameterType="htglBm">
+	SELECT TEMP.* FROM (
+		SELECT ROWNUM RN,A.* FROM (
+			SELECT A.*,B.childNum,C.VALUE AS bmlxStr FROM HTGL_BMB A left join (
+		        SELECT A.Bmcode,COUNT(B.Bmcode) AS childNum FROM HTGL_BMB A LEFT JOIN HTGL_BMB B ON B.Bmcode like A.Bmcode||'%' GROUP BY A.Bmcode
+		      )B ON A.Bmcode= B.Bmcode,HTGL_MJLX C WHERE A.Bmcode like #{bmcode}||'%' AND A.BMLX=C.KEY
+			ORDER BY QYZT DESC
+	    ) A
+	) TEMP
+	<where>
+		<if test="page != null and page != ''">
+			<![CDATA[RN <= (${page} * ${rows})]]>
+			 AND
+			<![CDATA[RN>((${page} - 1) * ${rows})]]>
+		</if>
+	</where>
+</select>
+
+<!-- 查询 - 按照条件统计数据条数 -->
+<select id="countNumBySome" resultType="int" parameterType="htglBm">
+	SELECT COUNT(*) FROM HTGL_BMB WHERE Bmcode like #{bmcode}||'%'
+</select>
+
+<!-- 获取“部门”主键 -->
+<select id="generationPK" parameterType="htglBm" resultType="htglBm">
+	SELECT CONCAT(#{bmcode},LPAD(CAST(NVL(substr(MAX(BMCODE), -2)+1,1) AS varchar(2)),2,0)) AS BMCODE FROM HTGL_BMB WHERE BMCODE like #{bmcode}||'__'
+</select>
+
+<!-- 添加 -->
+<insert id="bmAddOne" parameterType="htglBm">
+	INSERT INTO HTGL_BMB (BMCODE,BMZSCODE,BMNAME,FZR,LXDH,BMMS,QYZT,BMLX) VALUES(#{bmcode},#{bmzscode},#{bmname},#{fzr},#{lxdh},#{bmms},#{qyzt},#{bmlx})
+</insert>
+
+<!-- 删除 -->
+<delete id="bmDeleteOne" parameterType="htglBm">
+	DELETE FROM HTGL_BMB WHERE BMCODE=#{bmcode}
+</delete>
+
+<!-- 修改 -->
+<update id="bmUpdateOne" parameterType="htglBm">
+	UPDATE HTGL_BMB SET BMZSCODE=#{bmzscode},BMNAME=#{bmname},FZR=#{fzr},LXDH=#{lxdh},BMMS=#{bmms},QYZT=#{qyzt},BMLX=#{bmlx} WHERE BMCODE=#{bmcode}
+</update>
+
+<!-- 修改-“启用状态” -->
+<update id="bmUpdateOneQyzt" parameterType="htglBm">
+	UPDATE HTGL_BMB SET QYZT=#{qyzt} WHERE BMCODE=#{bmcode}
+</update>
+
+<!-- 根据部门编码查询其下所有bmcode.length=6的部门 -->
+<select id="queryBmToGlj" parameterType="htglBm" resultType="htglBm">
+	SELECT BMCODE,BMNAME FROM HTGL_BMB WHERE BMCODE like #{bmcode}||'%' AND length(BMCODE)=6
+</select>
+
+<!-- 根据部门查询部门名称 -->
+<select id="queryBmnameByBmcode" parameterType="htglBm" resultType="String">
+	SELECT BMNAME FROM HTGL_BMB WHERE BMCODE = #{bmcode}||'%'
+</select>
+
+</mapper>

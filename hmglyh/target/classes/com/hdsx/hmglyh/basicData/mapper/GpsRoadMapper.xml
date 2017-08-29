@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.basicData.mapper.GpsRoadMapper">
+	<!-- 查询最小路段 -->
+	<select id="getAllLd" resultType="gpsRoad">
+		select roadCode,least(roadStart,roadEnds) as roadStart,
+	    greatest(roadStart,roadEnds) as roadEnds,
+	    (case jsdj when '高速' then 1 when '一级' then 1 else 0 end) as isgs,
+	    lmkd,(case lmlx when '沥青混凝土' then 1 when '砂石路面' then 3 else 2 end) as lmlx from htgl_lkldhfb
+	    order by roadCode,roadStart
+	</select>
+</mapper>

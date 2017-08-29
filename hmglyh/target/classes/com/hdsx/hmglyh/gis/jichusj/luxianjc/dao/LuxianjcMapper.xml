@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.gis.jichusj.luxianjc.dao.LuxianjcMapper" >
+  <cache readOnly="true"></cache>
+  <resultMap id="GaosucrkResultMap" type="com.hdsx.hmglyh.gis.jichusj.luxianjc.dao.model.Gaosucrk" >
+    <result column="ROADCODE" property="roadcode" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="CODE" property="code" jdbcType="OTHER" />
+    <result column="NAME" property="name" jdbcType="OTHER" />
+    <result column="POS" property="pos" jdbcType="OTHER" />
+    <result column="CRKLX" property="crklx" jdbcType="OTHER" />
+    <result column="CRKWZ" property="crkwz" jdbcType="OTHER" />
+    <result column="LDLX" property="ldlx" jdbcType="OTHER" />
+    <result column="ZDBM" property="zdbm" jdbcType="OTHER" />
+    <result column="CKTWMDDDM" property="cktwmdddm" jdbcType="OTHER" />
+    <result column="CKTWJQMC" property="cktwjqmc" jdbcType="OTHER" />
+    <result column="LJLXDM" property="ljlxdm" jdbcType="OTHER" />
+    <result column="LJLXMC" property="ljlxmc" jdbcType="OTHER" />
+    <result column="LJLXZH" property="ljlxzh" jdbcType="OTHER" />
+    <result column="QTZYXX" property="qtzyxx" jdbcType="OTHER" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="OTHER" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="OTHER" />
+    <result column="GYDWMC" property="gydwmc" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="DSMC" property="dsmc" jdbcType="OTHER" />
+    <result column="QXMC" property="qxmc" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="ROADPOS_" property="roadpos" jdbcType="DECIMAL" />
+    <result column="O_ID" property="oId" jdbcType="OTHER" />
+    <result column="ROADNAME" property="roadname" jdbcType="OTHER" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="ROADPOS" property="roadpos" jdbcType="DECIMAL" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="ID" property="id" jdbcType="OTHER" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+  </resultMap>
+ 
+   
+   <sql id="Gaosucrk_Column_List">
+    	ROADCODE,XZQH,CODE,NAME,POS,CRKLX,CRKWZ,LDLX,ZDBM,CKTWMDDDM,CKTWJQMC,LJLXDM,LJLXMC,LJLXZH,QTZYXX,TBDWBM,GYDWBM,GYDWMC,BZ,DSMC,QXMC,PTX,PTY,ROADPOS_,O_ID,ROADNAME,Z_ID,ROADPOS,C_ID,ID,M_PTY,SFKBJ,M_PTX
+   </sql>
+  <sql id="Gaosucrk_Where"> 
+	  <where>
+	    <if test="roadcode != null and roadcode != '' ">and ROADCODE = #{roadcode}</if>
+	    <if test="xzqh != null and xzqh != '' ">and XZQH = #{xzqh}</if>
+	    <if test="code != null and code != '' ">and CODE = #{code}</if>
+	    <if test="crklx != null and crklx != '' ">and CRKLX = #{crklx}</if>
+	    <if test="ldlx != null and ldlx != '' ">and LDLX = #{ldlx}</if>
+	    <if test="name != null and name != '' ">and NAME like '%' || #{name} || '%'</if>
+	    <if test="startzh != null and startzh != '' ">
+	    	and pos &gt;= #{startzh}
+	    </if>
+	    <if test="endzh != null and endzh != '' ">
+	    	and pos &lt;= #{endzh}
+	    </if>
+	  </where>
+   </sql>
+  
+   <resultMap id="PingjiaodkResultMap" type="com.hdsx.hmglyh.gis.jichusj.luxianjc.dao.model.Pingjiaodk" >
+    <result column="PTY" property="pty" jdbcType="DECIMAL" />
+    <result column="LXZH2" property="lxzh2" jdbcType="DECIMAL" />
+    <result column="ROADCODE2" property="roadcode2" jdbcType="OTHER" />
+    <result column="ROADPOS" property="roadpos" jdbcType="DECIMAL" />
+    <result column="POS" property="pos" jdbcType="OTHER" />
+    <result column="ZDBM" property="zdbm" jdbcType="OTHER" />
+    <result column="LDLX" property="ldlx" jdbcType="OTHER" />
+    <result column="ROADCODE" property="roadcode" jdbcType="OTHER" />
+    <result column="C_ID" property="cId" jdbcType="DECIMAL" />
+    <result column="M_PTX" property="mPtx" jdbcType="DECIMAL" />
+    <result column="JCLKZL" property="jclkzl" jdbcType="OTHER" />
+    <result column="PTX" property="ptx" jdbcType="DECIMAL" />
+    <result column="O_ID" property="oId" jdbcType="OTHER" />
+    <result column="BZ" property="bz" jdbcType="OTHER" />
+    <result column="ROADNAME" property="roadname" jdbcType="OTHER" />
+    <result column="Z_ID" property="zId" jdbcType="DECIMAL" />
+    <result column="NAME" property="name" jdbcType="OTHER" />
+    <result column="CODE" property="code" jdbcType="OTHER" />
+    <result column="M_PTY" property="mPty" jdbcType="DECIMAL" />
+    <result column="ROADCODE2_" property="roadcode2" jdbcType="OTHER" />
+    <result column="SFKBJ" property="sfkbj" jdbcType="DECIMAL" />
+    <result column="ID" property="id" jdbcType="OTHER" />
+    <result column="GYDWMC" property="gydwmc" jdbcType="OTHER" />
+    <result column="GYDWBM" property="gydwbm" jdbcType="OTHER" />
+    <result column="F002" property="f002" jdbcType="OTHER" />
+    <result column="ROADLEVEL" property="roadlevel" jdbcType="OTHER" />
+    <result column="F070" property="f070" jdbcType="OTHER" />
+    <result column="FBM" property="fbm" jdbcType="OTHER" />
+    <result column="ROADCODE3" property="roadcode3" jdbcType="OTHER" />
+    <result column="ROADCODE2_D" property="roadcode2D" jdbcType="OTHER" />
+    <result column="LXZH3" property="lxzh3" jdbcType="DECIMAL" />
+    <result column="ROADPOS_" property="roadpos" jdbcType="DECIMAL" />
+    <result column="ROADCODE_D" property="roadcodeD" jdbcType="OTHER" />
+    <result column="ROADCODE_" property="roadcode" jdbcType="OTHER" />
+    <result column="QXMC" property="qxmc" jdbcType="OTHER" />
+    <result column="DSMC" property="dsmc" jdbcType="OTHER" />
+    <result column="TBDWBM" property="tbdwbm" jdbcType="OTHER" />
+    <result column="JCXS" property="jcxs" jdbcType="OTHER" />
+    <result column="XZQH" property="xzqh" jdbcType="OTHER" />
+    <result column="ROADPOS2_" property="roadpos2" jdbcType="DECIMAL" />
+  </resultMap>
+  
+ 
+   <sql id="Pingjiaodk_Column_List">
+   	PTY,LXZH2,ROADCODE2,ROADPOS,POS,ZDBM,LDLX,ROADCODE,C_ID,M_PTX,JCLKZL,PTX,O_ID,BZ,ROADNAME,Z_ID,NAME,CODE,M_PTY,ROADCODE2_,SFKBJ,ID,GYDWMC,GYDWBM,F002,ROADLEVEL,F070,FBM,ROADCODE3,ROADCODE2_D,LXZH3,ROADPOS_,ROADCODE_D,ROADCODE_,QXMC,DSMC,TBDWBM,JCXS,XZQH,ROADPOS2_
+   </sql>
+  
+  
+  <sql id="Pingjiaodk_Where"> 
+	  <where>
+	    <if test="roadcode != null and roadcode != '' ">and ROADCODE = #{roadcode}</if>
+	    <if test="name != null and name != '' ">and NAME like '%' || #{name} || '%'</if>
+	    <if test="startzh != null and startzh != '' ">
+	    	and pos &gt;= #{startzh}
+	    </if>
+	    <if test="endzh != null and  endzh != '' ">
+	    	and pos &lt;= #{endzh}
+	    </if>
+	  </where>
+  </sql>
+  
+  <!-- 自动生成 -->
+   <select id="gaosucrkList" resultMap="GaosucrkResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.luxianjc.dao.model.Gaosucrk">SELECT * FROM(SELECT ROWNUM RN,TEMP.* FROM( select
+    <include refid="Gaosucrk_Column_List"/>from GSCHURU
+    <include refid="Gaosucrk_Where"/>) TEMP
+    <if test="page != null and page != '' ">where <![CDATA[ROWNUM <= (#{page} * #{rows}))]]></if>
+    <where>
+      <if test="page != null and page != ''"><![CDATA[RN>((#{page} - 1) * #{rows})]]></if>
+    </where>
+  </select>
+  <select id="gaosucrkCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.luxianjc.dao.model.Gaosucrk">select count(*) from GSCHURU
+    <include refid="Gaosucrk_Where"/>
+  </select>
+  <select id="pingjiaodkList" resultMap="PingjiaodkResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.luxianjc.dao.model.Pingjiaodk">SELECT * FROM(SELECT ROWNUM RN,TEMP.* FROM( select
+    <include refid="Pingjiaodk_Column_List"/>from PINGJIAODAOKOU
+    <include refid="Pingjiaodk_Where"/>) TEMP
+    <if test="page != null and page != '' ">where <![CDATA[ROWNUM <= (#{page} * #{rows}))]]></if>
+    <where>
+      <if test="page != null and page != ''"><![CDATA[RN>((#{page} - 1) * #{rows})]]></if>
+    </where>
+  </select>
+  <select id="pingjiaodkCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.luxianjc.dao.model.Pingjiaodk">select count(*) from PINGJIAODAOKOU
+    <include refid="Pingjiaodk_Where"/>
+  </select>
+</mapper>

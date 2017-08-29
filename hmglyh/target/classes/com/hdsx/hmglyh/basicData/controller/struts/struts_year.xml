@@ -1,0 +1,9 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<!-- 年份，年度学习用 -->
+	<package name="year" extends="struts-default" namespace="/year">
+		<action name="getYearCombo" class="yearController" method="getYearCombo"></action>
+	</package>
+</struts>

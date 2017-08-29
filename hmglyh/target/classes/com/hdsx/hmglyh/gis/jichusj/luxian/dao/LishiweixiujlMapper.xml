@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.gis.jichusj.luxian.dao.LishiweixiujlMapper" >
+	
+	<insert id="add" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Lishiweixiujl">
+		INSERT INTO LISHIWEIXIUJL(ID,WXLX,ROADCODE,QZZH,NF,GCMC,GKJFA,SSQ,SSH,HTRQ,SJRQ,
+		JSDW,XMZXJG,ZBDLDW,KCSJDW,JLDW,SGDW,DSFJCDW,SJDW,WH,JSJE,BZ)
+		VALUES(#{id},#{wxlx},#{roadcode},#{qzzh},#{nf},#{gcmc},#{gkjfa},#{ssq},#{ssh},#{htrq},
+		#{sjrq},#{jsdw},#{xmzxjg},#{zbdldw},#{kcsjdw},#{jldw},#{sgdw},#{dsfjcdw},#{sjdw},#{wh},#{jsje},#{bz})
+	</insert>
+	
+	<update id="change" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Lishiweixiujl">
+		UPDATE LISHIWEIXIUJL
+		SET QZZH=#{qzzh},NF=#{nf},GCMC=#{gcmc},GKJFA=#{gkjfa},SSQ=#{ssq},SSH=#{ssh},HTRQ=#{htrq},SJRQ=#{sjrq},JSDW=#{jsdw},
+		XMZXJG=#{xmzxjg},ZBDLDW=#{zbdldw},KCSJDW=#{kcsjdw},JLDW=#{jldw},SGDW=#{sgdw},DSFJCDW=#{dsfjcdw},SJDW=#{sjdw},WH=#{wh},JSJE=#{jsje},BZ=#{bz}
+		WHERE ID=#{id}
+	</update>
+	
+	<delete id="deleteById" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Lishiweixiujl">
+		DELETE FROM LISHIWEIXIUJL
+		WHERE ID=#{id}
+	</delete>
+	
+	<select id="getMxbById" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Lishiweixiujl" resultType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Lishiweixiujl">
+		SELECT * FROM LISHIWEIXIUJL
+		WHERE ID=#{id}
+	</select>
+	
+	<select id="getMxb" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Lishiweixiujl" resultType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Lishiweixiujl">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+				SELECT * FROM LISHIWEIXIUJL
+				<where>
+					<!-- 路线编码 -->
+			 		<if test="roadcode != null and roadcode != '' ">
+			 			and roadcode = #{roadcode}
+			 		</if>
+			 		<if test=" qzzh != null and qzzh != '' ">
+			 			and qzzh  =  #{qzzh}
+			 		</if>
+			 		<if test=" wxlx != null and wxlx != '' ">
+			 			and wxlx  = #{wxlx}
+			 		</if>
+			 		<if test="lx=='lm'">
+			 			AND WXLX IN ('路面','沿线设施')
+			 		</if>
+				</where>
+				order by roadcode,wxlx,nf
+		) TEMP
+		<if test="page != null and page != ''">
+		  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+		</if>)
+	    <where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	<select id="getMxbCount" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Lishiweixiujl" resultType="int">
+		SELECT COUNT(*) FROM LISHIWEIXIUJL
+		<where>
+			<!-- 路线编码 -->
+	 		<if test="roadcode != null and roadcode != '' ">
+	 			and roadcode = #{roadcode}
+	 		</if>
+	 		<if test=" qzzh != null and qzzh != '' ">
+	 			and qzzh  =  #{qzzh}
+	 		</if>
+	 		<if test=" wxlx != null and wxlx != '' ">
+	 			and wxlx  = #{wxlx}
+	 		</if>
+	 		<if test="lx=='lm'">
+	 			AND WXLX IN ('路面','沿线设施')
+	 		</if>
+		</where>
+	</select>
+	
+	<insert id="addAttachment" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Attachment">
+		INSERT INTO ATTACHMENT(ID,NAME,WZ,LSWXJLID)
+		VALUES(SYS_GUID(),#{name},#{wz},#{lswxjlid})
+	</insert>
+	
+	<select id="getAttachment" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Lishiweixiujl" resultType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Attachment">
+		SELECT * FROM ATTACHMENT
+		WHERE LSWXJLID=#{id}
+	</select>
+	
+</mapper>

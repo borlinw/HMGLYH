@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators> 
+	<field name="rwd.cjusername">
+		<field-validator type="requiredstring">
+			<message>任务单创建人用户名为空</message>
+		</field-validator>
+	</field> 
+	<field name="rwd.ssny">
+		<field-validator type="requiredstring">
+			<message>任务单所属年月不能为空</message>
+		</field-validator>
+	</field>
+	<field name="rwd.bmcode">
+		<field-validator type="requiredstring">
+			<message>受委派部门编码不能为空</message>
+		</field-validator>
+	</field>
+	<field name="rwd.bhid">
+		<field-validator type="requiredstring">
+			<message>病害名称不能为空!!!</message>
+		</field-validator>
+	</field>
+	<field name="rwd.yhid">
+		<field-validator type="requiredstring">
+			<message>项目名称不能为空</message>
+		</field-validator>
+	</field>
+	<field name="rwd.sl">
+		<field-validator type="required">
+			<message>派工数量不能为空</message>
+		</field-validator>
+		<field-validator type="double">
+			<message>派工数量只能为数字</message>
+		</field-validator>
+	</field>
+	 <field name="rwd.grde">
+		<field-validator type="required">
+			<message>工日定额不能为空</message>
+		</field-validator>
+		<field-validator type="double">
+			<message>工日定额只能为数字</message>
+		</field-validator>
+	</field>
+	<field name="rwd.jhgr">
+		<field-validator type="required">
+			<message>计划工日不能为空</message>
+		</field-validator>
+		<field-validator type="int">
+			<message>计划工日只能为数字</message>
+		</field-validator>
+	</field>
+	<field name="rwd.rgf">
+		<field-validator type="required">
+			<message>计划人工费不能为空</message>
+		</field-validator>
+		<field-validator type="double">
+			<message>计划人工费只能为数字</message>
+		</field-validator>
+	</field>
+</validators>

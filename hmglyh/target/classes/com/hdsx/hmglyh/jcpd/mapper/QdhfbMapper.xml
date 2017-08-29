@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.jcpd.mapper.QdhfbMapper">
+	<!-- 插入 -->
+	<insert id="addQdhfb" parameterType="qdhfb">
+		INSERT INTO JCPD_QDHFB(QDID,LXCODE,SZHH,EZHH,CD,BMCODE,BBID)
+		VALUES(QD_SEQUENCE.NEXTVAL,#{lxCode},#{szhh},#{ezhh},#{cd},#{bmCode},#{bbid})
+	</insert>
+	<!-- 查询 -->
+	<select id="queryQdhfb" parameterType="qdhfb" resultType="qdhfb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+				SELECT * FROM JCPD_QDHFB
+				WHERE LXCODE=#{lxCode} AND <![CDATA[szhh>=#{szhh} and #{ezhh}>szhh]]> AND BMCODE=#{bmCode} AND BBID=#{bbid}
+				ORDER BY SZHH
+			) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		<where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	<!-- 清空 -->
+	<delete id="dropQdhfb" parameterType="qdhfb">
+		DELETE FROM JCPD_QDHFB
+		WHERE LXCODE=#{lxCode} AND <![CDATA[szhh>=#{szhh} and #{ezhh}>szhh]]> AND BMCODE=#{bmCode} AND BBID=#{bbid}
+	</delete>
+	<!-- 查询区段划分条数 -->
+	<select id="getQdhfbCount" parameterType="qdhfb" resultType="int">
+		SELECT COUNT(*) FROM JCPD_QDHFB
+		WHERE LXCODE=#{lxCode} AND <![CDATA[szhh>=#{szhh} and #{ezhh}>szhh]]> AND BMCODE=#{bmCode} AND BBID=#{bbid}
+	</select>
+	
+	
+	<!-- 审核表插入 -->
+	<insert id="addShb" parameterType="qdhfb">
+		INSERT INTO JCPD_QDHFSHB(BMCODE,BBID,SQZT,SQR,SQSJ,SHZT)
+		VALUES(#{bmCode},#{bbid},0,#{sqr},#{sqsj},0)
+	</insert>
+	<!-- 查询是否已上报 -->
+	<select id="isSb" parameterType="qdhfb" resultType="qdhfb">
+		SELECT * FROM JCPD_QDHFSHB
+		WHERE BBID=#{bbid} AND BMCODE=#{bmCode} AND (SQZT=1 AND SHZT IN (0,1))
+	</select>
+	
+	
+	<!-- 区段划分中查询pci与iri -->
+	<select id="getPciIri" parameterType="qdhfb" resultType="qdhfb">
+		select t.column_value,avg(m.pci) as pci,avg(m.iri) as iri
+		from table(fn_split(#{points},','))t
+		join (select l.pci,l.iri,q.szhh from jcpd_lkpdmxb l left join jcpd_qmldb q on l.ldid=q.ldid where q.lxCode=#{lxCode} and l.bbid=#{bbid})m
+		on t.column_value=m.szhh
+		group by t.column_value
+		order by t.column_value
+	</select>
+	
+	<!-- 查询某个版本的区段划分是否有数据 -->
+	<select id="getCountByBb" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM JCPD_QDHFB
+		WHERE BBID=#{bbid}
+	</select>
+	<!-- 修改版本对应的路况调查版本 -->
+	<update id="changeDcbb" parameterType="qdhfb">
+		UPDATE JCPD_BBKZB
+		SET QMBBID=#{pdbbid}
+		WHERE BBID=#{bbid}
+	</update>
+	
+	<!-- 根据bbid查询版本信息 -->
+	<select id="getBb" parameterType="int" resultType="bbkzb">
+		SELECT * FROM JCPD_BBKZB WHERE BBID=#{bbid}
+	</select>
+	
+	<!-- 区段划分导出 -->
+	<!-- 查询管辖路段 -->
+	<select id="getLdb" parameterType="qdhfb" resultType="com.hdsx.hmglyh.jcpd.bean.Ldb">
+		SELECT L.*,#{bbid} AS BBID FROM HTGL_LDB L
+		WHERE BMCODE=#{bmCode}
+		ORDER BY LXCODE
+	</select>
+	<!-- 根据管辖路段查询区域划分 -->
+	<select id="getQyhfByLd" parameterType="com.hdsx.hmglyh.jcpd.bean.Ldb" resultType="qyhfb">
+		<![CDATA[SELECT * FROM JCPD_QYHFB
+		WHERE LXCODE=#{lxCode} AND SZHH>=#{szhh} AND SZHH<#{ezhh} AND BBID=#{bbid}
+		ORDER BY SZHH]]>
+	</select>
+	<!-- 根据区域划分查询区段划分信息 -->
+	<select id="getQdhfByQyhf" parameterType="qyhfb" resultType="qdhfb">
+		<![CDATA[SELECT QD.LXCODE,QD.SZHH,QD.EZHH,ROUND(QD.CD/1000,3) LENGTH,ROUND(AVG(MXB.PCI),2) PCI,ROUND(AVG(MXB.IRI),2) IRI FROM JCPD_QDHFB QD
+		LEFT JOIN (SELECT MX.PCI,MX.IRI,QM.LXCODE,QM.SZHH,QM.EZHH FROM JCPD_LKPDMXB MX
+		LEFT JOIN JCPD_QMLDB QM
+		ON MX.LDID=QM.LDID
+		WHERE MX.BBID=(SELECT QMBBID FROM JCPD_BBKZB WHERE BBID=#{bbid})) MXB
+		ON QD.LXCODE=MXB.LXCODE AND MXB.SZHH>=QD.SZHH AND MXB.SZHH<QD.EZHH
+		WHERE QD.LXCODE=#{lxCode} AND QD.SZHH>=#{szhh} AND QD.SZHH<#{ezhh} AND QD.BBID=#{bbid}
+		GROUP BY QD.LXCODE,QD.SZHH,QD.EZHH,QD.CD]]>
+	</select>
+	
+	<!-- 根据路况调查版本，路线编码，起止桩号获取病害分类统计表内容 -->
+	<select id="getBhfl" resultType="qdhfb" parameterType="qdhfb">
+		<![CDATA[SELECT LXCODE,SZHH,EZHH,SUM(CASE LXNAME WHEN '龟裂' THEN LJSJ ELSE 0 END)JL,
+		    SUM(CASE LXNAME WHEN '块状裂缝' THEN LJSJ ELSE 0 END)KL,
+		    SUM(CASE LXNAME WHEN '纵向裂缝' THEN LJSJ WHEN '横向裂缝' THEN LJSJ ELSE 0 END)DTLF,
+		    SUM(CASE LXNAME WHEN '沉陷' THEN LJSJ ELSE 0 END)CX,
+		    SUM(CASE LXNAME WHEN '波浪拥包' THEN LJSJ ELSE 0 END)BLYB,
+		    SUM(CASE LXNAME WHEN '车辙' THEN LJSJ ELSE 0 END)CZ,
+		    SUM(CASE LXNAME WHEN '坑槽' THEN LJSJ ELSE 0 END)KC,
+		    SUM(CASE LXNAME WHEN '松散' THEN LJSJ ELSE 0 END)SS,
+		    SUM(CASE LXNAME WHEN '泛油' THEN LJSJ ELSE 0 END)FY,
+		    SUM(CASE LXNAME WHEN '修补' THEN LJSJ ELSE 0 END)XB
+		FROM
+		(SELECT QD.LXCODE,QD.SZHH,QD.EZHH,LK.LXNAME,SUM(LK.LJSJ) LJSJ FROM JCPD_QDHFB QD
+		LEFT JOIN (SELECT LXCODE,SZHH,EZHH,LXNAME,SUM(LJSJ*DWKF*QZ)LJSJ 
+		          FROM V_LKDC 
+		          WHERE LXID LIKE '0101%' AND BBID=#{dcbbid} 
+		          GROUP BY LXCODE,SZHH,EZHH,LXNAME) LK
+		ON QD.LXCODE=LK.LXCODE AND QD.SZHH<=LK.SZHH AND QD.EZHH>LK.SZHH
+		WHERE QD.BBID=#{bbid} AND QD.BMCODE=#{bmCode} AND QD.LXCODE=#{lxCode} AND QD.SZHH>=#{szhh} AND QD.EZHH<=#{ezhh}
+		GROUP BY QD.LXCODE,QD.SZHH,QD.EZHH,LK.LXNAME)
+		GROUP BY LXCODE,SZHH,EZHH
+		ORDER BY LXCODE,SZHH]]>
+	</select>
+	
+	<!-- 区段节点 -->
+	<insert id="addJd" parameterType="qyhfb" useGeneratedKeys="false">
+		INSERT INTO JCPD_QDJD(ID,QDID,SZHH)
+		SELECT SYS_GUID(),QD.QDID,TO_NUMBER(JD.COLUMN_VALUE)
+		FROM JCPD_QDHFB QD,TABLE(FN_SPLIT(#{jd},'-')) JD
+		WHERE QD.LXCODE=#{lxCode} AND QD.SZHH=#{szhh} AND QD.EZHH=#{ezhh} AND QD.BMCODE=#{bmCode} AND QD.BBID=#{bbid}
+	</insert>
+	<select id="getJd" parameterType="qyhfb" resultType="String">
+		SELECT MAX(SUBSTR(SYS_CONNECT_BY_PATH(SZHH,'-'),2)) DJ 
+		FROM (SELECT SZHH,ROWNUM RN FROM JCPD_QDJD WHERE QDID=#{qdid})
+		START WITH RN=1
+		CONNECT BY PRIOR RN=RN-1
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

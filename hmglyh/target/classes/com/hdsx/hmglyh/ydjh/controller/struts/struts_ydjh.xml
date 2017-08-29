@@ -1,0 +1,10 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<!-- 月度计划 -->
+	<package name="ydjh" extends="struts-default" namespace="/ydjh">
+		<!-- 查询全部任务单 -->
+		<action name="getRwdBytj" class="ydjhController" method="getRwdBytj"></action>
+	</package>
+</struts>

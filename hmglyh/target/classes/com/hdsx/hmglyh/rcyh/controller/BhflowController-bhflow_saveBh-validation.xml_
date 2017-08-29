@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+	<field name="bhjl.xcid">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>    
+			<message>巡查ID不能为空</message>
+		</field-validator>
+	</field>
+	<field name="bhjl.bmcode">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>部门编码不能为空</message>
+		</field-validator>
+	</field>
+	<field name="bhjl.ldcode">
+		<field-validator type="requiredstring">
+			<message>路段编码不能为空</message>
+		</field-validator>
+	</field>
+	
+	<field name="bhjl.szhhkm">
+		<field-validator type="required" short-circuit="true">
+			<message>起点桩号KM 不能为空</message>
+		</field-validator>
+		<field-validator type="long">
+			<message>起点桩号KM 只能为数字</message>
+		</field-validator>
+	</field>
+	<field name="bhjl.szhhm">
+		<field-validator type="required" short-circuit="true">
+			<message>起点桩号M不能为空</message>
+		</field-validator>
+		<field-validator type="long">
+			<message>起点桩号M只能为数字</message>
+		</field-validator>
+	</field>
+	<field name="bhjl.ezhhkm">
+		<field-validator type="required" short-circuit="true">
+			<message>止点桩号KM不能为空</message>
+		</field-validator>
+		<field-validator type="long">
+			<message>止点桩号KM只能为数字</message>
+		</field-validator>
+	</field>
+	<field name="bhjl.ezhhm">
+		<field-validator type="long">
+			<message>止点桩号M只能为数字</message>
+		</field-validator>
+		<field-validator type="required">
+			<message>止点桩号M不能为空!!!</message>
+		</field-validator>
+	</field>
+	
+	<field name="bhjl.tq">
+		<field-validator type="requiredstring">
+			<message>方向不能为空</message>
+		</field-validator>
+	</field>
+	<field name="bhjl.bhid">
+		<field-validator type="requiredstring">
+			<message>病害类型不能为空</message>
+		</field-validator>
+	</field>
+	<field name="bhjl.sl">
+		<field-validator type="required">
+			<message>病害数量不能为空!!!</message>
+		</field-validator>
+		<field-validator type="int">
+			<message>病害数量只能为数字</message>
+		</field-validator>
+	</field>
+</validators>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.gis.jichusj.pub.dao.PublicBeanMapper" >
+	<select id="getData" parameterType="com.hdsx.hmglyh.gis.jichusj.pub.dao.model.PublicBean" resultType="String">
+		SELECT ${data} FROM ${tableName}
+		<where>
+			${condition}			
+		</where>
+	</select>
+</mapper>

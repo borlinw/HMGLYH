@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.jcpd.mapper.GzdxzbMapper">
+	<!-- 插入主表 -->
+	<insert id="addZb" parameterType="com.hdsx.hmglyh.jcpd.bean.Gzdxzb">
+		INSERT INTO RCYH_GZDXZB(GZID,SCDATE,SSNY,BMCODE,TBUSERNAME,TBRXM,FZRXM)
+		VALUES(#{gzid},current_date,#{ssny},#{bmCode},#{tbUserName},#{tbrxm},#{fzrxm})
+	</insert>
+	<!-- 查询主表是否已经存在 -->
+	<select id="getZb" parameterType="com.hdsx.hmglyh.jcpd.bean.Gzdxzb" resultType="com.hdsx.hmglyh.jcpd.bean.Gzdxzb">
+		SELECT * FROM RCYH_GZDXZB
+		WHERE BMCODE=#{bmCode} AND SSNY=#{ssny}
+	</select>
+	
+	<!-- 插入附表 -->
+	<insert id="addFb" parameterType="com.hdsx.hmglyh.jcpd.bean.Gzdxzb" useGeneratedKeys="false">
+		INSERT INTO RCYH_GZDXFB(GZID,RYID,CQGR,BJTS,SJTS,KGTS)
+		select #{gzid} as gzid,a.ryid,(select count(*) from table(fn_split(a.str,','))t where t.column_value in ('0701','0702'))cqgr,
+		(select count(*) from table(fn_split(a.str,',')) where column_value='0703')bjts,
+		(select count(*) from table(fn_split(a.str,',')) where column_value='0704')sjts,
+		(select count(*) from table(fn_split(a.str,',')) where column_value='0705')kgts 
+		from 
+		(select ryid,d1||','||d2||','||d3||','||d4||','||d5||','||d6||','||d7||','||d8||','
+		  ||d9||','||d10||','||d11||','||d12||','||d13||','||d14||','||d15||','||d16||','
+		  ||d17||','||d18||','||d19||','||d20||','||d21||','||d22||','||d23||','||d24||','
+		  ||d25||','||d26||','||d27||','||d28||','||d29||','||d30||','||d31 as str 
+		from rcyh_kqfb
+		where ryid in (select ryid from htgl_ryb where bmcode=#{bmCode} and qyzt=1) 
+		and kqid=(select kqid from rcyh_kqzb where bmcode=#{bmCode} and ssny=#{ssny}))a
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

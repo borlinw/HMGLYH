@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.rcyh.dao.RcyhRwdjlbMapper" >
+  <resultMap id="BaseResultMap" type="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" >
+    <id column="RWDID" property="rwdid" jdbcType="VARCHAR" />
+    <result column="SSNY" property="ssny" jdbcType="VARCHAR" />
+    <result column="CJTIME" property="cjtime" jdbcType="DATE" />
+    <result column="CJUSERNAME" property="cjusername" jdbcType="VARCHAR" />
+    <result column="BMCODE" property="bmcode" jdbcType="VARCHAR" />
+    <result column="LDCODE" property="ldcode" jdbcType="VARCHAR" />
+    <result column="TQ" property="tq" jdbcType="VARCHAR" />
+    <result column="SZHHKM" property="szhhkm" jdbcType="DECIMAL" />
+    <result column="SZHHM" property="szhhm" jdbcType="DECIMAL" />
+    <result column="EZHHKM" property="ezhhkm" jdbcType="DECIMAL" />
+    <result column="EZHHM" property="ezhhm" jdbcType="DECIMAL" />
+    <result column="WZBC" property="wzbc" jdbcType="VARCHAR" />
+    <result column="QLCODE" property="qlcode" jdbcType="VARCHAR" />
+    <result column="QLNAME" property="qlname" jdbcType="VARCHAR" />
+    <result column="SDCODE" property="sdcode" jdbcType="VARCHAR" />
+    <result column="SDNAME" property="sdname" jdbcType="VARCHAR" />
+    <result column="HDCODE" property="hdcode" jdbcType="VARCHAR" />
+    <result column="HDNAME" property="hdname" jdbcType="VARCHAR" />
+    <result column="BHID" property="bhid" jdbcType="VARCHAR" />
+    <result column="YHID" property="yhid" jdbcType="VARCHAR" />
+    <result column="SL" property="sl" jdbcType="DECIMAL" />
+    <result column="BZ" property="bz" jdbcType="VARCHAR" />
+    <result column="GRDE" property="grde" jdbcType="DECIMAL" />
+    <result column="JHGR" property="jhgr" jdbcType="DECIMAL" />
+    <result column="RGF" property="rgf" jdbcType="DECIMAL" />
+    <result column="CLF" property="clf" jdbcType="DECIMAL" />
+    <result column="JXF" property="jxf" jdbcType="DECIMAL" />
+    <result column="XFSX" property="xfsx" jdbcType="DECIMAL" />
+    <result column="RWDZT" property="rwdzt" jdbcType="DECIMAL" />
+    <result column="RWDLX" property="rwdlx" jdbcType="DECIMAL" />
+    <result column="RWBH" property="rwbh" jdbcType="VARCHAR" />
+  </resultMap>
+  <!-- 与病害关联 -->
+  <resultMap type="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" id="RwdjlbResultMap" extends="BaseResultMap">
+  	<collection property="bhjls" ofType="com.hdsx.hmglyh.rcyh.dao.model.RcyhBhjlb">
+  		<id property="bhjlid" column="BHJLID" />  
+  	</collection>
+  </resultMap>
+  <!-- 与材料消耗关联 人员表 -->
+  <resultMap type="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" id="RwdjlbRysAndClxhResultMap" extends="BaseResultMap">
+  	<collection property="cljxxhs" column="rwdid" ofType="list" select="selectClxh"></collection>
+  	<collection property="rys" column="bmcode" ofType="list" select="selectRys"></collection>
+  </resultMap>
+  
+  <resultMap type="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" id="RwdjlbWithClxhResultMap" extends="BaseResultMap">
+  	<collection property="cljxxhs" column="rwdid" ofType="list" select="selectClxh"></collection>
+  </resultMap>
+
+ <resultMap type="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" id="RwdjlbWithClxhAndBhResultMap" extends="BaseResultMap">
+  	<collection property="cljxxhs" column="rwdid" ofType="list" select="selectClxh"></collection>
+ 	<collection property="bhjls" ofType="com.hdsx.hmglyh.rcyh.dao.model.RcyhBhjlb">
+  		<id property="bhjlid" column="BHJLID" />  
+  	</collection>
+  </resultMap>
+
+  
+  <sql id="Base_Column_List" >
+    RWDID, SSNY, to_char(CJTIME,'yyyy-mm-dd hh24:mi:ss') CJTIME, CJUSERNAME, BMCODE, LDCODE, TQ, SZHHKM, SZHHM, EZHHKM, EZHHM, 
+    WZBC, QLCODE, QLNAME, SDCODE, SDNAME, HDCODE, HDNAME, BHID, YHID, SL, BZ, GRDE, JHGR, 
+    RGF, CLF, JXF, XFSX, RWDZT, RWDLX,RWBH
+  </sql>
+  <!-- 任务单 条件列表 -->
+  <sql id="Rwd_Where">
+  	<where>
+  		<!-- 所属年月 -->
+  		<if test="ssny != null and ssny != '' ">
+  			and SSNY = #{ssny}
+  		</if>
+  		<!-- 创建时间 -->
+  		<if test="starttime != null and starttime != '' and endtime != null and endtime != '' ">
+  			and CJTIME &gt;= #{starttime} and CJTIME &lt; #{endtime}
+  		</if>
+  		<!-- 创建人 -->
+  		<if test="cjusername != null and cjusername != '' ">
+  			and CJUSERNAME = #{cjusername}
+  		</if>
+  		<!-- 部门编码 -->
+  		<if test="bmcode != null and bmcode != '' ">
+  			and BMCODE = #{bmcode}
+  		</if>
+  		<!-- 养护类型 -->
+  		<if test="yhid != null and yhid != '' ">
+  			and YHID = #{yhid}
+  		</if>
+  		<!-- 任务单类型 -->
+  		<if test="rwdlx != null and rwdlx != '' ">
+  			and rwdlx = #{rwdlx}
+  		</if>
+  		<!-- 任务单状态 -->
+  		<if test="rwdzt == 0 ">
+  			and ( rwdzt = 0 or rwdzt = 3 )
+  		</if>
+  	</where>
+  </sql>
+  
+  <sql id="Rwd_Where_forYdjh">
+  	<where>
+  		<!-- 所属年月 -->
+  		<if test="ssny != null and ssny != '' ">
+  			and SSNY = #{ssny}
+  		</if>
+  		<!-- 创建时间 -->
+  		<if test="starttime != null and starttime != '' ">
+  			and to_char(CJTIME,'yyyy-mm-dd') &gt;= #{starttime}
+  		</if>
+  		<!-- 部门编码 -->
+  		<if test="ldcode != null and ldcode != '' ">
+  			and LDCODE like  #{ldcode} || '%'
+  		</if>
+  		
+  		<!-- 任务单类型 -->
+  		<if test="rwdlx != null and rwdlx != '' ">
+  			and rwdlx = #{rwdlx}
+  		</if>
+  		
+  		<if test="bmcode != null and bmcode != '' ">
+  			and bmcode = #{bmcode}
+  		</if>
+  		
+  	</where>
+  </sql>
+  
+  <!-- 任务单 条件列表 -->
+  <sql id="Rwd_Where_Forcx">
+  	<where>
+  		<!-- 部门编码 -->
+  		<if test="bmcode != null and bmcode != '' ">
+  			and BMCODE like  #{bmcode} || '%'
+  		</if>
+  		<if test="bmcode == null or bmcode == '' ">
+  			and BMCODE = '-1'
+  		</if>
+  		<!-- 创建时间 -->
+  		<if test="starttime != null and starttime != '' ">
+  			and CJTIME &gt;=  to_date(#{starttime} || ' 00:00:00','yyyy-mm-dd hh24:mi:ss') 
+  		</if>
+  		<if test="endtime != null and endtime != '' ">
+  			and CJTIME &lt;= to_date(#{endtime} || ' 23:59:59','yyyy-mm-dd hh24:mi:ss')
+  		</if>
+  		
+  		<!-- 创建人 -->
+  		<if test="cjusername != null and cjusername != '' ">
+  			and CJUSERNAME = #{cjusername}
+  		</if>
+  		
+  		<!-- 养护类型 -->
+  		<if test="yhid != null and yhid != '' ">
+  			and YHID = #{yhid}
+  		</if>
+  		
+  		<!-- 任务单类型 -->
+  		<if test="rwdlx != null and rwdlx != '' ">
+  			and rwdlx = #{rwdlx}
+  		</if>
+  		
+  		<!-- 任务单状态 -->
+  		<if test="rwdzt != null and rwdzt != '' ">
+  			and rwdzt = #{rwdzt}
+  		</if>
+  	</where>
+  </sql>
+  
+  <select id="selectClxh" parameterType="string" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhCljxxhb">
+  		select t1.SSID,t1.LXID,t1.SL,t1.DJ,t1.JE ,t2.GG,t2.LXNAME,t2.DW,t2.bm
+  			from RCYH_CLJXXHB t1
+  				left join
+  					HTGL_GLJLXB t2 on t1.LXID = t2.LXID
+  			where SSID = #{rwdid}
+  </select>
+  
+  <select id="selectRys" parameterType="string" resultType="com.hdsx.hmglyh.htgl.bean.HtglRyb">
+  		select 
+  			RYID,RYNAME,BMCODE
+  			from HTGL_RYB
+  			where BMCODE = #{bmcode}
+  			order by ZW
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="RwdjlbRysAndClxhResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from hmglyh.RCYH_RWDJLB
+    where RWDID = #{rwdid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByPrimaryKeyWithClxhAndBh" resultMap="RwdjlbWithClxhAndBhResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from hmglyh.RCYH_RWDJLB
+    where RWDID = #{rwdid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByPrimaryKeyWithClxh" resultMap="RwdjlbWithClxhResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from hmglyh.RCYH_RWDJLB
+    where RWDID = #{rwdid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByPrimaryKeySimple" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from hmglyh.RCYH_RWDJLB
+    where RWDID = #{rwdid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="listRwd" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" 
+  		  resultMap="BaseResultMap">
+  	SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+			 select
+			 	<include refid="Base_Column_List" /> 
+			 	from RCYH_RWDJLB	 
+			 	<include refid="Rwd_Where" />
+	) TEMP
+	<if test="page != null and page != ''">
+	  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+	</if>)
+    <where>
+	   <if test="page != null and page != ''">
+	      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+		</if>
+	</where>
+  </select>
+  
+  <select id="listRwdCount" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb"
+  	resultType="int"
+  >
+  	 select
+			 count(*)
+			 	from RCYH_RWDJLB	 
+			 	<include refid="Rwd_Where" />
+  </select>
+  
+   <select id="listRwdcx" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" 
+  		  resultMap="BaseResultMap">
+  	
+  	SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+			 select
+			 	<include refid="Base_Column_List" /> 
+			 	from RCYH_RWDJLB	 
+			 	<include refid="Rwd_Where_Forcx" />
+	) TEMP
+	<if test="page != null and page != ''">
+	  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+	</if>)
+    <where>
+	   <if test="page != null and page != ''">
+	      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+		</if>
+	</where>
+  </select>
+  
+  <select id="listRwdcxCount" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" resultType="int">
+  	 select
+			 count(*)
+			 	from RCYH_RWDJLB	 
+			 	<include refid="Rwd_Where_Forcx" />
+  </select>
+  
+   <select id="listRwdForYdjh" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" 
+  		  resultMap="BaseResultMap">
+		  	SELECT * FROM(
+				    SELECT ROWNUM RN,TEMP.* FROM(
+					 select
+					 	<include refid="Base_Column_List" /> 
+					 	from RCYH_RWDJLB	 
+					 	<include refid="Rwd_Where_forYdjh" />
+			) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		    <where>
+			   <if test="page != null and page != ''">
+			      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+				</if>
+			</where>
+  </select>
+  
+  <select id="listRwdForYdjhCount" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" resultType="int">
+  	 	select
+			 count(*)
+			 	from RCYH_RWDJLB	 
+			 	<include refid="Rwd_Where_forYdjh" />
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from hmglyh.RCYH_RWDJLB
+    where RWDID = #{rwdid,jdbcType=VARCHAR}
+  </delete>
+  
+  <insert id="insert" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" >
+    insert into hmglyh.RCYH_RWDJLB (RWDID, SSNY, CJTIME, 
+      CJUSERNAME, BMCODE, LDCODE, 
+      TQ, SZHHKM, SZHHM, 
+      EZHHKM, EZHHM, WZBC, 
+      QLCODE, QLNAME, SDCODE, 
+      SDNAME, HDCODE, HDNAME, 
+      BHID, YHID, SL, BZ, 
+      GRDE, JHGR, RGF, CLF, 
+      JXF, XFSX, RWDZT, RWDLX,RWBH
+      )
+    values (#{rwdid,jdbcType=VARCHAR}, #{ssny,jdbcType=VARCHAR}, to_date(#{cjtime},'yyyy-mm-dd hh24:mi:ss'), 
+      #{cjusername,jdbcType=VARCHAR}, #{bmcode,jdbcType=VARCHAR}, #{ldcode,jdbcType=VARCHAR}, 
+      #{tq,jdbcType=VARCHAR}, #{szhhkm,jdbcType=DECIMAL}, #{szhhm,jdbcType=DECIMAL}, 
+      #{ezhhkm,jdbcType=DECIMAL}, #{ezhhm,jdbcType=DECIMAL}, #{wzbc,jdbcType=VARCHAR}, 
+      #{qlcode,jdbcType=VARCHAR}, #{qlname,jdbcType=VARCHAR}, #{sdcode,jdbcType=VARCHAR}, 
+      #{sdname,jdbcType=VARCHAR}, #{hdcode,jdbcType=VARCHAR}, #{hdname,jdbcType=VARCHAR}, 
+      #{bhid,jdbcType=VARCHAR}, #{yhid,jdbcType=VARCHAR}, #{sl,jdbcType=DECIMAL}, #{bz,jdbcType=VARCHAR}, 
+      #{grde,jdbcType=DECIMAL}, #{jhgr,jdbcType=DECIMAL}, #{rgf,jdbcType=DECIMAL}, #{clf,jdbcType=DECIMAL}, 
+      #{jxf,jdbcType=DECIMAL}, #{xfsx,jdbcType=DECIMAL}, #{rwdzt,jdbcType=DECIMAL}, #{rwdlx,jdbcType=DECIMAL},#{rwbh,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" >
+    insert into hmglyh.RCYH_RWDJLB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rwdid != null" >
+        RWDID,
+      </if>
+      <if test="ssny != null" >
+        SSNY,
+      </if>
+      <if test="cjtime != null" >
+        CJTIME,
+      </if>
+      <if test="cjusername != null" >
+        CJUSERNAME,
+      </if>
+      <if test="bmcode != null" >
+        BMCODE,
+      </if>
+      <if test="ldcode != null" >
+        LDCODE,
+      </if>
+      <if test="tq != null" >
+        TQ,
+      </if>
+      <if test="szhhkm != null" >
+        SZHHKM,
+      </if>
+      <if test="szhhm != null" >
+        SZHHM,
+      </if>
+      <if test="ezhhkm != null" >
+        EZHHKM,
+      </if>
+      <if test="ezhhm != null" >
+        EZHHM,
+      </if>
+      <if test="wzbc != null" >
+        WZBC,
+      </if>
+      <if test="qlcode != null" >
+        QLCODE,
+      </if>
+      <if test="qlname != null" >
+        QLNAME,
+      </if>
+      <if test="sdcode != null" >
+        SDCODE,
+      </if>
+      <if test="sdname != null" >
+        SDNAME,
+      </if>
+      <if test="hdcode != null" >
+        HDCODE,
+      </if>
+      <if test="hdname != null" >
+        HDNAME,
+      </if>
+      <if test="bhid != null" >
+        BHID,
+      </if>
+      <if test="yhid != null" >
+        YHID,
+      </if>
+      <if test="sl != null" >
+        SL,
+      </if>
+      <if test="bz != null" >
+        BZ,
+      </if>
+      <if test="grde != null" >
+        GRDE,
+      </if>
+      <if test="jhgr != null" >
+        JHGR,
+      </if>
+      <if test="rgf != null" >
+        RGF,
+      </if>
+      <if test="clf != null" >
+        CLF,
+      </if>
+      <if test="jxf != null" >
+        JXF,
+      </if>
+      <if test="xfsx != null" >
+        XFSX,
+      </if>
+      <if test="rwdzt != null" >
+        RWDZT,
+      </if>
+      <if test="rwdlx != null" >
+        RWDLX,
+      </if>
+       <if test="rwbh != null" >
+        RWBH,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rwdid != null" >
+        #{rwdid,jdbcType=VARCHAR},
+      </if>
+      <if test="ssny != null" >
+        #{ssny,jdbcType=VARCHAR},
+      </if>
+      <if test="cjtime != null" >
+       to_date( #{cjtime,jdbcType=DATE} , 'yyyy-mm-dd hh24:mi:ss'),
+      </if>
+      <if test="cjusername != null" >
+        #{cjusername,jdbcType=VARCHAR},
+      </if>
+      <if test="bmcode != null" >
+        #{bmcode,jdbcType=VARCHAR},
+      </if>
+      <if test="ldcode != null" >
+        #{ldcode,jdbcType=VARCHAR},
+      </if>
+      <if test="tq != null" >
+        #{tq,jdbcType=VARCHAR},
+      </if>
+      <if test="szhhkm != null" >
+        #{szhhkm,jdbcType=DECIMAL},
+      </if>
+      <if test="szhhm != null" >
+        #{szhhm,jdbcType=DECIMAL},
+      </if>
+      <if test="ezhhkm != null" >
+        #{ezhhkm,jdbcType=DECIMAL},
+      </if>
+      <if test="ezhhm != null" >
+        #{ezhhm,jdbcType=DECIMAL},
+      </if>
+      <if test="wzbc != null" >
+        #{wzbc,jdbcType=VARCHAR},
+      </if>
+      <if test="qlcode != null" >
+        #{qlcode,jdbcType=VARCHAR},
+      </if>
+      <if test="qlname != null" >
+        #{qlname,jdbcType=VARCHAR},
+      </if>
+      <if test="sdcode != null" >
+        #{sdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="sdname != null" >
+        #{sdname,jdbcType=VARCHAR},
+      </if>
+      <if test="hdcode != null" >
+        #{hdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hdname != null" >
+        #{hdname,jdbcType=VARCHAR},
+      </if>
+      <if test="bhid != null" >
+        #{bhid,jdbcType=VARCHAR},
+      </if>
+      <if test="yhid != null" >
+        #{yhid,jdbcType=VARCHAR},
+      </if>
+      <if test="sl != null" >
+        #{sl,jdbcType=DECIMAL},
+      </if>
+      <if test="bz != null" >
+        #{bz,jdbcType=VARCHAR},
+      </if>
+      <if test="grde != null" >
+        #{grde,jdbcType=DECIMAL},
+      </if>
+      <if test="jhgr != null" >
+        #{jhgr,jdbcType=DECIMAL},
+      </if>
+      <if test="rgf != null" >
+        #{rgf,jdbcType=DECIMAL},
+      </if>
+      <if test="clf != null" >
+        #{clf,jdbcType=DECIMAL},
+      </if>
+      <if test="jxf != null" >
+        #{jxf,jdbcType=DECIMAL},
+      </if>
+      <if test="xfsx != null" >
+        #{xfsx,jdbcType=DECIMAL},
+      </if>
+      <if test="rwdzt != null" >
+        #{rwdzt,jdbcType=DECIMAL},
+      </if>
+      <if test="rwdlx != null" >
+        #{rwdlx,jdbcType=DECIMAL},
+      </if>
+      <if test="rwbh != null" >
+        #{rwbh,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" >
+    update hmglyh.RCYH_RWDJLB
+    <set >
+      <if test="ssny != null" >
+        SSNY = #{ssny,jdbcType=VARCHAR},
+      </if>
+      <if test="cjtime != null" >
+        CJTIME = to_date(#{cjtime},'yyyy-mm-dd hh24:mi:ss'),
+      </if>
+      <if test="cjusername != null" >
+        CJUSERNAME = #{cjusername,jdbcType=VARCHAR},
+      </if>
+      <if test="bmcode != null" >
+        BMCODE = #{bmcode,jdbcType=VARCHAR},
+      </if>
+      <if test="ldcode != null" >
+        LDCODE = #{ldcode,jdbcType=VARCHAR},
+      </if>
+      <if test="tq != null" >
+        TQ = #{tq,jdbcType=VARCHAR},
+      </if>
+      <if test="szhhkm != null" >
+        SZHHKM = #{szhhkm,jdbcType=DECIMAL},
+      </if>
+      <if test="szhhm != null" >
+        SZHHM = #{szhhm,jdbcType=DECIMAL},
+      </if>
+      <if test="ezhhkm != null" >
+        EZHHKM = #{ezhhkm,jdbcType=DECIMAL},
+      </if>
+      <if test="ezhhm != null" >
+        EZHHM = #{ezhhm,jdbcType=DECIMAL},
+      </if>
+      <if test="wzbc != null" >
+        WZBC = #{wzbc,jdbcType=VARCHAR},
+      </if>
+      <if test="qlcode != null" >
+        QLCODE = #{qlcode,jdbcType=VARCHAR},
+      </if>
+      <if test="qlname != null" >
+        QLNAME = #{qlname,jdbcType=VARCHAR},
+      </if>
+      <if test="sdcode != null" >
+        SDCODE = #{sdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="sdname != null" >
+        SDNAME = #{sdname,jdbcType=VARCHAR},
+      </if>
+      <if test="hdcode != null" >
+        HDCODE = #{hdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hdname != null" >
+        HDNAME = #{hdname,jdbcType=VARCHAR},
+      </if>
+      <if test="bhid != null" >
+        BHID = #{bhid,jdbcType=VARCHAR},
+      </if>
+      <if test="yhid != null" >
+        YHID = #{yhid,jdbcType=VARCHAR},
+      </if>
+      <if test="sl != null" >
+        SL = #{sl,jdbcType=DECIMAL},
+      </if>
+      <if test="bz != null" >
+        BZ = #{bz,jdbcType=VARCHAR},
+      </if>
+      <if test="grde != null" >
+        GRDE = #{grde,jdbcType=DECIMAL},
+      </if>
+      <if test="jhgr != null" >
+        JHGR = #{jhgr,jdbcType=DECIMAL},
+      </if>
+      <if test="rgf != null" >
+        RGF = #{rgf,jdbcType=DECIMAL},
+      </if>
+      <if test="clf != null" >
+        CLF = #{clf,jdbcType=DECIMAL},
+      </if>
+      <if test="jxf != null" >
+        JXF = #{jxf,jdbcType=DECIMAL},
+      </if>
+      <if test="xfsx != null" >
+        XFSX = #{xfsx,jdbcType=DECIMAL},
+      </if>
+      <if test="rwdzt != null" >
+        RWDZT = #{rwdzt,jdbcType=DECIMAL},
+      </if>
+      <if test="rwdlx != null" >
+        RWDLX = #{rwdlx,jdbcType=DECIMAL},
+      </if>
+       <if test="rwbh != null" >
+        RWBH = #{rwbh,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where RWDID = #{rwdid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" >
+    update hmglyh.RCYH_RWDJLB
+    set SSNY = #{ssny,jdbcType=VARCHAR},
+      CJTIME = to_date(#{cjtime},'yyyy-mm-dd hh24:mi:ss'),
+      CJUSERNAME = #{cjusername,jdbcType=VARCHAR},
+      BMCODE = #{bmcode,jdbcType=VARCHAR},
+      LDCODE = #{ldcode,jdbcType=VARCHAR},
+      TQ = #{tq,jdbcType=VARCHAR},
+      SZHHKM = #{szhhkm,jdbcType=DECIMAL},
+      SZHHM = #{szhhm,jdbcType=DECIMAL},
+      EZHHKM = #{ezhhkm,jdbcType=DECIMAL},
+      EZHHM = #{ezhhm,jdbcType=DECIMAL},
+      WZBC = #{wzbc,jdbcType=VARCHAR},
+      QLCODE = #{qlcode,jdbcType=VARCHAR},
+      QLNAME = #{qlname,jdbcType=VARCHAR},
+      SDCODE = #{sdcode,jdbcType=VARCHAR},
+      SDNAME = #{sdname,jdbcType=VARCHAR},
+      HDCODE = #{hdcode,jdbcType=VARCHAR},
+      HDNAME = #{hdname,jdbcType=VARCHAR},
+      BHID = #{bhid,jdbcType=VARCHAR},
+      YHID = #{yhid,jdbcType=VARCHAR},
+      SL = #{sl,jdbcType=DECIMAL},
+      BZ = #{bz,jdbcType=VARCHAR},
+      GRDE = #{grde,jdbcType=DECIMAL},
+      JHGR = #{jhgr,jdbcType=DECIMAL},
+      RGF = #{rgf,jdbcType=DECIMAL},
+      CLF = #{clf,jdbcType=DECIMAL},
+      JXF = #{jxf,jdbcType=DECIMAL},
+      XFSX = #{xfsx,jdbcType=DECIMAL},
+      RWDZT = #{rwdzt,jdbcType=DECIMAL},
+      RWDLX = #{rwdlx,jdbcType=DECIMAL},
+      RWBH = #{rwbh,jdbcType=VARCHAR}
+    where RWDID = #{rwdid,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="listJhshRwd" parameterType="string" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb">
+  	select <include refid="Base_Column_List"></include> from
+  	 	Rcyh_Rwdjlb
+  	 	where 
+  	 	bmcode = #{bmcode} and
+  	 	ldcode = #{ldcode} and
+  	 	ssny = #{ssny} and
+  	 	rwdlx = '0901'
+  </select>
+  
+</mapper>

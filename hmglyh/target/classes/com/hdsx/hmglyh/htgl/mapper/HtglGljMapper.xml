@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.htgl.mapper.HtglGljMapper">
+
+<!-- 添加（类型） -->
+<insert id="gljlxAddOne" parameterType="htglGlj">
+	INSERT INTO HTGL_GLJLXB (LXID,LXNAME,GG,DW,BZ,PX,QYZT,BM) VALUES(#{lxid},#{lxname},#{gg},#{dw},#{bz},1,#{qyzt},#{bm})
+</insert>
+
+<!-- 添加（价格） -->
+<insert id="gljjgAddOne" parameterType="htglGlj">
+	INSERT INTO HTGL_GLJJGB (LXID,DJ,BMCODE) VALUES(#{lxid},#{dj},#{bmcode})
+</insert>
+
+<!-- 删除（类型） -->
+<delete id="gljlxDeleteOne" parameterType="htglGlj">
+	DELETE HTGL_GLJLXB WHERE LXID=#{lxid}
+</delete>
+
+<!-- 删除（价格） -->
+<delete id="gljjgDelete" parameterType="htglGlj">
+	DELETE HTGL_GLJJGB WHERE LXID=#{lxid}
+</delete>
+
+<!-- 修改（类型） -->
+<update id="gljlxUpdateOne" parameterType="htglGlj">
+	UPDATE HTGL_GLJLXB SET LXNAME=#{lxname}, GG=#{gg}, DW=#{dw}, BZ=#{bz}, QYZT=#{qyzt} WHERE LXID=#{lxid}
+</update>
+
+<!-- 修改（价格） -->
+<update id="gljjgUpdateOne" parameterType="htglGlj">
+	UPDATE HTGL_GLJJGB SET DJ=#{dj} WHERE LXID=#{lxid} AND BMCODE=#{bmcode}
+</update>
+
+<!-- 修改-“启用状态” -->
+<update id="gljlxUpdateOneQyzt" parameterType="htglGlj">
+	UPDATE Htgl_Gljlxb SET QYZT=#{qyzt} WHERE LXID=#{lxid}
+</update>
+
+<!-- 查询 -->
+<select id="queryAllBySome" resultType="htglGlj" parameterType="htglGlj">
+	SELECT TEMP.* FROM (
+	    SELECT ROWNUM RN,A.* FROM (
+			SELECT A.*,B.childNum FROM HTGL_GLJLXB A left join (
+				SELECT A.LXID,COUNT(B.LXID) AS childNum FROM HTGL_GLJLXB A LEFT JOIN HTGL_GLJLXB B ON B.LXID like A.LXID||'%' GROUP BY A.LXID
+			)B ON A.LXID= B.LXID WHERE A.LXID like #{lxid}||'%'
+			ORDER BY QYZT DESC,PX
+		) A
+	) TEMP
+	<where>
+		<if test="page != null and page != ''">
+			<![CDATA[RN <= (${page} * ${rows})]]>
+			 AND
+			<![CDATA[RN>((${page} - 1) * ${rows})]]>
+		</if>
+	</where>
+</select>
+
+<!-- 查询 - 按照条件统计数据条数 -->
+<select id="countNumBySome" resultType="int" parameterType="htglGlj">
+	SELECT COUNT(*) FROM HTGL_GLJLXB WHERE LXID like #{lxid}||'%'
+</select>
+
+<!-- 获取父节点（病害类型） -->
+<select id="selectFather" parameterType="htglGlj" resultType="htglGlj">
+	SELECT * FROM Htgl_Gljlxb WHERE LXID=#{lxid}
+</select>
+<!-- 获取children -->
+<select id="selectChildren" parameterType="htglGlj" resultType="htglGlj">
+	SELECT * FROM Htgl_Gljlxb WHERE LXID like #{lxid}||'___' order by LXID
+</select>
+
+<!-- 主键生成规则（被注释掉的是二位一层级，现在应用的是三位一层级） -->
+<select id="generationPK" parameterType="htglGlj" resultType="htglGlj">
+	<!-- SELECT CONCAT(#{lxid},LPAD(CAST(NVL(substr(MAX(LXID), -2)+1,1) AS varchar(2)),2,0)) AS LXID FROM HTGL_GLJLXB WHERE LXID like #{lxid}||'__' -->
+	SELECT CONCAT(#{lxid},LPAD(CAST(NVL(substr(MAX(LXID), -3)+1,1) AS varchar(3)),3,0)) AS LXID FROM HTGL_GLJLXB WHERE LXID like #{lxid}||'___'
+</select>
+
+<!-- 根据Lxid和Bmcode查询价格 -->
+<select id="queryJgByLxidAndBmcode" resultType="htglGlj" parameterType="htglGlj">
+	SELECT * FROM HTGL_GLJJGB WHERE LXID=#{lxid} AND BMCODE=#{bmcode}
+</select>
+
+<!-- 查询全部“工料机”用于创建工料机Combobox，添加定额（作业项目类别管理） -->
+<select id="queryAllToCreateComboboxToDeb" resultType="htglGlj" parameterType="htglGlj">
+	SELECT A.* FROM HTGL_GLJLXB A left join (
+		SELECT A.LXID,COUNT(B.LXID) AS childNum FROM HTGL_GLJLXB A LEFT JOIN HTGL_GLJLXB B ON B.LXID like A.LXID||'%' GROUP BY A.LXID
+	)B ON A.LXID= B.LXID WHERE B.CHILDNUM=1 AND LENGTH(A.LXID) != 2 ORDER BY QYZT DESC,PX
+</select>
+
+<!-- 查询“材料”的工料机（父类） -->
+<select id="queryClToInsertDeb" resultType="htglGlj" >
+	SELECT * FROM HTGL_GLJLXB WHERE LXID='002'
+</select>
+
+<!-- 查询“机械”的工料机（父类） -->
+<select id="queryJxToInsertDeb" resultType="htglGlj" >
+	SELECT * FROM HTGL_GLJLXB WHERE LXID='003'
+</select>
+
+<!-- 获取children（用于添加定额） -->
+<select id="selectChildrenOfInsertDe" parameterType="htglGlj" resultType="htglGlj">
+	SELECT A.*,B.childNum FROM Htgl_Gljlxb A LEFT JOIN 
+		(SELECT A.LXID,COUNT(B.LXID) AS childNum FROM HTGL_GLJLXB A LEFT JOIN HTGL_GLJLXB B ON B.LXID like A.LXID||'%' GROUP BY A.LXID) B ON A.LXID=B.LXID
+	WHERE A.LXID like #{lxid}||'___' AND QYZT=1 order by A.LXID
+</select>
+
+<select id="verifyBm" parameterType="htglGlj" resultType="int">
+	SELECT COUNT(*) FROM HTGL_GLJLXB WHERE BM=#{bm}
+</select>
+
+</mapper>

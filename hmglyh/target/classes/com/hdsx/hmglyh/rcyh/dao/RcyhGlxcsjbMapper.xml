@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.rcyh.dao.RcyhGlxcsjbMapper" >
+  <resultMap id="GlcxsjbResultMap" type="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" >
+    <id column="XCID" property="xcid" jdbcType="VARCHAR" />
+    <result column="BMCODE" property="bmcode" jdbcType="VARCHAR" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="STIME" property="stime" jdbcType="DATE" />
+    <result column="ETIME" property="etime" jdbcType="DATE" />
+    <result column="XSLD" property="xsld" jdbcType="VARCHAR" />
+    <result column="TQ" property="tq" jdbcType="VARCHAR" />
+    <result column="BZ" property="bz" jdbcType="VARCHAR" />
+    <result column="JLR" property="jlr" jdbcType="VARCHAR" />
+    <result column="FZR" property="fzr" jdbcType="VARCHAR" />
+    <result column="LM" property="lm" jdbcType="VARCHAR" />
+    <result column="LJ" property="lj" jdbcType="VARCHAR" />
+    <result column="QSH" property="qsh" jdbcType="VARCHAR" />
+    <result column="YXSS" property="yxss" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Glxcsjb_Column_List" >
+    XCID, BMCODE, USERNAME, to_char(STIME,'yyyy-mm-dd hh24:mi:ss') STIME, to_char(ETIME,'yyyy-mm-dd hh24:mi:ss') ETIME, XSLD, TQ, BZ, JLR, FZR, LM, LJ, QSH, YXSS
+  </sql>
+  <sql id="Glxcsjb_Column_List2" >
+    t1.XCID, t1.BMCODE, t1.USERNAME,  to_char(t1.STIME,'yyyy-mm-dd hh24:mi:ss') STIME,  to_char(t1.ETIME,'yyyy-mm-dd hh24:mi:ss') ETIME, t1.XSLD, t1.TQ, t1.BZ, t1.JLR, t1.FZR, t1.LM, t1.LJ, t1.QSH, t1.YXSS
+  </sql>
+  <sql id="Glxcsjb_Where">
+  	<where>
+  		<if test="bmcode != null and bmcode != '' ">
+  			and bmcode = #{bmcode}
+  		</if>
+  		<if test="stime != null and stime != '' ">
+  			and stime &gt;= to_date(#{stime} || ' 00:00:00','yyyy-mm-dd hh24:mi:ss') 
+  		</if>
+  		<if test="etime != null and etime != '' ">
+  			and etime &lt;= to_date(#{etime} || ' 23:59:59','yyyy-mm-dd hh24:mi:ss')
+  		</if>
+  		<if test="xsld != null and xsld != '' ">
+  			and xsld like '%'|| #{xsld} ||'%'
+  		</if>
+  	</where>
+  </sql>
+  
+  <sql id="Glxdcx_Where">
+  	<where>
+  		<if test="bmcode != null and bmcode != '' ">
+  			and bmcode like #{bmcode}||'%'
+  		</if>
+  		<if test="stime != null and stime != '' ">
+  			and stime &gt;= to_date(#{stime} || ' 00:00:00','yyyy-mm-dd hh24:mi:ss') 
+  		</if>
+  		<if test="etime != null and etime != '' ">
+  			and etime &lt;= to_date(#{etime} || ' 23:59:59','yyyy-mm-dd hh24:mi:ss')
+  		</if>
+  		<if test="xsld != null and xsld != '' ">
+  			and xsld like '%'|| #{xsld} ||'%'
+  		</if>
+  	</where>
+  </sql>
+  
+  <resultMap id="HtglYhbResultMap" type="com.hdsx.hmglyh.rcyh.dao.model.HtglYhb" >
+    <id column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="PW" property="pw" jdbcType="VARCHAR" />
+    <result column="RYID" property="ryid" jdbcType="DECIMAL" />
+    <result column="JSID" property="jsid" jdbcType="DECIMAL" />
+    <result column="QYZT" property="qyzt" jdbcType="DECIMAL" />
+    <collection property="lds" javaType="java.util.ArrayList" select="selectLuduans" column="BMCODE" ofType="com.hdsx.hmglyh.rcyh.dao.model.HtglLuduan">
+    </collection>  
+  </resultMap>
+  
+  <sql id="HtglYhb_Column_List" >
+    t1.USERNAME, t1.PW, t1.RYID, t1.JSID, t1.QYZT
+  </sql>
+  
+  <resultMap id="LuduanResultMap" type="com.hdsx.hmglyh.rcyh.dao.model.HtglLuduan" >
+    <id column="LDCODE" property="ldcode" jdbcType="VARCHAR" />
+    <result column="LDNAME" property="ldname" jdbcType="VARCHAR" />
+    <result column="LXCODE" property="lxcode" jdbcType="VARCHAR" />
+    <result column="SZHH" property="szhh" jdbcType="DECIMAL" />
+    <result column="EZHH" property="ezhh" jdbcType="DECIMAL" />
+    <result column="MILEAGE" property="mileage" jdbcType="DECIMAL" />
+    <result column="BMCODE" property="bmcode" jdbcType="VARCHAR" />
+    <result column="BZ" property="bz" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Luduan_Column_List" >
+    LDCODE, LDNAME, LXCODE, SZHH, EZHH, MILEAGE, BMCODE, BZ
+  </sql>
+  
+  <sql id="HtglYhb_Where">
+  	<where>
+  		<if test="username != null and username != '' ">
+  			and t1.username = #{username}
+  		</if>
+  		<if test="bmcode != null and bmcode != '' ">
+  			and t1.bmcode = #{bmcode}
+  		</if>
+  	</where>
+  </sql>
+  
+  <select id="selectLuduans" resultMap="LuduanResultMap" parameterType="com.hdsx.hmglyh.rcyh.dao.model.HtglLuduan">
+  	select
+  		<include refid="Luduan_Column_List" />
+  		from HTGL_LDB
+  		where
+  		BMCODE =  substr(#{bmcode},0,length(#{bmcode})-2)
+  </select>   
+  <select id="selectByPrimaryKey" resultMap="GlcxsjbResultMap" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" >
+    select 
+    <include refid="Glxcsjb_Column_List" />
+    from RCYH_GLXCSJB
+    where XCID = #{xcid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectGlxcsjbByUsername" parameterType="java.lang.String" resultMap="GlcxsjbResultMap">
+  	select
+  	 	<include refid="Glxcsjb_Column_List" />
+  	 	from RCYH_GLXCSJB
+  	 	where
+  	 	username = #{username}
+  </select>
+  
+  <!-- 首页寻道数据列表 -->
+  <select id="listXdsj" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb">
+  		SELECT * FROM(
+			    SELECT ROWNUM RN,TEMP.* FROM(
+			select distinct
+			<include refid="Glxcsjb_Column_List" />
+			from RCYH_GLXCSJB
+			<include refid="Glxcsjb_Where"/>		
+			 order by stime desc		  
+		) TEMP
+		<if test="page != null and page != ''">
+		  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+		</if>)
+	    <where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+  </select>
+  
+  <select id="listXdsjCount" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" resultType="int">
+  		select 
+			count(*)
+			from RCYH_GLXCSJB
+			<include refid="Glxcsjb_Where"/>		
+  </select>
+  
+  <!-- 判断 寻道记录 是否可以被删除 -->
+  <select id="canDelXdjl" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" resultType="int">
+  		select count(*) 
+  		from RCYH_BHJLB
+  		where XCID = #{xcid}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from hmglyh.RCYH_GLXCSJB
+    where XCID = #{xcid,jdbcType=VARCHAR}
+  </delete>
+  
+  <insert id="insert" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" >
+    insert into hmglyh.RCYH_GLXCSJB (XCID, BMCODE, USERNAME, 
+      STIME, ETIME, XSLD, TQ, 
+      BZ, JLR, FZR, LM, 
+      LJ, QSH, YXSS)
+    values (#{xcid,jdbcType=VARCHAR}, #{bmcode,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      to_date(#{stime},'yyyy-mm-dd hh24:mi:ss'), to_date(#{etime},'yyyy-mm-dd hh24:mi:ss'), #{xsld,jdbcType=VARCHAR}, #{tq,jdbcType=VARCHAR}, 
+      #{bz,jdbcType=VARCHAR}, #{jlr,jdbcType=VARCHAR}, #{fzr,jdbcType=VARCHAR}, #{lm,jdbcType=VARCHAR}, 
+      #{lj,jdbcType=VARCHAR}, #{qsh,jdbcType=VARCHAR}, #{yxss,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" >
+    insert into hmglyh.RCYH_GLXCSJB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="xcid != null" >
+        XCID,
+      </if>
+      <if test="bmcode != null" >
+        BMCODE,
+      </if>
+      <if test="username != null" >
+        USERNAME,
+      </if>
+      <if test="stime != null" >
+        STIME,
+      </if>
+      <if test="etime != null" >
+        ETIME,
+      </if>
+      <if test="xsld != null" >
+        XSLD,
+      </if>
+      <if test="tq != null" >
+        TQ,
+      </if>
+      <if test="bz != null" >
+        BZ,
+      </if>
+      <if test="jlr != null" >
+        JLR,
+      </if>
+      <if test="fzr != null" >
+        FZR,
+      </if>
+      <if test="lm != null" >
+        LM,
+      </if>
+      <if test="lj != null" >
+        LJ,
+      </if>
+      <if test="qsh != null" >
+        QSH,
+      </if>
+      <if test="yxss != null" >
+        YXSS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="xcid != null" >
+        #{xcid,jdbcType=VARCHAR},
+      </if>
+      <if test="bmcode != null" >
+        #{bmcode,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="stime != null" >
+       to_date( #{stime,jdbcType=DATE},'yyyy-mm-dd hh24:mi:ss'),
+      </if>
+      <if test="etime != null" >
+      to_date( #{etime,jdbcType=DATE},'yyyy-mm-dd hh24:mi:ss'),
+      </if>
+      <if test="xsld != null" >
+        #{xsld,jdbcType=VARCHAR},
+      </if>
+      <if test="tq != null" >
+        #{tq,jdbcType=VARCHAR},
+      </if>
+      <if test="bz != null" >
+        #{bz,jdbcType=VARCHAR},
+      </if>
+      <if test="jlr != null" >
+        #{jlr,jdbcType=VARCHAR},
+      </if>
+      <if test="fzr != null" >
+        #{fzr,jdbcType=VARCHAR},
+      </if>
+      <if test="lm != null" >
+        #{lm,jdbcType=VARCHAR},
+      </if>
+      <if test="lj != null" >
+        #{lj,jdbcType=VARCHAR},
+      </if>
+      <if test="qsh != null" >
+        #{qsh,jdbcType=VARCHAR},
+      </if>
+      <if test="yxss != null" >
+        #{yxss,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" >
+    update hmglyh.RCYH_GLXCSJB
+    <set >
+      <if test="bmcode != null" >
+        BMCODE = #{bmcode,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="stime != null" >
+        STIME = to_date(#{stime},'yyyy-mm-dd hh24:mi:ss'),
+      </if>
+      <if test="etime != null" >
+        ETIME = to_date(#{etime},'yyyy-mm-dd hh24:mi:ss'),
+      </if>
+      <if test="xsld != null" >
+        XSLD = #{xsld,jdbcType=VARCHAR},
+      </if>
+      <if test="tq != null" >
+        TQ = #{tq,jdbcType=VARCHAR},
+      </if>
+      <if test="bz != null" >
+        BZ = #{bz,jdbcType=VARCHAR},
+      </if>
+      <if test="jlr != null" >
+        JLR = #{jlr,jdbcType=VARCHAR},
+      </if>
+      <if test="fzr != null" >
+        FZR = #{fzr,jdbcType=VARCHAR},
+      </if>
+      <if test="lm != null" >
+        LM = #{lm,jdbcType=VARCHAR},
+      </if>
+      <if test="lj != null" >
+        LJ = #{lj,jdbcType=VARCHAR},
+      </if>
+      <if test="qsh != null" >
+        QSH = #{qsh,jdbcType=VARCHAR},
+      </if>
+      <if test="yxss != null" >
+        YXSS = #{yxss,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where XCID = #{xcid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" >
+    update hmglyh.RCYH_GLXCSJB
+    set BMCODE = #{bmcode,jdbcType=VARCHAR},
+      USERNAME = #{username,jdbcType=VARCHAR},
+      STIME = to_date(#{stime},'yyyy-mm-dd hh24:mi:ss'),
+      ETIME = to_date(#{etime},'yyyy-mm-dd hh24:mi:ss'),
+      XSLD = #{xsld,jdbcType=VARCHAR},
+      TQ = #{tq,jdbcType=VARCHAR},
+      BZ = #{bz,jdbcType=VARCHAR},
+      JLR = #{jlr,jdbcType=VARCHAR},
+      FZR = #{fzr,jdbcType=VARCHAR},
+      LM = #{lm,jdbcType=VARCHAR},
+      LJ = #{lj,jdbcType=VARCHAR},
+      QSH = #{qsh,jdbcType=VARCHAR},
+      YXSS = #{yxss,jdbcType=VARCHAR}
+    where XCID = #{xcid,jdbcType=VARCHAR}
+  </update>
+  
+  <!-- 查询统计巡道记录信息表用，按条件查询巡道记录 -->
+  <select id="getXdsj" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb">
+  		SELECT * FROM(
+		SELECT ROWNUM RN,TEMP.* FROM(
+			select distinct
+			<include refid="Glxcsjb_Column_List" />
+			from RCYH_GLXCSJB
+			<include refid="Glxdcx_Where"/>		
+			 order by stime desc		  
+		) TEMP
+		<if test="page != null and page != ''">
+		  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+		</if>)
+	    <where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+  </select>
+  <!-- 查询统计巡道记录信息表用，按条件查询巡道记录的条数 -->
+  <select id="getXdsjCount" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" resultType="int">
+  	SELECT COUNT(*) FROM RCYH_GLXCSJB
+  	<include refid="Glxdcx_Where"></include>
+  </select>
+  
+  
+  <!-- 根据巡道id查询维修情况 -->
+  <select id="getWxqkByXcid" parameterType="String" resultType="String">
+  	SELECT BM.BMNAME||LD.LXCODE||'线 K'||WX.SZHHKM||'+'||WX.SZHHM||(CASE WHEN WX.EZHHKM=-1 THEN '' ELSE '-K'||WX.EZHHKM||'+'||WX.EZHHM END)||' '||YHLX.YHNAME XCCZQK FROM RCYH_WXZYJLB WX
+	LEFT JOIN HTGL_BMB BM
+	ON WX.BMCODE=BM.BMCODE
+	LEFT JOIN HTGL_LDB LD
+	ON WX.LDCODE=LD.LDCODE
+	LEFT JOIN HTGL_YHLXB YHLX
+	ON WX.YHID=YHLX.YHID
+	WHERE WX.RWDID IN (SELECT RWDID FROM RCYH_RWBHGLB WHERE BHJLID IN (SELECT BHJLID FROM RCYH_BHJLB WHERE XCID=#{xcid}))
+  </select>
+  
+  <select id="getDetailByXcid" parameterType="String" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb">
+  	SELECT XC.JLR,BM.BMNAME,TO_CHAR(XC.STIME,'YYYY')||'年'||TO_CHAR(XC.STIME,'MM')||'月'||TO_CHAR(XC.STIME,'DD')||'日' XCRQ, 
+	TO_CHAR(XC.STIME,'HH24') STIME, TO_CHAR(XC.ETIME,'HH24') ETIME, 
+	XC.XSLD, MJ.VALUE TQ, XC.LM, XC.LJ, XC.QSH, XC.YXSS,SUM(CASE WHEN BH.BHSBZT=1 THEN 1 ELSE 0 END) SFSB,WM_CONCAT(ZP.ZPMC)ZPXX,XC.BZ
+	FROM RCYH_GLXCSJB XC
+	LEFT JOIN HTGL_MJLX MJ
+	ON XC.TQ=MJ.KEY
+	LEFT JOIN HTGL_BMB BM
+	ON XC.BMCODE=BM.BMCODE
+	LEFT JOIN RCYH_BHJLB BH
+	ON BH.XCID=XC.XCID
+	LEFT JOIN RCYH_ZPJLB ZP
+	ON BH.BHJLID=ZP.SSID
+	WHERE XC.XCID=#{xcid}
+	GROUP BY XC.JLR,BM.BMNAME,XC.STIME,XC.ETIME,XC.XSLD, MJ.VALUE, XC.LM, XC.LJ, XC.QSH, XC.YXSS, XC.BZ
+  </select>
+  
+  
+  
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+	<field name="bhjl.bhsbzt"><!-- 要校验的属性名 -->
+		<field-validator type="requiredstring"><!-- 指定校验规则 -->
+			<message>上报状态为空</message><!-- 校验失败后的错误信息 -->
+		</field-validator>
+	</field>
+	<field name="bhjl.sbbmcode"><!-- 要校验的属性名 -->
+		<field-validator type="requiredstring"><!-- 指定校验规则 -->
+			<message>上报对象单位不能为空</message><!-- 校验失败后的错误信息 -->
+		</field-validator>
+	</field>
+</validators>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.basicData.mapper.DgyldBmMapper">
+	<!-- 查询根节点 -->
+	<select id="getParent" resultType="com.hdsx.hmglyh.util.Combotree" parameterType="String">
+		select bmcode id,bmname text from (select * from HTGL_BMB WHERE  bmlx='0101' or bmlx='0102') 
+		where bmcode=#{bmcode}
+	</select>
+	<!-- 查询某种类型的子节点 -->
+	<select id="getChildren" resultType="com.hdsx.hmglyh.util.Combotree" parameterType="htglBm">
+	SELECT bmcode id,bmname text FROM HTGL_BMB 
+		WHERE BMCODE LIKE #{bmcode}||'__' AND (BMLX='0101' OR BMLX='0102')
+	</select>
+</mapper>

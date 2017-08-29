@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.rcyh.dao.RcyhWxzyjlbMapper" >
+  <resultMap id="BaseResultMap" type="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb" >
+    <id column="ZYID" property="zyid" jdbcType="VARCHAR" />
+    <result column="RWDID" property="rwdid" jdbcType="VARCHAR" />
+    <result column="WGTIME" property="wgtime" jdbcType="DATE" />
+    <result column="JLUSERNAME" property="jlusername" jdbcType="VARCHAR" />
+    <result column="BMCODE" property="bmcode" jdbcType="VARCHAR" />
+    <result column="LDCODE" property="ldcode" jdbcType="VARCHAR" />
+    <result column="TQ" property="tq" jdbcType="VARCHAR" />
+    <result column="SZHHKM" property="szhhkm" jdbcType="DECIMAL" />
+    <result column="SZHHM" property="szhhm" jdbcType="DECIMAL" />
+    <result column="EZHHKM" property="ezhhkm" jdbcType="DECIMAL" />
+    <result column="EZHHM" property="ezhhm" jdbcType="DECIMAL" />
+    <result column="WZBC" property="wzbc" jdbcType="VARCHAR" />
+    <result column="QLCODE" property="qlcode" jdbcType="VARCHAR" />
+    <result column="QLNAME" property="qlname" jdbcType="VARCHAR" />
+    <result column="SDCODE" property="sdcode" jdbcType="VARCHAR" />
+    <result column="SDNAME" property="sdname" jdbcType="VARCHAR" />
+    <result column="HDCODE" property="hdcode" jdbcType="VARCHAR" />
+    <result column="HDNAME" property="hdname" jdbcType="VARCHAR" />
+    <result column="YHID" property="yhid" jdbcType="VARCHAR" />
+    <result column="SL" property="sl" jdbcType="DECIMAL" />
+    <result column="BZ" property="bz" jdbcType="VARCHAR" />
+    <result column="GRDE" property="grde" jdbcType="DECIMAL" />
+    <result column="JHGR" property="jhgr" jdbcType="DECIMAL" />
+    <result column="RGF" property="rgf" jdbcType="DECIMAL" />
+    <result column="CLF" property="clf" jdbcType="DECIMAL" />
+    <result column="JXF" property="jxf" jdbcType="DECIMAL" />
+    <result column="ZYSBZT" property="zysbzt" jdbcType="DECIMAL" />
+    <result column="SBUSERNAME" property="sbusername" jdbcType="VARCHAR" />
+    <result column="SBTIME" property="sbtime" jdbcType="DATE" />
+    <result column="HGSL" property="hgsl" jdbcType="DECIMAL" />
+    <result column="YSZT" property="yszt" jdbcType="DECIMAL" />
+    <result column="DJ" property="dj" jdbcType="DECIMAL" />
+  </resultMap>
+  
+  <resultMap type="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb" id="WxzyResultMap" extends="BaseResultMap">
+      <collection property="ryzys" column="zyid" ofType="list" select="selectzRyzys" />
+      <collection property="cljxxhs" column="zyid" ofType="list" select="selectGljxhs"/>
+      <collection property="zps" column="zyid" select="selectZps"    javaType="java.util.List" ofType="com.hdsx.hmglyh.rcyh.dao.model.ZP" />
+  </resultMap>
+  
+  <resultMap type="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb" id="WxzyResultMapWithZps" extends="BaseResultMap">
+      <collection property="zps" column="zyid" select="selectZps"    javaType="java.util.List" ofType="com.hdsx.hmglyh.rcyh.dao.model.ZP" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    ZYID, RWDID, TO_CHAR(WGTIME,'yyyy-mm-dd hh24:mi:ss') WGTIME, JLUSERNAME, BMCODE, LDCODE, TQ, SZHHKM, SZHHM, EZHHKM, EZHHM, 
+    WZBC, QLCODE, QLNAME, SDCODE, SDNAME, HDCODE, HDNAME, YHID, SL, BZ, GRDE, JHGR, RGF, 
+    CLF, JXF, ZYSBZT, SBUSERNAME, TO_CHAR(SBTIME,'yyyy-mm-dd hh24:mi:ss') SBTIME, YSZT,HGSL
+  </sql>
+  <sql id="Base_Where">
+  	<where>
+  		<!-- 完工时间 -->
+  		<if test="starttime != null and starttime != ''
+  			and endtime != null and endtime != '' 
+  		 ">
+  			and #{starttime} &lt;= wgtime and wgtime &gt; #{endtime}
+  		</if>
+  		<!-- 作业上报状态 -->
+  		<if test="zysbzt != null and zysbzt != '' ">
+  			and ZYSBZT = #{zysbzt}
+  		</if>
+  		<!-- 维修作业验收状态 -->
+  		<if test="yszt != null and yszt != '' ">
+  			and YSZT = #{yszt}
+  		</if>
+  		<!-- 路段编码 -->
+  		<if test="ldcode != null and ldcode != '' ">
+			and LDCODE = #{ldcode}
+		</if>  	
+		<!-- 查询  当前 一个月 的  -->	    
+		<if test="fromYs">
+		   and  #{stime,jdbcType=DATE} &lt; = WGTIME and #{etime,jdbcType=DATE} &gt;= WGTIME
+		</if>
+		<if test="bmcode != null and bmcode != '' ">
+		   and bmcode = #{bmcode}
+		</if>
+  	</where>
+  </sql>
+  
+  <sql id="Base_Where_Forcx">
+  	<where>
+  		<if test="bmcode != null and bmcode != '' ">
+  			and t1.BMCODE like #{bmcode} || '%'
+  		</if>
+  		<!-- <if test="bmcode == null or bmcode == '' ">
+  			and bmcode = '-1'
+  		</if> -->
+  		<!-- 完工时间 -->
+  		<if test="starttime != null and starttime != ''
+  		 ">
+  			and  to_date(#{starttime} || ' 00:00:00','yyyy-mm-dd hh24:mi:ss')  &lt;= t1.wgtime
+  		</if>
+	  	<if test="endtime != null and endtime != ''
+  		 ">
+  			and  to_date(#{endtime} || ' 23:59:59','yyyy-mm-dd hh24:mi:ss') &gt;= t1.wgtime
+  		</if>
+  		<!-- 作业上报状态 -->
+  		<if test="zysbzt != null and zysbzt != '' ">
+  			and t1.ZYSBZT = #{zysbzt}
+  		</if>
+  		<!-- 维修作业验收状态 -->
+  		<if test="yszt != null and yszt != '' ">
+  			and t1.YSZT = #{yszt}
+  		</if>
+  		<if test="yhid != null and yhid != '' ">
+  			and t1.YHID = #{yhid}
+  		</if>
+  		<if test="select == 1 ">
+  			and t1.QLCODE is not null
+  		</if>
+  		<if test="select == 2 ">
+  			and t1.SDCODE is not null
+  		</if>
+  		<if test="select == 3 ">
+  			and t1.HDCODE is not null
+  		</if>
+  		<if test="ldcode != null and ldcode != '' ">
+  			and t1.LDCODE like #{ldcode} || '%'
+  		</if>
+  		<if test="lxcode != null and lxcode != '' ">
+  			and t2.LXCODE = #{lxcode}
+  		</if>
+  	</where>
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="WxzyResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from hmglyh.RCYH_WXZYJLB
+    where ZYID = #{zyid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="queryWxzyByKeySimple" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from hmglyh.RCYH_WXZYJLB
+    where ZYID = #{zyid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="queryWxzyByKeyWithZps" resultMap="WxzyResultMapWithZps" parameterType="java.lang.String">
+  	select 
+	    <include refid="Base_Column_List" />
+	    from hmglyh.RCYH_WXZYJLB
+	    where ZYID = #{zyid,jdbcType=VARCHAR}
+  </select>
+  
+  <!-- 级联查询 与 作业 相关的 人员 作业 信息 -->
+  <select id="selectzRyzys" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRyzyjlb">
+      select 
+      	t1.ZYID,t1.RYID,t1.WCGCL,t1.WCGR,t2.ryname
+      	from
+      	RCYH_RYZYJLB t1
+      	left join HTGL_RYB t2 on t1.ryid = t2.ryid
+      	where ZYID = #{zyid}
+  </select>
+  
+  <select id="selectGljxhs" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhCljxxhb" >
+      select
+      t1.SSID,t1.LXID,t1.SL,t1.DJ,t1.JE,t2.GG,nvl(t2.DW,'-') dw,t2.LXNAME,t2.BM
+      from
+      RCYH_CLJXXHB t1 
+      left join HTGL_GLJLXB t2 on t1.LXID = t2.LXID 
+      where SSID = #{zyid}
+  </select>
+  
+  <select id="selectZps" parameterType="string" resultType="com.hdsx.hmglyh.rcyh.dao.model.ZP">
+  		select
+  			SSID,RYID,ZPMC,ZPDZ,ZPID,ZPDX,ZPMS
+  			from RCYH_ZPJLB
+  			where SSID = #{zyid}
+  </select>
+  
+  <!-- 维修作业 列表 -->
+  <select id="listWxzy" resultMap="BaseResultMap" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb">
+  	SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+			 select
+		  		  <include refid="Base_Column_List" />
+		  	  from RCYH_WXZYJLB
+		  	  	  <include refid="Base_Where" />
+		  	  	  order by WGTIME
+	) TEMP
+	<if test="page != null and page != ''">
+	  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+	</if>)
+    <where>
+	   <if test="page != null and page != ''">
+	      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+		</if>
+	</where>  	  
+  </select>
+  <!-- 维修作业 列表 总数 -->
+  <select id="listWxzyCount" resultType="int" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb">
+  	select
+  		 count(*)
+  	  from RCYH_WXZYJLB
+  	  	  <include refid="Base_Where" />
+  </select>
+  
+  <select id="listWxzycx" resultMap="BaseResultMap" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb">
+  	SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+			 select
+		  		  t1.*,t2.lxcode
+		  	  from RCYH_WXZYJLB t1
+		  	  	   left join HTGL_LDB t2 on t1.LDCODE = t2.LDCODE
+		  	  	  <include refid="Base_Where_Forcx" />
+		  	  	   order by t1.WGTIME
+	) TEMP
+	<if test="page != null and page != ''">
+	  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+	</if>)
+    <where>
+	   <if test="page != null and page != ''">
+	      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+		</if>
+	</where>  	  
+  </select>
+  
+    <select id="listWxzycxCount" resultType="int" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb">
+	  	select
+	  		 count(*)
+	  	  from RCYH_WXZYJLB t1 
+	  	  	   left join HTGL_LDB t2 on t1.LDCODE = t2.LDCODE
+	  	  	  <include refid="Base_Where_Forcx" />
+	</select>
+   <!-- 汇总非特殊部门维修作业 -->
+ 	<select id="listWxzyHz" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb" resultMap="BaseResultMap">
+      	SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+			 select t1.yhid,t1.bmcode,sum(t1.sl) sl,sum(t1.jhgr) jhgr,min(t1.szhhkm+t1.szhhm/1000) szhh,max(t1.ezhhkm+t1.ezhhm/1000) ezhh  from rcyh_wxzyjlb t1
+				left join htgl_bmb t2 on t1.bmcode = t2.bmcode 
+				where ldcode = #{ldcode} and
+				      wgtime &gt;= to_date(#{starttime} || ' 00:00:00','yyyy-mm-dd,hh24:mi:ss') and
+				      wgtime &lt;= to_date(#{endtime} || ' 23:59:59','yyyy-mm-dd,hh24:mi:ss') and
+				      yszt = '0' and
+				      zysbzt = '1'
+				      and 
+				      t2.sftsbm = '0'
+				group by t1.yhid,t1.bmcode    
+		) TEMP
+		<if test="page != null and page != ''">
+		  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+		</if>)
+	    <where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>    
+  </select>
+  
+  <select id="listWxzyHzCount" resultType="int" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb">
+     select count(*) from (
+      	select t1.yhid,t1.bmcode,sum(t1.sl) sl,sum(t1.jhgr) jhgr,min(t1.szhhkm+t1.szhhm/1000) szhh,max(t1.ezhhkm+t1.ezhhm/1000) ezhh   from rcyh_wxzyjlb t1
+			left join htgl_bmb t2 on  t1.bmcode = t2.bmcode
+				where ldcode = #{ldcode} and
+				      wgtime &gt;= to_date(#{starttime} || ' 00:00:00','yyyy-mm-dd,hh24:mi:ss') and
+				      wgtime &lt;= to_date(#{endtime} || ' 23:59:59','yyyy-mm-dd,hh24:mi:ss') and
+				      yszt = '0' and
+				      zysbzt = '1' and
+				      t2.sftsbm = '0'
+				group by t1.yhid,t1.bmcode    
+	)
+  </select>
+  
+  <select id="listTsbmWxzyHz" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb">
+  		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+			 select t1.zyid,t1.yhid,t1.bmcode,t1.sl sl,t1.jhgr jhgr,t1.szhhkm+t1.szhhm/1000 szhh,t1.ezhhkm+t1.ezhhm/1000 ezhh  from rcyh_wxzyjlb t1
+				left join htgl_bmb t2 on t1.bmcode = t2.bmcode 
+				where ldcode like #{ldcode} || '%' and
+				      wgtime &gt;= to_date(#{starttime}  || ' 00:00:00','yyyy-mm-dd,hh24:mi:ss') and
+				      wgtime &lt;= to_date(#{endtime} || ' 23:59:59' ,'yyyy-mm-dd,hh24:mi:ss') and
+				      yszt = '0' and
+				      zysbzt = '1'
+				      and t2.sftsbm = '1'
+		) TEMP
+		<if test="page != null and page != ''">
+		  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+		</if>)
+	    <where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>  
+  </select>
+  
+  <select id="listTsbmWxzyHzCount" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb" resultType="int">
+  		select count(*) from rcyh_wxzyjlb t1
+				left join htgl_bmb t2 on t1.bmcode = t2.bmcode 
+				where ldcode like #{ldcode} || '%' and
+				      wgtime &gt;= to_date(#{starttime}  || ' 00:00:00' ,'yyyy-mm-dd,hh24:mi:ss') and
+				      wgtime &lt;= to_date(#{endtime} || ' 23:59:59','yyyy-mm-dd,hh24:mi:ss') and
+				      yszt = '0' and
+				      zysbzt = '1' and
+				      t2.sftsbm = '1'
+  </select>
+  
+  <select id="wxjlByYhidAndLd" parameterType="hashmap" resultType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb">
+       select 
+	    <include refid="Base_Column_List" />
+	    from RCYH_WXZYJLB
+	    where ldcode = #{ldcode} and
+	    	  yhid = #{yhid} and
+	    	  bmcode = #{bmcode} and
+ 		      wgtime &gt;= to_date(#{starttime},'yyyy-mm-dd') and
+		      wgtime &lt;= to_date(#{endtime},'yyyy-mm-dd') and
+		      yszt = '0'
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from hmglyh.RCYH_WXZYJLB
+    where ZYID = #{zyid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb" >
+    insert into hmglyh.RCYH_WXZYJLB (ZYID, RWDID, WGTIME, 
+      JLUSERNAME, BMCODE, LDCODE, 
+      TQ, SZHHKM, SZHHM, 
+      EZHHKM, EZHHM, WZBC, 
+      QLCODE, QLNAME, SDCODE, 
+      SDNAME, HDCODE, HDNAME, 
+      YHID, SL, BZ, GRDE, 
+      JHGR, RGF, CLF, JXF, 
+      ZYSBZT, SBUSERNAME, SBTIME, 
+      YSZT,HGSL,DJ)
+    values (#{zyid,jdbcType=VARCHAR}, #{rwdid,jdbcType=VARCHAR}, to_date(#{wgtime},'yyyy-mm-dd hh24:mi:ss'), 
+      #{jlusername,jdbcType=VARCHAR}, #{bmcode,jdbcType=VARCHAR}, #{ldcode,jdbcType=VARCHAR}, 
+      #{tq,jdbcType=VARCHAR}, #{szhhkm,jdbcType=DECIMAL}, #{szhhm,jdbcType=DECIMAL}, 
+      #{ezhhkm,jdbcType=DECIMAL}, #{ezhhm,jdbcType=DECIMAL}, #{wzbc,jdbcType=VARCHAR}, 
+      #{qlcode,jdbcType=VARCHAR}, #{qlname,jdbcType=VARCHAR}, #{sdcode,jdbcType=VARCHAR}, 
+      #{sdname,jdbcType=VARCHAR}, #{hdcode,jdbcType=VARCHAR}, #{hdname,jdbcType=VARCHAR}, 
+      #{yhid,jdbcType=VARCHAR}, #{sl,jdbcType=DECIMAL}, #{bz,jdbcType=VARCHAR}, #{grde,jdbcType=DECIMAL}, 
+      #{jhgr,jdbcType=DECIMAL}, #{rgf,jdbcType=DECIMAL}, #{clf,jdbcType=DECIMAL}, #{jxf,jdbcType=DECIMAL}, 
+      #{zysbzt,jdbcType=DECIMAL}, #{sbusername,jdbcType=VARCHAR}, #{sbtime,jdbcType=DATE}, 
+      #{yszt,jdbcType=DECIMAL},#{hgsl},#{dj})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb" >
+    insert into hmglyh.RCYH_WXZYJLB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="zyid != null" >
+        ZYID,
+      </if>
+      <if test="rwdid != null" >
+        RWDID,
+      </if>
+      <if test="wgtime != null" >
+        WGTIME,
+      </if>
+      <if test="jlusername != null" >
+        JLUSERNAME,
+      </if>
+      <if test="bmcode != null" >
+        BMCODE,
+      </if>
+      <if test="ldcode != null" >
+        LDCODE,
+      </if>
+      <if test="tq != null" >
+        TQ,
+      </if>
+      <if test="szhhkm != null" >
+        SZHHKM,
+      </if>
+      <if test="szhhm != null" >
+        SZHHM,
+      </if>
+      <if test="ezhhkm != null" >
+        EZHHKM,
+      </if>
+      <if test="ezhhm != null" >
+        EZHHM,
+      </if>
+      <if test="wzbc != null" >
+        WZBC,
+      </if>
+      <if test="qlcode != null" >
+        QLCODE,
+      </if>
+      <if test="qlname != null" >
+        QLNAME,
+      </if>
+      <if test="sdcode != null" >
+        SDCODE,
+      </if>
+      <if test="sdname != null" >
+        SDNAME,
+      </if>
+      <if test="hdcode != null" >
+        HDCODE,
+      </if>
+      <if test="hdname != null" >
+        HDNAME,
+      </if>
+      <if test="yhid != null" >
+        YHID,
+      </if>
+      <if test="sl != null" >
+        SL,
+      </if>
+      <if test="bz != null" >
+        BZ,
+      </if>
+      <if test="grde != null" >
+        GRDE,
+      </if>
+      <if test="jhgr != null" >
+        JHGR,
+      </if>
+      <if test="rgf != null" >
+        RGF,
+      </if>
+      <if test="clf != null" >
+        CLF,
+      </if>
+      <if test="jxf != null" >
+        JXF,
+      </if>
+      <if test="zysbzt != null" >
+        ZYSBZT,
+      </if>
+      <if test="sbusername != null" >
+        SBUSERNAME,
+      </if>
+      <if test="sbtime != null" >
+        SBTIME,
+      </if>
+      <if test="yszt != null" >
+        YSZT,
+      </if>,
+      <if test="dj != null" >
+        GJ,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="zyid != null" >
+        #{zyid,jdbcType=VARCHAR},
+      </if>
+      <if test="rwdid != null" >
+        #{rwdid,jdbcType=VARCHAR},
+      </if>
+      <if test="wgtime != null" >
+        to_date(#{wgtime},'yyyy-mm-dd hh24:mi:ss'),
+      </if>
+      <if test="jlusername != null" >
+        #{jlusername,jdbcType=VARCHAR},
+      </if>
+      <if test="bmcode != null" >
+        #{bmcode,jdbcType=VARCHAR},
+      </if>
+      <if test="ldcode != null" >
+        #{ldcode,jdbcType=VARCHAR},
+      </if>
+      <if test="tq != null" >
+        #{tq,jdbcType=VARCHAR},
+      </if>
+      <if test="szhhkm != null" >
+        #{szhhkm,jdbcType=DECIMAL},
+      </if>
+      <if test="szhhm != null" >
+        #{szhhm,jdbcType=DECIMAL},
+      </if>
+      <if test="ezhhkm != null" >
+        #{ezhhkm,jdbcType=DECIMAL},
+      </if>
+      <if test="ezhhm != null" >
+        #{ezhhm,jdbcType=DECIMAL},
+      </if>
+      <if test="wzbc != null" >
+        #{wzbc,jdbcType=VARCHAR},
+      </if>
+      <if test="qlcode != null" >
+        #{qlcode,jdbcType=VARCHAR},
+      </if>
+      <if test="qlname != null" >
+        #{qlname,jdbcType=VARCHAR},
+      </if>
+      <if test="sdcode != null" >
+        #{sdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="sdname != null" >
+        #{sdname,jdbcType=VARCHAR},
+      </if>
+      <if test="hdcode != null" >
+        #{hdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hdname != null" >
+        #{hdname,jdbcType=VARCHAR},
+      </if>
+      <if test="yhid != null" >
+        #{yhid,jdbcType=VARCHAR},
+      </if>
+      <if test="sl != null" >
+        #{sl,jdbcType=DECIMAL},
+      </if>
+      <if test="bz != null" >
+        #{bz,jdbcType=VARCHAR},
+      </if>
+      <if test="grde != null" >
+        #{grde,jdbcType=DECIMAL},
+      </if>
+      <if test="jhgr != null" >
+        #{jhgr,jdbcType=DECIMAL},
+      </if>
+      <if test="rgf != null" >
+        #{rgf,jdbcType=DECIMAL},
+      </if>
+      <if test="clf != null" >
+        #{clf,jdbcType=DECIMAL},
+      </if>
+      <if test="jxf != null" >
+        #{jxf,jdbcType=DECIMAL},
+      </if>
+      <if test="zysbzt != null" >
+        #{zysbzt,jdbcType=DECIMAL},
+      </if>
+      <if test="sbusername != null" >
+        #{sbusername,jdbcType=VARCHAR},
+      </if>
+      <if test="sbtime != null" >
+        #{sbtime,jdbcType=DATE},
+      </if>
+      <if test="yszt != null" >
+        #{yszt,jdbcType=DECIMAL},
+      </if>
+       <if test="hgsl != null" >
+        #{hgsl,jdbcType=DECIMAL},
+      </if>
+      <if test="dj != null" >
+        #{dj,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb" >
+    update hmglyh.RCYH_WXZYJLB
+    <set >
+      <if test="rwdid != null" >
+        RWDID = #{rwdid,jdbcType=VARCHAR},
+      </if>
+      <if test="wgtime != null" >
+       WGTIME =  to_date(#{wgtime},'yyyy-mm-dd hh24:mi:ss'),
+      </if>
+      <if test="jlusername != null" >
+        JLUSERNAME = #{jlusername,jdbcType=VARCHAR},
+      </if>
+      <if test="bmcode != null" >
+        BMCODE = #{bmcode,jdbcType=VARCHAR},
+      </if>
+      <if test="ldcode != null" >
+        LDCODE = #{ldcode,jdbcType=VARCHAR},
+      </if>
+      <if test="tq != null" >
+        TQ = #{tq,jdbcType=VARCHAR},
+      </if>
+      <if test="szhhkm != null" >
+        SZHHKM = #{szhhkm,jdbcType=DECIMAL},
+      </if>
+      <if test="szhhm != null" >
+        SZHHM = #{szhhm,jdbcType=DECIMAL},
+      </if>
+      <if test="ezhhkm != null" >
+        EZHHKM = #{ezhhkm,jdbcType=DECIMAL},
+      </if>
+      <if test="ezhhm != null" >
+        EZHHM = #{ezhhm,jdbcType=DECIMAL},
+      </if>
+      <if test="wzbc != null" >
+        WZBC = #{wzbc,jdbcType=VARCHAR},
+      </if>
+      <if test="qlcode != null" >
+        QLCODE = #{qlcode,jdbcType=VARCHAR},
+      </if>
+      <if test="qlname != null" >
+        QLNAME = #{qlname,jdbcType=VARCHAR},
+      </if>
+      <if test="sdcode != null" >
+        SDCODE = #{sdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="sdname != null" >
+        SDNAME = #{sdname,jdbcType=VARCHAR},
+      </if>
+      <if test="hdcode != null" >
+        HDCODE = #{hdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hdname != null" >
+        HDNAME = #{hdname,jdbcType=VARCHAR},
+      </if>
+      <if test="yhid != null" >
+        YHID = #{yhid,jdbcType=VARCHAR},
+      </if>
+      <if test="sl != null" >
+        SL = #{sl,jdbcType=DECIMAL},
+      </if>
+      <if test="bz != null" >
+        BZ = #{bz,jdbcType=VARCHAR},
+      </if>
+      <if test="grde != null" >
+        GRDE = #{grde,jdbcType=DECIMAL},
+      </if>
+      <if test="jhgr != null" >
+        JHGR = #{jhgr,jdbcType=DECIMAL},
+      </if>
+      <if test="rgf != null" >
+        RGF = #{rgf,jdbcType=DECIMAL},
+      </if>
+      <if test="clf != null" >
+        CLF = #{clf,jdbcType=DECIMAL},
+      </if>
+      <if test="jxf != null" >
+        JXF = #{jxf,jdbcType=DECIMAL},
+      </if>
+      <if test="zysbzt != null" >
+        ZYSBZT = #{zysbzt,jdbcType=DECIMAL},
+      </if>
+      <if test="sbusername != null" >
+        SBUSERNAME = #{sbusername,jdbcType=VARCHAR},
+      </if>
+      <if test="sbtime != null" >
+        SBTIME = to_date(#{sbtime},'yyyy-mm-dd hh24:mi:ss'),
+      </if>
+      <if test="yszt != null" >
+        YSZT = #{yszt,jdbcType=DECIMAL},
+      </if>
+       <if test="hgsl != null" >
+        hgsl = #{hgsl,jdbcType=DECIMAL},
+      </if>
+       <if test="dj != null" >
+        dj = #{dj,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ZYID = #{zyid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhWxzyjlb" >
+    update hmglyh.RCYH_WXZYJLB
+    set RWDID = #{rwdid,jdbcType=VARCHAR},
+      WGTIME =  to_date(#{wgtime},'yyyy-mm-dd hh24:mi:ss'),
+      JLUSERNAME = #{jlusername,jdbcType=VARCHAR},
+      BMCODE = #{bmcode,jdbcType=VARCHAR},
+      LDCODE = #{ldcode,jdbcType=VARCHAR},
+      TQ = #{tq,jdbcType=VARCHAR},
+      SZHHKM = #{szhhkm,jdbcType=DECIMAL},
+      SZHHM = #{szhhm,jdbcType=DECIMAL},
+      EZHHKM = #{ezhhkm,jdbcType=DECIMAL},
+      EZHHM = #{ezhhm,jdbcType=DECIMAL},
+      WZBC = #{wzbc,jdbcType=VARCHAR},
+      QLCODE = #{qlcode,jdbcType=VARCHAR},
+      QLNAME = #{qlname,jdbcType=VARCHAR},
+      SDCODE = #{sdcode,jdbcType=VARCHAR},
+      SDNAME = #{sdname,jdbcType=VARCHAR},
+      HDCODE = #{hdcode,jdbcType=VARCHAR},
+      HDNAME = #{hdname,jdbcType=VARCHAR},
+      YHID = #{yhid,jdbcType=VARCHAR},
+      SL = #{sl,jdbcType=DECIMAL},
+      BZ = #{bz,jdbcType=VARCHAR},
+      GRDE = #{grde,jdbcType=DECIMAL},
+      JHGR = #{jhgr,jdbcType=DECIMAL},
+      RGF = #{rgf,jdbcType=DECIMAL},
+      CLF = #{clf,jdbcType=DECIMAL},
+      JXF = #{jxf,jdbcType=DECIMAL},
+      ZYSBZT = #{zysbzt,jdbcType=DECIMAL},
+      SBUSERNAME = #{sbusername,jdbcType=VARCHAR},
+      SBTIME = to_date(#{sbtime},'yyyy-mm-dd hh24:mi:ss'),
+      YSZT = #{yszt,jdbcType=DECIMAL},
+      HGSL = #{hgsl,jdbcType=DECIMAL},
+      DJ = #{dj,jdbcType=DECIMAL}
+    where ZYID = #{zyid,jdbcType=VARCHAR}
+  </update>
+</mapper>

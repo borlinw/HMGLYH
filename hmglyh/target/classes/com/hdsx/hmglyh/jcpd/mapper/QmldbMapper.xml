@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.jcpd.mapper.QmldbMapper">
+	<!-- 插入千米数据 -->
+	<insert id="addQmld" parameterType="qmldb">
+		INSERT INTO JCPD_QMLDB(LDID,LXCODE,SZHH,EZHH,CD,LMKD,BBID,LMLX,ISGS,FX)
+		VALUES(qm_sequence.nextval,#{lxCode},#{szhh},#{ezhh},#{cd},#{lmkd},#{bbid},#{lmlx},#{isgs},#{fx})
+	</insert>
+	<!-- 查询千米数据 -->
+	<select id="getQmld" parameterType="qmldb" resultType="qmldb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+				SELECT qm.*,mj.value as fxName FROM JCPD_QMLDB qm
+				left join htgl_mjlx mj
+				on qm.fx=mj.key
+				WHERE qm.BBID=#{bbid}
+				<if test="lxCode != null and lxCode != ''">
+					AND qm.LXCODE=#{lxCode}
+				</if>
+				ORDER BY qm.LXCODE,qm.SZHH,qm.FX
+		    ) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		<where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	<!-- 查询千米数据的条数 -->
+	<select id="getQmldCount" parameterType="qmldb" resultType="int">
+		SELECT COUNT(*) FROM JCPD_QMLDB
+		WHERE BBID=#{bbid}
+		<if test="lxCode != null and lxCode != ''">
+			AND LXCODE=#{lxCode}
+		</if>
+	</select>
+	<!-- 清空千米数据 -->
+	<delete id="dropQmld" parameterType="qmldb">
+		DELETE FROM JCPD_QMLDB
+		WHERE BBID=#{bbid}
+	</delete>
+	<!-- 查询千米路段是否被使用 -->
+	<select id="isUsed" parameterType="qmldb" resultType="qmldb">
+		select qmbbid as bbid from jcpd_bbkzb
+		where bbid in(select distinct bbid from jcpd_lkdczb
+		              union
+		              select distinct bbid from jcpd_lmjcb
+		              union
+		              select distinct bbid from jcpd_lkpdmxb)
+		and qmbbid=#{bbid}
+	</select>
+	
+	<!-- 路况调查用 -->
+	<select id="getQmldForLkdc" parameterType="qmldb" resultType="qmldb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+				select q.*,l.* from 
+				(select qm.*,'K'||qm.szhh||'-K'||qm.ezhh as ldName,mj.value as fxName,l.lxname from jcpd_qmldb qm
+				left join htgl_ldb ld
+				on ld.lxcode=qm.lxcode and qm.szhh>=ld.szhh and ld.ezhh>qm.szhh
+				left join htgl_lxb l
+				on qm.lxcode=l.lxcode
+				left join htgl_mjlx mj
+				on qm.fx=mj.key
+				where qm.fx=#{fx} and qm.bbid=(select qmbbid from jcpd_bbkzb where bbid=#{dcbbid})
+				and ld.bmcode=#{bmCode}
+				<if test="ldCode != null and ldCode != ''">
+					and ld.ldcode=#{ldCode}
+				</if>
+				<if test="lmlx != null and lmlx != ''">
+					and qm.lmlx=#{lmlx}
+				</if>
+				)q left join 
+				(select dcid,lxid,ldid as qmldid,bbid as dcbbid,dcsj,dcry from jcpd_lkdczb where bbid=#{dcbbid} and lxid=#{lxid})l
+				on q.ldid=l.qmldid
+				order by q.lxname,q.szhh
+			) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		<where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	<select id="getQmldCountForLkdc" parameterType="qmldb" resultType="int">
+		SELECT COUNT(*) FROM JCPD_QMLDB QM
+		LEFT JOIN HTGL_LDB LD
+		ON QM.LXCODE=LD.LXCODE AND QM.SZHH>=LD.SZHH AND LD.EZHH>QM.SZHH
+		WHERE QM.FX=#{fx} AND QM.BBID=(SELECT QMBBID FROM JCPD_BBKZB WHERE BBID=#{dcbbid})
+		AND LD.BMCODE=#{bmCode}
+		<if test="ldCode != null and ldCode != ''">
+			AND LD.LDCODE=#{ldCode}
+		</if>
+		<if test="lmlx != null and lmlx != ''">
+			AND LMLX=#{lmlx} 
+		</if>
+	</select>
+	<!-- 路况调查中查询各种调查类型的数量 -->
+	<select id="getLkdcfb" parameterType="String" resultType="lkdcfb">
+		select * from jcpd_lkdcfb 
+		where dcid=#{dcid}
+		order by lxid
+	</select>
+	
+	
+	<!-- 路况评定用 -->
+	<!-- 获取路面四项指标 -->
+	<select id="getLmjc" parameterType="qmldb" resultType="qmldb">
+		select qm.*,nvl(lm1.zhi,100) as rqi,lm1.pjz as iri,nvl(lm2.zhi,100) as rdi,
+		nvl(lm3.zhi,100) as sri,nvl(lm4.zhi,100) as pssi
+		from jcpd_qmldb qm
+		left join (select * from jcpd_lmjcb where bbid=#{jcbbid} and jclx='0401')lm1
+		on qm.ldid=lm1.ldid
+		left join (select * from jcpd_lmjcb where bbid=#{jcbbid} and jclx='0402')lm2
+		on qm.ldid=lm2.ldid
+		left join (select * from jcpd_lmjcb where bbid=#{jcbbid} and jclx='0403')lm3
+		on qm.ldid=lm3.ldid
+		left join (select * from jcpd_lmjcb where bbid=#{jcbbid} and jclx='0404')lm4
+		on qm.ldid=lm4.ldid
+		where qm.lxcode=#{lxCode} and <![CDATA[qm.szhh>=#{szhh} and #{ezhh}>qm.szhh]]> and qm.bbid=(select qmbbid from jcpd_bbkzb where bbid=#{jcbbid})
+	</select>
+	<!-- 查询pci -->
+	<select id="getPci" parameterType="qmldb" resultType="Double">
+		select round(nvl(100-#{a0}*power(100*sum(qz*ljsj*dwkf)/(#{cd}*#{lmkd}),#{a1}),100),2) as pci from 
+		(select nvl(l.ljsj,0) ljsj,lx.qz,lx.dwkf,lx.lxname from jcpd_lkdcfb l
+		left join jcpd_lkdclxb lx
+		on l.lxid=lx.lxid
+		where dcid=(select dcid from jcpd_lkdczb where ldid=#{ldid} and bbid=#{dcbbid} and lxid=#{lxid}))
+	</select>
+	<!-- 查询sci -->
+	<select id="getSci" parameterType="qmldb" resultType="Double">
+		select nvl(sum(qz*fn_checknum(100-total)),100) as sci from
+		(select lxName,sum(ljsj*dwkf) as total,avg(qz) as qz from 
+		(select nvl(l.ljsj,0) ljsj,lx.dwkf,lx.qz,lx.lxname from jcpd_lkdcfb l
+		left join jcpd_lkdclxb lx
+		on l.lxid=lx.lxid
+		where dcid=(select dcid from jcpd_lkdczb where ldid=#{ldid} and bbid=#{dcbbid} and lxid='02'))
+		group by lxName)
+	</select>
+	<!-- 查询bci -->
+	<select id="getBci" parameterType="qmldb" resultType="Double">
+		select fn_checknum(100-nvl(max(total),0)) as bci from 
+		(select lxName,sum(ljsj*dwkf) as total from 
+		(select nvl(l.ljsj,0) ljsj,lx.dwkf,lx.lxname from jcpd_lkdcfb l
+		left join jcpd_lkdclxb lx
+		on l.lxid=lx.lxid
+		where dcid=(select dcid from jcpd_lkdczb where ldid=#{ldid} and bbid=#{dcbbid} and lxid='03'))
+		group by lxName)
+	</select>
+	<!-- 查询tci -->
+	<select id="getTci" parameterType="qmldb" resultType="Double">
+		select round(nvl(sum(qz*fn_checknum(100-total)),100),2) as tci from
+		(select lxName,sum(ljsj*dwkf) as total,avg(qz) as qz from 
+		(select nvl(l.ljsj,0) ljsj,lx.dwkf,lx.qz,lx.lxname from jcpd_lkdcfb l
+		left join jcpd_lkdclxb lx
+		on l.lxid=lx.lxid
+		where dcid=(select dcid from jcpd_lkdczb where ldid=#{ldid} and bbid=#{dcbbid} and lxid='04'))
+		group by lxName)
+	</select>
+	
+	<!-- 查询明细表 -->
+	<select id="queryMxb" parameterType="qmldb" resultType="qmldb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+				select t.*,q.lxcode,q.szhh,q.ezhh,q.cd,mj.value as fxName from jcpd_lkpdmxb t
+				join jcpd_qmldb q
+				on t.ldid=q.ldid
+				left join htgl_mjlx mj
+				on q.fx=mj.key
+				where t.bbid=#{pdbbid} and q.lxcode=#{lxCode} and <![CDATA[q.szhh>=#{szhh} and #{ezhh}>q.szhh]]>
+				and q.lmlx=#{lmlx} and q.fx = #{fx} and q.isgs=#{isgs}
+				order by q.szhh,q.fx
+			) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		<where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	<!-- 查询明细表条数 -->
+	<select id="getMxbCount" parameterType="qmldb" resultType="int">
+		SELECT COUNT(*) FROM 
+		(select t.*,q.* from jcpd_lkpdmxb t
+				join jcpd_qmldb q
+				on t.ldid=q.ldid
+				where t.bbid=#{pdbbid} and q.lxcode=#{lxCode} and <![CDATA[q.szhh>=#{szhh} and #{ezhh}>q.szhh]]> 
+				and q.lmlx=#{lmlx} and q.fx = #{fx} and q.isgs=#{isgs})
+	</select>
+	
+	<!-- 明细表中插入数据 -->
+	<insert id="addMxb" parameterType="qmldb">
+		INSERT INTO JCPD_LKPDMXB(LDID,BBID,MQI,PQI,PCI,RQI,PSSI,RDI,SRI,SCI,BCI,TCI,IRI)
+		VALUES(#{ldid},#{pdbbid},#{mqi},#{pqi},#{pci},#{rqi},#{pssi},#{rdi},#{sri},#{sci},#{bci},#{tci},#{iri})
+	</insert>
+	<!-- 清空某个版本某个路段上的评定明细数据 -->
+	<delete id="dropMxb" parameterType="qmldb">
+		DELETE FROM JCPD_LKPDMXB
+		WHERE BBID=#{pdbbid} AND LDID IN (SELECT LDID FROM JCPD_QMLDB WHERE LXCODE=#{lxCode} AND <![CDATA[szhh>=#{szhh} and #{ezhh}>szhh]]>
+										AND BBID=(SELECT QMBBID FROM JCPD_BBKZB WHERE BBID=#{pdbbid}) )
+	</delete>
+	
+	
+	<!-- 查询统计路面类型 -->
+	<select id="getLmlx" parameterType="qmldb" resultType="qmldb">
+		select distinct(lmlx) lmlx,
+			   case lmlx when 1 then '沥青路面' when 2 then '水泥路面' 
+			   when 3 then '砂石路面' end fx FROM Jcpd_Qmldb where lxCode=#{lxCode} and
+			    <![CDATA[(szhh)>=#{szhh} and (ezhh)<=#{ezhh} ]]> order by lmlx   
+	</select>
+	<!-- 查询统计技术等级 -->
+	<select id="getJsdj" parameterType="qmldb" resultType="qmldb">
+		select distinct(isgs) lmlx,
+			   case isgs when 1 then '高速或一级公路' when 0 then '普通公路' 
+			   end fx FROM Jcpd_Qmldb where lxcode = #{lxCode} and 
+			       <![CDATA[(szhh)>=#{szhh} and (ezhh)<=#{ezhh} ]]> order by lmlx desc    
+	</select>
+	
+	
+	<!-- 区段划分用，各区段病害分类统计 -->
+	<select id="getBhfltj" parameterType="qmldb" resultType="qmldb">
+		SELECT LXCODE,SZHH,EZHH,SUM(CASE LXNAME WHEN '龟裂' THEN LJSJ*100/LMMJ ELSE 0 END)JL,
+		SUM(CASE LXNAME WHEN '块状裂缝' THEN LJSJ*100/LMMJ ELSE 0 END)KL,
+		SUM(CASE LXNAME WHEN '纵向裂缝' THEN LJSJ*100/LMMJ WHEN '横向裂缝' THEN LJSJ*100/LMMJ ELSE 0 END)DTLF,
+		SUM(CASE LXNAME WHEN '沉陷' THEN LJSJ*100/LMMJ ELSE 0 END)CX,
+		SUM(CASE LXNAME WHEN '波浪拥包' THEN LJSJ*100/LMMJ ELSE 0 END)BLYB,
+		SUM(CASE LXNAME WHEN '车辙' THEN LJSJ*100/LMMJ ELSE 0 END)CZ,
+		SUM(CASE LXNAME WHEN '坑槽' THEN LJSJ*100/LMMJ ELSE 0 END)KC,
+		SUM(CASE LXNAME WHEN '松散' THEN LJSJ*100/LMMJ ELSE 0 END)SS,
+		SUM(CASE LXNAME WHEN '泛油' THEN LJSJ*100/LMMJ ELSE 0 END)FY,
+		SUM(CASE LXNAME WHEN '修补' THEN LJSJ*100/LMMJ ELSE 0 END)XB
+		FROM
+		(SELECT LXCODE,SZHH,EZHH,LXNAME,SUM(CD*LMKD) LMMJ,SUM(LJSJ) LJSJ FROM
+		(SELECT BBID,LXCODE,SZHH,EZHH,CD,FX,LMKD,LXNAME,SUM(LJSJ*DWKF*QZ)LJSJ FROM V_LKDC
+		WHERE LXID LIKE '0101%' AND BBID =#{dcbbid} AND LXCODE=#{lxCode} AND SZHH>=#{szhh} AND #{ezhh}>SZHH
+		GROUP BY BBID,LXCODE,SZHH,EZHH,CD,FX,LMKD,LXNAME)
+		GROUP BY LXCODE,SZHH,EZHH,LXNAME)
+		GROUP BY LXCODE,SZHH,EZHH
+		ORDER BY LXCODE,SZHH,EZHH
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+

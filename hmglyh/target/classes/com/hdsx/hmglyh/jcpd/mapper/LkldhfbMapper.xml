@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.hmglyh.jcpd.mapper.LkldhfbMapper">
+	<!-- 插入千米数据 -->
+
+	<insert id="addYsld" parameterType="com.hdsx.hmglyh.jcpd.bean.Lkldhfb">
+		INSERT INTO HTGL_LKLDHFB(ID,ROADCODE,ROADSTART,ROADENDS,JSDJ,LMLX,LMKD)
+		VALUES(lkldhfb.nextval,#{roadcode},#{roadstart},#{roadends},#{jsdj},#{lmlx},#{lmkd})
+	</insert>
+	<!-- 根据roadcode查询原始路段数据 -->
+	<select id="getYsld" parameterType="com.hdsx.hmglyh.jcpd.bean.Lkldhfb" resultType="com.hdsx.hmglyh.jcpd.bean.Lkldhfb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+				SELECT LK.*,lx.lxname||lx.lxcode||'('||'K'||lx.szhh||'-'||'K'||lx.ezhh||')' as lxname FROM HTGL_LKLDHFB LK LEFT JOIN HTGL_LXB LX ON LX.LXCODE=LK.ROADCODE 
+				WHERE roadcode=#{roadcode}
+		    ) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		<where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	<!-- 查询原始路段数据的条数 -->
+	<select id="getYsldCount" parameterType="com.hdsx.hmglyh.jcpd.bean.Lkldhfb" resultType="int">
+		SELECT COUNT(*) FROM HTGL_LKLDHFB
+		WHERE roadcode=#{roadcode}
+	</select>
+	<!-- 删除一条原始路段数据 -->
+	<delete id="dropYsld" parameterType="com.hdsx.hmglyh.jcpd.bean.Lkldhfb">
+		DELETE FROM HTGL_LKLDHFB
+		WHERE ID=#{id}
+	</delete>
+	
+	<!-- 修改一条信息 -->
+	<update id="change" parameterType="com.hdsx.hmglyh.jcpd.bean.Lkldhfb">
+		UPDATE HTGL_LKLDHFB
+		SET ROADCODE=#{roadcode},ROADSTART=#{roadstart},ROADENDS=#{roadends},
+		JSDJ=#{jsdj},LMLX=#{lmlx},LMKD=#{lmkd}
+		WHERE ID=#{id}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+

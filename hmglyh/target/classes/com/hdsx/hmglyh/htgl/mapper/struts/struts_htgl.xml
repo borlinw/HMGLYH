@@ -1,0 +1,383 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+
+	<!-- 后台权限index.jsp的权限（未应用）  -->
+	<package name="htgl" extends="struts-default" namespace="/htgl">
+
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="loginInterceptor"
+				class="com.hdsx.hmglyh.util.LoginInterceptor" />
+			<!-- 配置拦截器 -->
+			<interceptor-stack name="myloginInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login,userLoginAuthor,logout</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器 ， 对包中的所有的Action 都有效 -->
+		<default-interceptor-ref name="myloginInterceptor" />
+
+		<global-results>
+			<result name="loginPage" type="redirect">../index.jsp</result>
+			<result name="authErrorPage" type="redirect">../authErrorPage.jsp</result>
+			<result name="exceptionPage" type="redirect">../exceptionPage.jsp</result>
+		</global-results>
+
+		<!-- 跳转到index页面 -->
+		<action name="index" class="com.hdsx.hmglyh.htgl.action.HomeAction" method="index">
+			<result name="index">/page/htgl/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 病害类型 - 病害类型 - 病害类型 - 病害类型 - 病害类型 - 病害类型 - 病害类型 - 病害类型 - 病害类型 - 病害类型 - 病害类型 - 病害类型 -->
+	<package name="htglbhlx" extends="struts-default" namespace="/htglbhlx">
+	
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="loginInterceptor"
+				class="com.hdsx.hmglyh.util.LoginInterceptor" />
+			<!-- 配置拦截器 -->
+			<interceptor-stack name="myloginInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login,userLoginAuthor,logout</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器 ， 对包中的所有的Action 都有效 -->
+		<default-interceptor-ref name="myloginInterceptor" />
+
+		<global-results>
+			<result name="loginPage" type="redirect">../index.jsp</result>
+			<result name="authErrorPage" type="redirect">../authErrorPage.jsp</result>
+			<result name="exceptionPage" type="redirect">../exceptionPage.jsp</result>
+		</global-results>
+	
+		<!-- （测试）查询全部 -->
+		<action name="test" class="com.hdsx.hmglyh.htgl.action.HtglBhlxAction" method="test"/>
+		<!-- 创建病害类型树 -->
+		<action name="createBhlxTree" class="com.hdsx.hmglyh.htgl.action.HtglBhlxAction" method="createBhlxTree"/>
+		<!-- 查询全部：参数（bhid，qyztStr） -->
+		<action name="queryAllByBhid" class="com.hdsx.hmglyh.htgl.action.HtglBhlxAction" method="queryAllByBhid"/>
+		<!-- 添加 -->
+		<action name="insertOneBh" class="com.hdsx.hmglyh.htgl.action.HtglBhlxAction" method="insertOneBh"/>
+		<!-- 删除 -->
+		<action name="deleteOneBh" class="com.hdsx.hmglyh.htgl.action.HtglBhlxAction" method="deleteOneBh"/>
+		<!-- 修改 -->
+		<action name="updateOneBh" class="com.hdsx.hmglyh.htgl.action.HtglBhlxAction" method="updateOneBh"/>
+		<!-- 修改（启用/禁用） -->
+		<action name="updateOneBhQyzt" class="com.hdsx.hmglyh.htgl.action.HtglBhlxAction" method="updateOneBhQyzt"/>
+	</package>
+
+	<!-- 工料机 - 工料机 - 工料机 - 工料机 - 工料机 - 工料机 - 工料机 - 工料机 - 工料机 - 工料机 - 工料机 - 工料机 - 工料机 - 工料机 - 工料机 - 工料机 -->
+	<package name="htglglj" extends="struts-default" namespace="/htglglj">
+
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="loginInterceptor"
+				class="com.hdsx.hmglyh.util.LoginInterceptor" />
+			<!-- 配置拦截器 -->
+			<interceptor-stack name="myloginInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login,userLoginAuthor,logout</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器 ， 对包中的所有的Action 都有效 -->
+		<default-interceptor-ref name="myloginInterceptor" />
+
+		<global-results>
+			<result name="loginPage" type="redirect">../index.jsp</result>
+			<result name="authErrorPage" type="redirect">../authErrorPage.jsp</result>
+			<result name="exceptionPage" type="redirect">../exceptionPage.jsp</result>
+		</global-results>
+	
+	
+		<!-- 创建工料机数据树-->
+		<action name="createGljTree" class="com.hdsx.hmglyh.htgl.action.HtglGljAction" method="createGljTree"/>
+		<!-- 查询全部-->
+		<action name="queryAllBySome" class="com.hdsx.hmglyh.htgl.action.HtglGljAction" method="queryAllBySome"/>
+		<!-- 添加（类型）-->
+		<action name="gljlxAddOne" class="com.hdsx.hmglyh.htgl.action.HtglGljAction" method="gljlxAddOne"/>
+		<!-- 删除（类型+价格）-->
+		<action name="gljlxDeleteOne" class="com.hdsx.hmglyh.htgl.action.HtglGljAction" method="gljlxDeleteOne"/>
+		<!-- 修改（类型）-->
+		<action name="gljlxUpdateOne" class="com.hdsx.hmglyh.htgl.action.HtglGljAction" method="gljlxUpdateOne"/>
+		<!-- 修改（“启用/禁用”状态）-->
+		<action name="gljlxUpdateOneQyzt" class="com.hdsx.hmglyh.htgl.action.HtglGljAction" method="gljlxUpdateOneQyzt"/>
+		<!-- 添加（价格）-->
+		<action name="gljjgAddOne" class="com.hdsx.hmglyh.htgl.action.HtglGljAction" method="gljjgAddOne"/>
+		<!-- 修改（价格）-->
+		<action name="gljjgUpdateOne" class="com.hdsx.hmglyh.htgl.action.HtglGljAction" method="gljjgUpdateOne"/>
+		<!-- 创建工料机Combobox用于：作业项目类别管理的添加定额（2015-06-16废弃） -->
+		<action name="createGljCombobox" class="com.hdsx.hmglyh.htgl.action.HtglGljAction" method="createGljCombobox"/>
+		<!-- 创建工料机Combobox用于：作业项目类别管理的添加定额（2015-06-16新版） -->
+		<action name="createGljCombotreeToInsertDe" class="com.hdsx.hmglyh.htgl.action.HtglGljAction" method="createGljCombotreeToInsertDe"/>
+		<!-- 验证工料机编码是否已存在 -->
+		<action name="verifyBm" class="com.hdsx.hmglyh.htgl.action.HtglGljAction" method="verifyBm"/>
+	</package>
+
+	<!-- 枚举类型 - 枚举类型 - 枚举类型 - 枚举类型 - 枚举类型 - 枚举类型 - 枚举类型 - 枚举类型 - 枚举类型 - 枚举类型 - 枚举类型 - 枚举类型 - 枚举类型 - 枚举类型  -->
+	<package name="htglmjlx" extends="struts-default" namespace="/htglmjlx">
+		<!-- 创建枚举下拉框：Combobox-->
+		<action name="createCombobox" class="com.hdsx.hmglyh.htgl.action.HtglMjAction" method="createCombobox"/>
+	</package>
+
+	<!-- 部门信息 - 部门信息 - 部门信息 - 部门信息 - 部门信息 - 部门信息 - 部门信息 - 部门信息 - 部门信息 - 部门信息 - 部门信息 - 部门信息 - 部门信息 - 部门信息  -->
+	<package name="htglbm" extends="struts-default" namespace="/htglbm">
+
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="loginInterceptor"
+				class="com.hdsx.hmglyh.util.LoginInterceptor" />
+			<!-- 配置拦截器 -->
+			<interceptor-stack name="myloginInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login,userLoginAuthor,logout</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器 ， 对包中的所有的Action 都有效 -->
+		<default-interceptor-ref name="myloginInterceptor" />
+
+		<global-results>
+			<result name="loginPage" type="redirect">../index.jsp</result>
+			<result name="authErrorPage" type="redirect">../authErrorPage.jsp</result>
+			<result name="exceptionPage" type="redirect">../exceptionPage.jsp</result>
+		</global-results>
+	
+	
+		<!-- 创建部门树-->
+		<action name="createDapartTree" class="com.hdsx.hmglyh.htgl.action.HtglBmAction" method="createDapartTree"/>
+		<!-- 根据Bmcode查询数据-->
+		<action name="queryAllByBmcode" class="com.hdsx.hmglyh.htgl.action.HtglBmAction" method="queryAllByBmcode"/>
+		<!-- 添加-->
+		<action name="insertOneBm" class="com.hdsx.hmglyh.htgl.action.HtglBmAction" method="insertOneBm"/>
+		<!-- 删除-->
+		<action name="deleteOneBm" class="com.hdsx.hmglyh.htgl.action.HtglBmAction" method="deleteOneBm"/>
+		<!-- 修改-->
+		<action name="updateOneBm" class="com.hdsx.hmglyh.htgl.action.HtglBmAction" method="updateOneBm"/>
+		<!-- 修改（启用/禁用）-->
+		<action name="updateOneBmQyzt" class="com.hdsx.hmglyh.htgl.action.HtglBmAction" method="updateOneBmQyzt"/>
+		<!-- 据部门编码查询其下所有bmcode.length=6的部门-->
+		<action name="queryBmToGlj" class="com.hdsx.hmglyh.htgl.action.HtglBmAction" method="queryBmToGlj"/>
+		<!-- 据部门编码查询其部门名称 -->
+		<action name="queryBmnameByBmcode" class="com.hdsx.hmglyh.htgl.action.HtglBmAction" method="queryBmnameByBmcode"/>
+	</package>
+
+	<!-- “路段/路线” - “路段/路线” - “路段/路线” - “路段/路线” - “路段/路线” - “路段/路线” - “路段/路线” - “路段/路线” - “路段/路线” -->
+	<package name="htglld" extends="struts-default" namespace="/htglld">
+	
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="loginInterceptor"
+				class="com.hdsx.hmglyh.util.LoginInterceptor" />
+			<!-- 配置拦截器 -->
+			<interceptor-stack name="myloginInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login,userLoginAuthor,logout</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器 ， 对包中的所有的Action 都有效 -->
+		<default-interceptor-ref name="myloginInterceptor" />
+
+		<global-results>
+			<result name="loginPage" type="redirect">../index.jsp</result>
+			<result name="authErrorPage" type="redirect">../authErrorPage.jsp</result>
+			<result name="exceptionPage" type="redirect">../exceptionPage.jsp</result>
+		</global-results>
+	
+		<!-- 创建“路线”下拉框。参数：lxQueryType -->
+		<action name="createLxCombobox" class="com.hdsx.hmglyh.htgl.action.HtglLdbAction" method="createLxCombobox"/>
+		<!-- 查询全部（LD） -->
+		<action name="queryAllBySome" class="com.hdsx.hmglyh.htgl.action.HtglLdbAction" method="queryAllBySome"/>
+		<!-- 添加（LD） -->
+		<action name="addOneLd" class="com.hdsx.hmglyh.htgl.action.HtglLdbAction" method="addOneLd"/>
+		<!-- 删除（LD） -->
+		<action name="deleteOneLd" class="com.hdsx.hmglyh.htgl.action.HtglLdbAction" method="deleteOneLd"/>
+		<!-- 修改（LD） -->
+		<action name="updateOneLd" class="com.hdsx.hmglyh.htgl.action.HtglLdbAction" method="updateOneLd"/>
+		<!-- 创建路段树：用于除雪快报选择路段（LD） -->
+		<action name="createLdCombobox" class="com.hdsx.hmglyh.htgl.action.HtglLdbAction" method="createLdCombobox"/>
+	</package>
+
+	<!-- “人员信息” - “人员信息” - “人员信息” - “人员信息” - “人员信息” - “人员信息” - “人员信息” - “人员信息” - “人员信息” - “人员信息” -->
+	<package name="htglry" extends="struts-default" namespace="/htglry">
+
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="loginInterceptor"
+				class="com.hdsx.hmglyh.util.LoginInterceptor" />
+			<!-- 配置拦截器 -->
+			<interceptor-stack name="myloginInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login,userLoginAuthor,logout</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器 ， 对包中的所有的Action 都有效 -->
+		<default-interceptor-ref name="myloginInterceptor" />
+
+		<global-results>
+			<result name="loginPage" type="redirect">../index.jsp</result>
+			<result name="authErrorPage" type="redirect">../authErrorPage.jsp</result>
+			<result name="exceptionPage" type="redirect">../exceptionPage.jsp</result>
+		</global-results>
+	
+	
+		<!-- 查询全部-->
+		<action name="queryAllRy" class="com.hdsx.hmglyh.htgl.action.HtglRybAction" method="queryAllRy"/>
+		<!-- 添加-->
+		<action name="insertOneRy" class="com.hdsx.hmglyh.htgl.action.HtglRybAction" method="insertOneRy"/>
+		<!-- 删除-->
+		<action name="deleteOneRy" class="com.hdsx.hmglyh.htgl.action.HtglRybAction" method="deleteOneRy"/>
+		<!-- 修改-->
+		<action name="updateOneRy" class="com.hdsx.hmglyh.htgl.action.HtglRybAction" method="updateOneRy"/>
+		<!-- 修改启用禁用状态-->
+		<action name="changeState" class="com.hdsx.hmglyh.htgl.action.HtglRybAction" method="changeState"/>
+		<!-- 查询没有用户名的人员信息（用户创建）-->
+		<action name="createRyComboboxWithNoUsername" class="com.hdsx.hmglyh.htgl.action.HtglRybAction" method="createRyComboboxWithNoUsername"/>
+		<!-- 查询入职时间列表-->
+		<action name="queryYear" class="com.hdsx.hmglyh.htgl.action.HtglRybAction" method="queryYear"/>
+	</package>
+
+	<!-- “用户表” - “用户表” - “用户表” - “用户表” - “用户表” - “用户表” - “用户表” - “用户表” - “用户表” - “用户表” - “用户表” -->
+	<package name="htglyh" extends="struts-default" namespace="/htglyh">
+	
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="loginInterceptor"
+				class="com.hdsx.hmglyh.util.LoginInterceptor" />
+			<!-- 配置拦截器 -->
+			<interceptor-stack name="myloginInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login,userLoginAuthor,logout</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器 ， 对包中的所有的Action 都有效 -->
+		<default-interceptor-ref name="myloginInterceptor" />
+
+		<global-results>
+			<result name="loginPage" type="redirect">../index.jsp</result>
+			<result name="authErrorPage" type="redirect">../authErrorPage.jsp</result>
+			<result name="exceptionPage" type="redirect">../exceptionPage.jsp</result>
+		</global-results>
+	
+		<!-- 查询全部（Bmcode） -->
+		<action name="queryAll" class="com.hdsx.hmglyh.htgl.action.HtglYhAction" method="queryAll"/>
+		<!-- 添加-->
+		<action name="insertOneYh" class="com.hdsx.hmglyh.htgl.action.HtglYhAction" method="insertOneYh"/>
+		<!-- 删除-->
+		<action name="deleteOneYh" class="com.hdsx.hmglyh.htgl.action.HtglYhAction" method="deleteOneYh"/>
+		<!-- 修改-->
+		<action name="updateOneYh" class="com.hdsx.hmglyh.htgl.action.HtglYhAction" method="updateOneYh"/>
+		<!-- 修改“启用/禁用” -->
+		<action name="updateOneYhQyzt" class="com.hdsx.hmglyh.htgl.action.HtglYhAction" method="updateOneYhQyzt"/>
+		<!-- 验证用户名是否存在 -->
+		<action name="verifyUsername" class="com.hdsx.hmglyh.htgl.action.HtglYhAction" method="verifyUsername"/>
+	</package>
+
+	<!-- “角色” - “角色” - “角色” - “角色” - “角色” - “角色” - “角色” - “角色” - “角色” - “角色” - “角色” - “角色” - “角色” -->
+	<package name="htgljs" extends="struts-default" namespace="/htgljs">
+	
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="loginInterceptor"
+				class="com.hdsx.hmglyh.util.LoginInterceptor" />
+			<!-- 配置拦截器 -->
+			<interceptor-stack name="myloginInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login,userLoginAuthor,logout</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器 ， 对包中的所有的Action 都有效 -->
+		<default-interceptor-ref name="myloginInterceptor" />
+
+		<global-results>
+			<result name="loginPage" type="redirect">../index.jsp</result>
+			<result name="authErrorPage" type="redirect">../authErrorPage.jsp</result>
+			<result name="exceptionPage" type="redirect">../exceptionPage.jsp</result>
+		</global-results>
+	
+		<!-- 创建角色下拉框-->
+		<action name="createJsCombobox" class="com.hdsx.hmglyh.htgl.action.HtglJsAction" method="createJsCombobox" />
+		<!-- 创建页面树 -->
+		<action name="createMkCombotree" class="com.hdsx.hmglyh.htgl.action.HtglJsAction" method="createMkCombotree" />
+		<!-- 查询全部 -->
+		<action name="queryAllJs" class="com.hdsx.hmglyh.htgl.action.HtglJsAction" method="queryAllJs" />
+		<!-- 添加 -->
+		<action name="addOneJs" class="com.hdsx.hmglyh.htgl.action.HtglJsAction" method="addOneJs" />
+		<!-- 删除 -->
+		<action name="deleteOneJs" class="com.hdsx.hmglyh.htgl.action.HtglJsAction" method="deleteOneJs" />
+		<!-- 修改 -->
+		<action name="updateOneJs" class="com.hdsx.hmglyh.htgl.action.HtglJsAction" method="updateOneJs" />
+	</package>
+
+	<!-- “作业项目类别管理” - “作业项目类别管理” - “作业项目类别管理” - “作业项目类别管理” - “作业项目类别管理” - “作业项目类别管理” - “作业项目类别管理”  -->
+	<package name="htglZyxmlbgl" extends="struts-default" namespace="/htglZyxmlbgl">
+	
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="loginInterceptor"
+				class="com.hdsx.hmglyh.util.LoginInterceptor" />
+			<!-- 配置拦截器 -->
+			<interceptor-stack name="myloginInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login,userLoginAuthor,logout</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器 ， 对包中的所有的Action 都有效 -->
+		<default-interceptor-ref name="myloginInterceptor" />
+
+		<global-results>
+			<result name="loginPage" type="redirect">../index.jsp</result>
+			<result name="authErrorPage" type="redirect">../authErrorPage.jsp</result>
+			<result name="exceptionPage" type="redirect">../exceptionPage.jsp</result>
+		</global-results>
+	
+		<!-- 创建“养护类型”Tree -->
+		<action name="createYhlxbTree" class="com.hdsx.hmglyh.htgl.action.HtglZyxmlbglAction" method="createYhlxbTree"/>
+		<!-- 查询全部（养护类型） -->
+		<action name="queryAllByYhid" class="com.hdsx.hmglyh.htgl.action.HtglZyxmlbglAction" method="queryAllByYhid"/>
+		<!-- 添加（养护类型） -->
+		<action name="addOneYhlx" class="com.hdsx.hmglyh.htgl.action.HtglZyxmlbglAction" method="addOneYhlx"/>
+		<!-- 删除（养护类型） -->
+		<action name="deleteOneYhlx" class="com.hdsx.hmglyh.htgl.action.HtglZyxmlbglAction" method="deleteOneYhlx"/>
+		<!-- 修改（养护类型）-->
+		<action name="updateOneYhlx" class="com.hdsx.hmglyh.htgl.action.HtglZyxmlbglAction" method="updateOneYhlx"/>
+		<!-- 修改“启用/禁用”（养护类型） -->
+		<action name="updateOneYhlxQyzt" class="com.hdsx.hmglyh.htgl.action.HtglZyxmlbglAction" method="updateOneYhlxQyzt"/>
+		<!-- 修改“定额状态”（养护类型）方法已废弃 -->
+		<action name="updateOneYhlxbDezt" class="com.hdsx.hmglyh.htgl.action.HtglZyxmlbglAction" method="updateOneYhlxbDezt"/>
+		<!-- 修改“定额启动状态”（养护类型） -->
+		<action name="updateOneYhlxbDeqdzt" class="com.hdsx.hmglyh.htgl.action.HtglZyxmlbglAction" method="updateOneYhlxbDeqdzt"/>
+		<!-- 修改“是否裂缝修补”（养护类型） -->
+		<action name="updateOneYhlxbIslfxb" class="com.hdsx.hmglyh.htgl.action.HtglZyxmlbglAction" method="updateOneYhlxbIslfxb"/>
+		<!-- 修改“是否沥青路面修补”（养护类型） -->
+		<action name="updateOneYhlxbIslqlmxb" class="com.hdsx.hmglyh.htgl.action.HtglZyxmlbglAction" method="updateOneYhlxbIslqlmxb"/>
+		<!-- 添加“定额”并修改所属“养护类型”的“dezt=1” -->
+		<action name="insertDe" class="com.hdsx.hmglyh.htgl.action.HtglZyxmlbglAction" method="insertDe"/>
+		<!-- 删除“定额”并修改所属“养护类型”的“dezt=0” -->
+		<action name="deleteDe" class="com.hdsx.hmglyh.htgl.action.HtglZyxmlbglAction" method="deleteDe"/>
+		<!-- 根据yhid查询其下的所有定额信息 -->
+		<action name="queryAllDeByYhid" class="com.hdsx.hmglyh.htgl.action.HtglZyxmlbglAction" method="queryAllDeByYhid"/>
+		<!-- 根据yhid修改下的定额信息 -->
+		<action name="updateDe" class="com.hdsx.hmglyh.htgl.action.HtglZyxmlbglAction" method="updateDe"/>
+	</package>
+
+</struts>

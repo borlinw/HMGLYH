@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.gis.jichusj.luxian.dao.HtglLxbMapper" >
+  <cache readOnly="true"></cache>
+  <resultMap id="LuxianBaseResultMap" type="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.HtglLxb" >
+    <id column="LXCODE" property="lxcode" jdbcType="VARCHAR" />
+    <result column="LXNAME" property="lxname" jdbcType="VARCHAR" />
+    <result column="SZHH" property="szhh" jdbcType="DECIMAL" />
+    <result column="EZHH" property="ezhh" jdbcType="DECIMAL" />
+    <result column="MILEAGE" property="mileage" jdbcType="DECIMAL" />
+  </resultMap>
+  
+  <resultMap id="LuduanBaseResultMap" type="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.HtglLdb" >
+    <id column="LDCODE" property="ldcode" jdbcType="VARCHAR" />
+    <result column="LDNAME" property="ldname" jdbcType="VARCHAR" />
+    <result column="LXCODE" property="lxcode" jdbcType="VARCHAR" />
+    <result column="SZHH" property="szhh" jdbcType="DECIMAL" />
+    <result column="EZHH" property="ezhh" jdbcType="DECIMAL" />
+    <result column="MILEAGE" property="mileage" jdbcType="DECIMAL" />
+    <result column="BMCODE" property="bmcode" jdbcType="VARCHAR" />
+    <result column="BZ" property="bz" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <sql id="Luxian_Column_List" >
+    LXCODE, LXNAME, SZHH, EZHH, MILEAGE, ZDLC
+  </sql>
+  
+  <sql id="Luduan_Column_List" >
+    LDCODE, LDNAME, LXCODE, SZHH, EZHH, MILEAGE, BMCODE, BZ
+  </sql>
+  
+  <sql id="Luxian_Where">
+	<where>
+	 	<if test = "lxcode != null and lxcode != '' ">
+	 	 	and lxcode = #{lxcode}
+	 	</if>
+	 	<if test = "lxname != null and lxname != '' ">
+	 		and lxname like '%' || #{lxname} || '%'
+	 	</if>
+ 	</where>
+  </sql>
+  
+  <sql id="Luduan_Where">
+  		<where>
+ 			 	<if test = "ldcode != null and ldcode != '' ">
+ 			 	 	and ldcode = #{ldcode}
+ 			 	</if>
+ 			 	<if test = "ldname != null and ldname != '' ">
+ 			 		and ldname like '%' || #{ldname} || '%'
+ 			 	</if>
+ 			 	<if test=" lxcode != null and lxcode != '' ">
+ 			 		and lxcode = #{lxcode}
+ 			 	</if>
+ 			 	<if test=" bmcode != null and bmcode != '' ">
+ 			 		and bmcode = #{bmcode}
+ 			 	</if>
+ 			 	
+ 			 	<if test=" szhh != null and szhh != '' ">
+ 			 		and SZHH  <![CDATA[ >= ]]>#{szhh}
+ 			 	</if>
+ 			 	
+ 			 	<if test = " ezhh != null and ezhh != '' ">
+ 			 		and EZHH  <![CDATA[ <= ]]> #{ezhh}
+ 			 	</if>
+	   </where>
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="LuxianBaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Luxian_Column_List" />
+    from HTGL_LXB
+    where LXCODE = #{lxcode,jdbcType=VARCHAR} 
+  </select>
+  
+  <!-- 路线combobox 模糊查询-->
+  <select id="luxianCombobox" resultType="com.hdsx.hmglyh.gis.util.Combobox" parameterType="hashmap">	      
+	SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+			  select lxcode valueField,lxname || '(' || lxcode || ')' textField from htgl_lxb where 1=1
+		  		<if test="q != null and q != '' ">
+		  			and (lxcode like '%' || #{q} ||'%'
+		  			     or lxname like '%' || #{q} || '%')
+		  		</if>
+	
+	) TEMP
+	
+	  	where <![CDATA[ROWNUM <= (1 * 10)]]>
+	)
+    <where>
+	  
+	      <![CDATA[RN>((1 - 1) * 10)]]>
+		
+	</where>
+		
+		
+  </select>
+  
+   <!-- 路线combobox 模糊查询 for 部门-->
+  <select id="luxianComboboxForBm" resultType="com.hdsx.hmglyh.gis.util.Combobox" parameterType="hashmap">	      
+	SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+			  select distinct lxcode valueField,lxcode || '(' || szhh || '-' || ezhh || ')' textField,szhh,ezhh from htgl_ldb
+		  		where 1=1 
+		  		<if test="q != null and q != '' ">
+		  		and	lxcode like '%' || #{q} ||'%'
+		  		</if>
+		  		and BMCODE = #{bmcode}
+	) TEMP
+	
+	  	where <![CDATA[ROWNUM <= (1 * 10)]]>
+	)
+    <where>
+	      <![CDATA[RN>((1 - 1) * 10)]]>
+	</where>
+  </select>
+  
+  <select id="zhuanghaoByLxcodeAndBmcode" parameterType="hashmap" resultType="hashmap">
+  		select szhh "startzh",ezhh "endzh" from HTGL_LDB 
+  		where lxcode = #{lxcode} and bmcode = #{bmcode}
+  </select> 
+  
+  <!-- 路线rows -->
+  <select id="luxianRows" resultMap="LuxianBaseResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.HtglLxb">
+   	SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+			  select 
+   			 	<include refid="Luxian_Column_List" />
+   			 		from HTGL_LXB
+   			 	<include refid="Luxian_Where"></include>
+	) TEMP
+	<if test="page != null and page != ''">
+	  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+	</if>)
+    <where>
+	   <if test="page != null and page != ''">
+	      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+		</if>
+	</where>
+  </select>
+  
+  <select id="luxianCount" resultType="int" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.HtglLxb">
+  		select 
+   			 	count(*)
+   			 		from HTGL_LXB
+   			 	 	<include refid="Luxian_Where"></include>
+  </select>
+  
+  <!-- 路段rows -->
+  <select id="luduanRows" resultMap="LuduanBaseResultMap" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.HtglLdb">
+  		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+			  select 
+   			 	<include refid="Luduan_Column_List" />
+   			 		from HTGL_LDB
+   			 	<include refid="Luduan_Where"/>
+		) TEMP
+		<if test="page != null and page != ''">
+		  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+		</if>)
+	    <where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+  </select>
+  
+  <select id = "luduanCount" resultType = "int" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.HtglLdb" >
+  		select 
+   			 	count(*)
+   			 		from HTGL_LDB
+   			 	<include refid="Luduan_Where"/>
+  </select>
+
+	
+  <select id="luduanCombobox" parameterType="string" resultType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.HtglLdb">
+	select * from htgl_ldb 
+		where bmcode = #{bmcode}
+  </select>
+ 
+</mapper>

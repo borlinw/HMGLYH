@@ -1,0 +1,9 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "/xsd/struts-2.1.7.dtd">
+<struts>
+	<!-- 挖掘占施工 -->
+	<package name="gpsRoad" extends="struts-default" namespace="/gpsRoad">
+		<action name="getAllLd" class="gpsRoadController" method="getAllLd"></action>
+	</package>
+</struts>
