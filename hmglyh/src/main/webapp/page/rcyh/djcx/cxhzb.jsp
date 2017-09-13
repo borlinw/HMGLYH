@@ -29,7 +29,7 @@ $(function(){
 		success:function(data){
 			bmcode = data.bmcode;
 			username = data.username;
-			//$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=cxhzb.cpt&bmcode="+data.bmcode+"&username="+data.username+"&op=write");
+			//$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=hmglyh%2Fcxhzb.cpt&bmcode="+data.bmcode+"&username="+data.username+"&op=write");
 		}
 	});
 	//查询
@@ -45,13 +45,13 @@ $(function(){
 					success:function(result){
 						/* alert("请求是否已存在除雪年报数据result="+result); */
 						if(result){
-							$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=NEWcxhzbView.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj);
+							$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=hmglyh%2FNEWcxhzbView.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj);
 							$("#edit").show();
 							//$("#reportFrame").attr("src","http://localhost:8075/WebReport/ReportServer?reportlet=NEWcxhzbView.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj+"&op=write");
-							//$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=NEWcxhzbEdit.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj+"&op=write");
+							//$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=hmglyh%2FNEWcxhzbEdit.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj+"&op=write");
 						}else if(!result){
-							$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=NEWcxhzb.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj+"&op=write");
-							//$("#reportFrame").attr("src","http://localhost:8075/WebReport/ReportServer?reportlet=NEWcxhzb.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj+"&op=write");
+							$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=hmglyh%2FNEWcxhzb.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj+"&op=write");
+							//$("#reportFrame").attr("src","http://localhost:8075/WebReport/ReportServer?reportlet=hmglyh%2FNEWcxhzb.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj+"&op=write");
 						}else{
 							YMLib.UI.Show("数据请求错误（cxbbb_queryCxnbByBBIDAndBmcode.do），请刷新后重试。",1500);
 						}
@@ -62,15 +62,15 @@ $(function(){
 					//alert("分局下部门：具有查看权限。");
 					bmcode = bmcode.substr(0 , 6);
 				} 
-				$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=NEWcxhzbView.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj);
-				//$("#reportFrame").attr("src","http://localhost:8075/WebReport/ReportServer?reportlet=NEWcxhzbView.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj);
+				$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=hmglyh%2FNEWcxhzbView.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj);
+				//$("#reportFrame").attr("src","http://localhost:8075/WebReport/ReportServer?reportlet=hmglyh%2FNEWcxhzbView.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj);
 			}
 		}else{
 			YMLib.UI.Show("请选择版本。",1500);
 		}
 	});
 	$("#edit").click(function(){
-		$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=NEWcxhzbEdit.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj+"&op=write");
+		$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=hmglyh%2FNEWcxhzbEdit.cpt&bmcode="+bmcode+"&bbid="+bbid+"&username="+username+"&ssj="+ssj+"&esj="+esj+"&op=write");
 	});
 	//加载“除雪版本”Combotree
 	$("#chooseCxbb").combobox({

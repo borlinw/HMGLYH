@@ -108,20 +108,20 @@ var initButton = function(){
 			var jcbb = $("#jcbb").combobox("getValue");
 			if(recording=="0" && qdState){
 				var qdbb=$("#qdbb").combobox("getValue");
-				document.getElementById("report_yj").src=YMLib.reportUrl+"reportlet=lmyhfa%2Fyjzbpd.cpt&__bypagesize__=false&dcbb="+dcbb+
+				document.getElementById("report_yj").src=YMLib.reportUrl+"reportlet=hmglyh%2Flmyhfa%2Fyjzbpd.cpt&__bypagesize__=false&dcbb="+dcbb+
 				"&lxcode="+lxCode_ls+"&szhh="+szhh+"&ezhh="+ezhh+"&qdbb="+qdbb+"&jcbb="+jcbb;
-				document.getElementById("report_ej").src=YMLib.reportUrl+"reportlet=lmyhfa%2Fejzbpd.cpt&__bypagesize__=false&dcbb="+dcbb+
+				document.getElementById("report_ej").src=YMLib.reportUrl+"reportlet=hmglyh%2Flmyhfa%2Fejzbpd.cpt&__bypagesize__=false&dcbb="+dcbb+
 				"&lxcode="+lxCode_ls+"&szhh="+szhh+"&ezhh="+ezhh+"&qdbb="+qdbb+"&jcbb="+jcbb;
-				document.getElementById("report_fa").src=YMLib.reportUrl+"reportlet=lmyhfa%2Fyhfa.cpt&__bypagesize__=false&dcbb="+dcbb+
+				document.getElementById("report_fa").src=YMLib.reportUrl+"reportlet=hmglyh%2Flmyhfa%2Fyhfa.cpt&__bypagesize__=false&dcbb="+dcbb+
 				"&lxcode="+lxCode_ls+"&szhh="+szhh+"&ezhh="+ezhh+"&qdbb="+qdbb+"&jcbb="+jcbb;
 			}else if(recording == "1"){
 				var start = $("#start").numberbox("getValue");
 				var end = $("#end").numberbox("getValue");
-				document.getElementById("report_yj").src=YMLib.reportUrl+"reportlet=lmyhfa%2FyjzbpdForLd.cpt&__bypagesize__=false&dcbb="+dcbb+
+				document.getElementById("report_yj").src=YMLib.reportUrl+"reportlet=hmglyh%2Flmyhfa%2FyjzbpdForLd.cpt&__bypagesize__=false&dcbb="+dcbb+
 				"&lxcode="+lxCode_ls+"&szhh="+start+"&ezhh="+end+"&jcbb="+jcbb;
-				document.getElementById("report_ej").src=YMLib.reportUrl+"reportlet=lmyhfa%2FejzbpdForLd.cpt&__bypagesize__=false&dcbb="+dcbb+
+				document.getElementById("report_ej").src=YMLib.reportUrl+"reportlet=hmglyh%2Flmyhfa%2FejzbpdForLd.cpt&__bypagesize__=false&dcbb="+dcbb+
 				"&lxcode="+lxCode_ls+"&szhh="+start+"&ezhh="+end+"&jcbb="+jcbb;
-				document.getElementById("report_fa").src=YMLib.reportUrl+"reportlet=lmyhfa%2FyhfaForLd.cpt&__bypagesize__=false&dcbb="+dcbb+
+				document.getElementById("report_fa").src=YMLib.reportUrl+"reportlet=hmglyh%2Flmyhfa%2FyhfaForLd.cpt&__bypagesize__=false&dcbb="+dcbb+
 				"&lxcode="+lxCode_ls+"&szhh="+start+"&ezhh="+end+"&jcbb="+jcbb;
 			}else{
 				YMLib.UI.Show("查询条件不完全，请选择",2000);

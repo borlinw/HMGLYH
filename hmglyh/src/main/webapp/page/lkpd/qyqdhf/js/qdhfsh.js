@@ -5,7 +5,7 @@ var src=null;
 var Detail = function(_index){
 	currentGridRows = $("#myGrid").datagrid("getRows")[_index];
 	var params = "total=0&bbid="+currentGridRows.bbid+"&bmCode="+currentGridRows.bmCode;
-	src = YMLib.reportUrl + "reportlet="+YMLib.cjkEncode('区段划分一览表-按单位')+".cpt&"+YMLib.cjkEncode(params);
+	src = YMLib.reportUrl + "reportlet=hmglyh%2F"+YMLib.cjkEncode('区段划分一览表-按单位')+".cpt&"+YMLib.cjkEncode(params);
 	YMLib.UI.createWindow("ljdc","区域划分导出","../lkdc/report.jsp","",800,450);
 	
 //	currentGridRows = $("#myGrid").datagrid("getRows")[_index];
@@ -116,7 +116,7 @@ var initButton = function(){
 	});
 	$("#export").click(function(){
 		var params = "total=1&bbid="+$("#bbid").combobox("getValue")+"&bmCode=0101";
-		src = YMLib.reportUrl + "reportlet="+YMLib.cjkEncode('区段划分一览表-按单位')+".cpt&"+YMLib.cjkEncode(params);
+		src = YMLib.reportUrl + "reportlet=hmglyh%2F"+YMLib.cjkEncode('区段划分一览表-按单位')+".cpt&"+YMLib.cjkEncode(params);
 		YMLib.UI.createWindow("ljdc","区域划分导出","../lkdc/report.jsp","",800,450);
 		
 //		var params = "bmCode="+window.top.loginUserObject.bmcode+"&bmName="+window.top.loginUserObject.bmname+"&bbid="+$("#bbid").combobox("getValue");

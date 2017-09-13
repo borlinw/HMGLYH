@@ -52,7 +52,7 @@ var initCombo = function(){
 
 var getTable = function(){
 	var params = "bbid="+parent.currentGridRows.bbid1+"&dcbbid="+$("#dcbbid").combobox("getValue")+"&lxCode="+lxCode+"&szhh="+szhh+"&ezhh="+ezhh;
-	var src = YMLib.reportUrl + "reportlet="+YMLib.cjkEncode('区段划分病害列表')+".cpt&"+YMLib.cjkEncode(params);
+	var src = YMLib.reportUrl + "reportlet=hmglyh%2F"+YMLib.cjkEncode('区段划分病害列表')+".cpt&"+YMLib.cjkEncode(params);
 	$("#bhlb").attr("src",src);
 };
 

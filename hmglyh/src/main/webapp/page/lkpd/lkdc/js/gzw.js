@@ -15,7 +15,7 @@ var Edit = function(_index){
 		params += "&dcid="+window.top.createUUID();
 	else
 		params += "&dcid="+rowData.dcid;
-	src = YMLib.reportUrl + "reportlet=lkdc.cpt&op=write&"+YMLib.cjkEncode(params);
+	src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=hmglyh/lkdc.cpt&op=write&"+params);
 	YMLib.UI.createWindow("gzwdc","桥隧涵构造物调查","report.jsp","",734,500,function(){
 		$("#gzw").datagrid("reload");
 	});
@@ -26,7 +26,7 @@ var View = function(_index){
 	if(rowData.dcid == null || rowData.dcid == "")
 		YMLib.UI.Show("还未填报数据",2000);
 	else{
-		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=桥隧构造物调查.cpt&__bypagesize__=false&dcid="+rowData.dcid);
+		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=hmglyh/桥隧构造物调查.cpt&__bypagesize__=false&dcid="+rowData.dcid);
 		YMLib.UI.createWindow("gzwdc","桥隧构造物调查","report.jsp","",734,500);
 	}
 };
@@ -315,7 +315,7 @@ var initQuery = function(){
 		var params = "lxid=03&dcry="+window.top.loginUserObject.ryname+"&bbid="+$("#bbid").combobox("getValue")+
 					 "&lxCode="+lxCode+"&szhh="+szhh+"&ezhh="+ezhh+"&fx="+$("#fx").combobox("getValue")+"&condition=";
 		
-		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=路况调查模板.cpt&op=write&"+params);
+		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=hmglyh/路况调查模板.cpt&op=write&"+params);
 		YMLib.UI.createWindow("gzwdc","桥隧构造物调查","report.jsp","",734,500,function(){
 			$("#gzw").datagrid("reload");
 		});
@@ -333,7 +333,7 @@ var initQuery = function(){
 		var params = "bbid="+$("#bbid").combobox("getValue")+"&lxCode="+lxCode+"&szhh="+szhh+"&ezhh="+ezhh+
 					 "&fx="+$("#fx").combobox("getValue")+"&lxid=03";
 		
-		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=桥隧构造物调查数据.cpt&__bypagesize__=false&"+params);
+		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=hmglyh/桥隧构造物调查数据.cpt&__bypagesize__=false&"+params);
 		YMLib.UI.createWindow("gzwdc","桥隧构造物调查数据","report.jsp","",734,500);
 	});
 	$("#exportHz").click(function(){
@@ -351,7 +351,7 @@ var initQuery = function(){
 					 "&fx="+$("#fx").combobox("getValue")+"&lxid=03&fxName="+$("#fx").combobox("getText");
 		
 		location.href = YMLib.url + "qmldb/getQshdcForExport.do?" + encodeURI(params);
-//		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=桥隧构造物调查数据.cpt&__bypagesize__=false&"+params);
+//		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=hmglyh/桥隧构造物调查数据.cpt&__bypagesize__=false&"+params);
 //		YMLib.UI.createWindow("gzwdc","桥隧构造物调查数据","report.jsp","",734,500);
 	});
 };

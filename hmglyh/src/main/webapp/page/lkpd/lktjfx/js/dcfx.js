@@ -163,10 +163,10 @@ var initButton = function(){
 //		var ld=$("#ld").combobox("getValue");
 		var lmlx=$("#lmlx").combobox("getValue");
 		if(lmlx=="1"){//沥青路面
-			document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=dcfx%2Flqlmps_gs.cpt&__bypagesize__=false&dcbb="+dcbb+
+			document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Flqlmps_gs.cpt&__bypagesize__=false&dcbb="+dcbb+
 			"&lxcode="+lxCode_ls+"&szhh="+szhh+"&ezhh="+ezhh+"&lmlx="+lmlx+"&qdbb="+qdbb;
 		}else{//沙石路面
-			document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=dcfx%2Fsslmps_gs.cpt&__bypagesize__=false&dcbb="+dcbb+
+			document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Fsslmps_gs.cpt&__bypagesize__=false&dcbb="+dcbb+
 			"&lxcode="+lxCode_ls+"&szhh="+szhh+"&ezhh="+ezhh+"&lmlx="+lmlx+"&qdbb="+qdbb;
 		};
 	});
@@ -268,7 +268,7 @@ var initButton1 = function(){
 		alert(qdbb1);
 		alert(ld1);*/
 		
-		document.getElementById("report_lj").src=YMLib.reportUrl+"reportlet=dcfx%2Fljps.cpt&__bypagesize__=false&dcbb="+dcbb1+
+		document.getElementById("report_lj").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Fljps.cpt&__bypagesize__=false&dcbb="+dcbb1+
 		"&lxcode="+lxCode_ls1+"&szhh="+szhh1+"&ezhh="+ezhh1+"&qdbb="+qdbb1;
 	});
 	
@@ -353,7 +353,7 @@ var initButton2 = function(){
 	$("#query2").click(function(){
 		var bb2=$("#bb2").combobox("getValue");
 //		var ld2=$("#ld2").combobox("getValue");
-		document.getElementById("report_qh").src=YMLib.reportUrl+"reportlet=dcfx%2Fqshgzw.cpt&__bypagesize__=false&bb="+bb2+
+		document.getElementById("report_qh").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Fqshgzw.cpt&__bypagesize__=false&bb="+bb2+
 		"&lxcode="+lxCode_ls2+"&szhh="+szhh2+"&ezhh="+ezhh2;
 	});
 };
@@ -430,7 +430,7 @@ var initButton3 = function(){
 		var dcbb3=$("#yxdcbb").combobox("getValue");
 //		var ld4=$("#yxld").combobox("getValue");
 		var	qdbb3 = $("#yxqdbb").combobox("getValue");
-		document.getElementById("report_yx").src=YMLib.reportUrl+"reportlet=dcfx%2Fyxss_gs.cpt&__bypagesize__=false&dcbb="+dcbb3+
+		document.getElementById("report_yx").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Fyxss_gs.cpt&__bypagesize__=false&dcbb="+dcbb3+
 		"&lxcode="+lxCode_ls3+"&szhh="+szhh3+"&ezhh="+ezhh3+"&qdbb="+qdbb3;
 	});
 };
@@ -565,7 +565,7 @@ var initButton4 = function(){
 //		var ld5=$("#ldbhld").combobox("getValue");
 		var	qdbb4 = $("#ldbhqdbb").combobox("getValue");
 		var jcbb = $("#ldbhjcbb").combobox("getValue");
-		document.getElementById("report_ldhz").src=YMLib.reportUrl+"reportlet=dcfx%2Fldbhqkhz.cpt&__bypagesize__=false&dcbb="+dcbb4+
+		document.getElementById("report_ldhz").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Fldbhqkhz.cpt&__bypagesize__=false&dcbb="+dcbb4+
 		"&lxcode="+lxCode_ls4+"&szhh="+szhh4+"&ezhh="+ezhh4+"&qdbb="+qdbb4+"&jcbb="+jcbb;
 	});
 };
@@ -703,7 +703,7 @@ var initButton5 = function(){
 //		var ld6=$("#lqlmld").combobox("getValue");
 		var	qdbb5 = $("#lqlmqdbb").combobox("getValue");
 		var lqlmjcbb = $("#lqlmjcbb").combobox("getValue");
-		document.getElementById("report_lqhz").src=YMLib.reportUrl+"reportlet=dcfx%2Flqlmyhxqfxhz.cpt&__bypagesize__=false&dcbb="+dcbb5+
+		document.getElementById("report_lqhz").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Flqlmyhxqfxhz.cpt&__bypagesize__=false&dcbb="+dcbb5+
 		"&lxcode="+lxCode_ls5+"&szhh="+szhh5+"&ezhh="+ezhh5+"&qdbb="+qdbb5+"&jcbb="+lqlmjcbb;
 	});
 };

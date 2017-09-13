@@ -1,7 +1,7 @@
 /*function autoLoad(){   
 	var bmCode=window.top.loginUserObject.bmcode;
     //使用获取的参数值拼接出最终的url  
-    var reportURL ="/hmglyh/ReportServer?reportlet=%5B516c%5D%5B8def%5D%5B8def%5D%5B9762%5D%5B76d1%5D%5B6d4b%5D%5B5206%5D%5B6790%5D%2F%5B516c%5D%5B8def%5D%5B8def%5D%5B9762%5D+_%5B7236%5D%5B8868%5D.cpt&bmcode="+bmCode+"";   
+    var reportURL ="/hmglyh/ReportServer?reportlet=hmglyh%2F%5B516c%5D%5B8def%5D%5B8def%5D%5B9762%5D%5B76d1%5D%5B6d4b%5D%5B5206%5D%5B6790%5D%2F%5B516c%5D%5B8def%5D%5B8def%5D%5B9762%5D+_%5B7236%5D%5B8868%5D.cpt&bmcode="+bmCode+"";   
     //将新的报表路径赋给报表所在iframe的src   
     document.getElementById("reportFrame").src = reportURL;    
 }   
@@ -108,24 +108,24 @@ var initButton = function(){
 		var bb=$("#bb").combobox("getValue");
 		if(recording == 1){
 			if(jczs=="PCI"){//PCI
-				document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=jcfx%2Fgllm_PCI.cpt&bb="+bb+
+				document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=hmglyh%2Fjcfx%2Fgllm_PCI.cpt&bb="+bb+
 				"&lxcode="+roadCode[0]+"&szhh="+$("#ld_start").numberbox("getValue")+"&ezhh="+$("#ld_end").numberbox("getValue");
 			}else if(jczs=="RQI"){//RQI
-				document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=jcfx%2Fgllm_RQI.cpt&bb="+bb+
+				document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=hmglyh%2Fjcfx%2Fgllm_RQI.cpt&bb="+bb+
 				"&lxcode="+roadCode[0]+"&szhh="+$("#ld_start").numberbox("getValue")+"&ezhh="+$("#ld_end").numberbox("getValue");
 			}else if(jczs=="SRI"){//SRI
-				document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=jcfx%2Fgllm_SRI.cpt&bb="+bb+
+				document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=hmglyh%2Fjcfx%2Fgllm_SRI.cpt&bb="+bb+
 				"&lxcode="+roadCode[0]+"&szhh="+$("#ld_start").numberbox("getValue")+"&ezhh="+$("#ld_end").numberbox("getValue");
 			}else if(jczs=="RDI"){//RDI
-				document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=jcfx%2Fgllm_RDI.cpt&bb="+bb+
+				document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=hmglyh%2Fjcfx%2Fgllm_RDI.cpt&bb="+bb+
 				"&lxcode="+roadCode[0]+"&szhh="+$("#ld_start").numberbox("getValue")+"&ezhh="+$("#ld_end").numberbox("getValue");
 			}else if(jczs=="PSSI"){//PSSI
-				document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=jcfx%2Fgllm_PSSI.cpt&bb="+bb+
+				document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=hmglyh%2Fjcfx%2Fgllm_PSSI.cpt&bb="+bb+
 				"&lxcode="+roadCode[0]+"&szhh="+$("#ld_start").numberbox("getValue")+"&ezhh="+$("#ld_end").numberbox("getValue");
 			}
 		}else{
 			var qdbb = $("#qdbb").combobox("getValue");
-			document.getElementById("reportFrame").src=YMLib.reportUrl + "reportlet=jcfx%2FlmjcfxForQd.cpt&pdbb="+bb+
+			document.getElementById("reportFrame").src=YMLib.reportUrl + "reportlet=hmglyh%2Fjcfx%2FlmjcfxForQd.cpt&pdbb="+bb+
 				"&qdbb="+qdbb+"&sel="+jczs+"&lxcode="+roadCode[0]+"&szhh="+szhhList[0]+"&ezhh="+ezhhList[0];
 		}
 	});
@@ -134,11 +134,11 @@ var initButton = function(){
 		var recording = $("#lmxs_recording").combobox("getValue");
 		var bb = $("#bb1").combobox("getValue");
 		if(recording == 1){
-			document.getElementById("report_xszl").src=YMLib.reportUrl+"reportlet=jcfx%2Flmxszlzs.cpt&bb="+bb+
+			document.getElementById("report_xszl").src=YMLib.reportUrl+"reportlet=hmglyh%2Fjcfx%2Flmxszlzs.cpt&bb="+bb+
 			"&lxcode="+roadCode[1]+"&szhh="+$("#ld1_start").numberbox("getValue")+"&ezhh="+$("#ld1_end").numberbox("getValue");
 		}else{
 			var qdbb = $("#qdbb").combobox("getValue");
-			document.getElementById("report_xszl").src=YMLib.reportUrl + "reportlet=jcfx%2FlmxszlzsForQd.cpt&pdbb="+bb+
+			document.getElementById("report_xszl").src=YMLib.reportUrl + "reportlet=hmglyh%2Fjcfx%2FlmxszlzsForQd.cpt&pdbb="+bb+
 				"&qdbb="+qdbb+"&lxcode="+roadCode[0]+"&szhh="+szhhList[0]+"&ezhh="+ezhhList[0];
 		}
 	});

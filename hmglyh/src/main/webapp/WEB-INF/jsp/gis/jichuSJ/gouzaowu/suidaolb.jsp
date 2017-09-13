@@ -120,16 +120,16 @@ $(function(){
 	    	        	 text:"历史维修记录",
 	    	        	 attr:rowData,
 	    	        	 eventHandler:function(obj){
-	    	        		 var name = $(obj).attr('name');
+	    	        		 var sdcode = $(obj).attr('sdcode');
 			        		 var roadcode = $(obj).attr('roadcode');
 			        		 var qzzh = $(obj).attr('pos');
-			        		 var lx = 'gzw';
+			        		 var lx = 'sd';
 	    	        		 gisui.createWindow({
 	    	        			 id:'lswxjl',
-	    	        			 title:name+'-历史维修记录',
+	    	        			 title:sdcode+'-历史维修记录',
 		    	        		 width:500,
 		    	        		 height:450,
-		    	        		 src:YMLib.url + 'page/gis/page/lswxjl.jsp?roadcode='+roadcode+'&lx='+lx+'&qzzh='+qzzh+'&wxlx='+encodeURI('隧道')
+		    	        		 src:YMLib.url + 'page/gis/page/lswxjl.jsp?roadcode='+roadcode+'&lx='+lx+'&zh='+qzzh+'&sdcode='+sdcode
 	    	        		 });
 	    	        	 }
 	    	         }

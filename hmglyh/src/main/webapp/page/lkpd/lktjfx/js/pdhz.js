@@ -121,10 +121,10 @@ var initButton = function(){
 		var lmlx=$("#lmlx").combobox("getValue");
 		var	jsdj = $("#jsdj").combobox("getValue");
 		if(jsdj=="1"){
-			document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=pdhz%2Fpdhz_gs.cpt&bb="+bb+
+			document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=hmglyh%2Fpdhz%2Fpdhz_gs.cpt&bb="+bb+
 			"&lxcode1="+lxCode_ls+"&QDZH="+szhh+"&ZDZH="+ezhh+"&lmlx="+lmlx+"&jsdj="+jsdj+"&bbsj="+bbsj+"&bmcode="+bmcode;
 		}else{
-			document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=pdhz%2Fpdhz_pt.cpt&bb="+bb+
+			document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=hmglyh%2Fpdhz%2Fpdhz_pt.cpt&bb="+bb+
 			"&lxcode1="+lxCode_ls+"&QDZH="+szhh+"&ZDZH="+ezhh+"&lmlx="+lmlx+"&jsdj="+jsdj+"&bbsj="+bbsj+"&bmcode="+bmcode;
 		}
 	});

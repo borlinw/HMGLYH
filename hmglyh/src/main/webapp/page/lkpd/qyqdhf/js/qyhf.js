@@ -163,7 +163,7 @@ var initButton = function(){
 		}else{
 //			location.href = YMLib.url + "qyhfb/exportQyhf.do?bmCode="+window.top.loginUserObject.bmcode+"&bbid="+$("#bbid").combobox("getValue")+"&bmName="+window.top.loginUserObject.bmname;
 			var params = 'bmName=' + window.top.loginUserObject.bmname + "&bmCode=" + window.top.loginUserObject.bmcode + "&bbid=" + $("#bbid").combobox("getValue");
-			src = YMLib.reportUrl + "reportlet="+YMLib.cjkEncode('区域划分导出')+".cpt&"+YMLib.cjkEncode(params);
+			src = YMLib.reportUrl + "reportlet=hmglyh%2F"+YMLib.cjkEncode('区域划分导出')+".cpt&"+YMLib.cjkEncode(params);
 			YMLib.UI.createWindow("ljdc","区域划分导出","../lkdc/report.jsp","",800,450);
 		}
 	});

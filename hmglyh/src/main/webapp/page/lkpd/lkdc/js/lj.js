@@ -16,7 +16,7 @@ var Edit = function(_index){
 	else
 		params += "&dcid="+rowData.dcid;
 	
-	src = YMLib.reportUrl + "reportlet=lkdc.cpt&op=write&"+YMLib.cjkEncode(params);
+	src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=hmglyh/lkdc.cpt&op=write&"+params);
 	YMLib.UI.createWindow("ljdc","路基调查","report.jsp","",734,500,function(){
 		$("#lj").datagrid("reload");
 	});
@@ -27,7 +27,7 @@ var View = function(_index){
 	if(rowData.dcid == null || rowData.dcid == "")
 		YMLib.UI.Show("还未填报数据",2000);
 	else{
-		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=路基调查.cpt&__bypagesize__=false&dcid="+rowData.dcid);
+		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=hmglyh/路基调查.cpt&__bypagesize__=false&dcid="+rowData.dcid);
 		YMLib.UI.createWindow("ljdc","路基调查","report.jsp","",734,500);
 	}
 };
@@ -397,7 +397,7 @@ var initQuery = function(){
 		var params = "lxid=02&dcry="+window.top.loginUserObject.ryname+"&bbid="+$("#bbid").combobox("getValue")+
 					 "&lxCode="+lxCode+"&szhh="+szhh+"&ezhh="+ezhh+"&fx="+$("#fx").combobox("getValue")+"&condition=";
 		
-		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=路况调查模板.cpt&op=write&"+params);
+		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=hmglyh/路况调查模板.cpt&op=write&"+params);
 		YMLib.UI.createWindow("ljdc","路基调查","report.jsp","",734,500,function(){
 			$("#lj").datagrid("reload");
 		});
@@ -415,7 +415,7 @@ var initQuery = function(){
 					 "&fx="+$("#fx").combobox("getValue")+"&lxid=02";
 		
 		
-		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=路基调查数据.cpt&__bypagesize__=false&"+params);
+		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=hmglyh/路基调查数据.cpt&__bypagesize__=false&"+params);
 		YMLib.UI.createWindow("ljdc","路基调查数据","report.jsp","",734,500);
 	});
 	$("#exportHz").click(function(){
@@ -433,7 +433,7 @@ var initQuery = function(){
 		
 		location.href = YMLib.url + "qmldb/getLjdcForExport.do?" + encodeURI(params);
 		
-//		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=路基调查数据.cpt&__bypagesize__=false&"+params);
+//		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=hmglyh/路基调查数据.cpt&__bypagesize__=false&"+params);
 //		YMLib.UI.createWindow("ljdc","路基调查数据","report.jsp","",734,500);
 	});
 };

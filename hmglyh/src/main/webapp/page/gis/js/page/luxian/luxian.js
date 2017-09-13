@@ -323,7 +323,7 @@ function onClickRow(rowIndex,rowData){
     	        	 eventHandler:function(obj){
     	        		 var roadcode = $(obj).attr('lxcode');
 	    	        	 var roadname = $(obj).attr('lxname');
-	    	        	 var winid = 'lswxjl';
+	    	        	 var winid = 'lxlswxjl';
 	    	        	 var lx = 'lm';
 	    	        	 gisui.destroyWindow(winid);
     	        		 gisui.createWindow({
@@ -331,9 +331,9 @@ function onClickRow(rowIndex,rowData){
 	    	        		 id:winid,
 	    	        		 width:500,
 	    	        		 height:450,
-	    	        		 src:YMLib.url + 'page/gis/page/lswxjl.jsp?roadcode='+roadcode+'&lx='+lx+'&qzzh=&wxlx=',
+	    	        		 src:YMLib.url + 'page/gis/page/lswxjl.jsp?roadcode='+roadcode+'&lx='+lx+'&zh=',
 	    	        		 onDestroy:function(){
-	    	        			 var winid = 'lswxjl';
+	    	        			 var winid = 'lxlswxjl';
 	    	        			 var windowid= 'luxian';
 	    	        			 map.clearLayerByWindowId(winid);
 	    	        			 top.map.centerMap();

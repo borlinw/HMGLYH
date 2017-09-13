@@ -374,11 +374,11 @@ var RwdColumns = [[
 		var condition=$("#condition").combobox("getValue");
 		day = $("#time").val();
 		 if(rwly=="0902"&&condition=="2"){
-			 window.open(YMLib.reportUrl+"reportlet=rcyhrwtzd_xd.cpt&bmcode="+yhdw+"&cjtime="+day+"&ldcode="+yhqd+"&rwdlx="+rwly);
+			 window.open(YMLib.reportUrl+"reportlet=hmglyh%2Frcyhrwtzd_xd.cpt&bmcode="+yhdw+"&cjtime="+day+"&ldcode="+yhqd+"&rwdlx="+rwly);
 		 }else if(rwly=="0902"&&condition=="1"){
-			 window.open(YMLib.reportUrl+"reportlet=rcyhrwtzd_xd_yf.cpt&bmcode="+yhdw+"&ssny="+cjkEncode(yf)+"&ldcode="+yhqd+"&rwdlx="+rwly);
+			 window.open(YMLib.reportUrl+"reportlet=hmglyh%2Frcyhrwtzd_xd_yf.cpt&bmcode="+yhdw+"&ssny="+cjkEncode(yf)+"&ldcode="+yhqd+"&rwdlx="+rwly);
 		 }else{
-			 window.open(YMLib.reportUrl+"reportlet=rcyhrwtzd_bj.cpt&bmcode="+yhdw+"&ssny="+cjkEncode(yf)+"&ldcode="+yhqd+"&rwdlx="+rwly);
+			 window.open(YMLib.reportUrl+"reportlet=hmglyh%2Frcyhrwtzd_bj.cpt&bmcode="+yhdw+"&ssny="+cjkEncode(yf)+"&ldcode="+yhqd+"&rwdlx="+rwly);
 		 }; 
 	};
 	

@@ -70,7 +70,7 @@ var initComboQzd = function(){
 var initButton = function(){
 	$("#query").click(function(){
 		var bb=$("#bb").combobox("getValue");
-		document.getElementById("report1").src=YMLib.reportUrl+"reportlet=pdfx%2Fpdfx_ld.cpt&__bypagesize__=false&bb="+bb+
+		document.getElementById("report1").src=YMLib.reportUrl+"reportlet=hmglyh%2Fpdfx%2Fpdfx_ld.cpt&__bypagesize__=false&bb="+bb+
 		"&lxcode1="+lxCode_ls+"&qdzh="+szhh+"&zdzh="+ezhh;
 	});
 };
@@ -118,7 +118,7 @@ var initButton1 = function(){
 	$("#query1").click(function(){
 		var bb1=$("#bb1").combobox("getValue");
 		var gydw1=$("#gydw1").combobox("getValue");
-			document.getElementById("report2").src=YMLib.reportUrl+"reportlet=pdfx%2Fpdfx_dw.cpt&bb="+bb1+
+			document.getElementById("report2").src=YMLib.reportUrl+"reportlet=hmglyh%2Fpdfx%2Fpdfx_dw.cpt&bb="+bb1+
 			"&bmcode="+gydw1;
 	});
 };
@@ -170,10 +170,10 @@ var initButton2 = function(){
 		var gydw2=$("#gydw2").combobox("getValue");
 		var jsdj2=$("#jsdj2").combobox("getValue");
 		if(jsdj2=="0"){
-			document.getElementById("report3").src=YMLib.reportUrl+"reportlet=pdfx%2Fpdfx_gs.cpt&__bypagesize__=false&bb="+bb2+
+			document.getElementById("report3").src=YMLib.reportUrl+"reportlet=hmglyh%2Fpdfx%2Fpdfx_gs.cpt&__bypagesize__=false&bb="+bb2+
 			"&bmcode="+gydw2;
 		}else{
-			document.getElementById("report3").src=YMLib.reportUrl+"reportlet=pdfx%2Fpdfx_pt.cpt&__bypagesize__=false&bb="+bb2+
+			document.getElementById("report3").src=YMLib.reportUrl+"reportlet=hmglyh%2Fpdfx%2Fpdfx_pt.cpt&__bypagesize__=false&bb="+bb2+
 			"&bmcode="+gydw2;
 		}
 			
@@ -201,7 +201,7 @@ var initCombo3 = function(){
 var initButton3 = function(){
 	$("#query3").click(function(){
 		var bb3=$("#bb3").combobox("getValue");
-		document.getElementById("report4").src=YMLib.reportUrl+"reportlet=pdfx%2Flxxxhzb.cpt&bb="+bb3+
+		document.getElementById("report4").src=YMLib.reportUrl+"reportlet=hmglyh%2Fpdfx%2Flxxxhzb.cpt&bb="+bb3+
 			"&bmcode="+bmcode;
 	});
 };

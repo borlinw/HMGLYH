@@ -40,7 +40,7 @@ var initQuery = function(){
 		var params = "bmCode="+$("#depart").combotree("getValue")+"&ssny="+$("#yf").combobox("getValue")+"&tbUserName="+loginUserObject.username
 					+"&tbrxm="+loginUserObject.ryname+"&fzrxm="+loginUserObject.fzr;
 		YMLib.Ajax.POST("gzdxzb/getZbid.do",params,"json",function(result){
-			var src = YMLib.reportUrl + cjkEncode("reportlet=工资表.cpt&op=write&gzid="+result.gzid);
+			var src = YMLib.reportUrl + cjkEncode("reportlet=hmglyh/工资表.cpt&op=write&gzid="+result.gzid);
 			$("#reportFrame").attr("src",src);
 		},function(){});
 	});

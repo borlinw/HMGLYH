@@ -265,10 +265,10 @@ var initButton = function(){
 		var qdbb=$("#qdbb").combobox("getValue");
 		var lmlx=$("#lmlx").combobox("getValue");
 		if(lmlx=="1"){//沥青路面
-			document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=dcfx%2Flqlmps_gs.cpt&__bypagesize__=false&dcbb="+dcbb+
+			document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Flqlmps_gs.cpt&__bypagesize__=false&dcbb="+dcbb+
 			"&lxcode="+lxCode_ls+"&szhh="+szhh+"&ezhh="+ezhh+"&lmlx="+lmlx+"&qdbb="+qdbb;
 		}else{//沙石路面
-			document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=dcfx%2Fsslmps_gs.cpt&__bypagesize__=false&dcbb="+dcbb+
+			document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Fsslmps_gs.cpt&__bypagesize__=false&dcbb="+dcbb+
 			"&lxcode="+lxCode_ls+"&szhh="+szhh+"&ezhh="+ezhh+"&lmlx="+lmlx+"&qdbb="+qdbb;
 		};
 	});
@@ -283,20 +283,20 @@ var initQuery = function(){
 		if(recording == "0"){//按区段
 			var qdbb=$("#qdbb").combobox("getValue");
 			if(lmlx=="1"){//沥青路面
-				document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=dcfx%2Flqlmps_gs.cpt&__bypagesize__=false&dcbb="+dcbb+
+				document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Flqlmps_gs.cpt&__bypagesize__=false&dcbb="+dcbb+
 				"&lxcode="+roadCode[0]+"&szhh="+szhhList[0]+"&ezhh="+ezhhList[0]+"&lmlx="+lmlx+"&qdbb="+qdbb;
 			}else{//沙石路面
-				document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=dcfx%2Fsslmps_gs.cpt&__bypagesize__=false&dcbb="+dcbb+
+				document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Fsslmps_gs.cpt&__bypagesize__=false&dcbb="+dcbb+
 				"&lxcode="+roadCode[0]+"&szhh="+szhhList[0]+"&ezhh="+ezhhList[0]+"&lmlx="+lmlx+"&qdbb="+qdbb;
 			};
 		}else{//按路段
 			var start = $("#ld_start").numberbox("getValue");
 			var end = $("#ld_end").numberbox("getValue");
 			if(lmlx=="1"){//沥青路面
-				document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=dcfx%2FlqlmpsForLd.cpt&__bypagesize__=false&dcbb="+dcbb+
+				document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2FlqlmpsForLd.cpt&__bypagesize__=false&dcbb="+dcbb+
 				"&lxcode="+roadCode[0]+"&szhh="+start+"&ezhh="+end+"&lmlx="+lmlx;
 			}else{//沙石路面
-				document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=dcfx%2FsslmpsForLd.cpt&__bypagesize__=false&dcbb="+dcbb+
+				document.getElementById("report_lm").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2FsslmpsForLd.cpt&__bypagesize__=false&dcbb="+dcbb+
 				"&lxcode="+roadCode[0]+"&szhh="+start+"&ezhh="+end+"&lmlx="+lmlx;
 			};
 		}
@@ -307,12 +307,12 @@ var initQuery = function(){
 		var dcbb1=$("#dcbb1").combobox("getValue");
 		if(recording == "0"){
 			var qdbb1=$("#qdbb1").combobox("getValue");
-			document.getElementById("report_lj").src=YMLib.reportUrl+"reportlet=dcfx%2Fljps.cpt&__bypagesize__=false&dcbb="+dcbb1+
+			document.getElementById("report_lj").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Fljps.cpt&__bypagesize__=false&dcbb="+dcbb1+
 			"&lxcode="+roadCode[1]+"&szhh="+szhhList[1]+"&ezhh="+ezhhList[1]+"&qdbb="+qdbb1;
 		}else{
 			var start = $("#ld1_start").numberbox("getValue");
 			var end = $("#ld1_end").numberbox("getValue");
-			document.getElementById("report_lj").src=YMLib.reportUrl+"reportlet=dcfx%2FljpsForLd.cpt&__bypagesize__=false&dcbb="+dcbb1+
+			document.getElementById("report_lj").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2FljpsForLd.cpt&__bypagesize__=false&dcbb="+dcbb1+
 			"&lxcode="+roadCode[1]+"&szhh="+start+"&ezhh="+end;
 		}
 	});
@@ -321,7 +321,7 @@ var initQuery = function(){
 		var bb2=$("#bb2").combobox("getValue");
 		var start = $("#ld2_start").numberbox("getValue");
 		var end = $("#ld2_end").numberbox("getValue");
-		document.getElementById("report_qh").src=YMLib.reportUrl+"reportlet=dcfx%2Fqshgzw.cpt&__bypagesize__=false&bb="+bb2+
+		document.getElementById("report_qh").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Fqshgzw.cpt&__bypagesize__=false&bb="+bb2+
 		"&lxcode="+roadCode[2]+"&szhh="+start+"&ezhh="+end;
 	});
 	//沿线设施
@@ -330,12 +330,12 @@ var initQuery = function(){
 		var dcbb3=$("#yxdcbb").combobox("getValue");
 		if(recording == "0"){
 			var	qdbb3 = $("#yxqdbb").combobox("getValue");
-			document.getElementById("report_yx").src=YMLib.reportUrl+"reportlet=dcfx%2Fyxss_gs.cpt&__bypagesize__=false&dcbb="+dcbb3+
+			document.getElementById("report_yx").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Fyxss_gs.cpt&__bypagesize__=false&dcbb="+dcbb3+
 			"&lxcode="+roadCode[3]+"&szhh="+szhhList[3]+"&ezhh="+ezhhList[3]+"&qdbb="+qdbb3;
 		}else{
 			var start = $("#yxld_start").numberbox("getValue");
 			var end = $("#yxld_end").numberbox("getValue");
-			document.getElementById("report_yx").src=YMLib.reportUrl+"reportlet=dcfx%2FyxsspsForLd.cpt&__bypagesize__=false&dcbb="+dcbb3+
+			document.getElementById("report_yx").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2FyxsspsForLd.cpt&__bypagesize__=false&dcbb="+dcbb3+
 			"&lxcode="+roadCode[3]+"&szhh="+start+"&ezhh="+end;
 		}
 	});
@@ -346,12 +346,12 @@ var initQuery = function(){
 		var jcbb = $("#ldbhjcbb").combobox("getValue");
 		if(recording == "0"){
 			var	qdbb4 = $("#ldbhqdbb").combobox("getValue");
-			document.getElementById("report_ldhz").src=YMLib.reportUrl+"reportlet=dcfx%2Fldbhqkhz.cpt&__bypagesize__=false&dcbb="+dcbb4+
+			document.getElementById("report_ldhz").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Fldbhqkhz.cpt&__bypagesize__=false&dcbb="+dcbb4+
 			"&lxcode="+roadCode[4]+"&szhh="+szhhList[4]+"&ezhh="+ezhhList[4]+"&qdbb="+qdbb4+"&jcbb="+jcbb;
 		}else{
 			var start = $("#ldbhld_start").numberbox("getValue");
 			var end = $("#ldbhld_end").numberbox("getValue");
-			document.getElementById("report_ldhz").src=YMLib.reportUrl+"reportlet=dcfx%2FldbhqkhzForLd.cpt&__bypagesize__=false&dcbb="+dcbb4+
+			document.getElementById("report_ldhz").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2FldbhqkhzForLd.cpt&__bypagesize__=false&dcbb="+dcbb4+
 			"&lxcode="+roadCode[4]+"&szhh="+start+"&ezhh="+end+"&jcbb="+jcbb;
 		}
 	});
@@ -362,12 +362,12 @@ var initQuery = function(){
 		var lqlmjcbb = $("#lqlmjcbb").combobox("getValue");
 		if(recording == "0"){
 			var	qdbb5 = $("#lqlmqdbb").combobox("getValue");
-			document.getElementById("report_lqhz").src=YMLib.reportUrl+"reportlet=dcfx%2Flqlmyhxqfxhz.cpt&__bypagesize__=false&dcbb="+dcbb5+
+			document.getElementById("report_lqhz").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2Flqlmyhxqfxhz.cpt&__bypagesize__=false&dcbb="+dcbb5+
 			"&lxcode="+roadCode[5]+"&szhh="+szhhList[5]+"&ezhh="+ezhhList[5]+"&qdbb="+qdbb5+"&jcbb="+lqlmjcbb;
 		}else{
 			var start = $("#lqlmld_start").numberbox("getValue");
 			var end = $("#lqlmld_end").numberbox("getValue");
-			document.getElementById("report_lqhz").src=YMLib.reportUrl+"reportlet=dcfx%2FlqlmyhxqfxhzForLd.cpt&__bypagesize__=false&dcbb="+dcbb5+
+			document.getElementById("report_lqhz").src=YMLib.reportUrl+"reportlet=hmglyh%2Fdcfx%2FlqlmyhxqfxhzForLd.cpt&__bypagesize__=false&dcbb="+dcbb5+
 			"&lxcode="+roadCode[5]+"&szhh="+start+"&ezhh="+end+"&jcbb="+lqlmjcbb;
 		}
 	});

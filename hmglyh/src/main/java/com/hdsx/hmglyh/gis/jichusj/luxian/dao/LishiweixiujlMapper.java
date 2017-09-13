@@ -33,4 +33,6 @@ public interface LishiweixiujlMapper {
 	int addAttachment(Attachment attachment);
 	
 	List<Attachment> getAttachment(Lishiweixiujl lswxjl);
+	
+	int dropAttachment(String id);
 }

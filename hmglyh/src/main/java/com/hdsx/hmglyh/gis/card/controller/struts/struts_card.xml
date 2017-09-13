@@ -17,5 +17,11 @@
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
 		</action>
+		<action name="uploadTp" class="cardController" method="uploadTp">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">52000000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
 	</package>
 </struts>

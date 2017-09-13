@@ -226,7 +226,7 @@ var initButton = function(){
 };
 //查看详细
 var Ckxx = function(id){
-	 window.open(YMLib.reportUrl + "reportlet=jassbhxfcdd.cpt&__bypagesize__=false&&rwdid="+cjkEncode(id));
+	 window.open(YMLib.reportUrl + cjkEncode("reportlet=hmglyh/jassbhxfcdd.cpt&__bypagesize__=false&&rwdid="+id));
 };
 
 

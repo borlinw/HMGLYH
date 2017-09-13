@@ -94,3 +94,10 @@ function getQueryByName(name){
 		return null;
 	return list[1].split("&")[0];
 }
+
+function getParamString(){
+	var list = location.href.split("?");
+	if(list.length < 2)
+		return null;
+	return list[1];
+}

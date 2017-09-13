@@ -255,7 +255,7 @@ var showQy = function(_index){
 var Detail = function(_index){
 	currentGridRows = $("#reportGrid").datagrid("getRows")[_index];
 	var params = "total=0&bbid="+currentGridRows.bbid1+"&bmCode="+currentGridRows.bmCode1;
-	src = YMLib.reportUrl + "reportlet="+YMLib.cjkEncode('区段划分一览表-按单位')+".cpt&"+YMLib.cjkEncode(params);
+	src = YMLib.reportUrl + "reportlet="+YMLib.cjkEncode('hmglyh/区段划分一览表-按单位')+".cpt&"+YMLib.cjkEncode(params);
 	YMLib.UI.createWindow("ljdc","区域划分导出","../lkdc/report.jsp","",800,450);
 };
 

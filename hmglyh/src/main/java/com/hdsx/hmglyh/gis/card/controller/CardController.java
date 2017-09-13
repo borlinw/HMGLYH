@@ -203,6 +203,29 @@ public class CardController extends BaseActionSupport<Card> {
 	}
 	
 	
+	public void uploadTp() throws Exception{
+		FileInputStream in = new FileInputStream(upload);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyMMddHHmmssSSS");
+		String date = sdf.format(new Date());
+		String uploadName = date+uploadFileName;
+		String uri = ServletActionContext.getRequest().getRealPath("/qhjc")+"\\"+uploadName;
+		FileOutputStream out = new FileOutputStream(uri);
+		byte[] buf = new byte[1024];
+		for(int readNum;(readNum = in.read(buf))!=-1;)
+			out.write(buf, 0, readNum);
+		out.close();
+		in.close();
+		
+		Attachment a = new Attachment();
+		a.setName(uploadFileName);
+		a.setWz(uri);
+		
+		JsonUtils.write(a, this.getResponse().getWriter());
+	}
+	
+	
+	
+	
 	
 	@Override
 	public Card getModel() {

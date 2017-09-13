@@ -87,10 +87,10 @@ var initButton = function(){
 		szhh = $("#start").numberbox("getValue");
 		ezhh = $("#end").numberbox("getValue");
 		if(jsdj=="1"){
-			document.getElementById("report_ld").src=YMLib.reportUrl+"reportlet=bjfx%2Fbjfx_gs.cpt&bb='"+bb+"'"+
+			document.getElementById("report_ld").src=YMLib.reportUrl+"reportlet=hmglyh%2Fbjfx%2Fbjfx_gs.cpt&bb='"+bb+"'"+
 			"&lxcode="+lxCode_ls+"&szhh="+szhh+"&ezhh="+ezhh+"&jsdj="+jsdj;
 		}else{
-			document.getElementById("report_ld").src=YMLib.reportUrl+"reportlet=bjfx%2Fbjfx_pt.cpt&bb='"+bb+"'"+
+			document.getElementById("report_ld").src=YMLib.reportUrl+"reportlet=hmglyh%2Fbjfx%2Fbjfx_pt.cpt&bb='"+bb+"'"+
 			"&lxcode="+lxCode_ls+"&szhh="+szhh+"&ezhh="+ezhh+"&jsdj="+jsdj;
 		}
 	});
@@ -101,7 +101,7 @@ var initButton = function(){
 			YMLib.UI.Show("请选择需要对比的路况评定的版本",2000);
 			return;
 		}else{
-			document.getElementById("report_dw").src=YMLib.reportUrl+"reportlet=bjfx%2FbjfxForDw.cpt&bb="+bb+"&bmcode="+bm;
+			document.getElementById("report_dw").src=YMLib.reportUrl+"reportlet=hmglyh%2Fbjfx%2FbjfxForDw.cpt&bb="+bb+"&bmcode="+bm;
 		}
 		
 	});

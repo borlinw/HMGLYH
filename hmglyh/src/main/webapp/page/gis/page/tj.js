@@ -23,7 +23,7 @@ var initCombo = function(){
 var initButton = function(){
 	$("#query").click(function(){
 		var sel = $("#sel").combobox("getValue");
-		var params = "reportlet=gzw/桥梁/"+sel+".cpt&__bypagesize__=false";
+		var params = "reportlet=hmglyh/gzw/桥梁/"+sel+".cpt&__bypagesize__=false";
 		if(sel=='按跨径及桥长分类' || sel=='按桥梁技术状况等级进行分类' || sel=='按跨径及技术等级进行分类' || sel=='按桥型及技术等级进行分类'){
 			var jsdj = $("#lxjsdj").combobox("getText");
 			var lxjsdj = 0;

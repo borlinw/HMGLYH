@@ -321,7 +321,7 @@
  		and roadcode = #{roadcode}
  	</if>
  	<if test="code != null and code != '' ">
- 		and code = #{code}
+ 		and code like '%' || #{code} || '%'
  	</if>
  	<if test="xzqh != null and xzqh != '' ">
  		and xzqh = #{xzqh}

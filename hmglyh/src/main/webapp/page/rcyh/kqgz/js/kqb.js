@@ -53,13 +53,13 @@ var initQuery = function(){
 					YMLib.UI.Show("请输入全勤天数",2000);
 					return;
 				}else{
-					$("#reportFrame").attr("src",YMLib.reportUrl + cjkEncode("reportlet=考勤表.cpt&kqid="+result.kqid+"&count=0&__bypagesize__=false"));
+					$("#reportFrame").attr("src",YMLib.reportUrl + cjkEncode("reportlet=hmglyh/考勤表.cpt&kqid="+result.kqid+"&count=0&__bypagesize__=false"));
 				}
 			}else if(!$("#count").validatebox("isValid")||$("#count").val()==0){
 				YMLib.UI.Show("全勤天数格式不对",2000);
 				return;
 			}else{
-				var src = YMLib.reportUrl + cjkEncode("reportlet=考勤表.cpt&op=write&kqid="+result.kqid+"&count="+$("#count").val());
+				var src = YMLib.reportUrl + cjkEncode("reportlet=hmglyh/考勤表.cpt&op=write&kqid="+result.kqid+"&count="+$("#count").val());
 				$("#reportFrame").attr("src",src);
 			}
 		},function(){

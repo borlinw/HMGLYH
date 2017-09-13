@@ -38,8 +38,17 @@ public class LishiweixiujlController extends BaseActionSupport<Lishiweixiujl> {
 	
 	private String[] name;
 	private String[] wz;
+	private int[] type;
 	
 	
+	public int[] getType() {
+		return type;
+	}
+
+	public void setType(int[] type) {
+		this.type = type;
+	}
+
 	public String[] getName() {
 		return name;
 	}
@@ -78,9 +87,11 @@ public class LishiweixiujlController extends BaseActionSupport<Lishiweixiujl> {
 				a.setLswxjlid(lswxjl.getId());
 				a.setName(name[i]);
 				a.setWz(wz[i]);
+				a.setType(type[i]);
 				attachment.add(a);
 			}
 		}
+		System.out.println(lswxjl);
 		lswxjl.setAttachment(attachment);
 		System.out.println(lswxjl);
 		
@@ -109,12 +120,12 @@ public class LishiweixiujlController extends BaseActionSupport<Lishiweixiujl> {
 	 * @throws Exception
 	 */
 	public String getMxbById() throws Exception{
-		lswxjl.setWxlx(new String(lswxjl.getWxlx().getBytes("ISO-8859-1"),"UTF-8"));
-		System.out.println(lswxjl.getWxlx()+"===========================");
+		if(lswxjl.getLx().equals("ql"))
+			lswxjl.setQlname(new String(lswxjl.getQlname().getBytes("ISO-8859-1"),"UTF-8"));
 		if(lswxjl.getId() != null && !lswxjl.getId().equals("")){
-			String lx = lswxjl.getLx();
 			lswxjl = lswxjlService.getMxbById(lswxjl);
-			lswxjl.setLx(lx);
+		}else{
+			lswxjl.setWxlx("日常养护");
 		}
 		return SUCCESS;
 	}

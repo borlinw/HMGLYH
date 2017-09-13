@@ -30,7 +30,7 @@ $(function(){
 	initCombo();
 	
 	var params = 'bmName=' + parent.sbBmName + "&bmCode=" + parent.sbBmCode + "&bbid=" + parent.sbBbid;
-	src = YMLib.reportUrl + "reportlet="+YMLib.cjkEncode('区域划分导出')+".cpt&"+YMLib.cjkEncode(params);
+	src = YMLib.reportUrl + "reportlet=hmglyh%2F"+YMLib.cjkEncode('区域划分导出')+".cpt&"+YMLib.cjkEncode(params);
 	$("#table").attr("src",src);
 });
 

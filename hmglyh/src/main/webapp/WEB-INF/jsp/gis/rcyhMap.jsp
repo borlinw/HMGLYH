@@ -74,12 +74,12 @@
 	<script type="text/javascript">
 	 var map;
 	 function init() {
-	     var url = "http://211.101.37.234:8087/hdmapserver/wms";
+	     var url = "http://117.145.188.9:9218/hdmapserver/wms";
 	     var bounds = new OpenLayers.Bounds(
 	    		 73.44127700000004,34.33493400000003,
-	    		 96.388373,49.17857399999999
+	    		 97.669512,49.17857400000006
 	     );
-	     var layerName = "xjktmap";
+	     var layerName = "xjhmmap";
 	     map = new HdMap();
 	     map.initMap("map", url,bounds,layerName);
 	 } 

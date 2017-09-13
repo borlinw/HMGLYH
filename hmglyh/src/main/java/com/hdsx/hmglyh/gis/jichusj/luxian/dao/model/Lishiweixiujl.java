@@ -6,6 +6,7 @@
 package com.hdsx.hmglyh.gis.jichusj.luxian.dao.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**  
@@ -18,44 +19,50 @@ import java.util.List;
 public class Lishiweixiujl {
 	
 	private String id;
-	private String wxlx;
 	private String lx;
 	private String roadcode;
-	private String qzzh;
-	private String nf;
-	private String gcmc;
-	private String gkjfa;
-	private String ssq;
-	private String ssh;
-	private String htrq;
-	private String sjrq;
-	private String jsdw;
-	private String xmzxjg;
-	private String zbdldw;
-	private String kcsjdw;
-	private String jldw;
-	private String sgdw;
-	private String dsfjcdw;
-	private String sjdw;
-	private String wh;
-	private String jsje;
-	private String bz;
+	private String zh;
+	private String qlcode;
+	private String qlname;
+	private String hdcode;
+	private String wxlx;
+	private String wxbw;
+	private Date kgsj;
+	private Date wgsj;
+	private String sycl;
+	private String wxgcl;
+	private double wxje;
+	
+	private List<Attachment> yxzl = new ArrayList<Attachment>();
+	private List<Attachment> hpgqk = new ArrayList<Attachment>();
 	private List<Attachment> attachment = new ArrayList<Attachment>();
 	
-	private String page;
-	private String rows;
+	private int page;
+	private int rows;
 	
-	public String getPage() {
+	public int getPage() {
 		return page;
 	}
-	public void setPage(String page) {
+	public void setPage(int page) {
 		this.page = page;
 	}
-	public String getRows() {
+	public int getRows() {
 		return rows;
 	}
-	public void setRows(String rows) {
+	public void setRows(int rows) {
 		this.rows = rows;
+	}
+	public String getQlname() {
+		return qlname;
+	}
+	public void setQlname(String qlname) {
+		this.qlname = qlname;
+	}
+	public String getZh() {
+		return zh;
+	}
+	public void setZh(String zh) {
+		this.zh = zh;
 	}
 	public String getLx() {
 		return lx;
@@ -63,23 +70,11 @@ public class Lishiweixiujl {
 	public void setLx(String lx) {
 		this.lx = lx;
 	}
-	public List<Attachment> getAttachment() {
-		return attachment;
-	}
-	public void setAttachment(List<Attachment> attachment) {
-		this.attachment = attachment;
-	}
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
-	}
-	public String getWxlx() {
-		return wxlx;
-	}
-	public void setWxlx(String wxlx) {
-		this.wxlx = wxlx;
 	}
 	public String getRoadcode() {
 		return roadcode;
@@ -87,132 +82,86 @@ public class Lishiweixiujl {
 	public void setRoadcode(String roadcode) {
 		this.roadcode = roadcode;
 	}
-	public String getQzzh() {
-		return qzzh;
+	public String getQlcode() {
+		return qlcode;
 	}
-	public void setQzzh(String qzzh) {
-		this.qzzh = qzzh;
+	public void setQlcode(String qlcode) {
+		this.qlcode = qlcode;
 	}
-	public String getNf() {
-		return nf;
+	public String getHdcode() {
+		return hdcode;
 	}
-	public void setNf(String nf) {
-		this.nf = nf;
+	public void setHdcode(String hdcode) {
+		this.hdcode = hdcode;
 	}
-	public String getGcmc() {
-		return gcmc;
+	public String getWxlx() {
+		return wxlx;
 	}
-	public void setGcmc(String gcmc) {
-		this.gcmc = gcmc;
+	public void setWxlx(String wxlx) {
+		this.wxlx = wxlx;
 	}
-	public String getGkjfa() {
-		return gkjfa;
+	public String getWxbw() {
+		return wxbw;
 	}
-	public void setGkjfa(String gkjfa) {
-		this.gkjfa = gkjfa;
+	public void setWxbw(String wxbw) {
+		this.wxbw = wxbw;
 	}
-	public String getSsq() {
-		return ssq;
+	public Date getKgsj() {
+		return kgsj;
 	}
-	public void setSsq(String ssq) {
-		this.ssq = ssq;
+	public void setKgsj(Date kgsj) {
+		this.kgsj = kgsj;
 	}
-	public String getSsh() {
-		return ssh;
+	public Date getWgsj() {
+		return wgsj;
 	}
-	public void setSsh(String ssh) {
-		this.ssh = ssh;
+	public void setWgsj(Date wgsj) {
+		this.wgsj = wgsj;
 	}
-	public String getHtrq() {
-		return htrq;
+	public String getSycl() {
+		return sycl;
 	}
-	public void setHtrq(String htrq) {
-		this.htrq = htrq;
+	public void setSycl(String sycl) {
+		this.sycl = sycl;
 	}
-	public String getSjrq() {
-		return sjrq;
+	public String getWxgcl() {
+		return wxgcl;
 	}
-	public void setSjrq(String sjrq) {
-		this.sjrq = sjrq;
+	public void setWxgcl(String wxgcl) {
+		this.wxgcl = wxgcl;
 	}
-	public String getJsdw() {
-		return jsdw;
+	public double getWxje() {
+		return wxje;
 	}
-	public void setJsdw(String jsdw) {
-		this.jsdw = jsdw;
+	public void setWxje(double wxje) {
+		this.wxje = wxje;
 	}
-	public String getXmzxjg() {
-		return xmzxjg;
+	public List<Attachment> getYxzl() {
+		return yxzl;
 	}
-	public void setXmzxjg(String xmzxjg) {
-		this.xmzxjg = xmzxjg;
+	public void setYxzl(List<Attachment> yxzl) {
+		this.yxzl = yxzl;
 	}
-	public String getZbdldw() {
-		return zbdldw;
+	public List<Attachment> getHpgqk() {
+		return hpgqk;
 	}
-	public void setZbdldw(String zbdldw) {
-		this.zbdldw = zbdldw;
+	public void setHpgqk(List<Attachment> hpgqk) {
+		this.hpgqk = hpgqk;
 	}
-	public String getKcsjdw() {
-		return kcsjdw;
+	public List<Attachment> getAttachment() {
+		return attachment;
 	}
-	public void setKcsjdw(String kcsjdw) {
-		this.kcsjdw = kcsjdw;
-	}
-	public String getJldw() {
-		return jldw;
-	}
-	public void setJldw(String jldw) {
-		this.jldw = jldw;
-	}
-	public String getSgdw() {
-		return sgdw;
-	}
-	public void setSgdw(String sgdw) {
-		this.sgdw = sgdw;
-	}
-	public String getDsfjcdw() {
-		return dsfjcdw;
-	}
-	public void setDsfjcdw(String dsfjcdw) {
-		this.dsfjcdw = dsfjcdw;
-	}
-	public String getSjdw() {
-		return sjdw;
-	}
-	public void setSjdw(String sjdw) {
-		this.sjdw = sjdw;
-	}
-	public String getWh() {
-		return wh;
-	}
-	public void setWh(String wh) {
-		this.wh = wh;
-	}
-	public String getJsje() {
-		return jsje;
-	}
-	public void setJsje(String jsje) {
-		this.jsje = jsje;
-	}
-	public String getBz() {
-		return bz;
-	}
-	public void setBz(String bz) {
-		this.bz = bz;
+	public void setAttachment(List<Attachment> attachment) {
+		this.attachment = attachment;
 	}
 	@Override
 	public String toString() {
-		return "Lishiweixiujl [id=" + id + ", wxlx=" + wxlx + ", lx=" + lx
-				+ ", roadcode=" + roadcode + ", qzzh=" + qzzh + ", nf=" + nf
-				+ ", gcmc=" + gcmc + ", gkjfa=" + gkjfa + ", ssq=" + ssq
-				+ ", ssh=" + ssh + ", htrq=" + htrq + ", sjrq=" + sjrq
-				+ ", jsdw=" + jsdw + ", xmzxjg=" + xmzxjg + ", zbdldw="
-				+ zbdldw + ", kcsjdw=" + kcsjdw + ", jldw=" + jldw + ", sgdw="
-				+ sgdw + ", dsfjcdw=" + dsfjcdw + ", sjdw=" + sjdw + ", wh="
-				+ wh + ", jsje=" + jsje + ", bz=" + bz + "]";
+		return "Lishiweixiujl [id=" + id + ", lx=" + lx + ", roadcode="
+				+ roadcode + ", zh=" + zh + ", qlcode=" + qlcode + ", qlname="
+				+ qlname + ", hdcode=" + hdcode + ", wxlx=" + wxlx + ", wxbw="
+				+ wxbw + ", kgsj=" + kgsj + ", wgsj=" + wgsj + ", sycl=" + sycl
+				+ ", wxgcl=" + wxgcl + ", wxje=" + wxje + "]";
 	}
-	
 	
 	
 }

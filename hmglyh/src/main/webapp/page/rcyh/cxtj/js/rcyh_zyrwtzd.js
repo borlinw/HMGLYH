@@ -70,11 +70,11 @@ var initButton = function(){
 		var	condition=$("#condition").combobox("getValue");
 		var	day = $("#day").val();
 		if(rwly=="0902"&&condition=="1"){
-			document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=rcyhrwtzd_xd.cpt&bmcode="+yhdw+"&cjtime="+day+"&ldcode="+yhqd+"&rwdlx="+rwly;
+			document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=hmglyh%2Frcyhrwtzd_xd.cpt&bmcode="+yhdw+"&cjtime="+day+"&ldcode="+yhqd+"&rwdlx="+rwly;
 		}else if(rwly=="0902"&&condition=="0"){
-			document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=rcyhrwtzd_xd_yf.cpt&bmcode="+yhdw+"&ssny="+cjkEncode(yf)+"&ldcode="+yhqd+"&rwdlx="+rwly;
+			document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=hmglyh%2Frcyhrwtzd_xd_yf.cpt&bmcode="+yhdw+"&ssny="+cjkEncode(yf)+"&ldcode="+yhqd+"&rwdlx="+rwly;
 		}else{
-			document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=rcyhrwtzd_bj.cpt&bmcode="+yhdw+"&ssny="+cjkEncode(yf)+"&ldcode="+yhqd+"&rwdlx="+rwly;
+			document.getElementById("reportFrame").src=YMLib.reportUrl+"reportlet=hmglyh%2Frcyhrwtzd_bj.cpt&bmcode="+yhdw+"&ssny="+cjkEncode(yf)+"&ldcode="+yhqd+"&rwdlx="+rwly;
 		};
 		
 	});

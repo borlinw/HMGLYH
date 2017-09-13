@@ -28,7 +28,7 @@ $(function(){
 			console.log(data);
 			loginUserObject = data;
 
-			var src = YMLib.reportUrl + cjkEncode("reportlet=沥青路面修补.cpt&__bypagesize__=false&bmCode="+loginUserObject.bmcode);
+			var src = YMLib.reportUrl + cjkEncode("reportlet=hmglyh/沥青路面修补.cpt&__bypagesize__=false&bmCode="+loginUserObject.bmcode);
 			$("#reportFrame").attr("src",src);
 		}
 	});

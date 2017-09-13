@@ -307,7 +307,7 @@ var initQuery = function(){
 		bbid = $("#bbid").combobox("getValue");
 		fx = $("#fx").combobox("getValue");
 		var params = "lxCode="+lxCode+"&bbid="+bbid+"&szhh="+szhh+"&ezhh="+ezhh+"&fx="+fx;
-		src = YMLib.reportUrl + "reportlet=lmjc.cpt&op=write&"+YMLib.cjkEncode(params);
+		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=hmglyh/lmjc.cpt&op=write&"+params);
 		YMLib.UI.createWindow("lmjcWindow","路面检测","../lkdc/report.jsp","",734,500,function(){
 			loadGrid();
 		});
@@ -331,7 +331,7 @@ var initQuery = function(){
 		bbid = $("#bbid").combobox("getValue");
 		fx = $("#fx").combobox("getValue");
 		var params = "lxCode="+lxCode+"&bbid="+bbid+"&szhh="+szhh+"&ezhh="+ezhh+"&fx="+fx;
-		src = YMLib.reportUrl + "reportlet=lmjc-edit.cpt&op=write&"+YMLib.cjkEncode(params);
+		src = YMLib.reportUrl + YMLib.cjkEncode("reportlet=hmglyh/lmjc-edit.cpt&op=write&"+params);
 		YMLib.UI.createWindow("lmjcWindow","路面检测","../lkdc/report.jsp","",734,500,function(){
 			loadGrid();
 		});

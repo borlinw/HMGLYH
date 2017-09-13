@@ -916,8 +916,8 @@ public class GouzaowuController extends BaseAction{
 			hd.setPage(page);
 			hd.setRows(rows);
 			
-			if( hd.getName() != null ) {
-				hd.setName(URLDecoder.decode(hd.getName(), "UTF-8"));
+			if( hd.getCode() != null ) {
+				hd.setCode(URLDecoder.decode(hd.getCode(), "UTF-8"));
 			}
 			
 			List<Handong> rows = gouzaowuService.handongRows(hd);

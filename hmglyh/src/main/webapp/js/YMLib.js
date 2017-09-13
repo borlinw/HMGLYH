@@ -28,7 +28,7 @@ var YMLib = {
 		/*
 		 * 获取报表的地址
 		 */
-		reportUrl : document.location.protocol+"//"+document.location.host + "/WebReport/ReportServer?",
+		reportUrl : document.location.protocol+"//localhost:8075/WebReport/ReportServer?",
 		
 		/*
 		 * 枚举类型
@@ -59,6 +59,14 @@ var YMLib = {
 			}          
 			return newText;          
 		},
+		//获取uuid
+		guid : function() {
+		  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+		    var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+		    return v.toString(16);
+		  });
+		},
+		
 		/*
 		 * AJAX操作相关
 		 */
@@ -665,4 +673,9 @@ function cjkEncode(text) {
 
 	return newText;     
 
-	} 
+}
+
+
+
+
+

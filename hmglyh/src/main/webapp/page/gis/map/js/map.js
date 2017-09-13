@@ -94,7 +94,7 @@ HdMap.prototype = {
         this.map.addLayer(wmsLayer);
         //初始化设置地图中心,设置地图的放大级别
         //this.map.zoomToMaxExtent();
-        this.map.setCenter(new OpenLayers.LonLat(85.016870579896,44.553373664609),7);
+        this.map.setCenter(new OpenLayers.LonLat(93.151776597438,42.804333318518),5);
        
         // 添加地图控件	
       /*  this.map.addControl(new OpenLayers.Control.PanZoomBar({

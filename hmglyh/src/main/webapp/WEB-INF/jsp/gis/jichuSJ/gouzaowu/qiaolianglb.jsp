@@ -124,18 +124,56 @@ $(function(){
 			         },
 			         {
 	    	        	 text:"历史维修记录",
-	    	        	 attr:rowData,
+	    	        	 attr:{
+	    	        		 qlname : rowData.name,
+	    	        		 roadcode : rowData.roadcode,
+	    	        		 qlcode : rowData.roadcode+rowData.xzqh+rowData.code,
+	    	        		 qzzh : rowData.pos
+	    	        	 },
 	    	        	 eventHandler:function(obj){
-	    	        		 var name = $(obj).attr('name');
+	    	        		 var qlname = $(obj).attr('qlname');
 			        		 var roadcode = $(obj).attr('roadcode');
-			        		 var qzzh = $(obj).attr('pos');
-			        		 var lx = 'gzw';
+			        		 var qlcode = $(obj).attr('qlcode');
+			        		 var qzzh = $(obj).attr('qzzh');
+			        		 var lx = 'ql';
 	    	        		 gisui.createWindow({
-	    	        			 id:'lswxjl',
+	    	        			 id:'qllswxjl',
 	    	        			 title:name+'-历史维修记录',
 		    	        		 width:500,
 		    	        		 height:450,
-		    	        		 src:YMLib.url + 'page/gis/page/lswxjl.jsp?roadcode='+roadcode+'&lx='+lx+'&qzzh='+qzzh+'&wxlx='+encodeURI('桥梁')
+		    	        		 src:YMLib.url + 'page/gis/page/lswxjl.jsp?roadcode='+roadcode+'&lx='+lx+'&zh='+qzzh+'&qlcode='+qlcode+'&qlname='+encodeURI(qlname)
+	    	        		 });
+	    	        	 }
+	    	         },
+			         {
+	    	        	 text:"定期检查",
+	    	        	 attr:{
+			        		 dyid:rowData.roadcode+rowData.xzqh+rowData.code,
+			        	 },
+	    	        	 eventHandler:function(obj){
+	    	        		 var dyid = $(obj).attr('dyid');
+	    	        		 gisui.createWindow({
+	    	        			 id:'qldqjc',
+	    	        			 title:'定期检查',
+		    	        		 width:680,
+		    	        		 height:450,
+		    	        		 src:YMLib.url + 'page/gis/page/qhjc/qldqjc.jsp?qlcode='+dyid
+	    	        		 });
+	    	        	 }
+	    	         },
+			         {
+	    	        	 text:"经常性检查",
+	    	        	 attr:{
+			        		 dyid:rowData.roadcode+rowData.xzqh+rowData.code,
+			        	 },
+	    	        	 eventHandler:function(obj){
+	    	        		 var dyid = $(obj).attr('dyid');
+	    	        		 gisui.createWindow({
+	    	        			 id:'qljcxjc',
+	    	        			 title:'经常性检查',
+		    	        		 width:600,
+		    	        		 height:450,
+		    	        		 src:YMLib.url + 'page/gis/page/qhjc/qljcxjc.jsp?qlcode='+dyid
 	    	        		 });
 	    	        	 }
 	    	         }

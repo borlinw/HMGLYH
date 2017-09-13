@@ -27,8 +27,8 @@ $(function(){
 				bmcodeToQuery = bmcodeToQuery.substr(0,6);
 			}
 			//alert("处理后的部门编码为："+bmcodeToQuery);
-			$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=NEWcxfyzbfx.cpt&bmcodeToChoose="+bmcodeToQuery+"&__bypagesize__=false");
-			//$("#reportFrame").attr("src","http://localhost:8075/WebReport/ReportServer?reportlet=NEWcxfyzbfx.cpt&bmcodeToChoose="+bmcodeToQuery+"&__bypagesize__=false");
+			$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=hmglyh%2FNEWcxfyzbfx.cpt&bmcodeToChoose="+bmcodeToQuery+"&__bypagesize__=false");
+			//$("#reportFrame").attr("src","http://localhost:8075/WebReport/ReportServer?reportlet=hmglyh%2FNEWcxfyzbfx.cpt&bmcodeToChoose="+bmcodeToQuery+"&__bypagesize__=false");
 		}
 	});
 });
@@ -39,7 +39,7 @@ $(function(){
 		<div class="top_div_lr" >当前位置：&nbsp;日常养护管理系统&nbsp;&gt;&nbsp;<font id="djcxHome" style="cursor:pointer;" >冬季除雪</font>&nbsp;&gt;&nbsp;除雪占比分析</div>		
 	</div>
 	<div data-options="region:'center',border:false" style="border-left:0px;border-right:0px;border-button:0px;overflow:hidden;">
-		<!-- <iframe id="reportFrame" style="width:100%;height:100%;border:0px" src="/hmglyh/ReportServer?reportlet=cxfyfx1.cpt&op=view" ></iframe> -->
+		<!-- <iframe id="reportFrame" style="width:100%;height:100%;border:0px" src="/hmglyh/ReportServer?reportlet=hmglyh%2Fcxfyfx1.cpt&op=view" ></iframe> -->
 		<iframe id="reportFrame" style="width:100%;height:100%;border:0px" src="" ></iframe>
 	</div>
 </body>

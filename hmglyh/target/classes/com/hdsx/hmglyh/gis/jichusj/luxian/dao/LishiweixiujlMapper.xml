@@ -3,16 +3,13 @@
 <mapper namespace="com.hdsx.hmglyh.gis.jichusj.luxian.dao.LishiweixiujlMapper" >
 	
 	<insert id="add" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Lishiweixiujl">
-		INSERT INTO LISHIWEIXIUJL(ID,WXLX,ROADCODE,QZZH,NF,GCMC,GKJFA,SSQ,SSH,HTRQ,SJRQ,
-		JSDW,XMZXJG,ZBDLDW,KCSJDW,JLDW,SGDW,DSFJCDW,SJDW,WH,JSJE,BZ)
-		VALUES(#{id},#{wxlx},#{roadcode},#{qzzh},#{nf},#{gcmc},#{gkjfa},#{ssq},#{ssh},#{htrq},
-		#{sjrq},#{jsdw},#{xmzxjg},#{zbdldw},#{kcsjdw},#{jldw},#{sgdw},#{dsfjcdw},#{sjdw},#{wh},#{jsje},#{bz})
+		INSERT INTO LISHIWEIXIUJL(ID,WXLX,ROADCODE,ZH,LX,WXBW,KGSJ,WGSJ,SYCL,WXGCL,WXJE,QLCODE,QLNAME,HDCODE)
+		VALUES(#{id},#{wxlx},#{roadcode},#{zh},#{lx},#{wxbw},#{kgsj},#{wgsj},#{sycl},#{wxgcl},#{wxje},#{qlcode,jdbcType=VARCHAR},#{qlname,jdbcType=VARCHAR},#{hdcode,jdbcType=VARCHAR})
 	</insert>
 	
 	<update id="change" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Lishiweixiujl">
 		UPDATE LISHIWEIXIUJL
-		SET QZZH=#{qzzh},NF=#{nf},GCMC=#{gcmc},GKJFA=#{gkjfa},SSQ=#{ssq},SSH=#{ssh},HTRQ=#{htrq},SJRQ=#{sjrq},JSDW=#{jsdw},
-		XMZXJG=#{xmzxjg},ZBDLDW=#{zbdldw},KCSJDW=#{kcsjdw},JLDW=#{jldw},SGDW=#{sgdw},DSFJCDW=#{dsfjcdw},SJDW=#{sjdw},WH=#{wh},JSJE=#{jsje},BZ=#{bz}
+		SET WXLX=#{wxlx},ZH=#{zh},WXBW=#{wxbm},KGSJ=#{kgsj},WGSJ=#{wgsj},SYCL=#{sycl},WXGCL=#{wxgcl},WXJE=#{wxje}
 		WHERE ID=#{id}
 	</update>
 	
@@ -33,19 +30,16 @@
 				<where>
 					<!-- 路线编码 -->
 			 		<if test="roadcode != null and roadcode != '' ">
-			 			and roadcode = #{roadcode}
+			 			AND ROADCODE = #{roadcode}
 			 		</if>
-			 		<if test=" qzzh != null and qzzh != '' ">
-			 			and qzzh  =  #{qzzh}
+			 		<if test=" qlcode != null and qlcode != '' ">
+			 			AND QLCODE  =  #{qlcode}
 			 		</if>
-			 		<if test=" wxlx != null and wxlx != '' ">
-			 			and wxlx  = #{wxlx}
-			 		</if>
-			 		<if test="lx=='lm'">
-			 			AND WXLX IN ('路面','沿线设施')
+			 		<if test=" hdcode != null and hdcode != '' ">
+			 			AND HDCODE = #{hdcode}
 			 		</if>
 				</where>
-				order by roadcode,wxlx,nf
+				order by roadcode,wxlx,kgsj desc
 		) TEMP
 		<if test="page != null and page != ''">
 		  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
@@ -61,28 +55,31 @@
 		<where>
 			<!-- 路线编码 -->
 	 		<if test="roadcode != null and roadcode != '' ">
-	 			and roadcode = #{roadcode}
+	 			AND ROADCODE = #{roadcode}
 	 		</if>
-	 		<if test=" qzzh != null and qzzh != '' ">
-	 			and qzzh  =  #{qzzh}
+	 		<if test=" qlcode != null and qlcode != '' ">
+	 			AND QLCODE  =  #{qlcode}
 	 		</if>
-	 		<if test=" wxlx != null and wxlx != '' ">
-	 			and wxlx  = #{wxlx}
-	 		</if>
-	 		<if test="lx=='lm'">
-	 			AND WXLX IN ('路面','沿线设施')
+	 		<if test=" hdcode != null and hdcode != '' ">
+	 			AND HDCODE = #{hdcode}
 	 		</if>
 		</where>
 	</select>
 	
 	<insert id="addAttachment" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Attachment">
-		INSERT INTO ATTACHMENT(ID,NAME,WZ,LSWXJLID)
-		VALUES(SYS_GUID(),#{name},#{wz},#{lswxjlid})
+		INSERT INTO ATTACHMENT(ID,NAME,WZ,LSWXJLID,TYPE)
+		VALUES(SYS_GUID(),#{name},#{wz},#{lswxjlid},#{type})
 	</insert>
 	
 	<select id="getAttachment" parameterType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Lishiweixiujl" resultType="com.hdsx.hmglyh.gis.jichusj.luxian.dao.model.Attachment">
 		SELECT * FROM ATTACHMENT
 		WHERE LSWXJLID=#{id}
+		ORDER BY TYPE
 	</select>
+	
+	<delete id="dropAttachment" parameterType="String">
+		DELETE FROM ATTACHMENT
+		WHERE LSWXJLID=#{id}
+	</delete>
 	
 </mapper>

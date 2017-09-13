@@ -17,7 +17,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/page/gis/js/tools.js"></script>
 <script type="text/javascript">
 	$(function(){
-		var params = YMLib.reportUrl + cjkEncode("reportlet=gzw/隧道/隧道汇总.cpt&__bypagesize__=false");
+		var params = YMLib.reportUrl + cjkEncode("reportlet=hmglyh/gzw/隧道/隧道汇总.cpt&__bypagesize__=false");
 		$("#showTj").attr("src",params);
 	});
 	

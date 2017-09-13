@@ -5,6 +5,7 @@
  */
 package com.hdsx.hmglyh.gis.jichusj.luxian.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -32,6 +33,7 @@ public class LishiweixiujlServiceImpl implements LishiweixiujlService {
 	@Override
 	public boolean add(Lishiweixiujl lswxjl) {
 		lswxjlMapper.deleteById(lswxjl);
+		lswxjlMapper.dropAttachment(lswxjl.getId());
 		if(lswxjlMapper.add(lswxjl) != -1){
 			for(Attachment a:lswxjl.getAttachment()){
 				if(lswxjlMapper.addAttachment(a) == -1)
@@ -52,9 +54,9 @@ public class LishiweixiujlServiceImpl implements LishiweixiujlService {
 	@Override
 	public List<Lishiweixiujl> getMxb(Lishiweixiujl lswxjl) {
 		List<Lishiweixiujl> list = lswxjlMapper.getMxb(lswxjl);
-		for(Lishiweixiujl l:list){
+		/*for(Lishiweixiujl l:list){
 			l.setAttachment(lswxjlMapper.getAttachment(l));
-		}
+		}*/
 		return list;
 	}
 
@@ -66,8 +68,28 @@ public class LishiweixiujlServiceImpl implements LishiweixiujlService {
 	@Override
 	public Lishiweixiujl getMxbById(Lishiweixiujl lswxjl) {
 		Lishiweixiujl l = lswxjlMapper.getMxbById(lswxjl);
-		l.setAttachment(lswxjlMapper.getAttachment(l));
+		List<Attachment> yxzl = new ArrayList<Attachment>();
+		List<Attachment> hpgqk = new ArrayList<Attachment>();
+		List<Attachment> attachment = lswxjlMapper.getAttachment(l);
+		for(Attachment a:attachment){
+			if(a.getType() == 0){
+				yxzl.add(a);
+			}else{
+				hpgqk.add(a);
+			}
+		}
+		l.setYxzl(yxzl);
+		l.setHpgqk(hpgqk);
+		
 		return l;
 	}
 
 }
+
+
+
+
+
+
+
+

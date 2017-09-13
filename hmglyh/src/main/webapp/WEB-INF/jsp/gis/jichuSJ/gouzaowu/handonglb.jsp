@@ -52,7 +52,7 @@ $(function(){
 			        	 text:'涵洞卡片',
 			        	 attr:{
 			        		 kplx:'3',
-			        		 dyid:rowData.roadcode+rowData.xzqh+rowData.code,
+			        		 dyid:rowData.code,
 			        	 },
 			        	 eventHandler:function(obj){
 			        		 var kplx = $(obj).attr('kplx');
@@ -124,18 +124,54 @@ $(function(){
 			         },
 			         {
 	    	        	 text:"历史维修记录",
-	    	        	 attr:rowData,
+	    	        	 attr:{
+	    	        		 hdcode : rowData.hdcode,
+	    	        		 roadcode : rowData.roadcode,
+	    	        		 qzzh : rowData.pos
+	    	        	 },
 	    	        	 eventHandler:function(obj){
-	    	        		 var name = $(obj).attr('name');
+	    	        		 var hdcode = $(obj).attr('hdcode');
 			        		 var roadcode = $(obj).attr('roadcode');
-			        		 var qzzh = $(obj).attr('pos');
-			        		 var lx = 'gzw';
+			        		 var qzzh = $(obj).attr('qzzh');
+			        		 var lx = 'hd';
 	    	        		 gisui.createWindow({
-	    	        			 id:'lswxjl',
-	    	        			 title:name+'-历史维修记录',
+	    	        			 id:'hdlswxjl',
+	    	        			 title:hdcode+'历史维修记录',
 		    	        		 width:500,
 		    	        		 height:450,
-		    	        		 src:YMLib.url + 'page/gis/page/lswxjl.jsp?roadcode='+roadcode+'&lx='+lx+'&qzzh='+qzzh+'&wxlx='+encodeURI('涵洞')
+		    	        		 src:YMLib.url + 'page/gis/page/lswxjl.jsp?roadcode='+roadcode+'&lx='+lx+'&zh='+qzzh+'&hdcode='+hdcode
+	    	        		 });
+	    	        	 }
+	    	         },
+			         {
+	    	        	 text:"定期检查",
+	    	        	 attr:{
+			        		 dyid:rowData.code,
+			        	 },
+	    	        	 eventHandler:function(obj){
+	    	        		 var dyid = $(obj).attr('dyid');
+	    	        		 gisui.createWindow({
+	    	        			 id:'hddqjc',
+	    	        			 title:'定期检查',
+		    	        		 width:600,
+		    	        		 height:450,
+		    	        		 src:YMLib.url + 'page/gis/page/qhjc/hddqjc.jsp?hdcode='+dyid
+	    	        		 });
+	    	        	 }
+	    	         },
+			         {
+	    	        	 text:"经常性检查",
+	    	        	 attr:{
+			        		 dyid:rowData.code,
+			        	 },
+	    	        	 eventHandler:function(obj){
+	    	        		 var dyid = $(obj).attr('dyid');
+	    	        		 gisui.createWindow({
+	    	        			 id:'hdjcxjc',
+	    	        			 title:'经常性检查',
+		    	        		 width:600,
+		    	        		 height:450,
+		    	        		 src:YMLib.url + 'page/gis/page/qhjc/hdjcxjc.jsp?hdcode='+dyid
 	    	        		 });
 	    	        	 }
 	    	         }
@@ -212,7 +248,7 @@ $(function(){
 						<input id="hd_roadcode" type="hidden" name="hd.roadcode" />
 				</s:else>
 				</td>
-				<td><span>名称：</span><input style="width:120px;" class="combo myCombo" type="text" name="hd.name" ></td>
+				<td><span>编码：</span><input style="width:120px;" class="combo myCombo" type="text" name="hd.code" ></td>
 				<td><a class="easyui-linkbutton" id="export">导出</a></td>
 			</tr>
 			<tr>
@@ -337,7 +373,7 @@ $(function(){
 										]" name='hd.hdlx'>
 				</td>
 				<td>
-				<span>地市：</span><input style="width:120px;" class="easyui-combobox" data-options="
+				<!-- <span>地市：</span><input style="width:120px;" class="easyui-combobox" data-options="
 										panelHeight:'auto',
 										data:[
 											{
@@ -361,7 +397,7 @@ $(function(){
 												value:'乌苏市'
 											}
 										]
-										" type="text" name="hd.dsmc" >
+										" type="text" name="hd.dsmc" > -->
 										</td>
 				<td></td>
 			</tr>

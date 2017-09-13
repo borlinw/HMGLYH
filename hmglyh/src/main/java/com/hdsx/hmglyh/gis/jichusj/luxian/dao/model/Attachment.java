@@ -16,7 +16,14 @@ public class Attachment {
 	private String name;
 	private String wz;
 	private String lswxjlid;
+	private int type;
 	
+	public int getType() {
+		return type;
+	}
+	public void setType(int type) {
+		this.type = type;
+	}
 	public String getId() {
 		return id;
 	}

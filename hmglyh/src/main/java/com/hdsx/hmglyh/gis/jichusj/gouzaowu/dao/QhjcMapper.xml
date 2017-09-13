@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.QhjcMapper" >
+
+	<!-- 桥梁定期检查 -->
+	<!-- 签到 -->
+	<insert id="addQldqjc" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qhjc" useGeneratedKeys="false">
+		INSERT INTO HTGL_QLDQJCB(QLDQJCID,QLCODE,ROADCODE,ROADNAME,ROADPOS,QLNAME,QC,ZDKJ,GYDW,JCNY,BCJCRQ,FZR)
+		(SELECT SYS_GUID(),#{qlcode},ROADCODE,ROADNAME,ROADPOS,NAME,QLCD,ZQZK,GYDWMC,JCSJ,#{jcsj},#{fzr}
+		FROM HMBASICDATABASE.QIAOLIANG
+		WHERE ROADCODE||XZQH||CODE=#{qlcode})
+	</insert>
+	
+	<select id="queryQldqjc" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qhjc" resultType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qldqjcb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+		    	SELECT * FROM HTGL_QLDQJCB
+				WHERE QLCODE=#{qlcode}
+		    	ORDER BY BCJCRQ DESC
+			) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		<where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	
+	<select id="getQldqjcCount" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qhjc" resultType="int">
+		SELECT COUNT(*) FROM HTGL_QLDQJCB
+		WHERE QLCODE=#{qlcode}
+	</select>
+	
+	<delete id="dropTpbm" parameterType="String">
+		DELETE FROM HTGL_QLDQJC_BJQSTPB
+		WHERE QLDQJCID=#{qldqjcid}
+	</delete>
+	
+	<insert id="addTpbm" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qlbjqstpb">
+		INSERT INTO HTGL_QLDQJC_BJQSTPB(ID,QLDQJCID,TPBM,TPMS,CFDZ,FJMC)
+		VALUES(SYS_GUID(),#{qldqjcid},#{tpbm},#{tpms},#{cfdz},#{fjmc})
+	</insert>
+	
+	<select id="getTpbm" resultType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qlbjqstpb" parameterType="String">
+		SELECT QS.TPBM,TP.TPMS,TP.CFDZ 
+		FROM HTGL_QLDQJC_BJQSB QS
+		LEFT JOIN HTGL_QLDQJC_BJQSTPB TP
+		ON QS.TPBM=TP.TPBM AND QS.QLDQJCID=TP.QLDQJCID
+		WHERE QS.QLDQJCID=#{qldqjcid} AND QS.TPBM IS NOT NULL
+	</select>
+	
+	
+	
+	<!-- 桥梁经常性检查 -->
+	<insert id="addQljcxjc" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qhjc" useGeneratedKeys="false">
+		INSERT INTO HTGL_QLJCXJCB(QLJCXJCID,QLCODE,ROADCODE,ROADNAME,ROADPOS,QLNAME,GYDW,JCRQ,FZR)
+		(SELECT SYS_GUID(),#{qlcode},ROADCODE,ROADNAME,ROADPOS,NAME,GYDWMC,#{jcsj},#{fzr}
+		FROM HMBASICDATABASE.QIAOLIANG
+		WHERE ROADCODE||XZQH||CODE=#{qlcode})
+	</insert>
+	<select id="queryQljcxjc" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qhjc" resultType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qljcxjcb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+		    	SELECT * FROM HTGL_QLJCXJCB
+				WHERE QLCODE=#{qlcode}
+		    	ORDER BY JCRQ DESC
+			) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		<where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	
+	<select id="getQljcxjcCount" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qhjc" resultType="int">
+		SELECT COUNT(*) FROM HTGL_QLJCXJCB
+		WHERE QLCODE=#{qlcode}
+	</select>
+	
+	
+	
+	
+	<!-- 涵洞定期检查 -->
+	<!-- 签到 -->
+	<insert id="addHddqjc" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qhjc" useGeneratedKeys="false">
+		INSERT INTO HTGL_HDDQJCB(HDDQJCID,HDCODE,ROADCODE,ROADNAME,ROADPOS,JCSJ,JCR)
+		(SELECT SYS_GUID(),#{hdcode},ROADCODE,ROADNAME,ROADPOS,#{jcsj},#{fzr}
+		FROM HMBASICDATABASE.HANDONG
+		WHERE CODE=#{hdcode})
+	</insert>
+	
+	<select id="queryHddqjc" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qhjc" resultType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Hddqjcb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+		    	SELECT * FROM HTGL_HDDQJCB
+				WHERE HDCODE=#{hdcode}
+		    	ORDER BY JCSJ DESC
+			) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		<where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	
+	<select id="getHddqjcCount" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qhjc" resultType="int">
+		SELECT COUNT(*) FROM HTGL_HDDQJCB
+		WHERE HDCODE=#{hdcode}
+	</select>
+	
+	
+	
+	
+	<!-- 涵洞经常性检查 -->
+	<insert id="addHdjcxjc" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qhjc" useGeneratedKeys="false">
+		INSERT INTO HTGL_HDJCXJCB(HDJCXJCID,HDCODE,ROADCODE,ROADNAME,ROADPOS,JCSJ,FZR)
+		(SELECT SYS_GUID(),#{hdcode},ROADCODE,ROADNAME,ROADPOS,#{jcsj},#{fzr}
+		FROM HMBASICDATABASE.HANDONG
+		WHERE CODE=#{hdcode})
+	</insert>
+	<select id="queryHdjcxjc" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qhjc" resultType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Hdjcxjcb">
+		SELECT * FROM(
+		    SELECT ROWNUM RN,TEMP.* FROM(
+		    	SELECT * FROM HTGL_HDJCXJCB
+				WHERE HDCODE=#{hdcode}
+		    	ORDER BY JCSJ DESC
+			) TEMP
+			<if test="page != null and page != ''">
+			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
+			</if>)
+		<where>
+		   <if test="page != null and page != ''">
+		      <![CDATA[RN>((#{page} - 1) * #{rows})]]>
+			</if>
+		</where>
+	</select>
+	
+	<select id="getHdjcxjcCount" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qhjc" resultType="int">
+		SELECT COUNT(*) FROM HTGL_HDJCXJCB
+		WHERE HDCODE=#{hdcode}
+	</select>
+	
+	
+	
+	
+  
+</mapper>

@@ -26,8 +26,8 @@ $(function(){
 			if(bmcodeStr.length > 6){
 				bmcodeStr = bmcodeStr.substr(0,6);
 			}
-			$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=djcxylb.cpt&bmcodeToChoose="+bmcodeStr+"&username="+data.username+"&ryname="+data.ryname);
-			//$("#reportFrame").attr("src","http://localhost:8075/WebReport/ReportServer?reportlet=%5Bff08%5D%5B594e%5D%5B5c6f%5D%5B9879%5D%5B76ee%5D%5Bff09%5Ddjcxylb%5Bff08%5D%5B51ac%5D%5B5b63%5D%5B9664%5D%5B96ea%5D%5B4e00%5D%5B89c8%5D%5B8868%5D%5Bff09%5D.cpt&bmcodeToChoose="+bmcodeStr+"&username="+data.username+"&ryname="+data.ryname);
+			$("#reportFrame").attr("src",YMLib.reportUrl+"reportlet=hmglyh%2Fdjcxylb.cpt&bmcodeToChoose="+bmcodeStr+"&username="+data.username+"&ryname="+data.ryname);
+			//$("#reportFrame").attr("src","http://localhost:8075/WebReport/ReportServer?reportlet=hmglyh%2F%5Bff08%5D%5B594e%5D%5B5c6f%5D%5B9879%5D%5B76ee%5D%5Bff09%5Ddjcxylb%5Bff08%5D%5B51ac%5D%5B5b63%5D%5B9664%5D%5B96ea%5D%5B4e00%5D%5B89c8%5D%5B8868%5D%5Bff09%5D.cpt&bmcodeToChoose="+bmcodeStr+"&username="+data.username+"&ryname="+data.ryname);
 		}
 	});
 });
@@ -38,7 +38,7 @@ $(function(){
 		<div class="top_div_lr" >当前位置：&nbsp;日常养护管理系统&nbsp;&gt;&nbsp;<font id="djcxHome" style="cursor:pointer;" >冬季除雪</font>&nbsp;&gt;&nbsp;除雪一览表</div>		
 	</div>
 	<div data-options="region:'center',border:false" style="border-left:0px;border-right:0px;border-button:0px;overflow:hidden;">
-		<!-- <iframe id="reportFrame" style="width:100%;height:100%;border:0px" src="/hmglyh/ReportServer?reportlet=djcxylb.cpt" ></iframe> -->
+		<!-- <iframe id="reportFrame" style="width:100%;height:100%;border:0px" src="/hmglyh/ReportServer?reportlet=hmglyh%2Fdjcxylb.cpt" ></iframe> -->
 		<iframe id="reportFrame" style="width:100%;height:100%;border:0px" src="" ></iframe>
 	</div>
 </body>

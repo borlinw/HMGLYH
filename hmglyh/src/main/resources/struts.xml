@@ -117,6 +117,52 @@
 		<action name="getMxb" class="lishiweixiujlController" method="getMxb"></action>
 	</package>
 	
+	<package name="qhjc" extends="struts-default" namespace="/qhjc">
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="loginInterceptor"
+				class="com.hdsx.hmglyh.util.LoginInterceptor" />
+			<!-- 配置拦截器 -->
+			<interceptor-stack name="myloginInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login,userLoginAuthor,logout</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 覆盖底层的拦截器 ， 对包中的所有的Action 都有效 -->
+		<default-interceptor-ref name="myloginInterceptor" />
+	
+		<global-results>
+			<result name="loginPage" type="redirect">../index.jsp</result>
+			<result name="authErrorPage" type="redirect">../authErrorPage.jsp</result>
+			<result name="exceptionPage" type="redirect">../exceptionPage.jsp</result>
+		</global-results>
+		
+		<!-- 桥梁经常性检查 -->
+		<action name="getQljcxjc" class="qhjcController" method="getQljcxjc"></action>
+		<action name="addQljcxjc" class="qhjcController" method="addQljcxjc"></action>
+		<!-- 桥梁定期检查 -->
+		<action name="getQldqjc" class="qhjcController" method="getQldqjc"></action>
+		<action name="addQldqjc" class="qhjcController" method="addQldqjc"></action>
+		<action name="getTpbms" class="qhjcController" method="getTpbms">
+			<result>/page/gis/page/qhjc/addTpbm.jsp</result>
+		</action>
+		<action name="addTpbm" class="qhjcController" method="addTpbm"></action>
+		<!-- 涵洞经常性检查 -->
+		<action name="getHdjcxjc" class="qhjcController" method="getHdjcxjc"></action>
+		<action name="addHdjcxjc" class="qhjcController" method="addHdjcxjc"></action>
+		<!-- 涵洞定期检查 -->
+		<action name="getHddqjc" class="qhjcController" method="getHddqjc"></action>
+		<action name="addHddqjc" class="qhjcController" method="addHddqjc"></action>
+	</package>
+	
+	
+	
+	
+	
+	
+	
 	 
 	<package name="rcyh" extends="struts-default" namespace="/rcyh" >
 		
