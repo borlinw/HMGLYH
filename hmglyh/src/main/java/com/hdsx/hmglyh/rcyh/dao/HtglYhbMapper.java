@@ -12,5 +12,7 @@ public interface HtglYhbMapper {
     public String getRealName(String username);
     
     public String getBmname(String bmcode);
+    
+    public ArrayList<String> getBmusername(String bmcode);
 
 }
