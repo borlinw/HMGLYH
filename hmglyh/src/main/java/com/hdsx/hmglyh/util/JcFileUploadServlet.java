@@ -55,7 +55,7 @@ public class JcFileUploadServlet extends HttpServlet {
 		 * .getRealPath(""); savePath = savePath + "/uploads/";
 		 */
 		String code = request.getParameter("code");
-		String xzqh = request.getParameter("xzqh");
+//		String xzqh = request.getParameter("xzqh");
 		String savePath1 = this.getServletContext().getInitParameter(
 				"uploadPath1");
 		String picUrl = this.getServletContext().getInitParameter("picUrl2");
@@ -107,7 +107,7 @@ public class JcFileUploadServlet extends HttpServlet {
 			}
 		}
 
-		String id = code + "-" + xzqh;
+		String id = code;
 
 		MediasMapper mMapper = (MediasMapper) SpringContextUtil
 				.getBean("mediasMapper");

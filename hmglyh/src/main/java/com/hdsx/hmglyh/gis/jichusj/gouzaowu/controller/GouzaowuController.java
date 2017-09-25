@@ -53,6 +53,7 @@ public class GouzaowuController extends BaseAction{
 	private String q; // combobox 条件查询 条件
 	private String code;
 	private String xzqh;
+	private String qlcode;
 	private Medias m;
 	
 	private boolean fromQl = false;
@@ -66,6 +67,14 @@ public class GouzaowuController extends BaseAction{
 
 
 	
+	public String getQlcode() {
+		return qlcode;
+	}
+
+	public void setQlcode(String qlcode) {
+		this.qlcode = qlcode;
+	}
+
 	public String getBmCode() {
 		return bmCode;
 	}

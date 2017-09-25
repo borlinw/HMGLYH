@@ -154,7 +154,7 @@
 			  	</if>
 			  	
 			  </where>
-			  order by pos
+			  order by roadcode,roadpos
   </sql>
   
   <resultMap id="SuidaoResultMap" type="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Suidao" >
@@ -342,7 +342,7 @@
     	and dsmc like '%' || #{dsmc} || '%'
     </if>
  	</where>
- 	order by pos
+ 	order by roadcode,roadpos
   </sql>
   <resultMap id="LujifhResultMap" type="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Lujifh" >
     <id column="ID" property="id" jdbcType="OTHER" />
@@ -395,7 +395,7 @@
 			  select 
 			  <include refid="Qiaoliang_Columns_List"/> 
 			  from Qiaoliang 
-			  <include refid="Qiaoliang_Where"/>			 
+			  <include refid="Qiaoliang_Where"/>	
 	) TEMP
 	<if test="page != null and page != ''">
 	  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
@@ -441,7 +441,7 @@
 			select 
 			<include refid="Handong_Columns_List" />
 			from HANDONG
-			<include refid="Handong_Where"/>				  
+			<include refid="Handong_Where"/>	
 		) TEMP
 		<if test="page != null and page != ''">
 		  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>

@@ -37,7 +37,7 @@
 				'fileTypeDesc':'请选择 jgp,jpeg,gif,png 格式的图片', // 貌似不好用
 				'debug':false,
 				'swf'      : '${pageContext.request.contextPath}/uploadify.swf',
-				'uploader' : '${pageContext.request.contextPath}/up1?code=<s:property value="code" />&xzqh=<s:property value="xzqh" />',
+				'uploader' : '${pageContext.request.contextPath}/up1?code=<s:property value="code" />',
 				'fileSizeLimit':'1024mb',
 				//'fileTypeExts':'*.jpeg;*.jpg; *.png;*.gif',
 				'onUploadSuccess':function(file,strData){

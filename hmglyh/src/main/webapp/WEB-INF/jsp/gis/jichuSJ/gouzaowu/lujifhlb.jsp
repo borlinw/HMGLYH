@@ -11,7 +11,7 @@ $(function(){
 		var data = YMLib.Columns.getDataWithoutFormatter(LujifhColumns);
 		var params = getParam('fm');
 		
-		var condition = "1=1";
+		var condition = "where 1=1";
 		if(params['lj.roadcode'] != null && params['lj.roadcode'] != ""){
 			condition += " and roadcode='" + params['lj.roadcode']+"'";
 		}
@@ -25,7 +25,7 @@ $(function(){
 			condition += " and " + params['lj.endzh'] + ">= epos";
 		}
 		
-		
+		condition += "order by roadcode,spos";
 		
 		var param = "pb.title="+encodeURIComponent(title)+"&pb.data="+encodeURIComponent(data)+"&pb.condition="+encodeURIComponent(condition)+"&pb.tableName=LUJIFANGHUGZW";
 
@@ -76,7 +76,7 @@ $(function(){
 				      				title:name+'-多媒体信息',
 				      				height:600,
 				      				width:900,
-				      				src:'${pageContext.request.contextPath}/gis/gouzaowu_showPicAndUpload.do?code='+code+'&xzqh='+xzqh
+				      				src:'${pageContext.request.contextPath}/gis/gouzaowu_showPicAndUpload.do?code='+code
 				      			});
 			        	 }
 			         }

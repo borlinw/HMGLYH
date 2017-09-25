@@ -44,6 +44,16 @@ public class MapCatchUtil {
 	public static HashMap<String,Object> getRoadShapeByRoadCode(Gpsmailroad mailroad) {
 		
 			String roadcode = mailroad.getRoadcode();
+			
+			if(roadcode.equals("S236")){
+				roadcode = "G575";
+			}else if(roadcode.equals("S332")){
+				roadcode = "G331";
+			}
+			
+			mailroad.setRoadcode(roadcode);
+			
+			
 			char c = roadcode.charAt(0);
 			if(Character.isDigit(c)){
 				roadcode = getRoadcodeByld(roadcode);

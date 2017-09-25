@@ -10,7 +10,7 @@ $(function(){
 		var data = YMLib.Columns.getDataWithoutFormatter(columns);
 		var params = getParamForMult('fm');
 		
-		var condition = "1=1 and roadcode='"+params['ldmxb.roadcode']+"'";
+		var condition = "where 1=1 and roadcode='"+params['ldmxb.roadcode']+"'";
 		if(params['ldmxb.jsdj'] != null && params['ldmxb.jsdj'] != ""){
 			condition += " and jsdj in (select * from table(fn_split('"+params['ldmxb.jsdj']+"',',')))";
 		}
@@ -20,6 +20,8 @@ $(function(){
 		if(params['ldmxb.epos'] != null && params['ldmxb.epos'] != ""){
 			condition += " and " + params['ldmxb.epos'] + ">= epos";
 		}
+		
+		condition += "order by roadcode,spos";
 		
 		var param = "pb.title="+encodeURIComponent(title)+"&pb.data="+encodeURIComponent(data)+"&pb.condition="+encodeURIComponent(condition)+"&pb.tableName=LUDUANJBQKMXB";
 

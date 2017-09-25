@@ -17,7 +17,7 @@
     <result column="ZPDZ" property="zpdz" jdbcType="VARCHAR" />
   </resultMap>
   <insert id="insert" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Medias" >
-    insert into KTBASICDATABASE.MEDIAS (SFKBJ, ID, Z_ID, 
+    insert into HMBASICDATABASE.MEDIAS (SFKBJ, ID, Z_ID, 
       BZ, ZPFX, DMTLX, TXYSDID, 
       BM, ZML, C_ID, NAME, 
       DX, ZPDZ)
@@ -27,7 +27,7 @@
       #{dx,jdbcType=VARCHAR}, #{zpdz,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Medias" >
-    insert into KTBASICDATABASE.MEDIAS
+    insert into HMBASICDATABASE.MEDIAS
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="sfkbj != null" >
         SFKBJ,
@@ -112,12 +112,12 @@
     </trim>
   </insert>
   <select id="selectByKey" parameterType="string" resultType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Medias">
-  	select * from KTBASICDATABASE.medias
+  	select * from HMBASICDATABASE.medias
   	where id = #{id}
   </select>
   
   <delete id="deleteByKey" parameterType="string">
-  	delete  from KTBASICDATABASE.medias
+  	delete  from HMBASICDATABASE.medias
   	where id = #{id}
   </delete>
 </mapper>

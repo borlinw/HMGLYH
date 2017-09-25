@@ -22,19 +22,13 @@ public class Ldmxb {
 	private String spos;			//起点桩号
 	private String epos;			//止点桩号
 	private double mail;			//里程
-	private String jsdj;				//路段技术等级代码
+	private String jsdj;			//路段技术等级代码
 	private String jsdjname;		//路段技术等级
 	private String sfyfgd;			//是否一幅高度
 	private int cdsl;				//车道数量
-	private String smclx;			//路面结构-上面层类型及厚度
-	private String smcnclx;			//路面结构-上面层是否有粘层及其类型
-	private String zmclx;			//路面结构-中面层类型及厚度
-	private String zmcnclx;			//路面结构-中面层是否有粘层及其类型
-	private String xmclx;			//路面结构-下面层类型及厚度
-	private String xmctclx;			//路面结构-下面层是否有透层及其类型
-	private String xfctclx;			//路面结构-下封层是否有透层及其类型
-	private String jclx;			//路面结构-基层类型及厚度
-	private String djclx;			//路面结构-底基层类型及厚度
+	private String mclx;			//面层类型代码
+	private String mclxmc;			//面层类型名称
+	private String mchd;			//面层厚度
 	private String ljkd;			//路基宽度
 	private String lmkd;			//路面宽度
 	private String sjss;			//设计时速
@@ -58,6 +52,7 @@ public class Ldmxb {
 	private String gydw;			//管养单位名称
 	private String sjcrk;			//省际出入口
 	private String bz;				//备注
+	private String npjrjtl;			//年平均日交通量
 	
 	
 	private String page;
@@ -65,6 +60,30 @@ public class Ldmxb {
 	private double roadends;
     private double roadstart;
     
+	public String getMclx() {
+		return mclx;
+	}
+	public void setMclx(String mclx) {
+		this.mclx = mclx;
+	}
+	public String getMclxmc() {
+		return mclxmc;
+	}
+	public void setMclxmc(String mclxmc) {
+		this.mclxmc = mclxmc;
+	}
+	public String getMchd() {
+		return mchd;
+	}
+	public void setMchd(String mchd) {
+		this.mchd = mchd;
+	}
+	public String getNpjrjtl() {
+		return npjrjtl;
+	}
+	public void setNpjrjtl(String npjrjtl) {
+		this.npjrjtl = npjrjtl;
+	}
 	public String getId() {
 		return id;
 	}
@@ -148,60 +167,6 @@ public class Ldmxb {
 	}
 	public void setCdsl(int cdsl) {
 		this.cdsl = cdsl;
-	}
-	public String getSmclx() {
-		return smclx;
-	}
-	public void setSmclx(String smclx) {
-		this.smclx = smclx;
-	}
-	public String getSmcnclx() {
-		return smcnclx;
-	}
-	public void setSmcnclx(String smcnclx) {
-		this.smcnclx = smcnclx;
-	}
-	public String getZmclx() {
-		return zmclx;
-	}
-	public void setZmclx(String zmclx) {
-		this.zmclx = zmclx;
-	}
-	public String getZmcnclx() {
-		return zmcnclx;
-	}
-	public void setZmcnclx(String zmcnclx) {
-		this.zmcnclx = zmcnclx;
-	}
-	public String getXmclx() {
-		return xmclx;
-	}
-	public void setXmclx(String xmclx) {
-		this.xmclx = xmclx;
-	}
-	public String getXmctclx() {
-		return xmctclx;
-	}
-	public void setXmctclx(String xmctclx) {
-		this.xmctclx = xmctclx;
-	}
-	public String getXfctclx() {
-		return xfctclx;
-	}
-	public void setXfctclx(String xfctclx) {
-		this.xfctclx = xfctclx;
-	}
-	public String getJclx() {
-		return jclx;
-	}
-	public void setJclx(String jclx) {
-		this.jclx = jclx;
-	}
-	public String getDjclx() {
-		return djclx;
-	}
-	public void setDjclx(String djclx) {
-		this.djclx = djclx;
 	}
 	public String getLjkd() {
 		return ljkd;

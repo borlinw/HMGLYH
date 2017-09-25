@@ -10,7 +10,7 @@ $(function(){
 		var data = YMLib.Columns.getDataWithoutFormatter(HandongColumns);
 		var params = getParam('fm');
 		
-		var condition = "1=1";
+		var condition = "where 1=1";
 		if(params['hd.roadcode'] != null && params['hd.roadcode'] != ""){
 			condition += " and roadcode='" + params['hd.roadcode']+"'";
 		}
@@ -30,7 +30,7 @@ $(function(){
 			condition += " and " + params['hd.endzh'] + "> pos";
 		}
 		
-		
+		condition += "order by roadcode,roadpos";
 		
 		var param = "pb.title="+encodeURIComponent(title)+"&pb.data="+encodeURIComponent(data)+"&pb.condition="+encodeURIComponent(condition)+"&pb.tableName=HANDONG";
 
@@ -82,7 +82,7 @@ $(function(){
 				      				title:name+'-多媒体信息',
 				      				height:600,
 				      				width:900,
-				      				src:'${pageContext.request.contextPath}/gis/gouzaowu_showPicAndUpload.do?code='+code+'&xzqh='+xzqh
+				      				src:'${pageContext.request.contextPath}/gis/gouzaowu_showPicAndUpload.do?code='+code
 				      			});
 			        	 }
 			         },
@@ -125,12 +125,12 @@ $(function(){
 			         {
 	    	        	 text:"历史维修记录",
 	    	        	 attr:{
-	    	        		 hdcode : rowData.hdcode,
+	    	        		 hdcode : rowData.code,
 	    	        		 roadcode : rowData.roadcode,
 	    	        		 qzzh : rowData.pos
 	    	        	 },
 	    	        	 eventHandler:function(obj){
-	    	        		 var hdcode = $(obj).attr('hdcode');
+	    	        		 var hdcode = $(obj).attr('code');
 			        		 var roadcode = $(obj).attr('roadcode');
 			        		 var qzzh = $(obj).attr('qzzh');
 			        		 var lx = 'hd';
@@ -139,7 +139,7 @@ $(function(){
 	    	        			 title:hdcode+'历史维修记录',
 		    	        		 width:500,
 		    	        		 height:450,
-		    	        		 src:YMLib.url + 'page/gis/page/lswxjl.jsp?roadcode='+roadcode+'&lx='+lx+'&zh='+qzzh+'&hdcode='+hdcode
+		    	        		 src:YMLib.url + 'page/gis/page/lswxjl.jsp?roadcode='+roadcode+'&lx='+lx+'&zh='+qzzh+'&hdcode='+code
 	    	        		 });
 	    	        	 }
 	    	         },

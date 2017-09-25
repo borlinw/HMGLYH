@@ -51,7 +51,7 @@ $(function(){
 				      				title:name+'-多媒体信息',
 				      				height:600,
 				      				width:900,
-				      				src:'${pageContext.request.contextPath}/gis/gouzaowu_showPicAndUpload.do?code='+code+'&xzqh='+xzqh
+				      				src:'${pageContext.request.contextPath}/gis/gouzaowu_showPicAndUpload.do?code='+code
 				      			});
 			        	 }
 			         }

@@ -10,7 +10,7 @@ $(function(){
 		var data = YMLib.Columns.getDataWithoutFormatter(SuidaoColumns);
 		var params = getParam('fm');
 		
-		var condition = "1=1";
+		var condition = "where 1=1";
 		if(params['sd.roadcode'] != null && params['sd.roadcode'] != ""){
 			condition += " and roadcode='" + params['sd.roadcode']+"'";
 		}
@@ -27,6 +27,7 @@ $(function(){
 			condition += " and " + params['sd.endzh'] + "> pos";
 		}
 		
+		condition += "order by roadcode,roadpos";
 		
 		var param = "pb.title="+encodeURIComponent(title)+"&pb.data="+encodeURIComponent(data)+"&pb.condition="+encodeURIComponent(condition)+"&pb.tableName=SUIDAO";
 
@@ -77,7 +78,7 @@ $(function(){
 				      				title:name+'-多媒体信息',
 				      				height:600,
 				      				width:900,
-				      				src:'${pageContext.request.contextPath}/gis/gouzaowu_showPicAndUpload.do?code='+code+'&xzqh='+xzqh
+				      				src:'${pageContext.request.contextPath}/gis/gouzaowu_showPicAndUpload.do?code='+code
 				      			});
 			        	 }
 			         },

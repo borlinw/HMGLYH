@@ -796,7 +796,7 @@
     <result column="FX" property="fx" jdbcType="OTHER" />
   </resultMap>
   <insert id="insert" parameterType="com.hdsx.hmglyh.gis.jichusj.yanxianss.dao.model.Yanghudaoban" >
-    insert into KTBASICDATABASE.YANGHUDAOBAN (ROADCODE, CODE, XZQH, 
+    insert into HMBASICDATABASE.YANGHUDAOBAN (ROADCODE, CODE, XZQH, 
       ROADNAME, NAME, DWLX, POS, 
       JCNF, SSWZ, RYBZ, YHLC, 
       SCNL, ZDMJ, JZMJ, LDLX, 
@@ -818,7 +818,7 @@
       #{id,jdbcType=OTHER}, #{sfkbj,jdbcType=DECIMAL}, #{fx,jdbcType=OTHER})
   </insert>
   <insert id="insertSelective" parameterType="com.hdsx.hmglyh.gis.jichusj.yanxianss.dao.model.Yanghudaoban" >
-    insert into KTBASICDATABASE.YANGHUDAOBAN
+    insert into HMBASICDATABASE.YANGHUDAOBAN
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="roadcode != null" >
         ROADCODE,

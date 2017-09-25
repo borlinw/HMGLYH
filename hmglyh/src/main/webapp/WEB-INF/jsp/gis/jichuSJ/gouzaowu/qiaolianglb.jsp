@@ -10,7 +10,7 @@ $(function(){
 		var data = YMLib.Columns.getDataWithoutFormatter(QiaoliangColumns);
 		var params = getParam('fm');
 		
-		var condition = "1=1";
+		var condition = "where 1=1";
 		if(params['ql.roadcode'] != null && params['ql.roadcode'] != ""){
 			condition += " and roadcode='" + params['ql.roadcode']+"'";
 		}
@@ -30,7 +30,7 @@ $(function(){
 			condition += " and " + params['ql.endzh'] + "> pos";
 		}
 		
-		
+		condition += "order by roadcode,roadpos";
 		
 		var param = "pb.title="+encodeURIComponent(title)+"&pb.data="+encodeURIComponent(data)+"&pb.condition="+encodeURIComponent(condition)+"&pb.tableName=QIAOLIANG";
 
@@ -70,19 +70,21 @@ $(function(){
 			        	 attr:{
 			        		 name:rowData.name,
 			        		 code:rowData.code,
-			        		 xzqh:rowData.xzqh
+			        		 xzqh:rowData.xzqh,
+			        		 roadcode:rowData.roadcode
 			        	 },
 			        	 eventHandler:function(obj){
 			        		 var code = $(obj).attr('code');
 			        		 var xzqh = $(obj).attr('xzqh');
 			        		 var name = $(obj).attr('name');
+			        		 var roadcode = $(obj).attr('roadcode');
 			        		
 			        		 gisui.createWindow({
 				        			id:'qshgzw_qiaoliangDMT',
 				      				title:name+'-多媒体信息',
 				      				height:600,
 				      				width:900,
-				      				src:'${pageContext.request.contextPath}/gis/gouzaowu_showPicAndUpload.do?code='+code+'&xzqh='+xzqh
+				      				src:'${pageContext.request.contextPath}/gis/gouzaowu_showPicAndUpload.do?code='+(roadcode+xzqh+code)
 				      		});
 			        	 }
 			         },
