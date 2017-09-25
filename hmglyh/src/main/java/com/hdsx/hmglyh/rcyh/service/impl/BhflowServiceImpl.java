@@ -4,6 +4,7 @@ package com.hdsx.hmglyh.rcyh.service.impl;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 import org.activiti.engine.task.Task;
 import org.apache.commons.lang3.StringUtils;
@@ -16,6 +17,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hdsx.hmglyh.rcyh.dao.HtglMjlxMapper;
+import com.hdsx.hmglyh.rcyh.dao.HtglYhbMapper;
 import com.hdsx.hmglyh.rcyh.dao.RcyhBhjlbMapper;
 import com.hdsx.hmglyh.rcyh.dao.RcyhGlxcsjbMapper;
 import com.hdsx.hmglyh.rcyh.dao.RcyhRwdjlbMapper;
@@ -30,6 +32,7 @@ import com.hdsx.hmglyh.rcyh.service.BhflowService;
 import com.hdsx.hmglyh.rcyh.service.WorkFlowService;
 import com.hdsx.hmglyh.rcyh.util.RcyhUtils;
 import com.hdsx.hmglyh.util.Constants;
+import com.hdsx.hmglyh.util.PushUtils;
 
 @Service
 @Transactional
@@ -47,6 +50,8 @@ public class BhflowServiceImpl implements BhflowService {
 	private RcyhWxzyjlbMapper wxzyMapper;
 	@Autowired
 	private RcyhGlxcsjbMapper xcjlMapper;
+	@Autowired
+	private HtglYhbMapper yhbMapper;
 	
 	@Autowired
 	private WorkFlowService workflowService;
@@ -128,6 +133,10 @@ public class BhflowServiceImpl implements BhflowService {
 			int count = rwdMapper.insert(rwd);
 			if( count > 0 ) {
 				log.info("插入了"+ count + "条 任务单信息");
+				ArrayList<String> userList = yhbMapper.getBmusername(rwd.getBmcode());
+				for(String user : userList){
+			       PushUtils.sendPushWithCustomConfig(user, "rwd");
+				}
 			}else {
 				log.error("插入任务单 信息  失败");
 			}

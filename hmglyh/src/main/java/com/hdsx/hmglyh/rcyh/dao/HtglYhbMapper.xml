@@ -42,5 +42,12 @@
   	HTGL_BMB
   	where BMCODE = #{bmcode}
   </select>
+  
+  <!-- 查询部门用户用户名 -->
+  <select id = "getBmusername" parameterType="string" resultType="string">
+  		select yh.username from htgl_ryb ry
+		right join htgl_yhb yh on ry.ryid=yh.ryid
+  		where ry.BMCODE = #{bmcode}
+  </select>
  
 </mapper>
