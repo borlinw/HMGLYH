@@ -28,7 +28,7 @@ $(function(){
 			console.log(data);
 			loginUserObject = data;
 
-			var src = YMLib.reportUrl + "reportlet=hmglyh%2Fjawxtjb.cpt&__bypagesize__=false&bmcode="+loginUserObject.bmcode;
+			var src = YMLib.reportUrl + "reportlet=hmglyh%2Fjawxtjb.cpt&op=write&bmcode="+loginUserObject.bmcode;
 			$("#reportFrame").attr("src",src);
 		}
 	});

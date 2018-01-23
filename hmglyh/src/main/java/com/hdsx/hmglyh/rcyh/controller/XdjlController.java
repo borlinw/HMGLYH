@@ -194,6 +194,7 @@ public class XdjlController extends BaseAction{
 		return SUCCESS;
 	}
 	
+	//进入巡道首页
 	@AnnotationAuth(mkid="010101")
 	public void xundaojlRows(){
 		try {

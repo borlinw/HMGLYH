@@ -28,7 +28,7 @@ $(function(){
 			console.log(data);
 			loginUserObject = data;
 
-			var src = YMLib.reportUrl + cjkEncode("reportlet=hmglyh/日常养护工作验收单.cpt&__bypagesize__=false&bmCode="+loginUserObject.bmcode);
+			var src = YMLib.reportUrl + cjkEncode("reportlet=hmglyh/日常养护工作验收单.cpt&op=write&bmCode="+loginUserObject.bmcode);
 			$("#reportFrame").attr("src",src);
 		}
 	});

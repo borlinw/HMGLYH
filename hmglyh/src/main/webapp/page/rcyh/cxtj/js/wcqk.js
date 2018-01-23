@@ -28,8 +28,8 @@ $(function(){
 			console.log(data);
 			loginUserObject = data;
 
-			var src1 = YMLib.reportUrl + cjkEncode("reportlet=hmglyh/养护作业单位个人生产任务完成情况（按单位）.cpt&__bypagesize__=false&bmCode="+loginUserObject.bmcode);
-			var src2 = YMLib.reportUrl + cjkEncode("reportlet=hmglyh/养护作业单位个人生产任务完成情况（按个人）.cpt&__bypagesize__=false&bmCode="+loginUserObject.bmcode);
+			var src1 = YMLib.reportUrl + cjkEncode("reportlet=hmglyh/养护作业单位个人生产任务完成情况（按单位）.cpt&op=write&bmCode="+loginUserObject.bmcode);
+			var src2 = YMLib.reportUrl + cjkEncode("reportlet=hmglyh/养护作业单位个人生产任务完成情况（按个人）.cpt&op=write&bmCode="+loginUserObject.bmcode);
 			$("#reportFrame1").attr("src",src1);
 			$("#reportFrame2").attr("src",src2);
 		}

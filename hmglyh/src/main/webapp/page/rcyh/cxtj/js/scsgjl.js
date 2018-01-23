@@ -28,7 +28,8 @@ $(function(){
 			console.log(data);
 			loginUserObject = data;
 
-			var src = YMLib.reportUrl + cjkEncode("reportlet=hmglyh/养护作业单位生产施工记录.cpt&__bypagesize__=false&bmCode="+loginUserObject.bmcode);
+			var src = YMLib.reportUrl + cjkEncode("reportlet=hmglyh/养护作业单位生产施工记录.cpt&op=write&bmCode="+loginUserObject.bmcode);
+			console.log(src);
 			$("#reportFrame").attr("src",src);
 		}
 	});

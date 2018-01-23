@@ -18,9 +18,9 @@ var datagridFields =[{
 	formatter : function(value,rowData,rowIndex){
 		//alert("rowData.state="+rowData.state+"^^"+typeof rowData.state);
 		if(rowData.state == "3"){
-			return "<font onclick=View('"+rowIndex+"') color=blue style=cursor:pointer><img src='" + YMLib.url + "images/view.png' title='查看' /></font>&nbsp;<font onclick=Edit('"+rowIndex+"') color=blue style=cursor:pointer><img src='" + YMLib.url + "images/edit.png' title='编辑' /></font>&nbsp;<font onclick=Delete('"+rowIndex+"') color=blue style=cursor:pointer><img src='" + YMLib.url + "images/shanchu.png' title='删除' /></font>&nbsp;<font onclick=Export('"+rowIndex+"') color=blue style=cursor:pointer><img src='" + YMLib.url + "images/export.png' title='导出' /></font>";
-		}else{
 			return "<font onclick=View('"+rowIndex+"') color=blue style=cursor:pointer><img src='" + YMLib.url + "images/view.png' title='查看' /></font>&nbsp;<font onclick=Delete('"+rowIndex+"') color=blue style=cursor:pointer><img src='" + YMLib.url + "images/shanchu.png' title='删除' /></font>&nbsp;<font onclick=Export('"+rowIndex+"') color=blue style=cursor:pointer><img src='" + YMLib.url + "images/export.png' title='导出' /></font>";
+		}else{			
+			return "<font onclick=View('"+rowIndex+"') color=blue style=cursor:pointer><img src='" + YMLib.url + "images/view.png' title='查看' /></font>&nbsp;<font onclick=Edit('"+rowIndex+"') color=blue style=cursor:pointer><img src='" + YMLib.url + "images/edit.png' title='编辑' /></font>&nbsp;<font onclick=Delete('"+rowIndex+"') color=blue style=cursor:pointer><img src='" + YMLib.url + "images/shanchu.png' title='删除' /></font>&nbsp;<font onclick=Export('"+rowIndex+"') color=blue style=cursor:pointer><img src='" + YMLib.url + "images/export.png' title='导出' /></font>";
 		}
 	}
 },{

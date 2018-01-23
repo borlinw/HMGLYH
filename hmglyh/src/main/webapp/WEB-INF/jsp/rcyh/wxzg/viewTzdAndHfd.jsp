@@ -34,7 +34,7 @@
 					</tr>
 					<tr>
 						<td colspan="3" style="border-right: black 1px solid; border-left: black 1px solid; border-top: 0px; border-bottom: 0px;"  >
-							&nbsp;致：
+							&nbsp;致<span id="lrt"></span>：
 							<br/>
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							<span id="bigText" >经巡查、检查发现你单位 ^^^此行中的各种属性需要在JS中拼接之后对该Span重写数据^^^在 ^位置^ 等处，从事的养护作业存在以下问题，请务必 ^要求（立即/尽快）^按本单要求进行整改，并于^^要求完成时间^^前报送整改结果，特此通知。</span>
