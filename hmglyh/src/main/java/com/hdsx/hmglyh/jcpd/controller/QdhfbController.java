@@ -42,8 +42,15 @@ public class QdhfbController extends BaseActionSupport<Qdhfb> {
 	private double[] end;
 	private String qdhfStr = "";
 	private String[] jds;
+	private String[] gydws;
 	
 	
+	public String[] getGydws() {
+		return gydws;
+	}
+	public void setGydws(String[] gydws) {
+		this.gydws = gydws;
+	}
 	public String[] getJds() {
 		return jds;
 	}
@@ -94,8 +101,10 @@ public class QdhfbController extends BaseActionSupport<Qdhfb> {
 				q.setEzhh(end[i]);
 				q.setLxCode(qdhfb.getLxCode());
 				q.setPdbbid(qdhfb.getPdbbid());
+				q.setFx(qdhfb.getFx());
 				q.setCd((int)(Math.round(1000*q.getEzhh())-Math.round(1000*q.getSzhh())));
 				q.setJd(jds[i]);
+				q.setGydw(gydws[i]);
 				list.add(q);
 			}
 			if(end[end.length-1]<qdhfb.getEzhh()){

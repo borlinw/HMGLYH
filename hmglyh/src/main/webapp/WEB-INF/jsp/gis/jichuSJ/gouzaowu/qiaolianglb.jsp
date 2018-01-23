@@ -203,7 +203,7 @@ $(function(){
 		fit:true,
 		<s:if test="fromBm">
 		queryParams:{
-			"ql.roadcode":"-1"
+			"ql.gydwmc":"<s:property value='ql.gydwmc' />"
 		},
 		</s:if>
 		<s:if test="fromLx">

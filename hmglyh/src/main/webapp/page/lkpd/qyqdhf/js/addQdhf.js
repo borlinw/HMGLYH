@@ -21,7 +21,9 @@ var loadQdhf = function(_list){
 		getIndex(_list[i].ezhh);
 		var append = "<tr><td>K"+_list[i].szhh+"-K"+_list[i].ezhh+"<input type='hidden' name='start' value='"+_list[i].szhh+"'/>" +
 				"<input type='hidden' name='end' value='"+_list[i].ezhh+"'/><input type='hidden' name='startIndex' value='"+startIndex+"'/>" +
-				"<input type='hidden' name='endIndex' value='"+endIndex+"'/></td><td><img style='cursor:pointer;' src='../images/shanchu.png' onclick='Delete(this)'/></td>" +
+				"<input type='hidden' name='endIndex' value='"+endIndex+"'/></td>" +
+				"<td>"+_list[i].gydwmc+"<input type='hidden' name='gydws' value='"+_list[i].gydw+"'/></td>" +
+				"<td><img style='cursor:pointer;' src='../images/shanchu.png' onclick='Delete(this)'/></td>" +
 				"<td><a href='javascript:void(0)' class='easyui-linkbutton' plain='true' onClick='AddJd("+_list[i].szhh+","+_list[i].ezhh+",this)'>节点</a><input type='hidden' name='jds' value='"+_list[i].jd+"'/></td></tr>";
 		$("#append").append(append);
 		$("#start").text(_list[i].ezhh);
@@ -54,7 +56,9 @@ var initButton = function(){
 			getIndex($("#end").val());
 			var append = "<tr><td>K"+$("#start").text()+"-K"+$("#end").val()+"<input type='hidden' name='start' value='"+$("#start").text()+"'/>" +
 					"<input type='hidden' name='end' value='"+$("#end").val()+"'/><input type='hidden' name='startIndex' value='"+startIndex+"'/>" +
-					"<input type='hidden' name='endIndex' value='"+endIndex+"'/></td><td><img style='cursor:pointer;' src='../images/shanchu.png' onclick='Delete(this)'/></td>" +
+					"<input type='hidden' name='endIndex' value='"+endIndex+"'/></td>" +
+					"<td>"+$("#gydw").combobox("getText")+"<input type='hidden' name='gydws' value='"+$("#gydw").combobox("getValue")+"'/></td>" +
+					"<td><img style='cursor:pointer;' src='../images/shanchu.png' onclick='Delete(this)'/></td>" +
 					"<td><a href='javascript:void(0)' class='easyui-linkbutton' plain='true' onClick='AddJd("+$("#start").text()+","+$("#end").val()+",this)'>节点</a><input type='hidden' name='jds'/></td></tr>";
 			$("#append").append(append);
 			initAddQd($("#start").text(),$("#end").val());
@@ -90,7 +94,7 @@ var initButton = function(){
 			YMLib.UI.Show("没有有数据的路况评定的版本，请先创建版本或者生成路况评定的数据",2000);
 			return;
 		}
-		var params = $("#myForm").serialize()+"&lxCode="+parent.lxCode+"&szhh="+parent.szhh+"&ezhh="+parent.ezhh+"&bmCode="+parent.bmCode;
+		var params = $("#myForm").serialize()+"&lxCode="+parent.lxCode+"&szhh="+parent.szhh+"&ezhh="+parent.ezhh+"&bmCode="+parent.bmCode+"&fx="+parent.$("#fx").combobox("getValue")+"&gydw="+$("#gydw").combobox("getValue");
 		YMLib.UI.MaskShow();
 		YMLib.Ajax.POST("qdhfb/addQdhfb.do",params,"json",function(result){
 			YMLib.UI.MaskHide();
@@ -321,13 +325,25 @@ var initHighCharts = function(){
 };
 
 var initCombo = function(){
+	
+	$("#gydw").combobox({
+		url : YMLib.url + "bm/getBmForXd.do",
+		valueField : "id",
+		textField : "text",
+		onLoadSuccess : function(){
+			var data = $("#gydw").combobox("getData");
+			$("#gydw").combobox("setValue",data[0].id);
+		}
+	});
+	
+	
 	$("#pdbbid").combobox({
 		url : YMLib.url + "bbkzb/getQmbb.do?bblx=0203&isUse=1",
 		valueField : "bbid",
 		textField : "bbmc",
 		onSelect : function(record){
 			YMLib.UI.MaskShow();
-			YMLib.Ajax.POST("qdhfb/getHighChartData.do","lxCode="+parent.lxCode+"&szhh="+parent.szhh+"&ezhh="+parent.ezhh+"&bbid="+record.bbid,"json",function(data){
+			YMLib.Ajax.POST("qdhfb/getHighChartData.do","lxCode="+parent.lxCode+"&szhh="+parent.szhh+"&ezhh="+parent.ezhh+"&bbid="+record.bbid+"&fx="+parent.$("#fx").combobox("getValue"),"json",function(data){
 				YMLib.UI.MaskHide();
 				if(data.pci == null || data.pci.length ==0)
 					bbState = false;
@@ -374,15 +390,27 @@ var initDcCombo = function(_bbid){
 		textField : "bbmc",
 		onSelect : function(record){
 			YMLib.UI.MaskShow();
-			YMLib.Ajax.POST("qmldb/getBhfltj.do","lxCode="+parent.lxCode+"&szhh="+parent.szhh+"&ezhh="+parent.ezhh+"&dcbbid="+record.bbid,"json",function(data){
+			YMLib.Ajax.POST("qmldb/getBhfltj.do","lxCode="+parent.lxCode+"&szhh="+parent.szhh+"&ezhh="+parent.ezhh+"&dcbbid="+record.bbid+"&fx="+parent.$("#fx").combobox("getValue"),"json",function(data){
 				YMLib.UI.MaskHide();
 				cacheBhData = data;
 				initDetail();
+				$("#qdTable tr[sid=add]").remove();
 				loadQdBh();
 			},function(){
 				YMLib.UI.MaskHide();
 				YMLib.UI.Show("查询出错",2000);
 			});
+		},
+		onChange : function(){
+			start = parent.szhh;
+			avgPci = new Array();				//生成区段划分时用，pci平均值
+			avgIri = new Array();				//生成区段划分时用，iri平均值
+			avgPciForQuery = new Array();		//查询用pci平均值
+			avgIriForQuery = new Array();		//查询用iri平均值
+			endIndex = 0;						//当前已划分的区段的节点的下标
+			startIndex = 0;
+			$("#start").text(start);
+			$("#append").html("");
 		},
 		onLoadSuccess : function(){
 			var data = $("#dcbbid").combobox("getData");
@@ -395,7 +423,7 @@ var initDetail = function(){
 	$("#detail tr[kid=add]").remove();
 	for(var i=0;i<cacheBhData.length;i++){
 		var qmldb = cacheBhData[i];
-		var html = "<tr kid=add><td>K"+qmldb.lxCode+"线K"+qmldb.szhh+"-K"+qmldb.ezhh+"</td>" +
+		var html = "<tr kid=add><td>"+qmldb.lxCode+"线K"+qmldb.szhh+"-K"+qmldb.ezhh+"</td>" +
 				"<td>"+qmldb.jl.toFixed(2)+"</td>"+"<td>"+qmldb.kl.toFixed(2)+"</td>"+"<td>"+qmldb.dtlf.toFixed(2)+"</td>"+
 				"<td>"+qmldb.cx.toFixed(2)+"</td>"+"<td>"+qmldb.blyb.toFixed(2)+"</td>"+"<td>"+qmldb.cz.toFixed(2)+"</td>"+
 				"<td>"+qmldb.kc.toFixed(2)+"</td>"+"<td>"+qmldb.ss.toFixed(2)+"</td>"+"<td>"+qmldb.fy.toFixed(2)+"</td>"+
@@ -429,7 +457,7 @@ var initAddQd = function(_start,_end){
 			list[9]+=cacheBhData[j].xb;
 		}
 	}
-	var html = "<tr kid="+_start+"><td>K"+parent.lxCode+"线K"+_start+"-K"+_end+"</td>";
+	var html = "<tr sid='add' kid="+_start+"><td>"+parent.lxCode+"线K"+_start+"-K"+_end+"</td>";
 	for(var x=0;x<list.length;x++){
 		html += "<td>"+(list[x]/total).toFixed(2)+"</td>";
 	}
@@ -438,7 +466,7 @@ var initAddQd = function(_start,_end){
 };
 
 $(function(){
-	var params = "lxCode="+parent.lxCode+"&szhh="+parent.szhh+"&ezhh="+parent.ezhh+"&bbid="+parent.$("#bbid").combobox("getValue")+"&bmCode="+parent.bmCode;
+	var params = "lxCode="+parent.lxCode+"&szhh="+parent.szhh+"&ezhh="+parent.ezhh+"&bbid="+parent.$("#bbid").combobox("getValue")+"&bmCode="+parent.bmCode+"&fx="+parent.$("#fx").combobox("getValue");
 	YMLib.Ajax.POST("qdhfb/getBb.do",params,"json",function(data){
 		cacheQdhfList = data.qdhfList;
 		pdbbid = data.qmbbid;

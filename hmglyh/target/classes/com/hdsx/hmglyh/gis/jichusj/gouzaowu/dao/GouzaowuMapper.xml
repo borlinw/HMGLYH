@@ -381,9 +381,11 @@
 		  	">
 		  		and #{startzh}  <![CDATA[ <= ]]> SPOS 
 		 </if>
-		 <if test="endzh != null and endzh != ''
-		  	">
+		 <if test="endzh != null and endzh != ''">
 		  		and #{endzh}  <![CDATA[ >= ]]> EPOS 
+		 </if>
+		 <if test="gydwmc != null and gydwmc != ''">
+		 	AND GYWDMC LIKE '%'||#{gydwmc}||'%'
 		 </if>
   	</where>
   	order by spos

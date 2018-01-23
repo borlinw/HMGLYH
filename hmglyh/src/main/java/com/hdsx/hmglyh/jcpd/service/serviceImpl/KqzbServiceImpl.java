@@ -44,12 +44,12 @@ public class KqzbServiceImpl implements KqzbService {
 			kqzb.setKqid(UUID.randomUUID().toString());
 			System.out.println(kqzb);
 			kqzbMapper.addZb(kqzb);
-			List<Kqfb> list = new ArrayList<Kqfb>();
-			if(kqzb.getBmlx().equals("0103")){
+			List<Kqfb> list = kqzbMapper.getFbxxNew(kqzb);
+			/*if(kqzb.getBmlx().equals("0103")){
 				list = kqzbMapper.getXcFbxx(kqzb);
 			}else{
 				list = kqzbMapper.getFbxx(kqzb);
-			}
+			}*/
 			
 			for(int i=0 ; i<list.size() ;){
 				System.out.println(list.size()+"==="+i);

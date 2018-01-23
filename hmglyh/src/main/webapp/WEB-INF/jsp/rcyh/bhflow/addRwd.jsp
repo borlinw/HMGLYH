@@ -393,8 +393,9 @@
 													$('#ldCombobox').combobox('setValue',data[0].id);
 												}
 											},
-											onSelect:function(){
+											onSelect:function(_record){
 												getQshCombobox();
+												$('#fx').combobox('setValue',_record.fx);
 											}
 											" />
 						</s:if>
@@ -404,8 +405,9 @@
 											textField:'text',
 											valueField:'id',
 											value:'<s:property value="rwd.ldcode" />',
-											onSelect:function(){
+											onSelect:function(_record){
 												getQshCombobox();
+												$('#fx').combobox('setValue',_record.fx);
 											}
 											" />
 						</s:if>
@@ -418,8 +420,8 @@
 				</td>
 				<td>
 					<div style='height:auto;text-align:center' class='datagrid-cell'>
-						<s:if test="!show">
-								<input type="text" name="rwd.tq" value="<s:property value="rwd.tq" />" class="easyui-combobox" 
+						<%-- <s:if test="!show"> --%>
+								<input type="text" id="fx" readonly name="rwd.tq" value="<s:property value="rwd.tq" />" class="easyui-combobox" 
 									data-options="
 											textField:'value',
 											valueField:'key',
@@ -430,10 +432,10 @@
 											url:'${pageContext.request.contextPath}/rcyh/bh_fxList.do'
 										"
 								 />
-						</s:if>
+						<%-- </s:if>
 						<s:else>
 							<s:property value="rwd.tq"/>
-						</s:else>
+						</s:else> --%>
 					 </div>
 				</td>
 				

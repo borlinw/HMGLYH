@@ -100,7 +100,7 @@
   	select
   		<include refid="Luduan_Column_List" />
   		from HTGL_LDB
-  		where
+  		whereI
   		BMCODE =  substr(#{bmcode},0,length(#{bmcode})-2)
   </select>   
   <select id="selectByPrimaryKey" resultMap="GlcxsjbResultMap" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" >
@@ -153,12 +153,12 @@
   </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from hmglyh.RCYH_GLXCSJB
+    delete from RCYH_GLXCSJB
     where XCID = #{xcid,jdbcType=VARCHAR}
   </delete>
   
   <insert id="insert" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" >
-    insert into hmglyh.RCYH_GLXCSJB (XCID, BMCODE, USERNAME, 
+    insert into RCYH_GLXCSJB (XCID, BMCODE, USERNAME, 
       STIME, ETIME, XSLD, TQ, 
       BZ, JLR, FZR, LM, 
       LJ, QSH, YXSS)
@@ -168,7 +168,7 @@
       #{lj,jdbcType=VARCHAR}, #{qsh,jdbcType=VARCHAR}, #{yxss,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" >
-    insert into hmglyh.RCYH_GLXCSJB
+    insert into RCYH_GLXCSJB
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="xcid != null" >
         XCID,
@@ -259,7 +259,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" >
-    update hmglyh.RCYH_GLXCSJB
+    update RCYH_GLXCSJB
     <set >
       <if test="bmcode != null" >
         BMCODE = #{bmcode,jdbcType=VARCHAR},
@@ -304,7 +304,7 @@
     where XCID = #{xcid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" >
-    update hmglyh.RCYH_GLXCSJB
+    update RCYH_GLXCSJB
     set BMCODE = #{bmcode,jdbcType=VARCHAR},
       USERNAME = #{username,jdbcType=VARCHAR},
       STIME = to_date(#{stime},'yyyy-mm-dd hh24:mi:ss'),
@@ -352,7 +352,7 @@
   	SELECT BM.BMNAME||LD.LXCODE||'线 K'||WX.SZHHKM||'+'||WX.SZHHM||(CASE WHEN WX.EZHHKM=-1 THEN '' ELSE '-K'||WX.EZHHKM||'+'||WX.EZHHM END)||' '||YHLX.YHNAME XCCZQK FROM RCYH_WXZYJLB WX
 	LEFT JOIN HTGL_BMB BM
 	ON WX.BMCODE=BM.BMCODE
-	LEFT JOIN HTGL_LDB LD
+	LEFT JOIN HTGL_LSLDB LD
 	ON WX.LDCODE=LD.LDCODE
 	LEFT JOIN HTGL_YHLXB YHLX
 	ON WX.YHID=YHLX.YHID

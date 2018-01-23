@@ -10,7 +10,15 @@
 	</select>
 	<!-- 按部门查询路段 -->
 	<select id="getLd" resultType="com.hdsx.hmglyh.basicData.bean.Lxld" parameterType="com.hdsx.hmglyh.basicData.bean.Lxld">
-		select ldcode as id,ldname as text,lxcode,szhh,ezhh,bmCode
+		<if test="bmlx.equals('0101')">
+			SELECT LDCODE AS ID,LDNAME AS TEXT,LXCODE,SZHH,EZHH,BMCODE FROM HTGL_LDB
+			WHERE BMCODE=#{bmCode}
+		</if>
+		<if test="bmlx.equals('0102')">
+			SELECT LDCODE AS ID,LDNAME AS TEXT,LXCODE,SZHH,EZHH,BMCODE,FX FROM HTGL_LSLDB
+			WHERE BMCODE=#{bmCode}
+		</if>
+		<!-- select ldcode as id,ldname as text,lxcode,szhh,ezhh,bmCode
 		from htgl_ldb
 		<if test="bmlx.equals('0101') or bmlx.equals('0102')">
 			where bmcode=#{bmCode}
@@ -18,19 +26,21 @@
 		<if test="bmlx.equals('0103') or bmlx.equals('0104')">
 			where bmcode like substr(#{bmCode},0,length(#{bmCode})-2)||'__'
 		</if>
-		order by lxcode
+		order by lxcode -->
 	</select>
 	
 	<!-- 按部门查询路段 zlm 有未验收的作业才显示 -->
 	<select id="getLd2" resultType="com.hdsx.hmglyh.basicData.bean.Lxld" parameterType="com.hdsx.hmglyh.basicData.bean.Lxld">
 		select ldcode as id,ldname as text,lxcode,szhh,ezhh,bmCode
-		from htgl_ldb
+		from htgl_lsldb
+		where bmcode=#{bmCode} and qyzt=1
+		<!-- from htgl_ldb
 		<if test="bmlx.equals('0101') or bmlx.equals('0102')">
 			where bmcode=#{bmCode}
 		</if>
 		<if test="bmlx.equals('0103') or bmlx.equals('0104')">
 			where bmcode like substr(#{bmCode},0,length(#{bmCode})-2)||'__'
-		</if>
+		</if> -->
 		 and ldcode in
          (  select distinct ldcode 
 	         from rcyh_wxzyjlb

@@ -29,16 +29,16 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
-    from hmglyh.RCYH_ZYYSJLB
+    from RCYH_ZYYSJLB
     where YSID = #{ysid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from hmglyh.RCYH_ZYYSJLB
+    delete from RCYH_ZYYSJLB
     where YSID = #{ysid,jdbcType=VARCHAR}
   </delete>
  
   <insert id="insert" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhZyysjlb" >
-    insert into hmglyh.RCYH_ZYYSJLB (YSID, YSTIME, YSUSERNAME, 
+    insert into RCYH_ZYYSJLB (YSID, YSTIME, YSUSERNAME, 
       BMCODE, LDCODE, SSNY, 
       YHID, SBSL, SBGR, LDZH, 
       CJSL, YSSL, HGSL, SLFHL, 
@@ -50,7 +50,7 @@
       #{zlhgl,jdbcType=DECIMAL}, #{yxsl,jdbcType=DECIMAL}, #{yxgr,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhZyysjlb" >
-    insert into hmglyh.RCYH_ZYYSJLB
+    insert into RCYH_ZYYSJLB
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="ysid != null" >
         YSID,
@@ -172,7 +172,7 @@
 
   
   <update id="updateByPrimaryKeySelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhZyysjlb" >
-    update hmglyh.RCYH_ZYYSJLB
+    update RCYH_ZYYSJLB
     <set >
       <if test="ystime != null" >
         YSTIME = to_date(#{ystime},'yyyy-mm-dd hh24:mi:ss'),
@@ -226,7 +226,7 @@
     where YSID = #{ysid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhZyysjlb" >
-    update hmglyh.RCYH_ZYYSJLB
+    update RCYH_ZYYSJLB
     set YSTIME = to_date(#{ystime},'yyyy-mm-dd hh24:mi:ss'),
       YSUSERNAME = #{ysusername,jdbcType=VARCHAR},
       BMCODE = #{bmcode,jdbcType=VARCHAR},

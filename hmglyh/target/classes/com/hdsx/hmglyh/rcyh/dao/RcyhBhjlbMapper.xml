@@ -210,14 +210,14 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Bhjlb_Column_List" /> 
-    from hmglyh.RCYH_BHJLB 
+    from RCYH_BHJLB 
     where BHJLID = #{bhjlid,jdbcType=VARCHAR}
   </select>
   
   <select id="selectByPrimaryKey2" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Bhjlb_Column_List" /> 
-    from hmglyh.RCYH_BHJLB 
+    from RCYH_BHJLB 
     where BHJLID = #{bhjlid,jdbcType=VARCHAR}
   </select>
   
@@ -225,7 +225,7 @@
   <select id="selectByPrimaryKeyWithZps" resultMap="BhjlbResultMap3" parameterType="java.lang.String" >
     select 
     <include refid="Bhjlb_Column_List" /> 
-    from hmglyh.RCYH_BHJLB 
+    from RCYH_BHJLB 
     where BHJLID = #{bhjlid,jdbcType=VARCHAR}
   </select>
   
@@ -265,7 +265,7 @@
 				 select
 				 		<include refid="Bhjlb_Column_List2" />,t2.lxcode 
 				 	from RCYH_BHJLB	 t1
-				 		left join HTGL_LDB t2 on t1.LDCODE = t2.LDCODE
+				 		left join HTGL_LSLDB t2 on t1.LDCODE = t2.LDCODE
 						<include refid="Bhjlb_Where_forCX" />
 			) TEMP
 			<if test="page != null and page != ''">
@@ -280,7 +280,7 @@
   
   <select id="bhcxListCount" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhBhjlb" resultType="int">
   		select count(*) from RCYH_BHJLB t1
-  		left join HTGL_LDB t2 on t1.LDCODE = t2.LDCODE
+  		left join HTGL_LSLDB t2 on t1.LDCODE = t2.LDCODE
   		<include refid="Bhjlb_Where_forCX" />
   </select>
   
@@ -340,11 +340,11 @@
    </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from hmglyh.RCYH_BHJLB
+    delete from RCYH_BHJLB
     where BHJLID = #{bhjlid,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhBhjlb" >
-    insert into hmglyh.RCYH_BHJLB (BHJLID, JLTIME, JLUSERNAME, 
+    insert into RCYH_BHJLB (BHJLID, JLTIME, JLUSERNAME, 
       BMCODE, LDCODE, TQ, 
       SZHHKM, SZHHM, EZHHKM, 
       EZHHM, WZBC, QLCODE, 
@@ -366,7 +366,7 @@
       #{bhwxzt,jdbcType=DECIMAL},#{xcid,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhBhjlb" >
-    insert into hmglyh.RCYH_BHJLB
+    insert into RCYH_BHJLB
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="bhjlid != null" >
         BHJLID,
@@ -553,7 +553,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhBhjlb" >
-    update hmglyh.RCYH_BHJLB
+    update RCYH_BHJLB
     <set >
       <if test="jltime != null" >
     	 JLTIME = to_date( #{jltime},'yyyy-mm-dd hh24:mi:ss'),
@@ -643,7 +643,7 @@
     where BHJLID = #{bhjlid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhBhjlb" >
-    update hmglyh.RCYH_BHJLB
+    update RCYH_BHJLB
     set JLTIME = to_date(#{jltime},'yyyy-mm-dd hh24:mi:ss'),
       JLUSERNAME = #{jlusername,jdbcType=VARCHAR},
       BMCODE = #{bmcode,jdbcType=VARCHAR},

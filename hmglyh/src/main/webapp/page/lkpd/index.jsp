@@ -61,7 +61,7 @@
 		<iframe id="frame" marginwidth="0" marginheight="0" frameborder="0" style="width:100%; height:100%;border:none;" scrolling="auto" src="${pageContext.request.contextPath}/page/lkpd/lkpd-welcome.jsp" ></iframe>
 	</div>
 	<div data-options="region:'south',border:false,split:false" style="height: 32px;text-align: center;overflow: hidden;padding-top:0px">
-		<div class="foot">哈密公路管理局　版权所有　　　技术支持：北京恒达时讯科技开发有限责任公司</div>
+		<div class="foot">哈密公路管理局　版权所有　　　技术支持：北京恒达时讯科技股份有限公司</div>
 	</div>
 </body>
 </html>

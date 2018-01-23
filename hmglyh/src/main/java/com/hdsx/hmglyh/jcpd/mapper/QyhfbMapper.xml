@@ -96,6 +96,22 @@
 		(SELECT SYS_GUID() QYID,LXCODE,SZHH,EZHH,#{bmCode} BMCODE,#{bbid},YXYS,DJ AS BBID FROM JCPD_QYHFXX T
 		<![CDATA[WHERE LXCODE=#{lxCode} AND SZHH>=#{szhh} AND SZHH<#{ezhh} AND BBID=#{qybbid} AND BMCODE=#{bmCode}]]>)
 	</insert>
+	
+	
+	
+	
+	<!-- 查看某一区域是否全为高速或一级公路 -->
+	<select id="isGs" parameterType="qyhfb" resultType="int">
+		<![CDATA[SELECT COUNT(*) FROM HTGL_LKLDHFB
+		WHERE JSDJ NOT IN ('高速','一级') AND ROADCODE=#{lxCode} AND 
+		((ROADSTART<=#{szhh} AND ROADENDS>#{szhh}) OR (ROADSTART<#{ezhh} AND ROADENDS>=#{ezhh})
+		OR(ROADSTART>=#{szhh} AND ROADENDS<=#{ezhh}))
+		ORDER BY ROADSTART]]>
+	</select>
+	
+	
+	
+	
 </mapper>
 
 

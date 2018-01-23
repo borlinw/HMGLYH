@@ -48,10 +48,9 @@
 					<td style="text-align:right;">区段划分：</td>
 					<td style="width:200px" >K<span id="start"></span>-
 						K<input class="easyui-validatebox" id="end" data-options="required:true,validType:'numberFloat'" style="width:30px"/>
+						<input class="easyui-combobox" id="gydw"/>
 						&nbsp;
-						<!-- <img style="cursor:pointer;" id="query" src="../images/button_search.png"/> -->
 						<a href="javascript:void(0)" class="easyui-linkbutton" plain="true" id="query">查看</a>
-						<!-- <img style="cursor:pointer;" id="add" src="../images/button_qdhf.png"/> -->
 						<a href="javascript:void(0)" class="easyui-linkbutton" plain="true" id="add">划分</a>
 						<table id="append" border="0">
 							

@@ -183,28 +183,28 @@
   <select id="selectByPrimaryKey" resultMap="RwdjlbRysAndClxhResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
-    from hmglyh.RCYH_RWDJLB
+    from RCYH_RWDJLB
     where RWDID = #{rwdid,jdbcType=VARCHAR}
   </select>
   
   <select id="selectByPrimaryKeyWithClxhAndBh" resultMap="RwdjlbWithClxhAndBhResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
-    from hmglyh.RCYH_RWDJLB
+    from RCYH_RWDJLB
     where RWDID = #{rwdid,jdbcType=VARCHAR}
   </select>
   
   <select id="selectByPrimaryKeyWithClxh" resultMap="RwdjlbWithClxhResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
-    from hmglyh.RCYH_RWDJLB
+    from RCYH_RWDJLB
     where RWDID = #{rwdid,jdbcType=VARCHAR}
   </select>
   
   <select id="selectByPrimaryKeySimple" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
-    from hmglyh.RCYH_RWDJLB
+    from RCYH_RWDJLB
     where RWDID = #{rwdid,jdbcType=VARCHAR}
   </select>
   
@@ -290,12 +290,12 @@
   </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from hmglyh.RCYH_RWDJLB
+    delete from RCYH_RWDJLB
     where RWDID = #{rwdid,jdbcType=VARCHAR}
   </delete>
   
   <insert id="insert" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" >
-    insert into hmglyh.RCYH_RWDJLB (RWDID, SSNY, CJTIME, 
+    insert into RCYH_RWDJLB (RWDID, SSNY, CJTIME, 
       CJUSERNAME, BMCODE, LDCODE, 
       TQ, SZHHKM, SZHHM, 
       EZHHKM, EZHHM, WZBC, 
@@ -317,7 +317,7 @@
       )
   </insert>
   <insert id="insertSelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" >
-    insert into hmglyh.RCYH_RWDJLB
+    insert into RCYH_RWDJLB
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="rwdid != null" >
         RWDID,
@@ -510,7 +510,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" >
-    update hmglyh.RCYH_RWDJLB
+    update RCYH_RWDJLB
     <set >
       <if test="ssny != null" >
         SSNY = #{ssny,jdbcType=VARCHAR},
@@ -606,7 +606,7 @@
     where RWDID = #{rwdid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhRwdjlb" >
-    update hmglyh.RCYH_RWDJLB
+    update RCYH_RWDJLB
     set SSNY = #{ssny,jdbcType=VARCHAR},
       CJTIME = to_date(#{cjtime},'yyyy-mm-dd hh24:mi:ss'),
       CJUSERNAME = #{cjusername,jdbcType=VARCHAR},

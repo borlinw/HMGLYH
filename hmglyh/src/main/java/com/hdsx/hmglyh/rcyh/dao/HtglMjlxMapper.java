@@ -130,6 +130,14 @@ public interface HtglMjlxMapper {
 	 * @return
 	 */
 	String getLdname(String ldcode);
+	
+	/**
+	 * 根据 路线编码 获取 到 路线名称
+	 * 
+	 * @param ldcode
+	 * @return
+	 */
+	String getQdname(String ldcode);
 
 	/**
 	 * 查询 当前部门同级部门的 养护站 所管辖的 路段
@@ -204,6 +212,13 @@ public interface HtglMjlxMapper {
 	 * @return
 	 */
 	String getLxcodeByld(String ldcode);
+	
+	/**
+	 * 根据路段编码 返回 路线编码 
+	 * @param ldcode
+	 * @return
+	 */
+	String getLxcodeBylsld(String ldcode);
 
 	/**
 	 * 根据部门编码 查询 该部门的所有的人员
@@ -276,4 +291,11 @@ public interface HtglMjlxMapper {
 	 * @return
 	 */
 	Double getYhlxDj(@Param("yhid") String yhid);
+	/**
+	 * 根据 路段编码 获取 到 路线编码
+	 * @param ldcode
+	 * @return
+	 */
+	String getRoadcode(String ldcode);
+	
 }

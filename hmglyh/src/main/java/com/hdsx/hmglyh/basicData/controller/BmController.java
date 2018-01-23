@@ -51,12 +51,11 @@ public class BmController extends BaseActionSupport<HtglBm> {
 	}
 
 	public void getBmForXd() throws Exception{
+		if(htglBm.getBmcode() == null)
+			htglBm.setBmcode(getUser().getBmcode());
 		List<Combobox> list = bmService.getBmForXd(htglBm.getBmcode());
 		JsonUtils.write(list, this.getResponse().getWriter());
 	}
-
-
-
 
 
 	@Override

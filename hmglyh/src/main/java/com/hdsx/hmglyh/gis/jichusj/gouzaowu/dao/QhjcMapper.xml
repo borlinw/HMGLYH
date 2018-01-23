@@ -44,12 +44,17 @@
 	</insert>
 	
 	<select id="getTpbm" resultType="com.hdsx.hmglyh.gis.jichusj.gouzaowu.dao.model.Qlbjqstpb" parameterType="String">
-		SELECT QS.TPBM,TP.TPMS,TP.CFDZ 
+		SELECT QS.TPBM,TP.TPMS,TP.CFDZ,TP.FJMC 
 		FROM HTGL_QLDQJC_BJQSB QS
 		LEFT JOIN HTGL_QLDQJC_BJQSTPB TP
 		ON QS.TPBM=TP.TPBM AND QS.QLDQJCID=TP.QLDQJCID
 		WHERE QS.QLDQJCID=#{qldqjcid} AND QS.TPBM IS NOT NULL
 	</select>
+	
+	<delete id="dropQldqjc" parameterType="String">
+		DELETE FROM HTGL_QLDQJCB
+		WHERE QLDQJCID=#{qldqjcid}
+	</delete>
 	
 	
 	
@@ -81,6 +86,11 @@
 		SELECT COUNT(*) FROM HTGL_QLJCXJCB
 		WHERE QLCODE=#{qlcode}
 	</select>
+	
+	<delete id="dropQljcxjc" parameterType="String">
+		DELETE FROM HTGL_QLJCXJCB
+		WHERE QLJCXJCID=#{qljcxjcid}
+	</delete>
 	
 	
 	
@@ -116,6 +126,11 @@
 		WHERE HDCODE=#{hdcode}
 	</select>
 	
+	<delete id="dropHdqdjc" parameterType="String">
+		DELETE FROM HTGL_HDDQJCB
+		WHERE HDDQJCID=#{hddqjcid}
+	</delete>
+	
 	
 	
 	
@@ -148,7 +163,10 @@
 		WHERE HDCODE=#{hdcode}
 	</select>
 	
-	
+	<delete id="dropHdjcxjc" parameterType="String">
+		DELETE FROM HTGL_HDJCXJCB
+		WHERE HDJCXJCID=#{hdjcxjcid}
+	</delete>
 	
 	
   

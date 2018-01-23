@@ -57,6 +57,11 @@ public class MapCatchUtil {
 			char c = roadcode.charAt(0);
 			if(Character.isDigit(c)){
 				roadcode = getRoadcodeByld(roadcode);
+				if(roadcode.equals("S236")){
+					roadcode = "G575";
+				}else if(roadcode.equals("S332")){
+					roadcode = "G331";
+				}
 				mailroad.setRoadcode(roadcode);
 			}
 			
@@ -258,5 +263,15 @@ public class MapCatchUtil {
 	public static String getRoadcodeByld(String roadcode) {
 		HtglMjlxMapper mjlxMapper = (HtglMjlxMapper) SpringContextUtil.getBean("htglMjlxMapper");
 		return mjlxMapper.getLxcodeByld(roadcode);
+	}
+	
+	/**
+	 * 将路段编码转换为路线编码
+	 * @param roadcode
+	 * @return
+	 */
+	public static String getRoadcodeBylsld(String roadcode) {
+		HtglMjlxMapper mjlxMapper = (HtglMjlxMapper) SpringContextUtil.getBean("htglMjlxMapper");
+		return mjlxMapper.getLxcodeBylsld(roadcode);
 	}
 }

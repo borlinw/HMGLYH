@@ -79,6 +79,9 @@ public interface QyhfbMapper extends Dao<Qyhfb> {
 	List<Qyhfxxb> getXxb(Qyhfb qyhfb);
 	
 	int copyXxb(Qyhfb qyhfb);
+	
+	
+	int isGs(Qyhfb qyhfb);
 }
 
 
