@@ -98,11 +98,20 @@ public class DjcxController extends BaseAction {
 	private double qtfy;				//其他费用
 	private double fyhj;				//费用合计
 	private String nz;					//备注
+	
 	private String ldcode;			//路段编码
 	private String state;				//编辑状态
 	private String cxrs;				//除雪人数：备注中的除雪人数
 	private String jxcl;					//机械车辆：备注中的除雪车辆前部合计数量
+	private String bz1;
 	
+	public String getBz1() {
+		return bz1;
+	}
+
+	public void setBz1(String bz1) {
+		this.bz1 = bz1;
+	}
 	private boolean toAdd = false;//用于添加/查看/编辑“除雪快报”
 	private boolean toView = false;//用于添加/查看/编辑“除雪快报”
 	private boolean toEdit = false;//用于添加/查看/编辑“除雪快报”
@@ -145,6 +154,8 @@ public class DjcxController extends BaseAction {
 			model.setNzCxcl(nzArray[1]);	//备注：除雪车辆
 			model.setNzCxmj(nzArray[2]);	//备注：除雪面积
 			model.setNzCxl(nzArray[3]);		//备注：除雪量
+//			model.setBz(nzArray[4]);        //备注：备注
+			
 			System.out.println("--查看冬季除雪快报--查看冬季除雪快报--查看冬季除雪快报--");
 		}
 		if(toEdit){
@@ -165,10 +176,17 @@ public class DjcxController extends BaseAction {
 			//拆分备注
 			String nzStr = model.getNz();
 			String nzArray[] = nzStr.split("###");
+			System.out.println(nzArray.toString());
 			model.setNzCxrs(nzArray[0]);	//备注：除雪人数
 			model.setNzCxcl(nzArray[1]);	//备注：除雪车辆
 			model.setNzCxmj(nzArray[2]);	//备注：除雪面积
 			model.setNzCxl(nzArray[3]);		//备注：除雪量
+//			model.setBz(nzArray[4]);        //备注：备注栏备注
+			System.out.println("--"+nzArray[0]);
+			System.out.println("--"+nzArray[1]);
+			System.out.println("--"+nzArray[2]);
+			System.out.println("--"+nzArray[3]);
+			System.out.println("--"+nzArray[4]);
 			System.out.println("--查看冬季除雪快报--查看冬季除雪快报--查看冬季除雪快报--");
 		}
 		return getResultname();
@@ -230,8 +248,24 @@ public class DjcxController extends BaseAction {
 			model.setWd(wd);
 			model.setQzzh(qzzh);
 			model.setQzzhStr(qzzhStr);
-			model.setJxsj(sf.parse(jxsjStr));
-			model.setTxsj(sf.parse(txsjStr));
+			try {
+				model.setJxsj(sf.parse(jxsjStr));
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				model.setJxsj(new Date());
+				e.printStackTrace();
+			}
+			try {
+				model.setTxsj(sf.parse(txsjStr));
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				model.setTxsj(new Date());
+				
+				e.printStackTrace();
+			}
+			
 			model.setCxsj(cxsj);
 			model.setPjhd(pjhd);
 			model.setCxfl(cxfl);
@@ -265,6 +299,7 @@ public class DjcxController extends BaseAction {
 			model.setQtdj(qtdj);
 			model.setQtfy(qtfy);
 			model.setFyhj(fyhj);
+			model.setBz1(bz1);
 			String nzStr = nz.replaceAll("xxxxx","+");
 			model.setNz(nzStr);
 			model.setLdcode(ldcode);//加入路段编码
@@ -726,6 +761,7 @@ public class DjcxController extends BaseAction {
 			model.setQtdj(qtdj);
 			model.setQtfy(qtfy);
 			model.setFyhj(fyhj);
+			model.setBz1(bz1);
 			String nzStr = nz.replaceAll("xxxxx","+");
 			model.setNz(nzStr);
 			double zslc = convertIntoRoad(model);//折算里程（合成二级公路之后的里程）

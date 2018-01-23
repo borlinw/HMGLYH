@@ -41,7 +41,7 @@
 					</tr>
 					<tr>
 						<td colspan="3" style="border-right: black 1px solid; border-left: black 1px solid; border-top: 0px; border-bottom: 0px;"  >
-							&nbsp;致：
+							&nbsp;致：<span id = "qys"></span>
 							<br/>
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							<span id="bigText" ></span>

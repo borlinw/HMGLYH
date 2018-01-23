@@ -52,6 +52,7 @@ $(function() {
 		YMLib.Tools.ShowPage();
 
 	} else if (action == "view") {
+		$("#dataToView").show(); 
 
 		/*$("#btnSave").hide(); 
 
@@ -61,7 +62,7 @@ $(function() {
 
 		
 
-		$("#dataToView").show(); 
+		
 
 		
 
@@ -169,11 +170,12 @@ $(function() {
 							var czwtStr = $("#czwt").text();
 
 							var zgyqStr = $("#zgyq").text();
+							var bhsl = $("#jc").val();
 
 							pams = pams + "&tbusername=" + loginUsername
-									+ "&czwt=" + czwtStr + "&zgyq=" + zgyqStr;
+									+ "&czwt=" + czwtStr + "&zgyq=" + zgyqStr+"&bhsl="+bhsl;
 
-							//alert("pams=" + pams);
+							alert("pams=" + pams);
 
 							//YMLib.Ajax.POST("/hmglyh/rcyh/wxzg_insertOneTzd.do",pams,"json",A,AA); 
 

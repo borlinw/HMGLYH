@@ -23,7 +23,8 @@ $(function() {
 			tzdObj = eval("("+result+")");
 			//alert("请求成功：tzdid="+tzdObj.tzdid);
 			$("#tzdForm").form("load",tzdObj);
-			$("#bigText").text("经巡查、检查发现你单位 "+tzdObj.sbbmname+" 在 "+tzdObj.wz+" 等处，从事的养护作业存在以下问题，请务必"+tzdObj.yq+"按本单要求进行整改，并于"+tzdObj.sxtimeStr+"前报送整改结果，特此通知。");
+			$("#qys").text(tzdObj.sbbmname);
+			$("#bigText").text("经巡查、检查发现你单位在 "+tzdObj.wz+" 等"+tzdObj.bhsl+"处，从事的养护作业存在以下问题，请务必"+tzdObj.yq+"按本单要求进行整改，并于"+tzdObj.sxtimeStr+"前报送整改结果，特此通知。");
 			$("#czwt").text(tzdObj.czwt);
 			$("#zgyq").text(tzdObj.zgyq);
 			//请求回复单信息

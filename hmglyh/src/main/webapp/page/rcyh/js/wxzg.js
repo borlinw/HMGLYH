@@ -258,6 +258,7 @@ function ViewHfdOfHfd(_index) {
 function ViewTzdAndHfd(_index) {
 	currentGridRows = $("#zgtzdGrid").datagrid("getRows")[_index];
 	YMLib.UI.createWindow("view", "查看",YMLib.url+ "/page/rcyh/viewTzdAndHfd.jsp", "",673, 392);
+
 };
 
 
@@ -316,8 +317,8 @@ function ViewTzdAndHfdOfHfd(_index) {
 		});
 	} else {
 		//如果其所对应的“整改通知单”已被查看（接单人和接单时间被添加） 
-		YMLib.UI.createWindow("view", "查看",YMLib.url+ "/page/rcyh/viewTzdAndHfd.jsp", "",673, 392);
-		//YMLib.UI.createWindow("view", "查看 - 维修整改通知单","/hmglyh/rcyh/wxzg_zgtzd.do?view=true&tzdid=" + currentGridRows.tzdid, "", 673, 392);
+//		YMLib.UI.createWindow("view", "查看",YMLib.url+ "/page/rcyh/viewTzdAndHfd.jsp", "",673, 392);
+     	YMLib.UI.createWindow("view", "查看 - 维修整改通知单","/hmglyh/rcyh/wxzg_zgtzd.do?view=true&tzdid=" + currentGridRows.tzdid, "", 673, 392);
 	}
 };
 

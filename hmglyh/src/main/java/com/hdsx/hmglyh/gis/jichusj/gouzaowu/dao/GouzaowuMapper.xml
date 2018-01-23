@@ -142,7 +142,7 @@
 			  	</if>
 			  	
 			  	<if test="endzh != null and endzh != '' " >
-			  		and POS <![CDATA[ <= ]]> #{endzh}
+			  		and ROADPOS <![CDATA[ <= ]]> #{endzh}
 			  	</if>
 			  	
 			  	<if test="qlkjfl != null and qlkjfl != '' ">

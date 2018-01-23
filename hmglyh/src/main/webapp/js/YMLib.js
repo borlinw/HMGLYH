@@ -28,7 +28,7 @@ var YMLib = {
 		/*
 		 * 获取报表的地址
 		 */
-		reportUrl : document.location.protocol+"//"+document.location.host + "/WebReport/ReportServer?",
+		reportUrl : document.location.protocol+"//"+"localhost:8075" + "/WebReport/ReportServer?",
 		
 		/*
 		 * 枚举类型

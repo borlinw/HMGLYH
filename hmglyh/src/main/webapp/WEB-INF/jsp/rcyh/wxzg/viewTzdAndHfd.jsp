@@ -24,7 +24,7 @@
 						</td>
 						<td style="text-align:right;border-style:none" >表 6-11</td>
 					</tr>
-					<tr
+					<tr>
 						<td style="border-right: 0px; border-left: black 1px solid; border-top: black 1px solid; border-bottom: 0px;" ></td>
 						<td style="border-right: 0px; border-left: 0px; border-top: black 1px solid; border-bottom: 0px;" ></td>
 						<td style="text-align:right; border-right: black 1px solid; border-left: black 1px solid; border-top: black 1px solid; border-bottom: black 1px solid;" >
@@ -37,7 +37,8 @@
 							&nbsp;致：
 							<br/>
 							&nbsp;&nbsp;&nbsp;&nbsp;
-							<span id="bigText" >经巡查、检查发现你单位 ^^^此行中的各种属性需要在JS中拼接之后对该Span重写数据^^^在 ^位置^ 等处，从事的养护作业存在以下问题，请务必 ^要求（立即/尽快）^按本单要求进行整改，并于^^要求完成时间^^前报送整改结果，特此通知。</span>
+							<!--<span id="bigText" >经巡查、检查发现你单位 ^^^此行中的各种属性需要在JS中拼接之后对该Span重写数据^^^在 ^位置^ 等处，从事的养护作业存在以下问题，请务必 ^要求（立即/尽快）^按本单要求进行整改，并于^^要求完成时间^^前报送整改结果，特此通知。</span>-->
+							<span>经巡查、检查发现你单位在 <s:property value='model.wz' /> 等<s:property value='model.bhsl' />处，从事的养护作业存在以下问题，请务必 <s:property value='model.yq' /> 按本单要求进行整改，并于 <s:property value='model.sxtimeStr' /> 前报送整改结果，特此通知。</span>
 						</td>
 					</tr>
 					<tr>

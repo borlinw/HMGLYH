@@ -13,6 +13,9 @@
 <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/js/YMLib.js"></script>
 <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/js/ValidatePlus.js"></script>
 <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/page/rcyh/js/addCxkb.js"></script>
+
+
+
 </head>
 <body>
 
@@ -152,13 +155,13 @@
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2" style="text-align:center" >除雪面积（㎡）</td>
+					<td colspan="2" style="text-align:center" >除雪面积（k•㎡）</td>
 					<td style="text-align:center" >
 						<s:if test="toAdd"><input id="cxmj" name="cxmj" onchange="countCxl()" class="easyui-validatebox" maxlength="100" data-options="required:true,validType:'numberFloatTwo'" /></s:if>
 						<s:if test="toView"><s:property value='model.cxmj' /></s:if>
 						<s:if test="toEdit"><input id="cxmj" name="cxmj" onchange="countCxl()" class="easyui-validatebox" maxlength="100" data-options="required:true,validType:'numberFloatTwo'" /></s:if>
 					</td>
-					<td style="text-align:center" >除雪量（m³）</td>
+					<td style="text-align:center" >除雪量（k•m³）</td>
 					<td colspan="3" style="text-align:center" >
 						<s:if test="toAdd"><input id="cxl" name="cxl" class="easyui-validatebox" maxlength="100" data-options="required:true" /></s:if>
 						<s:if test="toView"><s:property value='model.cxl' /></s:if>
@@ -305,7 +308,7 @@
 				</tr>
 				<tr>
 					<td rowspan="2" style="text-align:center" >油料（L）</td>
-					<td style="text-align:center" >汽油 93#</td>
+					<td style="text-align:center" >汽油 92#</td>
 					<td style="text-align:center" >
 						<s:if test="toAdd">
 							<input id="qysl" name="qysl" onchange="countQy()" class="easyui-validatebox" maxlength="100" data-options="required:false,validType:'numberFloatTwo'" />
@@ -335,7 +338,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td style="text-align:center" >柴油 0#</td>
+					<td style="text-align:center" >柴油 -35#</td>
 					<td style="text-align:center" >
 						<s:if test="toAdd">
 							<input id="cysl" name="cysl" onchange="countCy()" class="easyui-validatebox" maxlength="100" data-options="required:false,validType:'numberFloatTwo'" />
@@ -404,6 +407,8 @@
 						<s:if test="toEdit">
 							<input id="fyhj" name="fyhj" class="easyui-validatebox" style="width:90%" maxlength="100" data-options="required:false,validType:'numberFloatTwo'" readonly="readonly" value="" />
 						</s:if>
+						
+						
 					</td>
 				</tr>
 				<tr>
@@ -419,9 +424,13 @@
 							辆。
 							<span id='nzCxcl' contenteditable='true' style='width: 70%;' >撒盐车1辆、装载机1台、皮卡车1辆。</span><br/>
 							<font style="font-weight:bold;" >除雪面积：</font>
-							<span id='nzCxmj' contenteditable='true' style='width: 70%;' >（ * ）* = ㎡ （路面宽度*里程）如有不同路段，请分别计算。</span><br/>
+							<span id='nzCxmj' contenteditable='true' style='width: 70%;' >（ * ）* = k㎡ （路面宽度*里程）如有不同路段，请分别计算。</span><br/>
 							<font style="font-weight:bold;" >除雪量：</font>
-							<span id='nzCxl' contenteditable='true' style='width: 70%;' > * = m<sup>3</sup>。</span>
+							<span id='nzCxl' contenteditable='true' style='width: 70%;' > * = km<sup>3</sup>。</span><br/>
+
+							<font style="font-weight:bold;" >备注：</font>
+							<textarea id="bz1" name="bz1" cols="36" rows="8"  class="easyui-validatebox" maxlength="100"  ></textarea><br/>
+							
 							<!-- <textarea rows="3" cols="30" name="nz" style="width:98%" maxlength="100" ></textarea> -->
 						</s:if>
 						<s:if test="toView">
@@ -435,7 +444,11 @@
 							<font style="font-weight:bold;" >除雪面积：</font>
 							<s:property value='model.nzCxmj' escape="false" /><br/>
 							<font style="font-weight:bold;" >除雪量：</font>
-							<s:property value='model.nzCxl' escape="false" />
+							<s:property value='model.nzCxl' escape="false" /><br/>
+							<font style="font-weight:bold;" >备注：</font>
+							<textarea id="bz1" name="bz1" cols="36" rows="8"  class="easyui-validatebox" maxlength="100"  >
+							<s:property value='model.bz1' escape="false" />
+							</textarea>
 						</s:if>
 						<s:if test="toEdit">
 							<font style="font-weight:bold;" >除雪人数：</font>
@@ -447,7 +460,11 @@
 							<font style="font-weight:bold;" >除雪面积：</font>
 							<span id='nzCxmj' contenteditable='true' style='width: 70%;' ><s:property value='model.nzCxmj' /></span><br/>
 							<font style="font-weight:bold;" >除雪量：</font>
-							<span id='nzCxl' contenteditable='true' style='width: 70%;' ><s:property value='model.nzCxl' /></span>
+							<span id='nzCxl' contenteditable='true' style='width: 70%;' ><s:property value='model.nzCxl' /></span><br/>
+							<font style="font-weight:bold;" >备注：</font>
+							<textarea id="bz1" name="bz1" cols="36" rows="8"  class="easyui-validatebox" maxlength="100"  >
+							<s:property value='model.bz1' escape="false" />
+							</textarea>
 						</s:if>
 					</td>
 				</tr>
