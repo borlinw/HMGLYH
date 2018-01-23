@@ -29,6 +29,13 @@
 				<tr>
 					<td>&nbsp;版本：<select id="bbid" class="easyui-combobox" style="width:130px"></select></td>
 					<td>&nbsp;区域：<select id="ldCode" class="easyui-combobox" style="width:130px;"></select></td>
+					<td id="fxTd">
+						&nbsp;方向：<select id="fx" class="easyui-combobox">
+							<option value="0301">上行</option>
+							<option value="0302">下行</option>
+							<option value="0303">全幅</option>
+						</select>
+					</td>
 					<td>
 						&nbsp;&nbsp;
 						<!-- <img id="query" src="../images/button_search.png"  style="cursor: pointer;"/> -->

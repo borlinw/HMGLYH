@@ -68,7 +68,7 @@
 	</div>
 	<!-- 版权 开始 -->
 	<div data-options="region:'south',border:false,split:false" style="width:100%; height:32px; background-color:#0791a8; color:#FFF; line-height:32px; text-align:center;">
-		<center><font style="font-size:12px;color:#FFF;">哈密公路管理局　版权所有　　　技术支持：北京恒达时讯科技开发有限责任公司</font></center>
+		<center><font style="font-size:12px;color:#FFF;">哈密公路管理局　版权所有　　　技术支持：北京恒达时讯科技股份有限公司</font></center>
 		<!-- 版权所有：哈密公路管理局 　　　　技术支持：北京恒达时讯科技开发有限责任公司 -->
 	</div>
 	<!-- 版权 结束 -->

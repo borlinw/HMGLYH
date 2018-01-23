@@ -41,6 +41,7 @@ public class QdhfbServiceImpl implements QdhfbService{
 		q.setBbid(list.get(0).getBbid());
 		q.setBmCode(list.get(0).getBmCode());
 		q.setPdbbid(list.get(0).getPdbbid());
+		q.setFx(list.get(0).getFx());
 		System.out.println(q);
 		if(qdhfbMapper.isSb(q) != null)
 			return -1;

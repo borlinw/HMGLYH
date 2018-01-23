@@ -15,9 +15,18 @@ var initCombo = function(){
 		url : YMLib.url + "bm/getBmCombotree.do?bmcode="+loginUserObject.bmcode,
 		valueField : "id",
 		textField : "text",
-		
 		onSelect : function(node){
 			initLd(node.id);
+		},
+		onBeforeSelect : function(node){
+			if(!$(this).tree('isLeaf',node.target)){
+				return false;
+			}
+		},
+		onClick : function(node){
+			if(!$(this).tree('isLeaf',node.target)){
+				$("#yhdw").combo('showPanel');
+			}
 		}
 	});
 	$("#rwly").combobox('setValue','');

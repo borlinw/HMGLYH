@@ -96,7 +96,7 @@
 				<div class="cxtj_list_font">沥青路面修补<br>工程数量统计表</div>
 			</a>
 		</div>
-		<div class="cxtj_list">
+		<%-- <div class="cxtj_list">
 			<a href="jassbhcdd.jsp">
 				<div class="cxtj_list_img"><img src="${pageContext.request.contextPath}/images/cxtj_011.png" onmouseover="this.src='${pageContext.request.contextPath}/images/cxtj_011_hover.png'" onmouseout="this.src='${pageContext.request.contextPath}/images/cxtj_011.png'" width="86" height="86" border="0"></div>
 				<div class="cxtj_list_font">交安设施维修传递单</div>
@@ -113,7 +113,7 @@
 				<div class="cxtj_list_img"><img src="${pageContext.request.contextPath}/images/cxtj_013.png" onmouseover="this.src='${pageContext.request.contextPath}/images/cxtj_013_hover.png'" onmouseout="this.src='${pageContext.request.contextPath}/images/cxtj_013.png'" width="86" height="86" border="0"></div>
 				<div class="cxtj_list_font">交安设施维修统计表</div>
 			</a>
-		</div>
+		</div> --%>
 		<div class="cxtj_list">
 			<a href="xxbywcqk.jsp">
 				<div class="cxtj_list_img"><img src="${pageContext.request.contextPath}/images/cxtj_005.png" onmouseover="this.src='${pageContext.request.contextPath}/images/cxtj_005_hover.png'" onmouseout="this.src='${pageContext.request.contextPath}/images/cxtj_005.png'" width="86" height="86" border="0"></div>

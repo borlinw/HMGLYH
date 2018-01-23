@@ -684,13 +684,38 @@ public class RcyhUtils {
 		HtglMjlxMapper mjlxMapper = (HtglMjlxMapper) SpringContextUtil
 				.getBean("htglMjlxMapper");
 		
-		String ldname = mjlxMapper.getLdname(ldcode);
+//		String ldname = mjlxMapper.getLdname(ldcode);
+		String ldname = mjlxMapper.getQdname(ldcode);
 		
 		if( ldname == null ) {
-			ldname = ldcode + "没有名称";
+//			ldname = ldcode + "没有名称";
+			ldname = "";
 		}
 		
 		return ldname;
+	}
+	
+	/**
+	 * 根据 路段编码 获取 到 路线编码
+	 * @param ldcode
+	 * @return
+	 */
+	public static String getRoadcode(String ldcode) {
+		
+		if( ldcode == null || "".equals(ldcode)) {
+			return "--";
+		}
+		
+		HtglMjlxMapper mjlxMapper = (HtglMjlxMapper) SpringContextUtil
+				.getBean("htglMjlxMapper");
+		
+		String roadcode = mjlxMapper.getRoadcode(ldcode);
+		
+		if( roadcode == null ) {
+			roadcode = "";
+		}
+		
+		return roadcode;
 	}
 
 	/**
@@ -702,11 +727,12 @@ public class RcyhUtils {
 	public static List<HashMap<String, Object>> xdjlLds(String bmcode) {
 		HtglMjlxMapper mjlxMapper = (HtglMjlxMapper) SpringContextUtil
 				.getBean("htglMjlxMapper");
-		if(bmcode.length() == 8 ) {
-			return mjlxMapper.xdjlLds(bmcode.substring(0, bmcode.length()-2));
-		}else{
-			return mjlxMapper.xdjlLds(bmcode);
-		}
+//		if(bmcode.length() == 8 ) {
+//			return mjlxMapper.xdjlLds(bmcode.substring(0, bmcode.length()-2));
+//		}else{
+//			return mjlxMapper.xdjlLds(bmcode);
+//		}
+		return mjlxMapper.xdjlLds(bmcode);
 	}
 
 	
@@ -961,6 +987,7 @@ public class RcyhUtils {
 		rwd.setXfsx(RcyhUtils.getWxsx(bhjls.get(0).getBhid())); // 回写 病害的 修复时限
 		rwd.setDw(RcyhUtils.getDwByBhid(bhjls.get(0).getBhid()));
 		rwd.setSl(new Double(bhsl));
+		rwd.setTq(bhjls.get(0).getTq());
 	}
 
 	/**

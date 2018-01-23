@@ -62,7 +62,7 @@
   <select id="selectBhlxByPrimaryKey" resultType="com.hdsx.hmglyh.rcyh.dao.model.HtglBhlx" parameterType="java.lang.String" >
     select 
     <include refid="Bhlx_Column_List" />
-    from hmglyh.HTGL_BHLX
+    from HTGL_BHLX
     where BHID = #{bhid,jdbcType=VARCHAR}
   </select>
   
@@ -264,14 +264,28 @@
      from HTGL_LDB
      where LDCODE = #{ldcode}
  </select>
+ <select id="getQdname" parameterType="string" resultType="string">
+ 	SELECT LDNAME FROM HTGL_LSLDB
+ 	WHERE LDCODE=#{ldcode}
+ </select>
+ 
 <!-- 根据部门ID 查询同级部门的 养护站的 所管辖路段 -->
-<select id="xdjlLds" parameterType="string" resultType="hashmap">
+<!-- <select id="xdjlLds" parameterType="string" resultType="hashmap">
    	select t1.ldcode "value",t1.ldname "text",t1.SZHH "szhh",t1.EZHH "ezhh"
    	from HTGL_LDB t1 
    		left join HTGL_BMB t2 on t1.bmcode = t2.bmcode
    	where t1.bmcode like #{bmcode} || '__'
    		   and t2.BMLX = '0102'
+</select> -->
+<select id="xdjlLds" parameterType="string" resultType="hashmap">
+	SELECT LDCODE "value",LDNAME "text",LXCODE "lxcode",SZHH,EZHH,FX "fx"
+	FROM HTGL_LSLDB
+	WHERE BMCODE=#{bmcode} AND QYZT='1'
+	ORDER BY LXCODE,SZHH
 </select>
+
+
+
 <!-- 通过病害类型ID查询 病害的维修时限 -->
 <select id="getWxsx" parameterType="string" resultType="string">
    select WXSX from HTGL_BHLX
@@ -329,7 +343,12 @@
  
   <!-- 根据路路段编码 返回 路线编码 -->
   <select id="getLxcodeByld" parameterType="string" resultType="string">
-    	select lxcode from HTGL_LDB where LDCODE = #{ldcode}
+    	select lxcode from V_HTGL_LDB where LDCODE = #{ldcode}
+  </select>
+  
+  <!-- 根据路路段编码 返回 路线编码 -->
+  <select id="getLxcodeBylsld" parameterType="string" resultType="string">
+    	select lxcode from HTGL_LSLDB where LDCODE = #{ldcode}
   </select>
   
   <!-- 根据部门编码获取 一个部门的人员 -->
@@ -414,4 +433,14 @@
   	select dj from htgl_yhlxb
   	where yhid = #{yhid}
   </select>
+  
+  <select id="getRoadcode" parameterType="string" resultType="string">
+  	SELECT LXCODE FROM HTGL_LSLDB WHERE LDCODE=#{ldcode}
+  </select>
+  
+  
+  
+  
+  
+  
 </mapper>

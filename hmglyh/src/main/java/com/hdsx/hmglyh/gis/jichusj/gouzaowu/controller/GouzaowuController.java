@@ -260,7 +260,7 @@ public class GouzaowuController extends BaseAction{
 	}
 	
 	public String showPicAndUpload(){
-		m = mMapper.selectByKey(code+"-"+xzqh);
+		m = mMapper.selectByKey(code);
 		if( m != null ) {
 			m.setPicUrl(com.hdsx.hmglyh.util.Constants.PicUrl2);
 		}
@@ -984,7 +984,7 @@ public class GouzaowuController extends BaseAction{
 	
 	public void qlCombobox100(){	
 		try {
-			ql.setRoadcode(MapCatchUtil.getRoadcodeByld(ql.getRoadcode()));
+			ql.setRoadcode(MapCatchUtil.getRoadcodeBylsld(ql.getRoadcode()));
 			List<Combobox> list = gouzaowuService.qlCombobox(ql);
 			if(list.size() > 0 ) {
 				list.get(0).setSelected(true);
@@ -1022,7 +1022,7 @@ public class GouzaowuController extends BaseAction{
 	
 	public void sdCombobox100(){	
 		try {
-			sd.setRoadcode(MapCatchUtil.getRoadcodeByld(sd.getRoadcode()));
+			sd.setRoadcode(MapCatchUtil.getRoadcodeBylsld(sd.getRoadcode()));
 			List<Combobox> list = gouzaowuService.sdCombobox(sd);
 			if(list.size() > 0 ) {
 				list.get(0).setSelected(true);
@@ -1060,7 +1060,7 @@ public class GouzaowuController extends BaseAction{
 	}
 	public void hdCombobox100(){
 		try {
-			hd.setRoadcode(MapCatchUtil.getRoadcodeByld(hd.getRoadcode()));
+			hd.setRoadcode(MapCatchUtil.getRoadcodeBylsld(hd.getRoadcode()));
 			List<Combobox> list = gouzaowuService.hdCombobox(hd);
 			if(list.size() > 0 ) {
 				list.get(0).setSelected(true);

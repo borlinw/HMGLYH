@@ -13,7 +13,7 @@
     <result column="SHSJ" property="shsj" jdbcType="DATE" />
   </resultMap>
   <insert id="insert" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhYdjhshb" >
-    insert into hmglyh.RCYH_YDJHFSHB (BMCODE, LDCODE, SSNY, 
+    insert into RCYH_YDJHFSHB (BMCODE, LDCODE, SSNY, 
       SQZT, SQR, SQSJ, SHZT, 
       SHR, SHSJ)
     values (#{bmcode,jdbcType=VARCHAR}, #{ldcode,jdbcType=VARCHAR}, #{ssny,jdbcType=VARCHAR}, 
@@ -21,7 +21,7 @@
       #{shr,jdbcType=VARCHAR}, to_date(#{shsj},'yyyy-mm-dd hh24:mi:ss') )
   </insert>
   <insert id="insertSelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhYdjhshb" >
-    insert into hmglyh.RCYH_YDJHFSHB
+    insert into RCYH_YDJHFSHB
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="bmcode != null" >
         BMCODE,

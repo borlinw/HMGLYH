@@ -18,7 +18,8 @@ var initGrid = function(){
 			bbid : $("#bbid").combobox("getValue"),
 			szhh : szhh,
 			ezhh : ezhh,
-			bmCode : bmCode
+			bmCode : bmCode,
+			fx : $("#fx").combobox("getValue")
 		},
 		border : false,
 		fit : true,
@@ -113,7 +114,8 @@ var initButton = function(){
 				bbid : $("#bbid").combobox("getValue"),
 				szhh : szhh,
 				ezhh : ezhh,
-				bmCode : bmCode
+				bmCode : bmCode,
+				fx : $("#fx").combobox("getValue")
 			};
 			$("#myGrid").datagrid("load");
 		}

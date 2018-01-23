@@ -20,21 +20,21 @@
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
-    from hmglyh.RCYH_XDGJB
+    from RCYH_XDGJB
     where XCID = #{xcid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from hmglyh.RCYH_XDGJB
+    delete from RCYH_XDGJB
     where XCID = #{xcid,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhXdgjb" >
-    insert into hmglyh.RCYH_XDGJB (XCID, STIME, ETIME, 
+    insert into RCYH_XDGJB (XCID, STIME, ETIME, 
       SHAPE)
     values (#{xcid,jdbcType=VARCHAR}, to_date(#{stime},'yyyy-mm-dd hh24:mi:ss'), to_date(#{etime},'yyyy-mm-dd hh24:mi:ss'), 
       #{shape,jdbcType=BLOB})
   </insert>
   <insert id="insertSelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhXdgjb" >
-    insert into hmglyh.RCYH_XDGJB
+    insert into RCYH_XDGJB
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="xcid != null" >
         XCID,
@@ -65,7 +65,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhXdgjb" >
-    update hmglyh.RCYH_XDGJB
+    update RCYH_XDGJB
     <set >
       <if test="stime != null" >
         STIME = to_date(#{stime},'yyyy-mm-dd hh24:mi:ss'),
@@ -80,7 +80,7 @@
     where XCID = #{xcid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhXdgjb" >
-    update hmglyh.RCYH_XDGJB
+    update RCYH_XDGJB
     set
       STIME = to_date(#{stime},'yyyy-mm-dd hh24:mi:ss'),
       ETIME = to_date(#{etime},'yyyy-mm-dd hh24:mi:ss'),
@@ -88,7 +88,7 @@
     where XCID = #{xcid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhXdgjb" >
-    update hmglyh.RCYH_XDGJB
+    update RCYH_XDGJB
     set 
        STIME = to_date(#{stime},'yyyy-mm-dd hh24:mi:ss'),
        ETIME = to_date(#{etime},'yyyy-mm-dd hh24:mi:ss'),

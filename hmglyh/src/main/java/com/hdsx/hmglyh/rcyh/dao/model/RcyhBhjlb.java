@@ -124,6 +124,16 @@ public class RcyhBhjlb implements Serializable{
     
     private String ldname; // 路段名称
     
+    private String roadcode;
+    
+	public String getRoadcode() {
+		return roadcode;
+	}
+
+	public void setRoadcode(String roadcode) {
+		this.roadcode = roadcode;
+	}
+
 	public String getSbbmname() {
 		return sbbmname;
 	}

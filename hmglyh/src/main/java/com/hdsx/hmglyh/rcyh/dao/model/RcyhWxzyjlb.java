@@ -81,7 +81,7 @@ public class RcyhWxzyjlb implements Serializable{
     private Double rgdj;
     private Double dejs;
     
- 
+    private String roadcode;
     
     
     // 非 持久化 字段
@@ -118,6 +118,14 @@ public class RcyhWxzyjlb implements Serializable{
     
     private Double dj;
     
+	public String getRoadcode() {
+		return roadcode;
+	}
+
+	public void setRoadcode(String roadcode) {
+		this.roadcode = roadcode;
+	}
+
 	public Double getDj() {
 		return dj;
 	}

@@ -76,7 +76,16 @@ public class QyhfbServiceImpl implements QyhfbService {
 
 	@Override
 	public List<Qyhfb> queryQyhfb(Qyhfb qyhfb) {
-		return qyhfbMapper.queryQyhfb(qyhfb);
+		List<Qyhfb> list = qyhfbMapper.queryQyhfb(qyhfb);
+		if(qyhfb.getRows() == null){
+			for(Qyhfb q:list){
+				if(qyhfbMapper.isGs(q)>0)
+					q.setIsgs(false);
+				else
+					q.setIsgs(true);
+			}
+		}
+		return list;
 	}
 
 	@Override

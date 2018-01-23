@@ -43,6 +43,13 @@ public interface KqzbMapper extends Dao<Kqzb> {
 	 * @param kqzb
 	 * @return
 	 */
+	List<Kqfb> getFbxxNew(Kqzb kqzb);
+	
+	/**
+	 * 获取养护站或养护队生成考勤附表的信息
+	 * @param kqzb
+	 * @return
+	 */
 	List<Kqfb> getFbxx(Kqzb kqzb);
 	/**
 	 * 获取巡道队生成考勤附表的信息

@@ -18,6 +18,6 @@
 	<!-- 查询巡道记录用，若为管理局则查询分局，若为分局则查询管辖的巡道队 -->
 	<select id="getBmForXd" resultType="com.hdsx.hmglyh.util.Combobox" parameterType="String">
 		SELECT BMCODE AS ID,BMNAME AS TEXT FROM HTGL_BMB T 
-		WHERE BMCODE LIKE #{bmCode}||'__' AND BMLX IN ('0103','0101')
+		WHERE BMCODE LIKE #{bmCode}||'__'
 	</select>
 </mapper>

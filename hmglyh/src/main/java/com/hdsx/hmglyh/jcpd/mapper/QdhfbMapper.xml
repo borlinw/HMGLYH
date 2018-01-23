@@ -3,16 +3,18 @@
 <mapper namespace="com.hdsx.hmglyh.jcpd.mapper.QdhfbMapper">
 	<!-- 插入 -->
 	<insert id="addQdhfb" parameterType="qdhfb">
-		INSERT INTO JCPD_QDHFB(QDID,LXCODE,SZHH,EZHH,CD,BMCODE,BBID)
-		VALUES(QD_SEQUENCE.NEXTVAL,#{lxCode},#{szhh},#{ezhh},#{cd},#{bmCode},#{bbid})
+		INSERT INTO JCPD_QDHFB(QDID,LXCODE,SZHH,EZHH,CD,BMCODE,BBID,FX,GYDW)
+		VALUES(QD_SEQUENCE.NEXTVAL,#{lxCode},#{szhh},#{ezhh},#{cd},#{bmCode},#{bbid},#{fx},#{gydw})
 	</insert>
 	<!-- 查询 -->
 	<select id="queryQdhfb" parameterType="qdhfb" resultType="qdhfb">
 		SELECT * FROM(
 		    SELECT ROWNUM RN,TEMP.* FROM(
-				SELECT * FROM JCPD_QDHFB
-				WHERE LXCODE=#{lxCode} AND <![CDATA[szhh>=#{szhh} and #{ezhh}>szhh]]> AND BMCODE=#{bmCode} AND BBID=#{bbid}
-				ORDER BY SZHH
+				SELECT QD.*,BM.BMNAME GYDWMC FROM JCPD_QDHFB QD
+				LEFT JOIN HTGL_BMB BM
+				ON QD.GYDW=BM.BMCODE
+				WHERE QD.LXCODE=#{lxCode} AND <![CDATA[QD.szhh>=#{szhh} and #{ezhh}>QD.szhh]]> AND QD.BMCODE=#{bmCode} AND QD.BBID=#{bbid} AND QD.FX=#{fx}
+				ORDER BY QD.SZHH
 			) TEMP
 			<if test="page != null and page != ''">
 			  	where <![CDATA[ROWNUM <= (#{page} * #{rows})]]>
@@ -27,7 +29,19 @@
 	<delete id="dropQdhfb" parameterType="qdhfb">
 		DELETE FROM JCPD_QDHFB
 		WHERE LXCODE=#{lxCode} AND <![CDATA[szhh>=#{szhh} and #{ezhh}>szhh]]> AND BMCODE=#{bmCode} AND BBID=#{bbid}
+		<if test="fx != null and fx != '0303'">
+			AND FX IN (#{fx},'0303')
+		</if>
 	</delete>
+	<delete id="deleteForQdhf" parameterType="qdhfb">
+		DELETE FROM JCPD_QDHFB
+		WHERE LXCODE=#{lxCode} AND <![CDATA[szhh>=#{szhh} and #{ezhh}>szhh]]> AND BMCODE=#{bmCode} AND BBID=#{bbid}
+		<if test="fx != null and fx != '0303'">
+			AND FX IN (#{fx},'0303')
+		</if>
+	</delete>
+	
+	
 	<!-- 查询区段划分条数 -->
 	<select id="getQdhfbCount" parameterType="qdhfb" resultType="int">
 		SELECT COUNT(*) FROM JCPD_QDHFB
@@ -51,7 +65,9 @@
 	<select id="getPciIri" parameterType="qdhfb" resultType="qdhfb">
 		select t.column_value,avg(m.pci) as pci,avg(m.iri) as iri
 		from table(fn_split(#{points},','))t
-		join (select l.pci,l.iri,q.szhh from jcpd_lkpdmxb l left join jcpd_qmldb q on l.ldid=q.ldid where q.lxCode=#{lxCode} and l.bbid=#{bbid})m
+		join (select l.pci,l.iri,q.szhh from jcpd_lkpdmxb l left join jcpd_qmldb q on l.ldid=q.ldid where q.lxCode=#{lxCode} and l.bbid=#{bbid}
+			AND Q.FX=#{fx}
+		)m
 		on t.column_value=m.szhh
 		group by t.column_value
 		order by t.column_value

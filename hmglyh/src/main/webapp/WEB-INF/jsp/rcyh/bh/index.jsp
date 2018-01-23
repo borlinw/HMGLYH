@@ -59,7 +59,7 @@
 		                      {field:'jltime',title:'记录时间',width:140},
 		                      {field:'jlusername',title:'记录人',width:100},
 		                      {field:'bmcode',title:'部门',width:100},
-		                      {field:'ldname',title:'路段',width:100},
+		                      {field:'ldname',title:'路段',width:180},
 		                      {field:'tq',title:'方向',width:100},
 		                      {field:"bbb",title:"桩号",formatter:function(value,rowData){
 		                    	
@@ -223,6 +223,7 @@
 					bhjlsStr += "&bhjls["+i+"].ezhhkm="+d.ezhhkm;
 					bhjlsStr += "&bhjls["+i+"].ezhhm="+d.ezhhm;
 					bhjlsStr += "&bhjls["+i+"].sl="+d.sl;
+					bhjlsStr += "&bhjls["+i+"].tq="+d.tq;
 			});
 			
 			parent.gisui.createWindow({

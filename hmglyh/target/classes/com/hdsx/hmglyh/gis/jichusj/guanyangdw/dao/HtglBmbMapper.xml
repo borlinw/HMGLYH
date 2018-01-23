@@ -81,7 +81,7 @@
   <select id="selectByPrimaryKey" resultMap="BmbResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
-    from hmglyh.HTGL_BMB
+    from HTGL_BMB
     where BMCODE = #{bmcode,jdbcType=VARCHAR}
   </select>
   

@@ -21,12 +21,24 @@
 	<insert id="addFb" parameterType="com.hdsx.hmglyh.jcpd.bean.Kqfb">
 		${sql}
 	</insert>
+	<select id="getFbxxNew" parameterType="com.hdsx.hmglyh.jcpd.bean.Kqzb" resultType="com.hdsx.hmglyh.jcpd.bean.Kqfb">
+		<![CDATA[SELECT RY.RYID,RY.ZYTIME,NVL(KQ.KQ,'0706')KQ FROM
+		(SELECT RYID,ZYTIME 
+		FROM HTGL_RYB,(SELECT STIME+ROWNUM-1 AS ZYTIME FROM (SELECT STIME,ETIME FROM HTGL_NYJCB WHERE YNAME=#{ssny}) CONNECT BY ROWNUM<ETIME-STIME+2)
+		WHERE BMCODE=#{bmCode} AND QYZT=1) RY
+		LEFT JOIN V_RCYH_KQ KQ
+		ON RY.RYID=KQ.RYID AND RY.ZYTIME=KQ.WGTIME
+		ORDER BY RY.RYID,RY.ZYTIME]]>
+	</select>
+	
+	
+	
 	<!-- 获取养护站养护队生成附表的信息 -->
 	<select id="getFbxx" parameterType="com.hdsx.hmglyh.jcpd.bean.Kqzb" resultType="com.hdsx.hmglyh.jcpd.bean.Kqfb">
 		<![CDATA[select distinct ry.ryid,ry.zytime,nvl(wxzy.kq,'0706') kq from 
 		(select ryid,zytime 
 		from htgl_ryb,(select stime+rownum-1 as zytime from (select stime,etime from htgl_nyjcb where yname=#{ssny}) connect by rownum<etime-stime+2)
-		where bmcode=#{bmCode} and qyzt=1)ry
+		where bmcode= and qyzt=1)ry
 		left join (select r.ryid,trunc(wx.wgtime,'dd') wgtime,(case substr(wx.yhid,0,2) when '07' then '0702' else '0701' end)kq from rcyh_ryzyjlb r
 		left join rcyh_wxzyjlb wx
 		on r.zyid=wx.zyid) wxzy

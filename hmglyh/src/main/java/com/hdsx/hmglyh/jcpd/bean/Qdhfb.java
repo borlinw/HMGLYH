@@ -23,6 +23,8 @@ public class Qdhfb implements Serializable {
 	private Double ezhh;			//止点桩号
 	private int cd;					//长度
 	private String fx;
+	private String gydw;
+	private String gydwmc;
 	private String bmCode;			//部门编码
 	private String bmName;
 	private int bbid;				//版本id
@@ -55,6 +57,18 @@ public class Qdhfb implements Serializable {
 	
 	private String jd;
 	
+	public String getGydwmc() {
+		return gydwmc;
+	}
+	public void setGydwmc(String gydwmc) {
+		this.gydwmc = gydwmc;
+	}
+	public String getGydw() {
+		return gydw;
+	}
+	public void setGydw(String gydw) {
+		this.gydw = gydw;
+	}
 	public int getDcbbid() {
 		return dcbbid;
 	}

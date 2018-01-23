@@ -130,8 +130,10 @@
 												}
 											},
 										</s:if>
-										onSelect:function(){
+										onSelect:function(_record){
+											console.info(_record);
 											getQshCombobox();
+											$('#fx').combobox('select',_record.fx);
 										}
 								" />
 							</s:if>
@@ -159,7 +161,7 @@
 					<td><div style='height:auto;text-align:center' class='datagrid-cell'>方向</div></td>
 					<td><div style='height:auto;text-align:center' class='datagrid-cell'>
 						<s:if test="!show">
-							<input name="bhjl.tq" errorInfo="请选择方向" class="easyui-combobox notnull"
+							<input name="bhjl.tq" id="fx" errorInfo="请选择方向" class="easyui-combobox notnull"
 								data-options="
 									textField:'value',
 									valueField:'key',

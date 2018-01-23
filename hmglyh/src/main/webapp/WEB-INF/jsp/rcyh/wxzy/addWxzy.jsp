@@ -218,14 +218,17 @@ $(function(){
 					<div style='height:auto;text-align:center' class='datagrid-cell'>
 						<s:if test="ddWxzy or update">
 							<input id="ldCombobox" class="easyui-combobox"  name="wxzy.ldcode" data-options="
-										url:'${pageContext.request.contextPath}/lxld/getLxldCombo.do?bmCode=<s:property value="user.bmcode" />',
+										url:'${pageContext.request.contextPath}/rcyh/xdjl_xdjlLds.do',
 										textField:'text',
-										valueField:'id',
+										valueField:'value',
 										<s:if test="wxzy.ldcode != null" >
 										onLoadSuccess:function(){
 											$('#ldCombobox').combobox('setValue','<s:property value="wxzy.ldcode" />');
-										}
+										},
 										</s:if>
+										onSelect:function(_record){
+											$('#fx').combobox('setValue',_record.fx);
+										}
 										" />
 						</s:if>
 						<s:else>
@@ -241,7 +244,7 @@ $(function(){
 				<td>
 					<div style='height:auto;text-align:center' class='datagrid-cell'>
 						<s:if test="!show">
-							<input type="text" class="easyui-combobox"  data-options="
+							<input type="text" id="fx" class="easyui-combobox"  data-options="
 							<s:if test="update">
 							url:'${pageContext.request.contextPath}/rcyh/bh_fxList.do?selectFirst=false',
 							</s:if>
