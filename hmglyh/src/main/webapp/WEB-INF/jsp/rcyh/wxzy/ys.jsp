@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../public/head.jsp"%>
+<head>
  <script type="text/javascript" src="${pageContext.request.contextPath}/page/rcyh/js/validation.js"></script>
  <script type="text/javascript" src="${pageContext.request.contextPath}/page/rcyh/js/calculate.js"></script>
 <title>维修作业验收</title>
@@ -179,6 +180,6 @@
 	</div>
 	<div class="doYs doYs3" style="display:none;">
 		<center style="margin-top:5px;"><a class="easyui-linkbutton"  onclick="$('#fm').submit()" data-options="plain:true" >全部验收</a></center>
-	</div
-</body>
+	</div>
+ </body>
 </html>

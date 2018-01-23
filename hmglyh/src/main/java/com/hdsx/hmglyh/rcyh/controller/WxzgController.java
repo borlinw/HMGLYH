@@ -151,7 +151,9 @@ public class WxzgController extends BaseAction{
             model.setSdtime(sdtime); 
             model.setTbusername(tbusername); 
             model.setCzwt(czwt); 
-            model.setZgyq(zgyq); 
+            model.setZgyq(zgyq);
+            model.setSbbmname(sbbmname);
+            model.setBhsl(bhsl);
             if(service.addOneTzd(model)){ 
                 ResponseUtils.write(getResponse(), "true"); 
             }else{ 
@@ -352,7 +354,16 @@ public class WxzgController extends BaseAction{
    private String tzdxlj;                //通知单序列号 
    private String sbbmcode;        //送表单位 
    private String sbbmname;        //送表单位名称（显示用） 
-   private String wz;                    //位置 
+   private Integer bhsl;            //病害数量
+   public Integer getBhsl() {
+	return bhsl;
+}
+
+public void setBhsl(Integer bhsl) {
+	this.bhsl = bhsl;
+}
+
+private String wz;                    //位置 
    private String yq;                    //要求（立即/尽快） 
    private Date sxtime;                //时限（要求完成时间） 
    private String sxtimeStr;        //时限（中文格式） 

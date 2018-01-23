@@ -1,0 +1,6810 @@
+[
+		  {
+	  	"attributes":{
+	  		"gg":""
+	  	},
+        "checkbox": true,
+        "id": "002",
+        "lxid": "002",
+        "lxname": "材料",
+        "text": "材料"
+    	 ,
+    	 "children": [
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "002003",
+			        "lxid": "002003",
+			        "lxname": "商品混凝土",
+			        "text": "商品混凝土"
+			    	 ,
+			    	  "children": [
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003001",
+					         "lxid": "002003001",
+					         "lxname": "C10普通商品混凝土2cm碎石",
+					         "text": "C10普通商品混凝土2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003002",
+					         "lxid": "002003002",
+					         "lxname": "C15普通商品混凝土2cm碎石",
+					         "text": "C15普通商品混凝土2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003003",
+					         "lxid": "002003003",
+					         "lxname": "C20普通商品混凝土2cm碎石",
+					         "text": "C20普通商品混凝土2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003004",
+					         "lxid": "002003004",
+					         "lxname": "C25普通商品混凝土2cm碎石",
+					         "text": "C25普通商品混凝土2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003005",
+					         "lxid": "002003005",
+					         "lxname": "C30普通商品混凝土2cm碎石",
+					         "text": "C30普通商品混凝土2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003006",
+					         "lxid": "002003006",
+					         "lxname": "C35普通商品混凝土2cm碎石",
+					         "text": "C35普通商品混凝土2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003007",
+					         "lxid": "002003007",
+					         "lxname": "C40普通商品混凝土2cm碎石",
+					         "text": "C40普通商品混凝土2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003008",
+					         "lxid": "002003008",
+					         "lxname": "C45普通商品混凝土2cm碎石",
+					         "text": "C45普通商品混凝土2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003009",
+					         "lxid": "002003009",
+					         "lxname": "C50普通商品混凝土2cm碎石",
+					         "text": "C50普通商品混凝土2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003010",
+					         "lxid": "002003010",
+					         "lxname": "C55普通商品混凝土2cm碎石",
+					         "text": "C55普通商品混凝土2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003011",
+					         "lxid": "002003011",
+					         "lxname": "C60普通商品混凝土2cm碎石",
+					         "text": "C60普通商品混凝土2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003012",
+					         "lxid": "002003012",
+					         "lxname": "C10普通商品混凝土4cm碎石",
+					         "text": "C10普通商品混凝土4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003013",
+					         "lxid": "002003013",
+					         "lxname": "C15普通商品混凝土4cm碎石",
+					         "text": "C15普通商品混凝土4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003014",
+					         "lxid": "002003014",
+					         "lxname": "C20普通商品混凝土4cm碎石",
+					         "text": "C20普通商品混凝土4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003015",
+					         "lxid": "002003015",
+					         "lxname": "C25普通商品混凝土4cm碎石",
+					         "text": "C25普通商品混凝土4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003016",
+					         "lxid": "002003016",
+					         "lxname": "C30普通商品混凝土4cm碎石",
+					         "text": "C30普通商品混凝土4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003017",
+					         "lxid": "002003017",
+					         "lxname": "C35普通商品混凝土4cm碎石",
+					         "text": "C35普通商品混凝土4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003018",
+					         "lxid": "002003018",
+					         "lxname": "C40普通商品混凝土4cm碎石",
+					         "text": "C40普通商品混凝土4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003019",
+					         "lxid": "002003019",
+					         "lxname": "C45普通商品混凝土4cm碎石",
+					         "text": "C45普通商品混凝土4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003020",
+					         "lxid": "002003020",
+					         "lxname": "C50普通商品混凝土4cm碎石",
+					         "text": "C50普通商品混凝土4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003021",
+					         "lxid": "002003021",
+					         "lxname": "C55普通商品混凝土4cm碎石",
+					         "text": "C55普通商品混凝土4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003022",
+					         "lxid": "002003022",
+					         "lxname": "非泵送商品混凝土(5～16mm)C20",
+					         "text": "非泵送商品混凝土(5～16mm)C20"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003023",
+					         "lxid": "002003023",
+					         "lxname": "非泵送商品混凝土(5～16mm)C25",
+					         "text": "非泵送商品混凝土(5～16mm)C25"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003024",
+					         "lxid": "002003024",
+					         "lxname": "非泵送商品混凝土(5～16mm)C30",
+					         "text": "非泵送商品混凝土(5～16mm)C30"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003025",
+					         "lxid": "002003025",
+					         "lxname": "非泵送商品混凝土(5～16mm)C35",
+					         "text": "非泵送商品混凝土(5～16mm)C35"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003026",
+					         "lxid": "002003026",
+					         "lxname": "非泵送商品混凝土(5～16mm)C40",
+					         "text": "非泵送商品混凝土(5～16mm)C40"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003027",
+					         "lxid": "002003027",
+					         "lxname": "非泵送商品混凝土(5～20mm)C20",
+					         "text": "非泵送商品混凝土(5～20mm)C20"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003028",
+					         "lxid": "002003028",
+					         "lxname": "非泵送商品混凝土(5～20mm)C25",
+					         "text": "非泵送商品混凝土(5～20mm)C25"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003029",
+					         "lxid": "002003029",
+					         "lxname": "非泵送商品混凝土(5～20mm)C30",
+					         "text": "非泵送商品混凝土(5～20mm)C30"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003030",
+					         "lxid": "002003030",
+					         "lxname": "非泵送商品混凝土(5～20mm)C35",
+					         "text": "非泵送商品混凝土(5～20mm)C35"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003031",
+					         "lxid": "002003031",
+					         "lxname": "非泵送商品混凝土(5～20mm)C40",
+					         "text": "非泵送商品混凝土(5～20mm)C40"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003032",
+					         "lxid": "002003032",
+					         "lxname": "非泵送商品混凝土(5～20mm)C45",
+					         "text": "非泵送商品混凝土(5～20mm)C45"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003033",
+					         "lxid": "002003033",
+					         "lxname": "非泵送商品混凝土(5～20mm)C50",
+					         "text": "非泵送商品混凝土(5～20mm)C50"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003034",
+					         "lxid": "002003034",
+					         "lxname": "非泵送商品混凝土(5～20mm)C55",
+					         "text": "非泵送商品混凝土(5～20mm)C55"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003035",
+					         "lxid": "002003035",
+					         "lxname": "非泵送商品混凝土(5～20mm)C60",
+					         "text": "非泵送商品混凝土(5～20mm)C60"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003036",
+					         "lxid": "002003036",
+					         "lxname": "非泵送商品混凝土(5～40mm)C20",
+					         "text": "非泵送商品混凝土(5～40mm)C20"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003037",
+					         "lxid": "002003037",
+					         "lxname": "非泵送商品混凝土(5～40mm)C25",
+					         "text": "非泵送商品混凝土(5～40mm)C25"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003038",
+					         "lxid": "002003038",
+					         "lxname": "非泵送商品混凝土(5～40mm)C30",
+					         "text": "非泵送商品混凝土(5～40mm)C30"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003039",
+					         "lxid": "002003039",
+					         "lxname": "非泵送商品混凝土(5～40mm)C35",
+					         "text": "非泵送商品混凝土(5～40mm)C35"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003040",
+					         "lxid": "002003040",
+					         "lxname": "非泵送商品混凝土(5～40mm)C40",
+					         "text": "非泵送商品混凝土(5～40mm)C40"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003041",
+					         "lxid": "002003041",
+					         "lxname": "非泵送商品混凝土(5～40mm)C45",
+					         "text": "非泵送商品混凝土(5～40mm)C45"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003042",
+					         "lxid": "002003042",
+					         "lxname": "非泵送商品混凝土(5～40mm)C50",
+					         "text": "非泵送商品混凝土(5～40mm)C50"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003043",
+					         "lxid": "002003043",
+					         "lxname": "非泵送商品混凝土(5～40mm)C55",
+					         "text": "非泵送商品混凝土(5～40mm)C55"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003044",
+					         "lxid": "002003044",
+					         "lxname": "非泵送商品混凝土(5～40mm)C60",
+					         "text": "非泵送商品混凝土(5～40mm)C60"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003045",
+					         "lxid": "002003045",
+					         "lxname": "非泵送水下商品混凝土(5～40mm)C20",
+					         "text": "非泵送水下商品混凝土(5～40mm)C20"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003046",
+					         "lxid": "002003046",
+					         "lxname": "非泵送水下商品混凝土(5～40mm)C25",
+					         "text": "非泵送水下商品混凝土(5～40mm)C25"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003047",
+					         "lxid": "002003047",
+					         "lxname": "非泵送水下商品混凝土(5～40mm)C30",
+					         "text": "非泵送水下商品混凝土(5～40mm)C30"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003048",
+					         "lxid": "002003048",
+					         "lxname": "非泵送水下商品混凝土(5～40mm)C35",
+					         "text": "非泵送水下商品混凝土(5～40mm)C35"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003049",
+					         "lxid": "002003049",
+					         "lxname": "非泵送水下商品混凝土(5～40mm)C40",
+					         "text": "非泵送水下商品混凝土(5～40mm)C40"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003050",
+					         "lxid": "002003050",
+					         "lxname": "泵送商品混凝土(5～16mm)C20(不含泵送费)",
+					         "text": "泵送商品混凝土(5～16mm)C20(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003051",
+					         "lxid": "002003051",
+					         "lxname": "泵送商品混凝土(5～16mm)C25(不含泵送费)",
+					         "text": "泵送商品混凝土(5～16mm)C25(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003052",
+					         "lxid": "002003052",
+					         "lxname": "泵送商品混凝土(5～16mm)C30(不含泵送费)",
+					         "text": "泵送商品混凝土(5～16mm)C30(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003053",
+					         "lxid": "002003053",
+					         "lxname": "泵送商品混凝土(5～16mm)C35(不含泵送费)",
+					         "text": "泵送商品混凝土(5～16mm)C35(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003054",
+					         "lxid": "002003054",
+					         "lxname": "泵送商品混凝土(5～16mm)C40(不含泵送费)",
+					         "text": "泵送商品混凝土(5～16mm)C40(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003055",
+					         "lxid": "002003055",
+					         "lxname": "泵送商品混凝土(5～20mm)C20(不含泵送费)",
+					         "text": "泵送商品混凝土(5～20mm)C20(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003056",
+					         "lxid": "002003056",
+					         "lxname": "泵送商品混凝土(5～20mm)C25(不含泵送费)",
+					         "text": "泵送商品混凝土(5～20mm)C25(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003057",
+					         "lxid": "002003057",
+					         "lxname": "泵送商品混凝土(5～20mm)C30(不含泵送费)",
+					         "text": "泵送商品混凝土(5～20mm)C30(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003058",
+					         "lxid": "002003058",
+					         "lxname": "泵送商品混凝土(5～20mm)C35(不含泵送费)",
+					         "text": "泵送商品混凝土(5～20mm)C35(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003059",
+					         "lxid": "002003059",
+					         "lxname": "泵送商品混凝土(5～20mm)C40(不含泵送费)",
+					         "text": "泵送商品混凝土(5～20mm)C40(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003060",
+					         "lxid": "002003060",
+					         "lxname": "泵送商品混凝土(5～20mm)C45(不含泵送费)",
+					         "text": "泵送商品混凝土(5～20mm)C45(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003061",
+					         "lxid": "002003061",
+					         "lxname": "泵送商品混凝土(5～20mm)C50(不含泵送费)",
+					         "text": "泵送商品混凝土(5～20mm)C50(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003062",
+					         "lxid": "002003062",
+					         "lxname": "泵送商品混凝土(5～20mm)C55(不含泵送费)",
+					         "text": "泵送商品混凝土(5～20mm)C55(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003063",
+					         "lxid": "002003063",
+					         "lxname": "泵送商品混凝土(5～20mm)C60(不含泵送费)",
+					         "text": "泵送商品混凝土(5～20mm)C60(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003064",
+					         "lxid": "002003064",
+					         "lxname": "泵送商品混凝土(5～40mm)C20(不含泵送费)",
+					         "text": "泵送商品混凝土(5～40mm)C20(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003065",
+					         "lxid": "002003065",
+					         "lxname": "泵送商品混凝土(5～40mm)C25(不含泵送费)",
+					         "text": "泵送商品混凝土(5～40mm)C25(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003066",
+					         "lxid": "002003066",
+					         "lxname": "泵送商品混凝土(5～40mm)C30(不含泵送费)",
+					         "text": "泵送商品混凝土(5～40mm)C30(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003067",
+					         "lxid": "002003067",
+					         "lxname": "泵送商品混凝土(5～40mm)C35(不含泵送费)",
+					         "text": "泵送商品混凝土(5～40mm)C35(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003068",
+					         "lxid": "002003068",
+					         "lxname": "泵送商品混凝土(5～40mm)C40(不含泵送费)",
+					         "text": "泵送商品混凝土(5～40mm)C40(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003069",
+					         "lxid": "002003069",
+					         "lxname": "泵送商品混凝土(5～40mm)C45(不含泵送费)",
+					         "text": "泵送商品混凝土(5～40mm)C45(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003070",
+					         "lxid": "002003070",
+					         "lxname": "泵送商品混凝土(5～40mm)C50(不含泵送费)",
+					         "text": "泵送商品混凝土(5～40mm)C50(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003071",
+					         "lxid": "002003071",
+					         "lxname": "泵送商品混凝土(5～40mm)C55(不含泵送费)",
+					         "text": "泵送商品混凝土(5～40mm)C55(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003072",
+					         "lxid": "002003072",
+					         "lxname": "泵送商品混凝土(5～40mm)C60(不含泵送费)",
+					         "text": "泵送商品混凝土(5～40mm)C60(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003073",
+					         "lxid": "002003073",
+					         "lxname": "泵送水下商品混凝土(5～40mm)C20(不含泵送费)",
+					         "text": "泵送水下商品混凝土(5～40mm)C20(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003074",
+					         "lxid": "002003074",
+					         "lxname": "泵送水下商品混凝土(5～40mm)C25(不含泵送费)",
+					         "text": "泵送水下商品混凝土(5～40mm)C25(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003075",
+					         "lxid": "002003075",
+					         "lxname": "泵送水下商品混凝土(5～40mm)C30(不含泵送费)",
+					         "text": "泵送水下商品混凝土(5～40mm)C30(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003076",
+					         "lxid": "002003076",
+					         "lxname": "泵送水下商品混凝土(5～40mm)C35(不含泵送费)",
+					         "text": "泵送水下商品混凝土(5～40mm)C35(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003077",
+					         "lxid": "002003077",
+					         "lxname": "泵送水下商品混凝土(5～40mm)C40(不含泵送费)",
+					         "text": "泵送水下商品混凝土(5～40mm)C40(不含泵送费)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003078",
+					         "lxid": "002003078",
+					         "lxname": "细粒式沥青混合料",
+					         "text": "细粒式沥青混合料"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003079",
+					         "lxid": "002003079",
+					         "lxname": "中粒式沥青混合料",
+					         "text": "中粒式沥青混合料"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002003080",
+					         "lxid": "002003080",
+					         "lxname": "粗粒式沥青混合料",
+					         "text": "粗粒式沥青混合料"
+					        }
+			        	]
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "002001",
+			        "lxid": "002001",
+			        "lxname": "材料",
+			        "text": "材料"
+			    	 ,
+			    	  "children": [
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001134",
+					         "lxid": "002001134",
+					         "lxname": "钢绞线群锚（10孔）",
+					         "text": "钢绞线群锚（10孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001135",
+					         "lxid": "002001135",
+					         "lxname": "钢绞线群锚（12孔）",
+					         "text": "钢绞线群锚（12孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001136",
+					         "lxid": "002001136",
+					         "lxname": "钢绞线群锚（14孔）",
+					         "text": "钢绞线群锚（14孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001137",
+					         "lxid": "002001137",
+					         "lxname": "钢绞线群锚（15孔）",
+					         "text": "钢绞线群锚（15孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001138",
+					         "lxid": "002001138",
+					         "lxname": "钢绞线群锚（16孔）",
+					         "text": "钢绞线群锚（16孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001139",
+					         "lxid": "002001139",
+					         "lxname": "钢绞线群锚（17孔）",
+					         "text": "钢绞线群锚（17孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001140",
+					         "lxid": "002001140",
+					         "lxname": "钢绞线群锚（19孔）",
+					         "text": "钢绞线群锚（19孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001141",
+					         "lxid": "002001141",
+					         "lxname": "钢绞线群锚（22孔）",
+					         "text": "钢绞线群锚（22孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001142",
+					         "lxid": "002001142",
+					         "lxname": "钢绞线群锚（24孔）",
+					         "text": "钢绞线群锚（24孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001143",
+					         "lxid": "002001143",
+					         "lxname": "钢绞线群锚（31孔）",
+					         "text": "钢绞线群锚（31孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001144",
+					         "lxid": "002001144",
+					         "lxname": "轧丝锚具",
+					         "text": "轧丝锚具"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001145",
+					         "lxid": "002001145",
+					         "lxname": "自动排气阀",
+					         "text": "自动排气阀"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001146",
+					         "lxid": "002001146",
+					         "lxname": "螺纹截止阀",
+					         "text": "螺纹截止阀"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001147",
+					         "lxid": "002001147",
+					         "lxname": "法兰阀门（DN80）",
+					         "text": "法兰阀门（DN80）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001148",
+					         "lxid": "002001148",
+					         "lxname": "法兰阀门（DN100）",
+					         "text": "法兰阀门（DN100）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001149",
+					         "lxid": "002001149",
+					         "lxname": "法兰阀门（DN150）",
+					         "text": "法兰阀门（DN150）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001150",
+					         "lxid": "002001150",
+					         "lxname": "法兰阀门（DN200）",
+					         "text": "法兰阀门（DN200）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001151",
+					         "lxid": "002001151",
+					         "lxname": "不锈钢板",
+					         "text": "不锈钢板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001152",
+					         "lxid": "002001152",
+					         "lxname": "不锈钢滑板",
+					         "text": "不锈钢滑板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001153",
+					         "lxid": "002001153",
+					         "lxname": "聚四氟乙烯滑板",
+					         "text": "聚四氟乙烯滑板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001154",
+					         "lxid": "002001154",
+					         "lxname": "聚四氟乙烯滑块",
+					         "text": "聚四氟乙烯滑块"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001155",
+					         "lxid": "002001155",
+					         "lxname": "锚链",
+					         "text": "锚链"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001156",
+					         "lxid": "002001156",
+					         "lxname": "铁杆",
+					         "text": "铁杆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001157",
+					         "lxid": "002001157",
+					         "lxname": "镀锌铁件",
+					         "text": "镀锌铁件"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001158",
+					         "lxid": "002001158",
+					         "lxname": "铁钉",
+					         "text": "铁钉"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001159",
+					         "lxid": "002001159",
+					         "lxname": "8~12号铁丝",
+					         "text": "8~12号铁丝"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001160",
+					         "lxid": "002001160",
+					         "lxname": "20~22号铁丝",
+					         "text": "20~22号铁丝"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001161",
+					         "lxid": "002001161",
+					         "lxname": "刺铁丝",
+					         "text": "刺铁丝"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001162",
+					         "lxid": "002001162",
+					         "lxname": "铜接地板",
+					         "text": "铜接地板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001163",
+					         "lxid": "002001163",
+					         "lxname": "吊顶轻钢龙骨",
+					         "text": "吊顶轻钢龙骨"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001164",
+					         "lxid": "002001164",
+					         "lxname": "铁皮",
+					         "text": "铁皮"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001165",
+					         "lxid": "002001165",
+					         "lxname": "钢板标志",
+					         "text": "钢板标志"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001166",
+					         "lxid": "002001166",
+					         "lxname": "铝合金标志",
+					         "text": "铝合金标志"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001167",
+					         "lxid": "002001167",
+					         "lxname": "滑动槽钢",
+					         "text": "滑动槽钢"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001168",
+					         "lxid": "002001168",
+					         "lxname": "铸铁箅子",
+					         "text": "铸铁箅子"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001169",
+					         "lxid": "002001169",
+					         "lxname": "铸铁管",
+					         "text": "铸铁管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001170",
+					         "lxid": "002001170",
+					         "lxname": "胶管",
+					         "text": "胶管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001171",
+					         "lxid": "002001171",
+					         "lxname": "电焊网排",
+					         "text": "电焊网排"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001172",
+					         "lxid": "002001172",
+					         "lxname": "钢板网",
+					         "text": "钢板网"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001173",
+					         "lxid": "002001173",
+					         "lxname": "铁丝编制网",
+					         "text": "铁丝编制网"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001174",
+					         "lxid": "002001174",
+					         "lxname": "照明灯具",
+					         "text": "照明灯具"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001175",
+					         "lxid": "002001175",
+					         "lxname": "硅芯管",
+					         "text": "硅芯管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001176",
+					         "lxid": "002001176",
+					         "lxname": "通信子管",
+					         "text": "通信子管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001177",
+					         "lxid": "002001177",
+					         "lxname": "光缆",
+					         "text": "光缆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001178",
+					         "lxid": "002001178",
+					         "lxname": "光缆护套",
+					         "text": "光缆护套"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001179",
+					         "lxid": "002001179",
+					         "lxname": "光缆接头盒",
+					         "text": "光缆接头盒"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001180",
+					         "lxid": "002001180",
+					         "lxname": "光缆接头盒（48芯以内）",
+					         "text": "光缆接头盒（48芯以内）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001181",
+					         "lxid": "002001181",
+					         "lxname": "光纤插头",
+					         "text": "光纤插头"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001182",
+					         "lxid": "002001182",
+					         "lxname": "光纤连接器",
+					         "text": "光纤连接器"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001183",
+					         "lxid": "002001183",
+					         "lxname": "尾纤",
+					         "text": "尾纤"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001184",
+					         "lxid": "002001184",
+					         "lxname": "电缆",
+					         "text": "电缆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001185",
+					         "lxid": "002001185",
+					         "lxname": "母线",
+					         "text": "母线"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001186",
+					         "lxid": "002001186",
+					         "lxname": "屏蔽线",
+					         "text": "屏蔽线"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001187",
+					         "lxid": "002001187",
+					         "lxname": "电线",
+					         "text": "电线"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001188",
+					         "lxid": "002001188",
+					         "lxname": "裸铝（铜）线",
+					         "text": "裸铝（铜）线"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001189",
+					         "lxid": "002001189",
+					         "lxname": "橡皮线",
+					         "text": "橡皮线"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001190",
+					         "lxid": "002001190",
+					         "lxname": "皮线",
+					         "text": "皮线"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001191",
+					         "lxid": "002001191",
+					         "lxname": "绝缘软线",
+					         "text": "绝缘软线"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001192",
+					         "lxid": "002001192",
+					         "lxname": "橡胶条",
+					         "text": "橡胶条"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001193",
+					         "lxid": "002001193",
+					         "lxname": "户外终端盒（热塑头）",
+					         "text": "户外终端盒（热塑头）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001194",
+					         "lxid": "002001194",
+					         "lxname": "电缆中间接头",
+					         "text": "电缆中间接头"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001195",
+					         "lxid": "002001195",
+					         "lxname": "铜接线端子",
+					         "text": "铜接线端子"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001196",
+					         "lxid": "002001196",
+					         "lxname": "线槽",
+					         "text": "线槽"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001197",
+					         "lxid": "002001197",
+					         "lxname": "桥架",
+					         "text": "桥架"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001198",
+					         "lxid": "002001198",
+					         "lxname": "支撑架",
+					         "text": "支撑架"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001199",
+					         "lxid": "002001199",
+					         "lxname": "玻璃钢管箱",
+					         "text": "玻璃钢管箱"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001200",
+					         "lxid": "002001200",
+					         "lxname": "套管",
+					         "text": "套管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001201",
+					         "lxid": "002001201",
+					         "lxname": "绝缘橡胶板",
+					         "text": "绝缘橡胶板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001202",
+					         "lxid": "002001202",
+					         "lxname": "配线箱",
+					         "text": "配线箱"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001203",
+					         "lxid": "002001203",
+					         "lxname": "路灯控制箱",
+					         "text": "路灯控制箱"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001204",
+					         "lxid": "002001204",
+					         "lxname": "接线箱",
+					         "text": "接线箱"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001205",
+					         "lxid": "002001205",
+					         "lxname": "升降传动装置",
+					         "text": "升降传动装置"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001206",
+					         "lxid": "002001206",
+					         "lxname": "无机富锌漆",
+					         "text": "无机富锌漆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001207",
+					         "lxid": "002001207",
+					         "lxname": "油漆",
+					         "text": "油漆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001208",
+					         "lxid": "002001208",
+					         "lxname": "标线漆",
+					         "text": "标线漆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001209",
+					         "lxid": "002001209",
+					         "lxname": "涂料",
+					         "text": "涂料"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001210",
+					         "lxid": "002001210",
+					         "lxname": "桥面防水涂料",
+					         "text": "桥面防水涂料"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001211",
+					         "lxid": "002001211",
+					         "lxname": "防水卷材",
+					         "text": "防水卷材"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001212",
+					         "lxid": "002001212",
+					         "lxname": "底油",
+					         "text": "底油"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001213",
+					         "lxid": "002001213",
+					         "lxname": "热熔涂料",
+					         "text": "热熔涂料"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001214",
+					         "lxid": "002001214",
+					         "lxname": "反光玻璃珠",
+					         "text": "反光玻璃珠"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001215",
+					         "lxid": "002001215",
+					         "lxname": "反光膜",
+					         "text": "反光膜"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001216",
+					         "lxid": "002001216",
+					         "lxname": "反光突起路钮",
+					         "text": "反光突起路钮"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001217",
+					         "lxid": "002001217",
+					         "lxname": "防眩板",
+					         "text": "防眩板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001218",
+					         "lxid": "002001218",
+					         "lxname": "栏式反射器",
+					         "text": "栏式反射器"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001219",
+					         "lxid": "002001219",
+					         "lxname": "柱式轮廓标",
+					         "text": "柱式轮廓标"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001220",
+					         "lxid": "002001220",
+					         "lxname": "防撞筒",
+					         "text": "防撞筒"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001221",
+					         "lxid": "002001221",
+					         "lxname": "环氧树脂",
+					         "text": "环氧树脂"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001222",
+					         "lxid": "002001222",
+					         "lxname": "PE防护料",
+					         "text": "PE防护料"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001223",
+					         "lxid": "002001223",
+					         "lxname": "氯化乳胶",
+					         "text": "氯化乳胶"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001224",
+					         "lxid": "002001224",
+					         "lxname": "水玻璃",
+					         "text": "水玻璃"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001225",
+					         "lxid": "002001225",
+					         "lxname": "磷酸二氢钠",
+					         "text": "磷酸二氢钠"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001226",
+					         "lxid": "002001226",
+					         "lxname": "早强剂",
+					         "text": "早强剂"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001227",
+					         "lxid": "002001227",
+					         "lxname": "黏稠剂",
+					         "text": "黏稠剂"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001228",
+					         "lxid": "002001228",
+					         "lxname": "缓凝剂",
+					         "text": "缓凝剂"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001229",
+					         "lxid": "002001229",
+					         "lxname": "气密剂",
+					         "text": "气密剂"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001230",
+					         "lxid": "002001230",
+					         "lxname": "抗剥落剂",
+					         "text": "抗剥落剂"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001231",
+					         "lxid": "002001231",
+					         "lxname": "聚丙烯纤维",
+					         "text": "聚丙烯纤维"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001232",
+					         "lxid": "002001232",
+					         "lxname": "聚丙烯腈纤维",
+					         "text": "聚丙烯腈纤维"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001233",
+					         "lxid": "002001233",
+					         "lxname": "轻型井点总管",
+					         "text": "轻型井点总管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001234",
+					         "lxid": "002001234",
+					         "lxname": "轻型井点管",
+					         "text": "轻型井点管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001235",
+					         "lxid": "002001235",
+					         "lxname": "聚丙烯编织布",
+					         "text": "聚丙烯编织布"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001236",
+					         "lxid": "002001236",
+					         "lxname": "玻璃纤维布",
+					         "text": "玻璃纤维布"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001237",
+					         "lxid": "002001237",
+					         "lxname": "土工格栅",
+					         "text": "土工格栅"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001238",
+					         "lxid": "002001238",
+					         "lxname": "土工格室",
+					         "text": "土工格室"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001239",
+					         "lxid": "002001239",
+					         "lxname": "三维植被网",
+					         "text": "三维植被网"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001240",
+					         "lxid": "002001240",
+					         "lxname": "U形锚钉",
+					         "text": "U形锚钉"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001241",
+					         "lxid": "002001241",
+					         "lxname": "塑料防水板",
+					         "text": "塑料防水板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001242",
+					         "lxid": "002001242",
+					         "lxname": "橡胶防水板",
+					         "text": "橡胶防水板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001243",
+					         "lxid": "002001243",
+					         "lxname": "塑料板盲沟",
+					         "text": "塑料板盲沟"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001244",
+					         "lxid": "002001244",
+					         "lxname": "PVC塑料管（φ50mm）",
+					         "text": "PVC塑料管（φ50mm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001245",
+					         "lxid": "002001245",
+					         "lxname": "PVC塑料管（φ100mm）",
+					         "text": "PVC塑料管（φ100mm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001246",
+					         "lxid": "002001246",
+					         "lxname": "PVC阻燃塑料管",
+					         "text": "PVC阻燃塑料管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001247",
+					         "lxid": "002001247",
+					         "lxname": "塑料软管",
+					         "text": "塑料软管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001248",
+					         "lxid": "002001248",
+					         "lxname": "塑料弹簧软管（φ50mm）",
+					         "text": "塑料弹簧软管（φ50mm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001249",
+					         "lxid": "002001249",
+					         "lxname": "塑料弹簧软管（φ80mm）",
+					         "text": "塑料弹簧软管（φ80mm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001250",
+					         "lxid": "002001250",
+					         "lxname": "塑料弹簧软管（φ110mm）",
+					         "text": "塑料弹簧软管（φ110mm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001251",
+					         "lxid": "002001251",
+					         "lxname": "塑料波纹管（φ100mm）",
+					         "text": "塑料波纹管（φ100mm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001252",
+					         "lxid": "002001252",
+					         "lxname": "塑料波纹管（φ200mm）",
+					         "text": "塑料波纹管（φ200mm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001253",
+					         "lxid": "002001253",
+					         "lxname": "塑料波纹管（φ400mm）",
+					         "text": "塑料波纹管（φ400mm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001254",
+					         "lxid": "002001254",
+					         "lxname": "塑料打孔波纹管（φ100mm）",
+					         "text": "塑料打孔波纹管（φ100mm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001255",
+					         "lxid": "002001255",
+					         "lxname": "塑料打孔波纹管（φ200mm）",
+					         "text": "塑料打孔波纹管（φ200mm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001256",
+					         "lxid": "002001256",
+					         "lxname": "塑料打孔波纹管（φ400mm）",
+					         "text": "塑料打孔波纹管（φ400mm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001257",
+					         "lxid": "002001257",
+					         "lxname": "金属软管",
+					         "text": "金属软管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001258",
+					         "lxid": "002001258",
+					         "lxname": "橡胶止水带",
+					         "text": "橡胶止水带"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001259",
+					         "lxid": "002001259",
+					         "lxname": "橡胶止水条",
+					         "text": "橡胶止水条"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001260",
+					         "lxid": "002001260",
+					         "lxname": "可挠金属管（LV-5/38号）",
+					         "text": "可挠金属管（LV-5/38号）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001261",
+					         "lxid": "002001261",
+					         "lxname": "可挠金属管（LV-5/50号）",
+					         "text": "可挠金属管（LV-5/50号）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001262",
+					         "lxid": "002001262",
+					         "lxname": "可挠金属管（LV-5/63号）",
+					         "text": "可挠金属管（LV-5/63号）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001263",
+					         "lxid": "002001263",
+					         "lxname": "可挠金属管（LV-5/76号）",
+					         "text": "可挠金属管（LV-5/76号）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001264",
+					         "lxid": "002001264",
+					         "lxname": "可挠金属管（LV-5/83号）",
+					         "text": "可挠金属管（LV-5/83号）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001265",
+					         "lxid": "002001265",
+					         "lxname": "可挠金属管（LV-5/101号）",
+					         "text": "可挠金属管（LV-5/101号）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001266",
+					         "lxid": "002001266",
+					         "lxname": "PVC注浆管",
+					         "text": "PVC注浆管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001267",
+					         "lxid": "002001267",
+					         "lxname": "塑料排水板",
+					         "text": "塑料排水板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001268",
+					         "lxid": "002001268",
+					         "lxname": "塑料纺织袋",
+					         "text": "塑料纺织袋"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001269",
+					         "lxid": "002001269",
+					         "lxname": "塑料拉筋带",
+					         "text": "塑料拉筋带"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001270",
+					         "lxid": "002001270",
+					         "lxname": "钢拉带",
+					         "text": "钢拉带"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001271",
+					         "lxid": "002001271",
+					         "lxname": "麻袋",
+					         "text": "麻袋"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001272",
+					         "lxid": "002001272",
+					         "lxname": "草袋",
+					         "text": "草袋"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001273",
+					         "lxid": "002001273",
+					         "lxname": "绿篱",
+					         "text": "绿篱"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001274",
+					         "lxid": "002001274",
+					         "lxname": "草籽",
+					         "text": "草籽"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001275",
+					         "lxid": "002001275",
+					         "lxname": "树苗",
+					         "text": "树苗"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001276",
+					         "lxid": "002001276",
+					         "lxname": "乔木",
+					         "text": "乔木"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001277",
+					         "lxid": "002001277",
+					         "lxname": "灌木",
+					         "text": "灌木"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001278",
+					         "lxid": "002001278",
+					         "lxname": "油毛毡",
+					         "text": "油毛毡"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001279",
+					         "lxid": "002001279",
+					         "lxname": "玻璃钢瓦",
+					         "text": "玻璃钢瓦"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001280",
+					         "lxid": "002001280",
+					         "lxname": "32.5级水泥",
+					         "text": "32.5级水泥"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001281",
+					         "lxid": "002001281",
+					         "lxname": "42.5级水泥",
+					         "text": "42.5级水泥"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001282",
+					         "lxid": "002001282",
+					         "lxname": "52.5级水泥",
+					         "text": "52.5级水泥"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001283",
+					         "lxid": "002001283",
+					         "lxname": "白水泥",
+					         "text": "白水泥"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001001",
+					         "lxid": "002001001",
+					         "lxname": "原木",
+					         "text": "原木"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001002",
+					         "lxid": "002001002",
+					         "lxname": "锯材",
+					         "text": "锯材"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001003",
+					         "lxid": "002001003",
+					         "lxname": "枕木",
+					         "text": "枕木"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001004",
+					         "lxid": "002001004",
+					         "lxname": "毛竹",
+					         "text": "毛竹"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001005",
+					         "lxid": "002001005",
+					         "lxname": "胶合板",
+					         "text": "胶合板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001006",
+					         "lxid": "002001006",
+					         "lxname": "竹胶模板",
+					         "text": "竹胶模板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001007",
+					         "lxid": "002001007",
+					         "lxname": "光圆钢筋",
+					         "text": "光圆钢筋"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001008",
+					         "lxid": "002001008",
+					         "lxname": "带肋钢筋",
+					         "text": "带肋钢筋"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001009",
+					         "lxid": "002001009",
+					         "lxname": "冷轧带轧钢筋网",
+					         "text": "冷轧带轧钢筋网"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001010",
+					         "lxid": "002001010",
+					         "lxname": "环氧光圆钢筋",
+					         "text": "环氧光圆钢筋"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001011",
+					         "lxid": "002001011",
+					         "lxname": "环氧带肋钢筋",
+					         "text": "环氧带肋钢筋"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001012",
+					         "lxid": "002001012",
+					         "lxname": "预应力粗钢筋",
+					         "text": "预应力粗钢筋"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001013",
+					         "lxid": "002001013",
+					         "lxname": "钢铰线",
+					         "text": "钢铰线"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001014",
+					         "lxid": "002001014",
+					         "lxname": "环氧钢铰线",
+					         "text": "环氧钢铰线"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001015",
+					         "lxid": "002001015",
+					         "lxname": "镀锌钢绞线",
+					         "text": "镀锌钢绞线"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001016",
+					         "lxid": "002001016",
+					         "lxname": "钢丝",
+					         "text": "钢丝"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001017",
+					         "lxid": "002001017",
+					         "lxname": "冷拔低碳钢丝",
+					         "text": "冷拔低碳钢丝"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001018",
+					         "lxid": "002001018",
+					         "lxname": "高强钢丝",
+					         "text": "高强钢丝"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001019",
+					         "lxid": "002001019",
+					         "lxname": "镀锌高强钢丝",
+					         "text": "镀锌高强钢丝"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001020",
+					         "lxid": "002001020",
+					         "lxname": "平行钢丝斜拉索",
+					         "text": "平行钢丝斜拉索"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001021",
+					         "lxid": "002001021",
+					         "lxname": "钢绞线斜拉索",
+					         "text": "钢绞线斜拉索"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001022",
+					         "lxid": "002001022",
+					         "lxname": "主缆索股",
+					         "text": "主缆索股"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001023",
+					         "lxid": "002001023",
+					         "lxname": "斜拉索减振器",
+					         "text": "斜拉索减振器"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001024",
+					         "lxid": "002001024",
+					         "lxname": "吊索",
+					         "text": "吊索"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001025",
+					         "lxid": "002001025",
+					         "lxname": "系杆",
+					         "text": "系杆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001026",
+					         "lxid": "002001026",
+					         "lxname": "波纹管钢带",
+					         "text": "波纹管钢带"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001027",
+					         "lxid": "002001027",
+					         "lxname": "紧缆钢带",
+					         "text": "紧缆钢带"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001028",
+					         "lxid": "002001028",
+					         "lxname": "型钢",
+					         "text": "型钢"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001029",
+					         "lxid": "002001029",
+					         "lxname": "钢板",
+					         "text": "钢板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001030",
+					         "lxid": "002001030",
+					         "lxname": "圆钢",
+					         "text": "圆钢"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001031",
+					         "lxid": "002001031",
+					         "lxname": "钢轨",
+					         "text": "钢轨"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001032",
+					         "lxid": "002001032",
+					         "lxname": "钢管",
+					         "text": "钢管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001033",
+					         "lxid": "002001033",
+					         "lxname": "镀锌钢管",
+					         "text": "镀锌钢管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001034",
+					         "lxid": "002001034",
+					         "lxname": "不锈钢管",
+					         "text": "不锈钢管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001035",
+					         "lxid": "002001035",
+					         "lxname": "承插式铸铁管",
+					         "text": "承插式铸铁管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001036",
+					         "lxid": "002001036",
+					         "lxname": "压制弯头",
+					         "text": "压制弯头"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001037",
+					         "lxid": "002001037",
+					         "lxname": "镀锌钢板",
+					         "text": "镀锌钢板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001038",
+					         "lxid": "002001038",
+					         "lxname": "钢钎",
+					         "text": "钢钎"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001039",
+					         "lxid": "002001039",
+					         "lxname": "空心钢钎",
+					         "text": "空心钢钎"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001040",
+					         "lxid": "002001040",
+					         "lxname": "φ50mm以内合金钻头",
+					         "text": "φ50mm以内合金钻头"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001041",
+					         "lxid": "002001041",
+					         "lxname": "φ150mm以内合金钻头",
+					         "text": "φ150mm以内合金钻头"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001042",
+					         "lxid": "002001042",
+					         "lxname": "钻杆",
+					         "text": "钻杆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001043",
+					         "lxid": "002001043",
+					         "lxname": "中空注浆锚杆",
+					         "text": "中空注浆锚杆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001044",
+					         "lxid": "002001044",
+					         "lxname": "自进式锚杆",
+					         "text": "自进式锚杆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001045",
+					         "lxid": "002001045",
+					         "lxname": "钢丝绳",
+					         "text": "钢丝绳"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001046",
+					         "lxid": "002001046",
+					         "lxname": "钢纤维",
+					         "text": "钢纤维"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001047",
+					         "lxid": "002001047",
+					         "lxname": "双组份标线涂料",
+					         "text": "双组份标线涂料"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001048",
+					         "lxid": "002001048",
+					         "lxname": "电焊条",
+					         "text": "电焊条"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001049",
+					         "lxid": "002001049",
+					         "lxname": "钢筋连接套筒",
+					         "text": "钢筋连接套筒"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001050",
+					         "lxid": "002001050",
+					         "lxname": "锌",
+					         "text": "锌"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001051",
+					         "lxid": "002001051",
+					         "lxname": "螺栓",
+					         "text": "螺栓"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001052",
+					         "lxid": "002001052",
+					         "lxname": "镀锌螺栓",
+					         "text": "镀锌螺栓"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001053",
+					         "lxid": "002001053",
+					         "lxname": "膨胀螺栓",
+					         "text": "膨胀螺栓"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001054",
+					         "lxid": "002001054",
+					         "lxname": "镀锌膨胀螺栓",
+					         "text": "镀锌膨胀螺栓"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001055",
+					         "lxid": "002001055",
+					         "lxname": "法兰",
+					         "text": "法兰"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001056",
+					         "lxid": "002001056",
+					         "lxname": "镀锌法兰",
+					         "text": "镀锌法兰"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001057",
+					         "lxid": "002001057",
+					         "lxname": "钢管立柱",
+					         "text": "钢管立柱"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001058",
+					         "lxid": "002001058",
+					         "lxname": "型钢立柱",
+					         "text": "型钢立柱"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001059",
+					         "lxid": "002001059",
+					         "lxname": "波形钢板",
+					         "text": "波形钢板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001060",
+					         "lxid": "002001060",
+					         "lxname": "托架",
+					         "text": "托架"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001061",
+					         "lxid": "002001061",
+					         "lxname": "柱帽",
+					         "text": "柱帽"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001062",
+					         "lxid": "002001062",
+					         "lxname": "钢板柱",
+					         "text": "钢板柱"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001063",
+					         "lxid": "002001063",
+					         "lxname": "钢管桩",
+					         "text": "钢管桩"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001064",
+					         "lxid": "002001064",
+					         "lxname": "钢护筒",
+					         "text": "钢护筒"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001065",
+					         "lxid": "002001065",
+					         "lxname": "钢套箱",
+					         "text": "钢套箱"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001066",
+					         "lxid": "002001066",
+					         "lxname": "钢壳沉井",
+					         "text": "钢壳沉井"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001067",
+					         "lxid": "002001067",
+					         "lxname": "钢模板",
+					         "text": "钢模板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001068",
+					         "lxid": "002001068",
+					         "lxname": "组合钢模板",
+					         "text": "组合钢模板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001069",
+					         "lxid": "002001069",
+					         "lxname": "门式钢支架",
+					         "text": "门式钢支架"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001070",
+					         "lxid": "002001070",
+					         "lxname": "钢格栅",
+					         "text": "钢格栅"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001071",
+					         "lxid": "002001071",
+					         "lxname": "索夹",
+					         "text": "索夹"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001072",
+					         "lxid": "002001072",
+					         "lxname": "索鞍构件",
+					         "text": "索鞍构件"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001073",
+					         "lxid": "002001073",
+					         "lxname": "悬吊系统构件",
+					         "text": "悬吊系统构件"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001074",
+					         "lxid": "002001074",
+					         "lxname": "套管及拉杆构件",
+					         "text": "套管及拉杆构件"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001075",
+					         "lxid": "002001075",
+					         "lxname": "钢梁",
+					         "text": "钢梁"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001076",
+					         "lxid": "002001076",
+					         "lxname": "钢桁",
+					         "text": "钢桁"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001077",
+					         "lxid": "002001077",
+					         "lxname": "钢纵横梁",
+					         "text": "钢纵横梁"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001078",
+					         "lxid": "002001078",
+					         "lxname": "钢箱梁及桥面板",
+					         "text": "钢箱梁及桥面板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001079",
+					         "lxid": "002001079",
+					         "lxname": "钢锚箱",
+					         "text": "钢锚箱"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001080",
+					         "lxid": "002001080",
+					         "lxname": "钢筋拱肋",
+					         "text": "钢筋拱肋"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001081",
+					         "lxid": "002001081",
+					         "lxname": "钢支座",
+					         "text": "钢支座"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001082",
+					         "lxid": "002001082",
+					         "lxname": "四氟板式橡胶组合支座",
+					         "text": "四氟板式橡胶组合支座"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001083",
+					         "lxid": "002001083",
+					         "lxname": "板式橡胶支座",
+					         "text": "板式橡胶支座"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001084",
+					         "lxid": "002001084",
+					         "lxname": "盆式橡胶支座（800kN）",
+					         "text": "盆式橡胶支座（800kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001085",
+					         "lxid": "002001085",
+					         "lxname": "盆式橡胶支座（1000kN）",
+					         "text": "盆式橡胶支座（1000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001086",
+					         "lxid": "002001086",
+					         "lxname": "盆式橡胶支座（1250kN）",
+					         "text": "盆式橡胶支座（1250kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001087",
+					         "lxid": "002001087",
+					         "lxname": "盆式橡胶支座（1500kN）",
+					         "text": "盆式橡胶支座（1500kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001088",
+					         "lxid": "002001088",
+					         "lxname": "盆式橡胶支座（2000kN）",
+					         "text": "盆式橡胶支座（2000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001089",
+					         "lxid": "002001089",
+					         "lxname": "盆式橡胶支座（2500kN）",
+					         "text": "盆式橡胶支座（2500kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001090",
+					         "lxid": "002001090",
+					         "lxname": "盆式橡胶支座（3000kN）",
+					         "text": "盆式橡胶支座（3000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001091",
+					         "lxid": "002001091",
+					         "lxname": "盆式橡胶支座（3500kN）",
+					         "text": "盆式橡胶支座（3500kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001092",
+					         "lxid": "002001092",
+					         "lxname": "盆式橡胶支座（4000kN）",
+					         "text": "盆式橡胶支座（4000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001093",
+					         "lxid": "002001093",
+					         "lxname": "盆式橡胶支座（5000kN）",
+					         "text": "盆式橡胶支座（5000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001094",
+					         "lxid": "002001094",
+					         "lxname": "盆式橡胶支座（6000kN）",
+					         "text": "盆式橡胶支座（6000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001095",
+					         "lxid": "002001095",
+					         "lxname": "盆式橡胶支座（7000kN）",
+					         "text": "盆式橡胶支座（7000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001096",
+					         "lxid": "002001096",
+					         "lxname": "盆式橡胶支座（8000kN）",
+					         "text": "盆式橡胶支座（8000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001097",
+					         "lxid": "002001097",
+					         "lxname": "盆式橡胶支座（9000kN）",
+					         "text": "盆式橡胶支座（9000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001098",
+					         "lxid": "002001098",
+					         "lxname": "盆式橡胶支座（10000kN）",
+					         "text": "盆式橡胶支座（10000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001099",
+					         "lxid": "002001099",
+					         "lxname": "盆式橡胶支座（12500kN）",
+					         "text": "盆式橡胶支座（12500kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001100",
+					         "lxid": "002001100",
+					         "lxname": "盆式橡胶支座（15000kN）",
+					         "text": "盆式橡胶支座（15000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001101",
+					         "lxid": "002001101",
+					         "lxname": "盆式橡胶支座（17500kN）",
+					         "text": "盆式橡胶支座（17500kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001102",
+					         "lxid": "002001102",
+					         "lxname": "盆式橡胶支座（20000kN）",
+					         "text": "盆式橡胶支座（20000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001103",
+					         "lxid": "002001103",
+					         "lxname": "盆式橡胶支座（22500kN）",
+					         "text": "盆式橡胶支座（22500kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001104",
+					         "lxid": "002001104",
+					         "lxname": "盆式橡胶支座（25000kN）",
+					         "text": "盆式橡胶支座（25000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001105",
+					         "lxid": "002001105",
+					         "lxname": "盆式橡胶支座（27500kN）",
+					         "text": "盆式橡胶支座（27500kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001106",
+					         "lxid": "002001106",
+					         "lxname": "盆式橡胶支座（30000kN）",
+					         "text": "盆式橡胶支座（30000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001107",
+					         "lxid": "002001107",
+					         "lxname": "盆式橡胶支座（32500kN）",
+					         "text": "盆式橡胶支座（32500kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001108",
+					         "lxid": "002001108",
+					         "lxname": "盆式橡胶支座（35000kN）",
+					         "text": "盆式橡胶支座（35000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001109",
+					         "lxid": "002001109",
+					         "lxname": "盆式橡胶支座（37500kN）",
+					         "text": "盆式橡胶支座（37500kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001110",
+					         "lxid": "002001110",
+					         "lxname": "盆式橡胶支座（40000kN）",
+					         "text": "盆式橡胶支座（40000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001111",
+					         "lxid": "002001111",
+					         "lxname": "盆式橡胶支座（45000kN）",
+					         "text": "盆式橡胶支座（45000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001112",
+					         "lxid": "002001112",
+					         "lxname": "盆式橡胶支座（50000kN）",
+					         "text": "盆式橡胶支座（50000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001113",
+					         "lxid": "002001113",
+					         "lxname": "盆式橡胶支座（55000kN）",
+					         "text": "盆式橡胶支座（55000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001114",
+					         "lxid": "002001114",
+					         "lxname": "盆式橡胶支座（60000kN）",
+					         "text": "盆式橡胶支座（60000kN）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001115",
+					         "lxid": "002001115",
+					         "lxname": "阻尼器",
+					         "text": "阻尼器"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001116",
+					         "lxid": "002001116",
+					         "lxname": "抗风支座",
+					         "text": "抗风支座"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001117",
+					         "lxid": "002001117",
+					         "lxname": "毛勒伸缩缝",
+					         "text": "毛勒伸缩缝"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001118",
+					         "lxid": "002001118",
+					         "lxname": "板式橡胶伸缩缝",
+					         "text": "板式橡胶伸缩缝"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001119",
+					         "lxid": "002001119",
+					         "lxname": "TST伸缩体",
+					         "text": "TST伸缩体"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001120",
+					         "lxid": "002001120",
+					         "lxname": "铸铁",
+					         "text": "铸铁"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001121",
+					         "lxid": "002001121",
+					         "lxname": "钢砂",
+					         "text": "钢砂"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001122",
+					         "lxid": "002001122",
+					         "lxname": "钢丸",
+					         "text": "钢丸"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001123",
+					         "lxid": "002001123",
+					         "lxname": "弗氏锚具",
+					         "text": "弗氏锚具"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001124",
+					         "lxid": "002001124",
+					         "lxname": "冷铸镦头锚",
+					         "text": "冷铸镦头锚"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001125",
+					         "lxid": "002001125",
+					         "lxname": "镦头锚",
+					         "text": "镦头锚"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001126",
+					         "lxid": "002001126",
+					         "lxname": "钢绞线群锚（1孔）",
+					         "text": "钢绞线群锚（1孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001127",
+					         "lxid": "002001127",
+					         "lxname": "钢绞线群锚（3孔）",
+					         "text": "钢绞线群锚（3孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001128",
+					         "lxid": "002001128",
+					         "lxname": "钢绞线群锚（4孔）",
+					         "text": "钢绞线群锚（4孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001129",
+					         "lxid": "002001129",
+					         "lxname": "钢绞线群锚（5孔）",
+					         "text": "钢绞线群锚（5孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001130",
+					         "lxid": "002001130",
+					         "lxname": "钢绞线群锚（6孔）",
+					         "text": "钢绞线群锚（6孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001131",
+					         "lxid": "002001131",
+					         "lxname": "钢绞线群锚（7孔）",
+					         "text": "钢绞线群锚（7孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001132",
+					         "lxid": "002001132",
+					         "lxname": "钢绞线群锚（8孔）",
+					         "text": "钢绞线群锚（8孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001133",
+					         "lxid": "002001133",
+					         "lxname": "钢绞线群锚（9孔）",
+					         "text": "钢绞线群锚（9孔）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001284",
+					         "lxid": "002001284",
+					         "lxname": "高抗硫水泥",
+					         "text": "高抗硫水泥"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001285",
+					         "lxid": "002001285",
+					         "lxname": "硝铵炸药",
+					         "text": "硝铵炸药"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001286",
+					         "lxid": "002001286",
+					         "lxname": "导火线",
+					         "text": "导火线"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001287",
+					         "lxid": "002001287",
+					         "lxname": "砂包线",
+					         "text": "砂包线"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001288",
+					         "lxid": "002001288",
+					         "lxname": "母线",
+					         "text": "母线"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001289",
+					         "lxid": "002001289",
+					         "lxname": "普通雷管",
+					         "text": "普通雷管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001290",
+					         "lxid": "002001290",
+					         "lxname": "电雷管",
+					         "text": "电雷管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001291",
+					         "lxid": "002001291",
+					         "lxname": "非电毫秒雷管",
+					         "text": "非电毫秒雷管"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001292",
+					         "lxid": "002001292",
+					         "lxname": "导爆索",
+					         "text": "导爆索"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001293",
+					         "lxid": "002001293",
+					         "lxname": "石油沥青",
+					         "text": "石油沥青"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001294",
+					         "lxid": "002001294",
+					         "lxname": "改性沥青",
+					         "text": "改性沥青"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001295",
+					         "lxid": "002001295",
+					         "lxname": "乳化沥青",
+					         "text": "乳化沥青"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001296",
+					         "lxid": "002001296",
+					         "lxname": "环氧沥青",
+					         "text": "环氧沥青"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001297",
+					         "lxid": "002001297",
+					         "lxname": "纤维稳定剂",
+					         "text": "纤维稳定剂"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001298",
+					         "lxid": "002001298",
+					         "lxname": "重油",
+					         "text": "重油"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001299",
+					         "lxid": "002001299",
+					         "lxname": "汽油",
+					         "text": "汽油"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001300",
+					         "lxid": "002001300",
+					         "lxname": "柴油",
+					         "text": "柴油"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001301",
+					         "lxid": "002001301",
+					         "lxname": "煤",
+					         "text": "煤"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001302",
+					         "lxid": "002001302",
+					         "lxname": "电",
+					         "text": "电"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001303",
+					         "lxid": "002001303",
+					         "lxname": "水",
+					         "text": "水"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001304",
+					         "lxid": "002001304",
+					         "lxname": "木柴",
+					         "text": "木柴"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001305",
+					         "lxid": "002001305",
+					         "lxname": "马赛克",
+					         "text": "马赛克"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001306",
+					         "lxid": "002001306",
+					         "lxname": "瓷砖",
+					         "text": "瓷砖"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001307",
+					         "lxid": "002001307",
+					         "lxname": "石膏板",
+					         "text": "石膏板"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001308",
+					         "lxid": "002001308",
+					         "lxname": "青（红）砖",
+					         "text": "青（红）砖"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001309",
+					         "lxid": "002001309",
+					         "lxname": "生石灰",
+					         "text": "生石灰"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001310",
+					         "lxid": "002001310",
+					         "lxname": "土",
+					         "text": "土"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001311",
+					         "lxid": "002001311",
+					         "lxname": "砂",
+					         "text": "砂"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001312",
+					         "lxid": "002001312",
+					         "lxname": "中（粗）砂",
+					         "text": "中（粗）砂"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001313",
+					         "lxid": "002001313",
+					         "lxname": "砂砾",
+					         "text": "砂砾"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001314",
+					         "lxid": "002001314",
+					         "lxname": "天然级配",
+					         "text": "天然级配"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001315",
+					         "lxid": "002001315",
+					         "lxname": "黏土",
+					         "text": "黏土"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001316",
+					         "lxid": "002001316",
+					         "lxname": "膨润土",
+					         "text": "膨润土"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001317",
+					         "lxid": "002001317",
+					         "lxname": "碎石土",
+					         "text": "碎石土"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001318",
+					         "lxid": "002001318",
+					         "lxname": "砂砾土",
+					         "text": "砂砾土"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001319",
+					         "lxid": "002001319",
+					         "lxname": "砾石（2cm）",
+					         "text": "砾石（2cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001320",
+					         "lxid": "002001320",
+					         "lxname": "砾石（4cm）",
+					         "text": "砾石（4cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001321",
+					         "lxid": "002001321",
+					         "lxname": "砾石（6cm）",
+					         "text": "砾石（6cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001322",
+					         "lxid": "002001322",
+					         "lxname": "砾石（8cm）",
+					         "text": "砾石（8cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001323",
+					         "lxid": "002001323",
+					         "lxname": "片石",
+					         "text": "片石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001324",
+					         "lxid": "002001324",
+					         "lxname": "大卵石",
+					         "text": "大卵石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001325",
+					         "lxid": "002001325",
+					         "lxname": "煤矸石",
+					         "text": "煤矸石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001326",
+					         "lxid": "002001326",
+					         "lxname": "煤渣",
+					         "text": "煤渣"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001327",
+					         "lxid": "002001327",
+					         "lxname": "矿渣",
+					         "text": "矿渣"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001328",
+					         "lxid": "002001328",
+					         "lxname": "石渣",
+					         "text": "石渣"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001329",
+					         "lxid": "002001329",
+					         "lxname": "粉煤灰",
+					         "text": "粉煤灰"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001330",
+					         "lxid": "002001330",
+					         "lxname": "风化石",
+					         "text": "风化石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001331",
+					         "lxid": "002001331",
+					         "lxname": "矿粉",
+					         "text": "矿粉"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001332",
+					         "lxid": "002001332",
+					         "lxname": "白石子",
+					         "text": "白石子"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001333",
+					         "lxid": "002001333",
+					         "lxname": "碎石（2cm）",
+					         "text": "碎石（2cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001334",
+					         "lxid": "002001334",
+					         "lxname": "碎石（4cm）",
+					         "text": "碎石（4cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001335",
+					         "lxid": "002001335",
+					         "lxname": "碎石（6cm）",
+					         "text": "碎石（6cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001336",
+					         "lxid": "002001336",
+					         "lxname": "碎石（8cm）",
+					         "text": "碎石（8cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001337",
+					         "lxid": "002001337",
+					         "lxname": "碎石",
+					         "text": "碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001338",
+					         "lxid": "002001338",
+					         "lxname": "石屑",
+					         "text": "石屑 "
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001339",
+					         "lxid": "002001339",
+					         "lxname": "路用用碎石（1.5cm）",
+					         "text": "路用用碎石（1.5cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001340",
+					         "lxid": "002001340",
+					         "lxname": "路用用碎石（2.5cm）",
+					         "text": "路用用碎石（2.5cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001341",
+					         "lxid": "002001341",
+					         "lxname": "路用用碎石（3.5cm）",
+					         "text": "路用用碎石（3.5cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001342",
+					         "lxid": "002001342",
+					         "lxname": "路用用碎石（5cm）",
+					         "text": "路用用碎石（5cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001343",
+					         "lxid": "002001343",
+					         "lxname": "路用用碎石（6cm）",
+					         "text": "路用用碎石（6cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001344",
+					         "lxid": "002001344",
+					         "lxname": "路用用碎石（7cm）",
+					         "text": "路用用碎石（7cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001345",
+					         "lxid": "002001345",
+					         "lxname": "路用用碎石（8cm）",
+					         "text": "路用用碎石（8cm）"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001346",
+					         "lxid": "002001346",
+					         "lxname": "块石",
+					         "text": "块石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001347",
+					         "lxid": "002001347",
+					         "lxname": "盖板石",
+					         "text": "盖板石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001348",
+					         "lxid": "002001348",
+					         "lxname": "料石",
+					         "text": "料石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001349",
+					         "lxid": "002001349",
+					         "lxname": "粗料石",
+					         "text": "粗料石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001350",
+					         "lxid": "002001350",
+					         "lxname": "细料石",
+					         "text": "细料石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001351",
+					         "lxid": "002001351",
+					         "lxname": "草皮",
+					         "text": "草皮"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001352",
+					         "lxid": "002001352",
+					         "lxname": "其他材料费",
+					         "text": "其他材料费"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001353",
+					         "lxid": "002001353",
+					         "lxname": "设备摊销费",
+					         "text": "设备摊销费"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001354",
+					         "lxid": "002001354",
+					         "lxname": "线路折旧费",
+					         "text": "线路折旧费"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001355",
+					         "lxid": "002001355",
+					         "lxname": "密封胶",
+					         "text": "密封胶"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001357",
+					         "lxid": "002001357",
+					         "lxname": "芦苇",
+					         "text": "芦苇"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001358",
+					         "lxid": "002001358",
+					         "lxname": "除草剂",
+					         "text": "除草剂"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001356",
+					         "lxid": "002001356",
+					         "lxname": "压缝带",
+					         "text": "压缝带"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002001359",
+					         "lxid": "002001359",
+					         "lxname": "冷补料",
+					         "text": "冷补料"
+					        }
+			        	]
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "002002",
+			        "lxid": "002002",
+			        "lxname": "半成品",
+			        "text": "半成品"
+			    	 ,
+			    	  "children": [
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002072",
+					         "lxid": "002002072",
+					         "lxname": "C15号泵送砼32.5水泥4cm碎石",
+					         "text": "C15号泵送砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002073",
+					         "lxid": "002002073",
+					         "lxname": "C20号泵送砼32.5水泥4cm碎石",
+					         "text": "C20号泵送砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002074",
+					         "lxid": "002002074",
+					         "lxname": "C25号泵送砼32.5水泥4cm碎石",
+					         "text": "C25号泵送砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002075",
+					         "lxid": "002002075",
+					         "lxname": "C30号泵送砼32.5水泥4cm碎石",
+					         "text": "C30号泵送砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002076",
+					         "lxid": "002002076",
+					         "lxname": "C35号泵送砼32.5水泥4cm碎石",
+					         "text": "C35号泵送砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002077",
+					         "lxid": "002002077",
+					         "lxname": "C35号泵送砼42.5水泥4cm碎石",
+					         "text": "C35号泵送砼42.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002078",
+					         "lxid": "002002078",
+					         "lxname": "C40号泵送砼32.5水泥4cm碎石",
+					         "text": "C40号泵送砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002079",
+					         "lxid": "002002079",
+					         "lxname": "C40号泵送砼42.5水泥4cm碎石",
+					         "text": "C40号泵送砼42.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002080",
+					         "lxid": "002002080",
+					         "lxname": "C45号泵送砼42.5水泥4cm碎石",
+					         "text": "C45号泵送砼42.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002081",
+					         "lxid": "002002081",
+					         "lxname": "C50号泵送砼42.5水泥4cm碎石",
+					         "text": "C50号泵送砼42.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002082",
+					         "lxid": "002002082",
+					         "lxname": "C55号泵送砼52.5水泥4cm碎石",
+					         "text": "C55号泵送砼52.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002083",
+					         "lxid": "002002083",
+					         "lxname": "C20号水下砼32.5水泥4cm碎石",
+					         "text": "C20号水下砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002084",
+					         "lxid": "002002084",
+					         "lxname": "C25号水下砼32.5水泥4cm碎石",
+					         "text": "C25号水下砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002085",
+					         "lxid": "002002085",
+					         "lxname": "C30号水下砼32.5水泥4cm碎石",
+					         "text": "C30号水下砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002086",
+					         "lxid": "002002086",
+					         "lxname": "C35号水下砼32.5水泥4cm碎石",
+					         "text": "C35号水下砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002087",
+					         "lxid": "002002087",
+					         "lxname": "C25号防水砼32.5水泥4cm碎石",
+					         "text": "C25号防水砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002088",
+					         "lxid": "002002088",
+					         "lxname": "C30号防水砼32.5水泥4cm碎石",
+					         "text": "C30号防水砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002089",
+					         "lxid": "002002089",
+					         "lxname": "C35号防水砼42.5水泥4cm碎石",
+					         "text": "C35号防水砼42.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002090",
+					         "lxid": "002002090",
+					         "lxname": "C40号防水砼42.5水泥4cm碎石",
+					         "text": "C40号防水砼42.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002091",
+					         "lxid": "002002091",
+					         "lxname": "C15号喷射砼32.5水泥2cm碎石",
+					         "text": "C15号喷射砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002092",
+					         "lxid": "002002092",
+					         "lxname": "C20号喷射砼32.5水泥2cm碎石",
+					         "text": "C20号喷射砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002093",
+					         "lxid": "002002093",
+					         "lxname": "C25号喷射砼32.5水泥2cm碎石",
+					         "text": "C25号喷射砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002094",
+					         "lxid": "002002094",
+					         "lxname": "C30号喷射砼32.5水泥2cm碎石",
+					         "text": "C30号喷射砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002095",
+					         "lxid": "002002095",
+					         "lxname": "C10号片石砼32.5水泥8cm碎石",
+					         "text": "C10号片石砼32.5水泥8cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002096",
+					         "lxid": "002002096",
+					         "lxname": "C15号片石砼32.5水泥8cm碎石",
+					         "text": "C15号片石砼32.5水泥8cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002097",
+					         "lxid": "002002097",
+					         "lxname": "C20号片石砼32.5水泥8cm碎石",
+					         "text": "C20号片石砼32.5水泥8cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002098",
+					         "lxid": "002002098",
+					         "lxname": "C25号片石砼32.5水泥4cm碎石",
+					         "text": "C25号片石砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002099",
+					         "lxid": "002002099",
+					         "lxname": "C10号普通砼32.5水泥2cm砾石",
+					         "text": "C10号普通砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002100",
+					         "lxid": "002002100",
+					         "lxname": "C15号普通砼32.5水泥2cm砾石",
+					         "text": "C15号普通砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002101",
+					         "lxid": "002002101",
+					         "lxname": "C20号普通砼32.5水泥2cm砾石",
+					         "text": "C20号普通砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002102",
+					         "lxid": "002002102",
+					         "lxname": "C25号普通砼32.5水泥2cm砾石",
+					         "text": "C25号普通砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002103",
+					         "lxid": "002002103",
+					         "lxname": "C30号普通砼32.5水泥2cm砾石",
+					         "text": "C30号普通砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002104",
+					         "lxid": "002002104",
+					         "lxname": "C30号普通砼42.5水泥2cm砾石",
+					         "text": "C30号普通砼42.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002105",
+					         "lxid": "002002105",
+					         "lxname": "C35号普通砼32.5水泥2cm砾石",
+					         "text": "C35号普通砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002106",
+					         "lxid": "002002106",
+					         "lxname": "C35号普通砼42.5水泥2cm砾石",
+					         "text": "C35号普通砼42.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002107",
+					         "lxid": "002002107",
+					         "lxname": "C40号普通砼32.5水泥2cm砾石",
+					         "text": "C40号普通砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002108",
+					         "lxid": "002002108",
+					         "lxname": "C40号普通砼42.5水泥2cm砾石",
+					         "text": "C40号普通砼42.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002109",
+					         "lxid": "002002109",
+					         "lxname": "C40号普通砼52.5水泥2cm砾石",
+					         "text": "C40号普通砼52.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002110",
+					         "lxid": "002002110",
+					         "lxname": "C45号普通砼42.5水泥2cm砾石",
+					         "text": "C45号普通砼42.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002111",
+					         "lxid": "002002111",
+					         "lxname": "C45号普通砼52.5水泥2cm砾石",
+					         "text": "C45号普通砼52.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002112",
+					         "lxid": "002002112",
+					         "lxname": "C50号普通砼42.5水泥2cm砾石",
+					         "text": "C50号普通砼42.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002113",
+					         "lxid": "002002113",
+					         "lxname": "C50号普通砼52.5水泥2cm砾石",
+					         "text": "C50号普通砼52.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002114",
+					         "lxid": "002002114",
+					         "lxname": "C55号普通砼52.5水泥2cm砾石",
+					         "text": "C55号普通砼52.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002115",
+					         "lxid": "002002115",
+					         "lxname": "C60号普通砼52.5水泥2cm砾石",
+					         "text": "C60号普通砼52.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002116",
+					         "lxid": "002002116",
+					         "lxname": "C10号普通砼32.5水泥4cm砾石",
+					         "text": "C10号普通砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002117",
+					         "lxid": "002002117",
+					         "lxname": "C15号普通砼32.5水泥4cm砾石",
+					         "text": "C15号普通砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002118",
+					         "lxid": "002002118",
+					         "lxname": "C20号普通砼32.5水泥4cm砾石",
+					         "text": "C20号普通砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002119",
+					         "lxid": "002002119",
+					         "lxname": "C25号普通砼32.5水泥4cm砾石",
+					         "text": "C25号普通砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002120",
+					         "lxid": "002002120",
+					         "lxname": "C30号普通砼32.5水泥4cm砾石",
+					         "text": "C30号普通砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002121",
+					         "lxid": "002002121",
+					         "lxname": "C30号普通砼42.5水泥4cm砾石",
+					         "text": "C30号普通砼42.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002122",
+					         "lxid": "002002122",
+					         "lxname": "C35号普通砼32.5水泥4cm砾石",
+					         "text": "C35号普通砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002123",
+					         "lxid": "002002123",
+					         "lxname": "C35号普通砼42.5水泥4cm砾石",
+					         "text": "C35号普通砼42.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002124",
+					         "lxid": "002002124",
+					         "lxname": "C40号普通砼32.5水泥4cm砾石",
+					         "text": "C40号普通砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002125",
+					         "lxid": "002002125",
+					         "lxname": "C40号普通砼42.5水泥4cm砾石",
+					         "text": "C40号普通砼42.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002126",
+					         "lxid": "002002126",
+					         "lxname": "C40号普通砼52.5水泥4cm砾石",
+					         "text": "C40号普通砼52.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002127",
+					         "lxid": "002002127",
+					         "lxname": "C45号普通砼42.5水泥4cm砾石",
+					         "text": "C45号普通砼42.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002128",
+					         "lxid": "002002128",
+					         "lxname": "C45号普通砼52.5水泥4cm砾石",
+					         "text": "C45号普通砼52.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002129",
+					         "lxid": "002002129",
+					         "lxname": "C50号普通砼42.5水泥4cm砾石",
+					         "text": "C50号普通砼42.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002130",
+					         "lxid": "002002130",
+					         "lxname": "C50号普通砼52.5水泥4cm砾石",
+					         "text": "C50号普通砼52.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002131",
+					         "lxid": "002002131",
+					         "lxname": "C55号普通砼52.5水泥4cm砾石",
+					         "text": "C55号普通砼52.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002132",
+					         "lxid": "002002132",
+					         "lxname": "C10号普通砼32.5水泥8cm砾石",
+					         "text": "C10号普通砼32.5水泥8cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002133",
+					         "lxid": "002002133",
+					         "lxname": "C15号普通砼32.5水泥8cm砾石",
+					         "text": "C15号普通砼32.5水泥8cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002134",
+					         "lxid": "002002134",
+					         "lxname": "C20号普通砼32.5水泥8cm砾石",
+					         "text": "C20号普通砼32.5水泥8cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002135",
+					         "lxid": "002002135",
+					         "lxname": "C15号泵送砼32.5水泥2cm砾石",
+					         "text": "C15号泵送砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002136",
+					         "lxid": "002002136",
+					         "lxname": "C20号泵送砼32.5水泥2cm砾石",
+					         "text": "C20号泵送砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002137",
+					         "lxid": "002002137",
+					         "lxname": "C25号泵送砼32.5水泥2cm砾石",
+					         "text": "C25号泵送砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002138",
+					         "lxid": "002002138",
+					         "lxname": "C30号泵送砼32.5水泥2cm砾石",
+					         "text": "C30号泵送砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002139",
+					         "lxid": "002002139",
+					         "lxname": "C35号泵送砼32.5水泥2cm砾石",
+					         "text": "C35号泵送砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002140",
+					         "lxid": "002002140",
+					         "lxname": "C35号泵送砼42.5水泥2cm砾石",
+					         "text": "C35号泵送砼42.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002141",
+					         "lxid": "002002141",
+					         "lxname": "C40号泵送砼32.5水泥2cm砾石",
+					         "text": "C40号泵送砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002142",
+					         "lxid": "002002142",
+					         "lxname": "C40号泵送砼42.5水泥2cm砾石",
+					         "text": "C40号泵送砼42.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002143",
+					         "lxid": "002002143",
+					         "lxname": "C45号泵送砼42.5水泥2cm砾石",
+					         "text": "C45号泵送砼42.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002144",
+					         "lxid": "002002144",
+					         "lxname": "C50号泵送砼42.5水泥2cm砾石",
+					         "text": "C50号泵送砼42.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002145",
+					         "lxid": "002002145",
+					         "lxname": "C55号泵送砼52.5水泥2cm砾石",
+					         "text": "C55号泵送砼52.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002146",
+					         "lxid": "002002146",
+					         "lxname": "C60号泵送砼52.5水泥2cm砾石",
+					         "text": "C60号泵送砼52.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002147",
+					         "lxid": "002002147",
+					         "lxname": "C10号泵送砼32.5水泥4cm砾石",
+					         "text": "C10号泵送砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002148",
+					         "lxid": "002002148",
+					         "lxname": "C15号泵送砼32.5水泥4cm砾石",
+					         "text": "C15号泵送砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002149",
+					         "lxid": "002002149",
+					         "lxname": "C20号泵送砼32.5水泥4cm砾石",
+					         "text": "C20号泵送砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002150",
+					         "lxid": "002002150",
+					         "lxname": "C25号泵送砼32.5水泥4cm砾石",
+					         "text": "C25号泵送砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002151",
+					         "lxid": "002002151",
+					         "lxname": "C30号泵送砼32.5水泥4cm砾石",
+					         "text": "C30号泵送砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002152",
+					         "lxid": "002002152",
+					         "lxname": "C35号泵送砼32.5水泥4cm砾石",
+					         "text": "C35号泵送砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002153",
+					         "lxid": "002002153",
+					         "lxname": "C35号泵送砼42.5水泥4cm砾石",
+					         "text": "C35号泵送砼42.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002154",
+					         "lxid": "002002154",
+					         "lxname": "C40号泵送砼32.5水泥4cm砾石",
+					         "text": "C40号泵送砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002155",
+					         "lxid": "002002155",
+					         "lxname": "C40号泵送砼42.5水泥4cm砾石",
+					         "text": "C40号泵送砼42.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002156",
+					         "lxid": "002002156",
+					         "lxname": "C45号泵送砼42.5水泥4cm砾石",
+					         "text": "C45号泵送砼42.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002157",
+					         "lxid": "002002157",
+					         "lxname": "C50号泵送砼42.5水泥4cm砾石",
+					         "text": "C50号泵送砼42.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002158",
+					         "lxid": "002002158",
+					         "lxname": "C55号泵送砼52.5水泥4cm砾石",
+					         "text": "C55号泵送砼52.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002159",
+					         "lxid": "002002159",
+					         "lxname": "C20号水下砼32.5水泥4cm砾石",
+					         "text": "C20号水下砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002160",
+					         "lxid": "002002160",
+					         "lxname": "C25号水下砼32.5水泥4cm砾石",
+					         "text": "C25号水下砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002161",
+					         "lxid": "002002161",
+					         "lxname": "C30号水下砼32.5水泥4cm砾石",
+					         "text": "C30号水下砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002162",
+					         "lxid": "002002162",
+					         "lxname": "C35号水下砼32.5水泥4cm砾石",
+					         "text": "C35号水下砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002163",
+					         "lxid": "002002163",
+					         "lxname": "C25号防水砼32.5水泥4cm砾石",
+					         "text": "C25号防水砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002164",
+					         "lxid": "002002164",
+					         "lxname": "C30号防水砼32.5水泥4cm砾石",
+					         "text": "C30号防水砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002165",
+					         "lxid": "002002165",
+					         "lxname": "C35号防水砼42.5水泥4cm砾石",
+					         "text": "C35号防水砼42.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002166",
+					         "lxid": "002002166",
+					         "lxname": "C40号防水砼42.5水泥4cm砾石",
+					         "text": "C40号防水砼42.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002167",
+					         "lxid": "002002167",
+					         "lxname": "C15号喷射砼32.5水泥2cm砾石",
+					         "text": "C15号喷射砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002168",
+					         "lxid": "002002168",
+					         "lxname": "C20号喷射砼32.5水泥2cm砾石",
+					         "text": "C20号喷射砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002169",
+					         "lxid": "002002169",
+					         "lxname": "C25号喷射砼32.5水泥2cm砾石",
+					         "text": "C25号喷射砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002170",
+					         "lxid": "002002170",
+					         "lxname": "C30号喷射砼32.5水泥2cm砾石",
+					         "text": "C30号喷射砼32.5水泥2cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002171",
+					         "lxid": "002002171",
+					         "lxname": "C10号片石砼32.5水泥8cm砾石",
+					         "text": "C10号片石砼32.5水泥8cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002172",
+					         "lxid": "002002172",
+					         "lxname": "C15号片石砼32.5水泥8cm砾石",
+					         "text": "C15号片石砼32.5水泥8cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002173",
+					         "lxid": "002002173",
+					         "lxname": "C20号片石砼32.5水泥8cm砾石",
+					         "text": "C20号片石砼32.5水泥8cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002174",
+					         "lxid": "002002174",
+					         "lxname": "C25号片石砼32.5水泥4cm砾石",
+					         "text": "C25号片石砼32.5水泥4cm砾石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002001",
+					         "lxid": "002002001",
+					         "lxname": "M5水泥砂浆",
+					         "text": "M5水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002002",
+					         "lxid": "002002002",
+					         "lxname": "M7.5水泥砂浆",
+					         "text": "M7.5水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002003",
+					         "lxid": "002002003",
+					         "lxname": "M10水泥砂浆",
+					         "text": "M10水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002004",
+					         "lxid": "002002004",
+					         "lxname": "M12.5水泥砂浆",
+					         "text": "M12.5水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002005",
+					         "lxid": "002002005",
+					         "lxname": "M15水泥砂浆",
+					         "text": "M15水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002006",
+					         "lxid": "002002006",
+					         "lxname": "M20水泥砂浆",
+					         "text": "M20水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002007",
+					         "lxid": "002002007",
+					         "lxname": "M25水泥砂浆",
+					         "text": "M25水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002008",
+					         "lxid": "002002008",
+					         "lxname": "M30水泥砂浆",
+					         "text": "M30水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002009",
+					         "lxid": "002002009",
+					         "lxname": "M35水泥砂浆",
+					         "text": "M35水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002010",
+					         "lxid": "002002010",
+					         "lxname": "M40水泥砂浆",
+					         "text": "M40水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002011",
+					         "lxid": "002002011",
+					         "lxname": "1：1水泥砂浆",
+					         "text": "1：1水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002012",
+					         "lxid": "002002012",
+					         "lxname": "1：2水泥砂浆",
+					         "text": "1：2水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002013",
+					         "lxid": "002002013",
+					         "lxname": "1：2.5水泥砂浆",
+					         "text": "1：2.5水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002014",
+					         "lxid": "002002014",
+					         "lxname": "1：3水泥砂浆",
+					         "text": "1：3水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002015",
+					         "lxid": "002002015",
+					         "lxname": "M2.5混合砂浆",
+					         "text": "M2.5混合砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002016",
+					         "lxid": "002002016",
+					         "lxname": "M5混合砂浆",
+					         "text": "M5混合砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002017",
+					         "lxid": "002002017",
+					         "lxname": "M7.5混合砂浆",
+					         "text": "M7.5混合砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002018",
+					         "lxid": "002002018",
+					         "lxname": "M10混合砂浆",
+					         "text": "M10混合砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002019",
+					         "lxid": "002002019",
+					         "lxname": "M1石灰砂浆",
+					         "text": "M1石灰砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002020",
+					         "lxid": "002002020",
+					         "lxname": "水泥浆",
+					         "text": "水泥浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002021",
+					         "lxid": "002002021",
+					         "lxname": "水泥浆(42.5水泥)",
+					         "text": "水泥浆(42.5水泥)"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002022",
+					         "lxid": "002002022",
+					         "lxname": "M50水泥砂浆",
+					         "text": "M50水泥砂浆"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002023",
+					         "lxid": "002002023",
+					         "lxname": "C10号普通砼32.5水泥2cm碎石",
+					         "text": "C10号普通砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002024",
+					         "lxid": "002002024",
+					         "lxname": "C15号普通砼32.5水泥2cm碎石",
+					         "text": "C15号普通砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002025",
+					         "lxid": "002002025",
+					         "lxname": "C20号普通砼32.5水泥2cm碎石",
+					         "text": "C20号普通砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002026",
+					         "lxid": "002002026",
+					         "lxname": "C25号普通砼32.5水泥2cm碎石",
+					         "text": "C25号普通砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002027",
+					         "lxid": "002002027",
+					         "lxname": "C30号普通砼32.5水泥2cm碎石",
+					         "text": "C30号普通砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002028",
+					         "lxid": "002002028",
+					         "lxname": "C30号普通砼42.5水泥2cm碎石",
+					         "text": "C30号普通砼42.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002029",
+					         "lxid": "002002029",
+					         "lxname": "C35号普通砼32.5水泥2cm碎石",
+					         "text": "C35号普通砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002030",
+					         "lxid": "002002030",
+					         "lxname": "C35号普通砼42.5水泥2cm碎石",
+					         "text": "C35号普通砼42.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002031",
+					         "lxid": "002002031",
+					         "lxname": "C40号普通砼32.5水泥2cm碎石",
+					         "text": "C40号普通砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002032",
+					         "lxid": "002002032",
+					         "lxname": "C40号普通砼42.5水泥2cm碎石",
+					         "text": "C40号普通砼42.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002033",
+					         "lxid": "002002033",
+					         "lxname": "C40号普通砼52.5水泥2cm碎石",
+					         "text": "C40号普通砼52.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002034",
+					         "lxid": "002002034",
+					         "lxname": "C45号普通砼42.5水泥2cm碎石",
+					         "text": "C45号普通砼42.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002035",
+					         "lxid": "002002035",
+					         "lxname": "C45号普通砼52.5水泥2cm碎石",
+					         "text": "C45号普通砼52.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002036",
+					         "lxid": "002002036",
+					         "lxname": "C50号普通砼42.5水泥2cm碎石",
+					         "text": "C50号普通砼42.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002037",
+					         "lxid": "002002037",
+					         "lxname": "C50号普通砼52.5水泥2cm碎石",
+					         "text": "C50号普通砼52.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002038",
+					         "lxid": "002002038",
+					         "lxname": "C55号普通砼52.5水泥2cm碎石",
+					         "text": "C55号普通砼52.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002039",
+					         "lxid": "002002039",
+					         "lxname": "C60号普通砼52.5水泥2cm碎石",
+					         "text": "C60号普通砼52.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002040",
+					         "lxid": "002002040",
+					         "lxname": "C10号普通砼32.5水泥4cm碎石",
+					         "text": "C10号普通砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002041",
+					         "lxid": "002002041",
+					         "lxname": "C15号普通砼32.5水泥4cm碎石",
+					         "text": "C15号普通砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002042",
+					         "lxid": "002002042",
+					         "lxname": "C20号普通砼32.5水泥4cm碎石",
+					         "text": "C20号普通砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002043",
+					         "lxid": "002002043",
+					         "lxname": "C25号普通砼32.5水泥4cm碎石",
+					         "text": "C25号普通砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002044",
+					         "lxid": "002002044",
+					         "lxname": "C30号普通砼32.5水泥4cm碎石",
+					         "text": "C30号普通砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002045",
+					         "lxid": "002002045",
+					         "lxname": "C30号普通砼42.5水泥4cm碎石",
+					         "text": "C30号普通砼42.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002046",
+					         "lxid": "002002046",
+					         "lxname": "C35号普通砼32.5水泥4cm碎石",
+					         "text": "C35号普通砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002047",
+					         "lxid": "002002047",
+					         "lxname": "C35号普通砼42.5水泥4cm碎石",
+					         "text": "C35号普通砼42.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002048",
+					         "lxid": "002002048",
+					         "lxname": "C40号普通砼32.5水泥4cm碎石",
+					         "text": "C40号普通砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002049",
+					         "lxid": "002002049",
+					         "lxname": "C40号普通砼42.5水泥4cm碎石",
+					         "text": "C40号普通砼42.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002050",
+					         "lxid": "002002050",
+					         "lxname": "C40号普通砼52.5水泥4cm碎石",
+					         "text": "C40号普通砼52.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002051",
+					         "lxid": "002002051",
+					         "lxname": "C45号普通砼42.5水泥4cm碎石",
+					         "text": "C45号普通砼42.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002052",
+					         "lxid": "002002052",
+					         "lxname": "C45号普通砼52.5水泥4cm碎石",
+					         "text": "C45号普通砼52.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002053",
+					         "lxid": "002002053",
+					         "lxname": "C50号普通砼42.5水泥4cm碎石",
+					         "text": "C50号普通砼42.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002054",
+					         "lxid": "002002054",
+					         "lxname": "C50号普通砼52.5水泥4cm碎石",
+					         "text": "C50号普通砼52.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002055",
+					         "lxid": "002002055",
+					         "lxname": "C55号普通砼52.5水泥4cm碎石",
+					         "text": "C55号普通砼52.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002056",
+					         "lxid": "002002056",
+					         "lxname": "C10号普通砼32.5水泥8cm碎石",
+					         "text": "C10号普通砼32.5水泥8cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002057",
+					         "lxid": "002002057",
+					         "lxname": "C15号普通砼32.5水泥8cm碎石",
+					         "text": "C15号普通砼32.5水泥8cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002058",
+					         "lxid": "002002058",
+					         "lxname": "C20号普通砼32.5水泥8cm碎石",
+					         "text": "C20号普通砼32.5水泥8cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002059",
+					         "lxid": "002002059",
+					         "lxname": "C15号泵送砼32.5水泥2cm碎石",
+					         "text": "C15号泵送砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002060",
+					         "lxid": "002002060",
+					         "lxname": "C20号泵送砼32.5水泥2cm碎石",
+					         "text": "C20号泵送砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002061",
+					         "lxid": "002002061",
+					         "lxname": "C25号泵送砼32.5水泥2cm碎石",
+					         "text": "C25号泵送砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002062",
+					         "lxid": "002002062",
+					         "lxname": "C30号泵送砼32.5水泥2cm碎石",
+					         "text": "C30号泵送砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002063",
+					         "lxid": "002002063",
+					         "lxname": "C35号泵送砼32.5水泥2cm碎石",
+					         "text": "C35号泵送砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002064",
+					         "lxid": "002002064",
+					         "lxname": "C35号泵送砼42.5水泥2cm碎石",
+					         "text": "C35号泵送砼42.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002065",
+					         "lxid": "002002065",
+					         "lxname": "C40号泵送砼32.5水泥2cm碎石",
+					         "text": "C40号泵送砼32.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002066",
+					         "lxid": "002002066",
+					         "lxname": "C40号泵送砼42.5水泥2cm碎石",
+					         "text": "C40号泵送砼42.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002067",
+					         "lxid": "002002067",
+					         "lxname": "C45号泵送砼42.5水泥2cm碎石",
+					         "text": "C45号泵送砼42.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002068",
+					         "lxid": "002002068",
+					         "lxname": "C50号泵送砼42.5水泥2cm碎石",
+					         "text": "C50号泵送砼42.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002069",
+					         "lxid": "002002069",
+					         "lxname": "C55号泵送砼52.5水泥2cm碎石",
+					         "text": "C55号泵送砼52.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002070",
+					         "lxid": "002002070",
+					         "lxname": "C60号泵送砼52.5水泥2cm碎石",
+					         "text": "C60号泵送砼52.5水泥2cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002071",
+					         "lxid": "002002071",
+					         "lxname": "C10号泵送砼32.5水泥4cm碎石",
+					         "text": "C10号泵送砼32.5水泥4cm碎石"
+					        }
+							 ,
+			        	   {
+			        	   "attributes":{
+							  		"gg":""
+							  },
+			        		 "checkbox": true,
+					         "id": "002002175",
+					         "lxid": "002002175",
+					         "lxname": "混凝土里程碑",
+					         "text": "混凝土里程碑"
+					        }
+			        	]
+			       
+			      }
+     		 ]
+      }
+]

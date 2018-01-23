@@ -1,0 +1,133 @@
+[
+	{
+		"bhid": "03",
+		"bhname": "沿线设施",
+		"dw": "",
+		"id": "03",
+		"state": "closed",
+		"text": "沿线设施",
+		"wxsx": 1,
+		"children": [
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0301",
+				"bhname": "防护设施缺损（轻）",
+				"dw": "处",
+				"id": "0301",
+				"state": "",
+				"text": "防护设施缺损（轻）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0302",
+				"bhname": "防护设施缺损（重）",
+				"dw": "处",
+				"id": "0302",
+				"state": "",
+				"text": "防护设施缺损（重）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0303",
+				"bhname": "隔离栅损坏",
+				"dw": "处",
+				"id": "0303",
+				"state": "",
+				"text": "隔离栅损坏",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0304",
+				"bhname": "标志缺损",
+				"dw": "处",
+				"id": "0304",
+				"state": "",
+				"text": "标志缺损",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "m"
+				},
+				"bhid": "0305",
+				"bhname": "标线缺损",
+				"dw": "m",
+				"id": "0305",
+				"state": "",
+				"text": "标线缺损",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "m"
+				},
+				"bhid": "0306",
+				"bhname": "绿化管理不善",
+				"dw": "m",
+				"id": "0306",
+				"state": "",
+				"text": "绿化管理不善",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "m"
+				},
+				"bhid": "0307",
+				"bhname": "波形护栏损坏（普通型）",
+				"dw": "m",
+				"id": "0307",
+				"state": "",
+				"text": "波形护栏损坏（普通型）",
+				"wxsx": 7
+			},
+			{
+				"attributes": {
+					"dw": "m"
+				},
+				"bhid": "0308",
+				"bhname": "波形护栏（加强型）",
+				"dw": "m",
+				"id": "0308",
+				"state": "",
+				"text": "波形护栏（加强型）",
+				"wxsx": 7
+			},
+			{
+				"attributes": {
+					"dw": "km"
+				},
+				"bhid": "0309",
+				"bhname": "护栏不洁",
+				"dw": "km",
+				"id": "0309",
+				"state": "",
+				"text": "护栏不洁",
+				"wxsx": 30
+			},
+			{
+				"attributes": {
+					"dw": "块"
+				},
+				"bhid": "0310",
+				"bhname": "标志不洁",
+				"dw": "块",
+				"id": "0310",
+				"state": "",
+				"text": "标志不洁",
+				"wxsx": 30
+			}
+		]
+	}
+]

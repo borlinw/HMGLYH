@@ -62,7 +62,7 @@ public class SpringInit implements ServletContextListener {
 			String path = event.getServletContext().getRealPath("/");
 			fm.createJsonFile(root, "bhlxtree.ftl", path+"/template/bhlxtree.json");
 		
-			//WxzyService wxzyService = springContext.getBean(WxzyService.class);
+//			WxzyService wxzyService = springContext.getBean(WxzyService.class);
 			List<HtglYhlxb> yhlxlist = RcyhUtils.getYhlxTree();
 			root.put("list", yhlxlist);
 			fm.createJsonFile(root, "yhlxtree.ftl", path+"/template/yhlxtree.json");

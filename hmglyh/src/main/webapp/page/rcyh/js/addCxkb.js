@@ -31,12 +31,12 @@ var A = function(_result){
 	}
 };
 
-//处理除雪量的(平均厚度cm*除雪面积㎡)/100=除雪量
+//处理除雪量的平均厚度cm*除雪面积㎡
 function countCxl(){
 	var pjhdFloat = parseFloat($("#pjhd").val());//平均厚度
 	var cxmjFloat = parseFloat($("#cxmj").val());//除雪面积
 	if(pjhdFloat > 0 && cxmjFloat > 0){
-		$("#cxl").val((pjhdFloat*cxmjFloat)/100);
+		$("#cxl").val((pjhdFloat/100*cxmjFloat)/1000);
 	}else if(pjhdFloat == 0 || cxmjFloat == 0){
 		$("#cxl").val(0);
 	}
@@ -126,6 +126,109 @@ function countQt(){
 	}
 	countFyhj();
 };
+
+$(function(){
+	YMLib.UI.MaskShow("正在加载页面...");
+	nowBmcode = $("#nowBmcode").val();
+	if(action == "add"){
+		initCombobox();//加载各种Combobox
+		var nowDate = new Date();
+		var nowYear = nowDate.getFullYear();
+		var nowMonth = nowDate.getMonth()+1;
+		var nowDay = nowDate.getDate();
+		var nowDateStr = nowYear+"-"+nowMonth+"-"+nowDay;
+		$('#tbdateOfInput').datebox('setValue', nowDateStr);
+		$('#jxsj').datetimebox({onChange : function(){countCxsj();}});//加载“降雪时间”的选择日期事件
+		$('#txsj').datetimebox({onChange : function(){countCxsj();}});//加载“停雪时间”的选择日期事件
+		$('#stime').datetimebox({onChange : function(){countChuxsj();}});//加载“除雪开始时间”的选择日期事件
+		$('#etime').datetimebox({onChange : function(){countChuxsj();}});//加载“除雪结束时间”的选择日期事件
+		YMLib.UI.MaskHide();
+	}else if(action == "view"){
+		YMLib.UI.MaskHide();
+	}else if(action == "edit"){
+		jxlxStrToCombobox = parent.currentGridRows.cxfl;
+		//ldnameStrToCombobox = parent.currentGridRows.lxname;//路段名称Str
+		ldnameStrToCombobox = parent.currentGridRows.ldcode;//路段编码：2016-03-07LR改
+		initCombobox();//加载各种Combobox
+		$("#form").form("load",parent.currentGridRows);
+		$("#toAddQzzhStr").val($("#qzzhStrToViewInJsp").val());//加载起止桩号Str（用于添加和编辑“起止桩号”）
+		$('#jxsj').datetimebox({onChange : function(){countCxsj();}});//加载“降雪时间”的选择日期事件
+		$('#jxsj').datetimebox("setValue", parent.currentGridRows.jxsj);
+		$('#txsj').datetimebox({onChange : function(){countCxsj();}});//加载“停雪时间”的选择日期事件
+		$('#txsj').datetimebox("setValue", parent.currentGridRows.txsj);
+		$('#stime').datetimebox({onChange : function(){countChuxsj();}});//加载“除雪开始时间”的选择日期事件
+		$('#stime').datetimebox("setValue", parent.currentGridRows.stime);
+		$('#etime').datetimebox({onChange : function(){countChuxsj();}});//加载“除雪结束时间”的选择日期事件
+		$('#etime').datetimebox("setValue", parent.currentGridRows.etime);
+		YMLib.UI.MaskHide();
+	}else{
+		alert("action参数传递错误，请刷新重试。");
+		YMLib.UI.MaskHide();
+	}
+	//保存按钮
+	$("#btnSave").click(function(){
+		if ($("#form").form("validate")) {
+			if(action == "add"){
+				lxnameOfJsp = $("#chooseLxname").val();
+				qzzhStrOfJSP = $("#toAddQzzhStr").val();
+				var tbdateStr = $('#tbdateOfInput').datebox('getValue');
+				//alert("当前被选中的路线名称是："+lxnameOfJsp);
+				if(tbdateStr == "" || tbdateStr == null){
+					YMLib.UI.Show("填报日期不能为空。",1500);
+				}else if(cxflStrOfCombobox == ""){
+					YMLib.UI.Show("请选择降雪分类。",1500);
+				}else if(lxnameOfJsp == null || lxnameOfJsp == ""){
+					YMLib.UI.Show("请选择路线。",1500);
+				}else if(qzzhStrOfJSP == null || qzzhStrOfJSP == ""){
+					YMLib.UI.Show("请填写“起止桩号”。",1500);
+				}else{
+					var pams = $("#form").serialize();
+					var jxsjStrToEdit = $("#jxsj").datetimebox("getValue");		//降雪时间
+					var txsjStrToEdit = $("#txsj").datetimebox("getValue");		//停雪时间
+					var stimeStrToEdit = $("#stime").datetimebox("getValue");	//除雪开始时间
+					var etimeStrToEdit = $("#etime").datetimebox("getValue");	//除雪结束时间
+					var nzCxrsStr = $("#nzCxrs").text();
+					var nzCxclStr = $("#nzCxcl").text();
+					var nzCxmjStr = $("#nzCxmj").text();
+					var nzCxlStr = $("#nzCxl").text();
+					
+					console.log(pams);
+					var nzStrToExport = nzCxrsStr+"###"+nzCxclStr+"###"+nzCxmjStr+"###"+nzCxlStr+"###";
+//					console.log(nzStrToExport);
+					nzStrToExport = nzStrToExport.replace(/\+/g,"xxxxx");
+					var ldcodeStr = $("#chooseLd").combobox("getValue");//获取路线编码
+					pams = pams+"&tbdate="+tbdateStr+"&nz="+nzStrToExport+"&jxsjStr="+jxsjStrToEdit+"&txsjStr="+txsjStrToEdit+"&stimeStr="+stimeStrToEdit+"&etimeStr="+etimeStrToEdit+"&ldcode="+ldcodeStr;
+					//alert("add -> pams="+pams);
+					YMLib.Ajax.POST("/rcyh/djcx_addOneCxkb.do",pams,"json",A,AA);
+				}
+			}else if(action == "edit"){
+				var pams = $("#form").serialize();
+				var jxsjStrToEdit = $("#jxsj").datetimebox("getValue");		//降雪时间
+				var txsjStrToEdit = $("#txsj").datetimebox("getValue");		//停雪时间
+				var stimeStrToEdit = $("#stime").datetimebox("getValue");	//除雪开始时间
+				var etimeStrToEdit = $("#etime").datetimebox("getValue");	//除雪结束时间
+				var nzCxrsStr = $("#nzCxrs").text();
+				var nzCxclStr = $("#nzCxcl").text();
+				var nzCxmjStr = $("#nzCxmj").text();
+				var nzCxlStr = $("#nzCxl").text();
+				console.log(pams);
+//				var bz = document.getElementById("bz").value
+				var nzStrToExport = nzCxrsStr+"###"+nzCxclStr+"###"+nzCxmjStr+"###"+nzCxlStr+"###";
+				
+				nzStrToExport = nzStrToExport.replace(/\+/g,"xxxxx");
+				var ldcodeStr = $("#chooseLd").combobox("getValue");//获取路线编码
+				pams = pams+"&nz="+nzStrToExport+"&kbid="+parent.currentGridRows.kbid+"&jxsjStr="+jxsjStrToEdit+"&txsjStr="+txsjStrToEdit+"&stimeStr="+stimeStrToEdit+"&etimeStr="+etimeStrToEdit+"&ldcode="+ldcodeStr;
+				//alert("edit -> pams="+pams);
+				YMLib.Ajax.POST("/rcyh/djcx_editOneCxkb.do",pams,"json",A,AA);
+			}else{
+				YMLib.UI.Show("类型参数传递出错。",1500);
+			}
+		}else{
+			YMLib.UI.Show("表单不完整。",1500);
+		}
+	});
+});
+
 
 //处理费用合计
 function countFyhj(){
@@ -265,101 +368,7 @@ function changeJxfl(){
 	}
 };
 
-$(function(){
-	YMLib.UI.MaskShow("正在加载页面...");
-	nowBmcode = $("#nowBmcode").val();
-	if(action == "add"){
-		initCombobox();//加载各种Combobox
-		var nowDate = new Date();
-		var nowYear = nowDate.getFullYear();
-		var nowMonth = nowDate.getMonth()+1;
-		var nowDay = nowDate.getDate();
-		var nowDateStr = nowYear+"-"+nowMonth+"-"+nowDay;
-		$('#tbdateOfInput').datebox('setValue', nowDateStr);
-		$('#jxsj').datetimebox({onChange : function(){countCxsj();}});//加载“降雪时间”的选择日期事件
-		$('#txsj').datetimebox({onChange : function(){countCxsj();}});//加载“停雪时间”的选择日期事件
-		$('#stime').datetimebox({onChange : function(){countChuxsj();}});//加载“除雪开始时间”的选择日期事件
-		$('#etime').datetimebox({onChange : function(){countChuxsj();}});//加载“除雪结束时间”的选择日期事件
-		YMLib.UI.MaskHide();
-	}else if(action == "view"){
-		YMLib.UI.MaskHide();
-	}else if(action == "edit"){
-		jxlxStrToCombobox = parent.currentGridRows.cxfl;
-		//ldnameStrToCombobox = parent.currentGridRows.lxname;//路段名称Str
-		ldnameStrToCombobox = parent.currentGridRows.ldcode;//路段编码：2016-03-07LR改
-		initCombobox();//加载各种Combobox
-		$("#form").form("load",parent.currentGridRows);
-		$("#toAddQzzhStr").val($("#qzzhStrToViewInJsp").val());//加载起止桩号Str（用于添加和编辑“起止桩号”）
-		$('#jxsj').datetimebox({onChange : function(){countCxsj();}});//加载“降雪时间”的选择日期事件
-		$('#jxsj').datetimebox("setValue", parent.currentGridRows.jxsj);
-		$('#txsj').datetimebox({onChange : function(){countCxsj();}});//加载“停雪时间”的选择日期事件
-		$('#txsj').datetimebox("setValue", parent.currentGridRows.txsj);
-		$('#stime').datetimebox({onChange : function(){countChuxsj();}});//加载“除雪开始时间”的选择日期事件
-		$('#stime').datetimebox("setValue", parent.currentGridRows.stime);
-		$('#etime').datetimebox({onChange : function(){countChuxsj();}});//加载“除雪结束时间”的选择日期事件
-		$('#etime').datetimebox("setValue", parent.currentGridRows.etime);
-		YMLib.UI.MaskHide();
-	}else{
-		alert("action参数传递错误，请刷新重试。");
-		YMLib.UI.MaskHide();
-	}
-	//保存按钮
-	$("#btnSave").click(function(){
-		if ($("#form").form("validate")) {
-			if(action == "add"){
-				lxnameOfJsp = $("#chooseLxname").val();
-				qzzhStrOfJSP = $("#toAddQzzhStr").val();
-				var tbdateStr = $('#tbdateOfInput').datebox('getValue');
-				//alert("当前被选中的路线名称是："+lxnameOfJsp);
-				if(tbdateStr == "" || tbdateStr == null){
-					YMLib.UI.Show("填报日期不能为空。",1500);
-				}else if(cxflStrOfCombobox == ""){
-					YMLib.UI.Show("请选择降雪分类。",1500);
-				}else if(lxnameOfJsp == null || lxnameOfJsp == ""){
-					YMLib.UI.Show("请选择路线。",1500);
-				}else if(qzzhStrOfJSP == null || qzzhStrOfJSP == ""){
-					YMLib.UI.Show("请填写“起止桩号”。",1500);
-				}else{
-					var pams = $("#form").serialize();
-					var jxsjStrToEdit = $("#jxsj").datetimebox("getValue");		//降雪时间
-					var txsjStrToEdit = $("#txsj").datetimebox("getValue");		//停雪时间
-					var stimeStrToEdit = $("#stime").datetimebox("getValue");	//除雪开始时间
-					var etimeStrToEdit = $("#etime").datetimebox("getValue");	//除雪结束时间
-					var nzCxrsStr = $("#nzCxrs").text();
-					var nzCxclStr = $("#nzCxcl").text();
-					var nzCxmjStr = $("#nzCxmj").text();
-					var nzCxlStr = $("#nzCxl").text();
-					var nzStrToExport = nzCxrsStr+"###"+nzCxclStr+"###"+nzCxmjStr+"###"+nzCxlStr;
-					nzStrToExport = nzStrToExport.replace(/\+/g,"xxxxx");
-					var ldcodeStr = $("#chooseLd").combobox("getValue");//获取路线编码
-					pams = pams+"&tbdate="+tbdateStr+"&nz="+nzStrToExport+"&jxsjStr="+jxsjStrToEdit+"&txsjStr="+txsjStrToEdit+"&stimeStr="+stimeStrToEdit+"&etimeStr="+etimeStrToEdit+"&ldcode="+ldcodeStr;
-					//alert("add -> pams="+pams);
-					YMLib.Ajax.POST("/rcyh/djcx_addOneCxkb.do",pams,"json",A,AA);
-				}
-			}else if(action == "edit"){
-				var pams = $("#form").serialize();
-				var jxsjStrToEdit = $("#jxsj").datetimebox("getValue");		//降雪时间
-				var txsjStrToEdit = $("#txsj").datetimebox("getValue");		//停雪时间
-				var stimeStrToEdit = $("#stime").datetimebox("getValue");	//除雪开始时间
-				var etimeStrToEdit = $("#etime").datetimebox("getValue");	//除雪结束时间
-				var nzCxrsStr = $("#nzCxrs").text();
-				var nzCxclStr = $("#nzCxcl").text();
-				var nzCxmjStr = $("#nzCxmj").text();
-				var nzCxlStr = $("#nzCxl").text();
-				var nzStrToExport = nzCxrsStr+"###"+nzCxclStr+"###"+nzCxmjStr+"###"+nzCxlStr;
-				nzStrToExport = nzStrToExport.replace(/\+/g,"xxxxx");
-				var ldcodeStr = $("#chooseLd").combobox("getValue");//获取路线编码
-				pams = pams+"&nz="+nzStrToExport+"&kbid="+parent.currentGridRows.kbid+"&jxsjStr="+jxsjStrToEdit+"&txsjStr="+txsjStrToEdit+"&stimeStr="+stimeStrToEdit+"&etimeStr="+etimeStrToEdit+"&ldcode="+ldcodeStr;
-				//alert("edit -> pams="+pams);
-				YMLib.Ajax.POST("/rcyh/djcx_editOneCxkb.do",pams,"json",A,AA);
-			}else{
-				YMLib.UI.Show("类型参数传递出错。",1500);
-			}
-		}else{
-			YMLib.UI.Show("表单不完整。",1500);
-		}
-	});
-});
+
 
 //初始化Combobox（部门类型）
 function initCombobox(){

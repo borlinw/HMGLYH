@@ -1,0 +1,37 @@
+[
+	{
+		"bhid": "06",
+		"bhname": "涵洞",
+		"dw": "",
+		"id": "06",
+		"state": "closed",
+		"text": "涵洞",
+		"wxsx": 1,
+		"children": [
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0601",
+				"bhname": "涵洞损坏",
+				"dw": "处",
+				"id": "0601",
+				"state": "",
+				"text": "涵洞损坏",
+				"wxsx": 30
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0602",
+				"bhname": "涵洞进出水口淤积",
+				"dw": "处",
+				"id": "0602",
+				"state": "",
+				"text": "涵洞进出水口淤积",
+				"wxsx": 30
+			}
+		]
+	}
+]

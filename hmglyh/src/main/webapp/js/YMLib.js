@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Project :		首发安畅路产核心脚本库
  * Description : 	基于jQuery 1.10.2 & jQuery.EasyUI 1.3.4
  * 				  	前端开发框架联合开发核心库
@@ -28,8 +28,8 @@ var YMLib = {
 		/*
 		 * 获取报表的地址
 		 */
+
 		reportUrl : document.location.protocol+"//"+ "localhost:8075" + "/WebReport/ReportServer?",
-		
 		/*
 		 * 枚举类型
 		 */

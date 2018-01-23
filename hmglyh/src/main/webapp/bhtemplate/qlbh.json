@@ -1,0 +1,133 @@
+[
+	{
+		"bhid": "04",
+		"bhname": "桥梁",
+		"dw": "",
+		"id": "04",
+		"state": "closed",
+		"text": "桥梁",
+		"wxsx": 1,
+		"children": [
+			{
+				"attributes": {
+					"dw": ""
+				},
+				"bhid": "0401",
+				"bhname": "桥梁技术状况",
+				"dw": "",
+				"id": "0401",
+				"state": "",
+				"text": "桥梁技术状况",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0402",
+				"bhname": "桥头跳车",
+				"dw": "处",
+				"id": "0402",
+				"state": "",
+				"text": "桥头跳车",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "m"
+				},
+				"bhid": "0403",
+				"bhname": "伸缩缝损坏",
+				"dw": "m",
+				"id": "0403",
+				"state": "",
+				"text": "伸缩缝损坏",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0404",
+				"bhname": "泄水孔堵塞",
+				"dw": "处",
+				"id": "0404",
+				"state": "",
+				"text": "泄水孔堵塞",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0405",
+				"bhname": "栏杆护栏损坏",
+				"dw": "处",
+				"id": "0405",
+				"state": "",
+				"text": "栏杆护栏损坏",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0406",
+				"bhname": "翼墙锥坡损坏",
+				"dw": "处",
+				"id": "0406",
+				"state": "",
+				"text": "翼墙锥坡损坏",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0407",
+				"bhname": "上跨桥防落网损坏（轻）",
+				"dw": "处",
+				"id": "0407",
+				"state": "",
+				"text": "上跨桥防落网损坏（轻）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0408",
+				"bhname": "上跨桥防落网损坏（重）",
+				"dw": "处",
+				"id": "0408",
+				"state": "",
+				"text": "上跨桥防落网损坏（重）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "m"
+				},
+				"bhid": "0409",
+				"bhname": "伸缩缝不洁",
+				"dw": "m",
+				"id": "0409",
+				"state": "",
+				"text": "伸缩缝不洁",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0410",
+				"bhname": "桥梁进出水口淤积",
+				"dw": "处",
+				"id": "0410",
+				"state": "",
+				"text": "桥梁进出水口淤积",
+				"wxsx": 30
+			}
+		]
+	}
+]

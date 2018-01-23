@@ -52,6 +52,7 @@
                 </tr> 
                 <tr> 
                     <td colspan="3" style="border-right: black 1px solid; border-left: black 1px solid; border-top: 0px; border-bottom: 0px;"  > 
+
                         &nbsp;致： 
                         <s:if test="add"> 
                             <span id="dataToAdd" > 
@@ -72,6 +73,7 @@
                                &nbsp;&nbsp;&nbsp;&nbsp;经巡查、检查发现你单位 在 
                                <input id="wz" name="wz" class="easyui-validatebox" maxlength="100" data-options="required:true" style="border-left:0px;border-top:0px;border-right:0px;border-bottom:1px" value="（某路线 Kxxx）" /> 
                                 等处，从事的养护作业存在以下问题，请务必（ 
+
                                <span> 
                                     <input id="r1" type="radio" name="yq" style="border:none" value="尽快" checked /><label for="r1">尽快</label> 
                                     <input id="r2" type="radio" name="yq" style="border:none" value="立即" /><label for="r2">立即</label> 
@@ -79,7 +81,8 @@
                                 ）按本单要求进行整改，并于 
                                    <input id="sxtime" name="sxtime" class="easyui-datebox" data-options="required:true" style="width:120px" /> 
                                 日前报送整改结果，特此通知。 
-                           </span> 
+                           </span>
+                           
                         </s:if> 
                         <!-- <span id="dataToAdd" > 
                             &nbsp;&nbsp;&nbsp;&nbsp;经巡查、检查发现你单位 
@@ -95,11 +98,13 @@
                                <input id="sxtime" name="sxtime" class="easyui-datebox" data-options="required:true" style="width:120px" /> 
                             日前报送整改结果，特此通知。 
                        </span> --> 
+
                         <s:if test="view">
                         		<span>
                         		<s:property value='model.sbbmname' /><br/>
                             	&nbsp;&nbsp;&nbsp;&nbsp; 
                             	经巡查、检查发现你单位  在 <s:property value='model.wz' /> 等处，从事的养护作业存在以下问题，请务必 <s:property value='model.yq' /> 按本单要求进行整改，并于 <s:property value='model.sxtimeStr' /> 前报送整改结果，特此通知。</span> 
+
                         </s:if> 
                         <!-- <p id="dataToView" style="text-indent:2em;display:none" ></p> --> 
                     </td> 

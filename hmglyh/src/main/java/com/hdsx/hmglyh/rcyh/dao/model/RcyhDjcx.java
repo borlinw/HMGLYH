@@ -67,13 +67,18 @@ public class RcyhDjcx implements Serializable {
 	private double qtdj;				//其他单价
 	private double qtfy;				//其他费用
 	private double fyhj;				//费用合计
-	private String nz;					//备注
+	private String nz;					//备注栏
 	private double zslc;					//折算里程（折算成二级公路的里程）
 	private String nzCxrs;			//备注：除雪人数
 	private String nzCxcl;			//备注：除雪车辆
 	private String nzCxmj;			//备注：除雪面积
 	private String nzCxl;				//备注：除雪量
-	private String ldcode;			//路段编码：2016-03-07
+	private String ldcode;			//路段编码：2016-03-07              
+	private String bz1;              //备注栏中的备注
+	public String getBz1() {
+		return bz1;
+	}
+
 	private String state;				//编辑状态；2016-06-14
 	//1：刚填写或者修改完成。
 	//2：申请修改中（养护科人员同意了分局和养护站的修改请求）。
@@ -480,4 +485,7 @@ public class RcyhDjcx implements Serializable {
 		this.jxcl = jxcl;
 	}
 
+	public void setBz1(String bz1) {
+		this.bz1 = bz1;
+	}
 }

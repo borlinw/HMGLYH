@@ -1,0 +1,8990 @@
+[
+		  {
+	  	"attributes":{
+	  		"gg":""
+	  	},
+        "checkbox": true,
+        "id": "003",
+        "lxid": "003",
+        "lxname": "机械",
+        "text": "机械"
+    	 ,
+    	 "children": [
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003748",
+			        "lxid": "003748",
+			        "lxname": "肩背式割草机",
+			        "text": "肩背式割草机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003257",
+			        "lxid": "003257",
+			        "lxname": "含泵钢绞线穿束机",
+			        "text": "含泵钢绞线穿束机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003002",
+			        "lxid": "003002",
+			        "lxname": "75kw以内履带式推土机",
+			        "text": "75kw以内履带式推土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003003",
+			        "lxid": "003003",
+			        "lxname": "90kw以内履带式推土机",
+			        "text": "90kw以内履带式推土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003004",
+			        "lxid": "003004",
+			        "lxname": "105kw以内履带式推土机",
+			        "text": "105kw以内履带式推土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003005",
+			        "lxid": "003005",
+			        "lxname": "135kw以内履带式推土机",
+			        "text": "135kw以内履带式推土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003006",
+			        "lxid": "003006",
+			        "lxname": "165kw以内履带式推土机",
+			        "text": "165kw以内履带式推土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003007",
+			        "lxid": "003007",
+			        "lxname": "240kw以内履带式推土机",
+			        "text": "240kw以内履带式推土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003008",
+			        "lxid": "003008",
+			        "lxname": "320kw以内履带式推土机",
+			        "text": "320kw以内履带式推土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003009",
+			        "lxid": "003009",
+			        "lxname": "105kw以内湿地推土机",
+			        "text": "105kw以内湿地推土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003001",
+			        "lxid": "003001",
+			        "lxname": "60kw以内履带式推土机",
+			        "text": "60kw以内履带式推土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003010",
+			        "lxid": "003010",
+			        "lxname": "135kw以内湿地推土机",
+			        "text": "135kw以内湿地推土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003011",
+			        "lxid": "003011",
+			        "lxname": "165kw以内湿地推土机",
+			        "text": "165kw以内湿地推土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003012",
+			        "lxid": "003012",
+			        "lxname": "135kw以内轮胎式推土机",
+			        "text": "135kw以内轮胎式推土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003013",
+			        "lxid": "003013",
+			        "lxname": "160kw以内轮胎式推土机",
+			        "text": "160kw以内轮胎式推土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003014",
+			        "lxid": "003014",
+			        "lxname": "4m3以内自行式铲运机",
+			        "text": "4m3以内自行式铲运机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003015",
+			        "lxid": "003015",
+			        "lxname": "8m3以内自行式铲运机",
+			        "text": "8m3以内自行式铲运机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003016",
+			        "lxid": "003016",
+			        "lxname": "10m3以内自行式铲运机",
+			        "text": "10m3以内自行式铲运机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003017",
+			        "lxid": "003017",
+			        "lxname": "12m3以内自行式铲运机",
+			        "text": "12m3以内自行式铲运机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003018",
+			        "lxid": "003018",
+			        "lxname": "23m3以内自行式铲运机",
+			        "text": "23m3以内自行式铲运机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003019",
+			        "lxid": "003019",
+			        "lxname": "3m3以内拖式(含头)铲运机",
+			        "text": "3m3以内拖式(含头)铲运机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003020",
+			        "lxid": "003020",
+			        "lxname": "8m3以内拖式(含头)铲运机",
+			        "text": "8m3以内拖式(含头)铲运机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003021",
+			        "lxid": "003021",
+			        "lxname": "10m3以内拖式(含头)铲运机",
+			        "text": "10m3以内拖式(含头)铲运机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003022",
+			        "lxid": "003022",
+			        "lxname": "12m3以内拖式(含头)铲运机",
+			        "text": "12m3以内拖式(含头)铲运机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003023",
+			        "lxid": "003023",
+			        "lxname": "0.6m3履带式单斗挖掘机",
+			        "text": "0.6m3履带式单斗挖掘机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003024",
+			        "lxid": "003024",
+			        "lxname": "0.8m3履带式单斗挖掘机",
+			        "text": "0.8m3履带式单斗挖掘机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003025",
+			        "lxid": "003025",
+			        "lxname": "1.0m3履带式单斗挖掘机",
+			        "text": "1.0m3履带式单斗挖掘机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003026",
+			        "lxid": "003026",
+			        "lxname": "1.25m3履带式单斗挖掘机",
+			        "text": "1.25m3履带式单斗挖掘机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003027",
+			        "lxid": "003027",
+			        "lxname": "1.6m3履带式单斗挖掘机",
+			        "text": "1.6m3履带式单斗挖掘机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003028",
+			        "lxid": "003028",
+			        "lxname": "2.0m3履带式单斗挖掘机",
+			        "text": "2.0m3履带式单斗挖掘机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003029",
+			        "lxid": "003029",
+			        "lxname": "2.5m3履带式单斗挖掘机",
+			        "text": "2.5m3履带式单斗挖掘机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003030",
+			        "lxid": "003030",
+			        "lxname": "1.0m3履带式单斗挖掘机",
+			        "text": "1.0m3履带式单斗挖掘机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003031",
+			        "lxid": "003031",
+			        "lxname": "1.5m3履带式单斗挖掘机",
+			        "text": "1.5m3履带式单斗挖掘机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003032",
+			        "lxid": "003032",
+			        "lxname": "2.0m3履带式单斗挖掘机",
+			        "text": "2.0m3履带式单斗挖掘机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003033",
+			        "lxid": "003033",
+			        "lxname": "0.2m3轮胎式单斗挖掘机",
+			        "text": "0.2m3轮胎式单斗挖掘机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003034",
+			        "lxid": "003034",
+			        "lxname": "0.4m3轮胎式单斗挖掘机",
+			        "text": "0.4m3轮胎式单斗挖掘机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003035",
+			        "lxid": "003035",
+			        "lxname": "0.6m3轮胎式单斗挖掘机",
+			        "text": "0.6m3轮胎式单斗挖掘机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003036",
+			        "lxid": "003036",
+			        "lxname": "2.0m3履带式装载机",
+			        "text": "2.0m3履带式装载机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003037",
+			        "lxid": "003037",
+			        "lxname": "3.2m3履带式装载机",
+			        "text": "3.2m3履带式装载机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003038",
+			        "lxid": "003038",
+			        "lxname": "0.5m3轮胎式装载机",
+			        "text": "0.5m3轮胎式装载机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003039",
+			        "lxid": "003039",
+			        "lxname": "1.0m3轮胎式装载机",
+			        "text": "1.0m3轮胎式装载机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003040",
+			        "lxid": "003040",
+			        "lxname": "1.5m3轮胎式装载机",
+			        "text": "1.5m3轮胎式装载机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003041",
+			        "lxid": "003041",
+			        "lxname": "2.0m3轮胎式装载机",
+			        "text": "2.0m3轮胎式装载机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003042",
+			        "lxid": "003042",
+			        "lxname": "3.0m3轮胎式装载机",
+			        "text": "3.0m3轮胎式装载机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003043",
+			        "lxid": "003043",
+			        "lxname": "3.5m3轮胎式装载机",
+			        "text": "3.5m3轮胎式装载机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003044",
+			        "lxid": "003044",
+			        "lxname": "2.0m3轮胎式装载机",
+			        "text": "2.0m3轮胎式装载机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003045",
+			        "lxid": "003045",
+			        "lxname": "3.0m3轮胎式装载机",
+			        "text": "3.0m3轮胎式装载机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003046",
+			        "lxid": "003046",
+			        "lxname": "90kw以内平地机",
+			        "text": "90kw以内平地机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003047",
+			        "lxid": "003047",
+			        "lxname": "120kw以内平地机",
+			        "text": "120kw以内平地机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003048",
+			        "lxid": "003048",
+			        "lxname": "150kw以内平地机",
+			        "text": "150kw以内平地机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003049",
+			        "lxid": "003049",
+			        "lxname": "200kw以内平地机",
+			        "text": "200kw以内平地机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003050",
+			        "lxid": "003050",
+			        "lxname": "220kw以内平地机",
+			        "text": "220kw以内平地机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003051",
+			        "lxid": "003051",
+			        "lxname": "60kw以内履带式拖拉机",
+			        "text": "60kw以内履带式拖拉机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003052",
+			        "lxid": "003052",
+			        "lxname": "75kw以内履带式拖拉机",
+			        "text": "75kw以内履带式拖拉机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003053",
+			        "lxid": "003053",
+			        "lxname": "90kw以内履带式拖拉机",
+			        "text": "90kw以内履带式拖拉机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003054",
+			        "lxid": "003054",
+			        "lxname": "120kw以内履带式拖拉机",
+			        "text": "120kw以内履带式拖拉机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003055",
+			        "lxid": "003055",
+			        "lxname": "135kw以内履带式拖拉机",
+			        "text": "135kw以内履带式拖拉机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003056",
+			        "lxid": "003056",
+			        "lxname": "165kw以内履带式拖拉机",
+			        "text": "165kw以内履带式拖拉机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003057",
+			        "lxid": "003057",
+			        "lxname": "240kw以内履带式拖拉机",
+			        "text": "240kw以内履带式拖拉机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003058",
+			        "lxid": "003058",
+			        "lxname": "21kw以内轮胎式拖拉机",
+			        "text": "21kw以内轮胎式拖拉机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003059",
+			        "lxid": "003059",
+			        "lxname": "41kw以内轮胎式拖拉机",
+			        "text": "41kw以内轮胎式拖拉机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003060",
+			        "lxid": "003060",
+			        "lxname": "3t拖式羊足碾",
+			        "text": "3t拖式羊足碾"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003061",
+			        "lxid": "003061",
+			        "lxname": "6t拖式羊足碾",
+			        "text": "6t拖式羊足碾"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003258",
+			        "lxid": "003258",
+			        "lxname": "含钢带点焊机波纹管卷制机",
+			        "text": "含钢带点焊机波纹管卷制机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003259",
+			        "lxid": "003259",
+			        "lxname": "生产率50L/min压浆机",
+			        "text": "生产率50L/min压浆机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003260",
+			        "lxid": "003260",
+			        "lxname": "2t以内载货汽车",
+			        "text": "2t以内载货汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003261",
+			        "lxid": "003261",
+			        "lxname": "3t以内载货汽车",
+			        "text": "3t以内载货汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003262",
+			        "lxid": "003262",
+			        "lxname": "4t以内载货汽车",
+			        "text": "4t以内载货汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003263",
+			        "lxid": "003263",
+			        "lxname": "5t以内载货汽车",
+			        "text": "5t以内载货汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003264",
+			        "lxid": "003264",
+			        "lxname": "6t以内载货汽车",
+			        "text": "6t以内载货汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003265",
+			        "lxid": "003265",
+			        "lxname": "8t以内载货汽车",
+			        "text": "8t以内载货汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003266",
+			        "lxid": "003266",
+			        "lxname": "10t以内载货汽车",
+			        "text": "10t以内载货汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003267",
+			        "lxid": "003267",
+			        "lxname": "12t以内载货汽车",
+			        "text": "12t以内载货汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003268",
+			        "lxid": "003268",
+			        "lxname": "15t以内载货汽车",
+			        "text": "15t以内载货汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003269",
+			        "lxid": "003269",
+			        "lxname": "20t以内载货汽车",
+			        "text": "20t以内载货汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003270",
+			        "lxid": "003270",
+			        "lxname": "3t以内自卸汽车",
+			        "text": "3t以内自卸汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003271",
+			        "lxid": "003271",
+			        "lxname": "5t以内自卸汽车",
+			        "text": "5t以内自卸汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003272",
+			        "lxid": "003272",
+			        "lxname": "6t以内自卸汽车",
+			        "text": "6t以内自卸汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003273",
+			        "lxid": "003273",
+			        "lxname": "8t以内自卸汽车",
+			        "text": "8t以内自卸汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003274",
+			        "lxid": "003274",
+			        "lxname": "10t以内自卸汽车",
+			        "text": "10t以内自卸汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003275",
+			        "lxid": "003275",
+			        "lxname": "12t以内自卸汽车",
+			        "text": "12t以内自卸汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003276",
+			        "lxid": "003276",
+			        "lxname": "15t以内自卸汽车",
+			        "text": "15t以内自卸汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003277",
+			        "lxid": "003277",
+			        "lxname": "18t以内自卸汽车",
+			        "text": "18t以内自卸汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003278",
+			        "lxid": "003278",
+			        "lxname": "20t以内自卸汽车",
+			        "text": "20t以内自卸汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003279",
+			        "lxid": "003279",
+			        "lxname": "15t平板拖车组",
+			        "text": "15t平板拖车组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003280",
+			        "lxid": "003280",
+			        "lxname": "20t平板拖车组",
+			        "text": "20t平板拖车组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003281",
+			        "lxid": "003281",
+			        "lxname": "30t平板拖车组",
+			        "text": "30t平板拖车组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003282",
+			        "lxid": "003282",
+			        "lxname": "40t平板拖车组",
+			        "text": "40t平板拖车组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003283",
+			        "lxid": "003283",
+			        "lxname": "60t平板拖车组",
+			        "text": "60t平板拖车组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003284",
+			        "lxid": "003284",
+			        "lxname": "80t平板拖车组",
+			        "text": "80t平板拖车组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003285",
+			        "lxid": "003285",
+			        "lxname": "100t平板拖车组",
+			        "text": "100t平板拖车组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003286",
+			        "lxid": "003286",
+			        "lxname": "5000L以内运油汽车",
+			        "text": "5000L以内运油汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003287",
+			        "lxid": "003287",
+			        "lxname": "8000L以内运油汽车",
+			        "text": "8000L以内运油汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003288",
+			        "lxid": "003288",
+			        "lxname": "5000L以内加油汽车",
+			        "text": "5000L以内加油汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003289",
+			        "lxid": "003289",
+			        "lxname": "8000L以内加油汽车",
+			        "text": "8000L以内加油汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003290",
+			        "lxid": "003290",
+			        "lxname": "4000L以内洒水汽车",
+			        "text": "4000L以内洒水汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003291",
+			        "lxid": "003291",
+			        "lxname": "6000L以内洒水汽车",
+			        "text": "6000L以内洒水汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003292",
+			        "lxid": "003292",
+			        "lxname": "8000L以内洒水汽车",
+			        "text": "8000L以内洒水汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003293",
+			        "lxid": "003293",
+			        "lxname": "10000L以内洒水汽车",
+			        "text": "10000L以内洒水汽车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003294",
+			        "lxid": "003294",
+			        "lxname": "1.0t以内机动翻斗车",
+			        "text": "1.0t以内机动翻斗车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003295",
+			        "lxid": "003295",
+			        "lxname": "1.5t以内机动翻斗车",
+			        "text": "1.5t以内机动翻斗车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003296",
+			        "lxid": "003296",
+			        "lxname": "2.0t以内机动翻斗车",
+			        "text": "2.0t以内机动翻斗车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003297",
+			        "lxid": "003297",
+			        "lxname": "功率30kw轨道拖车头",
+			        "text": "功率30kw轨道拖车头"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003298",
+			        "lxid": "003298",
+			        "lxname": "2t以内轨道铁头车",
+			        "text": "2t以内轨道铁头车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003299",
+			        "lxid": "003299",
+			        "lxname": "4t以内轨道铁头车",
+			        "text": "4t以内轨道铁头车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003300",
+			        "lxid": "003300",
+			        "lxname": "6t以内轨道铁头车",
+			        "text": "6t以内轨道铁头车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003301",
+			        "lxid": "003301",
+			        "lxname": "功率9kw手扶式拖拉机(带斗)",
+			        "text": "功率9kw手扶式拖拉机(带斗)"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003302",
+			        "lxid": "003302",
+			        "lxname": "3t以内电瓶车",
+			        "text": "3t以内电瓶车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003303",
+			        "lxid": "003303",
+			        "lxname": "5t以内电瓶车",
+			        "text": "5t以内电瓶车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003304",
+			        "lxid": "003304",
+			        "lxname": "8t以内电瓶车",
+			        "text": "8t以内电瓶车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003305",
+			        "lxid": "003305",
+			        "lxname": "10t以内电瓶车",
+			        "text": "10t以内电瓶车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003306",
+			        "lxid": "003306",
+			        "lxname": "12t以内电瓶车",
+			        "text": "12t以内电瓶车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003307",
+			        "lxid": "003307",
+			        "lxname": "10t以内履带式起重机",
+			        "text": "10t以内履带式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003308",
+			        "lxid": "003308",
+			        "lxname": "15t以内履带式起重机",
+			        "text": "15t以内履带式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003309",
+			        "lxid": "003309",
+			        "lxname": "20t以内履带式起重机",
+			        "text": "20t以内履带式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003310",
+			        "lxid": "003310",
+			        "lxname": "25t以内履带式起重机",
+			        "text": "25t以内履带式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003311",
+			        "lxid": "003311",
+			        "lxname": "30t以内履带式起重机",
+			        "text": "30t以内履带式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003312",
+			        "lxid": "003312",
+			        "lxname": "40t以内履带式起重机",
+			        "text": "40t以内履带式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003313",
+			        "lxid": "003313",
+			        "lxname": "50t以内履带式起重机",
+			        "text": "50t以内履带式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003314",
+			        "lxid": "003314",
+			        "lxname": "8t以内轮胎式起重机",
+			        "text": "8t以内轮胎式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003315",
+			        "lxid": "003315",
+			        "lxname": "16t以内轮胎式起重机",
+			        "text": "16t以内轮胎式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003316",
+			        "lxid": "003316",
+			        "lxname": "20t以内轮胎式起重机",
+			        "text": "20t以内轮胎式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003317",
+			        "lxid": "003317",
+			        "lxname": "25t以内轮胎式起重机",
+			        "text": "25t以内轮胎式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003318",
+			        "lxid": "003318",
+			        "lxname": "40t以内轮胎式起重机",
+			        "text": "40t以内轮胎式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003319",
+			        "lxid": "003319",
+			        "lxname": "50t以内轮胎式起重机",
+			        "text": "50t以内轮胎式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003320",
+			        "lxid": "003320",
+			        "lxname": "60t以内轮胎式起重机",
+			        "text": "60t以内轮胎式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003321",
+			        "lxid": "003321",
+			        "lxname": "5t以内汽车式起重机",
+			        "text": "5t以内汽车式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003322",
+			        "lxid": "003322",
+			        "lxname": "8t以内汽车式起重机",
+			        "text": "8t以内汽车式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003323",
+			        "lxid": "003323",
+			        "lxname": "12t以内汽车式起重机",
+			        "text": "12t以内汽车式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003324",
+			        "lxid": "003324",
+			        "lxname": "16t以内汽车式起重机",
+			        "text": "16t以内汽车式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003325",
+			        "lxid": "003325",
+			        "lxname": "20t以内汽车式起重机",
+			        "text": "20t以内汽车式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003326",
+			        "lxid": "003326",
+			        "lxname": "25t以内汽车式起重机",
+			        "text": "25t以内汽车式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003327",
+			        "lxid": "003327",
+			        "lxname": "30t以内汽车式起重机",
+			        "text": "30t以内汽车式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003328",
+			        "lxid": "003328",
+			        "lxname": "40t以内汽车式起重机",
+			        "text": "40t以内汽车式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003329",
+			        "lxid": "003329",
+			        "lxname": "50t以内汽车式起重机",
+			        "text": "50t以内汽车式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003330",
+			        "lxid": "003330",
+			        "lxname": "75t以内汽车式起重机",
+			        "text": "75t以内汽车式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003331",
+			        "lxid": "003331",
+			        "lxname": "最大作业高度10m高空作业车",
+			        "text": "最大作业高度10m高空作业车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003332",
+			        "lxid": "003332",
+			        "lxname": "最大作业高度15m高空作业车",
+			        "text": "最大作业高度15m高空作业车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003333",
+			        "lxid": "003333",
+			        "lxname": "最大作业高度20m高空作业车",
+			        "text": "最大作业高度20m高空作业车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003334",
+			        "lxid": "003334",
+			        "lxname": "6t以内高80m以内塔式起重机",
+			        "text": "6t以内高80m以内塔式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003335",
+			        "lxid": "003335",
+			        "lxname": "6t以内高150m以内塔式起重机",
+			        "text": "6t以内高150m以内塔式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003336",
+			        "lxid": "003336",
+			        "lxname": "6t以内高200m以内塔式起重机",
+			        "text": "6t以内高200m以内塔式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003337",
+			        "lxid": "003337",
+			        "lxname": "6t以内高80m以内塔式起重机",
+			        "text": "6t以内高80m以内塔式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003338",
+			        "lxid": "003338",
+			        "lxname": "8t以内高150m以内塔式起重机",
+			        "text": "8t以内高150m以内塔式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003339",
+			        "lxid": "003339",
+			        "lxname": "8t以内高200m以内塔式起重机",
+			        "text": "8t以内高200m以内塔式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003340",
+			        "lxid": "003340",
+			        "lxname": "12t以内高80m以内塔式起重机",
+			        "text": "12t以内高80m以内塔式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003341",
+			        "lxid": "003341",
+			        "lxname": "12t以内高150m以内塔式起重机",
+			        "text": "12t以内高150m以内塔式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003342",
+			        "lxid": "003342",
+			        "lxname": "12t以内高200m以内塔式起重机",
+			        "text": "12t以内高200m以内塔式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003343",
+			        "lxid": "003343",
+			        "lxname": "5t以内桅杆式起重机",
+			        "text": "5t以内桅杆式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003344",
+			        "lxid": "003344",
+			        "lxname": "10t以内桅杆式起重机",
+			        "text": "10t以内桅杆式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003345",
+			        "lxid": "003345",
+			        "lxname": "15t以内桅杆式起重机",
+			        "text": "15t以内桅杆式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003346",
+			        "lxid": "003346",
+			        "lxname": "25t以内桅杆式起重机",
+			        "text": "25t以内桅杆式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003347",
+			        "lxid": "003347",
+			        "lxname": "40t以内桅杆式起重机",
+			        "text": "40t以内桅杆式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003348",
+			        "lxid": "003348",
+			        "lxname": "5t跨度20m龙门式起重机",
+			        "text": "5t跨度20m龙门式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003349",
+			        "lxid": "003349",
+			        "lxname": "10t跨度20m龙门式起重机",
+			        "text": "10t跨度20m龙门式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003350",
+			        "lxid": "003350",
+			        "lxname": "20t跨度20m龙门式起重机",
+			        "text": "20t跨度20m龙门式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003351",
+			        "lxid": "003351",
+			        "lxname": "30t跨度30m龙门式起重机",
+			        "text": "30t跨度30m龙门式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003352",
+			        "lxid": "003352",
+			        "lxname": "40t跨度30m龙门式起重机",
+			        "text": "40t跨度30m龙门式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003353",
+			        "lxid": "003353",
+			        "lxname": "50t跨度30m龙门式起重机",
+			        "text": "50t跨度30m龙门式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003354",
+			        "lxid": "003354",
+			        "lxname": "60t跨度30m龙门式起重机",
+			        "text": "60t跨度30m龙门式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003355",
+			        "lxid": "003355",
+			        "lxname": "80t跨度30m龙门式起重机",
+			        "text": "80t跨度30m龙门式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003356",
+			        "lxid": "003356",
+			        "lxname": "100t跨度30m龙门式起重机",
+			        "text": "100t跨度30m龙门式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003357",
+			        "lxid": "003357",
+			        "lxname": "120t跨度42m龙门式起重机",
+			        "text": "120t跨度42m龙门式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003358",
+			        "lxid": "003358",
+			        "lxname": "250t跨度42m龙门式起重机",
+			        "text": "250t跨度42m龙门式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003359",
+			        "lxid": "003359",
+			        "lxname": "350t跨度50m龙门式起重机",
+			        "text": "350t跨度50m龙门式起重机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003360",
+			        "lxid": "003360",
+			        "lxname": "跨缆吊机",
+			        "text": "跨缆吊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003361",
+			        "lxid": "003361",
+			        "lxname": "1t少先吊",
+			        "text": "1t少先吊"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003362",
+			        "lxid": "003362",
+			        "lxname": "10kN以内单筒慢动电动卷扬机",
+			        "text": "10kN以内单筒慢动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003363",
+			        "lxid": "003363",
+			        "lxname": "30kN以内单筒慢动电动卷扬机",
+			        "text": "30kN以内单筒慢动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003364",
+			        "lxid": "003364",
+			        "lxname": "50kN以内单筒慢动电动卷扬机",
+			        "text": "50kN以内单筒慢动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003365",
+			        "lxid": "003365",
+			        "lxname": "80kN以内单筒慢动电动卷扬机",
+			        "text": "80kN以内单筒慢动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003366",
+			        "lxid": "003366",
+			        "lxname": "100kN以内单筒慢动电动卷扬机",
+			        "text": "100kN以内单筒慢动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003367",
+			        "lxid": "003367",
+			        "lxname": "200kN以内单筒慢动电动卷扬机",
+			        "text": "200kN以内单筒慢动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003368",
+			        "lxid": "003368",
+			        "lxname": "300kN以内单筒慢动电动卷扬机",
+			        "text": "300kN以内单筒慢动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003369",
+			        "lxid": "003369",
+			        "lxname": "500kN以内单筒慢动电动卷扬机",
+			        "text": "500kN以内单筒慢动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003370",
+			        "lxid": "003370",
+			        "lxname": "10kN以内单筒快动电动卷扬机",
+			        "text": "10kN以内单筒快动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003371",
+			        "lxid": "003371",
+			        "lxname": "20kN以内单筒快动电动卷扬机",
+			        "text": "20kN以内单筒快动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003372",
+			        "lxid": "003372",
+			        "lxname": "30kN以内单筒快动电动卷扬机",
+			        "text": "30kN以内单筒快动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003373",
+			        "lxid": "003373",
+			        "lxname": "50kN以内单筒快动电动卷扬机",
+			        "text": "50kN以内单筒快动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003374",
+			        "lxid": "003374",
+			        "lxname": "80kN以内单筒快动电动卷扬机",
+			        "text": "80kN以内单筒快动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003375",
+			        "lxid": "003375",
+			        "lxname": "100kN以内单筒快动电动卷扬机",
+			        "text": "100kN以内单筒快动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003376",
+			        "lxid": "003376",
+			        "lxname": "10kN以内双筒慢动电动卷扬机",
+			        "text": "10kN以内双筒慢动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003377",
+			        "lxid": "003377",
+			        "lxname": "30kN以内双筒慢动电动卷扬机",
+			        "text": "30kN以内双筒慢动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003378",
+			        "lxid": "003378",
+			        "lxname": "50kN以内双筒慢动电动卷扬机",
+			        "text": "50kN以内双筒慢动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003379",
+			        "lxid": "003379",
+			        "lxname": "80kN以内双筒慢动电动卷扬机",
+			        "text": "80kN以内双筒慢动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003380",
+			        "lxid": "003380",
+			        "lxname": "100kN以内双筒慢动电动卷扬机",
+			        "text": "100kN以内双筒慢动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003381",
+			        "lxid": "003381",
+			        "lxname": "250kN以内双筒慢动电动卷扬机",
+			        "text": "250kN以内双筒慢动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003382",
+			        "lxid": "003382",
+			        "lxname": "10kN以内双筒快动电动卷扬机",
+			        "text": "10kN以内双筒快动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003383",
+			        "lxid": "003383",
+			        "lxname": "20kN以内双筒快动电动卷扬机",
+			        "text": "20kN以内双筒快动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003384",
+			        "lxid": "003384",
+			        "lxname": "30kN以内双筒快动电动卷扬机",
+			        "text": "30kN以内双筒快动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003385",
+			        "lxid": "003385",
+			        "lxname": "50kN以内双筒快动电动卷扬机",
+			        "text": "50kN以内双筒快动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003386",
+			        "lxid": "003386",
+			        "lxname": "80kN以内双筒快动电动卷扬机",
+			        "text": "80kN以内双筒快动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003387",
+			        "lxid": "003387",
+			        "lxname": "100kN以内双筒快动电动卷扬机",
+			        "text": "100kN以内双筒快动电动卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003388",
+			        "lxid": "003388",
+			        "lxname": "10kN以内手摇卷扬机",
+			        "text": "10kN以内手摇卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003389",
+			        "lxid": "003389",
+			        "lxname": "30kN以内手摇卷扬机",
+			        "text": "30kN以内手摇卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003390",
+			        "lxid": "003390",
+			        "lxname": "50kN以内手摇卷扬机",
+			        "text": "50kN以内手摇卷扬机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003391",
+			        "lxid": "003391",
+			        "lxname": "10m×0.5m皮带运输机",
+			        "text": "10m×0.5m皮带运输机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003392",
+			        "lxid": "003392",
+			        "lxname": "15m×0.5m皮带运输机",
+			        "text": "15m×0.5m皮带运输机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003393",
+			        "lxid": "003393",
+			        "lxname": "20m×0.5m皮带运输机",
+			        "text": "20m×0.5m皮带运输机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003394",
+			        "lxid": "003394",
+			        "lxname": "30m×0.5m皮带运输机",
+			        "text": "30m×0.5m皮带运输机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003395",
+			        "lxid": "003395",
+			        "lxname": "2t以内电动葫芦",
+			        "text": "2t以内电动葫芦"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003396",
+			        "lxid": "003396",
+			        "lxname": "3t以内电动葫芦",
+			        "text": "3t以内电动葫芦"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003397",
+			        "lxid": "003397",
+			        "lxname": "5t以内电动葫芦",
+			        "text": "5t以内电动葫芦"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003398",
+			        "lxid": "003398",
+			        "lxname": "10t以内电动葫芦",
+			        "text": "10t以内电动葫芦"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003399",
+			        "lxid": "003399",
+			        "lxname": "15t以内电动葫芦",
+			        "text": "15t以内电动葫芦"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003400",
+			        "lxid": "003400",
+			        "lxname": "20t以内电动葫芦",
+			        "text": "20t以内电动葫芦"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003401",
+			        "lxid": "003401",
+			        "lxname": "30t以内电动葫芦",
+			        "text": "30t以内电动葫芦"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003402",
+			        "lxid": "003402",
+			        "lxname": "1t以内内燃叉车",
+			        "text": "1t以内内燃叉车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003403",
+			        "lxid": "003403",
+			        "lxname": "2t以内内燃叉车",
+			        "text": "2t以内内燃叉车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003404",
+			        "lxid": "003404",
+			        "lxname": "3t以内内燃叉车",
+			        "text": "3t以内内燃叉车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003405",
+			        "lxid": "003405",
+			        "lxname": "4t以内内燃叉车",
+			        "text": "4t以内内燃叉车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003406",
+			        "lxid": "003406",
+			        "lxname": "5t以内内燃叉车",
+			        "text": "5t以内内燃叉车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003407",
+			        "lxid": "003407",
+			        "lxname": "提升高75m以内单笼施工电梯",
+			        "text": "提升高75m以内单笼施工电梯"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003408",
+			        "lxid": "003408",
+			        "lxname": "提升高100m以内单笼施工电梯",
+			        "text": "提升高100m以内单笼施工电梯"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003409",
+			        "lxid": "003409",
+			        "lxname": "提升高150m以内单笼施工电梯",
+			        "text": "提升高150m以内单笼施工电梯"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003410",
+			        "lxid": "003410",
+			        "lxname": "提升高100m以内双笼施工电梯",
+			        "text": "提升高100m以内双笼施工电梯"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003411",
+			        "lxid": "003411",
+			        "lxname": "提升高150m以内双笼施工电梯",
+			        "text": "提升高150m以内双笼施工电梯"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003412",
+			        "lxid": "003412",
+			        "lxname": "100t液压千斤顶",
+			        "text": "100t液压千斤顶"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003413",
+			        "lxid": "003413",
+			        "lxname": "200t液压千斤顶",
+			        "text": "200t液压千斤顶"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003414",
+			        "lxid": "003414",
+			        "lxname": "300t液压千斤顶",
+			        "text": "300t液压千斤顶"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003415",
+			        "lxid": "003415",
+			        "lxname": "300kg以内液压升降机",
+			        "text": "300kg以内液压升降机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003416",
+			        "lxid": "003416",
+			        "lxname": "400kg以内液压升降机",
+			        "text": "400kg以内液压升降机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003417",
+			        "lxid": "003417",
+			        "lxname": "500kg以内液压升降机",
+			        "text": "500kg以内液压升降机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003418",
+			        "lxid": "003418",
+			        "lxname": "锤0.6t以内导杆式柴油打桩机",
+			        "text": "锤0.6t以内导杆式柴油打桩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003419",
+			        "lxid": "003419",
+			        "lxname": "锤1.2t以内导杆式柴油打桩机",
+			        "text": "锤1.2t以内导杆式柴油打桩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003420",
+			        "lxid": "003420",
+			        "lxname": "锤1.6t以内导杆式柴油打桩机",
+			        "text": "锤1.6t以内导杆式柴油打桩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003421",
+			        "lxid": "003421",
+			        "lxname": "锤1.8t以内导杆式柴油打桩机",
+			        "text": "锤1.8t以内导杆式柴油打桩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003422",
+			        "lxid": "003422",
+			        "lxname": "锤2.5t以内轨道式柴油打桩机",
+			        "text": "锤2.5t以内轨道式柴油打桩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003423",
+			        "lxid": "003423",
+			        "lxname": "锤3.5t以内轨道式柴油打桩机",
+			        "text": "锤3.5t以内轨道式柴油打桩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003424",
+			        "lxid": "003424",
+			        "lxname": "锤0.5t以内重锤打桩机",
+			        "text": "锤0.5t以内重锤打桩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003425",
+			        "lxid": "003425",
+			        "lxname": "激振力300kN以内振动打拔桩机",
+			        "text": "激振力300kN以内振动打拔桩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003426",
+			        "lxid": "003426",
+			        "lxname": "激振力400kN以内振动打拔桩机",
+			        "text": "激振力400kN以内振动打拔桩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003427",
+			        "lxid": "003427",
+			        "lxname": "激振力500kN以内振动打拔桩机",
+			        "text": "激振力500kN以内振动打拔桩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003428",
+			        "lxid": "003428",
+			        "lxname": "激振力600kN以内振动打拔桩机",
+			        "text": "激振力600kN以内振动打拔桩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003429",
+			        "lxid": "003429",
+			        "lxname": "激振力300kN以内振动打拔桩锤",
+			        "text": "激振力300kN以内振动打拔桩锤"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003430",
+			        "lxid": "003430",
+			        "lxname": "激振力500kN以内振动打拔桩锤",
+			        "text": "激振力500kN以内振动打拔桩锤"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003431",
+			        "lxid": "003431",
+			        "lxname": "激振力600kN以内振动打拔桩锤",
+			        "text": "激振力600kN以内振动打拔桩锤"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003432",
+			        "lxid": "003432",
+			        "lxname": "激振力900kN以内振动打拔桩锤",
+			        "text": "激振力900kN以内振动打拔桩锤"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003433",
+			        "lxid": "003433",
+			        "lxname": "激振力1500kN以内振动打拔桩锤",
+			        "text": "激振力1500kN以内振动打拔桩锤"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003434",
+			        "lxid": "003434",
+			        "lxname": "电动20型,22型冲击钻机",
+			        "text": "电动20型,22型冲击钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003435",
+			        "lxid": "003435",
+			        "lxname": "电动30型冲击钻机",
+			        "text": "电动30型冲击钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003436",
+			        "lxid": "003436",
+			        "lxname": "机动28型冲击钻机",
+			        "text": "机动28型冲击钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003437",
+			        "lxid": "003437",
+			        "lxname": "Φ1200mm以内冲击反循环钻机",
+			        "text": "Φ1200mm以内冲击反循环钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003438",
+			        "lxid": "003438",
+			        "lxname": "Φ2000mm以内冲击反循环钻机",
+			        "text": "Φ2000mm以内冲击反循环钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003439",
+			        "lxid": "003439",
+			        "lxname": "Φ2500mm以内冲击反循环钻机",
+			        "text": "Φ2500mm以内冲击反循环钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003440",
+			        "lxid": "003440",
+			        "lxname": "Φ1500mm以内回旋钻机",
+			        "text": "Φ1500mm以内回旋钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003441",
+			        "lxid": "003441",
+			        "lxname": "Φ2500mm以内回旋钻机",
+			        "text": "Φ2500mm以内回旋钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003442",
+			        "lxid": "003442",
+			        "lxname": "Φ3000mm以内回旋钻机",
+			        "text": "Φ3000mm以内回旋钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003443",
+			        "lxid": "003443",
+			        "lxname": "Φ3500mm以内回旋钻机",
+			        "text": "Φ3500mm以内回旋钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003444",
+			        "lxid": "003444",
+			        "lxname": "Φ1000mm以内汽车式钻孔机",
+			        "text": "Φ1000mm以内汽车式钻孔机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003445",
+			        "lxid": "003445",
+			        "lxname": "Φ2000mm以内汽车式钻孔机",
+			        "text": "Φ2000mm以内汽车式钻孔机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003446",
+			        "lxid": "003446",
+			        "lxname": "Φ1125mm以内潜水钻机",
+			        "text": "Φ1125mm以内潜水钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003447",
+			        "lxid": "003447",
+			        "lxname": "Φ1500mm以内潜水钻机",
+			        "text": "Φ1500mm以内潜水钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003448",
+			        "lxid": "003448",
+			        "lxname": "Φ2500mm以内潜水钻机",
+			        "text": "Φ2500mm以内潜水钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003449",
+			        "lxid": "003449",
+			        "lxname": "Φ1500mm以内全套管钻孔机",
+			        "text": "Φ1500mm以内全套管钻孔机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003450",
+			        "lxid": "003450",
+			        "lxname": "Φ2000mm以内全套管钻孔机",
+			        "text": "Φ2000mm以内全套管钻孔机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003451",
+			        "lxid": "003451",
+			        "lxname": "泥浆制作循循环设备",
+			        "text": "泥浆制作循循环设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003452",
+			        "lxid": "003452",
+			        "lxname": "100～150L泥浆搅拌机",
+			        "text": "100～150L泥浆搅拌机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003453",
+			        "lxid": "003453",
+			        "lxname": "不带门架袋装砂井机",
+			        "text": "不带门架袋装砂井机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003454",
+			        "lxid": "003454",
+			        "lxname": "带门架袋装砂井机",
+			        "text": "带门架袋装砂井机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003455",
+			        "lxid": "003455",
+			        "lxname": "功率13kw振冲率",
+			        "text": "功率13kw振冲率"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003456",
+			        "lxid": "003456",
+			        "lxname": "功率30kw振冲率",
+			        "text": "功率30kw振冲率"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003457",
+			        "lxid": "003457",
+			        "lxname": "功率55kw振冲率",
+			        "text": "功率55kw振冲率"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003458",
+			        "lxid": "003458",
+			        "lxname": "功率75kw振冲率",
+			        "text": "功率75kw振冲率"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003459",
+			        "lxid": "003459",
+			        "lxname": "Φ400mm以内螺旋钻孔机",
+			        "text": "Φ400mm以内螺旋钻孔机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003460",
+			        "lxid": "003460",
+			        "lxname": "Φ600mm以内螺旋钻孔机",
+			        "text": "Φ600mm以内螺旋钻孔机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003461",
+			        "lxid": "003461",
+			        "lxname": "Φ800mm以内螺旋钻孔机",
+			        "text": "Φ800mm以内螺旋钻孔机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003462",
+			        "lxid": "003462",
+			        "lxname": "铣槽机",
+			        "text": "铣槽机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003463",
+			        "lxid": "003463",
+			        "lxname": "履带式液压抓斗机成槽机",
+			        "text": "履带式液压抓斗机成槽机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003464",
+			        "lxid": "003464",
+			        "lxname": "履带式绳索抓斗机成槽机",
+			        "text": "履带式绳索抓斗机成槽机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003465",
+			        "lxid": "003465",
+			        "lxname": "液压冲压击重凿机",
+			        "text": "液压冲压击重凿机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003466",
+			        "lxid": "003466",
+			        "lxname": "锁口管顶升机",
+			        "text": "锁口管顶升机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003467",
+			        "lxid": "003467",
+			        "lxname": "标准高度18m高压旋喷钻机",
+			        "text": "标准高度18m高压旋喷钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003468",
+			        "lxid": "003468",
+			        "lxname": "粉体发送器",
+			        "text": "粉体发送器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003469",
+			        "lxid": "003469",
+			        "lxname": "排出压力44MPa高压注浆泵",
+			        "text": "排出压力44MPa高压注浆泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003470",
+			        "lxid": "003470",
+			        "lxname": "搅拌深15m以内深层喷射搅拌机",
+			        "text": "搅拌深15m以内深层喷射搅拌机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003471",
+			        "lxid": "003471",
+			        "lxname": "搅拌深18m以内深层喷射搅拌机",
+			        "text": "搅拌深18m以内深层喷射搅拌机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003472",
+			        "lxid": "003472",
+			        "lxname": "搅拌深25m以内深层喷射搅拌机",
+			        "text": "搅拌深25m以内深层喷射搅拌机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003473",
+			        "lxid": "003473",
+			        "lxname": "Φ50mm以内电动单级离心水泵",
+			        "text": "Φ50mm以内电动单级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003474",
+			        "lxid": "003474",
+			        "lxname": "Φ100mm以内电动单级离心水泵",
+			        "text": "Φ100mm以内电动单级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003475",
+			        "lxid": "003475",
+			        "lxname": "Φ150mm以内电动单级离心水泵",
+			        "text": "Φ150mm以内电动单级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003476",
+			        "lxid": "003476",
+			        "lxname": "Φ200mm以内电动单级离心水泵",
+			        "text": "Φ200mm以内电动单级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003477",
+			        "lxid": "003477",
+			        "lxname": "Φ250mm以内电动单级离心水泵",
+			        "text": "Φ250mm以内电动单级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003478",
+			        "lxid": "003478",
+			        "lxname": "Φ50mm以内机动单级离心水泵",
+			        "text": "Φ50mm以内机动单级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003479",
+			        "lxid": "003479",
+			        "lxname": "Φ100mm以内机动单级离心水泵",
+			        "text": "Φ100mm以内机动单级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003480",
+			        "lxid": "003480",
+			        "lxname": "Φ150mm以内机动单级离心水泵",
+			        "text": "Φ150mm以内机动单级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003481",
+			        "lxid": "003481",
+			        "lxname": "Φ200mm以内机动单级离心水泵",
+			        "text": "Φ200mm以内机动单级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003482",
+			        "lxid": "003482",
+			        "lxname": "Φ250mm以内机动单级离心水泵",
+			        "text": "Φ250mm以内机动单级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003483",
+			        "lxid": "003483",
+			        "lxname": "Φ100mm以内电动多级离心水泵",
+			        "text": "Φ100mm以内电动多级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003484",
+			        "lxid": "003484",
+			        "lxname": "Φ100mm以内电动多级离心水泵",
+			        "text": "Φ100mm以内电动多级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003485",
+			        "lxid": "003485",
+			        "lxname": "Φ150mm以内电动多级离心水泵",
+			        "text": "Φ150mm以内电动多级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003486",
+			        "lxid": "003486",
+			        "lxname": "Φ150mm以内电动多级离心水泵",
+			        "text": "Φ150mm以内电动多级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003487",
+			        "lxid": "003487",
+			        "lxname": "Φ150mm以内机动多级离心水泵",
+			        "text": "Φ150mm以内机动多级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003488",
+			        "lxid": "003488",
+			        "lxname": "Φ150mm以内机动多级离心水泵",
+			        "text": "Φ150mm以内机动多级离心水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003489",
+			        "lxid": "003489",
+			        "lxname": "Φ150mm以内单级自吸式水泵",
+			        "text": "Φ150mm以内单级自吸式水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003490",
+			        "lxid": "003490",
+			        "lxname": "Φ50mm以内潜水泵",
+			        "text": "Φ50mm以内潜水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003491",
+			        "lxid": "003491",
+			        "lxname": "Φ100mm以内潜水泵",
+			        "text": "Φ100mm以内潜水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003492",
+			        "lxid": "003492",
+			        "lxname": "Φ150mm以内潜水泵",
+			        "text": "Φ150mm以内潜水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003493",
+			        "lxid": "003493",
+			        "lxname": "Φ100mm以内污水泵",
+			        "text": "Φ100mm以内污水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003494",
+			        "lxid": "003494",
+			        "lxname": "Φ150mm以内污水泵",
+			        "text": "Φ150mm以内污水泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003495",
+			        "lxid": "003495",
+			        "lxname": "Φ50mm以内泥浆泵",
+			        "text": "Φ50mm以内泥浆泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003496",
+			        "lxid": "003496",
+			        "lxname": "Φ100mm以内泥浆泵",
+			        "text": "Φ100mm以内泥浆泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003497",
+			        "lxid": "003497",
+			        "lxname": "Φ65mm以内砂泵",
+			        "text": "Φ65mm以内砂泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003498",
+			        "lxid": "003498",
+			        "lxname": "Φ100mm以内砂泵",
+			        "text": "Φ100mm以内砂泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003499",
+			        "lxid": "003499",
+			        "lxname": "Φ150mm以内砂泵",
+			        "text": "Φ150mm以内砂泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003500",
+			        "lxid": "003500",
+			        "lxname": "最大抽吸深度10m射流井点泵",
+			        "text": "最大抽吸深度10m射流井点泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003501",
+			        "lxid": "003501",
+			        "lxname": "最大抽吸速度204m3/h真空泵",
+			        "text": "最大抽吸速度204m3/h真空泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003502",
+			        "lxid": "003502",
+			        "lxname": "最大抽吸速度600m3/h真空泵",
+			        "text": "最大抽吸速度600m3/h真空泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003503",
+			        "lxid": "003503",
+			        "lxname": "Φ14mm以内钢筋调直切断机",
+			        "text": "Φ14mm以内钢筋调直切断机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003504",
+			        "lxid": "003504",
+			        "lxname": "Φ40mm以内钢筋切断机",
+			        "text": "Φ40mm以内钢筋切断机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003505",
+			        "lxid": "003505",
+			        "lxname": "Φ40mm以内钢筋弯曲机",
+			        "text": "Φ40mm以内钢筋弯曲机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003506",
+			        "lxid": "003506",
+			        "lxname": "Φ40mm以内钢筋直螺纹滚丝机",
+			        "text": "Φ40mm以内钢筋直螺纹滚丝机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003507",
+			        "lxid": "003507",
+			        "lxname": "Φ14mm以内钢筋镦头机",
+			        "text": "Φ14mm以内钢筋镦头机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003508",
+			        "lxid": "003508",
+			        "lxname": "钢丝缠束机",
+			        "text": "钢丝缠束机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003509",
+			        "lxid": "003509",
+			        "lxname": "缆径800mm以内钢缆缠丝机",
+			        "text": "缆径800mm以内钢缆缠丝机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003510",
+			        "lxid": "003510",
+			        "lxname": "缆径800mm以内钢缆压紧机",
+			        "text": "缆径800mm以内钢缆压紧机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003511",
+			        "lxid": "003511",
+			        "lxname": "Φ500mm以内木工圆锯机",
+			        "text": "Φ500mm以内木工圆锯机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003512",
+			        "lxid": "003512",
+			        "lxname": "Φ600mm以内木工圆锯机",
+			        "text": "Φ600mm以内木工圆锯机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003513",
+			        "lxid": "003513",
+			        "lxname": "Φ1000mm以内木工圆锯机",
+			        "text": "Φ1000mm以内木工圆锯机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003206",
+			        "lxid": "003206",
+			        "lxname": "输送量5m3/h以灰浆输送泵",
+			        "text": "输送量5m3/h以灰浆输送泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003207",
+			        "lxid": "003207",
+			        "lxname": "出灰量4m3/h以内灰气联合泵",
+			        "text": "出灰量4m3/h以内灰气联合泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003208",
+			        "lxid": "003208",
+			        "lxname": "生产率0.5~0.8m3/h水泥喷枪",
+			        "text": "生产率0.5~0.8m3/h水泥喷枪"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003209",
+			        "lxid": "003209",
+			        "lxname": "风动灌浆机",
+			        "text": "风动灌浆机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003210",
+			        "lxid": "003210",
+			        "lxname": "电动灌浆机",
+			        "text": "电动灌浆机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003211",
+			        "lxid": "003211",
+			        "lxname": "电动双液注浆泵",
+			        "text": "电动双液注浆泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003212",
+			        "lxid": "003212",
+			        "lxname": "电动单液注浆泵",
+			        "text": "电动单液注浆泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003213",
+			        "lxid": "003213",
+			        "lxname": "5t以内散散装水泥车",
+			        "text": "5t以内散散装水泥车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003214",
+			        "lxid": "003214",
+			        "lxname": "8t以内散散装水泥车",
+			        "text": "8t以内散散装水泥车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003215",
+			        "lxid": "003215",
+			        "lxname": "10t以内散散装水泥车",
+			        "text": "10t以内散散装水泥车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003216",
+			        "lxid": "003216",
+			        "lxname": "15t以内散散装水泥车",
+			        "text": "15t以内散散装水泥车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003217",
+			        "lxid": "003217",
+			        "lxname": "20t以内散散装水泥车",
+			        "text": "20t以内散散装水泥车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003218",
+			        "lxid": "003218",
+			        "lxname": "26t以内散散装水泥车",
+			        "text": "26t以内散散装水泥车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003219",
+			        "lxid": "003219",
+			        "lxname": "3m3混凝土搅拌运输车",
+			        "text": "3m3混凝土搅拌运输车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003220",
+			        "lxid": "003220",
+			        "lxname": "4m3混凝土搅拌运输车",
+			        "text": "4m3混凝土搅拌运输车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003221",
+			        "lxid": "003221",
+			        "lxname": "5m3混凝土搅拌运输车",
+			        "text": "5m3混凝土搅拌运输车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003222",
+			        "lxid": "003222",
+			        "lxname": "6m3混凝土搅拌运输车",
+			        "text": "6m3混凝土搅拌运输车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003223",
+			        "lxid": "003223",
+			        "lxname": "60m3/h以内混凝土输送泵车",
+			        "text": "60m3/h以内混凝土输送泵车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003224",
+			        "lxid": "003224",
+			        "lxname": "75m3/h以内混凝土输送泵车",
+			        "text": "75m3/h以内混凝土输送泵车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003225",
+			        "lxid": "003225",
+			        "lxname": "90m3/h以内混凝土输送泵车",
+			        "text": "90m3/h以内混凝土输送泵车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003226",
+			        "lxid": "003226",
+			        "lxname": "10m3/h以内混凝土输送泵",
+			        "text": "10m3/h以内混凝土输送泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003227",
+			        "lxid": "003227",
+			        "lxname": "20m3/h以内混凝土输送泵",
+			        "text": "20m3/h以内混凝土输送泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003228",
+			        "lxid": "003228",
+			        "lxname": "30m3/h以内混凝土输送泵",
+			        "text": "30m3/h以内混凝土输送泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003229",
+			        "lxid": "003229",
+			        "lxname": "45m3/h以内混凝土输送泵",
+			        "text": "45m3/h以内混凝土输送泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003230",
+			        "lxid": "003230",
+			        "lxname": "60m3/h以内混凝土输送泵",
+			        "text": "60m3/h以内混凝土输送泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003231",
+			        "lxid": "003231",
+			        "lxname": "80m3/h以内混凝土输送泵",
+			        "text": "80m3/h以内混凝土输送泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003232",
+			        "lxid": "003232",
+			        "lxname": "台面1m×2m混凝土振动台",
+			        "text": "台面1m×2m混凝土振动台"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003233",
+			        "lxid": "003233",
+			        "lxname": "台面1.5m×6.0m混凝土振动台",
+			        "text": "台面1.5m×6.0m混凝土振动台"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003234",
+			        "lxid": "003234",
+			        "lxname": "台面2.4m×6.2m混凝土振动台",
+			        "text": "台面2.4m×6.2m混凝土振动台"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003235",
+			        "lxid": "003235",
+			        "lxname": "15m3/h以内水泥混凝土搅拌站",
+			        "text": "15m3/h以内水泥混凝土搅拌站"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003236",
+			        "lxid": "003236",
+			        "lxname": "25m3/h以内水泥混凝土搅拌站",
+			        "text": "25m3/h以内水泥混凝土搅拌站"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003237",
+			        "lxid": "003237",
+			        "lxname": "40m3/h以内水泥混凝土搅拌站",
+			        "text": "40m3/h以内水泥混凝土搅拌站"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003238",
+			        "lxid": "003238",
+			        "lxname": "50m3/h以内水泥混凝土搅拌站",
+			        "text": "50m3/h以内水泥混凝土搅拌站"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003239",
+			        "lxid": "003239",
+			        "lxname": "60m3/h以内水泥混凝土搅拌站",
+			        "text": "60m3/h以内水泥混凝土搅拌站"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003240",
+			        "lxid": "003240",
+			        "lxname": "90m3/h以内水泥混凝土搅拌站",
+			        "text": "90m3/h以内水泥混凝土搅拌站"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003241",
+			        "lxid": "003241",
+			        "lxname": "120m3/h以内水泥混凝土搅拌站",
+			        "text": "120m3/h以内水泥混凝土搅拌站"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003242",
+			        "lxid": "003242",
+			        "lxname": "布料半径15m以内混凝土布料机",
+			        "text": "布料半径15m以内混凝土布料机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003243",
+			        "lxid": "003243",
+			        "lxname": "布料半径20m以内混凝土布料机",
+			        "text": "布料半径20m以内混凝土布料机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003244",
+			        "lxid": "003244",
+			        "lxname": "布料半径30m以内混凝土布料机",
+			        "text": "布料半径30m以内混凝土布料机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003245",
+			        "lxid": "003245",
+			        "lxname": "插入式混凝土振捣器",
+			        "text": "插入式混凝土振捣器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003246",
+			        "lxid": "003246",
+			        "lxname": "附着式混凝土振捣器",
+			        "text": "附着式混凝土振捣器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003247",
+			        "lxid": "003247",
+			        "lxname": "含50个千斤顶液压滑升机械",
+			        "text": "含50个千斤顶液压滑升机械"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003248",
+			        "lxid": "003248",
+			        "lxname": "顶推力400kN以内连续梁桥顶推设备",
+			        "text": "顶推力400kN以内连续梁桥顶推设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003249",
+			        "lxid": "003249",
+			        "lxname": "顶推力600kN以内连续梁桥顶推设备",
+			        "text": "顶推力600kN以内连续梁桥顶推设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003250",
+			        "lxid": "003250",
+			        "lxname": "拉伸力650kN以内预应力拉伸机",
+			        "text": "拉伸力650kN以内预应力拉伸机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003251",
+			        "lxid": "003251",
+			        "lxname": "拉伸力900kN以内预应力拉伸机",
+			        "text": "拉伸力900kN以内预应力拉伸机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003252",
+			        "lxid": "003252",
+			        "lxname": "拉伸力1200kN以内预应力拉伸机",
+			        "text": "拉伸力1200kN以内预应力拉伸机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003253",
+			        "lxid": "003253",
+			        "lxname": "拉伸力3000kN以内预应力拉伸机",
+			        "text": "拉伸力3000kN以内预应力拉伸机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003254",
+			        "lxid": "003254",
+			        "lxname": "拉伸力5000kN以内预应力拉伸机",
+			        "text": "拉伸力5000kN以内预应力拉伸机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003255",
+			        "lxid": "003255",
+			        "lxname": "油泵、千斤顶各1钢绞线拉伸设备",
+			        "text": "油泵、千斤顶各1钢绞线拉伸设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003256",
+			        "lxid": "003256",
+			        "lxname": "含泵钢绞线压花机",
+			        "text": "含泵钢绞线压花机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003514",
+			        "lxid": "003514",
+			        "lxname": "木工带锯机(带跑车)锯轮直径1250mm以内",
+			        "text": "木工带锯机(带跑车)锯轮直径1250mm以内"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003515",
+			        "lxid": "003515",
+			        "lxname": "刨削宽度300mm以内木工平刨床",
+			        "text": "刨削宽度300mm以内木工平刨床"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003516",
+			        "lxid": "003516",
+			        "lxname": "刨削宽度450mm以内木工平刨床",
+			        "text": "刨削宽度450mm以内木工平刨床"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003517",
+			        "lxid": "003517",
+			        "lxname": "刨削宽度600mm以内单面木工平刨床",
+			        "text": "刨削宽度600mm以内单面木工平刨床"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003518",
+			        "lxid": "003518",
+			        "lxname": "刨削宽度600mm以内双面木工平刨床",
+			        "text": "刨削宽度600mm以内双面木工平刨床"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003519",
+			        "lxid": "003519",
+			        "lxname": "刨削宽度400mm以内三面木工平刨床",
+			        "text": "刨削宽度400mm以内三面木工平刨床"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003520",
+			        "lxid": "003520",
+			        "lxname": "刨削宽度300mm以内四面木工平刨床",
+			        "text": "刨削宽度300mm以内四面木工平刨床"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003521",
+			        "lxid": "003521",
+			        "lxname": "长度160mm以内木工开榫机",
+			        "text": "长度160mm以内木工开榫机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003522",
+			        "lxid": "003522",
+			        "lxname": "Φ50mm以内木工打眼机",
+			        "text": "Φ50mm以内木工打眼机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003523",
+			        "lxid": "003523",
+			        "lxname": "宽度50mm以内森工裁口机(多面)",
+			        "text": "宽度50mm以内森工裁口机(多面)"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003524",
+			        "lxid": "003524",
+			        "lxname": "榫槽深度100mm以内木工榫槽机",
+			        "text": "榫槽深度100mm以内木工榫槽机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003525",
+			        "lxid": "003525",
+			        "lxname": "21KV·A交流电弧焊机",
+			        "text": "21KV·A交流电弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003526",
+			        "lxid": "003526",
+			        "lxname": "32KV·A交流电弧焊机",
+			        "text": "32KV·A交流电弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003527",
+			        "lxid": "003527",
+			        "lxname": "42KV·A交流电弧焊机",
+			        "text": "42KV·A交流电弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003528",
+			        "lxid": "003528",
+			        "lxname": "50KV·A交流电弧焊机",
+			        "text": "50KV·A交流电弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003529",
+			        "lxid": "003529",
+			        "lxname": "80KV·A交流电弧焊机",
+			        "text": "80KV·A交流电弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003530",
+			        "lxid": "003530",
+			        "lxname": "10kw以内直流电弧焊机",
+			        "text": "10kw以内直流电弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003531",
+			        "lxid": "003531",
+			        "lxname": "15kw以内直流电弧焊机",
+			        "text": "15kw以内直流电弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003532",
+			        "lxid": "003532",
+			        "lxname": "20kw以内直流电弧焊机",
+			        "text": "20kw以内直流电弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003533",
+			        "lxid": "003533",
+			        "lxname": "32kw以内直流电弧焊机",
+			        "text": "32kw以内直流电弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003534",
+			        "lxid": "003534",
+			        "lxname": "15KV·A硅整流电弧焊机",
+			        "text": "15KV·A硅整流电弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003535",
+			        "lxid": "003535",
+			        "lxname": "20KV·A硅整流电弧焊机",
+			        "text": "20KV·A硅整流电弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003536",
+			        "lxid": "003536",
+			        "lxname": "电流500A以内氩弧焊机",
+			        "text": "电流500A以内氩弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003537",
+			        "lxid": "003537",
+			        "lxname": "电流250A以内CO2保护焊机",
+			        "text": "电流250A以内CO2保护焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003538",
+			        "lxid": "003538",
+			        "lxname": "电流300A以内等离子弧焊机",
+			        "text": "电流300A以内等离子弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003539",
+			        "lxid": "003539",
+			        "lxname": "电流400A以内等离子切割机",
+			        "text": "电流400A以内等离子切割机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003540",
+			        "lxid": "003540",
+			        "lxname": "厚度100mm阗自动切割机",
+			        "text": "厚度100mm阗自动切割机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003541",
+			        "lxid": "003541",
+			        "lxname": "电流500A以内自动埋弧焊机",
+			        "text": "电流500A以内自动埋弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003542",
+			        "lxid": "003542",
+			        "lxname": "电流1200A以内自动埋弧焊机",
+			        "text": "电流1200A以内自动埋弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003543",
+			        "lxid": "003543",
+			        "lxname": "电流1500A以内自动埋弧焊机",
+			        "text": "电流1500A以内自动埋弧焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003544",
+			        "lxid": "003544",
+			        "lxname": "25KV·A交流对焊机",
+			        "text": "25KV·A交流对焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003545",
+			        "lxid": "003545",
+			        "lxname": "75KV·A交流对焊机",
+			        "text": "75KV·A交流对焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003546",
+			        "lxid": "003546",
+			        "lxname": "100KV·A交流对焊机",
+			        "text": "100KV·A交流对焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003547",
+			        "lxid": "003547",
+			        "lxname": "150KV·A交流对焊机",
+			        "text": "150KV·A交流对焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003548",
+			        "lxid": "003548",
+			        "lxname": "150KV·A缝焊机",
+			        "text": "150KV·A缝焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003549",
+			        "lxid": "003549",
+			        "lxname": "50KV·A以内短臂交流点焊机",
+			        "text": "50KV·A以内短臂交流点焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003550",
+			        "lxid": "003550",
+			        "lxname": "75KV·A以内长臂交流点焊机",
+			        "text": "75KV·A以内长臂交流点焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003551",
+			        "lxid": "003551",
+			        "lxname": "100KV·A以内多头交流点焊机",
+			        "text": "100KV·A以内多头交流点焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003552",
+			        "lxid": "003552",
+			        "lxname": "6×35KV·A以内多头交流点焊机",
+			        "text": "6×35KV·A以内多头交流点焊机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003553",
+			        "lxid": "003553",
+			        "lxname": "生产率1m3/h气焊设备",
+			        "text": "生产率1m3/h气焊设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003554",
+			        "lxid": "003554",
+			        "lxname": "Φ150×250mm电动鄂式破碎机",
+			        "text": "Φ150×250mm电动鄂式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003555",
+			        "lxid": "003555",
+			        "lxname": "Φ250×400mm电动鄂式破碎机",
+			        "text": "Φ250×400mm电动鄂式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003556",
+			        "lxid": "003556",
+			        "lxname": "Φ250×500mm电动鄂式破碎机",
+			        "text": "Φ250×500mm电动鄂式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003557",
+			        "lxid": "003557",
+			        "lxname": "Φ400×600mm电动鄂式破碎机",
+			        "text": "Φ400×600mm电动鄂式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003558",
+			        "lxid": "003558",
+			        "lxname": "Φ500×750mm电动鄂式破碎机",
+			        "text": "Φ500×750mm电动鄂式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003559",
+			        "lxid": "003559",
+			        "lxname": "Φ600×900mm电动鄂式破碎机",
+			        "text": "Φ600×900mm电动鄂式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003560",
+			        "lxid": "003560",
+			        "lxname": "Φ150×250mm机动鄂式破碎机",
+			        "text": "Φ150×250mm机动鄂式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003561",
+			        "lxid": "003561",
+			        "lxname": "Φ250×400mm机动鄂式破碎机",
+			        "text": "Φ250×400mm机动鄂式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003562",
+			        "lxid": "003562",
+			        "lxname": "20t/h以内反击式破碎机",
+			        "text": "20t/h以内反击式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003563",
+			        "lxid": "003563",
+			        "lxname": "30t/h以内反击式破碎机",
+			        "text": "30t/h以内反击式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003564",
+			        "lxid": "003564",
+			        "lxname": "60t/h以内反击式破碎机",
+			        "text": "60t/h以内反击式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003565",
+			        "lxid": "003565",
+			        "lxname": "100t/h以内反击式破碎机",
+			        "text": "100t/h以内反击式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003566",
+			        "lxid": "003566",
+			        "lxname": "120t/h以内反击式破碎机",
+			        "text": "120t/h以内反击式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003567",
+			        "lxid": "003567",
+			        "lxname": "140t/h以内反击式破碎机",
+			        "text": "140t/h以内反击式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003568",
+			        "lxid": "003568",
+			        "lxname": "160t/h以内反击式破碎机",
+			        "text": "160t/h以内反击式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003569",
+			        "lxid": "003569",
+			        "lxname": "180t/h以内反击式破碎机",
+			        "text": "180t/h以内反击式破碎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003570",
+			        "lxid": "003570",
+			        "lxname": "生产率10m3/h筛洗石子机",
+			        "text": "生产率10m3/h筛洗石子机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003571",
+			        "lxid": "003571",
+			        "lxname": "生产率8～20m3/h滚筒式筛分机",
+			        "text": "生产率8～20m3/h滚筒式筛分机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003572",
+			        "lxid": "003572",
+			        "lxname": "生产率100～300t/h惯性振动筛",
+			        "text": "生产率100～300t/h惯性振动筛"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003573",
+			        "lxid": "003573",
+			        "lxname": "生产率120t/h偏心振动筛",
+			        "text": "生产率120t/h偏心振动筛"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003574",
+			        "lxid": "003574",
+			        "lxname": "Φ400mm以内型材切割机",
+			        "text": "Φ400mm以内型材切割机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003575",
+			        "lxid": "003575",
+			        "lxname": "5kw以内柴油发电机组",
+			        "text": "5kw以内柴油发电机组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003576",
+			        "lxid": "003576",
+			        "lxname": "15kw以内柴油发电机组",
+			        "text": "15kw以内柴油发电机组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003577",
+			        "lxid": "003577",
+			        "lxname": "30kw以内柴油发电机组",
+			        "text": "30kw以内柴油发电机组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003578",
+			        "lxid": "003578",
+			        "lxname": "50kw以内柴油发电机组",
+			        "text": "50kw以内柴油发电机组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003579",
+			        "lxid": "003579",
+			        "lxname": "75kw以内柴油发电机组",
+			        "text": "75kw以内柴油发电机组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003580",
+			        "lxid": "003580",
+			        "lxname": "100kw以内柴油发电机组",
+			        "text": "100kw以内柴油发电机组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003581",
+			        "lxid": "003581",
+			        "lxname": "120kw以内柴油发电机组",
+			        "text": "120kw以内柴油发电机组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003582",
+			        "lxid": "003582",
+			        "lxname": "160kw以内柴油发电机组",
+			        "text": "160kw以内柴油发电机组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003583",
+			        "lxid": "003583",
+			        "lxname": "200kw以内柴油发电机组",
+			        "text": "200kw以内柴油发电机组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003584",
+			        "lxid": "003584",
+			        "lxname": "250kw以内柴油发电机组",
+			        "text": "250kw以内柴油发电机组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003585",
+			        "lxid": "003585",
+			        "lxname": "320kw以内柴油发电机组",
+			        "text": "320kw以内柴油发电机组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003586",
+			        "lxid": "003586",
+			        "lxname": "50KV·A以内变压器",
+			        "text": "50KV·A以内变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003587",
+			        "lxid": "003587",
+			        "lxname": "100KV·A以内变压器",
+			        "text": "100KV·A以内变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003588",
+			        "lxid": "003588",
+			        "lxname": "160KV·A以内变压器",
+			        "text": "160KV·A以内变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003589",
+			        "lxid": "003589",
+			        "lxname": "200KV·A以内变压器",
+			        "text": "200KV·A以内变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003590",
+			        "lxid": "003590",
+			        "lxname": "250KV·A以内变压器",
+			        "text": "250KV·A以内变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003591",
+			        "lxid": "003591",
+			        "lxname": "315KV·A以内变压器",
+			        "text": "315KV·A以内变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003592",
+			        "lxid": "003592",
+			        "lxname": "400KV·A以内变压器",
+			        "text": "400KV·A以内变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003593",
+			        "lxid": "003593",
+			        "lxname": "500KV·A以内变压器",
+			        "text": "500KV·A以内变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003594",
+			        "lxid": "003594",
+			        "lxname": "630KV·A以内变压器",
+			        "text": "630KV·A以内变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003595",
+			        "lxid": "003595",
+			        "lxname": "800KV·A以内变压器",
+			        "text": "800KV·A以内变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003596",
+			        "lxid": "003596",
+			        "lxname": "1000KV·A以内变压器",
+			        "text": "1000KV·A以内变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003597",
+			        "lxid": "003597",
+			        "lxname": "50KV·A以内箱式变压器",
+			        "text": "50KV·A以内箱式变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003598",
+			        "lxid": "003598",
+			        "lxname": "100KV·A以内箱式变压器",
+			        "text": "100KV·A以内箱式变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003599",
+			        "lxid": "003599",
+			        "lxname": "160KV·A以内箱式变压器",
+			        "text": "160KV·A以内箱式变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003600",
+			        "lxid": "003600",
+			        "lxname": "200KV·A以内箱式变压器",
+			        "text": "200KV·A以内箱式变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003601",
+			        "lxid": "003601",
+			        "lxname": "250KV·A以内箱式变压器",
+			        "text": "250KV·A以内箱式变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003602",
+			        "lxid": "003602",
+			        "lxname": "315KV·A以内箱式变压器",
+			        "text": "315KV·A以内箱式变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003603",
+			        "lxid": "003603",
+			        "lxname": "400KV·A以内箱式变压器",
+			        "text": "400KV·A以内箱式变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003604",
+			        "lxid": "003604",
+			        "lxname": "500KV·A以内箱式变压器",
+			        "text": "500KV·A以内箱式变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003605",
+			        "lxid": "003605",
+			        "lxname": "630KV·A以内箱式变压器",
+			        "text": "630KV·A以内箱式变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003606",
+			        "lxid": "003606",
+			        "lxname": "800KV·A以内箱式变压器",
+			        "text": "800KV·A以内箱式变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003607",
+			        "lxid": "003607",
+			        "lxname": "1000KV·A以内箱式变压器",
+			        "text": "1000KV·A以内箱式变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003608",
+			        "lxid": "003608",
+			        "lxname": "1250KV·A以内箱式变压器",
+			        "text": "1250KV·A以内箱式变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003609",
+			        "lxid": "003609",
+			        "lxname": "1600KV·A以内箱式变压器",
+			        "text": "1600KV·A以内箱式变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003610",
+			        "lxid": "003610",
+			        "lxname": "2000KV·A以内箱式变压器",
+			        "text": "2000KV·A以内箱式变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003611",
+			        "lxid": "003611",
+			        "lxname": "600～1000A高压开关柜",
+			        "text": "600～1000A高压开关柜"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003612",
+			        "lxid": "003612",
+			        "lxname": "4×600A低压配电屏",
+			        "text": "4×600A低压配电屏"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003613",
+			        "lxid": "003613",
+			        "lxname": "0.3m3/min以内电动空压机",
+			        "text": "0.3m3/min以内电动空压机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003614",
+			        "lxid": "003614",
+			        "lxname": "0.6m3/min以内电动空压机",
+			        "text": "0.6m3/min以内电动空压机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003615",
+			        "lxid": "003615",
+			        "lxname": "1m3/min以内电动空压机",
+			        "text": "1m3/min以内电动空压机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003616",
+			        "lxid": "003616",
+			        "lxname": "3m3/min以内电动空压机",
+			        "text": "3m3/min以内电动空压机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003617",
+			        "lxid": "003617",
+			        "lxname": "6m3/min以内电动空压机",
+			        "text": "6m3/min以内电动空压机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003618",
+			        "lxid": "003618",
+			        "lxname": "10m3/min以内电动空压机",
+			        "text": "10m3/min以内电动空压机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003619",
+			        "lxid": "003619",
+			        "lxname": "20m3/min以内电动空压机",
+			        "text": "20m3/min以内电动空压机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003620",
+			        "lxid": "003620",
+			        "lxname": "40m3/min以内电动空压机",
+			        "text": "40m3/min以内电动空压机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003621",
+			        "lxid": "003621",
+			        "lxname": "3m3/min以内机动空压机",
+			        "text": "3m3/min以内机动空压机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003622",
+			        "lxid": "003622",
+			        "lxname": "6m3/min以内机动空压机",
+			        "text": "6m3/min以内机动空压机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003623",
+			        "lxid": "003623",
+			        "lxname": "9m3/min以内机动空压机",
+			        "text": "9m3/min以内机动空压机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003624",
+			        "lxid": "003624",
+			        "lxname": "12m3/min以内机动空压机",
+			        "text": "12m3/min以内机动空压机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003625",
+			        "lxid": "003625",
+			        "lxname": "17m3/min以内机动空压机",
+			        "text": "17m3/min以内机动空压机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003626",
+			        "lxid": "003626",
+			        "lxname": "40m3/min以内机动空压机",
+			        "text": "40m3/min以内机动空压机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003627",
+			        "lxid": "003627",
+			        "lxname": "功率5kw液压动力柜",
+			        "text": "功率5kw液压动力柜"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003628",
+			        "lxid": "003628",
+			        "lxname": "蒸发量1t/h以内工业锅炉",
+			        "text": "蒸发量1t/h以内工业锅炉"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003629",
+			        "lxid": "003629",
+			        "lxname": "蒸发量2t/h以内工业锅炉",
+			        "text": "蒸发量2t/h以内工业锅炉"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003630",
+			        "lxid": "003630",
+			        "lxname": "蒸发量4t/h以内工业锅炉",
+			        "text": "蒸发量4t/h以内工业锅炉"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003631",
+			        "lxid": "003631",
+			        "lxname": "44kw以内内燃拖轮",
+			        "text": "44kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003632",
+			        "lxid": "003632",
+			        "lxname": "88kw以内内燃拖轮",
+			        "text": "88kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003633",
+			        "lxid": "003633",
+			        "lxname": "147kw以内内燃拖轮",
+			        "text": "147kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003634",
+			        "lxid": "003634",
+			        "lxname": "176kw以内内燃拖轮",
+			        "text": "176kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003635",
+			        "lxid": "003635",
+			        "lxname": "221kw以内内燃拖轮",
+			        "text": "221kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003636",
+			        "lxid": "003636",
+			        "lxname": "294kw以内内燃拖轮",
+			        "text": "294kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003637",
+			        "lxid": "003637",
+			        "lxname": "368kw以内内燃拖轮",
+			        "text": "368kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003638",
+			        "lxid": "003638",
+			        "lxname": "441kw以内内燃拖轮",
+			        "text": "441kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003639",
+			        "lxid": "003639",
+			        "lxname": "588kw以内内燃拖轮",
+			        "text": "588kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003640",
+			        "lxid": "003640",
+			        "lxname": "794kw以内内燃拖轮",
+			        "text": "794kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003641",
+			        "lxid": "003641",
+			        "lxname": "882kw以内内燃拖轮",
+			        "text": "882kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003642",
+			        "lxid": "003642",
+			        "lxname": "1228kw以内内燃拖轮",
+			        "text": "1228kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003643",
+			        "lxid": "003643",
+			        "lxname": "1441kw以内内燃拖轮",
+			        "text": "1441kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003644",
+			        "lxid": "003644",
+			        "lxname": "1941kw以内内燃拖轮",
+			        "text": "1941kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003645",
+			        "lxid": "003645",
+			        "lxname": "2353kw以内内燃拖轮",
+			        "text": "2353kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003646",
+			        "lxid": "003646",
+			        "lxname": "2500kw以内内燃拖轮",
+			        "text": "2500kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003647",
+			        "lxid": "003647",
+			        "lxname": "2942kw以内内燃拖轮",
+			        "text": "2942kw以内内燃拖轮"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003648",
+			        "lxid": "003648",
+			        "lxname": "30t以内工程驳船",
+			        "text": "30t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003649",
+			        "lxid": "003649",
+			        "lxname": "50t以内工程驳船",
+			        "text": "50t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003650",
+			        "lxid": "003650",
+			        "lxname": "80t以内工程驳船",
+			        "text": "80t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003651",
+			        "lxid": "003651",
+			        "lxname": "100t以内工程驳船",
+			        "text": "100t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003652",
+			        "lxid": "003652",
+			        "lxname": "150t以内工程驳船",
+			        "text": "150t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003653",
+			        "lxid": "003653",
+			        "lxname": "200t以内工程驳船",
+			        "text": "200t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003654",
+			        "lxid": "003654",
+			        "lxname": "300t以内工程驳船",
+			        "text": "300t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003655",
+			        "lxid": "003655",
+			        "lxname": "400t以内工程驳船",
+			        "text": "400t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003656",
+			        "lxid": "003656",
+			        "lxname": "500t以内工程驳船",
+			        "text": "500t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003657",
+			        "lxid": "003657",
+			        "lxname": "600t以内工程驳船",
+			        "text": "600t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003658",
+			        "lxid": "003658",
+			        "lxname": "800t以内工程驳船",
+			        "text": "800t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003659",
+			        "lxid": "003659",
+			        "lxname": "1000t以内工程驳船",
+			        "text": "1000t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003660",
+			        "lxid": "003660",
+			        "lxname": "1500t以内工程驳船",
+			        "text": "1500t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003661",
+			        "lxid": "003661",
+			        "lxname": "2000t以内工程驳船",
+			        "text": "2000t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003662",
+			        "lxid": "003662",
+			        "lxname": "3000t以内工程驳船",
+			        "text": "3000t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003663",
+			        "lxid": "003663",
+			        "lxname": "5000t以内工程驳船",
+			        "text": "5000t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003664",
+			        "lxid": "003664",
+			        "lxname": "6000t以内工程驳船",
+			        "text": "6000t以内工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003665",
+			        "lxid": "003665",
+			        "lxname": "800t以内自航式工程驳船",
+			        "text": "800t以内自航式工程驳船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003666",
+			        "lxid": "003666",
+			        "lxname": "1000m3以内泥浆船",
+			        "text": "1000m3以内泥浆船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003667",
+			        "lxid": "003667",
+			        "lxname": "桩架高度60m以内打桩船",
+			        "text": "桩架高度60m以内打桩船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003668",
+			        "lxid": "003668",
+			        "lxname": "桩架高度80m以内打桩船",
+			        "text": "桩架高度80m以内打桩船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003669",
+			        "lxid": "003669",
+			        "lxname": "桩架高度100m以内打桩船",
+			        "text": "桩架高度100m以内打桩船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003670",
+			        "lxid": "003670",
+			        "lxname": "272kN·m以内船用柴油打桩锤",
+			        "text": "272kN·m以内船用柴油打桩锤"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003671",
+			        "lxid": "003671",
+			        "lxname": "334kN·m以内船用柴油打桩锤",
+			        "text": "334kN·m以内船用柴油打桩锤"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003672",
+			        "lxid": "003672",
+			        "lxname": "417kN·m以内船用柴油打桩锤",
+			        "text": "417kN·m以内船用柴油打桩锤"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003673",
+			        "lxid": "003673",
+			        "lxname": "100t以内旋转扒杆起重船",
+			        "text": "100t以内旋转扒杆起重船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003674",
+			        "lxid": "003674",
+			        "lxname": "130t以内旋转扒杆起重船",
+			        "text": "130t以内旋转扒杆起重船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003675",
+			        "lxid": "003675",
+			        "lxname": "180t以内旋转扒杆起重船",
+			        "text": "180t以内旋转扒杆起重船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003676",
+			        "lxid": "003676",
+			        "lxname": "350t以内旋转扒杆起重船",
+			        "text": "350t以内旋转扒杆起重船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003677",
+			        "lxid": "003677",
+			        "lxname": "60t以内固定扒杆起重船",
+			        "text": "60t以内固定扒杆起重船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003678",
+			        "lxid": "003678",
+			        "lxname": "100t以内固定扒杆起重船",
+			        "text": "100t以内固定扒杆起重船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003679",
+			        "lxid": "003679",
+			        "lxname": "150t以内固定扒杆起重船",
+			        "text": "150t以内固定扒杆起重船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003680",
+			        "lxid": "003680",
+			        "lxname": "200t以内固定扒杆起重船",
+			        "text": "200t以内固定扒杆起重船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003681",
+			        "lxid": "003681",
+			        "lxname": "300t以内固定扒杆起重船",
+			        "text": "300t以内固定扒杆起重船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003682",
+			        "lxid": "003682",
+			        "lxname": "500t以内固定扒杆起重船",
+			        "text": "500t以内固定扒杆起重船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003683",
+			        "lxid": "003683",
+			        "lxname": "600t以内固定扒杆起重船",
+			        "text": "600t以内固定扒杆起重船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003684",
+			        "lxid": "003684",
+			        "lxname": "2500t以内固定扒杆起重船",
+			        "text": "2500t以内固定扒杆起重船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003685",
+			        "lxid": "003685",
+			        "lxname": "2600t以内固定扒杆起重船",
+			        "text": "2600t以内固定扒杆起重船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003686",
+			        "lxid": "003686",
+			        "lxname": "100m3/h以内混凝土搅拌船",
+			        "text": "100m3/h以内混凝土搅拌船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003687",
+			        "lxid": "003687",
+			        "lxname": "120m3/h以内混凝土搅拌船",
+			        "text": "120m3/h以内混凝土搅拌船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003688",
+			        "lxid": "003688",
+			        "lxname": "150m3/h以内混凝土搅拌船",
+			        "text": "150m3/h以内混凝土搅拌船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003689",
+			        "lxid": "003689",
+			        "lxname": "240kw以内抛锚船",
+			        "text": "240kw以内抛锚船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003690",
+			        "lxid": "003690",
+			        "lxname": "373kw以内抛锚船",
+			        "text": "373kw以内抛锚船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003691",
+			        "lxid": "003691",
+			        "lxname": "522kw以内抛锚船",
+			        "text": "522kw以内抛锚船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003692",
+			        "lxid": "003692",
+			        "lxname": "123kw以内机动船",
+			        "text": "123kw以内机动船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003693",
+			        "lxid": "003693",
+			        "lxname": "198kw以内机动船",
+			        "text": "198kw以内机动船"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003694",
+			        "lxid": "003694",
+			        "lxname": "7.5kw以内轴流式通风机",
+			        "text": "7.5kw以内轴流式通风机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003695",
+			        "lxid": "003695",
+			        "lxname": "30kw以内轴流式通风机",
+			        "text": "30kw以内轴流式通风机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003696",
+			        "lxid": "003696",
+			        "lxname": "100kw以内轴流式通风机",
+			        "text": "100kw以内轴流式通风机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003697",
+			        "lxid": "003697",
+			        "lxname": "506～708m3/min离心式通风机",
+			        "text": "506～708m3/min离心式通风机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003698",
+			        "lxid": "003698",
+			        "lxname": "756～899m3/min离心式通风机",
+			        "text": "756～899m3/min离心式通风机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003699",
+			        "lxid": "003699",
+			        "lxname": "900～1259m3/min离心式通风机",
+			        "text": "900～1259m3/min离心式通风机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003700",
+			        "lxid": "003700",
+			        "lxname": "1200～1678m3/min离心式通风机",
+			        "text": "1200～1678m3/min离心式通风机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003701",
+			        "lxid": "003701",
+			        "lxname": "1523～2132m3/min离心式通风机",
+			        "text": "1523～2132m3/min离心式通风机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003702",
+			        "lxid": "003702",
+			        "lxname": "风量4m3/min吹风机",
+			        "text": "风量4m3/min吹风机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003703",
+			        "lxid": "003703",
+			        "lxname": "风量8m3/min鼓风机",
+			        "text": "风量8m3/min鼓风机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003704",
+			        "lxid": "003704",
+			        "lxname": "风量18m3/min鼓风机",
+			        "text": "风量18m3/min鼓风机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003705",
+			        "lxid": "003705",
+			        "lxname": "潜水设备",
+			        "text": "潜水设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003706",
+			        "lxid": "003706",
+			        "lxname": "潜水减压舱",
+			        "text": "潜水减压舱"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003707",
+			        "lxid": "003707",
+			        "lxname": "光纤熔接机",
+			        "text": "光纤熔接机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003708",
+			        "lxid": "003708",
+			        "lxname": "光缆气流吹缆机",
+			        "text": "光缆气流吹缆机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003709",
+			        "lxid": "003709",
+			        "lxname": "光时域反射仪",
+			        "text": "光时域反射仪"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003710",
+			        "lxid": "003710",
+			        "lxname": "光功率计",
+			        "text": "光功率计"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003711",
+			        "lxid": "003711",
+			        "lxname": "光纤测试仪",
+			        "text": "光纤测试仪"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003712",
+			        "lxid": "003712",
+			        "lxname": "局域网电缆测试仪",
+			        "text": "局域网电缆测试仪"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003713",
+			        "lxid": "003713",
+			        "lxname": "微机硬盘测试议",
+			        "text": "微机硬盘测试议"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003714",
+			        "lxid": "003714",
+			        "lxname": "误码率测试仪",
+			        "text": "误码率测试仪"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003715",
+			        "lxid": "003715",
+			        "lxname": "PCM通道测试仪",
+			        "text": "PCM通道测试仪"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003716",
+			        "lxid": "003716",
+			        "lxname": "信令分析仪",
+			        "text": "信令分析仪"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003717",
+			        "lxid": "003717",
+			        "lxname": "网络分析仪",
+			        "text": "网络分析仪"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003718",
+			        "lxid": "003718",
+			        "lxname": "频谱分析仪",
+			        "text": "频谱分析仪"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003719",
+			        "lxid": "003719",
+			        "lxname": "场强仪",
+			        "text": "场强仪"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003720",
+			        "lxid": "003720",
+			        "lxname": "万能母线机",
+			        "text": "万能母线机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003721",
+			        "lxid": "003721",
+			        "lxname": "数字存储示波器",
+			        "text": "数字存储示波器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003722",
+			        "lxid": "003722",
+			        "lxname": "示波器",
+			        "text": "示波器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003723",
+			        "lxid": "003723",
+			        "lxname": "双通道示波器",
+			        "text": "双通道示波器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003724",
+			        "lxid": "003724",
+			        "lxname": "数显频率发生器",
+			        "text": "数显频率发生器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003725",
+			        "lxid": "003725",
+			        "lxname": "彩色监视器",
+			        "text": "彩色监视器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003726",
+			        "lxid": "003726",
+			        "lxname": "电视测试信号发生器",
+			        "text": "电视测试信号发生器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003727",
+			        "lxid": "003727",
+			        "lxname": "便携式计算机",
+			        "text": "便携式计算机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003728",
+			        "lxid": "003728",
+			        "lxname": "数字多用表",
+			        "text": "数字多用表"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003729",
+			        "lxid": "003729",
+			        "lxname": "微波频率计",
+			        "text": "微波频率计"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003730",
+			        "lxid": "003730",
+			        "lxname": "高压试验变压器全套装置",
+			        "text": "高压试验变压器全套装置"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003731",
+			        "lxid": "003731",
+			        "lxname": "继电保护测试仪",
+			        "text": "继电保护测试仪"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003732",
+			        "lxid": "003732",
+			        "lxname": "三相精密测试电源",
+			        "text": "三相精密测试电源"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003733",
+			        "lxid": "003733",
+			        "lxname": "直流高压发生器",
+			        "text": "直流高压发生器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003734",
+			        "lxid": "003734",
+			        "lxname": "轻型试验变压器",
+			        "text": "轻型试验变压器"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003735",
+			        "lxid": "003735",
+			        "lxname": "数字高压表",
+			        "text": "数字高压表"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003736",
+			        "lxid": "003736",
+			        "lxname": "电能校验仪",
+			        "text": "电能校验仪"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003737",
+			        "lxid": "003737",
+			        "lxname": "记录仪",
+			        "text": "记录仪"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003738",
+			        "lxid": "003738",
+			        "lxname": "真空断路器测试仪",
+			        "text": "真空断路器测试仪"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003739",
+			        "lxid": "003739",
+			        "lxname": "喷砂除锈机",
+			        "text": "喷砂除锈机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003740",
+			        "lxid": "003740",
+			        "lxname": "生产率1200m2/h液压无气喷涂机",
+			        "text": "生产率1200m2/h液压无气喷涂机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003741",
+			        "lxid": "003741",
+			        "lxname": "功率70kw以内工程修理车",
+			        "text": "功率70kw以内工程修理车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003742",
+			        "lxid": "003742",
+			        "lxname": "功率90kw以内工程修理车",
+			        "text": "功率90kw以内工程修理车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003743",
+			        "lxid": "003743",
+			        "lxname": "45cm×35cm×45cm电焊条烘干箱",
+			        "text": "45cm×35cm×45cm电焊条烘干箱"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003744",
+			        "lxid": "003744",
+			        "lxname": "55cm×45cm×55cm电焊条烘干箱",
+			        "text": "55cm×45cm×55cm电焊条烘干箱"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003745",
+			        "lxid": "003745",
+			        "lxname": "60cm×50cm×75cm电焊条烘干箱",
+			        "text": "60cm×50cm×75cm电焊条烘干箱"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003746",
+			        "lxid": "003746",
+			        "lxname": "80cm×80cm×100cm电焊条烘干箱",
+			        "text": "80cm×80cm×100cm电焊条烘干箱"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003747",
+			        "lxid": "003747",
+			        "lxname": "小型机具使用费",
+			        "text": "小型机具使用费"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003749",
+			        "lxid": "003749",
+			        "lxname": "交通车",
+			        "text": "交通车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003062",
+			        "lxid": "003062",
+			        "lxname": "6～8t光轮压路机",
+			        "text": "6～8t光轮压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003063",
+			        "lxid": "003063",
+			        "lxname": "8～10t光轮压路机",
+			        "text": "8～10t光轮压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003064",
+			        "lxid": "003064",
+			        "lxname": "10～12t光轮压路机",
+			        "text": "10～12t光轮压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003065",
+			        "lxid": "003065",
+			        "lxname": "12～15t光轮压路机",
+			        "text": "12～15t光轮压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003066",
+			        "lxid": "003066",
+			        "lxname": "15～18t光轮压路机",
+			        "text": "15～18t光轮压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003067",
+			        "lxid": "003067",
+			        "lxname": "18～21t光轮压路机",
+			        "text": "18～21t光轮压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003068",
+			        "lxid": "003068",
+			        "lxname": "21～25t光轮压路机",
+			        "text": "21～25t光轮压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003069",
+			        "lxid": "003069",
+			        "lxname": "0.6t手扶式振动碾",
+			        "text": "0.6t手扶式振动碾"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003070",
+			        "lxid": "003070",
+			        "lxname": "6t以内振动压路机",
+			        "text": "6t以内振动压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003071",
+			        "lxid": "003071",
+			        "lxname": "8t以内振动压路机",
+			        "text": "8t以内振动压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003072",
+			        "lxid": "003072",
+			        "lxname": "10t以内振动压路机",
+			        "text": "10t以内振动压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003073",
+			        "lxid": "003073",
+			        "lxname": "15t以内振动压路机",
+			        "text": "15t以内振动压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003074",
+			        "lxid": "003074",
+			        "lxname": "20t以内振动压路机",
+			        "text": "20t以内振动压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003075",
+			        "lxid": "003075",
+			        "lxname": "15t拖式振动碾(含头)",
+			        "text": "15t拖式振动碾(含头)"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003076",
+			        "lxid": "003076",
+			        "lxname": "200～620N·m蛙式夯土机",
+			        "text": "200～620N·m蛙式夯土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003077",
+			        "lxid": "003077",
+			        "lxname": "夯足直径265mm内燃夯土机",
+			        "text": "夯足直径265mm内燃夯土机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003078",
+			        "lxid": "003078",
+			        "lxname": "1200kN·m以内强夯机械",
+			        "text": "1200kN·m以内强夯机械"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003079",
+			        "lxid": "003079",
+			        "lxname": "2000kN·m以内强夯机械",
+			        "text": "2000kN·m以内强夯机械"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003080",
+			        "lxid": "003080",
+			        "lxname": "3000kN·m以内强夯机械",
+			        "text": "3000kN·m以内强夯机械"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003081",
+			        "lxid": "003081",
+			        "lxname": "风动手持式凿岩机",
+			        "text": "风动手持式凿岩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003082",
+			        "lxid": "003082",
+			        "lxname": "风动气腿式凿岩机",
+			        "text": "风动气腿式凿岩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003083",
+			        "lxid": "003083",
+			        "lxname": "风动导轨式凿岩机",
+			        "text": "风动导轨式凿岩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003084",
+			        "lxid": "003084",
+			        "lxname": "电动凿岩机",
+			        "text": "电动凿岩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003085",
+			        "lxid": "003085",
+			        "lxname": "内燃式凿岩机",
+			        "text": "内燃式凿岩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003086",
+			        "lxid": "003086",
+			        "lxname": "轮胎式MINB027PRL二臂凿岩台车",
+			        "text": "轮胎式MINB027PRL二臂凿岩台车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003087",
+			        "lxid": "003087",
+			        "lxname": "轮胎式H178三臂凿岩台车",
+			        "text": "轮胎式H178三臂凿岩台车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003088",
+			        "lxid": "003088",
+			        "lxname": "孔径38～76mm液压潜孔钻机",
+			        "text": "孔径38～76mm液压潜孔钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003089",
+			        "lxid": "003089",
+			        "lxname": "孔径38～115mm液压潜孔钻机",
+			        "text": "孔径38～115mm液压潜孔钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003090",
+			        "lxid": "003090",
+			        "lxname": "孔径100mm以内履带式潜孔钻机",
+			        "text": "孔径100mm以内履带式潜孔钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003091",
+			        "lxid": "003091",
+			        "lxname": "孔径150mm以内履带式潜孔钻机",
+			        "text": "孔径150mm以内履带式潜孔钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003092",
+			        "lxid": "003092",
+			        "lxname": "孔径38～105mm液压锚固钻机",
+			        "text": "孔径38～105mm液压锚固钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003093",
+			        "lxid": "003093",
+			        "lxname": "孔径38～170mm液压锚固钻机",
+			        "text": "孔径38～170mm液压锚固钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003094",
+			        "lxid": "003094",
+			        "lxname": "孔径38～200mm液压锚固钻机",
+			        "text": "孔径38～200mm液压锚固钻机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003095",
+			        "lxid": "003095",
+			        "lxname": "机动装药台车",
+			        "text": "机动装药台车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003096",
+			        "lxid": "003096",
+			        "lxname": "斗容0.2m3电动装岩机",
+			        "text": "斗容0.2m3电动装岩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003097",
+			        "lxid": "003097",
+			        "lxname": "斗容0.4m3电动装岩机",
+			        "text": "斗容0.4m3电动装岩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003098",
+			        "lxid": "003098",
+			        "lxname": "斗容0.6m3电动装岩机",
+			        "text": "斗容0.6m3电动装岩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003099",
+			        "lxid": "003099",
+			        "lxname": "斗容0.2m3汽动装岩机",
+			        "text": "斗容0.2m3汽动装岩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003100",
+			        "lxid": "003100",
+			        "lxname": "斗容0.5m3汽动装岩机",
+			        "text": "斗容0.5m3汽动装岩机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003101",
+			        "lxid": "003101",
+			        "lxname": "风动锻钎机",
+			        "text": "风动锻钎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003102",
+			        "lxid": "003102",
+			        "lxname": "液压锻钎机",
+			        "text": "液压锻钎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003103",
+			        "lxid": "003103",
+			        "lxname": "电动钻头磨床",
+			        "text": "电动钻头磨床"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003104",
+			        "lxid": "003104",
+			        "lxname": "电动修钎机",
+			        "text": "电动修钎机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003105",
+			        "lxid": "003105",
+			        "lxname": "机动液压喷播机",
+			        "text": "机动液压喷播机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003106",
+			        "lxid": "003106",
+			        "lxname": "88kw以内稳定土拌和机",
+			        "text": "88kw以内稳定土拌和机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003107",
+			        "lxid": "003107",
+			        "lxname": "118kw以内稳定土拌和机",
+			        "text": "118kw以内稳定土拌和机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003108",
+			        "lxid": "003108",
+			        "lxname": "135kw以内稳定土拌和机",
+			        "text": "135kw以内稳定土拌和机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003109",
+			        "lxid": "003109",
+			        "lxname": "165kw以内稳定土拌和机",
+			        "text": "165kw以内稳定土拌和机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003110",
+			        "lxid": "003110",
+			        "lxname": "235kw以内稳定土拌和机",
+			        "text": "235kw以内稳定土拌和机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003111",
+			        "lxid": "003111",
+			        "lxname": "50t/h以内稳定土厂拌设备",
+			        "text": "50t/h以内稳定土厂拌设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003112",
+			        "lxid": "003112",
+			        "lxname": "100t/h以内稳定土厂拌设备",
+			        "text": "100t/h以内稳定土厂拌设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003113",
+			        "lxid": "003113",
+			        "lxname": "200t/h以内稳定土厂拌设备",
+			        "text": "200t/h以内稳定土厂拌设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003114",
+			        "lxid": "003114",
+			        "lxname": "300t/h以内稳定土厂拌设备",
+			        "text": "300t/h以内稳定土厂拌设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003115",
+			        "lxid": "003115",
+			        "lxname": "400t/h以内稳定土厂拌设备",
+			        "text": "400t/h以内稳定土厂拌设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003116",
+			        "lxid": "003116",
+			        "lxname": "500t/h以内稳定土厂拌设备",
+			        "text": "500t/h以内稳定土厂拌设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003117",
+			        "lxid": "003117",
+			        "lxname": "摊铺宽7.5m稳定土摊铺机",
+			        "text": "摊铺宽7.5m稳定土摊铺机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003118",
+			        "lxid": "003118",
+			        "lxname": "摊铺宽9.5m稳定土摊铺机",
+			        "text": "摊铺宽9.5m稳定土摊铺机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003119",
+			        "lxid": "003119",
+			        "lxname": "摊铺宽12.5m稳定土摊铺机",
+			        "text": "摊铺宽12.5m稳定土摊铺机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003120",
+			        "lxid": "003120",
+			        "lxname": "1000L/h以内沥青乳化机",
+			        "text": "1000L/h以内沥青乳化机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003121",
+			        "lxid": "003121",
+			        "lxname": "3000L/h以内沥青乳化机",
+			        "text": "3000L/h以内沥青乳化机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003122",
+			        "lxid": "003122",
+			        "lxname": "6000L/h以内沥青乳化机",
+			        "text": "6000L/h以内沥青乳化机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003123",
+			        "lxid": "003123",
+			        "lxname": "6000L/h以内沥青乳化设备",
+			        "text": "6000L/h以内沥青乳化设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003124",
+			        "lxid": "003124",
+			        "lxname": "20～40t/班导热油加热沥青设备",
+			        "text": "20～40t/班导热油加热沥青设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003125",
+			        "lxid": "003125",
+			        "lxname": "40～60t/班导热油加热沥青设备",
+			        "text": "40～60t/班导热油加热沥青设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003126",
+			        "lxid": "003126",
+			        "lxname": "60～80t/班导热油加热沥青设备",
+			        "text": "60～80t/班导热油加热沥青设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003127",
+			        "lxid": "003127",
+			        "lxname": "80～100t/班导热油加热沥青设备",
+			        "text": "80～100t/班导热油加热沥青设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003128",
+			        "lxid": "003128",
+			        "lxname": "100～140t/班导热油加热沥青设备",
+			        "text": "100～140t/班导热油加热沥青设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003129",
+			        "lxid": "003129",
+			        "lxname": "4t/h沥青脱桶设备",
+			        "text": "4t/h沥青脱桶设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003130",
+			        "lxid": "003130",
+			        "lxname": "6t/h沥青脱桶设备",
+			        "text": "6t/h沥青脱桶设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003131",
+			        "lxid": "003131",
+			        "lxname": "撒布宽度1~3m石屑撒布机",
+			        "text": "撒布宽度1~3m石屑撒布机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003133",
+			        "lxid": "003133",
+			        "lxname": "7000L以内液态沥青运输车",
+			        "text": "7000L以内液态沥青运输车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003134",
+			        "lxid": "003134",
+			        "lxname": "9000L以内液态沥青运输车",
+			        "text": "9000L以内液态沥青运输车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003135",
+			        "lxid": "003135",
+			        "lxname": "22000L以内液态沥青运输车",
+			        "text": "22000L以内液态沥青运输车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003136",
+			        "lxid": "003136",
+			        "lxname": "500L以内沥青洒布机",
+			        "text": "500L以内沥青洒布机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003137",
+			        "lxid": "003137",
+			        "lxname": "1000L以内沥青洒布机",
+			        "text": "1000L以内沥青洒布机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003138",
+			        "lxid": "003138",
+			        "lxname": "2000L以内沥青洒布车",
+			        "text": "2000L以内沥青洒布车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003139",
+			        "lxid": "003139",
+			        "lxname": "4000L以内沥青洒布车",
+			        "text": "4000L以内沥青洒布车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003140",
+			        "lxid": "003140",
+			        "lxname": "6000L以内沥青洒布车",
+			        "text": "6000L以内沥青洒布车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003141",
+			        "lxid": "003141",
+			        "lxname": "8000L以内沥青洒布车",
+			        "text": "8000L以内沥青洒布车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003142",
+			        "lxid": "003142",
+			        "lxname": "15t/h以内电动黑色粒料拌和机",
+			        "text": "15t/h以内电动黑色粒料拌和机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003143",
+			        "lxid": "003143",
+			        "lxname": "25t/h以内电动黑色粒料拌和机",
+			        "text": "25t/h以内电动黑色粒料拌和机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003144",
+			        "lxid": "003144",
+			        "lxname": "25t/h以内机动黑色粒料拌和机",
+			        "text": "25t/h以内机动黑色粒料拌和机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003145",
+			        "lxid": "003145",
+			        "lxname": "30t/h以内沥青拌和设备",
+			        "text": "30t/h以内沥青拌和设备 "
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003146",
+			        "lxid": "003146",
+			        "lxname": "60t/h以内沥青拌和设备",
+			        "text": "60t/h以内沥青拌和设备 "
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003147",
+			        "lxid": "003147",
+			        "lxname": "80t/h以内沥青拌和设备",
+			        "text": "80t/h以内沥青拌和设备 "
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003148",
+			        "lxid": "003148",
+			        "lxname": "120t/h以内沥青拌和设备",
+			        "text": "120t/h以内沥青拌和设备 "
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003149",
+			        "lxid": "003149",
+			        "lxname": "160t/h以内沥青拌和设备",
+			        "text": "160t/h以内沥青拌和设备 "
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003150",
+			        "lxid": "003150",
+			        "lxname": "240t/h以内沥青拌和设备",
+			        "text": "240t/h以内沥青拌和设备 "
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003151",
+			        "lxid": "003151",
+			        "lxname": "320t/h以内沥青拌和设备",
+			        "text": "320t/h以内沥青拌和设备 "
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003152",
+			        "lxid": "003152",
+			        "lxname": "3.6m以内不带自动找平沥青混合料摊铺机",
+			        "text": "3.6m以内不带自动找平沥青混合料摊铺机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003153",
+			        "lxid": "003153",
+			        "lxname": "4.5m以内不带自动找平沥青混合料摊铺机",
+			        "text": "4.5m以内不带自动找平沥青混合料摊铺机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003154",
+			        "lxid": "003154",
+			        "lxname": "4.5m以内带自动找平沥青混合料摊铺机",
+			        "text": "4.5m以内带自动找平沥青混合料摊铺机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003155",
+			        "lxid": "003155",
+			        "lxname": "6.0m以内带自动找平沥青混合料摊铺机",
+			        "text": "6.0m以内带自动找平沥青混合料摊铺机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003156",
+			        "lxid": "003156",
+			        "lxname": "9.0m以内带自动找平沥青混合料摊铺机",
+			        "text": "9.0m以内带自动找平沥青混合料摊铺机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003157",
+			        "lxid": "003157",
+			        "lxname": "12.5m以内带自动找平沥青混合料摊铺机",
+			        "text": "12.5m以内带自动找平沥青混合料摊铺机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003158",
+			        "lxid": "003158",
+			        "lxname": "2.5～3.5m稀浆封层机",
+			        "text": "2.5～3.5m稀浆封层机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003159",
+			        "lxid": "003159",
+			        "lxname": "10t以内双钢轮振动压路机",
+			        "text": "10t以内双钢轮振动压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003160",
+			        "lxid": "003160",
+			        "lxname": "12t以内双钢轮振动压路机",
+			        "text": "12t以内双钢轮振动压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003161",
+			        "lxid": "003161",
+			        "lxname": "15t以内双钢轮振动压路机",
+			        "text": "15t以内双钢轮振动压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003162",
+			        "lxid": "003162",
+			        "lxname": "9～16t以内轮胎式压路机",
+			        "text": "9～16t以内轮胎式压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003163",
+			        "lxid": "003163",
+			        "lxname": "16～20t以内轮胎式压路机",
+			        "text": "16～20t以内轮胎式压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003164",
+			        "lxid": "003164",
+			        "lxname": "20～25t以内轮胎式压路机",
+			        "text": "20～25t以内轮胎式压路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003165",
+			        "lxid": "003165",
+			        "lxname": "热熔标线设备",
+			        "text": "热熔标线设备"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003166",
+			        "lxid": "003166",
+			        "lxname": "2.2kw以内手扶自行式路面画线车",
+			        "text": "2.2kw以内手扶自行式路面画线车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003167",
+			        "lxid": "003167",
+			        "lxname": "5.0kw以内手扶自行式路面画线车",
+			        "text": "5.0kw以内手扶自行式路面画线车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003168",
+			        "lxid": "003168",
+			        "lxname": "汽车式画线车(车载式)",
+			        "text": "汽车式画线车(车载式)"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003169",
+			        "lxid": "003169",
+			        "lxname": "3.0～9.0m滑模式水泥混凝土摊铺机",
+			        "text": "3.0～9.0m滑模式水泥混凝土摊铺机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003170",
+			        "lxid": "003170",
+			        "lxname": "2.5～4.5m轨道式水泥混凝土摊铺机",
+			        "text": "2.5～4.5m轨道式水泥混凝土摊铺机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003171",
+			        "lxid": "003171",
+			        "lxname": "排式振捣机",
+			        "text": "排式振捣机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003172",
+			        "lxid": "003172",
+			        "lxname": "电动混凝土真空吸水机组",
+			        "text": "电动混凝土真空吸水机组"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003173",
+			        "lxid": "003173",
+			        "lxname": "电动混凝土真空整平机",
+			        "text": "电动混凝土真空整平机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003174",
+			        "lxid": "003174",
+			        "lxname": "电动混凝土抹光机",
+			        "text": "电动混凝土抹光机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003175",
+			        "lxid": "003175",
+			        "lxname": "机动混凝土抹光机",
+			        "text": "机动混凝土抹光机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003176",
+			        "lxid": "003176",
+			        "lxname": "电动混凝土刻纹机",
+			        "text": "电动混凝土刻纹机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003177",
+			        "lxid": "003177",
+			        "lxname": "机动混凝土刻纹机",
+			        "text": "机动混凝土刻纹机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003178",
+			        "lxid": "003178",
+			        "lxname": "电动混凝土切缝机",
+			        "text": "电动混凝土切缝机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003179",
+			        "lxid": "003179",
+			        "lxname": "风冷汽油机混凝土切缝机",
+			        "text": "风冷汽油机混凝土切缝机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003180",
+			        "lxid": "003180",
+			        "lxname": "机动高压清洗机",
+			        "text": "机动高压清洗机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003181",
+			        "lxid": "003181",
+			        "lxname": "机动路缘石开沟机",
+			        "text": "机动路缘石开沟机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003182",
+			        "lxid": "003182",
+			        "lxname": "机动沥青路缘石铺筑机",
+			        "text": "机动沥青路缘石铺筑机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003183",
+			        "lxid": "003183",
+			        "lxname": "机动混凝土路缘石铺筑机",
+			        "text": "机动混凝土路缘石铺筑机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003184",
+			        "lxid": "003184",
+			        "lxname": "燃气加热沥青灌缝机",
+			        "text": "燃气加热沥青灌缝机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003185",
+			        "lxid": "003185",
+			        "lxname": "铣刨宽度500mm以内路面铣刨机",
+			        "text": "铣刨宽度500mm以内路面铣刨机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003186",
+			        "lxid": "003186",
+			        "lxname": "铣刨宽度1000mm以内路面铣刨机",
+			        "text": "铣刨宽度1000mm以内路面铣刨机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003187",
+			        "lxid": "003187",
+			        "lxname": "铣刨宽度2000mm以内路面铣刨机",
+			        "text": "铣刨宽度2000mm以内路面铣刨机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003188",
+			        "lxid": "003188",
+			        "lxname": "机动破路机",
+			        "text": "机动破路机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003189",
+			        "lxid": "003189",
+			        "lxname": "机动路面清扫机",
+			        "text": "机动路面清扫机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003190",
+			        "lxid": "003190",
+			        "lxname": "路面清扫车",
+			        "text": "路面清扫车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003191",
+			        "lxid": "003191",
+			        "lxname": "机动扫雪机",
+			        "text": "机动扫雪机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003192",
+			        "lxid": "003192",
+			        "lxname": "道路养护车",
+			        "text": "道路养护车"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003193",
+			        "lxid": "003193",
+			        "lxname": "150L以内强制式混凝土搅拌机",
+			        "text": "150L以内强制式混凝土搅拌机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003194",
+			        "lxid": "003194",
+			        "lxname": "250L以内强制式混凝土搅拌机",
+			        "text": "250L以内强制式混凝土搅拌机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003195",
+			        "lxid": "003195",
+			        "lxname": "350L以内强制式混凝土搅拌机",
+			        "text": "350L以内强制式混凝土搅拌机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003196",
+			        "lxid": "003196",
+			        "lxname": "500L以内强制式混凝土搅拌机",
+			        "text": "500L以内强制式混凝土搅拌机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003197",
+			        "lxid": "003197",
+			        "lxname": "750L以内强制式混凝土搅拌机",
+			        "text": "750L以内强制式混凝土搅拌机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003198",
+			        "lxid": "003198",
+			        "lxname": "1000L以内强制式混凝土搅拌机",
+			        "text": "1000L以内强制式混凝土搅拌机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003199",
+			        "lxid": "003199",
+			        "lxname": "1500L以内强制式混凝土搅拌机",
+			        "text": "1500L以内强制式混凝土搅拌机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003200",
+			        "lxid": "003200",
+			        "lxname": "2000L以内强制式混凝土搅拌机",
+			        "text": "2000L以内强制式混凝土搅拌机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003201",
+			        "lxid": "003201",
+			        "lxname": "200L以内灰浆搅拌机",
+			        "text": "200L以内灰浆搅拌机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003202",
+			        "lxid": "003202",
+			        "lxname": "400L以内灰浆搅拌机",
+			        "text": "400L以内灰浆搅拌机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003203",
+			        "lxid": "003203",
+			        "lxname": "生产率4~6m3/h混凝土喷射机",
+			        "text": "生产率4~6m3/h混凝土喷射机"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003204",
+			        "lxid": "003204",
+			        "lxname": "输送量3m3/h以灰浆输送泵",
+			        "text": "输送量3m3/h以灰浆输送泵"
+			       
+			      }
+				   ,
+        		{
+    				"attributes":{
+				  		"gg":""
+				  	},
+			        "checkbox": true,
+			        "id": "003205",
+			        "lxid": "003205",
+			        "lxname": "输送量4m3/h以灰浆输送泵",
+			        "text": "输送量4m3/h以灰浆输送泵"
+			       
+			      }
+     		 ]
+      }
+]

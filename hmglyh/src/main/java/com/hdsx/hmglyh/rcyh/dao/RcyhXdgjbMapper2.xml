@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdsx.hmglyh.rcyh.dao.RcyhXdgjbMapper2" >
+  <resultMap id="BaseResultMap" type="com.hdsx.hmglyh.rcyh.dao.model.RcyhXdgjb2" >
+    <id column="XCID" property="xcid" jdbcType="VARCHAR" />
+    <result column="STIME" property="stime" jdbcType="DATE" />
+    <result column="ETIME" property="etime" jdbcType="DATE" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.hdsx.hmglyh.rcyh.dao.model.RcyhXdgjb2" extends="BaseResultMap" >
+    <result column="SHAPE" property="shape" jdbcType="BLOB" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    XCID, TO_CHAR(STIME,'yyyy-mm-dd hh24:mi:ss') STIME, TO_CHAR(ETIME,'yyyy-mm-dd hh24:mi:ss') ETIME
+  </sql>
+  <sql id="Blob_Column_List" >
+    SHAPE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from hmglyh.RCYH_XDGJB
+    where XCID = #{xcid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from hmglyh.RCYH_XDGJB
+    where XCID = #{xcid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhXdgjb2" >
+    insert into hmglyh.RCYH_XDGJB (XCID, STIME, ETIME, 
+      SHAPE)
+    values (#{xcid,jdbcType=VARCHAR}, to_date(#{stime},'yyyy-mm-dd hh24:mi:ss'), to_date(#{etime},'yyyy-mm-dd hh24:mi:ss'), 
+      #{shape,jdbcType=BLOB})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhXdgjb2" >
+    insert into hmglyh.RCYH_XDGJB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="xcid != null" >
+        XCID,
+      </if>
+      <if test="stime != null" >
+        STIME,
+      </if>
+      <if test="etime != null" >
+        ETIME,
+      </if>
+      <if test="shape != null" >
+        SHAPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="xcid != null" >
+        #{xcid,jdbcType=VARCHAR},
+      </if>
+      <if test="stime != null" >
+        #{stime,jdbcType=DATE},
+      </if>
+      <if test="etime != null" >
+        #{etime,jdbcType=DATE},
+      </if>
+      <if test="shape != null" >
+        #{shape,jdbcType=BLOB},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhXdgjb2" >
+    update hmglyh.RCYH_XDGJB
+    <set >
+      <if test="stime != null" >
+        STIME = to_date(#{stime},'yyyy-mm-dd hh24:mi:ss'),
+      </if>
+      <if test="etime != null" >
+        ETIME = to_date(#{etime},'yyyy-mm-dd hh24:mi:ss'),
+      </if>
+      <if test="shape != null" >
+        SHAPE = #{shape,jdbcType=BLOB},
+      </if>
+    </set>
+    where XCID = #{xcid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhXdgjb2" >
+    update hmglyh.RCYH_XDGJB
+    set
+      STIME = to_date(#{stime},'yyyy-mm-dd hh24:mi:ss'),
+      ETIME = to_date(#{etime},'yyyy-mm-dd hh24:mi:ss'),
+      SHAPE = #{shape,jdbcType=BLOB}
+    where XCID = #{xcid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhXdgjb2" >
+    update hmglyh.RCYH_XDGJB
+    set 
+       STIME = to_date(#{stime},'yyyy-mm-dd hh24:mi:ss'),
+       ETIME = to_date(#{etime},'yyyy-mm-dd hh24:mi:ss'),
+    where XCID = #{xcid,jdbcType=VARCHAR}
+  </update>
+</mapper>

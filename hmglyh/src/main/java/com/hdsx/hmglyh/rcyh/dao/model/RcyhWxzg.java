@@ -22,6 +22,13 @@ public class RcyhWxzg implements Serializable {
 	private String sbbmcode;		//送表单位
 	private String sbbmname;		//送表单位名称（显示用）
 	private String wz;					//位置
+	private Integer bhsl;               //病害数量
+	public Integer getBhsl() {
+		return bhsl;
+	}
+	public void setBhsl(Integer bhsl) {
+		this.bhsl = bhsl;
+	}
 	private String yq;					//要求（立即/尽快）
 	private Date sxtime;				//时限（要求完成时间）
 	private String sxtimeStr;		//时限（中文格式）

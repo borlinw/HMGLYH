@@ -3,6 +3,7 @@
 <%@ page language="java" import="java.util.*"%>
 <%@ page language="java" import="com.hdsx.hmglyh.util.MD5Util"%>
 <%@ include file="../public/head.jsp"%>
+<head>
  <link href="${pageContext.request.contextPath}/css/uploadify.css" rel="stylesheet" type="text/css" />
  <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.uploadify.js"></script>
  <script type="text/javascript" src="${pageContext.request.contextPath}/page/rcyh/js/fileUtil.js"></script>
@@ -10,6 +11,7 @@
  <script type="text/javascript" src="${pageContext.request.contextPath}/page/rcyh/js/calculate2.js"></script>
 <title></title>
 <title>添加维修作业</title>
+
 <script>
 //添加 计划 材料消耗
 
@@ -45,7 +47,7 @@ $(function(){
 	<form id="fm" 
 		<s:if test="add">
 			<s:if test="ddWxzy">
-				action="${pageContext.request.contextPath}/rcyh/wxzy_saveDdWxzy.do"
+				
 			</s:if>
 			<s:else>
 				action="${pageContext.request.contextPath}/rcyh/wxzy_saveWxzy.do"
@@ -887,7 +889,7 @@ $(function(){
 					"</td>" +
 					"<td>"+
 						"<div style='text-align:center' class='datagrid-cell'>"+
-						"<input readonly='readonly'  name='wxzy.zps["+i+"].zpdx'  value="+ (	(file.size / 1024 / 1024) .toFixed(2) )+ 'MB' +"></input>"+
+						"<input readonly='readonly'  name='wxzy.zps["+i+"].zpdx'  value="+ ((file.size/1024/1024) .toFixed(2))+ 'MB' +"></input>"+
 						"</div>"+
 					"</td>"+
 					"<td>"+

@@ -1,8 +1,5 @@
 package com.hdsx.hmglyh.util;
 
-import org.junit.Test;
-
-
 public class StrutsTagHelp {
 	
 	/**

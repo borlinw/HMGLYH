@@ -1,0 +1,61 @@
+[
+	{
+		"bhid": "05",
+		"bhname": "隧道",
+		"dw": "",
+		"id": "05",
+		"state": "closed",
+		"text": "隧道",
+		"wxsx": 1,
+		"children": [
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0501",
+				"bhname": "洞体损坏",
+				"dw": "处",
+				"id": "0501",
+				"state": "",
+				"text": "洞体损坏",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0502",
+				"bhname": "渗漏积水、排水不良",
+				"dw": "处",
+				"id": "0502",
+				"state": "",
+				"text": "渗漏积水、排水不良",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0503",
+				"bhname": "通风监视系统故障",
+				"dw": "处",
+				"id": "0503",
+				"state": "",
+				"text": "通风监视系统故障",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0504",
+				"bhname": "照明设施故障",
+				"dw": "处",
+				"id": "0504",
+				"state": "",
+				"text": "照明设施故障",
+				"wxsx": 1
+			}
+		]
+	}
+]

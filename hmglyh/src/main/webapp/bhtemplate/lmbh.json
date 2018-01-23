@@ -1,0 +1,312 @@
+[
+	{
+		"bhid": "01",
+		"bhname": "路面",
+		"dw": "--",
+		"id": "01",
+		"state": "closed",
+		"text": "路面",
+		"wxsx": 0,
+		"children": 
+			[
+     			 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0101",
+				      "bhname": "龟裂（轻）",
+				      "dw": "㎡",
+				      "id": "0101",
+				      "state": "",
+				      "text": "龟裂（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0102",
+				      "bhname": "龟裂（中）",
+				      "dw": "㎡",
+				      "id": "0102",
+				      "state": "",
+				      "text": "龟裂（中）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0103",
+				      "bhname": "龟裂（重）",
+				      "dw": "㎡",
+				      "id": "0103",
+				      "state": "",
+				      "text": "龟裂（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0104",
+				      "bhname": "块状裂缝（轻）",
+				      "dw": "㎡",
+				      "id": "0104",
+				      "state": "",
+				      "text": "块状裂缝（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0105",
+				      "bhname": "块状裂缝（重）",
+				      "dw": "㎡",
+				      "id": "0105",
+				      "state": "",
+				      "text": "块状裂缝（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0106",
+				      "bhname": "纵向裂缝（轻）",
+				      "dw": "m",
+				      "id": "0106",
+				      "state": "",
+				      "text": "纵向裂缝（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0107",
+				      "bhname": "纵向裂缝（重）",
+				      "dw": "m",
+				      "id": "0107",
+				      "state": "",
+				      "text": "纵向裂缝（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0108",
+				      "bhname": "横向裂缝（轻）",
+				      "dw": "m",
+				      "id": "0108",
+				      "state": "",
+				      "text": "横向裂缝（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0109",
+				      "bhname": "横向裂缝（重）",
+				      "dw": "m",
+				      "id": "0109",
+				      "state": "",
+				      "text": "横向裂缝（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0110",
+				      "bhname": "坑槽（轻）",
+				      "dw": "㎡",
+				      "id": "0110",
+				      "state": "",
+				      "text": "坑槽（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0111",
+				      "bhname": "坑槽（重）",
+				      "dw": "㎡",
+				      "id": "0111",
+				      "state": "",
+				      "text": "坑槽（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0112",
+				      "bhname": "松散（轻）",
+				      "dw": "㎡",
+				      "id": "0112",
+				      "state": "",
+				      "text": "松散（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0113",
+				      "bhname": "松散（重）",
+				      "dw": "㎡",
+				      "id": "0113",
+				      "state": "",
+				      "text": "松散（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0114",
+				      "bhname": "沉陷（轻）",
+				      "dw": "㎡",
+				      "id": "0114",
+				      "state": "",
+				      "text": "沉陷（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0115",
+				      "bhname": "沉陷（重）",
+				      "dw": "㎡",
+				      "id": "0115",
+				      "state": "",
+				      "text": "沉陷（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0116",
+				      "bhname": "车辙（轻）",
+				      "dw": "m",
+				      "id": "0116",
+				      "state": "",
+				      "text": "车辙（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m"
+     				  },
+     				  "bhid": "0117",
+				      "bhname": "车辙（重）",
+				      "dw": "m",
+				      "id": "0117",
+				      "state": "",
+				      "text": "车辙（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0118",
+				      "bhname": "波浪拥包（轻）",
+				      "dw": "㎡",
+				      "id": "0118",
+				      "state": "",
+				      "text": "波浪拥包（轻）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0119",
+				      "bhname": "波浪拥包（重）",
+				      "dw": "㎡",
+				      "id": "0119",
+				      "state": "",
+				      "text": "波浪拥包（重）",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0120",
+				      "bhname": "泛油",
+				      "dw": "㎡",
+				      "id": "0120",
+				      "state": "",
+				      "text": "泛油",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"㎡"
+     				  },
+     				  "bhid": "0121",
+				      "bhname": "修补",
+				      "dw": "㎡",
+				      "id": "0121",
+				      "state": "",
+				      "text": "修补",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"m2"
+     				  },
+     				  "bhid": "0122",
+				      "bhname": "路面不洁",
+				      "dw": "m2",
+				      "id": "0122",
+				      "state": "",
+				      "text": "路面不洁",
+				      "wxsx": 1
+				      }
+				      ,
+     				 {
+     				  "attributes":{
+     				  	"dw":"处"
+     				  },
+     				  "bhid": "0123",
+				      "bhname": "路面积水",
+				      "dw": "处",
+				      "id": "0123",
+				      "state": "",
+				      "text": "路面积水",
+				      "wxsx": 3
+				      }	
+			]
+	 }
+]

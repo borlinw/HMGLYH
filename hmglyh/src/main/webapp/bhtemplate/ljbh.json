@@ -1,0 +1,289 @@
+[
+	{
+		"bhid": "02",
+		"bhname": "路基",
+		"dw": "",
+		"id": "02",
+		"state": "closed",
+		"text": "路基",
+		"wxsx": 1,
+		"children": [
+			{
+				"attributes": {
+					"dw": "m"
+				},
+				"bhid": "0201",
+				"bhname": "路肩边沟不洁",
+				"dw": "m",
+				"id": "0201",
+				"state": "",
+				"text": "路肩边沟不洁",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "㎡"
+				},
+				"bhid": "0202",
+				"bhname": "路肩损坏（轻）",
+				"dw": "㎡",
+				"id": "0202",
+				"state": "",
+				"text": "路肩损坏（轻）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "㎡"
+				},
+				"bhid": "0203",
+				"bhname": "路肩损坏（重）",
+				"dw": "㎡",
+				"id": "0203",
+				"state": "",
+				"text": "路肩损坏（重）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "㎡"
+				},
+				"bhid": "0204",
+				"bhname": "边坡坍塌（轻）",
+				"dw": "㎡",
+				"id": "0204",
+				"state": "",
+				"text": "边坡坍塌（轻）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "㎡"
+				},
+				"bhid": "0205",
+				"bhname": "边坡坍塌（中）",
+				"dw": "㎡",
+				"id": "0205",
+				"state": "",
+				"text": "边坡坍塌（中）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "㎡"
+				},
+				"bhid": "0206",
+				"bhname": "边坡坍塌（重）",
+				"dw": "㎡",
+				"id": "0206",
+				"state": "",
+				"text": "边坡坍塌（重）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "㎡"
+				},
+				"bhid": "0207",
+				"bhname": "水毁冲沟（轻）",
+				"dw": "㎡",
+				"id": "0207",
+				"state": "",
+				"text": "水毁冲沟（轻）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "㎡"
+				},
+				"bhid": "0208",
+				"bhname": "水毁冲沟（中）",
+				"dw": "㎡",
+				"id": "0208",
+				"state": "",
+				"text": "水毁冲沟（中）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "㎡"
+				},
+				"bhid": "0209",
+				"bhname": "水毁冲沟（重）",
+				"dw": "㎡",
+				"id": "0209",
+				"state": "",
+				"text": "水毁冲沟（重）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "单位"
+				},
+				"bhid": "0210",
+				"bhname": "路基构造物损坏（轻）",
+				"dw": "单位",
+				"id": "0210",
+				"state": "",
+				"text": "路基构造物损坏（轻）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "单位"
+				},
+				"bhid": "0211",
+				"bhname": "路基构造物损坏（中）",
+				"dw": "单位",
+				"id": "0211",
+				"state": "",
+				"text": "路基构造物损坏（中）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "单位"
+				},
+				"bhid": "0212",
+				"bhname": "路基构造物损坏（重）",
+				"dw": "单位",
+				"id": "0212",
+				"state": "",
+				"text": "路基构造物损坏（重）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "m"
+				},
+				"bhid": "0213",
+				"bhname": "路缘石缺损",
+				"dw": "m",
+				"id": "0213",
+				"state": "",
+				"text": "路缘石缺损",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0214",
+				"bhname": "路基沉降（轻）",
+				"dw": "处",
+				"id": "0214",
+				"state": "",
+				"text": "路基沉降（轻）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0215",
+				"bhname": "路基沉降（中）",
+				"dw": "处",
+				"id": "0215",
+				"state": "",
+				"text": "路基沉降（中）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0216",
+				"bhname": "路基沉降（重）",
+				"dw": "处",
+				"id": "0216",
+				"state": "",
+				"text": "路基沉降（重）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "m"
+				},
+				"bhid": "0217",
+				"bhname": "排水系统淤塞（轻）",
+				"dw": "m",
+				"id": "0217",
+				"state": "",
+				"text": "排水系统淤塞（轻）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "处"
+				},
+				"bhid": "0218",
+				"bhname": "排水系统淤塞（重）",
+				"dw": "处",
+				"id": "0218",
+				"state": "",
+				"text": "排水系统淤塞（重）",
+				"wxsx": 1
+			},
+			{
+				"attributes": {
+					"dw": "m3"
+				},
+				"bhid": "0219",
+				"bhname": "塌方",
+				"dw": "m3",
+				"id": "0219",
+				"state": "",
+				"text": "塌方",
+				"wxsx": 7
+			},
+			{
+				"attributes": {
+					"dw": "m3"
+				},
+				"bhid": "0220",
+				"bhname": "泥石流",
+				"dw": "m3",
+				"id": "0220",
+				"state": "",
+				"text": "泥石流",
+				"wxsx": 7
+			},
+			{
+				"attributes": {
+					"dw": "m"
+				},
+				"bhid": "0221",
+				"bhname": "碎落",
+				"dw": "m",
+				"id": "0221",
+				"state": "",
+				"text": "碎落",
+				"wxsx": 7
+			},
+			{
+				"attributes": {
+					"dw": "1000m2"
+				},
+				"bhid": "0222",
+				"bhname": "路肩边坡杂草",
+				"dw": "1000m2",
+				"id": "0222",
+				"state": "",
+				"text": "路肩边坡杂草",
+				"wxsx": 2
+			},
+			{
+				"attributes": {
+					"dw": "m2"
+				},
+				"bhid": "0223",
+				"bhname": "路基平台不顺",
+				"dw": "m2",
+				"id": "0223",
+				"state": "",
+				"text": "路基平台不顺",
+				"wxsx": 2
+			}
+		]
+	}
+]
