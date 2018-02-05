@@ -55,7 +55,7 @@ public class XdjlServiceImpl implements XdjlService {
 	@Override
 	@Transactional(isolation=Isolation.DEFAULT,propagation=Propagation.REQUIRED,readOnly=false)
 	public int saveXdjl(RcyhGlxcsjb xdjl) {
-		xdjl.setXcid(RcyhUtils.createXCID());
+		
 		return glxcsjbMapper.insert(xdjl);
 	}
 

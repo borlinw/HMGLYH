@@ -18,19 +18,22 @@
 <body>
 	<script>
 		 var BhjlbColumns = [[
+			 				/*
 		                      <s:if test="fromSb or fromPg">
 		                  	    {field:"ck",checkbox:true},
 		                      </s:if>
+		                  	    */
 		                      {field:'aaa',title:'操作',align:'center',width:200,formatter:function(value,rowData,rowIndex){
 		                    	    var xqStr = "<a href='javascript:void(0)' onclick=bhxq(\'"+rowData.xcid+"\',\'"+rowData.bhjlid+"\',\'"+rowData.bmcode+"\',\'"+rowData.jlusername+"\') >详情</a>";
-			                        var xgStr = "<a href='/hmglyh/rcyh/bh_updateBh.do?bhjl.bhjlid="+rowData.bhjlid+"&fromSb=true' )>修改</a>";
-			                        var scStr = "<a href='javascript:void(0)' onclick=delBh(\'"+rowData.bhjlid+"\',\'"+rowData.bhsbzt+"\')>删除</a>";
+			                        //var xgStr = "<a href='/hmglyh/rcyh/bh_updateBh.do?bhjl.bhjlid="+rowData.bhjlid+"&fromSb=true' )>修改</a>";
+			                        //var scStr = "<a href='javascript:void(0)' onclick=delBh(\'"+rowData.bhjlid+"\',\'"+rowData.bhsbzt+"\')>删除</a>";
 		                    	    var lcStr = "<a target='_blank' href='/hmglyh/rcyh/bhflow_showProcess.do?bhjl.bhjlid="+rowData.bhjlid+"&definitionKey=bhProcess'>流程图</a>";
 			                    
 		                    	    var rStr = "";
 		                    	    //修改中的流程图
 		                    	    <s:if test="fromXd and (!show)" >
-		                    	    	rStr =  xgStr + "|" + scStr + "|"+lcStr + "|" + xqStr;
+		                    	    	//rStr =  xgStr + "|" + scStr + "|"+lcStr + "|" + xqStr;
+		                    	    	rStr = lcStr + "|" + xqStr;
 		                    	    </s:if>
 		                    	    // 寻道详情中的流程图
 		                    	    <s:if test="fromXd and show " >
@@ -38,7 +41,7 @@
 		                    	    </s:if>
 		                    	    // 上报的时候 列表
 		                    	    <s:if test="fromSb and (!show)" >
-		                    	    	rStr = xqStr + "|"  + xgStr + "|" + scStr + "|"+lcStr;
+		                    	    	rStr = xqStr + "|"+lcStr;
 		                    	    </s:if>
 		                    	    // 派工时候的 列表
 		                    	    <s:if test="fromPg">
@@ -174,7 +177,7 @@
 					      {
 					    	  title:"巡道记录",
 					    	  id:"tab_xdjl",
-					    	  src:"${pageContext.request.contextPath}/rcyh/xdjl_showXdjl.do?xcsj.xcid="+xcid
+					    	  src:"${pageContext.request.contextPath}/rcyh/xdjl_showXdjl1.do?xcsj.xcid="+xcid
 					      },
 					      {
 					    	  title:"病害信息",

@@ -8,20 +8,23 @@
     <result column="STIME" property="stime" jdbcType="DATE" />
     <result column="ETIME" property="etime" jdbcType="DATE" />
     <result column="XSLD" property="xsld" jdbcType="VARCHAR" />
+    <result column="XSCL" property="xscl" jdbcType="VARCHAR" />
+    <result column="XSLX" property="xslx" jdbcType="VARCHAR" />
     <result column="TQ" property="tq" jdbcType="VARCHAR" />
     <result column="BZ" property="bz" jdbcType="VARCHAR" />
     <result column="JLR" property="jlr" jdbcType="VARCHAR" />
     <result column="FZR" property="fzr" jdbcType="VARCHAR" />
+    <result column="XCR" property="xcr" jdbcType="VARCHAR" />
     <result column="LM" property="lm" jdbcType="VARCHAR" />
     <result column="LJ" property="lj" jdbcType="VARCHAR" />
     <result column="QSH" property="qsh" jdbcType="VARCHAR" />
     <result column="YXSS" property="yxss" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Glxcsjb_Column_List" >
-    XCID, BMCODE, USERNAME, to_char(STIME,'yyyy-mm-dd hh24:mi:ss') STIME, to_char(ETIME,'yyyy-mm-dd hh24:mi:ss') ETIME, XSLD, TQ, BZ, JLR, FZR, LM, LJ, QSH, YXSS
+    XCID, BMCODE, USERNAME, to_char(STIME,'yyyy-mm-dd hh24:mi:ss') STIME, to_char(ETIME,'yyyy-mm-dd hh24:mi:ss') ETIME, XSLD, XSCL, XSLX, TQ, BZ, JLR, FZR, XCR, LM, LJ, QSH, YXSS
   </sql>
   <sql id="Glxcsjb_Column_List2" >
-    t1.XCID, t1.BMCODE, t1.USERNAME,  to_char(t1.STIME,'yyyy-mm-dd hh24:mi:ss') STIME,  to_char(t1.ETIME,'yyyy-mm-dd hh24:mi:ss') ETIME, t1.XSLD, t1.TQ, t1.BZ, t1.JLR, t1.FZR, t1.LM, t1.LJ, t1.QSH, t1.YXSS
+    t1.XCID, t1.BMCODE, t1.USERNAME,  to_char(t1.STIME,'yyyy-mm-dd hh24:mi:ss') STIME,  to_char(t1.ETIME,'yyyy-mm-dd hh24:mi:ss') ETIME, t1.XSLD, t1.XSCL, t1.XSLX t1.TQ, t1.BZ, t1.JLR, t1.FZR, t1.XCR, t1.LM, t1.LJ, t1.QSH, t1.YXSS
   </sql>
   <sql id="Glxcsjb_Where">
   	<where>
@@ -159,12 +162,13 @@
   
   <insert id="insert" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" >
     insert into RCYH_GLXCSJB (XCID, BMCODE, USERNAME, 
-      STIME, ETIME, XSLD, TQ, 
-      BZ, JLR, FZR, LM, 
+      STIME, ETIME, XSLD, XSCL, XSLX, TQ, 
+      BZ, JLR, FZR, XCR,LM, 
       LJ, QSH, YXSS)
     values (#{xcid,jdbcType=VARCHAR}, #{bmcode,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
-      to_date(#{stime},'yyyy-mm-dd hh24:mi:ss'), to_date(#{etime},'yyyy-mm-dd hh24:mi:ss'), #{xsld,jdbcType=VARCHAR}, #{tq,jdbcType=VARCHAR}, 
-      #{bz,jdbcType=VARCHAR}, #{jlr,jdbcType=VARCHAR}, #{fzr,jdbcType=VARCHAR}, #{lm,jdbcType=VARCHAR}, 
+      to_date(#{stime},'yyyy-mm-dd hh24:mi:ss'), to_date(#{etime},'yyyy-mm-dd hh24:mi:ss'), #{xsld,jdbcType=VARCHAR}, 
+      #{xscl,jdbcType=VARCHAR},#{xslx,jdbcType=VARCHAR},#{tq,jdbcType=VARCHAR}, 
+      #{bz,jdbcType=VARCHAR}, #{jlr,jdbcType=VARCHAR}, #{fzr,jdbcType=VARCHAR},#{xcr,jdbcType=VARCHAR},#{lm,jdbcType=VARCHAR}, 
       #{lj,jdbcType=VARCHAR}, #{qsh,jdbcType=VARCHAR}, #{yxss,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb" >
@@ -276,6 +280,12 @@
       <if test="xsld != null" >
         XSLD = #{xsld,jdbcType=VARCHAR},
       </if>
+      <if test="xscl != null" >
+        XSCL = #{xscl,jdbcType=VARCHAR},
+      </if>
+      <if test="xslx != null" >
+        XSLX = #{xslx,jdbcType=VARCHAR},
+      </if>
       <if test="tq != null" >
         TQ = #{tq,jdbcType=VARCHAR},
       </if>
@@ -287,6 +297,9 @@
       </if>
       <if test="fzr != null" >
         FZR = #{fzr,jdbcType=VARCHAR},
+      </if>
+      <if test="xcr != null" >
+        XCR = #{xcr,jdbcType=VARCHAR},
       </if>
       <if test="lm != null" >
         LM = #{lm,jdbcType=VARCHAR},

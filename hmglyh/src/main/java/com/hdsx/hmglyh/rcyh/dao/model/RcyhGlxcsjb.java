@@ -11,33 +11,56 @@ public class RcyhGlxcsjb implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
+	//唯一标识
 	private String xcid;
-
+	
+	//部门编码-->可以转换成部门名称
     private String bmcode;
 
+    //登陆用户
     private String username;
-
+    
+    //开始时间
     private String stime;
-
+    
+    //结束时间
     private String etime;
-
+    
+    //巡查路段
     private String xsld;
-
+    
+    //巡查车辆--增加
+    private String xscl;
+    
+    //巡查类型--增加
+    private String xslx;
+    
+    //天气
     private String tq;
-
+    
+    //备注
     private String bz;
-
+    
+    //巡查人
+    private String xcr;
+    
+    //记录人
     private String jlr;
      
-    private String fzr;
+    //负责人
+    private String fzr;   
     
+    //路面 --去掉
     private String lm;
-
+    
+    //路基--去掉
     private String lj;
-
+    
+    //桥涵构造物--去掉
     private String qsh;
-
+    
+    //沿线设施--去掉
     private String yxss;
        
     // 非持久化 属性
@@ -53,8 +76,39 @@ public class RcyhGlxcsjb implements Serializable{
     private String xcrq;								//巡查日期
     private int sfsb;									//是否上报
     private String zpxx;								//照片信息
+   
     
-    public int getSfsb() {
+    public String getXscl() {
+		return xscl;
+	}
+
+
+	public void setXscl(String xscl) {
+		this.xscl = xscl;
+	}
+
+
+	public String getXslx() {
+		return xslx;
+	}
+
+
+	public void setXslx(String xslx) {
+		this.xslx = xslx;
+	}
+
+
+	public String getXcr() {
+		return xcr;
+	}
+
+
+	public void setXcr(String xcr) {
+		this.xcr = xcr;
+	}
+
+
+	public int getSfsb() {
 		return sfsb;
 	}
 

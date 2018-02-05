@@ -11,15 +11,19 @@ import org.springframework.stereotype.Controller;
 import com.hdsx.hmglyh.gis.util.EasyUIPage;
 import com.hdsx.hmglyh.gis.util.MapCatchUtil;
 import com.hdsx.hmglyh.rcyh.base.BaseAction;
+import com.hdsx.hmglyh.rcyh.dao.RcyhBhjlbMapper;
 import com.hdsx.hmglyh.rcyh.dao.model.HtglLuduan;
 import com.hdsx.hmglyh.rcyh.dao.model.HtglMjlx;
+import com.hdsx.hmglyh.rcyh.dao.model.RcyhBhjlb;
 import com.hdsx.hmglyh.rcyh.dao.model.RcyhGlxcsjb;
+import com.hdsx.hmglyh.rcyh.service.BhflowService;
 import com.hdsx.hmglyh.rcyh.service.WorkFlowService;
 import com.hdsx.hmglyh.rcyh.service.XdjlService;
 import com.hdsx.hmglyh.rcyh.util.RcyhUtils;
 import com.hdsx.hmglyh.util.AnnotationAuth;
 import com.hdsx.hmglyh.util.Constants;
 import com.hdsx.hmglyh.util.JsonUtils;
+import com.hdsx.hmglyh.util.SpringContextUtil;
 
 @Controller
 @Scope(value="request")
@@ -33,6 +37,21 @@ public class XdjlController extends BaseAction{
 	private WorkFlowService wfService;
 	@Autowired
 	private XdjlService xdjlService;
+	@Autowired
+	private BhflowService bhflowService;
+	
+	/**
+	 * 巡查列表
+	 */
+	public void lxList() {
+		List<HtglMjlx> lxList = RcyhUtils.lxList();
+		try {
+			lxList.get(0).setSelected(true);
+			JsonUtils.write(lxList, getResponse().getWriter());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 	/**
 	 * 天气列表
@@ -97,12 +116,33 @@ public class XdjlController extends BaseAction{
 	public String showXdjl(){
 		setResultpage("addXundaojl");
 		setShow(true);
+		RcyhBhjlbMapper bhjlMapper = (RcyhBhjlbMapper) SpringContextUtil.getBean("rcyhBhjlbMapper");
+		bhjls = bhjlMapper.selectBhByXcid(getXcsj().getXcid());
 		xcsj = xdjlService.queryXdsjByKey(xcsj);
 	//	xcsj.setJlr(RcyhUtils.usernameToString(xcsj.getJlr()));
 	//	xcsj.setFzr(RcyhUtils.usernameToString(xcsj.getFzr()));
 		xcsj.setJlr(RcyhUtils.getRynameByRyid(xcsj.getJlr())); // 回写记录人员 姓名
 		xcsj.setFzr(RcyhUtils.getRynameByRyid(xcsj.getFzr())); // 回写负责人
+		xcsj.setXcr(RcyhUtils.getRynameByRyid(xcsj.getXcr())); // 回写巡查人
+		xcsj.setBmname(RcyhUtils.getBmname(xcsj.getBmcode()));	//回写部门名称
 		xcsj.setTq(RcyhUtils.mjlxConvert(Constants.tianqi, xcsj.getTq()));
+		xcsj.setXslx(RcyhUtils.mjlxConvert(Constants.xslx, xcsj.getXslx()));
+		return SUCCESS;
+	}
+	
+	//病害是显示的巡道记录界面
+	public String showXdjl1(){
+		setResultpage("addXundaojl1");
+		setShow(true);
+		xcsj = xdjlService.queryXdsjByKey(xcsj);
+	//	xcsj.setJlr(RcyhUtils.usernameToString(xcsj.getJlr()));
+	//	xcsj.setFzr(RcyhUtils.usernameToString(xcsj.getFzr()));
+		xcsj.setJlr(RcyhUtils.getRynameByRyid(xcsj.getJlr())); // 回写记录人员 姓名
+		xcsj.setFzr(RcyhUtils.getRynameByRyid(xcsj.getFzr())); // 回写负责人
+		xcsj.setXcr(RcyhUtils.getRynameByRyid(xcsj.getXcr())); // 回写巡查人
+		xcsj.setBmname(RcyhUtils.getBmname(xcsj.getBmcode()));	//回写部门名称
+		xcsj.setTq(RcyhUtils.mjlxConvert(Constants.tianqi, xcsj.getTq()));
+		xcsj.setXslx(RcyhUtils.mjlxConvert(Constants.xslx, xcsj.getXslx()));
 		return SUCCESS;
 	}
 	
@@ -135,7 +175,9 @@ public class XdjlController extends BaseAction{
 		getXcsj().setEtime(RcyhUtils.getDateStr() + " 18:00:00");
 		getXcsj().setJlr(getUser().getRyid()+"");
 		getXcsj().setFzr(getUser().getRyid()+"");
+		getXcsj().setXcr(getUser().getRyid()+"");
 		getXcsj().setBmcode(getUser().getBmcode());
+		getXcsj().setBmname(RcyhUtils.getBmname(getUser().getBmcode()));	//回写部门名称
 		getXcsj().setUsername(getUser().getUsername());
 		return SUCCESS;
 	}
@@ -149,6 +191,8 @@ public class XdjlController extends BaseAction{
 	 */
 	@AnnotationAuth(mkid="010101")
 	public void saveXdjl() throws IOException, Exception{
+		getXcsj().setXcid(RcyhUtils.createXCID());//给巡道记录添加ID
+			
 		int c = xdjlService.saveXdjl(getXcsj());
 		if( c ==  1 ) {
 			gmap.put(Constants.ISSUCCESS, true);
@@ -157,7 +201,21 @@ public class XdjlController extends BaseAction{
 			gmap.put(Constants.ISSUCCESS, false);
 			gmap.put(Constants.INFO,"保存巡道记录失败");
 		}
+		
+		
+		String glid = getXcsj().getXcid(); //获取巡道ID
+		
+		for(int i=0;i<bhjls.size();i++) {
+			bhjls.get(i).setXcid(glid);//病害关联巡道ID
+			int a = bhflowService.saveBh(bhjls.get(i));
+			if(a>0) {
+				System.out.println("增加病害成功！");
+			}else {
+				System.out.println("增加病害失败！");
+			}
+		}
 		JsonUtils.write(gmap, getResponse().getWriter());
+		
 	}
 	
 	/**
@@ -167,8 +225,9 @@ public class XdjlController extends BaseAction{
 	@AnnotationAuth(mkid="010101")
 	public String updateXdjl(){
 		setUpdate(true);
-		setResultpage("addXundaojl");
-		this.setXcsj(xdjlService.queryXdsjByKey(getXcsj()));		
+		setResultpage("addXundaojl");		
+		this.setXcsj(xdjlService.queryXdsjByKey(getXcsj()));
+		getXcsj().setBmname(RcyhUtils.getBmname(getUser().getBmcode()));		
 		return SUCCESS;
 	}
 	

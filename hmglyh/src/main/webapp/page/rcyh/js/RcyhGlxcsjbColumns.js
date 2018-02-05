@@ -1,8 +1,8 @@
 
  var GlcxsjbColumns = [[
-    {field:'aaa',title:'操作',align:'center',width:80,formatter:function(value,rowData,rowIndex){
-    	return "<a href='javascript:void(0)' onclick=listBh('"+rowData.xcid+"')>病害列表</a>";
-    }},
+    //{field:'aaa',title:'操作111',align:'center',width:80,formatter:function(value,rowData,rowIndex){
+    	//return "<a href='javascript:void(0)' onclick=listBh('"+rowData.xcid+"')>病害列表</a>";
+    //}},
     {field:'bmcode',title:'部门编码',width:100},
     {field:'username',title:'用户名',width:100},
     {field:'stime',title:'开始时间',width:140},

@@ -25,6 +25,7 @@ public class Constants {
 	public static String tianqi = "05"; // 天气
 	public static String zpjlzt = "08"; // 照片类型
 	public static String rwdlx = "09"; // 任务单类型
+	public static String xslx = "15"; //巡查类型
 	
 	
 	public static String JihuaRwd = "0901"; // 计划任务单value
