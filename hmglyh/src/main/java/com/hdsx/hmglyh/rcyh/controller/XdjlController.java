@@ -131,6 +131,7 @@ public class XdjlController extends BaseAction{
 	}
 	
 	//病害是显示的巡道记录界面
+	//测试
 	public String showXdjl1(){
 		setResultpage("addXundaojl1");
 		setShow(true);
