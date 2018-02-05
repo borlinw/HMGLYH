@@ -23,66 +23,101 @@ public class RcyhBhjlb implements Serializable{
 	public static int YanchiPaigong = 2 ; // 延迟派工
 	public static int QuxiaoPaigong = 3 ; // 取消派工
 	
-	
+	//病害记录ID--可用
     private String bhjlid;
-
+    
+    //记录时间--系统增加时间
     private String jltime;
-
+    
+    //记录人员--可用
     private String jlusername;
-
+    
+    //部门编码--可用
     private String bmcode;
-
+    
+    //路段编码--未知
     private String ldcode;
     
-
+    //天气--去掉
     private String tq;
-
+    
+    //起点桩号--可用
     private Integer szhhkm;
-
+    
+    //起点桩号+ --可用
     private Integer szhhm;
-
+    
+    //止点桩号--可用
     private Integer ezhhkm;
-
+    
+    //止点桩号+ --可用
     private Integer ezhhm;
-
+    
+    //位置补充--去掉
     private String wzbc;
-
+    
+    //桥梁编码--未知
     private String qlcode;
-
+    
+    //桥梁名称--未知
     private String qlname;
-
+    
+    //隧道编码--未知
     private String sdcode;
-
+    
+    //隧道名称--未知
     private String sdname;
-
+    
+    //涵洞编码--未知
     private String hdcode;
-
+    
+    //涵洞名称--未知
     private String hdname;
-
+    
+    //病害id--可用
     private String bhid;
-
+    
+    //数量--可用
     private String sl;
-
+    
+    //备注--去掉
     private String bz;
-
+    
+    //病害上报状态--未知
     private String bhsbzt;
-
+    
+    //上报人--未知
     private String sbusername;
-
+    
+    //上报时间--未知
     private String sbtime;
-
+    
+    //上报部门编码--未知
     private String sbbmcode;
-
+    
+    //派工状态--未知
     private String pgzt;
-
+    
+    //派工人员--未知
     private String pgusename;
-
+    
+    //派工时间--未知
     private String pgtime;
-
+    
+    //延期派工时间--未知
     private String ycpgtime;
-
+    
+    //病害维修状态--未知
     private String bhwxzt;
-      
+    
+    //现场处置情况--新增
+    private String xcczqk;
+    
+    //是否上报--新增
+    private Integer isSB; 
+    
+    
+    
     // 非 持久化 属性
     
   /*  private List<HtglBhlx> bhlxs;*/
@@ -574,6 +609,22 @@ public class RcyhBhjlb implements Serializable{
 
 	public void setBhwxzt(String bhwxzt) {
 		this.bhwxzt = bhwxzt;
+	}
+
+	public String getXcczqk() {
+		return xcczqk;
+	}
+
+	public void setXcczqk(String xcczqk) {
+		this.xcczqk = xcczqk;
+	}
+
+	public Integer getIsSB() {
+		return isSB;
+	}
+
+	public void setIsSB(Integer isSB) {
+		this.isSB = isSB;
 	}
 
     

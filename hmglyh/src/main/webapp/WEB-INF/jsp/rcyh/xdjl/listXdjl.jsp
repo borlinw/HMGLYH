@@ -98,13 +98,15 @@
 					    	  id:"tab_xdjl",
 					    	  src:"${pageContext.request.contextPath}/rcyh/xdjl_showXdjl.do?xcsj.xcid="+row.xcid
 					    	
-					      },
+					      }
+					      /*,
 					      {
 					    	  title:"关联病害信息",
 					    	  id:"tab_bhxx",
 					    	  disabled:true,
 					    	  src:"${pageContext.request.contextPath}/rcyh/bh_index.do?bhjl.xcid="+row.xcid+"&fromXd=true&isShow=true"
 					      }
+					      */
 					      ]
 				}
 			});

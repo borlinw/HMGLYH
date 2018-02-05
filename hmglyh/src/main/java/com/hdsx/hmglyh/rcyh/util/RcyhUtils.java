@@ -165,7 +165,23 @@ public class RcyhUtils {
 		os.close();
 
 	}
+	
+	
+	public static List<HtglMjlx> lxList() {
 
+		HtglMjlxMapper mjlxMapper = (HtglMjlxMapper) SpringContextUtil
+				.getBean("htglMjlxMapper");
+
+		HtglMjlx mjlx = new HtglMjlx();
+
+		mjlx.setType("巡查类型");
+
+		List<HtglMjlx> list = mjlxMapper.selectTq(mjlx);
+
+		return list;
+
+	}
+	
 	/**
 	 * 
 	 * 
@@ -216,10 +232,7 @@ public class RcyhUtils {
 
 	/**
 	 * 
-	 * 
 	 * 状态转换
-	 * 
-	 * 
 	 * @return
 	 */
 
@@ -1078,10 +1091,10 @@ public class RcyhUtils {
 		
 		RcyhGlxcsjb xcQ = new RcyhGlxcsjb(); xcQ.setXcid(xcid);
 		RcyhGlxcsjb xcjl = xcjlMapper.selectByPrimaryKey(xcQ);
-		xcjl.setLm(lumianSB.toString());
-		xcjl.setLj(lujiSB.toString());
-		xcjl.setQsh(qshSB.toString());
-		xcjl.setYxss(yanxianSB.toString());
+		//xcjl.setLm(lumianSB.toString());
+		//xcjl.setLj(lujiSB.toString());
+		//xcjl.setQsh(qshSB.toString());
+		//xcjl.setYxss(yanxianSB.toString());
 //		xcjl.setBz(bzSb.toString());
 		
 		int c = xcjlMapper.updateByPrimaryKeySelective(xcjl);

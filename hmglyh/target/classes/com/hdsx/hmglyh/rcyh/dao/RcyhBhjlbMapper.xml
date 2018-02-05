@@ -33,6 +33,8 @@
     <result column="YCPGTIME" property="ycpgtime"/>
     <result column="BHWXZT" property="bhwxzt" jdbcType="DECIMAL" />
     <result column="XCID" property="xcid" jdbcType="DECIMAL" />
+    <result column="XCCZQK" property="xcczqk" jdbcType="VARCHAR" />
+    <result column="ISSB" property="isSB" jdbcType="DECIMAL" />
   </resultMap>
   
   <resultMap id="BhjlbResultMap" type="com.hdsx.hmglyh.rcyh.dao.model.RcyhBhjlb" extends="BaseResultMap">
@@ -456,7 +458,13 @@
         BHWXZT,
       </if>
       <if test="xcid != null" >
-        XCID
+        XCID,
+      </if>
+      <if test="xcczqk != null" >
+        XCCZQK,
+      </if>
+      <if test="isSB != null" >
+        ISSB
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -550,6 +558,12 @@
        <if test="xcid != null" >
         #{xcid,jdbcType=DECIMAL},
        </if>
+        <if test="xcczqk != null" >
+        #{xcczqk,jdbcType=VARCHAR},
+      </if>
+      <if test="isSB != null" >
+        #{isSB,jdbcType=DECIMAL},
+       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.hdsx.hmglyh.rcyh.dao.model.RcyhBhjlb" >
@@ -639,6 +653,12 @@
       <if test="bhwxzt != null" >
         BHWXZT = #{bhwxzt,jdbcType=DECIMAL},
       </if>
+        <if test="xcczqk != null" >
+        XCCZQK = #{xcczqk,jdbcType=VARCHAR},
+      </if>
+      <if test="isSB != null" >
+        ISSB = #{isSB,jdbcType=DECIMAL},
+       </if>
     </set>
     where BHJLID = #{bhjlid,jdbcType=VARCHAR}
   </update>
@@ -671,7 +691,9 @@
       PGUSENAME = #{pgusename,jdbcType=VARCHAR},
      PGTIME = to_date( #{pgtime},'yyyy-mm-dd hh24:mi:ss'),
       YCPGTIME = #{ycpgtime},
-      BHWXZT = #{bhwxzt,jdbcType=DECIMAL}
+      BHWXZT = #{bhwxzt,jdbcType=DECIMAL},
+      XCCZQK = #{xcczqk,jdbcType=VARCHAR},
+      ISSB = #{isSB,jdbcType=DECIMAL}
     where BHJLID = #{bhjlid,jdbcType=VARCHAR}
   </update>
 </mapper>
