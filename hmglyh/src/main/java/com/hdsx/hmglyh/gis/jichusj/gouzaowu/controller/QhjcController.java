@@ -256,7 +256,9 @@ public class QhjcController extends BaseActionSupport<Qhjc> {
 	}
 	
 	
-
+   /**
+    * 测试一下
+    */
 
 	@Override
 	public Qhjc getModel() {
