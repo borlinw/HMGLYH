@@ -14,6 +14,7 @@ var RwdColumns = [[
                     }},
                     {field:'rwdzt',title:'任务单状态',width:100},
                     {field:'rwdlx',title:'任务单类型',width:100},
+                    {field:'rwdckzt',title:'任务单查看状态',width:100},
                     {field:'ssny',title:'所属年月',width:150},
                     {field:'cjtime',title:'创建时间',width:140},
                     {field:'cjusername',title:'创建用户名',width:100},
@@ -91,6 +92,11 @@ var RwdColumns = [[
 				 	panelHeight:'auto',
 				 	textField:'value',
 				 	valueField:'key'
+				 ">&nbsp;
+				 任务单查看状态：<input name="rwd.rwdckzt" class="easyui-combobox" data-options="
+				 	url:'${pageContext.request.contextPath}/rcyh/wxzy_rwdckztCombobox.do',
+				 	width:60,
+				 	panelHeight:'auto'
 				 ">&nbsp;
 				  <a class="easyui-linkbutton" onclick='loadData()' data-options="plain:true,iconCls:'query'">筛选</a>
 				  <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'check',plain:true" onclick="showMap()">定位</a>

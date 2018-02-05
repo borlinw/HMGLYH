@@ -1,6 +1,9 @@
 var qldqjcColumns = [[
 	{title:'操作',field:'1',formatter:function(value,row,index){
-		return "<a href='javascript:void(0)' onclick=Change('"+row.qldqjcid+"')>修改</a>";
+		return "<a href='javascript:void(0)' onclick=Change('"+row.qldqjcid+"')>修改</a> ";
+	}},
+	{title:'删除',field:'1',formatter:function(value,row,index){
+		return "<a href='javascript:void(0)' onclick=Delete('"+row.qldqjcid+"')>删除</a> ";
 	}},
 	{title:'检查日期',field:'bcjcrq',width:100},
 	{title:'负责人',field:'fzr',width:100},

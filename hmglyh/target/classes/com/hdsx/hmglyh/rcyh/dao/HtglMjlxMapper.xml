@@ -375,9 +375,7 @@
   
   <!-- 根据人员ID 获取人员的姓名 -->
   <select id="getRynameByRyid" parameterType="string" resultType="string">
-  		select ryname 
-  		from htgl_ryb
-  		where ryid = #{ryid}
+  		select ryname from htgl_ryb where ryid = #{ryid}
   </select>
   
  

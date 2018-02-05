@@ -18,6 +18,11 @@ public interface QhjcMapper {
 	List<Qldqjcb> queryQldqjc(Qhjc q);
 	
 	int getQldqjcCount(Qhjc q);
+	/*
+	 * 桥梁定期检查删除
+	 */
+	int dropQldqjc(String qldqjcid);
+	
 	
 	int dropTpbm(String qljcxjcid);
 	

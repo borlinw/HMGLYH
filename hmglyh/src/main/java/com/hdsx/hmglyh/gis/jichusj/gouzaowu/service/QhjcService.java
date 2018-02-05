@@ -20,6 +20,10 @@ public interface QhjcService {
 	//桥梁定期检查
 	boolean addQldqjc(Qhjc q);
 	
+	
+	boolean deleteQldqjc(Qhjc q);
+	
+	
 	List<Qldqjcb> queryQldqjc(Qhjc q);
 	
 	int getQldqjcCount(Qhjc q);

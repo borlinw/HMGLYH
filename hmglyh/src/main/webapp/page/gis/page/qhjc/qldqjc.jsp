@@ -25,6 +25,8 @@
 	<div data-options="region:'north',border:true,split:true" style="height:30px;border-left:0px;border-right:0px;border-top:0px;">
 		<input type="text"  onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" name="jcrq" id="jcrq"/>
 		<a href="javascript:void(0)" class="easyui-linkbutton" plain="true" id="add">签到</a>
+		
+		
 	</div>
 	<div data-options="region:'center',border:true" style="border-left:0px;border-right:0px;border-bottom:0px;">
 		<table id="myGrid"></table>

@@ -130,4 +130,12 @@ public interface WxzyService {
 	RcyhWxzyjlb selectByPrimaryKeySimple(String zyid);
 
 	int saveTsbmys(RcyhWxzyjlb wxzy);
+	
+	
+	/*
+	 * 任务单查看状态更新
+	 */
+	int updateByCkzt(String rwdid);
+	
+	
 }

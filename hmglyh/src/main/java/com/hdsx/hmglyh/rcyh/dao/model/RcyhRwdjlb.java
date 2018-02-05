@@ -76,8 +76,18 @@ public class RcyhRwdjlb implements Serializable {
 	private String rwdlx;
 	
 	private String rwbh;
+	
+	private String rwdckzt;
 
 	
+	public String getRwdckzt() {
+		return rwdckzt;
+	}
+
+	public void setRwdckzt(String rwdckzt) {
+		this.rwdckzt = rwdckzt;
+	}
+
 	// 非持久化 字段
 	private String cjryname; // 用于显示的 名称
 	private String duration; // 延期天数
@@ -238,7 +248,7 @@ public class RcyhRwdjlb implements Serializable {
 				+ bhid + ", yhid=" + yhid + ", sl=" + sl + ", bz=" + bz
 				+ ", grde=" + grde + ", jhgr=" + jhgr + ", rgf=" + rgf
 				+ ", clf=" + clf + ", jxf=" + jxf + ", xfsx=" + xfsx
-				+ ", rwdzt=" + rwdzt + ", rwdlx=" + rwdlx + ", bhjls=" + bhjls
+				+ ", rwdzt=" + rwdzt + ", rwdlx=" + rwdlx + ", rwdckzt=" + rwdckzt + ", bhjls=" + bhjls
 				+ ", cljxxhs=" + cljxxhs + ", cjryname=" + cjryname + "]";
 	}
 

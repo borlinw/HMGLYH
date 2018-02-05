@@ -37,6 +37,12 @@ public interface RcyhRwdjlbMapper {
 	 */
 	RcyhRwdjlb selectByPrimaryKeySimple(String rwdid);
 	
+	/*
+	 * 更新任务单查看状态
+	 */
+	int updateByCkzt(String rwdid);
+	
+	
     int updateByPrimaryKeySelective(RcyhRwdjlb record);
 
     int updateByPrimaryKey(RcyhRwdjlb record);

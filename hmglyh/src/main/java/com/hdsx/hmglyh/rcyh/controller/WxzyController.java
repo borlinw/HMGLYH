@@ -199,7 +199,7 @@ public class WxzyController extends BaseAction {
 	}
 	
 	/**
-	 * 任务单状态 combobox
+	 * 任务单状态combobox
 	 * @throws Exception 
 	 * @throws IOException 
 	 */
@@ -210,6 +210,19 @@ public class WxzyController extends BaseAction {
 		mjlx.setType("任务单类型");
 		List<HtglMjlx> list = mjlxMapper.selectTq(mjlx);
 		JsonUtils.write(list, getResponse().getWriter());
+	}
+	
+	/**
+	 * 任务单查看状态combobox
+	 * @throws Exception 
+	 * @throws IOException 
+	 */
+	public void rwdckztCombobox() throws IOException, Exception{
+		HashMap<String,Object> map = new HashMap<String,Object>();
+		map.put("ztcode", "rwdckzt");
+		map.put("ztname", "任务单查看状态");
+		List<Combobox> comboboxs = RcyhUtils.ztCombobox(map);
+		JsonUtils.write(comboboxs, getResponse().getWriter());
 	}
 	
 	/**
@@ -266,6 +279,7 @@ public class WxzyController extends BaseAction {
 			rw.setYhid(RcyhUtils.getYhlxName(rw.getYhid()));
 			rw.setRwdzt(RcyhUtils.ztConvert(Constants.rwdzt, rw.getRwdzt()));
 			rw.setRwdlx(RcyhUtils.mjlxConvert(Constants.rwdlx, rw.getRwdlx()));
+			rw.setRwdckzt(RcyhUtils.ztConvert(Constants.rwdckzt, rw.getRwdckzt()));
 			rw.setLdname(RcyhUtils.getLdname(rw.getLdcode()));
 			rw.setTq(RcyhUtils.mjlxConvert(Constants.fangxiang, rw.getTq()));
 			rw.setBhid(RcyhUtils.bhlxConvert(rw.getBhid()));
@@ -298,6 +312,7 @@ public class WxzyController extends BaseAction {
 			rw.setYhid(RcyhUtils.getYhlxName(rw.getYhid()));
 			rw.setRwdzt(RcyhUtils.ztConvert(Constants.rwdzt, rw.getRwdzt()));
 			rw.setRwdlx(RcyhUtils.mjlxConvert(Constants.rwdlx, rw.getRwdlx()));
+			rw.setRwdckzt(RcyhUtils.ztConvert(Constants.rwdckzt, rw.getRwdckzt()));
 			rw.setLdname(RcyhUtils.getLdname(rw.getLdcode()));
 			rw.setTq(RcyhUtils.mjlxConvert(Constants.fangxiang, rw.getTq()));
 			rw.setBhid(RcyhUtils.bhlxConvert(rw.getBhid()));
@@ -328,6 +343,7 @@ public class WxzyController extends BaseAction {
 			rw.setYhid(RcyhUtils.getYhlxName(rw.getYhid()));
 			rw.setRwdzt(RcyhUtils.ztConvert(Constants.rwdzt, rw.getRwdzt()));
 			rw.setRwdlx(RcyhUtils.mjlxConvert(Constants.rwdlx, rw.getRwdlx()));
+			rw.setRwdckzt(RcyhUtils.mjlxConvert(Constants.rwdckzt, rw.getRwdckzt()));
 			rw.setLdname(RcyhUtils.getLdname(rw.getLdcode()));
 			rw.setTq(RcyhUtils.mjlxConvert(Constants.fangxiang, rw.getTq()));
 			rw.setBhid(RcyhUtils.bhlxConvert(rw.getBhid()));
@@ -940,5 +956,6 @@ public class WxzyController extends BaseAction {
 	public String wxzycx(){
 		return SUCCESS;
 	}
-		
+	
+	
 }

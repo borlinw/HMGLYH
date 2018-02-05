@@ -239,6 +239,7 @@ public class BhflowController extends BaseAction{
 			getRwd().setLdcode(getZyys().getLdcode());
 			getRwd().setYhid(getZyys().getYhid());
 			getRwd().setRwdzt("0");
+			
 			getRwd().setRwdlx(Constants.BuchongRwd);
 			getRwd().setDejs(RcyhUtils.getDejs(zyys.getYhid()));
 			getRwd().setRgdj(RcyhUtils.getRgfdj(zyys.getBmcode()));
@@ -289,6 +290,7 @@ public class BhflowController extends BaseAction{
 	public String showRwd(){
 		setShow(true);
 		setResultpage("addRwd");
+		int i = wxzyService.updateByCkzt(rwd.getRwdid());
 		rwd = wxzyService.selectByPrimaryKeyWithClxh(rwd.getRwdid());
 		rwd.setCjryname(RcyhUtils.usernameToString(rwd.getCjusername())); // 回显创建人用户名
 		rwd.setBmname(RcyhUtils.getBmname(rwd.getBmcode())); //回显受委派部门名称
@@ -349,7 +351,7 @@ public class BhflowController extends BaseAction{
 		if(StringUtils.isBlank(rwd.getRwbh())) {
 			rwd.setRwbh(RcyhUtils.createRWDBH());
 		}
-		
+		rwd.setRwdckzt("0");
 		int res = bhflowService.savepg(getRwd());
 		gmap.clear();
 		gmap.put(Constants.ISSUCCESS, true);

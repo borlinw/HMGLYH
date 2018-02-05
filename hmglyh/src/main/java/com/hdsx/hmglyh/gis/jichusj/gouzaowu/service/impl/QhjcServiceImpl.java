@@ -114,4 +114,10 @@ public class QhjcServiceImpl implements QhjcService {
 		return false;
 	}
 
+	@Override
+	public boolean deleteQldqjc(Qhjc q) {
+		
+		return false;
+	}
+
 }

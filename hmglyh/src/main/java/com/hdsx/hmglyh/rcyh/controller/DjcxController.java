@@ -186,7 +186,7 @@ public class DjcxController extends BaseAction {
 			System.out.println("--"+nzArray[1]);
 			System.out.println("--"+nzArray[2]);
 			System.out.println("--"+nzArray[3]);
-			System.out.println("--"+nzArray[4]);
+			
 			System.out.println("--查看冬季除雪快报--查看冬季除雪快报--查看冬季除雪快报--");
 		}
 		return getResultname();

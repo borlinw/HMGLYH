@@ -16,6 +16,7 @@ public class Constants {
 	// 状态 typecode
 	public static String rwdzt = "rwdzt";
 	public static String pgzt = "pgzt";
+	public static String rwdckzt = "rwdckzt";
 	
 	
 	// 枚举类型   typecode
@@ -31,6 +32,7 @@ public class Constants {
 	public static String BuchongRwd = "0903"; // 补充类型任务单
 
 	
+	
 	// 任务单状态值
 	public static String RwdWwx = "0";  // 任务单未维修
 	public static String RwdYwx = "1";  // 任务单已维修
@@ -39,6 +41,9 @@ public class Constants {
 	public static String RwdYdjh1 = "4"; // 可修改
 	public static String RwdYdjh2 = "5";  // 不可修改	
 	
+	//任务单查看状态值
+	public static String RwdYck = "1"; //已查看
+	public static String RwdWck = "0"; //未查看
 	
 	
 	

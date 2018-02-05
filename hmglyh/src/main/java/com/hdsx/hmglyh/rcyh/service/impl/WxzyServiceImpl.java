@@ -516,4 +516,12 @@ public class WxzyServiceImpl implements WxzyService {
 			return -1;
 		}
 	}
+
+	@Override
+	public int updateByCkzt(String rwdid) {
+		// TODO Auto-generated method stub
+		return rwdMapper.updateByCkzt(rwdid);
+	}
+
+
 }
