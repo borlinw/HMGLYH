@@ -263,6 +263,10 @@ public class QhjcController extends BaseActionSupport<Qhjc> {
 		return qhjc;
 	}
 
+	/*
+	 * xxx
+	 * @see com.hdsx.hmglyh.base.BaseActionSupport#prepareModel()
+	 */
 	@Override
 	protected void prepareModel() throws Exception {
 		// TODO Auto-generated method stub
